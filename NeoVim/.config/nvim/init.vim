@@ -118,7 +118,7 @@ hi clear Conceal "This removes the stupid highlighting
 
 "PlasticBoy Plugin
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 
 " This enables syntax highlighting  for Math environments
 let g:vim_markdown_math = 1
@@ -556,7 +556,11 @@ inoremap <C-b> <esc><C-^>
 "Cycle Buffers (p. 64 Mastering Vim)
 map <C-K> :bprev<CR>
 map backspace :bprev<CR>
+map <leader>bp :bprev<CR>
 map <C-J> :bnext<CR>
+map <Leader>bn :bnext<CR>
+
+
 
 "Save Document
 
@@ -629,8 +633,12 @@ let sh_fold_enabled=1    "Shell Scirpts
 "inoremap <expr> <c-x><c-f> fzf#vim#complete#path( 
 "    \ "find . -path '*/\.*' -prune -o -print \| sed '1d;s:^..::'",
 "    \ fzf#wrap({'dir': expand('%:p:h')}))
-" invoke fzf with <C-p>
+"
+" invoke fzf files with <C-p>
 nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <leader>bW :Buffers<CR>
+nnoremap <leader>bW :Buffers<CR>
+
 
 "" Themes 
  " Theme Must go at the bottom
