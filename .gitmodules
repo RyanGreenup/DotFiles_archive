@@ -1,0 +1,3 @@
+[submodule "Shells/.config/fish/functions/.fzf"]
+	path = Shells/.config/fish/functions/.fzf
+	url = https://github.com/junegunn/fzf
