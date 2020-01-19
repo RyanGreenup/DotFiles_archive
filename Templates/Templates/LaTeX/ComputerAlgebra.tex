@@ -1,0 +1,237 @@
+\documentclass[12pt]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%Preamble%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Packages ------------------------------------
+
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\addtolength{\skip\footins}{2pc plus 5pt} %Add whitespace before footnotes`
+\usepackage[svgnames, x11names]{xcolor}
+%\usepackage{tgadventor}
+
+%Hyperlinks-----------------------------------
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+	 colorlinks=true, %set true if you want colored links
+	linktoc=all     %set to all if you want both sections and subsections linked
+}
+
+%Remove Section Numbers----------------
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+%Change the Font------------------------------
+%\usepackage{PoiretOne}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+% Add rule after sections ------------------------------
+\usepackage{titlesec}
+
+
+
+
+
+
+%Listings----------------------------------------
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+%  frame=tb,
+  frame=leftline,
+  framesep=15pt,
+  language=Java,
+  aboveskip=20pt,
+  belowskip=20pt,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+%  backgroundcolor=\color{Snow2},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  xleftmargin=1in,
+}
+
+% Formatting----------------------------------------
+\widowpenalty=1000
+\clubpenalty=1000
+
+
+
+
+\title{Computer Algebra Exercises}
+\author{Ryan G}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%Document%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\fontfamily{cmss}\selectfont
+
+\section{(04) Lists}	
+\subsection{Problem 4.10}
+How many numbers of the form $3\cdot  n^5 +  11$ are prime for $n \in \left[ 1, 2000 \right]$?
+\paragraph{Solution}
+This would be a good problem to solve `top-down`, if you want to solve a problem top down, use the  defines symbol \verb|:=| \footnote{TB [2.3]-Equalities; P. 43} , this is analogous to creating a function or a method and means you can simply can that as a \verb|main|  method at the end.\\
+
+So laying out or problem we might start with something that looks like this:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+(* Create the Select function *)
+    returnvals := Select[vals897, PrimeQ]
+        (* Put the code here*)
+    returnvals
+\end{lstlisting}	
+%\end{minipage}
+
+Now all that is necessary is to fill in the undefined methods/variables/functions:
+
+\begin{itemize}
+  \item \verb|vals897| will be a list of prime numbers which we could determine like so:
+    \begin{lstlisting}[language = Mathematica]
+         vals897 := Table[functionp410[i], {i, 0, maxval}] // Length
+         \end{lstlisting}
+
+
+         \begin{itemize}
+           \item and from that we need to define the function $3n^5 +11$ and the maxval:
+    %\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+    \begin{lstlisting}[language = Mathematica]
+        (* Define the Function and Domain *)
+        functionp410[n_] := 3*n^5 + 11;
+        maxval = 20
+    \end{lstlisting}	
+    %\end{minipage}
+
+         \end{itemize}
+\end{itemize}
+
+So putting this all together we get:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+(* Create the Select function *)
+returnvals :=  Select[vals897, PrimeQ] // Length
+
+    (* Create a list of resulting values *)
+    vals897 := Table[functionp410[i], {i, 0, maxval}];
+
+        (*Define the Function and Domain*)
+        functionp410[n_] := 3*n^5 + 11;
+        maxval = 2000;
+
+returnvals
+\end{lstlisting}	
+%\end{minipage}j
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+98
+\end{lstlisting}	
+%\end{minipage}
+
+And we hence conclude that there are 98 numbers of the form $3n^5+11, \quad \forall n \in \left[ 1, 2000 \right]$.
+
+
+
+
+\begin{align*}
+  4x^3&=6x\\
+x&=\pm4x^3 
+\end{align*}
+\subsection{Exercise 4.1}	
+Generate 6 random integers $n$ between $1$ and 3095 and show that $n^6 +  1091$ is not prime.
+
+\paragraph{Solution}
+In order to solve this first create a list of 6 random numbers using \verb|RandomInteger|:
+
+\begin{lstlisting}[language = Mathematica]
+Myvals = Table[RandomInteger[{1, 3095}], 6];
+\end{lstlisting}	
+
+
+Appending the \verb|;| character will cause the output will be supressed, now define the function:
+
+\begin{lstlisting}[language = Mathematica]
+f[n_] = n! + 1091;
+\end{lstlisting}	
+
+Now we can use \verb|/@| to apply the function over the list \footnote{TB [4.2]-Listable Functions P. 74} and then use \verb|//| to pipe that into the  \verb|PrimeQ| Function:
+
+\begin{lstlisting}[language = Mathematica]
+truthlist = 
+ f /@ Myvals // PrimeQ (* 
+  applying functions over a list is acheived by f[x] @ / {} or Map[f,
+  expr], refer to p. 74 listable functions [4.2] *)
+\end{lstlisting}	
+
+This will return the output:
+
+\begin{lstlisting}[language = Mathematica]
+{False, False, False, False, False, False}
+\end{lstlisting}	
+
+But it isn't necessary to read that, instead we can execute:
+
+\begin{lstlisting}[language = Mathematica]
+If[AllTrue[f /@ Myvals, PrimeQ],
+ 	Print["These values are prime"],
+ 	Print["These values are composite"]
+ ]
+\end{lstlisting}	
+
+
+\begin{lstlisting}[language = Mathematica]
+These values are composite
+\end{lstlisting}	
+
+And we hence conclude that the random values are composite.
+
+	
+	
+
+
+
+\subsection{Exercise 4.2}
+Explain the Following Code:
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Text[Style["Sydney", Red, Italic, #]] & /@ Range[40, 70, 10]
+\end{lstlisting}	
+%\end{minipage}
+\end{document}

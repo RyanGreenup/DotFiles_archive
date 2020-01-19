@@ -1,0 +1,67 @@
+%! TEX root = /home/ryan/Dropbox/Studies/MathModelling/Notes/Diffeq/latex_working/00_master.tex
+% In spaceemacs just press =<Spc>-f-y= or  F4 in neovim
+
+\documentclass[12 pt]{article}
+\usepackage{/home/ryan/Dropbox/profiles/Templates/LaTeX/ScreenStyle}
+
+%\usepackage{~/Dropbox/profiles/Templates/LaTeX/ScreenStyle}
+%LaTeX doesn't work with the ~
+
+
+%%%%%%%Title
+\title{\color{coltit} \Huge Title913498432198}
+\author{Ryan Greenup ; 1780-5315}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%4%%%%%%%%%
+%%%%%%%Document%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{figure}[h!]
+\begin{tikzpicture}[domain = 0:10, scale = (2/3)]
+  \clip (-1,-1) rectangle (12,12);
+  \draw[->, thick] (0,0) -- (0,10) node[right] {$C$ {\scriptsize nmol $\cdot  $ L$^{-1}$}};
+  \draw[->, thick] (0,0) -- (10, 0) node[right] {$t$ };
+  \draw[] [out=270, in = 180]  (0,5) to (3,2) node[right] {\scriptsize $\left( t_{\textit{min}}, c_{\textit{min}} \right)$};
+  \draw[dashed] (3,2)--(3,5);
+  \draw[] [out=270, in=180] (3,5) to (6,3) ;
+  \draw[dashed] (6,3)--(6,6);
+  \draw[] [out=270, in=180] (6,6) to (9,4) ;
+  \draw[dashed] (9,4)--(9, 7);
+  \draw[ ] [out=270, in=180] (9,7) to (12,4);
+  \draw[dotted]  (0,7)--(12,7) node[below left] {$C_n = H$};
+  \draw[dotted]  (0,4)--(12,4) node[below left] {$R_\infty = L$};
+  \node [left] at (0,5) {$C_0$};
+  \draw[<-> ] (0.4,4)--(0.4,7) node[below right] {\tiny $C_0 = H-L$};
+\end{tikzpicture}
+  \caption{Diagram of Blood Levels over time}
+  \label{fig:Concentration Plot}
+\end{figure}
+
+\lipsum
+
+ 
+\end{document}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "/home/ryan/Dropbox/Studies/MathModelling/Notes/Diffeq/latex_working/00_master.tex"
+%%% End: 
+
+
+
+
+
+
+
+
+
+
+

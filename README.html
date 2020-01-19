@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-19 Sun 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Synchronising DotFiles</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ryan" />
+<style type="text/css">
+<!-- [CDATA] -->
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+ * Taken from [Github](https://raw.githubusercontent.com/gongzhitaao/orgcss/master/src/css/org.css)
+   ========================================================================== */
+
+@import "normalize";
+@import "htmlize";
+
+$sans: Helvetica, sans-serif;
+$serif: Georgia, serif;
+$monospace: Lucida Console, monospace;
+$code-size: 80%;
+$smaller: 90%;
+$max-width: 710px;
+
+body {
+    width: 95%;
+    margin: 2% auto;
+    font-size: 14px;
+    line-height: 1.4em;
+    font-family: $serif;
+    color: #333;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 910px) {
+    body {
+        width: 900px;
+    }
+}
+
+::selection {
+    background: #D6EDFF;
+}
+
+p {
+    margin: 1em auto;
+}
+
+ol,ul {
+    margin: 0 auto;
+}
+
+dl {
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    margin: 0.8em auto;
+    color: black;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.4;
+    font-weight: bold;
+    margin: 1em auto;
+}
+
+.abstract {
+    margin: auto;
+    width: 80%;
+    font-style: italic;
+}
+
+.abstract p:last-of-type:before {
+    content: "    ";
+    white-space: pre;
+}
+
+.status {
+    font-size: $smaller;
+    margin: 2em auto;
+}
+
+[class^="section-number-"] {
+    margin-right: .5em;
+}
+
+[id^="orgheadline"] {
+    clear: both;
+}
+
+#footnotes {
+    font-size: $smaller;
+}
+
+.footpara {
+    display: inline;
+    margin: .2em auto;
+}
+
+.footdef {
+    margin-bottom: 1em;
+}
+
+.footdef sup {
+    padding-right: .5em;
+}
+
+a {
+    color: #527d9a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #003355;
+    border-bottom: 1px dotted;
+}
+
+figure {
+    padding: 0px;
+    margin: 1em auto;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.MathJax_Display {
+    margin: 0!important;
+    width: $smaller!important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #A5573E;
+    line-height: 1em;
+    font-family: $sans;
+}
+
+h1,h2,h3 {
+    line-height: 1.4em;
+}
+
+h4,h5,h6 {
+    font-size: 1em;
+}
+
+@media screen and (min-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.3em;
+    }
+    h1,h2,h3 {
+        line-height: 1.4em;
+    }
+    h4,h5,h6 {
+        font-size: 1.1em;
+    }
+}
+
+dt {
+    font-weight: bold;
+}
+
+/* table */
+
+table {
+    margin: 1em auto;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 2px solid;
+}
+
+table td + td, table th + th {
+    border-left: 1px solid gray;
+}
+
+table tr {
+    border-top: 1px solid lightgray;
+}
+
+td,th {
+    padding: 0.3em 0.6em;
+    vertical-align: middle;
+}
+
+caption.t-above {
+    caption-side: top;
+}
+
+caption.t-bottom {
+    caption-side: bottom;
+}
+
+caption {
+    margin-bottom: 0.3em;
+}
+
+figcaption {
+    margin-top: 0.3em;
+}
+
+th.org-right {
+    text-align: center;
+}
+
+th.org-left {
+    text-align: center;
+}
+
+th.org-center {
+    text-align: center;
+}
+
+td.org-right {
+    text-align: right;
+}
+
+td.org-left {
+    text-align: left;
+}
+
+td.org-center {
+    text-align: center;
+}
+
+blockquote {
+    margin: 1em 2em;
+    padding-left: 1em;
+    border-left: 3px solid #ccc;
+}
+
+kbd {
+    background-color: #f7f7f7;
+    font-size: $code-size;
+    margin: 0 .1em;
+    padding: .1em .6em;
+}
+
+.todo {
+    background-color: red;
+    color: white;
+    padding: .1em 0.3em;
+    border-radius: 3px;
+    background-clip: padding-box;
+    font-size: $code-size;
+    font-family: $monospace;
+    line-height: 1;
+}
+
+.done {
+    background-color: green;
+    color: white;
+    padding: .1em 0.3em;
+    border-radius: 3px;
+    background-clip: padding-box;
+    font-size: $code-size;
+    font-family: $monospace;
+    line-height: 1;
+}
+
+.priority {
+    color: orange;
+    font-family: $monospace;
+}
+
+/* Because tag span is set to float.  This is more like a hacking.  Maybe we
+   need a cleaner solution. */
+#table-of-contents li {
+    clear: both;
+}
+
+.tag {
+    font-family: $monospace;
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+.tag span {
+    padding: 0.3em 0.3em;
+    float: right;
+    margin-right: .5em;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-clip: padding-box;
+    color: #333;
+    background-color: #eee;
+    line-height: 1;
+}
+
+.timestamp {
+    color: #bebebe;
+    font-size: $smaller;
+}
+
+.timestamp-kwd {
+    color: #5f9ea0;
+}
+
+.org-right {
+    margin-left: auto;
+    margin-right: 0px;
+    text-align: right;
+}
+
+.org-left {
+    margin-left: 0px;
+    margin-right: auto;
+    text-align: left;
+}
+
+.org-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#postamble p, #preamble p {
+    font-size: $smaller;
+    margin: .2em;
+}
+
+p.verse {
+    margin-left: 3%;
+}
+
+:not(pre) > code {
+    padding: 2px 5px;
+    margin: auto 1px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    background-clip: padding-box;
+    color: #333;
+    font-size: $code-size;
+}
+
+.org-src-container {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    font-family: $monospace;
+    font-size: $code-size;
+    margin: 1em auto;
+    padding: 0.1em 0.5em;
+    position: relative;
+}
+
+.org-src-container>pre {
+    overflow: auto;
+}
+
+.org-src-container>pre:before {
+    display: block;
+    position: absolute;
+    background-color: #b3b3b3;
+    top: 0;
+    right: 0;
+    padding: 0 0.5em;
+    border-bottom-left-radius: 8px;
+    border: 0;
+    color: white;
+    font-size: $code-size;
+}
+
+/* from http://demo.thi.ng/org-spec/ */
+
+.org-src-container>pre.src-sh:before {
+    content: 'sh';
+}
+.org-src-container>pre.src-bash:before {
+    content: 'bash';
+}
+.org-src-container>pre.src-emacs-lisp:before {
+    content: 'Emacs Lisp';
+}
+.org-src-container>pre.src-R:before {
+    content: 'R';
+}
+.org-src-container>pre.src-org:before {
+    content: 'Org';
+}
+.org-src-container>pre.src-cpp:before {
+    content: 'C++';
+}
+.org-src-container>pre.src-c:before {
+    content: 'C';
+}
+.org-src-container>pre.src-html:before {
+    content: 'HTML'
+}
+.org-src-container>pre.src-js:before {
+    content: 'Javascript'
+}
+.org-src-container>pre.src-javascript:before {
+    content: 'Javascript'
+}
+
+// More languages from http://orgmode.org/worg/org-contrib/babel/languages.html
+
+.org-src-container>pre.src-abc:before {
+    content: 'ABC';
+}
+.org-src-container>pre.src-asymptote:before {
+    content: 'Asymptote';
+}
+.org-src-container>pre.src-awk:before {
+    content: 'Awk';
+}
+.org-src-container>pre.src-C:before {
+    content: 'C';
+}
+.org-src-container>pre.src-calc:before {
+    content: 'Calc';
+}
+.org-src-container>pre.src-clojure:before {
+    content: 'Clojure';
+}
+.org-src-container>pre.src-comint:before {
+    content: 'comint';
+}
+.org-src-container>pre.src-css:before {
+    content: 'CSS';
+}
+.org-src-container>pre.src-D:before {
+    content: 'D';
+}
+.org-src-container>pre.src-ditaa:before {
+    content: 'Ditaa';
+}
+.org-src-container>pre.src-dot:before {
+    content: 'Dot';
+}
+.org-src-container>pre.src-ebnf:before {
+    content: 'ebnf';
+}
+.org-src-container>pre.src-forth:before {
+    content: 'Forth';
+}
+.org-src-container>pre.src-F90:before {
+    content: 'Fortran';
+}
+.org-src-container>pre.src-gnuplot:before {
+    content: 'Gnuplot';
+}
+.org-src-container>pre.src-haskell:before {
+    content: 'Haskell';
+}
+.org-src-container>pre.src-io:before {
+    content: 'Io';
+}
+.org-src-container>pre.src-java:before {
+    content: 'Java';
+}
+.org-src-container>pre.src-latex:before {
+    content: 'LaTeX';
+}
+.org-src-container>pre.src-ledger:before {
+    content: 'Ledger';
+}
+.org-src-container>pre.src-ly:before {
+    content: 'Lilypond';
+}
+.org-src-container>pre.src-lisp:before {
+    content: 'Lisp';
+}
+.org-src-container>pre.src-makefile:before {
+    content: 'Make';
+}
+.org-src-container>pre.src-matlab:before {
+    content: 'Matlab';
+}
+.org-src-container>pre.src-max:before {
+    content: 'Maxima';
+}
+.org-src-container>pre.src-mscgen:before {
+    content: 'Mscgen';
+}
+.org-src-container>pre.src-Caml:before {
+    content: 'Objective';
+}
+.org-src-container>pre.src-octave:before {
+    content: 'Octave';
+}
+.org-src-container>pre.src-org:before {
+    content: 'Org';
+}
+.org-src-container>pre.src-perl:before {
+    content: 'Perl';
+}
+.org-src-container>pre.src-picolisp:before {
+    content: 'Picolisp';
+}
+.org-src-container>pre.src-plantuml:before {
+    content: 'PlantUML';
+}
+.org-src-container>pre.src-python:before {
+    content: 'Python';
+}
+.org-src-container>pre.src-ruby:before {
+    content: 'Ruby';
+}
+.org-src-container>pre.src-sass:before {
+    content: 'Sass';
+}
+.org-src-container>pre.src-scala:before {
+    content: 'Scala';
+}
+.org-src-container>pre.src-scheme:before {
+    content: 'Scheme';
+}
+.org-src-container>pre.src-screen:before {
+    content: 'Screen';
+}
+.org-src-container>pre.src-sed:before {
+    content: 'Sed';
+}
+.org-src-container>pre.src-shell:before {
+    content: 'shell';
+}
+.org-src-container>pre.src-shen:before {
+    content: 'Shen';
+}
+.org-src-container>pre.src-sql:before {
+    content: 'SQL';
+}
+.org-src-container>pre.src-sqlite:before {
+    content: 'SQLite';
+}
+.org-src-container>pre.src-stan:before {
+    content: 'Stan';
+}
+.org-src-container>pre.src-vala:before {
+    content: 'Vala';
+}
+.org-src-container>pre.src-axiom:before {
+    content: 'Axiom';
+}
+.org-src-container>pre.src-browser:before {
+    content: 'HTML';
+}
+.org-src-container>pre.src-cypher:before {
+    content: 'Neo4j';
+}
+.org-src-container>pre.src-elixir:before {
+    content: 'Elixir';
+}
+.org-src-container>pre.src-request:before {
+    content: 'http';
+}
+.org-src-container>pre.src-ipython:before {
+    content: 'iPython';
+}
+.org-src-container>pre.src-kotlin:before {
+    content: 'Kotlin';
+}
+.org-src-container>pre.src-Flavored Erlang  lfe:before {
+    content: 'Lisp';
+}
+.org-src-container>pre.src-mongo:before {
+    content: 'MongoDB';
+}
+.org-src-container>pre.src-prolog:before {
+    content: 'Prolog';
+}
+.org-src-container>pre.src-rec:before {
+    content: 'rec';
+}
+.org-src-container>pre.src-ML  sml:before {
+    content: 'Standard';
+}
+.org-src-container>pre.src-Translate  translate:before {
+    content: 'Google';
+}
+.org-src-container>pre.src-typescript:before {
+    content: 'Typescript';
+}
+.org-src-container>pre.src-rust:before {
+    content: 'Rust';
+}
+
+.inlinetask {
+    background: #ffffcc;
+    border: 2px solid gray;
+    margin: 10px;
+    padding: 10px;
+}
+
+#org-div-home-and-up {
+    font-size: 70%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.linenr {
+    font-size: $smaller;
+}
+
+.code-highlighted {
+    background-color: #ffff00;
+}
+
+#bibliography {
+    font-size: $smaller;
+}
+
+#bibliography table {
+    width: 100%;
+}
+
+.creator {
+    display: block;
+}
+
+@media screen and (min-width: 600px) {
+    .creator {
+        display: inline;
+        float: right;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+The typical Github Style:
+   ========================================================================== */
+
+
+
+
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.go-top {
+position: fixed;
+bottom: 2em;
+right: 2em;
+text-decoration: none;
+background-color: #E0E0E0;
+font-size: 12px;
+padding: 1em;
+display: inline;
+}
+
+/* Github css */
+
+html,body{        margin: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+    max-width: 60em; color:black;}*:not('#mkdbuttons'){margin:0;padding:0}body{font:13.34px helvetica,arial,freesans,clean,sans-serif;-webkit-font-smoothing:subpixel-antialiased;line-height:1.4;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}p{margin:1em 0}a{color:#4183c4;text-decoration:none}body{background-color:#fff;padding:30px;margin:15px;font-size:14px;line-height:1.6}body>*:first-child{margin-top:0!important}body>*:last-child{margin-bottom:0!important}@media screen{body{box-shadow:0 0 0 1px #cacaca,0 0 0 4px #eee}}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:bold;-webkit-font-smoothing:subpixel-antialiased;cursor:text}h1{font-size:28px;color:#000}h2{font-size:24px;border-bottom:1px solid #ccc;color:#000}h3{font-size:18px;color:#333}h4{font-size:16px;color:#333}h5{font-size:14px;color:#333}h6{color:#777;font-size:14px}p,blockquote,table,pre{margin:15px 0}ul{padding-left:30px}ol{padding-left:30px}ol li ul:first-of-type{margin-top:0}hr{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;border:0 none;color:#ccc;height:4px;padding:0}body>h2:first-child{margin-top:0;padding-top:0}body>h1:first-child{margin-top:0;padding-top:0}body>h1:first-child+h2{margin-top:0;padding-top:0}body>h3:first-child,body>h4:first-child,body>h5:first-child,body>h6:first-child{margin-top:0;padding-top:0}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6{margin-top:0;padding-top:0}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p,ul li>:first-child,ol li>:first-child{margin-top:0}dl{padding:0}dl dt{font-size:14px;font-weight:bold;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}blockquote{border-left:4px solid #DDD;padding:0 15px;color:#777}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{border-collapse:collapse;border-spacing:0;font-size:100%;font:inherit}table th{font-weight:bold;border:1px solid #ccc;padding:6px 13px}table td{border:1px solid #ccc;padding:6px 13px}table tr{border-top:1px solid #ccc;background-color:#fff}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px;font-family:Consolas,'Liberation Mono',Courier,monospace;font-size:12px;color:#333}pre>code{margin:0;padding:0;white-space:pre;border:0;background:transparent}.highlight pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre code,pre tt{background-color:transparent;border:0}.poetry pre{font-family:Georgia,Garamond,serif!important;font-style:italic;font-size:110%!important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia,Garamond,serif!important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,pre,blockquote,table,figure{page-break-inside:avoid}body{background:#fff;border:0}code{background-color:#fff;color:#333!important;padding:0 .2em;border:1px solid #dedede}pre{background:#fff}pre code{background-color:white!important;overflow:visible}}@media screen{body.inverted{color:#eee!important;border-color:#555;box-shadow:none}.inverted body,.inverted hr .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee!important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted h2{border-color:#555}.inverted hr{border-color:#777;border-width:1px!important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eee}code span::selection{background-color:rgba(0,0,0,0.7)!important;color:#eee!important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted body{background:#252a2a}.inverted a{color:#acd1d5}}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne,.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#eaf2f5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}
+
+
+/;]]>;/-->
+</style>
+
+<script type="text/javascript" src="https://orgmode.org/org-info.js">
+/**
+ *
+ * @source: https://orgmode.org/org-info.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in https://orgmode.org/org-info.js.
+ *
+ * Copyright (C) 2012-2019 Free Software Foundation, Inc.
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in https://orgmode.org/org-info.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "4");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Synchronising DotFiles</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga339705">Installation Instructions</a></li>
+<li><a href="#org6598752">How to Backup DotFiles</a>
+<ul>
+<li><a href="#org82795ac">Bare Repo</a></li>
+<li><a href="#org56f60ab">My Method</a>
+<ul>
+<li><a href="#org4cebf42">1. Backup Existing Dotfiles to a new Directory</a></li>
+<li><a href="#org75e023b">2. Link the Files Between Directories</a></li>
+</ul>
+</li>
+<li><a href="#orgf139d61">Make a git repo</a></li>
+<li><a href="#orgc457e96">Install Emacs</a>
+<ul>
+<li><a href="#org53d6e41">Reinstalling with just the <code>~/.emacs.d/init.el</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+In order to synchronise <code>DotFiles</code> it is necessary to:
+</p>
+
+<ol class="org-ol">
+<li>backup existing <code>DotFiles</code> to a new directory
+<ol class="org-ol">
+<li>This should be done as a script to it's reproducible.</li>
+</ol></li>
+<li>Link the files between the directories
+<ol class="org-ol">
+<li>This should be undo-able so ideally with <code>GNU Stow</code></li>
+</ol></li>
+<li>synchronise that directory between devices
+<ol class="org-ol">
+<li><b><b>VCS</b></b> repo (e.g. <code>git=/=bzr</code> with <code>GitHub</code>)</li>
+<li>and/or Cloud</li>
+</ol></li>
+</ol>
+
+<p>
+There is nothing more to managing <code>DotFiles</code>.
+</p>
+
+<div id="outline-container-orga339705" class="outline-2">
+<h2 id="orga339705">Installation Instructions</h2>
+<div class="outline-text-2" id="text-orga339705">
+<ol class="org-ol">
+<li>Clone this repo</li>
+<li>change into the directory and remove what you don't want</li>
+<li>install <a href="https://github.com/aspiers/stow">GNU Stow</a></li>
+<li>execute <code>stow -S -t $HOME *</code></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6598752" class="outline-2">
+<h2 id="org6598752">How to Backup DotFiles</h2>
+<div class="outline-text-2" id="text-org6598752">
+</div>
+<div id="outline-container-org82795ac" class="outline-3">
+<h3 id="org82795ac">Bare Repo</h3>
+<div class="outline-text-3" id="text-org82795ac">
+<p>
+I really like the idea of using a bare repo in the home folder to manage <code>DotFiles</code> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> but I've never been able to get it to actually track the changes so I haven't bothered with that
+</p>
+</div>
+</div>
+
+<div id="outline-container-org56f60ab" class="outline-3">
+<h3 id="org56f60ab">My Method</h3>
+<div class="outline-text-3" id="text-org56f60ab">
+</div>
+<div id="outline-container-org4cebf42" class="outline-4">
+<h4 id="org4cebf42">1. Backup Existing Dotfiles to a new Directory</h4>
+<div class="outline-text-4" id="text-org4cebf42">
+<p>
+In order to backup existing dotfiles to a new directory, just use <code>cp</code> with <code>--parents</code> option.
+</p>
+
+<p>
+In order to not get <code>.git</code> files as well we can use extended globbing<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> (because trying to exclude the with <code>find ~/ -not -name \*\.git\* -exec cp {} --parents ;\</code> is a PITA and removing them after the fact with <code>find ./HomeDir -not -name \*\.git\* -exec rm-rvf {} +</code>  isn't really a good idea:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">    CopyinFiles<span style="color: #4f97d7;">()</span> <span style="color: #4f97d7;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">for</span> dotfiles<span style="color: #4f97d7; font-weight: bold;"> in</span> $<span style="color: #7590db;">@</span>; <span style="color: #4f97d7; font-weight: bold;">do</span>
+            <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">[</span> -e $<span style="color: #7590db;">dotfiles</span> <span style="color: #bc6ec5;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
+                cp -lr --parents $<span style="color: #7590db;">dotfiles</span> ./
+            <span style="color: #4f97d7; font-weight: bold;">fi</span>
+        <span style="color: #4f97d7; font-weight: bold;">done</span>
+    <span style="color: #4f97d7;">}</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">#    </span><span style="color: #2aa1ae; background-color: #292e34;">CopyinFiles ~/.bashrc ~/.profile ~/.config/autostart/ ~/.zshrc ~/.zprofile ~/.oh-my-zsh/ ~/config/fish ~/.config/omf/ ~/.inputrc </span>
+CopyinFiles <span style="color: #2d9574;">\</span>
+    ~/.bashrc            <span style="color: #2d9574;">\</span>
+    ~/.profile           <span style="color: #2d9574;">\</span>
+    ~/.config/autostart  <span style="color: #2d9574;">\</span>
+    ~/.zshrc             <span style="color: #2d9574;">\</span>
+    ~/.zprofile          <span style="color: #2d9574;">\</span>
+    ~/.oh-my-zsh         <span style="color: #2d9574;">\</span>
+    ~/.config/fish       <span style="color: #2d9574;">\</span>
+    ~/.config/omf*       <span style="color: #2d9574;">\</span>
+    ~/.inputrc           <span style="color: #2d9574;">\</span>
+    ~/.config/i3         <span style="color: #2d9574;">\</span>
+    ~/.conky*            <span style="color: #2d9574;">\</span>
+    ~/.config/nvim/init.vim       <span style="color: #2d9574;">\</span>
+    ~/.config/systemd    <span style="color: #2d9574;">\</span>
+    ~/.systemd           <span style="color: #2d9574;">\</span>
+    ~/.spacemacs         <span style="color: #2d9574;">\</span>
+    ~/.config/ranger     <span style="color: #2d9574;">\</span>
+    ~/.emacs.d/          <span style="color: #2d9574;">\</span>
+    ~/bin                <span style="color: #2d9574;">\</span>
+    ~/.xmodmap           <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">END</span>
+
+<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">[</span> -d ./home <span style="color: #4f97d7;">]</span>; <span style="color: #4f97d7; font-weight: bold;">then</span>
+    rsync -av ./home/$<span style="color: #4f97d7;">(</span>basename $<span style="color: #7590db;">HOME</span><span style="color: #4f97d7;">)</span>/ ./HomeDir &amp;&gt; /dev/null
+    rm -r ./home;
+<span style="color: #4f97d7; font-weight: bold;">else</span>
+    <span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"it doesn't look like anything was copied"</span>;
+<span style="color: #4f97d7; font-weight: bold;">fi</span>
+
+  find ./HomeDir/ -maxdepth <span style="color: #a45bad;">1</span> -type d 
+  <span style="color: #4f97d7;">echo</span> Success!
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">./HomeDir/</td>
+</tr>
+
+<tr>
+<td class="org-left">./HomeDir/.oh-my-zsh</td>
+</tr>
+
+<tr>
+<td class="org-left">./HomeDir/.emacs.d</td>
+</tr>
+
+<tr>
+<td class="org-left">./HomeDir/.config</td>
+</tr>
+
+<tr>
+<td class="org-left">./HomeDir/bin</td>
+</tr>
+
+<tr>
+<td class="org-left">Success!</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+So what this does is first test to see if the file exists using an if test, this prevents <code>cp</code> throwing a warning, then it copies the file including the parent folder strucutre.
+Finally it moves the home directory to <code>HomeDir</code> removes the root directory structure, the assumption being only local <code>DotFiles</code> desire to be synced.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org348658b"></a>1(a) Remove <code>.git</code> Directories<br />
+<div class="outline-text-5" id="text-org348658b">
+<p>
+In syncing the <code>~/.emacs.d</code> directory , if we didn't use extended globbing, we are going to have the <code>.git</code> folder in there as well which we don't really want, so we'll just remove it, please don't run this from <code>~</code> or <code>/</code>, it might cause a mess, that's a part of the reason for renaming your home directory to HomeDir, it's just to be sure, make sure you're in a subdirectory like <code>~/Dropbox/.DotFiles</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">find ./HomeDir -name <span style="color: #2d9574;">\*\.</span>git<span style="color: #2d9574;">\*</span> 
+     find ./HomeDir/ -name <span style="color: #2d9574;">\*\.</span>git<span style="color: #2d9574;">\*</span> -exec rm -rf <span style="color: #4f97d7;">{}</span> <span style="color: #2d9574;">\;</span>
+     find ./HomeDir/ -name <span style="color: #2d9574;">\*\.</span>git<span style="color: #2d9574;">\*</span> -exec rm -rf <span style="color: #4f97d7;">{}</span> <span style="color: #2d9574;">\;</span>
+</pre>
+</div>
+
+<pre class="example">
+./HomeDir/.config/autostart/.gitignore
+</pre>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org75e023b" class="outline-4">
+<h4 id="org75e023b">2. Link the Files Between Directories</h4>
+<div class="outline-text-4" id="text-org75e023b">
+<p>
+In order to link the directories, you should use <a href="https://www.gnu.org/software/stow/">GNU Stow</a>, it is possible however to use a combination of <a href="https://linux.die.net/man/1/rsync"><code>rsync</code></a> and <a href="https://github.com/pauldreik/rdfind"><code>rdfind</code></a>, I'll show both methods.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org32e77ef"></a>Gnu Stow (Preferred)<br />
+<div class="outline-text-5" id="text-org32e77ef">
+<p>
+The advantage to using GNU Stow is:
+</p>
+
+<ul class="org-ul">
+<li>It automates the process entirely</li>
+<li>It's the right tool for the right job</li>
+<li>It can deal with internal symlinks in a sensible way
+<ul class="org-ul">
+<li>you could have one folder of Appimages and symlink them into any configs directories that need that program.</li>
+</ul></li>
+<li>It will also allow you to deal with <code>AppImages</code> intertwined with your workflow</li>
+<li>Combined with ranger you'll start to feel sane again</li>
+<li>You could rework directory structures however you like if you're sensible
+<ul class="org-ul">
+<li>it's generally more powerful.</li>
+</ul></li>
+</ul>
+
+<p>
+Disadvantages&#x2026;non yet.
+</p>
+</div>
+</li>
+
+<li><a id="org1c5b175"></a>How it Works<br />
+<div class="outline-text-5" id="text-org1c5b175">
+<p>
+Put dotfiles in <code>~/Dropbox/.Dotfiles/</code> in such a way that each folder represents a self contained home folder structure,<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>  then <code>stow</code> will merge that folder over you're home directory replacing with symlinks, so by way of example:
+</p>
+
+<ol class="org-ol">
+<li>move <code>~/.config/nvim/init.vim</code> to <code>~/Dropbx/.Dotfiles/NeoVim/.config/nvim/init.vim</code></li>
+<li>execute <code>stow -S --target=$HOME ~/Dropbox/.Dotfiles/NeoVim</code> and everything will be symlinked out apporopriately and automagically.
+<ol class="org-ol">
+<li>a shorter way is to use <code>stow -S -t $HOME NeoVim</code> if your in the directory
+<ol class="org-ol">
+<li>You could also do <code>cd ~; stow -S -d ~/Dropbox/.Dotfiles/Neovim ./</code>, this makes a little more sense because it is consistent with <code>ln -s &lt;source&gt; &lt;target&gt;</code></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+</li>
+
+<li><a id="orgd6203e5"></a>How to do it<br />
+<div class="outline-text-5" id="text-orgd6203e5">
+<p>
+First make a single folder for each progam that contains every config file relative to the home directory, so it sould look something like this:
+</p>
+
+<pre class="example">
+../
+├── i3
+├── KeyBindings
+├── NeoVim
+├── Scripts
+│   └── bin
+│       ├── home
+│       │   └── ryan
+│       ├── icons
+│       └── shortcuts
+├── Shells
+├── Spacemacs
+└── Templates
+    └── Templates
+        ├── CSS_
+        │   ├── HugoThemes
+        │   │   └── hugo-theme-basic
+        │   │       ├── archetypes
+        │   │       ├── exampleSite
+        │   │       │   └── content
+        │   │       │       ├── post
+        │   │       │       └── project
+        │   │       ├── images
+        │   │       ├── layouts
+        │   │       │   ├── _default
+        │   │       │   ├── partials
+        │   │       │   ├── post
+        │   │       │   ├── project
+        │   │       │   ├── section
+        │   │       │   └── taxonomy
+        │   │       └── static
+        │   │           └── css
+        │   ├── NotableCSS
+        │   └── Org-CSS
+        │       └── fniessen
+        │           └── org-html-themes
+        │               ├── demo
+        │               │   └── images
+        │               ├── setup
+        │               └── styles
+        │                   ├── bigblow
+        │                   │   ├── css
+        │                   │   ├── images
+        │                   │   └── js
+        │                   ├── lib
+        │                   │   └── js
+        │                   └── readtheorg
+        │                       ├── css
+        │                       └── js
+        └── LaTeX
+            ├── auto
+            ├── codestyles
+            │   └── auto
+            ├── make4ht
+            └── styles
+
+54 directories
+</pre>
+
+<ol class="org-ol">
+<li>Do this in ranger and create links inbetween as you go, for example, I have CSS symlinks in my <code>~/Dropbox/.Dotfiles/Spacemacs/.emacs.d/org-css</code> folder so that I only have one bloody set of them, <code>stow</code> is smart enough to follow the symlinks until it hits the file and then dispatch the new symlink without nesting (because deep nesting will usually cause an error).</li>
+<li>now inside the directory run <code>stow -S -t $HOME *</code> to install them.</li>
+<li>You'll get a tonne of errors telling you that there's already files there, delete those files and run it again.
+<ol class="org-ol">
+<li>Don't worry about deleting them, you don't just have a backup, but your backup is in the correct structure, you could just open the file manager and merge all the folders and your back to where you started.
+<ol class="org-ol">
+<li>This is why I said to make them all relative to the home directory, it's just simpler in the end.</li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+</li>
+
+
+<li><a id="orgf3628c8"></a>Using <code>rdfind</code> and <code>rsync</code> instead<br />
+<div class="outline-text-5" id="text-orgf3628c8">
+<p>
+If you don't want to use GNU Stow for some bad reason, you can do this instead:
+</p>
+
+<ol class="org-ol">
+<li>don't change the files after originally importing them, have all the dot files relative to the home directory</li>
+<li>run <code>rsync -av ./HomeDir/ $HOME</code>
+<ol class="org-ol">
+<li>That trailing forward-slash is important</li>
+</ol></li>
+<li>run <code>rdfind -makesymlinks true $hmDir $HOME</code></li>
+</ol>
+
+<p>
+That's it, all symlinks now, and whenver you need to adda dotfile, add it to <code>~/Dropbox/.DotFiles/HomeDir</code> and run those two commands again. I'd still recommend GNU Stow because it's just more powerful, but, this is still an option if stow isn't an option.
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf139d61" class="outline-3">
+<h3 id="orgf139d61">Make a git repo</h3>
+<div class="outline-text-3" id="text-orgf139d61">
+<p>
+This is a matter of Preference really, you could put it on <a href="https://github.com/pauldreik/rdfind">GitHub</a>, <a href="https://about.gitlab.com/">GitLab</a> or <a href="https://bitbucket.org/product">BitBucket</a>; Or you could just make a local repo that syncs over DropBox. Either way I'd recommend making a <code>git</code> repo, that way when you change a setting you don't like you can roll back, without fighting dropbox. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc457e96" class="outline-3">
+<h3 id="orgc457e96">Install Emacs</h3>
+<div class="outline-text-3" id="text-orgc457e96">
+<p>
+So one of the issues with emacs is that you might not going to want to include the entire <code>~/.emacs.d/</code> directory as a backup because:
+</p>
+<ul class="org-ul">
+<li>it's already got a <code>.git</code> in there</li>
+<li>it's kinda large</li>
+</ul>
+
+<p>
+I'd recommend:
+</p>
+
+<ul class="org-ul">
+<li>regularly doing something lik <code>cp ~/.emacs.d ~/.emacs.d.BAK</code>, because when something goes wrong it's such a pain.</li>
+<li>backing up and syncing everything emacs rather than merely the <code>~/.emacs.d/init.el</code> simply because it is such a pain in the ass, so you should backup:
+<ul class="org-ul">
+<li><code>~/.spacemacs</code></li>
+<li><code>~/.emacs.d</code></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org53d6e41" class="outline-4">
+<h4 id="org53d6e41">Reinstalling with just the <code>~/.emacs.d/init.el</code></h4>
+<div class="outline-text-4" id="text-org53d6e41">
+<p>
+If you just backed up <code>~/.spacemacs</code> and <code>~/.emacs.d/init.el</code> then the steps to reinstall are:
+</p>
+
+<ol class="org-ol">
+<li>Clone the spacemacs repo <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> with:
+<ol class="org-ol">
+<li><a href="https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org">https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org</a></li>
+</ol></li>
+<li><code>mv ~/.spacemacs ~/Desktop; mv ~/.emacs.d/init.el ~/Desktop</code></li>
+<li>Startup emacs and let spacemacs install</li>
+<li>Restart emacs a couple of times</li>
+<li><code>M-x Customize Variable package-check-signature</code> set this to false<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> 
+<ol class="org-ol">
+<li>or run M-: (setq package-check-signature nil) RET</li>
+</ol></li>
+<li>M-x package-install RET gnu-elpa-keyring-update RET</li>
+<li>M-: (setq package-check-signature true) RET</li>
+<li><code>cp ~/Desktop/.spacemacs ~/.spacemacs; cp ~/Desktop/init.el ~/.emacs.d/init.el</code></li>
+<li>Restart emacs a few times</li>
+<li>Install <a href="https://github.com/andras-simonyi/citeproc-org"><code>citeproc-org</code></a>
+<ol class="org-ol">
+<li>i.e. <code>cd ~/Downloads; wget https://github.com/andras-simonyi/citeproc-org/releases/download/0.2.2/citeproc-org-0.2.2.tar</code> then <code>package-install-file</code> and point to <code>~/Downloads/citeproc-org-0.x.y.tar</code></li>
+</ol></li>
+<li>Install <a href="https://github.com/caiorss/org-wiki"><code>org-wiki</code></a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.atlassian.com/git/tutorials/dotfiles">The best Way to store your Dotfiles: A bare Git Repository</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://unix.stackexchange.com/questions/382027/use-bashs-extended-globbing-to-negate-a-filename-that-begins-with-a-dot">https://unix.stackexchange.com/questions/382027/use-bashs-extended-globbing-to-negate-a-filename-that-begins-with-a-dot</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+GNU Stow takes an option and two arguments, the option will be install/delete and the arguments will be target and directory, so you can set up the folders to be relative to any directory you like, you just need to remember to specify it.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org">https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://emacs.stackexchange.com/a/53142/26057">https://emacs.stackexchange.com/a/53142/26057</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: ryan</p>
+<p class="date">Created: 2020-01-19 Sun 17:43</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

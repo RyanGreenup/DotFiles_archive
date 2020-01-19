@@ -1,0 +1,31 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Jan 19 17:44:01 2020
+;; Desktop file format version 208
+;; Emacs version 26.3
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24099 64177 246366 861000) (desktop . "208") "ryan@vidar" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-ADBO-Source Code Pro-normal-normal-normal-*-27-*-*-*-m-0-iso10646-1") (font-parameter . "-ADBO-Source Code Pro-normal-normal-normal-*-27-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#b2b2b2") (background-color . "#292b2e") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "DarkGoldenrod2") (sticky) (environment) (eyebrowse-last-slot . 1) (eyebrowse-current-slot . 1) (eyebrowse-window-configs (1 (((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 3) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 140) (min-pixel-width . 160) (min-pixel-height-ignore . 105) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 35) (min-pixel-width-safe . 32)) leaf (pixel-width . 2496) (pixel-height . 1325) (total-width . 156) (total-height . 38) (normal-height . 1.0) (normal-width . 1.0) (buffer "README.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1514) (start . 765))) "")) (powerline-cache) (persp) (persp-buffer-predicate-old . spacemacs/useful-buffer-p) (persp-buffer-predicate-generated . "Unprintable entity") (frameset--id . "1FF7-CA2D-1AD7-5417") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (frameset--text-pixel-height . 1700) (height . 48) (width . 173) (left . 53) (top . 187)) ((min-height . 4) (min-width . 20) (min-height-ignore . 3) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 140) (min-pixel-width . 320) (min-pixel-height-ignore . 105) (min-pixel-width-ignore . 96) (min-pixel-height-safe . 35) (min-pixel-width-safe . 64)) hc (pixel-width . 2784) (pixel-height . 1665) (total-width . 174) (total-height . 47) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1392) (pixel-height . 1665) (total-width . 87) (total-height . 47) (normal-height . 1.0) (normal-width . 0.5) (buffer "README.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1090) (start . 1))) (leaf (last . t) (pixel-width . 1392) (pixel-height . 1665) (total-width . 87) (total-height . 47) (normal-height . 1.0) (normal-width . 0.5) (buffer "*Messages*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 565) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("right" "rsync" "glob"))
+(setq register-alist (list '(48 . "\n") (list 95 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*-979372")))) mk))))
+(setq file-name-history '("~/Dropbox/.GnuStow/.DotFiles/README.org" "~/Dropbox/.cfg/DotFiles/README.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/ryan/Dropbox/.GnuStow/.DotFiles/README.org"
+  "README.org"
+  'org-mode
+  '(visual-line-mode eldoc-mode page-break-lines-mode global-auto-revert-mode flyspell-mode undo-tree-mode override-global-mode which-key-mode hybrid-mode adaptive-wrap-prefix-mode anzu-mode evil-escape-mode flx-ido-mode persp-mode vi-tilde-fringe-mode volatile-highlights-mode helm-mode hl-todo-mode yas-minor-mode company-mode evil-org-mode projectile-mode)
+  1090
+  '(1090 nil)
+  nil
+  nil
+  '((indicate-empty-lines . t) (buffer-display-time 24099 64146 628245 444000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1102 5018 8311 4971 4972 4975 4483 5232 3465 3558 11580 4922 1305 1306 7540 5869))))
+

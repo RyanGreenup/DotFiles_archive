@@ -1,0 +1,22 @@
+\ProvidesPackage{barline_minted}
+
+% * Code Blocks
+% ** Minted
+% *** Without Box
+
+%Minted--------------------
+% I prefer this because:
+   %+ It has support for more languages
+      %+ listings would break =org-mode= when using emacs-lisp or elisp
+   %+ linbreaks easily by default
+
+
+% you need to install python, pygments and compile latex with the =-shell-escape= flag
+
+
+\RequirePackage{minted}
+\setminted{linenos,tabsize=2,breaklines, breakanywhere,
+  frame=lines,framerule=0.5 pt, xleftmargin = 0.75 in}
+\RequirePackage{mdframed}
+\RequirePackage{tcolorbox}
+\RequirePackage{etoolbox}

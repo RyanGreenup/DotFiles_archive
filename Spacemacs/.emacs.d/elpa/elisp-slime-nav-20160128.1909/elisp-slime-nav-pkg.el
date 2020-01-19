@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "elisp-slime-nav" "20160128.1909" "Make M-. and M-, work in elisp like they do in slime" '((cl-lib "0.2")) :commit "be36d66b4781eab7218bff419f3ec79573bbd15c" :keywords '("navigation" "slime" "elisp" "emacs-lisp") :authors '(("Steve Purcell" . "steve@sanityinc.com")) :maintainer '("Steve Purcell" . "steve@sanityinc.com") :url "https://github.com/purcell/elisp-slime-nav")

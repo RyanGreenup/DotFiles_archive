@@ -1,0 +1,172 @@
+\documentclass[12pt]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%Preamble%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Fakepart Preamble
+% Fakechapter General
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[utf8]{inputenc}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{pgfplots}
+\usepackage{tikz, pstricks}
+\usepackage{graphicx}
+%\usetikzlibrary{calc}
+%\usepackage{chngcntr}
+\usepackage[T1]{fontenc}
+\usepackage{extsizes} % More Font Sizes
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{sectsty} %Need it for underlining Sections
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{enumitem}
+\usepackage{ifxetex,ifluatex}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\addtolength{\skip\footins}{2pc plus 5pt} %Add whitespace before footnotes`
+%\usepackage[svgnames, x11names, dvipsnames]{xcolor} %This is included with mdframed
+%\usepackage{tgadventor}
+%\usepackage{titlesec} % Section Colours
+
+
+% Fakechapter Hyperlinks
+
+
+%Hyperlinks-----------------------------------
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+	 colorlinks=true, %set true if you want colored links
+	linktoc=all     %set to all if you want both sections and subsections linked
+}
+
+% Fakechapter SansSerif-DigitalDisplay
+
+%Remove Section Numbers----------------
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+%Change the Font------------------------------
+%\usepackage{PoiretOne}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+% Add rule after sections ------------------------------
+\usepackage{titlesec}
+
+% Fakesection Code Listings
+
+%Listings----------------------------------------
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+%  frame=tb,
+  frame=leftline,
+  framesep=15pt,
+  language=Java,
+  aboveskip=15pt,
+  belowskip=20pt,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+%  backgroundcolor=\color{Snow2},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  xleftmargin=1in,
+}
+
+	% Formatting----------------------------------------
+	\widowpenalty=1000
+	\clubpenalty=1000
+
+% Fakesection Problem Boxes
+% Problem boxes --------------------------------------
+
+%\newtheorem*{prob}{Problem}
+%\theoremstyle{working}{\cmss}
+%\newtheorem*{working}{Worked Solution}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+\newenvironment{prob}[1][Problem]{%
+	\sffamily \itshape   %
+}{\endproof} %\itshape for italics
+
+\newenvironment{sol}[1][Problem]{%
+	\proof[\nopunct]  %
+}{\endproof}
+
+%\renewenvironment{proof}{{\bfseries \fontfamily{ccr} \selectfont Proof}}{*something*}
+
+
+
+% Fakechapter Heading Colours
+% Numbering
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+
+
+%%%% Define Heading colours
+\definecolor{colsse}{RGB}{136, 73, 143}
+\definecolor{colsss}{RGB}{156, 118, 160}
+\definecolor{colspg}{RGB}{218, 168, 224}
+\definecolor{coltit}{RGB}{84, 65, 86}
+\definecolor{colname}{RGB}{236, 66 ,255}
+		
+	
+	
+% Change Section Colour
+\titleformat{\section}
+{\color{colsse}\normalfont\LARGE\bfseries}
+{\color{colsse}\thesection}{-1em}{}
+\fontfamily{cmss}\selectfont
+
+%SubSection
+\titleformat{\subsection}
+{\color{colsss}\normalfont\Large\bfseries}
+{\color{colsss}\thesubsection}{-1em}{}[\rule{4 in}{2pt}]
+\fontfamily{cmss}\selectfont
+% Change Font
+\fontfamily{cmss}\selectfont
+
+
+
+%Paragraph
+\titleformat{\paragraph}
+{\color{colsss}\normalfont\large}
+{\color{colsss}\theparagraph}{9em}{}[\rule{2 in}{1 pt}]
+\fontfamily{cmss}\selectfont
+% Change Font
+\fontfamily{cmss}\selectfont
+
+
+
+
+
+
+
+%%%%%%Document%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

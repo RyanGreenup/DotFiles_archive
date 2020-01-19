@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+
+echo "We live in an interactive world!"
+if status --is-interactive
+    echo "We live in an interactive world!"
+end

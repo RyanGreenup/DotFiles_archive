@@ -1,0 +1,80 @@
+#!/bin/bash
+# Don't forget to adjust the permissions with:
+#chmod +x ~/somecrazyfolder/script1
+
+## Program
+
+
+### Description
+# This will print 'Hello World' to the STDOUT.
+
+### Code
+cp -l ~/Notes/Org/*html ~/Notes/MD/notes/LinkToOrg/ 
+deleted=$(ls ~/Notes/MD/notes/LinkToOrg/*jou; rm ~/Notes/MD/notes/LinkToOrg/*xxx)
+
+for i in $(find ~/Notes/MD/notes/LinkToOrg -name \*jou\*); do
+    echo "removed $i"
+    rm $i;
+done
+
+for i in $(find ~/Notes/MD/notes/LinkToOrg -name \*xxx\*); do
+    echo "removed $i"
+    rm $i;
+done
+
+
+      #The hardlinks will behave like files but the sync aspect
+      #   may become handy, but it won't be bilateral
+
+
+cd $HOME
+cd Notes/Boostnote
+./boost2mdAttFix.sh
+echo "Succesfully converted all Boostnote"
+
+/home/ryan/Notes/MD/notes/
+
+
+cd ~/Dropbox/Notes/MD
+#if [isDifferent]
+#then do
+#    #Build the File
+#    else
+#        #Don't deploy the file
+#fi
+
+
+mkdocs build
+mkdocs gh-deploy
+
+echo "
+
+Site Succesfully Built.
+
+Notes not made available on the gitpage are inside ~/Notes/Org with xxx or jou in the name.
+
+for i in $(find ./ -name \*jou\*); do
+    echo "removed $i"
+    rm $i;
+done
+
+for i in $(find ./ -name \*xxx\*); do
+    echo "removed $i"
+    rm $i;
+done
+
+"
+
+cd ~/Notes
+git pull
+git add . ; git commit -m "Note Synch Command"  ; echo "Done"
+git push
+
+
+echo "Boostnote converted to MD and git pull, add, commit, push, pull"
+
+qrencode -t UTF8 "https://RyanGreenup.github.io/Notes/"
+
+## vim:fdm=expr:fdl=0
+## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
+

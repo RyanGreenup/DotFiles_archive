@@ -1,0 +1,54 @@
+\ProvidesPackage{diffpreamble}
+
+
+% * Packages
+% ** General
+%\RequirePackage{~/Dropbox/profiles/Templates/LaTeX/texnotePreamble.sty}
+\RequirePackage{tcolorbox}
+\RequirePackage{mdframed}
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{pgfplots}
+\RequirePackage{import} %This is allows relative directories
+\RequirePackage{tikz, pstricks}
+%\usetikzlibrary{calc}
+%\RequirePackage{chngcntr}
+\RequirePackage[T1]{fontenc}
+%\RequirePackage{extsizes} % More Font Sizes
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{sectsty} %Need it for underlining Sections
+\RequirePackage{lmodern}
+\RequirePackage{enumitem}
+\RequirePackage{ifxetex,ifluatex} % This doesn't work with org-mode
+\RequirePackage{lipsum}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[margin=1in]{geometry}
+\addtolength{\skip\footins}{2pc plus 5pt} %Add whitespace before footnotes`
+%\RequirePackage{tgadventor}
+% Titlesec is incompatible with org-mode
+% ** Styles
+%\RequirePackage{titlesec} % Section Colours
+% *** Colours
+%\RequirePackage[svgnames, x11names, dvipsnames]{xcolor} %This is included with mdframed
+% ** Graphics
+
+\RequirePackage{graphicx}
+% ** AmsMath
+\RequirePackage{amsmath, amssymb, amsthm}
+\RequirePackage{amsmath}
+% ** Hyperref (Last)
+
+%Hyperlinks----------------must load last ---------------
+\RequirePackage{bibentry}
+\RequirePackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=blue,
+	 colorlinks=true, %set true if you want colored links
+	 linktoc=all, %set to all if you want both sections and subsections linked
+   backref=page %hyperlink references
+}

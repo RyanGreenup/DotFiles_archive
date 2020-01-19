@@ -1,0 +1,50 @@
+shell sag zheng
+pwd
+shell echo pwd | cd
+shell pwd
+filter -r [^r]
+shell mkdir test
+shell mkdir .config
+find con
+find confl
+find i3
+shell find ./ -name \.git\* -delete
+deletey
+flat 3
+filter git
+filter .git
+filter -r \.git
+filter -r \.git*
+open_with 
+filter 
+filter -r *\.git*
+filter -r 
+flat 5
+find 
+find lat
+flat -1
+flat 9
+filter -r .*\.git.*
+flat 8
+filter .*\.git.*
+shell baobab . & disown
+find config
+find auto
+bulkrename 
+unmark 
+open_with gedit
+shell mkdir autostart
+
+shell nvim dboxfile
+search config
+search ranger
+search sp
+search
+shell mv %s dotspacemacs
+filter space
+rename .spacemacs.DefBak
+rename .spacemacs
+filter init
+filter ema
+delete
+rename init.el

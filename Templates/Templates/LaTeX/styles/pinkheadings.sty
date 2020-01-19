@@ -1,0 +1,75 @@
+\ProvidesPackage{mycodestyle}
+
+% * Styling/Aesthetics
+% ** Section Numbering
+%Remove Section Numbers----------------
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% Numbering
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+
+% ** Font Style
+%Change the Font------------------------------
+%\RequirePackage{PoiretOne}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+% ** Rule AFter Sectioning
+% Add rule after sections ------------------------------
+\RequirePackage{titlesec}
+
+	% Formatting----------------------------------------
+	\widowpenalty=1000
+	\clubpenalty=1000
+% ** Page Breaks
+% ** Problem Boxes
+
+% Problem boxes --------------------------------------
+
+%\newtheorem*{prob}{Problem}
+%\theoremstyle{working}{\cmss}
+%\newtheorem*{working}{Worked Solution}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newenvironment{sol}[1][Problem]{%
+	\proof[\nopunct]  %
+}{\endproof}
+
+%\renewenvironment{proof}{{\bfseries \fontfamily{ccr} \selectfont Proof}}{*something*}
+% ** Heading Colours
+% *** Define Heading Colours
+\definecolor{colsse}{RGB}{136, 73, 143}
+\definecolor{colsss}{RGB}{156, 118, 160}
+\definecolor{colspg}{RGB}{218, 168, 224}
+\definecolor{coltit}{RGB}{84, 65, 86}
+\definecolor{colname}{RGB}{236, 66 ,255}
+		
+% *** Change Colours
+% **** Section
+\titleformat{\section}
+{\color{colsse}\normalfont\LARGE\bfseries}
+{\color{colsse}\thesection}{-1em}{}
+\fontfamily{cmss}\selectfont
+% **** SubSection
+\titleformat{\subsection}
+{\color{colsss}\normalfont\Large\bfseries}
+{\color{colsss}\thesubsection}{-1em}{}[\rule{4 in}{2pt}]
+\fontfamily{cmss}\selectfont
+% Change Font
+\fontfamily{cmss}\selectfont
+% **** Paragraph
+\titleformat{\paragraph}
+{\color{colsss}\normalfont\large}
+{\color{colsss}\theparagraph}{9em}{}[\rule{2 in}{1 pt}]
+\fontfamily{cmss}\selectfont
+% Change Font
+\fontfamily{cmss}\selectfont
+
+
+
+
+
+
+	
+% 	
