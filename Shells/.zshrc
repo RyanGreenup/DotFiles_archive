@@ -73,7 +73,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -150,4 +150,6 @@ ag --nobreak --nonumbers --noheading . | fzf
 #
 #
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
