@@ -152,4 +152,3 @@ ag --nobreak --nonumbers --noheading . | fzf
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

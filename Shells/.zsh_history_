@@ -44,4 +44,40 @@
 : 1579436806:0;rm $HOME/.config/fish/functions/fzf_key_bindings.fish
 : 1579436808:0;stow -S -t $HOME Shells
 : 1579436813:0;exec fish
-: 1579437671:0;exec bash
+: 1579436841:0;cd .fzf
+: 1579436842:0;ls
+: 1579436844:0;./install
+: 1579436853:0;exec fish
+: 1579436864:0;exec zsh
+: 1579436872:0;exec bash
+: 1579436879:0;vim .zshrc
+: 1579436898:0;vim ~/.zshrc
+: 1579436930:0;cd .fzf
+: 1579436930:0;ls
+: 1579436932:0;cd
+: 1579436934:0;cd .fzf
+: 1579436935:0;ls
+: 1579436937:0;./install
+: 1579436942:0;exec zsh
+: 1579436976:0;source zsh
+: 1579436989:0;source $HOME/.zshrc
+: 1579436992:0;
+: 1579437000:0;ls
+: 1579437004:0;./install
+: 1579437017:0;vim $HOME/.zshrc
+: 1579437029:0;ls
+: 1579437031:0;exec zsh
+: 1579437032:0;
+: 1579437035:0;./install
+: 1579437041:0;exec zsh
+: 1579437081:0;git add -A ; git commit -m "FZF working, Zsh Working, haven't stowed yet"
+: 1579437108:0;vim $HOME/.zshrc
+: 1579437137:0;pwd
+: 1579437148:0;cd 
+: 1579437161:0;cd Dropbox/.GnuStow
+: 1579437162:0;ls
+: 1579437167:0;git add -A ; git commit -m "FZF working, Zsh Working, haven't stowed yet"
+: 1579437172:0;cd Shells
+: 1579437176:0;vim .zshrc
+: 1579437224:0;cd ..
+: 1579437236:0;stow -S -t $HOME Shells
