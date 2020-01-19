@@ -1,0 +1,1 @@
+("~/Dropbox/.GnuStow/" "~/Dropbox/.GnuStow/Spacemacs/.emacs.d/" "~/Dropbox/.cfg/DotFiles/" "~/.emacs.d/")

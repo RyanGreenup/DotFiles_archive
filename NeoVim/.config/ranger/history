@@ -1,10 +1,3 @@
-shell sag zheng
-pwd
-shell echo pwd | cd
-shell pwd
-filter -r [^r]
-shell mkdir test
-shell mkdir .config
 find con
 find confl
 find i3
@@ -48,3 +41,10 @@ filter init
 filter ema
 delete
 rename init.el
+search pic
+search Notes
+search drop
+search notes
+search md
+filter .md
+w

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=$HOME/Dropbox/profiles/bin/NoteServer.sh
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_AU]=Python HTTP Server
+Comment[en_AU]=Start Py Server to watch notes in MD
+X-GNOME-Autostart-Delay=0

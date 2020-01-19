@@ -1,0 +1,266 @@
+#+TODO: TODO IN-PROGRESS WAITING DONE
+#+STARTUP: latexpreview
+#+INFOJS_OPT: view:info toc:4
+#+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
+#+OPTIONS: tex:t num:nil
+#+PROPERTY: header-args:bash :exports both  
+#+LATEX_HEADER: \usepackage{/home/ryan/Dropbox/profiles/Templates/LaTeX/ScreenStyle}
+#+CSL_STYLE: /home/ryan/.emacs.d/elpa/citeproc-org-0.2.2/styles/Nature.csl
+#+TITLE: Synchronising DotFiles
+
+
+In order to synchronise =DotFiles= it is necessary to:
+
+1. backup existing =DotFiles= to a new directory
+   1. This should be done as a script to it's reproducible. 
+2. Link the files between the directories
+   1. This should be undo-able so ideally with =GNU Stow=
+3. synchronise that directory between devices
+   1. **VCS** repo (e.g. =git=/=bzr= with =GitHub=)
+   2. and/or Cloud 
+
+There is nothing more to managing =DotFiles=.
+
+* Installation Instructions
+
+#+Begin_src bash
+cd ~/Dropbox
+git glone https://github.com/RyanGreenup/DotFiles.git
+cd DotFiles
+# sudo [[ apt install | pacman -Syu ]] stow
+stow -S -t $HOME $(ls -d */)
+#+End_src
+
+* How to Backup DotFiles
+** Bare Repo
+
+ I really like the idea of using a bare repo in the home folder to manage =DotFiles= [fn:3] but I've never been able to get it to actually track the changes so I haven't bothered with that
+
+** My Method
+*** 1. Backup Existing Dotfiles to a new Directory
+ In order to backup existing dotfiles to a new directory, just use =cp= with =--parents= option.
+
+ In order to not get =.git= files as well we can use extended globbing[fn:4] (because trying to exclude the with =find ~/ -not -name \*\.git\* -exec cp {} --parents ;\= is a PITA and removing them after the fact with =find ./HomeDir -not -name \*\.git\* -exec rm-rvf {} +=  isn't really a good idea:
+
+ #+BEGIN_SRC bash
+     CopyinFiles() {
+         for dotfiles in $@; do
+             if [ -e $dotfiles ]; then
+                 cp -lr --parents $dotfiles ./
+             fi
+         done
+     }
+
+ #    CopyinFiles ~/.bashrc ~/.profile ~/.config/autostart/ ~/.zshrc ~/.zprofile ~/.oh-my-zsh/ ~/config/fish ~/.config/omf/ ~/.inputrc 
+ CopyinFiles \
+     ~/.bashrc            \
+     ~/.profile           \
+     ~/.config/autostart  \
+     ~/.zshrc             \
+     ~/.zprofile          \
+     ~/.oh-my-zsh         \
+     ~/.config/fish       \
+     ~/.config/omf*       \
+     ~/.inputrc           \
+     ~/.config/i3         \
+     ~/.conky*            \
+     ~/.config/nvim/init.vim       \
+     ~/.config/systemd    \
+     ~/.systemd           \
+     ~/.spacemacs         \
+     ~/.config/ranger     \
+     ~/.emacs.d/          \
+     ~/bin                \
+     ~/.xmodmap           #END
+
+ if [ -d ./home ]; then
+     rsync -av ./home/$(basename $HOME)/ ./HomeDir &> /dev/null
+     rm -r ./home;
+ else
+     echo "it doesn't look like anything was copied";
+ fi
+
+   find ./HomeDir/ -maxdepth 1 -type d 
+   echo Success!
+ #+END_SRC
+
+ #+RESULTS:
+ | ./HomeDir/           |
+ | ./HomeDir/.oh-my-zsh |
+ | ./HomeDir/.emacs.d   |
+ | ./HomeDir/.config    |
+ | ./HomeDir/bin        |
+ | Success!             |
+
+ So what this does is first test to see if the file exists using an if test, this prevents =cp= throwing a warning, then it copies the file including the parent folder strucutre.
+ Finally it moves the home directory to =HomeDir= removes the root directory structure, the assumption being only local =DotFiles= desire to be synced.
+
+**** 1(a) Remove =.git= Directories
+ In syncing the =~/.emacs.d= directory , if we didn't use extended globbing, we are going to have the =.git= folder in there as well which we don't really want, so we'll just remove it, please don't run this from =~= or =/=, it might cause a mess, that's a part of the reason for renaming your home directory to HomeDir, it's just to be sure, make sure you're in a subdirectory like =~/Dropbox/.DotFiles=.
+
+ #+BEGIN_SRC bash
+ find ./HomeDir -name \*\.git\* 
+      find ./HomeDir/ -name \*\.git\* -exec rm -rf {} \;
+      find ./HomeDir/ -name \*\.git\* -exec rm -rf {} \;
+ #+END_SRC
+
+ #+RESULTS:
+ : ./HomeDir/.config/autostart/.gitignore
+
+*** 2. Link the Files Between Directories 
+
+ In order to link the directories, you should use [[https://www.gnu.org/software/stow/][GNU Stow]], it is possible however to use a combination of [[https://linux.die.net/man/1/rsync][=rsync=]] and [[https://github.com/pauldreik/rdfind][=rdfind=]], I'll show both methods.
+
+**** Gnu Stow (Preferred)
+ The advantage to using GNU Stow is:
+
+ + It automates the process entirely
+ + It's the right tool for the right job
+ + It can deal with internal symlinks in a sensible way
+   + you could have one folder of Appimages and symlink them into any configs directories that need that program. 
+ + It will also allow you to deal with =AppImages= intertwined with your workflow
+ + Combined with ranger you'll start to feel sane again
+ + You could rework directory structures however you like if you're sensible
+   + it's generally more powerful.
+
+ Disadvantages...non yet.
+  
+**** How it Works
+ Put dotfiles in =~/Dropbox/.Dotfiles/= in such a way that each folder represents a self contained home folder structure,[fn:7]  then =stow= will merge that folder over you're home directory replacing with symlinks, so by way of example:
+
+ 1. move =~/.config/nvim/init.vim= to =~/Dropbx/.Dotfiles/NeoVim/.config/nvim/init.vim=
+ 2. execute =stow -S --target=$HOME ~/Dropbox/.Dotfiles/NeoVim= and everything will be symlinked out apporopriately and automagically.
+    1. a shorter way is to use =stow -S -t $HOME NeoVim= if your in the directory
+       1. You could also do =cd ~; stow -S -d ~/Dropbox/.Dotfiles/Neovim ./=, this makes a little more sense because it is consistent with =ln -s <source> <target>=
+
+**** How to do it
+ First make a single folder for each progam that contains every config file relative to the home directory, so it sould look something like this:
+
+     #+begin_example
+ ../
+ ├── i3
+ ├── KeyBindings
+ ├── NeoVim
+ ├── Scripts
+ │   └── bin
+ │       ├── home
+ │       │   └── ryan
+ │       ├── icons
+ │       └── shortcuts
+ ├── Shells
+ ├── Spacemacs
+ └── Templates
+     └── Templates
+         ├── CSS_
+         │   ├── HugoThemes
+         │   │   └── hugo-theme-basic
+         │   │       ├── archetypes
+         │   │       ├── exampleSite
+         │   │       │   └── content
+         │   │       │       ├── post
+         │   │       │       └── project
+         │   │       ├── images
+         │   │       ├── layouts
+         │   │       │   ├── _default
+         │   │       │   ├── partials
+         │   │       │   ├── post
+         │   │       │   ├── project
+         │   │       │   ├── section
+         │   │       │   └── taxonomy
+         │   │       └── static
+         │   │           └── css
+         │   ├── NotableCSS
+         │   └── Org-CSS
+         │       └── fniessen
+         │           └── org-html-themes
+         │               ├── demo
+         │               │   └── images
+         │               ├── setup
+         │               └── styles
+         │                   ├── bigblow
+         │                   │   ├── css
+         │                   │   ├── images
+         │                   │   └── js
+         │                   ├── lib
+         │                   │   └── js
+         │                   └── readtheorg
+         │                       ├── css
+         │                       └── js
+         └── LaTeX
+             ├── auto
+             ├── codestyles
+             │   └── auto
+             ├── make4ht
+             └── styles
+
+ 54 directories
+ #+end_example
+
+ 1. Do this in ranger and create links inbetween as you go, for example, I have CSS symlinks in my =~/Dropbox/.Dotfiles/Spacemacs/.emacs.d/org-css= folder so that I only have one bloody set of them, =stow= is smart enough to follow the symlinks until it hits the file and then dispatch the new symlink without nesting (because deep nesting will usually cause an error).
+ 2. now inside the directory run =stow -S -t $HOME *= to install them.
+ 3. You'll get a tonne of errors telling you that there's already files there, delete those files and run it again.
+    1. Don't worry about deleting them, you don't just have a backup, but your backup is in the correct structure, you could just open the file manager and merge all the folders and your back to where you started.
+       1. This is why I said to make them all relative to the home directory, it's just simpler in the end.
+     
+    
+**** Using =rdfind= and =rsync= instead
+ If you don't want to use GNU Stow for some bad reason, you can do this instead:
+
+ 1. don't change the files after originally importing them, have all the dot files relative to the home directory
+ 2. run =rsync -av ./HomeDir/ $HOME=
+    1. That trailing forward-slash is important
+ 3. run =rdfind -makesymlinks true $hmDir $HOME=
+
+ That's it, all symlinks now, and whenver you need to adda dotfile, add it to =~/Dropbox/.DotFiles/HomeDir= and run those two commands again. I'd still recommend GNU Stow because it's just more powerful, but, this is still an option if stow isn't an option.
+
+** Make a git repo
+ This is a matter of Preference really, you could put it on [[https://github.com/pauldreik/rdfind][GitHub]], [[https://about.gitlab.com/][GitLab]] or [[https://bitbucket.org/product][BitBucket]]; Or you could just make a local repo that syncs over DropBox. Either way I'd recommend making a =git= repo, that way when you change a setting you don't like you can roll back, without fighting dropbox. 
+
+** Install Emacs
+
+ So one of the issues with emacs is that you might not going to want to include the entire =~/.emacs.d/= directory as a backup because:
+  + it's already got a =.git= in there
+  + it's kinda large
+
+ I'd recommend:
+
+ + regularly doing something lik =cp ~/.emacs.d ~/.emacs.d.BAK=, because when something goes wrong it's such a pain. 
+ + backing up and syncing everything emacs rather than merely the =~/.emacs.d/init.el= simply because it is such a pain in the ass, so you should backup:
+   + =~/.spacemacs=
+   + =~/.emacs.d=
+ 
+*** Reinstalling with just the =~/.emacs.d/init.el=
+
+ If you just backed up =~/.spacemacs= and =~/.emacs.d/init.el= then the steps to reinstall are:
+
+ 1. Clone the spacemacs repo [fn:1] with:
+    1. https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org
+ 2. =mv ~/.spacemacs ~/Desktop; mv ~/.emacs.d/init.el ~/Desktop=
+ 3. Startup emacs and let spacemacs install
+ 4. Restart emacs a couple of times
+ 5. =M-x Customize Variable package-check-signature= set this to false[fn:2] 
+    1. or run M-: (setq package-check-signature nil) RET
+ 6. M-x package-install RET gnu-elpa-keyring-update RET
+ 7. M-: (setq package-check-signature true) RET
+ 8. =cp ~/Desktop/.spacemacs ~/.spacemacs; cp ~/Desktop/init.el ~/.emacs.d/init.el=
+ 9. Restart emacs a few times
+ 10. Install [[https://github.com/andras-simonyi/citeproc-org][=citeproc-org=]]
+     1. i.e. =cd ~/Downloads; wget https://github.com/andras-simonyi/citeproc-org/releases/download/0.2.2/citeproc-org-0.2.2.tar= then =package-install-file= and point to =~/Downloads/citeproc-org-0.x.y.tar=
+ 11. Install [[https://github.com/caiorss/org-wiki][=org-wiki=]]
+
+* Footnotes
+
+[fn:7] GNU Stow takes an option and two arguments, the option will be install/delete and the arguments will be target and directory, so you can set up the folders to be relative to any directory you like, you just need to remember to specify it.
+
+[fn:6] https://stackoverflow.com/a/22099005/10593632
+
+[fn:5] this is usually =/usr/local/stow
+
+[fn:4] https://unix.stackexchange.com/questions/382027/use-bashs-extended-globbing-to-negate-a-filename-that-begins-with-a-dot
+
+[fn:3]  [[https://www.atlassian.com/git/tutorials/dotfiles][The best Way to store your Dotfiles: A bare Git Repository]]
+
+
+[fn:2] https://emacs.stackexchange.com/a/53142/26057
+
+[fn:1] https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=conky
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_AU]=Conky
+Comment[en_AU]=Start Conky at Boot to watch the system parameters
+X-GNOME-Autostart-Delay=0

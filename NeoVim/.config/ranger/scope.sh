@@ -75,6 +75,10 @@ handle_extension() {
             odt2txt "${FILE_PATH}" && exit 5
             exit 1;;
 
+    md|markdown)
+	    glow -s dark "${FILE_PATH}" && { dump | trim; exit 5; }
+	    ;;
+
         # HTML
         htm|html|xhtml)
             # Preview as text conversion

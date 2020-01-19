@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#Preamble
+file='/home/ryan/Dropbox/MathModelling/DifferentialEq/secondOrder/03_4.1_SecondOrder.tex' 
+dir='/home/ryan/Dropbox/MathModelling/DifferentialEq/secondOrder' 
+
+#cd $Dir
+
+#Open in FileManager
+#nemo $dir & disown
+
+#Open in Typora
+#typora $file & disown
+
+#Open in Vim
+#vim -o $file
+
+#I've switched to latex away from markdown
+
+
+#github
+    #00master location
+github-desktop & disown
+nemo /home/ryan/Documents/GitPage/ryangreenup.github.io/MModNotes & disown
+nemo /home/ryan/Dropbox/Studies/MathModelling/Notes/latex_working/00_master & disown
+
+#kile
+kile '/home/ryan/Dropbox/Studies/MathModelling/Notes/latex_working/00_master.tex' & disown
+
+#texstudio
+texstudio '/home/ryan/Dropbox/Studies/MathModelling/Notes/latex_working/00_master.tex' & disown
+
+
+#Vim
+nvim /home/ryan/Dropbox/Studies/MathModelling/Notes/latex_working & disown
+
+#Nemo Directory
+    #00 Master root
+
+nemo /home/ryan/Dropbox/Studies/MathModelling/Notes/latex_working & disown
+
+
+
+
+

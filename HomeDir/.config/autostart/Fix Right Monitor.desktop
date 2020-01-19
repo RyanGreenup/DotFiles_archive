@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xrandr --output DP-2 --dpi 144 --output HDMI-0 --auto --scale 2x2 --right-of DP-2
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_AU]=Fix Right Monitor
+Comment[en_AU]=Super Sample Right monitor to 4k, then downsample to 1080p to fix scaling
+X-GNOME-Autostart-Delay=5

@@ -1,0 +1,186 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "KITTY" "1" "Dec 21, 2019" "0.15.1" "kitty"
+.SH NAME
+kitty \- kitty Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+kitty [options] [program\-to\-run ...]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Run the kitty terminal emulator. You can also specify the program
+to run inside kitty as normal arguments following the options\&.
+For example: kitty /bin/sh
+.sp
+For comprehensive documentation for kitty, please see: \fI\%https://sw.kovidgoyal.net/kitty/\fP
+.SH OPTIONS
+.INDENT 0.0
+.TP
+.B \-\-class <CLS>
+Set the class part of the WM_CLASS window property. On Wayland, it sets the app id.
+Default: \fBkitty\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-name <NAME>
+Set the name part of the WM_CLASS property (defaults to using the value from \fI\%kitty \-\-class\fP)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-title <TITLE>, \-T <TITLE>
+Set the window title. This will override any title set by the program running inside kitty. So only use this if you are running a program that does not set titles. If combined with \fI\%kitty \-\-session\fP the title will be used for all windows created by the session, that do not set their own titles.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config <CONFIG>, \-c <CONFIG>
+Specify a path to the configuration file(s) to use. All configuration files are merged onto the builtin kitty.conf, overriding the builtin values. This option can be specified multiple times to read multiple configuration files in sequence, which are merged. Use the special value NONE to not load a config file.
+.sp
+If this option is not specified, config files are searched for in the order: \fB$XDG_CONFIG_HOME/kitty/kitty.conf\fP, \fB~/.config/kitty/kitty.conf\fP, \fB$XDG_CONFIG_DIRS/kitty/kitty.conf\fP\&. The first one that exists is used as the config file.
+.sp
+If the environment variable KITTY_CONFIG_DIRECTORY is specified, that directory is always used and the above searching does not happen.
+.sp
+If \fB/etc/xdg/kitty/kitty.conf\fP exists it is merged before (i.e. with lower priority) than any user config files. It can be used to specify system\-wide defaults for all users.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-override <OVERRIDE>, \-o <OVERRIDE>
+Override individual configuration options, can be specified multiple times. Syntax: name=value\&. For example: \fI\%kitty \-o\fP font_size=20
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-directory <DIRECTORY>, \-d <DIRECTORY>
+Change to the specified directory when launching
+Default: \fB\&.\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-detach
+Detach from the controlling terminal, if any
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-session <SESSION>
+Path to a file containing the startup session (tabs, windows, layout, programs). Use \- to read from STDIN. See the README file for details and an example.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-hold
+Remain open after child process exits. Note that this only affects the first window. You can quit by either using the close window shortcut or \fBCtrl+d\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-single\-instance, \-1
+If specified only a single instance of kitty will run. New invocations will instead create a new top\-level window in the existing kitty instance. This allows kitty to share a single sprite cache on the GPU and also reduces startup time. You can also have separate groups of kitty instances by using the \fI\%kitty \-\-instance\-group\fP option
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-instance\-group <INSTANCE_GROUP>
+Used in combination with the \fI\%kitty \-\-single\-instance\fP option. All kitty invocations with the same \fI\%kitty \-\-instance\-group\fP will result in new windows being created in the first kitty instance within that group
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-wait\-for\-single\-instance\-window\-close
+Normally, when using \fI\%\-\-single\-instance\fP, kitty will open a new window in an existing instance and quit immediately. With this option, it will not quit till the newly opened window is closed. Note that if no previous instance is found, then kitty will wait anyway, regardless of this option.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-listen\-on <LISTEN_ON>
+Tell kitty to listen on the specified address for control messages. For example, \fI\%kitty \-\-listen\-on\fP\fB=unix:/tmp/mykitty\fP or \fI\%kitty \-\-listen\-on\fP\fB=tcp:localhost:12345\fP\&. On Linux systems, you can also use abstract UNIX sockets, not associated with a file, like this: \fI\%kitty \-\-listen\-on\fP\fB=unix:@mykitty\fP\&.  To control kitty, you can send it commands with kitty @ using the \fBkitty @ \-\-to\fP option to specify this address. This option will be ignored, unless you set \fBallow_remote_control\fP to yes in \fBkitty.conf\fP\&. Note that if you run kitty @ within a kitty window, there is no need to specify the \-\-to option as it is read automatically from the environment.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-as <START_AS>
+Control how the initial kitty window is created.
+Default: \fBnormal\fP
+Choices: \fBfullscreen, maximized, minimized, normal\fP
+.UNINDENT
+.SS Debugging options
+.INDENT 0.0
+.TP
+.B \-\-version, \-v
+The current kitty version
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-dump\-commands
+Output commands received from child process to stdout
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-replay\-commands <REPLAY_COMMANDS>
+Replay previously dumped commands. Specify the path to a dump file previously created by \-\-dump\-commands. You can open a new kitty window to replay the commands with:
+.INDENT 7.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+kitty sh \-c "kitty \-\-replay\-commands /path/to/dump/file; read"
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-dump\-bytes <DUMP_BYTES>
+Path to file in which to store the raw bytes received from the child process
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug\-gl
+Debug OpenGL commands. This will cause all OpenGL calls to check for errors instead of ignoring them. Useful when debugging rendering problems
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug\-keyboard
+This option will cause kitty to print out key events as they are received
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug\-font\-fallback
+Print out information about the selection of fallback fonts for characters not present in the main font.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug\-config
+Print out information about the system and kitty configuration.
+.UNINDENT
+.SH AUTHOR
+Kovid Goyal
+.SH COPYRIGHT
+2019, Kovid Goyal
+.\" Generated by docutils manpage writer.
+.
