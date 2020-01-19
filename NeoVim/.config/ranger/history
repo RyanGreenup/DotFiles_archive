@@ -1,4 +1,3 @@
-shell find ./ -name \.git\* -delete
 deletey
 flat 3
 filter git
@@ -48,3 +47,4 @@ search zsh
 find 
 search
 search vim
+search .vimrc

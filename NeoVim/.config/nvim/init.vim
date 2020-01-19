@@ -2,10 +2,6 @@
 "####### My Vim Settings ##########################
 "##################################################
 "
-" bad line go away
-"
-" alkdkdslsk
-"
 "
 "
 "" Generic Settings
@@ -60,7 +56,10 @@ let g:nv_search_paths = ['~/Notes/MD/notes/', '~/Dropbox/Notes/MD/notes/', '~/wr
 Plug 'https://github.com/alok/notational-fzf-vim'
 
 "Folding plugin to work like org-mode
-Plug 'msuperdock/vim-foldout'
+"Plug 'msuperdock/vim-foldout'
+"   "This get's rid of any writing on the fold,
+"      It also breaks all the time,
+"      leave it off
 
 "SpeedDating
 Plug 'tpope/vim-speeddating'
@@ -118,7 +117,8 @@ hi clear Conceal "This removes the stupid highlighting
 
 "PlasticBoy Plugin
 Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
+
 
 " This enables syntax highlighting  for Math environments
 let g:vim_markdown_math = 1
@@ -138,6 +138,20 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 "R-Markdown Preview
 Plug 'vim-pandoc/vim-rmarkdown'
+
+
+"""""" Text Objects
+Plug 'kana/vim-textobj-user'
+" use if/af to search forward for code block, iF/aF goes back
+" Then you could fold it with zif
+Plug 'coachshea/vim-textobj-markdown' 
+"Use i$/a$ for inline math and ie/ae for environments
+Plug 'rbonvall/vim-textobj-latex'
+
+""""" Sandwhich
+" use s for sandwhich a/d/r for add delete replace then just text object
+Plug 'machakann/vim-sandwich'
+
 
 
 """" Defaults
@@ -612,8 +626,8 @@ set foldenable           "Enable folding
 set foldlevelstart=1     "Open most of the folds by default. If set to 0, all folds will be closed.
 set foldnestmax=10       "Folds can be nested. Setting a max value protects you from too many folds.
 set foldmethod=manual    "Defines the type of folding.
-let r_syntax_folding=1   "R code folding
-let sh_fold_enabled=1    "Shell Scirpts
+let r_syntax_folding=0   "R code folding
+let sh_fold_enabled=0    "Shell Scirpts
 
 
 
