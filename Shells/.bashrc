@@ -156,12 +156,3 @@ unset __conda_setup
 # $HOME/bin/NoteServer.sh & disown
 
 
-
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
-
-
-
-curl -Lks http://bit.do/cfg-init | /bin/bash
-
-
-
