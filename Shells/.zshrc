@@ -1,16 +1,3 @@
-## Z sh Default Stuff
-#
-#
-#
-#What you do here, you must do for bash and fish 
-#  use `gf` to travel there
-#   [[$HOME/.config/fish/config.fish][Fish Configs]]
-#   [[~/.bashrc][Bash RunCommand]]
-
-#""""""""""""""""""""""""""""""
-#"""" Default stuff """""""""""
-#""""""""""""""""""""""""""""""
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -20,7 +7,7 @@ export ZSH="/home/ryan/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -86,18 +73,19 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ You may need to manually set your language environment
+ export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -111,17 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-
-## My Stuff
-
-#ZSH_THEME="random" 
-
-# Make FZF Keybindings Work
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#Make OMZsh suggest like fish
-plugins=(szh-autosuggestions)
-
+#
 # Vim KeyBindings
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
@@ -166,16 +144,8 @@ fif() {
 ag --nobreak --nonumbers --noheading . | fzf
  --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
-
-## Start Python Server to access notes
-  # Do this from auto start
-#ps -ef | grep 'python3 -m http.server 8128' | awk '{print $2}' | xargs sudo kill
-#$HOME/bin/NoteServer.sh & disown
-
-
-alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
-
-
-## vim:fdm=expr:fdl=0
-## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
-
+#
+#
+#
+#
+#
