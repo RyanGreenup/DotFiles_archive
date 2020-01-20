@@ -25,7 +25,7 @@ There is nothing more to managing =DotFiles=.
 1. Clone this repo
 2. change into the directory and remove what you don't want
 3. install [[https://github.com/aspiers/stow][GNU Stow]]
-4. execute =stow -S -t $HOME *=
+4. execute =stow -S -t $HOME $(ls -d */)=
 
 * How to Backup DotFiles
 ** Bare Repo
