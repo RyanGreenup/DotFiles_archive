@@ -1,5 +1,3 @@
-filter 
-filter -r *\.git*
 filter -r 
 flat 5
 find lat
@@ -48,3 +46,5 @@ delete
 search Comp
 filter Comp
 search .vim
+search gitig
+open_with nvim
