@@ -635,10 +635,21 @@ vnoremap K :m '<-2<CR>gv=gv
   set nofoldenable           "Enable folding
 "  set foldlevelstart=0     "Open most of the folds by default. If set to 0, all folds will be closed.
   set foldnestmax=10       "Folds can be nested. Setting a max value protects you from too many folds.
-  set foldmethod=expr    "Defines the type of folding.
+  set foldmethod=expr    "Defines the type of folding. globally, so if you don't have an 
+"                        " Auto method defined, it expects instructions at the
+"                        end like in this file
+":autocmd BufRead /path/to/file setlocal foldmethod=marker
+":autocmd FileType java setlocal foldmethod=marker
+":autocmd BufEnter *.tex set foldmethod=manual " This will use the inbuild, but it will let
+"                                              fold things manually, like
+"                                              equations/code blocks
+
   let r_syntax_folding=1   "R code folding
   let sh_fold_enabled=1    "Shell Scirpts
-
+" unfourtunately manual folding doesn't work in markdown because plasticboy,
+" the following let's plasticboy fold and let's manual folding of say code
+" blocks
+:map <leader>fm :set foldmethod=manual<CR>
 
 
 """" fzf mappings fzf-vim-usage 
@@ -683,7 +694,6 @@ set t_Co=256   " This is may or may not needed.
 " using indent folding also allows manual folding with zfip or zfif (markdown
 " plugin)
 "set shiftwidth=2
-"set foldmethod=indent
 
 
 
