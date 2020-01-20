@@ -11,7 +11,7 @@
 "##############################
 
 set nocompatible
-set mouse=a " this is brillian for touch screen
+set mouse=a " this is brillian for touch screen ; requires `apt install vim-gtk`
 filetype plugin on
 syntax on
 set number "Absolute Number
@@ -83,7 +83,7 @@ nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
 "
 
 """"" vim-markdown-wiki NOT VimWiki
-Plug 'mmai/vim-markdown-wiki'
+"Plug 'mmai/vim-markdown-wiki'
 
 " Fix the titles
  function! MdwiWriteTitle(word)
@@ -308,6 +308,20 @@ let g:vimtex_quickfix_enabled=0
 
 
 """" MarkDown
+""""" PlasticBoy Settings
+" Don't Hide Code Blocks
+let g:vim_markdown_conceal_code_blocks = 0
+" Syntax highligt code blocks
+let g:vim_markdown_fenced_languages = ['csharp=cs', 'bash=sh', 'R=r', 'elisp=el', 'markdown=md', 'python=py', 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'mathematica=wsl']
+" Follow Anchors
+let g:vim_markdown_follow_anchor = 1
+" Syntax Highting
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+" Adjust new item indent
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_new_list_item_indent
+
 
 """"" Syntax Highlighting
 "This is now handled by a plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -619,7 +633,7 @@ vnoremap K :m '<-2<CR>gv=gv
 """"" Folding
   set foldenable           "Enable folding
   set nofoldenable           "Enable folding
-  set foldlevelstart=2     "Open most of the folds by default. If set to 0, all folds will be closed.
+"  set foldlevelstart=0     "Open most of the folds by default. If set to 0, all folds will be closed.
   set foldnestmax=10       "Folds can be nested. Setting a max value protects you from too many folds.
   set foldmethod=expr    "Defines the type of folding.
   let r_syntax_folding=1   "R code folding
