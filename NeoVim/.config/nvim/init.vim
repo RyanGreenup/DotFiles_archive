@@ -83,7 +83,7 @@ nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
 "
 
 """"" vim-markdown-wiki NOT VimWiki
-"Plug 'mmai/vim-markdown-wiki'
+Plug 'mmai/vim-markdown-wiki'
 
 " Fix the titles
  function! MdwiWriteTitle(word)
@@ -507,7 +507,11 @@ nmap <Leader>b :silent ! vivaldi "file://%:p" & disown <CR>
 "
 :map <leader>ww :e ~/Dropbox/Notes/MD/notes/index.md <CR>
 " make this run the 'ns' script as well. or maybe use <leader>ws
-nnoremap <CR> :MdwiGotoLink nnoremap <leader><CR> :MdwiReturn
+" This conflicted with Tocv in Plastic boy,
+" I remapped it but normal enter seems to 
+" just work with CR anyway so whatever
+nnoremap <S-CR> :MdwiGotoLink 
+nnoremap <leader><CR> :MdwiReturn
 
 " Fix the titles
 " function! MdwiWriteTitle(word)
