@@ -96,6 +96,10 @@ Plug 'mmai/vim-markdown-wiki'
 "Plug 'junegunn/vim-github-dashboard'
 Plug 'kyuhi/vim-emoji-complete'
 
+""""" Python-Mode
+Plug 'python-mode/python-mode'
+
+
 """"" LaTeX Stuff
 " 
 " 
@@ -581,10 +585,10 @@ nnoremap <C-b> <C-^>
 inoremap <C-b> <esc><C-^>
 
 "Cycle Buffers (p. 64 Mastering Vim)
-map <C-K> :bprev<CR>
+noremap <C-k> :bprev<CR>
 map backspace :bprev<CR>
 map <leader>bp :bprev<CR>
-map <C-J> :bnext<CR>
+noremap <C-j> :bnext<CR>
 map <Leader>bn :bnext<CR>
 
 
@@ -599,6 +603,7 @@ map <Space> <Leader>
 
 """"" Clipboard-Map
 " Write file leader-clip-reymap
+"
 "
 nnoremap <Leader>fs :w<CR> 
 vmap <Leader>y "+y
@@ -628,9 +633,17 @@ vmap <Leader>P "+P
 vnoremap . :normal.<CR>
 
 " Move visual selection
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+  " So the problem with this is it get's rid of 
+  " Join so instead, Alt+j/k
+"vnoremap J :m '>+1<CR>gv=gv
+"vnoremap K :m '<-2<CR>gv=gv
 
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 
 
