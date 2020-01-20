@@ -1,8 +1,3 @@
-flat 3
-filter git
-filter -r \.git
-filter -r \.git*
-open_with 
 filter 
 filter -r *\.git*
 filter -r 
@@ -47,4 +42,9 @@ search .vimrc
 flat 2
 filter .git
 filter -r .*\.git.*
+rename 
+rename .vimrc
 delete
+search Comp
+filter Comp
+search .vim

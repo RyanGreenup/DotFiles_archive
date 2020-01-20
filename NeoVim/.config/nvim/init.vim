@@ -198,12 +198,19 @@ call plug#end()
 "##### Editing ################
 "##############################
 
-"""" UltiSnips
 
- "Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<tab>"
+"""""" UltiSnips
+
+" Alt only seems to work in NeoVim, not in Vim,
+" I tried using M-j and A-j no dice, just use NeoVim.
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+ 
+ let g:UltiSnipsExpandTrigger="<A-l>"
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<M-l>"
+let g:UltiSnipsJumpForwardTrigger="<A-l>"
+let g:UltiSnipsJumpBackwardTrigger="<A-h>"
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips']
 
  " If you want :UltiSnipsEdit to split your window.
@@ -211,7 +218,10 @@ let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips']
 
 
 
- """ Right Align Text
+     
+
+
+ """" Right Align Text
 function! RightAlignVisual() range
     let lim = [virtcol("'<"), virtcol("'>")]
     let [l, r] = [min(lim), max(lim)]
@@ -294,13 +304,8 @@ let g:vimtex_quickfix_enabled=0
 
 
 """"" Castel Dev
-     
-"    Plug 'sirver/ultisnips'
-        let g:UltiSnipsExpandTrigger = '<tab>'
-        let g:UltiSnipsExpandTrigger = '<tab>'
-        let g:UltiSnipsJumpForwardTrigger = '<tab>' "Default is <c-b>
-        let g:UltiSnipsJumpBackwardTrigger = '<s-tab>' "default is <c-z>
-    
+
+
 "    Plug 'lervag/vimtex'
         let g:tex_flavor='latex'
         let g:vimtex_view_method='mupdf'
@@ -310,6 +315,10 @@ let g:vimtex_quickfix_enabled=0
     
 
 
+
+
+"""" YouCompleteMe
+Plug 'ycm-core/YouCompleteMe'
 
 """" MarkDown
 """"" PlasticBoy Settings
