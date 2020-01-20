@@ -1,7 +1,5 @@
-deletey
 flat 3
 filter git
-filter .git
 filter -r \.git
 filter -r \.git*
 open_with 
@@ -12,7 +10,6 @@ flat 5
 find lat
 flat -1
 flat 9
-filter -r .*\.git.*
 flat 8
 filter .*\.git.*
 shell baobab . & disown
@@ -33,7 +30,6 @@ rename .spacemacs.DefBak
 rename .spacemacs
 filter init
 filter ema
-delete
 rename init.el
 search pic
 search Notes
@@ -48,3 +44,7 @@ find
 search
 search vim
 search .vimrc
+flat 2
+filter .git
+filter -r .*\.git.*
+delete

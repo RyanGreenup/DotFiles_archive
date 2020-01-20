@@ -1,10 +1,11 @@
-"##################################################
+""" ##################################################
 "####### My Vim Settings ##########################
 "##################################################
 "
 "
 "
-"" Generic Settings
+""" Generic Settings
+
 "##############################
 "####### Generic Settings #####
 "##############################
@@ -17,26 +18,21 @@ set number "Absolute Number
 set relativenumber
 imap jj <Esc>
 imap fd <Esc>
-	" If latent files get annoying consider doing:
-	" set undodir/.vim/undodir
-	" 	Or whatever directory
+" If latent files get annoying consider doing:
+" set undodir/.vim/undodir
+" 	Or whatever directory
 set ignorecase
 set smartcase " if you search for something purely lowercase, it will do a case insensitive search
 set autoread  "Automatically re-read files
 set encoding=utf-8
 
 
-
-"" Plugins
-
+"""" Plugins
 "############################## 
 "###### Plugins ############### 
 "############################## 
 
-""" Vim-Plug
-
-
-
+"""" Vim-Plug
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -45,7 +41,7 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 "
-"""" General Stuff
+""""" General Stuff
 "Auto-Save
 Plug '907th/vim-auto-save'
 " example
@@ -86,7 +82,7 @@ nnoremap <silent><Leader>ft :RangerOpenCurrentDir<CR>
 nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
 "
 
-"""" vim-markdown-wiki NOT VimWiki
+""""" vim-markdown-wiki NOT VimWiki
 Plug 'mmai/vim-markdown-wiki'
 
 " Fix the titles
@@ -95,12 +91,12 @@ Plug 'mmai/vim-markdown-wiki'
  endfunction
 
 
-"""" Vim-Emoji
+""""" Vim-Emoji
 "Plug 'junegunn/vim-emoji'
 "Plug 'junegunn/vim-github-dashboard'
 Plug 'kyuhi/vim-emoji-complete'
 
-"""" LaTeX Stuff
+""""" LaTeX Stuff
 " 
 " 
 "VimTeX
@@ -113,7 +109,7 @@ autocmd BufEnter *.md set conceallevel=2
 let g:tex_conceal="abdgms"
 hi clear Conceal "This removes the stupid highlighting
 
-""""" Markdown Stuff
+"""""" Markdown Stuff
 
 "PlasticBoy Plugin
 Plug 'godlygeek/tabular'
@@ -140,7 +136,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'vim-pandoc/vim-rmarkdown'
 
 
-"""""" Text Objects
+""""""" Text Objects
 Plug 'kana/vim-textobj-user'
 " use if/af to search forward for code block, iF/aF goes back
 " Then you could fold it with zif
@@ -148,13 +144,13 @@ Plug 'coachshea/vim-textobj-markdown'
 "Use i$/a$ for inline math and ie/ae for environments
 Plug 'rbonvall/vim-textobj-latex'
 
-""""" Sandwhich
+"""""" Sandwhich
 " use s for sandwhich a/d/r for add delete replace then just text object
 Plug 'machakann/vim-sandwich'
 
 
 
-"""" Defaults
+""""" Defaults
 
 Plug 'junegunn/vim-easy-align'
 
@@ -185,7 +181,7 @@ Plug 'junegunn/fzf.vim'
 Plug '~/my-prototype-plugin'
 
 
-""" Themes
+"""" Themes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
@@ -193,13 +189,12 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 call plug#end()
 
 
-"" Editing Workflow
-
+""" Editing Workflow
 "##############################
 "##### Editing ################
 "##############################
 
-""" UltiSnips
+"""" UltiSnips
 
  "Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsExpandTrigger="<tab>"
@@ -212,7 +207,7 @@ let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips']
 
 
 
- "" Right Align Text
+ """ Right Align Text
 function! RightAlignVisual() range
     let lim = [virtcol("'<"), virtcol("'>")]
     let [l, r] = [min(lim), max(lim)]
@@ -222,16 +217,16 @@ function! StrPadLeft(s, w)
     let s = substitute(a:s, '^\s\+\|\s\+$', '', 'g')
     return repeat(' ', a:w - strwidth(s)) . s
 endfunction
-""" FileType Remap
+"""" FileType Remap
 
-""" AutoCmd
+"""" AutoCmd
 
 "Use F2 to Compile markdown
 autocmd BufEnter *.tex :map <f2> :w<cr><leader>ll 
 autocmd BufEnter *.md :map <f2> :! prevmd "%" <Enter> <Enter>
 autocmd BufEnter *.md :map <leader>lv  :! firefox --new-window "$(echo "%" \| cut -f 1 -d '.').html" & disown <Enter>
 
-"""" Boostnote
+""""" Boostnote
 "autocmd BufEnter *.md :setlocal filetype=markdown
 autocmd BufEnter *.md :setlocal filetype=markdown
 autocmd BufEnter *.cson :setlocal filetype=markdown 
@@ -266,7 +261,7 @@ autocmd BufEnter *.md :map <f12> :w<cr>:!typora "%" & disown <Enter>
 "autocmd BufEnter *.Rmd :map <f12> :w<cr>:!marktext "%" & disown <Enter>
 
 
-""" Templates
+"""" Templates
 autocmd BufNewFile *.tex 0r  ~/Dropbox/profiles/Templates/LaTeX/LaTeX.tex
 autocmd BufNewFile *.sh 0r  ~/Dropbox/profiles/bin/hworld.sh
 
@@ -274,9 +269,9 @@ autocmd BufNewFile *.sh 0r  ~/Dropbox/profiles/bin/hworld.sh
 
 
 
-""" LaTeX Settings
+"""" LaTeX Settings
 
-"""" My Settings 
+""""" My Settings 
 let g:vimtex_fold_enabled = 1
 let g:vimtex_fold_levelmarker = "*"
 let g:vimtex_compiler_latexmk = {
@@ -294,7 +289,7 @@ let g:vimtex_compiler_latexmk = {
 let g:vimtex_quickfix_enabled=0
 
 
-"""" Castel Dev
+""""" Castel Dev
      
 "    Plug 'sirver/ultisnips'
         let g:UltiSnipsExpandTrigger = '<tab>'
@@ -312,13 +307,13 @@ let g:vimtex_quickfix_enabled=0
 
 
 
-""" MarkDown
+"""" MarkDown
 
-"""" Syntax Highlighting
+""""" Syntax Highlighting
 "This is now handled by a plugin 'vim-pandoc/vim-pandoc-syntax'
   " Because I'm not using `vim-pandoc` as my Plugin of Choise:
 
-""""" Old method
+"""""" Old method
 "Don't Use this method because it means you get
 "no Syntax highlighting for non-TeX stuff in MD
    "Have markdown files highlighted like tex so math() context will work
@@ -326,8 +321,8 @@ let g:vimtex_quickfix_enabled=0
    "autocmd BufEnter *.md :set syntax 
 
 
-"""" Markdown Preview
-""""" iamcco
+""""" Markdown Preview
+"""""" iamcco
 "Refer to [iamcco/markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 
 " set to 1, nvim will open the preview window after entering the markdown buffer
@@ -430,9 +425,9 @@ let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/gitOrgWrapp
 "let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
 let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
 
-""let g:mkdp_highlight_css = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css'
+" let g:mkdp_highlight_css = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css'
 
-"let g:mkdp_highlight_css = ''
+" let g:mkdp_highlight_css = ''
 
 " use a custom port to start server or random for empty
  let g:mkdp_port = '8353'
@@ -442,16 +437,16 @@ let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNi
 let g:mkdp_page_title = '「${name}」'
 
 
-"""" iamcco Markdown Preview Mappings
+""""" iamcco Markdown Preview Mappings
 "This used KaTeX, which is quicker and probably preferable anyway,
 "refer to ~/Notes/Notable/KaTeX_and_MD_Notes.md
 "
-"""" VimWiki
+""""" VimWiki
 "let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 "let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 "let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folder
-"""" Default Maps
+""""" Default Maps
 
 "nmap <C-x> <Plug>MarkdownPreview
 nmap <Leader>v <Plug>MarkdownPreview
@@ -472,10 +467,10 @@ nmap <Leader>b :silent ! vivaldi "file://%:p" & disown <CR>
 " you might also want to look at [`shiba`](https://github.com/rhysd/Shiba/blob/master/docs/installation.md)
 
 
-""""" Using Suan/Vim-instant-Markdown 
-"" I'm hoping that this will allow me to follow links
+"""""" Using Suan/Vim-instant-Markdown 
+" I'm hoping that this will allow me to follow links
 "filetype plugin on
-""Uncomment to override defaults:
+"Uncomment to override defaults:
 "let g:instant_markdown_slow = 1
 "let g:instant_markdown_autostart = 1
 "let g:instant_markdown_open_to_the_world = 1
@@ -519,7 +514,7 @@ nnoremap <CR> :MdwiGotoLink nnoremap <leader><CR> :MdwiReturn
 "############################## 
 "###### Re Mapping ############ 
 "############################## 
-"""" Vim-Emoji
+""""" Vim-Emoji
 "let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
 "let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
 "let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
@@ -530,7 +525,7 @@ nnoremap <CR> :MdwiGotoLink nnoremap <leader><CR> :MdwiReturn
 "endfor
 
 
-""" Useful mappings
+"""" Useful mappings
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
@@ -579,12 +574,12 @@ map <Leader>bn :bnext<CR>
 "Save Document
 
 
-""" Leader Key
+"""" Leader Key
 "This is probably for the best because matches spacemacs
 "let mapleader="\<Space>"
 map <Space> <Leader>
 
-"""" Clipboard-Map
+""""" Clipboard-Map
 " Write file leader-clip-reymap
 "
 nnoremap <Leader>fs :w<CR> 
@@ -609,7 +604,7 @@ vmap <Leader>P "+P
 
 
 
-"""" Visual Selection
+""""" Visual Selection
 
 " Run the dot command over visually selected lines
 vnoremap . :normal.<CR>
@@ -621,17 +616,18 @@ vnoremap K :m '<-2<CR>gv=gv
 
 
 
-"""" Folding
-set foldenable           "Enable folding
-set foldlevelstart=1     "Open most of the folds by default. If set to 0, all folds will be closed.
-set foldnestmax=10       "Folds can be nested. Setting a max value protects you from too many folds.
-set foldmethod=manual    "Defines the type of folding.
-let r_syntax_folding=0   "R code folding
-let sh_fold_enabled=0    "Shell Scirpts
+""""" Folding
+  set foldenable           "Enable folding
+  set nofoldenable           "Enable folding
+  set foldlevelstart=2     "Open most of the folds by default. If set to 0, all folds will be closed.
+  set foldnestmax=10       "Folds can be nested. Setting a max value protects you from too many folds.
+  set foldmethod=expr    "Defines the type of folding.
+  let r_syntax_folding=1   "R code folding
+  let sh_fold_enabled=1    "Shell Scirpts
 
 
 
-""" fzf mappings fzf-vim-usage 
+"""" fzf mappings fzf-vim-usage 
   " Mapping selecting mappings
 "    nmap <leader><tab> <plug>(fzf-maps-n)   "I couldn't fix these?
 "    xmap <leader><tab> <plug>(fzf-maps-x)
@@ -654,8 +650,8 @@ nnoremap <leader>bW :Buffers<CR>
 nnoremap <leader>bW :Buffers<CR>
 
 
-"" Themes 
- " Theme Must go at the bottom
+""" Themes 
+" Theme Must go at the bottom
 set t_Co=256   " This is may or may not needed.
 
 "set background=light
@@ -665,13 +661,29 @@ set t_Co=256   " This is may or may not needed.
 
 
 
+""" Modeline Folding
+
+" Nah this breaks all the time, instead I'm going to use 2 whitespace
+" characters and change > to use 2 white spaces (I know 4 is standed but it's
+" going to prohibit deep nesting
+" using indent folding also allows manual folding with zfip or zfif (markdown
+" plugin)
+"set shiftwidth=2
+"set foldmethod=indent
+
+
+
+
+
+set modeline
 set modelineexpr  "This does all the magic folding
 
-"" vim:fdm=expr:fdl=0
-"" vim:fde=getline(v\:lnum)=~'^""'?'>'.(matchend(getline(v\:lnum),'""*')-2)\:'='
+" Found this [here](https://vi.stackexchange.com/a/3820)
 
 
+" Found this [here](https://vi.stackexchange.com/a/3820)
 
-
-
-
+" vim:fdm=expr:fdl=0
+" vim:fde=getline(v\:lnum)=~'^""'?'>'.(matchend(getline(v\:lnum),'""*')-2)\:'='
+"
+" Comments MUST be on the first column or this will break, that's the issue
