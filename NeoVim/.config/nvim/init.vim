@@ -718,6 +718,11 @@ set t_Co=256   " This is may or may not needed.
 
 set modeline
 set modelineexpr  "This does all the magic folding
+   " This is always enabled in OG vim, in nvim it must be physically enabled
+     " Vim will giv a warning about not recognising this command, which is
+     " fine because it shouldn't and it notifies us that we are using vim and
+     " not nvim. Google "vim modeline vulnerability 2019" for more info 
+
 
 " Found this [here](https://vi.stackexchange.com/a/3820)
 
