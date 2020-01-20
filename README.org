@@ -22,9 +22,19 @@ In order to synchronise =DotFiles= it is necessary to:
 There is nothing more to managing =DotFiles=.
 
 * Installation Instructions
+
+  Execute the following or some derivative thereof, you will need to install https://github.com/RyanGreenup/DotFiles:
+
+#+BEGIN_SRC bash
+  cd ~/Dropbox
+  git clone https://github.com/RyanGreenup/DotFiles
+  cd DotFiles
+  stow -S -t $HOME $(ls -d */)
+#+END_SRC 
+
 1. Clone this repo
 2. change into the directory and remove what you don't want
-3. install [[https://github.com/aspiers/stow][GNU Stow]]
+3. 
 4. execute =stow -S -t $HOME $(ls -d */)=
 
 * How to Backup DotFiles
