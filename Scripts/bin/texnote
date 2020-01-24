@@ -33,13 +33,31 @@ pdflatex -interaction=nonstopmode $filename.tex #&& disown #use && not &, must w
 ls *.aux *.bbl *.blg *.brf *.lof *.log *.lot *.out *.toc -1 > .hidden & disown
 
 
+# Before using `setwindow`
+
+command -v wmctrl >/dev/null 2>&1 || { echo >&2 "I require wmctrl but it's not installed.  it can be installed with sudo apt wmctrl, the windows will be unaligned!."; exit 1; }
+
+
+
+
 #Preview PDF
 #zathura $filename.pdf & disown
-    # I found a python script online that will resize the window
-setwindow "zathura "$filename.pdf"" 960 0 50 100 & disown
+# I found a python script online that will resize the window
+if hash wmctrl 2>/dev/null; then
+    setwindow "zathura "$filename.pdf"" 960 0 50 100 & disown
+else
+    echo "I require wmctrl but it's not installed.  it can be installed with sudo apt wmctrl, the windows will be unaligned!."
+    zathura "$filename.pdf"
+fi
+
+
+#setwindow "zathura "$filename.pdf"" 960 0 50 100 & disown
+
+
+
 
 #Open in Vim
-vim +173 $filename.tex
+nvim +173 $filename.tex
 
 
 

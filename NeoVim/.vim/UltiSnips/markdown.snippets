@@ -99,6 +99,59 @@ $0
 endsnippet
 
 
+snippet det "Details"
+  <!-- WSpace Important --><details ${6: open} markdown="1"><summary><p>
+
+$2
+</p></summary><p>
+    ${3:text or whitespace must be here}
+
+
+* ${4: List item Must be Here}
+
+    ${5:text or whitespace must be here} 
+</p>
+<!--Newline Important-->
+</details>
+<!--Newline Important-->
+$0
+endsnippet
+
+snippet kindaolddet "Details"
+<details ${6: open} markdown="1"><summary><h$1> $2 </h$1></summary>
+<p>
+${3:First Line Must be Here}
+
+
+* ${4: List item Must be Here}
+
+${5: Must be a text Line Immediately preceeding </p> and a \n Immediately following}
+</p>
+
+</details>
+$0
+endsnippet
+
+snippet odet "Summary as MD Details" wA
+<details markdown="1">
+<summary markdown="1">
+
+${1:${VISUAL}}
+
+</summary>
+
+${2:${VISUAL}}
+
+</details>
+endsnippet
+
+snippet li "List Item"
+<li> $1 </li>
+$0
+endsnippet
+
+
+
 snippet kd "Code" wA
 \`${1}\`$0
 endsnippet
@@ -400,3 +453,6 @@ endsnippet
 snippet CGT "CG Theorem"
 the \textit{Cauchy-Goursat Theorem}
 endsnippet
+
+
+

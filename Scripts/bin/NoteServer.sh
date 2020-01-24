@@ -2,30 +2,42 @@
 # Don't forget to adjust the permissions with:
 #chmod +x ~/somecrazyfolder/script1
 
+# use spacemacs and:
+  #Use C-c C-n and C-c C-x and C-c C-z and C-c C-( and sh-if and sh-for
+  # There's also snippets, use =company-yasnippet=
+    # LaTeX in Vim but Bash in emacs
+        # Probably R in Rstudio (and some vim for math and maybe emacs for folding)
+
+
+## Help Statement
+if [ "$1" == "-h" ]; then
+  echo "Usage: `basename $0` WRITE HELP HERE"
+  exit 0
+elif [[ "$1" == *-m* ]]; then
+    echo "the option had the letter m somewhere"
+    if [[ "$2" == "" ]]; then
+        echo "The second argument was null"
+    else
+        style=$2
+        echo "The second argument was" $2
+    fi
+    exit 0
+else
+    echo "the option was neither -h nor did it contain -m in it"
+    exit 0
+fi
+
 ## Program
 
 
 ### Description
-# This will print 'Hello World' to the STDOUT.
-
+# This will start a pyton server on 192.168.1.163:8371
+  # It'
 ### Code
-cd / # Do it from / because then you can more easily use 
-         # Vims %, e.g.
-	    # :! chromium "http://%"
-python3 -m http.server 8128
-
-echo "Local Python 3 server started on 8128,
-      Listening on LocalHost,
-      served from /
-      use ps -ef to find the PID in order to kill it, 
-      you could pipe this into grep and awk like so
+echo "Hello World"
 
 
-ps -ef | grep 'python3 -m http.server 8128' | awk '{print \$2}' | xargs sudo kill
-
-
-"
-
+exit 0
 
 
 ## vim:fdm=expr:fdl=0

@@ -1,33 +1,4 @@
-filter -r 
-flat 5
-find lat
-flat -1
-flat 9
-flat 8
-filter .*\.git.*
-shell baobab . & disown
-find config
-find auto
-bulkrename 
-unmark 
-open_with gedit
-shell mkdir autostart
-
-shell nvim dboxfile
-search config
-search ranger
-search sp
-shell mv %s dotspacemacs
-filter space
-rename .spacemacs.DefBak
-rename .spacemacs
-filter init
-filter ema
-rename init.el
-search pic
-search Notes
 search drop
-search notes
 search md
 filter .md
 w
@@ -35,16 +6,45 @@ search /bash
 search zsh
 find 
 search
-search vim
 search .vimrc
 flat 2
 filter .git
 filter -r .*\.git.*
 rename 
 rename .vimrc
-delete
 search Comp
 filter Comp
-search .vim
 search gitig
 open_with nvim
+shell cat mystyle.css >> renderer.css
+filter rend
+search downlo
+shell 
+shell mkdir pytest
+shell nvim pytest.py
+search vim
+search you
+find .vimrc
+search .vim
+open_with 
+search dropbox
+search m2o
+rename h20
+rename m2h
+rename m2hRaw
+find bin
+find ns
+shell ns
+filter bin
+filter notes
+search notes
+rename css
+q
+search .confi
+search au
+search bin
+search 
+filter ser
+filter 
+shell vim N
+delete

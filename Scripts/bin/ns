@@ -67,7 +67,7 @@ done
 
 cd ~/Notes
 git pull
-git add . ; git commit -m "Note Synch Command"  ; echo "Done"
+git add . ; git commit  ; echo "Done"
 git push
 
 

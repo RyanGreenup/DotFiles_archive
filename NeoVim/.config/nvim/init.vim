@@ -15,6 +15,12 @@ set mouse=a " this is brillian for touch screen ; requires `apt install vim-gtk`
 filetype plugin on
 syntax on
 set number "Absolute Number
+"set autochdir "This will conflict with some things
+"                " So instead I'm just going to be minful to open
+"                vim in ranger in the desired working directory
+nnoremap <silent><Leader>fcd :cd %:p:h<CR>
+nnoremap <silent><Leader>fcd :lcd %:p:h<CR>
+
 set relativenumber
 imap jj <Esc>
 imap fd <Esc>
@@ -79,7 +85,7 @@ Plug 'rbgrouleff/bclose.vim'
 "https://github.com/iberianpig/ranger-explorer.vim
 "
 nnoremap <silent><Leader>ft :RangerOpenCurrentDir<CR>
-nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
+nnoremap <silent><Leader>ff :RangerOpenProjectRootDir<CR>
 "
 
 """"" vim-markdown-wiki NOT VimWiki
@@ -97,8 +103,10 @@ Plug 'mmai/vim-markdown-wiki'
 Plug 'kyuhi/vim-emoji-complete'
 
 """"" Python-Mode
-Plug 'python-mode/python-mode'
+"Plug 'python-mode/python-mode'
 
+""""" YouCompleteMe
+Plug 'ycm-core/YouCompleteMe'
 
 """"" LaTeX Stuff
 " 
@@ -256,7 +264,7 @@ autocmd BufEnter *.cson :set syntax=markdown
 " generally make sure vim-pandoc-syntax means
 " markdown snippets will work as well.
 " This could be good for RStudio where we have tikz and aligned integration
-nnoremap <Leader>t :set syntax=tex<CR> 
+" nnoremap <Leader>t :set syntax=tex<CR> 
 nnoremap <Leader>t :setlocal filetype=tex<CR>
 nnoremap <Leader>m :set syntax=markdown<CR> 
 nnoremap <Leader>m :setlocal filetype=markdown<CR> 
@@ -317,8 +325,6 @@ let g:vimtex_quickfix_enabled=0
 
 
 
-"""" YouCompleteMe
-Plug 'ycm-core/YouCompleteMe'
 
 """" MarkDown
 """"" PlasticBoy Settings
@@ -334,7 +340,12 @@ let g:vim_markdown_frontmatter = 1
 " Adjust new item indent
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_new_list_item_indent
+if (&ft=='md' || &ft=='markdown')
+nnoremap <Leader>it :Tocv<CR>
+nmap ,it :Tocv<CR>
+nmap <leader>m2h "+y"!$HOME/bin/m2hRaw
 
+endif
 
 """"" Syntax Highlighting
 "This is now handled by a plugin 'vim-pandoc/vim-pandoc-syntax'
