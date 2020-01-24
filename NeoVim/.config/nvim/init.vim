@@ -5,7 +5,6 @@
 "
 "
 """ Generic Settings
-
 "##############################
 "####### Generic Settings #####
 "##############################
@@ -89,7 +88,11 @@ nnoremap <silent><Leader>ff :RangerOpenProjectRootDir<CR>
 "
 
 """"" vim-markdown-wiki NOT VimWiki
-Plug 'mmai/vim-markdown-wiki'
+"Plug 'mmai/vim-markdown-wiki'
+" This let's me use the format [](./) but vimwiki
+" has more features so I may as well leverage those
+" features and just fix the [](./) manually
+Plug 'vimwiki/vimwiki'
 
 " Fix the titles
  function! MdwiWriteTitle(word)
@@ -480,10 +483,17 @@ let g:mkdp_page_title = '「${name}」'
 "refer to ~/Notes/Notable/KaTeX_and_MD_Notes.md
 "
 """"" VimWiki
-"let g:vimwiki_list = [{'path': '~/vimwiki/',
+let g:vimwiki_list = [{'path': '~/Notes/MD/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
-"let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-"let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folder
+let g:vimwiki_list = [{'path': '~/Notes/MD/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folder
+" Change the Generated links
+"     Refer to [[https://github.com/vimwiki/vimwiki/pull/204]]
+" Clean bad links from beginning of line
+nmap <leader>wc f[;yi[A(./pa)0;di[Vvhp0j
+
 """"" Default Maps
 
 "nmap <C-x> <Plug>MarkdownPreview
@@ -529,13 +539,14 @@ nmap <Leader>b :silent ! vivaldi "file://%:p" & disown <CR>
 " work, vimwiki will break putting underscores in and it will break the very
 " sensible syntax.
 "
-:map <leader>ww :e ~/Dropbox/Notes/MD/notes/index.md <CR>
+":map <leader>ww :e ~/Dropbox/Notes/MD/notes/index.md <CR>
+
 " make this run the 'ns' script as well. or maybe use <leader>ws
 " This conflicted with Tocv in Plastic boy,
 " I remapped it but normal enter seems to 
 " just work with CR anyway so whatever
-nnoremap <S-CR> :MdwiGotoLink 
-nnoremap <leader><CR> :MdwiReturn
+"nnoremap <S-CR> :MdwiGotoLink 
+"nnoremap <leader><CR> :MdwiReturn
 
 " Fix the titles
 " function! MdwiWriteTitle(word)
