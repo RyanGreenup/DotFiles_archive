@@ -492,7 +492,9 @@ let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folde
 " Change the Generated links
 "     Refer to [[https://github.com/vimwiki/vimwiki/pull/204]]
 " Clean bad links from beginning of line
-nmap <leader>wc f[;yi[A(./pa)0;di[Vvhp0j
+nmap <leader>wc f[;yi[A(./pa.md)0;di[Vvhp0j
+" Clean up underscores inside name
+nmap <leader>wu f[vi[:s/\%V_/ /g0j
 
 """"" Default Maps
 
