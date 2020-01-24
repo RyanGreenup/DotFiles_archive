@@ -100,21 +100,17 @@ endsnippet
 
 
 snippet det "Details"
-  <!-- WSpace Important --><details ${6: open} markdown="1"><summary><p>
+    <!-- Sometimes you need a dot, <br> ruins the spacing Important --><details ${6: open} markdown="1"><summary><p>
 
 $2
 </p></summary><p>
     ${3:text or whitespace must be here}
-
-
-* ${4: List item Must be Here}
-
+* ${0: List item Must be Here}
     ${5:text or whitespace must be here} 
 </p>
 <!--Newline Important-->
 </details>
 <!--Newline Important-->
-$0
 endsnippet
 
 snippet kindaolddet "Details"
