@@ -11,31 +11,27 @@
 
 ## Help Statement
 if [ "$1" == "-h" ]; then
-  echo "Usage: `basename $0` WRITE HELP HERE"
+  echo "Usage: `basename $0` -g will serve it globally on 192.168.0.134:8351"
   exit 0
-elif [[ "$1" == *-m* ]]; then
-    echo "the option had the letter m somewhere"
-    if [[ "$2" == "" ]]; then
-        echo "The second argument was null"
-    else
-        style=$2
-        echo "The second argument was" $2
-    fi
-    exit 0
-else
-    echo "the option was neither -h nor did it contain -m in it"
-    exit 0
 fi
+
 
 ## Program
 
 
 ### Description
-# This will start a pyton server on 192.168.1.163:8371
-  # It'
-### Code
-echo "Hello World"
+# This will print 'Hello World' to the STDOUT.
 
+
+if [ "$1" == "-g" ]; then
+    cd /home/ryan/Dropbox/Notes/MD/notes
+    python3 -m http.server 8351 --bind 192.168.0.134 
+    exit 0
+fi
+
+### Code
+cd /home/ryan/Dropbox/Notes/MD/notes
+python3 -m http.server 8351 
 
 exit 0
 

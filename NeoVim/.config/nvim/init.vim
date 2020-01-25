@@ -412,8 +412,8 @@ let g:mkdp_open_ip = ''
 " default: ''
 "let g:mkdp_browser = ''
 " chromium is way too slow
-"let g:mkdp_browser = 'epiphany'
-let g:mkdp_browser = 'epiphany'
+let g:mkdp_browser = 'vivaldi'
+"let g:mkdp_browser = '/usr/bin/epiphany-browser'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -510,6 +510,7 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 "This has the massive advantage of allowing links to be followed
 " This is way fucking better than iamcco!!
 nmap <Leader>b :silent ! vivaldi "file://%:p" & disown <CR> 
+nmap <Leader>b :silent ! vivaldi "192.168.0.134:8351/%:t" & disown <CR> 
 
 "This with the code copier single click (includes history!) extension is the
 "way to go for sure.

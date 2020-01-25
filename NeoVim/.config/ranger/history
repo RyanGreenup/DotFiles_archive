@@ -1,5 +1,3 @@
-search drop
-search md
 filter .md
 w
 search /bash
@@ -27,7 +25,6 @@ search you
 find .vimrc
 search .vim
 open_with 
-search dropbox
 search m2o
 rename h20
 rename m2h
@@ -48,3 +45,6 @@ filter ser
 filter 
 shell vim N
 delete
+search dropbox
+rename NotesBackup2020Jan
+rename ZZNotesBackup2020Jan
