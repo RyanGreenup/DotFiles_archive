@@ -1,1 +1,1 @@
-/home/ryan/Dropbox/DotFiles/FZF/.fzf/shell/key-bindings.fish
+/home/ryan/.fzf/shell/key-bindings.fish

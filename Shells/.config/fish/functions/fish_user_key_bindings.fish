@@ -1,12 +1,10 @@
-function fish_user_key_bindings
-  fzf_key_bindings
-end
 
 function fish_user_key_bindings
     bind -M insert jj "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
 end
 
 
+function fish_user_key_bindings
 # Key bindings
 # ------------
 function fzf_key_bindings
@@ -151,5 +149,7 @@ function fzf_key_bindings
 
     echo $dir
   end
+
+end
 
 end

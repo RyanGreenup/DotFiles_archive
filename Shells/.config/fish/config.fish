@@ -5,16 +5,18 @@
 #   [[~/.bashrc][Bash RunCommand]]
 #   [[~/.zshrc][ Bash RunCommand]]
 
+# Make the keybindings just work
+#$HOME/.config/fish/functions/fzf_key_bindings.fish
+fzf_key_bindings
 
 # Set Vim Keybindings
 #fish_vi_key_bindings
 #read this on spacemacs warnings
 # https://github.com/syl20bnr/spacemacs/issues/12221
-fish_vi_key_bindings 2>/dev/null #supress warnings for emacs
+#fish_vi_key_bindings 2>/dev/null #supress warnings for emacs
 
 
-# Make the keybindings just work
- fzf_key_bindings
+
 
 # Make the default Editor NVim (vim is aliased to nvim)
 set -x EDITOR "/usr/bin/nvim"
@@ -25,13 +27,6 @@ set -x VISUAL "/usr/bin/nvim"
 	 # I'm just happy with the `es` theme
 #eval (starship init fish)
 
-
-#function fish_user_key_bindings
-#  fzf_key_bindings
-#end
-
-
-# ~/.config/fish/config.fish
 
 #starship init fish | source
 
@@ -53,12 +48,6 @@ set -x VISUAL "/usr/bin/nvim"
 #powerline-setup
 
 
-# Bulshit Ruby stuff
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-
-
 
 
 ## vim:fdm=expr:fdl=0
@@ -69,3 +58,5 @@ export PATH="$HOME/gems/bin:$PATH"
 ## Start Python Server to access notes
 #ps -ef | grep 'python3 -m http.server 8128' | awk '{print \$2}' | xargs sudo kill
 #$HOME/bin/NoteServer.sh & disown
+#
+#

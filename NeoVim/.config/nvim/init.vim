@@ -510,7 +510,7 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 "This has the massive advantage of allowing links to be followed
 " This is way fucking better than iamcco!!
 nmap <Leader>b :silent ! vivaldi "file://%:p" & disown <CR> 
-nmap <Leader>b :silent ! vivaldi "192.168.0.134:8351/%:t" & disown <CR> 
+nmap <Leader>b :silent ! vivaldi "0.0.0.0:8351/%:t" & disown <CR> 
 
 "This with the code copier single click (includes history!) extension is the
 "way to go for sure.

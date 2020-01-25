@@ -13,6 +13,7 @@
 if [ "$1" == "-h" ]; then
   echo "Usage: `basename $0` -g will serve it globally on 192.168.0.134:8351"
   exit 0
+echo "Hello World"
 fi
 
 
@@ -31,7 +32,7 @@ fi
 
 ### Code
 cd /home/ryan/Dropbox/Notes/MD/notes
-python3 -m http.server 8351 
+python3 -m http.server 8351  
 
 exit 0
 
