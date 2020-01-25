@@ -1,8 +1,14 @@
 
-function fish_user_key_bindings
-    bind -M insert jj "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
-end
+# Why the fuck did all this stop fucking working,
+# I'll just have to wipe out fish and OMF then reset up fzf and see what happens.
+# This is a massive pain in the ass because fzf wants to symlink into the fish user bindings but they're already symlinked out of stow arrrrrgggghh!
 
+# I'll just use the  emacs bindings for the moment and drop into vim when I need to edit loops etc by using M-e.
+
+#function fish_user_key_bindings
+#    bind -M insert jj "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
+#end
+#
 
 function fish_user_key_bindings
 # Key bindings

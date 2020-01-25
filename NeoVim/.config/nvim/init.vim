@@ -9,6 +9,7 @@
 "####### Generic Settings #####
 "##############################
 
+set autochdir " this might bake plugins but it's just way too fucking confusing otherwise, I keep forgetting to hit `SPC f c d`
 set nocompatible
 set mouse=a " this is brillian for touch screen ; requires `apt install vim-gtk`
 filetype plugin on

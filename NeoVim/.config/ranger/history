@@ -23,7 +23,6 @@ search vim
 search you
 find .vimrc
 search .vim
-open_with 
 search m2o
 rename h20
 rename m2h
@@ -43,8 +42,9 @@ search
 filter ser
 filter 
 shell vim N
-delete
 search dropbox
 rename NotesBackup2020Jan
 rename ZZNotesBackup2020Jan
 search config
+open_with 
+delete
