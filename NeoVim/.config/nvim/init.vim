@@ -377,8 +377,8 @@ nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>
 "(think like a tag after C-x><C-t>
 "     b takes you to the beginning of the previous word
 "       won't change word will move from whitespace
-nnoremap <Leader>ft  b"t0D:NV<C-r>t<BS><CR>
-inoremap <C-c><C-f>  <Esc>b"t0D:NV<C-r>t<BS><CR>
+nnoremap <Leader>ft  b0"tD:NV<C-r>t<BS><CR>
+inoremap <C-c><C-f>  <Esc>b0"tD:NV<C-r>t<BS><CR>
 
 " Include # symbol in <C-r><C-w>
 :set iskeyword+=#
