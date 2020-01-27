@@ -364,6 +364,15 @@ endif
    "autocmd BufEnter *.md :set syntax 
 
 
+""""" tags
+inoremap <expr> <c-x><c-t> fzf#vim#complete('cat ~/Notes/MD/notes/00tags.csv')
+inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" -o --no-filename *.md')
+"rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" -o --no-filename *.md | fzf
+"
+" MUST be preceeded and terminated with a space
+"
+inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=[\s\^])#[a-zA-Z-@]+\s" -o --no-filename *.md')
+"
 """"" Markdown Preview
 """""" iamcco
 "Refer to [iamcco/markdown-preview](https://github.com/iamcco/markdown-preview.nvim)

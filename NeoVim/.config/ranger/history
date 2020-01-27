@@ -1,4 +1,3 @@
-search .vimrc
 flat 2
 filter .git
 filter -r .*\.git.*
@@ -48,3 +47,4 @@ filter
 filter No
 open_with h
 filter R
+search tags
