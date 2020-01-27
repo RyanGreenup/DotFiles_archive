@@ -373,6 +373,15 @@ inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" 
 "
 inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=[\s\^])#[a-zA-Z-@]+\s" -o --no-filename *.md')
 "
+map <f4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+nnoremap <expr> <Space>ff :Rg expand('<cword>') <CR>
+
+" Include # symbol in <C-r><C-w>
+:set iskeyword+=#
+" [[https://vi.stackexchange.com/questions/4009/include-symbols-in-cword]]
+"map <Space>fg :Rg <C-r><C-w>
+map <Space>fg :NV <C-r><C-w> <CR>
+
 """"" Markdown Preview
 """""" iamcco
 "Refer to [iamcco/markdown-preview](https://github.com/iamcco/markdown-preview.nvim)

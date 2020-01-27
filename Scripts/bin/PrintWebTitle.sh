@@ -14,6 +14,9 @@
 ### Choose what format to output in
  # LaTeX, # MD or # Org
 
+ command -v recode >/dev/null 2>&1 || { echo >&2 "I require recode but it's not installed.  install with sudo apt recode (or pacman its in the repos), Aborting."; exit 1; }
+
+
 if [ "$1" == "-h" ]; then
 # Put's formated link in clipboard
   echo "
