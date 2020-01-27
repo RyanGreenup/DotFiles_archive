@@ -365,13 +365,13 @@ endif
 
 
 """"" tags
-inoremap <expr> <c-x><c-t> fzf#vim#complete('cat ~/Notes/MD/notes/00tags.csv')
+inoremap <expr> <C-x><C-t> fzf#vim#complete('cat ~/Notes/MD/notes/00tags.csv')
 inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" -o --no-filename *.md')
 "rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" -o --no-filename *.md | fzf
 "
 " MUST be preceeded and terminated with a space
 "
-inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=[\s\^])#[a-zA-Z-@]+\s" -o --no-filename *.md')
+inoremap <expr> <C-x><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename *.md \| sort -u')
 "
 map <f4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 nnoremap <expr> <Space>ff :Rg expand('<cword>') <CR>

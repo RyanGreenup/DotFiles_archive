@@ -1,4 +1,3 @@
-flat 2
 filter .git
 filter -r .*\.git.*
 rename 
@@ -10,7 +9,6 @@ open_with nvim
 shell cat mystyle.css >> renderer.css
 filter rend
 search downlo
-shell 
 shell mkdir pytest
 shell nvim pytest.py
 search vim
@@ -48,3 +46,5 @@ filter No
 open_with h
 filter R
 search tags
+shell 
+filter index
