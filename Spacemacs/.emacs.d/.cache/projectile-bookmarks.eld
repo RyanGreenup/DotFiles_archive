@@ -1,1 +1,1 @@
-("~/Dropbox/DotFiles/" "~/Dropbox/Notes/" "~/Dropbox/DotFiles/Spacemacs/.emacs.d/" "~/.emacs.d/")
+("~/Dropbox/Notes/" "~/Dropbox/DotFiles/Spacemacs/.emacs.d/" "~/Dropbox/DotFiles/" "~/.emacs.d/")

@@ -283,6 +283,7 @@ nnoremap <Leader>r :e!<CR>
  " Open TexStudio with F12
 autocmd BufEnter *.tex :map <f12> :w<cr>:!texstudio "%" <Enter>
 autocmd BufEnter *.md :map <f12> :w<cr>:!typora "%" & disown <Enter>
+autocmd BufEnter *.md :map <Space>fo :w<cr>:!marktext "%" & disown <Enter>
 "autocmd BufEnter *.md :map <f12> :w<cr>:!marktext "%" & disown <Enter>
 "autocmd BufEnter *.Rmd :map <f12> :w<cr>:!marktext "%" & disown <Enter>
 
