@@ -365,16 +365,20 @@ endif
 
 
 """"" tags
-inoremap <expr> <C-x><C-t> fzf#vim#complete('cat ~/Notes/MD/notes/00tags.csv')
-inoremap <expr> <c-x><c-t> fzf#vim#complete('rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" -o --no-filename *.md')
 "rg --pcre2 "(?<=\s)#[a-zA-Z-@]+\s" -o --no-filename *.md | fzf
 "
 " MUST be preceeded and terminated with a space
 "
-inoremap <expr> <C-x><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename *.md \| sort -u')
-"
-map <f4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-nnoremap <expr> <Space>ff :Rg expand('<cword>') <CR>
+imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename *.md \| sort -u')
+"nnoremap <expr> <Space>fg :Rg expand('<cword>') <CR>
+nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>
+
+"Search for line under cursor and remove
+"(think like a tag after C-x><C-t>
+"     b takes you to the beginning of the previous word
+"       won't change word will move from whitespace
+nnoremap <Leader>ft  b"tdd:NV<C-r>t<BS><CR>
+inoremap <C-c><C-f>  <Esc>b"tdd:NV<C-r>t<BS><CR>
 
 " Include # symbol in <C-r><C-w>
 :set iskeyword+=#
