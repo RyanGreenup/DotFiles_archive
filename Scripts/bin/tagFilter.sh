@@ -54,6 +54,9 @@ Table of Contents
 	       "
   exit 0
 elif [[ "$1" == *-s* ]]; then
+     # make sure newlines not spaces are seperators
+      IFS=$'\n'
+
      # restore the last TagValue
      tagval=$(cat /tmp/thelasttagfromTagFilter)
      # This is supposed to be run second,
@@ -90,17 +93,43 @@ else
      if test -f 00TagMatchList; then
             	echo "subsequent search";
      else
-            	ls *.md > 00TagMatchList;
+              # List in order of modification Date, top newest
+            	ls -t *.md > 00TagMatchList; 
      fi
      
      # Have the user choose a tag from all the tag matches
-     tagval=$(for i in $(cat 00TagMatchList); do
-        rg --pcre2 --sort-files --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o $i;
-     done | sort -u | fzf)
+#     tagval=$(for i in $(cat 00TagMatchList); do
+#        rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o $i;
+#     done | fzf)
+
+	     # Remove Duplicates (This is slower, because the tags are listed by recency by default,
+                     #  duplicates act as frequency for fzf I guess shrug)
+#	     tagval=$(for i in $(cat 00TagMatchList); do
+#	        rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o $i;
+#	     done | sort -u | fzf)
+
+
+    # Don't do the loop, this is like 10 times faster
+        # With Repetition
+     # tagval=$(cat 00TagMatchList | xargs -d '\n' rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o | fzf)
+         # Duplicates Removed
+     tagval=$(cat 00TagMatchList | xargs -d '\n' rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o | sort -u | fzf)
+
 
      # Return any files that contain that tag 
        # TODO join this with the above step for efficiency
-     cat 00TagMatchList | xargs rg ":$tagval:|\s#$tagval\s" -l > 00TagMatchList;
+     # Have ripgrep find files that contain that tag
+      if [[ -z $tagval ]]; then
+          echo '
+ 	         wait for fzf to finish otherwise ripgrep has
+		 nothing with which to filter files with and
+		 returns everything, recursively, 
+		 TODO This breaks symlinks but shouldnt?
+ 	 '
+          exit 1
+      else
+	     cat 00TagMatchList | xargs rg ":$tagval:|\s#$tagval\s" -l > 00TagMatchList;
+      fi
      
      # Space 
      echo "

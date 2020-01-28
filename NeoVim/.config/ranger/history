@@ -1,4 +1,3 @@
-rename .vimrc
 search Comp
 filter Comp
 search gitig
@@ -16,7 +15,6 @@ search m2o
 rename h20
 rename m2h
 rename m2hRaw
-find bin
 find ns
 shell ns
 filter bin
@@ -48,3 +46,5 @@ filter Ap
 rename marktext
 delete
 
+find bin
+find binlll
