@@ -637,6 +637,7 @@ nnoremap <C-p> :<C-u>FZF<CR>
 " Remap F4 to CopyFileDirectory
 noremap <silent> <F4> :let @+=expand("%:p")<CR>
 noremap <silent> <leader>fy :let @+=expand("%:p")<CR>
+noremap <silent> <leader>fty :let @+=expand("%:t")<CR>
 
 " Return to previous Buffer
 "Jump back to last edited buffer
