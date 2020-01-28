@@ -21,8 +21,37 @@
 
 ## Help Statement
 if [ "$1" == "-h" ]; then
-  echo "Usage: `basename $0` Will write temp files to manage filtering tags
-               `basename $0 -s` Will Move the symlinked Tags"
+  echo "
+
+Table of Contents
+─────────────────
+
+1. `basename $0`
+2. `basename $0` -s
+.. 1. `basename $0` -s m/e/z/t/c
+
+
+1 `basename $0`
+═══════════════
+
+  This will offer, concurrently, tags to filter notes by and write files
+  that match into a temporary file.
+
+
+2 `basename $0` -s
+════════════════════
+
+  This will create symlinks to the filtered files and use ag to locate
+      the last tags line number.
+
+
+2.1 `basename $0` -s m/e/z/t/c
+────────────────────────────────
+
+  This will open that directory in /MarkText/, emacs, /Zettler/,
+  	/Typora/ or /VSCode/ respectively.
+
+	       "
   exit 0
 elif [[ "$1" == *-s* ]]; then
      # restore the last TagValue
