@@ -87,7 +87,14 @@ elif [[ "$1" == *-y* ]]; then
     if [[ "$2" == *g* ]]; then
         Rscript ./ListTags.R
        # cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
-    exit 0
+    fi
+    if [[ "$2" == *f* ]]; then
+       cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
+      exit 0 # pipe doesn't work well here
+    fi
+    if [[ "$2" == *z* ]]; then
+       cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd | fzf --preview 'cat {}'
+       exit 0
     fi
     cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
     exit 0
