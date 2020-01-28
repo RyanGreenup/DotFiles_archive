@@ -34,7 +34,22 @@ elif [[ "$1" == *-s* ]]; then
       rm 00TagMatch/*
       ln -s $(realpath $(cat 00TagMatchList)) ./00TagMatch; rm 00TagMatchList
       cd 00TagMatch;
-      marktext . & disown; sag -f "\s#$tagval" ./
+      sag -f "\s#$tagval" ./
+      if [[ "$2" == *m* ]]; then
+          marktext . & disown;
+      fi
+      if [[ "$2" == *t* ]]; then
+          typora . & disown;
+      fi
+      if [[ "$2" == *e* ]]; then
+          emacsclient --create-frame . & disown
+      fi
+      if [[ "$2" == *z* ]]; then
+          zettlr . & disown
+      fi
+      if [[ "$2" == *c* ]]; then
+          code . & disown
+      fi
 else
     # This is supposed to be run first, as many times as necessary
     # It will filter out the tags
