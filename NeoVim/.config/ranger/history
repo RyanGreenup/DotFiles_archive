@@ -1,4 +1,3 @@
-rename 
 rename .vimrc
 search Comp
 filter Comp
@@ -36,7 +35,6 @@ rename NotesBackup2020Jan
 rename ZZNotesBackup2020Jan
 search config
 open_with 
-delete
 search no
 filter no
 filter 
@@ -48,3 +46,5 @@ shell
 filter index
 filter Ap
 rename marktext
+delete
+
