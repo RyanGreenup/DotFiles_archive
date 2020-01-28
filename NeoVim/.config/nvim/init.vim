@@ -370,6 +370,7 @@ endif
 " MUST be preceeded and terminated with a space
 "
 imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename *.md \| sort -u')
+imap <expr> <C-c><C-y> fzf#vim#complete('cat ~/Notes/MD/notes/00tags.csv')
 "nnoremap <expr> <Space>fg :Rg expand('<cword>') <CR>
 nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>
 
