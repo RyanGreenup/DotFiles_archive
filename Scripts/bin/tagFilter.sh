@@ -82,6 +82,15 @@ elif [[ "$1" == *-s* ]]; then
       if [[ "$2" == *c* ]]; then
           code . & disown
       fi
+elif [[ "$1" == *-y* ]]; then
+    # Filter based on the Yaml Tags, option g will regen list
+    if [[ "$2" == *g* ]]; then
+        Rscript ./ListTags.R
+       # cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
+    exit 0
+    fi
+    cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
+    exit 0
 else
     # This is supposed to be run first, as many times as necessary
     # It will filter out the tags
