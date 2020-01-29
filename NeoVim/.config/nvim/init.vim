@@ -61,6 +61,7 @@ let g:airline_powerline_fonts = 1
 " Make sure to install the fonts with
 "      pip install --user git+git://github.com/powerline/powerline
 nmap <Leader>; :Commands<CR>
+let g:airline_theme='violet'
 
 " Notational Velocity
 Plug 'https://github.com/alok/notational-fzf-vim'
