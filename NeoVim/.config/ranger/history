@@ -45,6 +45,6 @@ shell mkdir elpa
 filter 
 
 cle
-delete
 filter cite
 w
+delete
