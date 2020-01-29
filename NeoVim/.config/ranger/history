@@ -1,7 +1,3 @@
-shell mkdir pytest
-shell nvim pytest.py
-search vim
-search you
 find .vimrc
 search .vim
 search m2o
@@ -39,12 +35,16 @@ find bin
 find binlll
 filter citep
 shell mkdir elpa
-
 cle
 filter cite
 w
-delete
-filter 
 filter bin
 filter
 rename ~Notes
+
+unmark 
+find ./ -name '\.fzf\.bash'
+filter bash
+filter 
+filter fzf
+delete

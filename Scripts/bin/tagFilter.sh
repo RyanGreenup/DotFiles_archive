@@ -103,6 +103,20 @@ TODO Remove 00tags.csv from allowable search results
   other people have already done
 
 
+1.0.4 Regenerate Tags
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  The =g= argument will regenerate tags using the =ListTags.R= script.
+  This script is pretty quick (like 80ms) even though it runs a loop.
+  Calling from bash adds 200 ms to it though, so is should scale well.
+
+
+
+  ┌────
+  │ `basename $0` -y g
+  └────
+
+
 
 Footnotes
 ─────────
