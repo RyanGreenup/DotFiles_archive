@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ls *.aux *.bbl *.blg *.brf *.lof *.log *.lot *.out *.toc -1 > .hidden

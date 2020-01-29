@@ -1,2 +1,0 @@
-cd ~/gitpage/ryangreenup.github.io/ && git add . && git commit -m "Add existing file" && git push origin master
-

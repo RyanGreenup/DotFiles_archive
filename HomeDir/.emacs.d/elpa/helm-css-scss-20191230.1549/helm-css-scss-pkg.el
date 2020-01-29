@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "helm-css-scss" "20191230.1549" "CSS/SCSS/LESS Selectors with helm interface" '((emacs "24.3") (helm "1.0")) :commit "48b996f73af1fef8d6e88a1c545d98f8c50b0cf3" :keywords '("convenience" "scss" "css" "less" "selector" "helm") :authors '(("Shingo Fukuyama - http://fukuyama.co")) :maintainer '("Shingo Fukuyama - http://fukuyama.co") :url "https://github.com/ShingoFukuyama/helm-css-scss")

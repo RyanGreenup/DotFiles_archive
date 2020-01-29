@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=ls#/etc/init.d/plexmediaserver start
-X-GNOME-Autostart-enabled=true
-NoDisplay=false
-Hidden=false
-Name[en_AU]=Plex Media Server (Commented out, see if it works first)
-Comment[en_AU]=Runs the Plex Media Server
-X-GNOME-Autostart-Delay=0

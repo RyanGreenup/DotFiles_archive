@@ -1,6 +1,0 @@
-#!/bin/bash
-    
-#  local line  # use in function not script
-  line=`ag --nocolor "$1" | fzf` \
-    && vim $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
-
