@@ -23,13 +23,17 @@
 if [ "$1" == "-h" ] || [ "$1" == "--help"  ]; then
   echo "
 
+
 Table of Contents
 ─────────────────
 
 1. `basename $0`
 2. `basename $0` -s
 .. 1. `basename $0` -s m/e/z/t/c
-
+3. YAML Filtering
+..... 1. Return Results
+..... 2. List Files
+..... 3. TODO Make Symlinks
 
 1 `basename $0`
 ═══════════════
@@ -50,6 +54,61 @@ Table of Contents
 
   This will open that directory in /MarkText/, emacs, /Zettler/,
   	/Typora/ or /VSCode/ respectively.
+
+
+Table of Contents
+─────────────────
+
+
+
+3 YAML Filtering
+════════════════
+
+TODO Remove 00tags.csv from allowable search results
+
+  switch to this mode by using `basename $0` -y.
+
+  This will offer a selection of the =YAML= tags used in your notes
+
+
+3.0.1 Return Results
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  By default ripgrep is used to filter out the matching notes and then
+  =ag= searches over those matches (yeah this is double handling but
+  =ripgrep= was already implemented and most of the time you probably
+  wont the note names, the only reason I used =ag= afterwards was
+  because =sag= [1] offers the luxury of creating shortcuts mapped to =F
+  \d=.
+
+
+3.0.2 List Files
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  use the =f= argument after the =-y= argument, so something like this:
+
+  ┌────
+  │ `basename $0` -y f
+  └────
+
+  This will return a list of files
+
+
+3.0.3 TODO Make Symlinks
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This hasn=t yet been implemented, I could have implemented it just
+  like =#tags= but It would be nice to tie this into TMSU somehow and
+  it seems well suited so I might leave it rather than recreating work
+  other people have already done
+
+
+
+Footnotes
+─────────
+
+[1] [GitHub - sampson-chen/sack: s(hortcut)-ack: a faster way to use
+ag, ack (or grep)!] (<https://github.com/sampson-chen/sack>)
 
 	       "
   exit 0
