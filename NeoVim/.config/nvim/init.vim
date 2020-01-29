@@ -54,6 +54,14 @@ Plug '907th/vim-auto-save'
 let g:nv_search_paths = ['~/Notes/MD/notes/', '~/Dropbox/Notes/MD/notes/', '~/writing', '~/code', 'docs.md' , './notes.md']
 
 
+" Airline Display bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+" Make sure to install the fonts with
+"      pip install --user git+git://github.com/powerline/powerline
+nmap <Leader>; :Commands<CR>
+
 " Notational Velocity
 Plug 'https://github.com/alok/notational-fzf-vim'
 
