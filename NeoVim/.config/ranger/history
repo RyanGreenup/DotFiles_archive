@@ -1,5 +1,3 @@
-filter rend
-search downlo
 shell mkdir pytest
 shell nvim pytest.py
 search vim
@@ -12,7 +10,6 @@ rename m2h
 rename m2hRaw
 find ns
 shell ns
-filter bin
 filter notes
 search notes
 rename css
@@ -42,9 +39,12 @@ find bin
 find binlll
 filter citep
 shell mkdir elpa
-filter 
 
 cle
 filter cite
 w
 delete
+filter 
+filter bin
+filter
+rename ~Notes
