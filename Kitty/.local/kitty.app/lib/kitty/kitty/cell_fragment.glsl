@@ -12,6 +12,7 @@
 
 #ifdef NEEDS_BACKROUND
 in vec3 background;
+in float draw_bg;
 #if defined(TRANSPARENT) || defined(SPECIAL)
 in float bg_alpha;
 #endif
@@ -76,11 +77,13 @@ vec4 blend_onto_opaque_premul(vec3 over, float over_alpha, vec3 under) {
  *
  *    2a) Opaque bg with images under text
  *        There are multiple passes, each pass is blended onto the previous using the opaque blend func (alpha, 1- alpha):
- *        1) Draw only the background -- expected output is color with alpha 1
- *        2) Draw the images that are supposed to be below text. This happens in the graphics shader
- *        3) Draw the special cells (selection/cursor). Output is same as from step 1, with bg_alpha 1 for special cells and 0 otherwise
- *        4) Draw the foreground -- expected output is color with alpha which is blended using the opaque blend func
- *        5) Draw the images that are supposed to be above text again in the graphics shader
+ *        1) Draw background for all cells
+ *        2) Draw the images that are supposed to be below both the background and text, if any. This happens in the graphics shader
+ *        3) Draw the background of cells that don't have the default background if any images were drawn in 2 above
+          4) Draw the images that are supposed to be below text but not background, again in graphics shader.
+ *        5) Draw the special cells (selection/cursor). Output is same as from step 1, with bg_alpha 1 for special cells and 0 otherwise
+ *        6) Draw the foreground -- expected output is color with alpha which is blended using the opaque blend func
+ *        7) Draw the images that are supposed to be above text again in the graphics shader
  *
  *    2b) Transparent bg with images
  *        First everything is rendered into a framebuffer, and then the framebauffer is blended onto
@@ -126,10 +129,10 @@ void main() {
 #endif
 
 #ifdef BACKGROUND
-#ifdef TRANSPARENT
+#if defined(TRANSPARENT)
     final_color = vec4(background.rgb * bg_alpha, bg_alpha);
 #else
-    final_color = vec4(background.rgb, 1.0f);
+    final_color = vec4(background.rgb, draw_bg);
 #endif
 #endif
 
