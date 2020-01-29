@@ -1,8 +1,3 @@
-search Comp
-filter Comp
-search gitig
-open_with nvim
-shell cat mystyle.css >> renderer.css
 filter rend
 search downlo
 shell mkdir pytest
@@ -35,7 +30,6 @@ search config
 open_with 
 search no
 filter no
-filter 
 filter No
 open_with h
 filter R
@@ -44,7 +38,13 @@ shell
 filter index
 filter Ap
 rename marktext
-delete
-
 find bin
 find binlll
+filter citep
+shell mkdir elpa
+filter 
+
+cle
+delete
+filter cite
+w

@@ -139,11 +139,11 @@ vg() {
 
 # using ripgrep combined with preview
 # find-in-file - usage: fif <searchTerm>
-fif() {
-  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
-ag --nobreak --nonumbers --noheading . | fzf
- --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
-}
+# fif() {
+#   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+# ag --nobreak --nonumbers --noheading . | fzf
+#  --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+# }
 #
 #
 #

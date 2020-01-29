@@ -4,3 +4,6 @@
 [submodule "FZF/.fzf"]
 	path = FZF/.fzf
 	url = https://github.com/junegunn/fzf
+[submodule "Spacemacs/.emacs.d"]
+	path = Spacemacs/.emacs.d
+	url = https://github.com/syl20bnr/spacemacs
