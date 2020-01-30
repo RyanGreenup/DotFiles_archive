@@ -159,6 +159,12 @@ elif [[ "$1" == *-s* ]]; then
       if [[ "$2" == *c* ]]; then
           code . & disown
       fi
+# **** TODO Feed to TMSU
+#      for i in *.md in ; do
+#         echo tmsu tag $i $(rg '(?<=#)[a-zA-z0-9](?=\s)' -o --no-filename)
+#              tmsu tag $i $(rg '(?<=#)[a-zA-z0-9](?=\s)' -o --no-filename)
+#      done
+      # TODO should I use Xargs instead of a loop? probably this looks good though???? I can't think
 # *** Yaml Tag Filtering
 elif [[ "$1" == *-y* ]]; then
 # **** Regenerate List (calling ListTags.R)

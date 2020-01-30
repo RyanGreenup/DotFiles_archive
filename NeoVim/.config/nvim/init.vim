@@ -64,7 +64,10 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 " Make sure to install the fonts with
 "      pip install --user git+git://github.com/powerline/powerline
+"      pip3 install --user git+git://github.com/powerline/powerline
 let g:airline_theme='violet'
+"let g:airline_statusline_ontop=1
+let g:airline#extensions#tabline#enabled = 1
 
 " Notational Velocity
 Plug 'https://github.com/alok/notational-fzf-vim'
