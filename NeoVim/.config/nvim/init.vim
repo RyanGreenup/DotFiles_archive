@@ -35,6 +35,7 @@ set encoding=utf-8
 """"" Keyboard Remaps
 nmap <Leader>; :Commands<CR>
 nmap <C-x><C-k> :bd<CR>
+nmap <Leader>rr "
 
 """" Plugins
 "############################## 
