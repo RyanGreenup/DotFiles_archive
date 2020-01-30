@@ -96,7 +96,7 @@ Plug 'rbgrouleff/bclose.vim'
 "https://github.com/iberianpig/ranger-explorer.vim
 "
 nnoremap <silent><Leader>ft :RangerOpenCurrentDir<CR>
-nnoremap <silent><Leader>ff :RangerOpenProjectRootDir<CR>
+nnoremap <silent><Leader>ff :Files
 "
 
 """"" vim-markdown-wiki NOT VimWiki
