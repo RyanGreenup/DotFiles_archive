@@ -2,6 +2,7 @@
 # Don't forget to adjust the permissions with:
 #chmod +x ~/somecrazyfolder/script1
 
+# * Preliminary
 # use spacemacs and:
   #Use C-c C-n and C-c C-x and C-c C-z and C-c C-( and sh-if and sh-for
   # There's also snippets, use =company-yasnippet=
@@ -9,17 +10,16 @@
         # Probably R in Rstudio (and some vim for math and maybe emacs for folding)
 
 
+# * Program
 
-## Program
-
-### Description
+# ** Description
 # This will search and filter tags in the ~/Notes directory, returning results into temporary file and working from that
 
-### Code
+# ** Code
 
      cd ~/Notes/MD/notes
 
-## Help Statement
+# *** Help Statement
 if [ "$1" == "-h" ] || [ "$1" == "--help"  ]; then
   echo "
 
@@ -126,12 +126,16 @@ ag, ack (or grep)!] (<https://github.com/sampson-chen/sack>)
 
 	       "
   exit 0
+
+# *** Show the Filtered Content
+  # This should really come after the generated part but I through it in here so it could be an else if, that wasn't clever?
 elif [[ "$1" == *-s* ]]; then
      # make sure newlines not spaces are seperators
       IFS=$'\n'
 
-     # restore the last TagValue
+# **** restore the last TagValue
      tagval=$(cat /tmp/thelasttagfromTagFilter)
+# **** Create the Symlinks
      # This is supposed to be run second,
      # In order to take the filtered tags and put them in the symlinked directory
      echo "Symlinking and Showing the Filtered tags"
@@ -155,23 +159,29 @@ elif [[ "$1" == *-s* ]]; then
       if [[ "$2" == *c* ]]; then
           code . & disown
       fi
+# *** Yaml Tag Filtering
 elif [[ "$1" == *-y* ]]; then
+# **** Regenerate List (calling ListTags.R)
     # Filter based on the Yaml Tags, option g will regen list
     if [[ "$2" == *g* ]]; then
         Rscript ./ListTags.R
        # cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
     fi
+# **** List the Files Matching the Filter
     if [[ "$2" == *f* ]]; then
        cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
       exit 0 # pipe doesn't work well here
     fi
+# **** Preview matches in =fzf --preview=
     if [[ "$2" == *z* ]]; then
        cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd | fzf --preview 'cat {}'
        exit 0
     fi
+# **** Create sag shortcuts for the Tag (TODO this is slow)
     cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
     exit 0
 else
+# *** Filter out the tags must Run First (TODO this should be at the top of the script)
     # This is supposed to be run first, as many times as necessary
     # It will filter out the tags
 
@@ -186,6 +196,7 @@ else
             	ls -t *.md > 00TagMatchList; 
      fi
      
+# **** Unused Slow Method
      # Have the user choose a tag from all the tag matches
 #     tagval=$(for i in $(cat 00TagMatchList); do
 #        rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o $i;
@@ -197,14 +208,14 @@ else
 #	        rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o $i;
 #	     done | sort -u | fzf)
 
-
+# **** Revised faster method
     # Don't do the loop, this is like 10 times faster
         # With Repetition
      # tagval=$(cat 00TagMatchList | xargs -d '\n' rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o | fzf)
          # Duplicates Removed
      tagval=$(cat 00TagMatchList | xargs -d '\n' rg --pcre2 --no-pcre2-unicode --no-filename '(?<=[\n\s]#)[a-zA-z]+(?=[\s\n$])' -o | sort -u | fzf)
 
-
+# **** Search through files for selected tag (iff fzf returned a term)
      # Return any files that contain that tag 
        # TODO join this with the above step for efficiency
      # Have ripgrep find files that contain that tag
@@ -214,7 +225,8 @@ else
 		 nothing with which to filter files with and
 		 returns everything, recursively, 
 		 TODO This breaks symlinks but shouldnt?
- 	 '
+            Investigate if this will scale to nested directories?
+                '
           exit 1
       else
 	     cat 00TagMatchList | xargs rg ":$tagval:|\s#$tagval\s" -l > 00TagMatchList;
@@ -225,10 +237,10 @@ else
      
      "
 
-     # Print Tags
+# **** Print Matching Tags Tags
      bat 00TagMatchList
 
-     # Save the last used tag so you can use `ag` on the preview later with it
+# **** Save the last used tag so you can use `ag` on the preview later with it
      echo $tagval > /tmp/thelasttagfromTagFilter
      
      exit 0
