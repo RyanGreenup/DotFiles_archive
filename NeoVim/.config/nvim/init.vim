@@ -32,6 +32,9 @@ set smartcase " if you search for something purely lowercase, it will do a case 
 set autoread  "Automatically re-read files
 set encoding=utf-8
 
+""""" Keyboard Remaps
+nmap <Leader>; :Commands<CR>
+nmap <C-x><C-k> :bd<CR>
 
 """" Plugins
 "############################## 
@@ -60,7 +63,6 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 " Make sure to install the fonts with
 "      pip install --user git+git://github.com/powerline/powerline
-nmap <Leader>; :Commands<CR>
 let g:airline_theme='violet'
 
 " Notational Velocity
