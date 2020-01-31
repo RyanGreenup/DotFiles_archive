@@ -130,12 +130,16 @@ ag, ack (or grep)!] (<https://github.com/sampson-chen/sack>)
   exit 0
 
 
-  # *** Show the Filtered Content
+  # *** Pass the Tags to TMSU
   # This should really come after the generated part but I through it in here so it could be an else if, that wasn't clever?
 elif [[ "$1" == *--tmsu* ]]; then
     cd ~/Notes/MD/notes
     rg --pcre2 '(?<=\s#)[a-zA-Z]+(?=\s)' *.md -o \
         | sed s+:+\ + | sed s/^/tmsu\ tag\ / | bash
+  # **** TODO Mount the TMSU somewhere
+#    Do I want to do this everytime?
+    # mkdir 00HashTags
+    # tmsu mount 00HashTags
 # *** Show the Filtered Content
   # This should really come after the generated part but I through it in here so it could be an else if, that wasn't clever?
 elif [[ "$1" == *-s* ]]; then
