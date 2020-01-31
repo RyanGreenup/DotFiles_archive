@@ -1,7 +1,3 @@
-find .vimrc
-search .vim
-search m2o
-rename h20
 rename m2h
 rename m2hRaw
 find ns
@@ -45,6 +41,10 @@ rename ~Notes
 unmark 
 find ./ -name '\.fzf\.bash'
 filter bash
-filter 
 filter fzf
+find ig
+filter 
+filter con
+filter nvim
+filter ycm
 delete

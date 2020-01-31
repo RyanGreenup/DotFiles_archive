@@ -19,27 +19,30 @@ fi
 # Copy the File Template
 echo "Please enter a filename 💼: "
 read -p 'Filename: ' filename 
-cp ~/Templates/LaTeX.tex ./$filename.tex
+cp ~/Templates/LaTeX/LaTeX.tex ./$filename.tex
+
 
 #Change the Heading
 echo "Please enter a Document Heading: "
 read -p 'Title ␁: ' title 
 sed -i "s/Title913498432198/$title/g" $filename.tex
 
+echo runlatex
 #Compile the latex
-pdflatex -interaction=nonstopmode $filename.tex #&& disown #use && not &, must wait for it to finish or zathura cannot load
+pdflatex -interaction=nonstopmode $filename.tex && disown #&& disown #use && not &, must wait for it to finish or zathura cannot load
 
+echo hidefiles
 #hide latex files in directory
 ls *.aux *.bbl *.blg *.brf *.lof *.log *.lot *.out *.toc -1 > .hidden & disown
 
-
+echo setwindow
 # Before using `setwindow`
 
 command -v wmctrl >/dev/null 2>&1 || { echo >&2 "I require wmctrl but it's not installed.  it can be installed with sudo apt wmctrl, the windows will be unaligned!."; exit 1; }
 
 
 
-
+echo openzathura
 #Preview PDF
 #zathura $filename.pdf & disown
 # I found a python script online that will resize the window
@@ -55,7 +58,7 @@ fi
 
 
 
-
+echo opennvim
 #Open in Vim
 nvim +173 $filename.tex
 

@@ -33,7 +33,7 @@ set autoread  "Automatically re-read files
 set encoding=utf-8
 
 """"" Keyboard Remaps
-nmap <Leader>; :Commands<CR>
+nmap <Leader><Space> :Commands<CR>
 nmap <C-x><C-k> :bd<CR>
 nmap <Leader>rr "
 
@@ -100,7 +100,7 @@ Plug 'rbgrouleff/bclose.vim'
 "https://github.com/iberianpig/ranger-explorer.vim
 "
 nnoremap <silent><Leader>ft :RangerOpenCurrentDir<CR>
-nnoremap <silent><Leader>ff :Files
+nnoremap <silent><Leader>ff :Files<CR>
 "
 
 """"" vim-markdown-wiki NOT VimWiki
@@ -121,11 +121,38 @@ Plug 'vimwiki/vimwiki'
 "Plug 'junegunn/vim-github-dashboard'
 Plug 'kyuhi/vim-emoji-complete'
 
+""""" Smooth Scroll
+Plug 'yuttie/comfortable-motion.vim'
+
 """"" Python-Mode
-"Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode'
+Plug 'davidhalter/jedi-vim'
+
+""""" Deoplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 """"" YouCompleteMe
-Plug 'ycm-core/YouCompleteMe'
+" I'm dropping this, it's too unstable, I blink and it's broken
+" It offers fuck-all for the time investment, I can't spend 
+" 3hours debugging this every 1-2 weeks, I just can't use it.
+"Plug 'ycm-core/YouCompleteMe'
+"
+" Make sure you have
+" sudo pip3 install pynvim 
+" neovim-ruby-host
+" npm neovim
+" perl
+" cpanm
+
+
+""""" DeoPlete
 
 """"" LaTeX Stuff
 " 
@@ -289,7 +316,8 @@ nnoremap <Leader>m :set syntax=markdown<CR>
 nnoremap <Leader>m :setlocal filetype=markdown<CR> 
 
 "nnoremap <Leader>r :set syntax=expand('%:e')<CR> 
-nnoremap <Leader>r :e!<CR>
+"nnoremap <Leader>r :e!<CR>
+nmap <Leader>r :e!<CR>
 
 "Map F3 to XeLaTeX
 
@@ -358,8 +386,8 @@ let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 " Adjust new item indent
-let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_new_list_item_indent
+let g:vim_markdown_new_list_item_indent=2
+"let g:vim_markdown_new_list_item_indent
 if (&ft=='md' || &ft=='markdown')
 nnoremap <Leader>it :Tocv<CR>
 nmap ,it :Tocv<CR>
@@ -646,8 +674,6 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 " Maybe us this instead? read :help clipboard
 "set clipboard+=unnamed
 
-" Remap FZF
-nnoremap <C-p> :<C-u>FZF<CR>
 
 
 " Remap F4 to CopyFileDirectory
@@ -746,16 +772,21 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 
 """" fzf mappings fzf-vim-usage 
-  " Mapping selecting mappings
-"    nmap <leader><tab> <plug>(fzf-maps-n)   "I couldn't fix these?
-"    xmap <leader><tab> <plug>(fzf-maps-x)
-"    omap <leader><tab> <plug>(fzf-maps-o)
+"  " Mapping selecting mappings
+    nmap <leader><tab> <plug>(fzf-maps-n)  
+    xmap <leader><tab> <plug>(fzf-maps-x)
+    omap <leader><tab> <plug>(fzf-maps-o)
 "
 "    " Insert mode completion
-"    imap <c-x><c-k> <plug>(fzf-complete-word)
-"    imap <c-x><c-f> <plug>(fzf-complete-path)
-"    imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-"    imap <c-x><c-l> <plug>(fzf-complete-line)
+    imap <c-x><c-k> <plug>(fzf-complete-word)
+    imap <c-x><c-f> <plug>(fzf-complete-path)
+    imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+    imap <c-x><c-l> <plug>(fzf-complete-line)
+"   " Snippets
+   nmap  <Leader>s :Snippets<CR>
+   imap  <Leader>s :Snippets<CR>
+" Remap FZF
+nnoremap <C-p> :<C-u>FZF<CR>
 "
 "may work in bash/zsh
 "inoremap <expr> <c-x><c-f> fzf#vim#complete#path( 
@@ -767,6 +798,12 @@ nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <leader>bW :Buffers<CR>
 nnoremap <leader>bW :Buffers<CR>
 
+"""" Deoplete Bindings
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
 
 """ Themes 
 " Theme Must go at the bottom
