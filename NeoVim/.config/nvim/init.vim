@@ -36,6 +36,7 @@ set encoding=utf-8
 nmap <Leader><Space> :Commands<CR>
 nmap <C-x><C-k> :bd<CR>
 nmap <Leader>rr "
+nmap <leader>wd :q<CR>
 
 """" Plugins
 "############################## 
@@ -123,6 +124,20 @@ Plug 'kyuhi/vim-emoji-complete'
 
 """"" Smooth Scroll
 Plug 'yuttie/comfortable-motion.vim'
+
+
+""""" Nvim-R
+Plug 'jalvesaq/Nvim-R'
+autocmd BufEnter *.R :imap <A--> <-
+imap <A-->  <- 
+"""""" Ncm-R
+Plug 'gaalcaras/ncm-R'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'jalvesaq/Nvim-R'
+Plug 'gaalcaras/ncm-R'
+"""""" Linting
+Plug 'dense-analysis/ale'
 
 """"" Python-Mode
 Plug 'python-mode/python-mode'
@@ -332,8 +347,11 @@ autocmd BufEnter *.md :map <Space>fo :w<cr>:!marktext "%" & disown <Enter>
 
 
 """" Templates
+autocmd BufNewFile *.tex 0r  ~/Templates/LaTeX/LaTeX.tex
 autocmd BufNewFile *.tex 0r  ~/Dropbox/profiles/Templates/LaTeX/LaTeX.tex
 autocmd BufNewFile *.sh 0r  ~/Dropbox/profiles/bin/hworld.sh
+autocmd BufNewFile *.R 0r  ~/Templates/RScriptTemplate.R
+
 
 
 
