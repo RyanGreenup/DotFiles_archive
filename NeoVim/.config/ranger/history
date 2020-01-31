@@ -1,6 +1,3 @@
-find .vimrc
-search .vim
-search m2o
 rename h20
 rename m2h
 rename m2hRaw
@@ -24,10 +21,8 @@ open_with
 search no
 filter no
 filter No
-open_with h
 filter R
 search tags
-shell 
 filter index
 filter Ap
 rename marktext
@@ -47,4 +42,9 @@ find ./ -name '\.fzf\.bash'
 filter bash
 filter 
 filter fzf
+shell 
+filter Te
+open_with h
+open_with dD
 delete
+open_with hhhh

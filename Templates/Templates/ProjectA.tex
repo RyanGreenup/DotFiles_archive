@@ -1,0 +1,662 @@
+\documentclass[12pt]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%Preamble%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Packages ------------------------------------
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[utf8]{inputenc}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{graphicx}
+%\usetikzlibrary{calc}
+%\usepackage{chngcntr}
+\usepackage[T1]{fontenc}
+\usepackage{extsizes} % More Font Sizes
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{sectsty} %Need it for underlining Sections
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{enumitem}
+\usepackage{ifxetex,ifluatex}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\addtolength{\skip\footins}{2pc plus 5pt} %Add whitespace before footnotes`
+\usepackage[svgnames, x11names, dvipsnames]{xcolor} %This is included with mdframed
+%\usepackage{tgadventor}
+\usepackage{titlesec} % Section Colours
+
+
+
+
+%Hyperlinks-----------------------------------
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+	 colorlinks=true, %set true if you want colored links
+	linktoc=all     %set to all if you want both sections and subsections linked
+}
+
+%Remove Section Numbers----------------
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+%Change the Font------------------------------
+%\usepackage{PoiretOne}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+% Add rule after sections ------------------------------
+\usepackage{titlesec}
+
+
+
+
+
+
+%Listings----------------------------------------
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+%  frame=tb,
+  frame=leftline,
+  framesep=15pt,
+  language=Java,
+  aboveskip=15pt,
+  belowskip=20pt,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+%  backgroundcolor=\color{Snow2},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  xleftmargin=1in,
+}
+
+% Formatting----------------------------------------
+\widowpenalty=1000
+\clubpenalty=1000
+
+% Problem boxes --------------------------------------
+
+%\newtheorem*{prob}{Problem}
+%\theoremstyle{working}{\cmss}
+%\newtheorem*{working}{Worked Solution}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+\newenvironment{prob}[1][Problem]{%
+	\sffamily \itshape   %
+}{\endproof} %\itshape for italics
+
+\newenvironment{sol}[1][Problem]{%
+	\proof[\nopunct]  %
+}{\endproof}
+
+%%%% Define Heading colours
+\definecolor{colsse}{RGB}{136, 73, 143}
+\definecolor{colsss}{RGB}{156, 118, 160}
+\definecolor{colspg}{RGB}{218, 168, 224}
+\definecolor{coltit}{RGB}{84, 65, 86}
+\definecolor{colname}{RGB}{236, 66 ,255}
+	% Font
+	
+	% Numbering
+	
+	
+
+	\renewcommand{\thesection}{}
+	\renewcommand{\thesubsection}{}
+	
+
+	
+
+
+
+
+
+%\renewenvironment{proof}{{\bfseries \fontfamily{ccr} \selectfont Proof}}{*something*}
+
+
+
+\title{\color{coltit} \Huge Computer Algebra [Ch. 17.1]}
+\author{Ryan Greenup ; 1780-5315}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%Document%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%
+\begin{document}
+	% Change Section Colour
+	\titleformat{\section}
+	{\color{colsse}\normalfont\LARGE\bfseries}
+	{\color{colsse}\thesection}{-1em}{}
+	\fontfamily{cmss}\selectfont
+	
+	%SubSection
+	\titleformat{\subsection}
+{\color{colsss}\normalfont\Large\bfseries}
+{\color{colsss}\thesubsection}{-1em}{}[\rule{4 in}{2pt}]
+\fontfamily{cmss}\selectfont
+	% Change Font
+\fontfamily{cmss}\selectfont
+
+
+
+	%Paragraph
+	\titleformat{\paragraph}
+	{\color{colsss}\normalfont\large}
+	{\color{colsss}\theparagraph}{9em}{}[\rule{2 in}{1 pt}]
+	\fontfamily{cmss}\selectfont
+	% Change Font
+	\fontfamily{cmss}\selectfont
+
+
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+\begin{prob}
+	
+\section{Question 18}
+
+\subsection{Problem}
+
+Show that among the first 450 Fibonacci numbers, the number of odd Fibonacci numbers is twice the number of even ones.
+
+\end{prob}
+
+\begin{sol}
+
+
+\subsection{Solution}
+
+Initially generate a list of Fibonacci numbers using \verb|Table| , the output will be quite large so append the call with \verb|;| in order to supress it:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Table[Fibonacci[n], {n, 1, 450, 1}];
+\end{lstlisting}	
+%\end{minipage}
+
+Take the Modulus of the value with respect to 2 by using an 'anonymous function' to pass the \verb|list|  to the \verb|Mod[]| function:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Table[Fibonacci[n], {n, 1, 450, 1}] // Mod[ #, 2] &;
+\end{lstlisting}	
+%\end{minipage}
+
+
+
+This list can hence be filtered by passing it to the \verb|Select| command via another anonymous function, in this case the \verb|#|  symbol represents the variable or 'landing-spot` and the \verb|&| character represents the end of the 'pure function', in order to create a logical test for equality to 1 or 0 it is necessary to use the \verb|EqualTo| command, in which case another anonymous function.
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Table[Fibonacci[n], {n, 1, 450, 1}] // Mod[ #, 2] & // 
+ Select[#, EqualTo[0]] & ;
+\end{lstlisting}	
+%\end{minipage}
+
+\newpage
+
+This list could then be counted by passing the list to the \verb|Length| command via an 'anonymous function':
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Table[Fibonacci[n], {n, 1, 450, 1}] // Mod[ #, 2] & // 
+  Select[#, EqualTo[0]] & // Length
+\end{lstlisting}	
+%\end{minipage} 
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+150
+\end{lstlisting}	
+%\end{minipage}
+
+Hence we may conclude that there are 150 even prime values, which demonstrates that there must be twice as many odd values $\left( \frac{450}{150} = 2 \right)$.\\
+
+As opposed to taking the modulus of elements of the list, it would have also been possible to use the 'canned function' \verb|EqualTo|, using this and putting it all together:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+(Table[Fibonacci[n], {n, 1, 450, 1}] //  Select[#, OddQ] & // 
+   Length[#] &)/(Table[Fibonacci[n], {n, 1, 450, 1}] // 
+    Select[#, EvenQ] & // Length[#] &)
+\end{lstlisting}	
+%\end{minipage}
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+2
+\end{lstlisting}	
+%\end{minipage}
+
+And it may be hence concluded that there are twice as many odd Fibonacci numbers as even among the first 450 values.\\
+
+\end{sol}
+
+\newpage
+
+
+\section{Question 23}
+
+\subsection{Problem}
+
+\begin{prob}
+
+
+Show that among the first 500 Fibonacci numbers:
+
+
+\begin{enumerate}[label=\alph*.]
+  \item 18 of them are primes.
+  \item None of them is divisible by 350 and only one is divisibly by 150. Find that number.
+\end{enumerate}
+
+\end{prob}
+
+
+\subsection{Solution}
+
+
+\paragraph{Part (a)}  
+  In order to count the number of prime Fibonacci numbers it will be necassary to count the elements of such a list, so first construct such a list:
+
+  %\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+  \begin{lstlisting}[language = Mathematica]
+  numPrime := Length[fibPrimes] (* Dependent on Lower Values*)
+  \end{lstlisting}	
+  %\end{minipage}
+
+  \hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+  In order to filter the number of Fibonacci Numbers that are prime we use the \verb|Select| command:
+
+  \begin{lstlisting}[language = Mathematica]
+  fibPrimes := Select[fibNums, PrimeQ] 
+  \end{lstlisting}	
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+
+  \ \\Now it is simply necessary to create a list:
+
+  \begin{lstlisting}[language = Mathematica]
+  fibNums = Table[Fibonacci[n], {n, 1, PrimePi[500], 1}]
+  \end{lstlisting}	
+\end{minipage}
+
+  \end{minipage}
+  
+
+  Now if we count that initial list, the number of prime values returned is:
+
+    %\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+    \begin{lstlisting}[language = Mathematica]
+    Print["There are ", numPrime, " Prime numbers among the first 500 \
+Fibonacci Numbers"]
+    \end{lstlisting}	
+    %\end{minipage}
+
+    %\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+    \begin{lstlisting}[language = Mathematica]
+    There are 18 Prime numbers among the first 500 Fibonacci Numbers
+    \end{lstlisting}	
+    %\end{minipage}
+
+    Thus it may be concluded that there are 18 prime numbers among the first 500 Fibonacci numbers.
+
+
+\paragraph{Part (b)}
+In order to find the number of values in the list of the first 500 Fibonacci numbers that are divisible by 350 the `Select` function may be used, however it is necessary to use an 'anonymous function' in order to specify the divisibility test:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Select[fibNums, Divisible[#, 350] &] // Length
+\end{lstlisting}	
+%\end{minipage}
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+0
+\end{lstlisting}	
+%\end{minipage}
+
+Hence it may be concluded that there is no Fibonacci number, in the first 500 values, that is divisible by 350.
+
+To return any value that is  divisible by 150, omit the `Length` Command and change the corresponding Parameter:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+Select[fibNums, Divisible[#, 150] &]
+\end{lstlisting}	
+%\end{minipage}
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+{222232244629420445529739893461909967206666939096499764990979600}
+\end{lstlisting}	
+%\end{minipage}
+
+This is a list of one value (albeit a very large value), and thus it may be concluded that this value is the only value divisible by 150.
+
+\begin{flushright}
+{\rule{0.7em}{0.7em}}
+\end{flushright}
+ 
+\newpage
+
+\section{Question 26}
+\subsection{Problem}
+\begin{prob}
+
+  Plot the graph of the  ``Cowboy Hat'' equation:
+
+$$
+f\left( x,y \right) = \sin{\left( x^2+ y^2 \right)e^{- x^2} +  \cos{\left( x^2+ y^2 \right)}}
+$$
+\vspace{0.5 mm}
+
+  as both $x$ and $y$ ranges from -2 to 2. Now plot the graph twice more, in each case changing the viewpoint to show the graph when it is viewed from above and below. What is the maximum value that the function takes in this range?
+\end{prob}
+
+\subsection{Solution}
+First Define the function in Wolfram:
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+fq26[x_, y_] := Sin[x^2 + y^2] E^-x^2  + Cos[x^2 + y^2]
+\end{lstlisting}	
+%\end{minipage}
+
+The function may now be plotted by using the built-in Plot Function (refer to  figure \ref{fig:hatplotsingle}), with some tweaks in an effort to have it resemble a cowboy hat, :
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+HatPlot = Plot3D[fq26[x, y], {x, -2, 2}, {y, -2, 2},
+  PlotStyle -> RGBColor[0.74, 0.62, 0.],
+  MeshStyle -> 
+   Directive[RGBColor[0., 0.09, 1.], Opacity[0.], 
+    Dashing[{0, Small}]], Mesh -> Automatic]
+\end{lstlisting}	
+%\end{minipage}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{HatPlotSingle}
+	\caption[]{Output Plot of 'Cowboy Hat'}
+	\label{fig:hatplotsingle}
+\end{figure}
+
+
+
+In order to rotate the plot, use the option \verb|ViewPoint|, this can be passed into \verb|GraphicsRow| in order to get everything on one Row:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+GraphicsRow[{HatPlot, Show[HatPlot, ViewPoint -> Above], 
+  Show[HatPlot, ViewPoint -> Below]}]
+\end{lstlisting}	
+%\end{minipage}
+
+
+The Rotated Graphics can be seen in figure \ref{fig:hatplotmult}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{hatPlotMult}
+	\caption[]{Multiple Output Graphics}
+	\label{fig:hatplotmult}
+\end{figure}
+
+\paragraph{Maximum Value} The Maximum value of the function can be found by using the \verb|FindMaximum|  function, however this would be a local maximum, located at a stationary point, we require a global maximum, in which case a numerical approach is required (i.e. using a gradient descent technique as opposed to calculus) :
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+NMaxValue[{fq26[x, y], -2 <= x <= 2, -2 <= y <= y}, {x, y}]
+\end{lstlisting}	
+%\end{minipage}
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+1.41421
+\end{lstlisting}	
+%\end{minipage}
+
+Hence it may be concluded that:
+$$
+\max\left[ f\left( x,y \right) \right] \approx 1.41421, \quad \forall  x,y \in \left[ -2,2 \right]
+$$
+
+\begin{flushright}
+{\rule{0.7em}{0.7em}}
+\end{flushright}
+ 
+\section{Question 24}
+
+\begin{prob}
+  
+\subsection{Problem}
+\begin{enumerate}[label=\alph*.]
+  \item Show that the only primes $p$ less than 1000 such that the remainder when $19^{p- 1}$ is divided by $p^2$ is 1 are $\left\{ 3, 7, 13, 43, 137 \right\}$.
+  \item For the numbers $n$ bewtween 1 and 100, we are interested in the number of primes between $n$ and $2n$ (including $n$ ). Show that $n = 51$ is the only number such that the number of primes between $n$ and $2n$, inclusive, is 11.
+\end{enumerate}
+\end{prob}
+
+\subsection{Solution}
+
+\paragraph{Part (a)}
+
+Consider the Primes less than 1000:
+
+%\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{lstlisting}[language = Mathematica]
+primeList = Table[Prime[n], {n, 1, PrimePi[1000], 1}]
+\end{lstlisting}	
+%\end{minipage}
+
+Now Create a logical test that will return True for values of $p$ such that: $19^{p-1} \equiv 1\pmod{2}$:
+\begin{lstlisting}[language = Mathematica]
+congTest[p_] := Mod[19^(p - 1), p^2] == 1
+\end{lstlisting}	
+
+Now Filter the list based on this property:
+
+\begin{lstlisting}[language = Mathematica]
+Select[primeList, congTest[#] &]
+\end{lstlisting}	
+
+\begin{lstlisting}[language = Mathematica]
+{3, 7, 13, 43, 137}
+\end{lstlisting}	
+
+
+This could be expressed in a single line and the readability would more or less be preserved:
+
+\begin{lstlisting}[language = Mathematica]
+Select[Table[Prime[n], {n, PrimePi[1000]}], 
+ Mod[19^(# - 1), #^2] == 1 &]
+\end{lstlisting}	
+
+\begin{lstlisting}[language = Mathematica]
+{3, 7, 13, 43, 137}
+\end{lstlisting}	
+
+\paragraph{Part (b)}
+
+It is necessary to write a function that takes in a value $n$ and outputs the number of primes between $n$ and $2n$.
+
+The \textit{Euler\-Phi}Function ($\varphi$) may be used to set the starting and ending value of \verb| Table | to generate a list of those prime values.\\
+
+It should be noted however that \textit{Mathematica} uses the command \verb|PrimePi| which is distinct from $\varphi$ in the sense that \verb|PrimePi| includes the argument value in the count (presuming that value is indeed prime).
+
+\begin{lstlisting}[language = Mathematica]
+fpcount[n_] := (PrimePi[2 n]) -  PrimePi[n - 1] (*all primes <= 2n subtract any primes <   n (but not including n, beware off-by-one-bug*)
+\end{lstlisting}	
+
+Now a \verb|For|  loop may be used to print out any values of $n$ below 100 for which this function returns 11:
+
+\begin{lstlisting}[language = Mathematica]
+For[i = 1, i < 100, i++, 
+  If[
+  	fpcount[i] == 11, Print[i], ## &[]]
+
+    ]
+ \end{lstlisting}	
+
+ \begin{lstlisting}[language = Mathematica]
+ 51
+ \end{lstlisting}	
+
+ Hence it may be concluded that only the value $n=51$ is such that:
+ 
+ $$
+ |\varphi\left( 2n+1 \right) - \varphi \left( n+1 \right)| = 11 \enspace :\qquad n \in \left( 1, 100 \right)
+ $$
+
+ \begin{flushright}
+ {\rule{0.7em}{0.7em}}
+ \end{flushright}
+  
+\newpage
+
+\section{Question 25}
+\subsection{Problem}
+\begin{prob}
+Write the function:
+$$
+f\left( k \right) =  \sin{\left( x \right)+  x + \frac{x^3}{1 \times 2\times 3} + \frac{x^5}{1 \times  2 \times  3 \times  4 \times 5} +  \cdots \frac{x^k}{1 \times  2 \times  \cdots k}} 
+$$
+such that $k$ is odd.\\
+
+Now find all the roots of the equation $x^3-f\left[ 99 \right]$ lying between 0 and 2.
+\end{prob}
+
+\subsection{Solution}
+Create the Function:
+\begin{lstlisting}[language = Mathematica]
+ClearAll[x, k, i]; 
+fq25[k_] := Sin[x] + x + Sum[x^(2*i + 1)/(2*i + 1)!, {i, 1, n}]
+\end{lstlisting}	
+
+Now use that defined function to solve $x^3 - f\left( 99 \right) = 0 \qquad \forall x \in \left( 0,2 \right)$:
+
+\begin{lstlisting}[language = Mathematica]
+x /. NSolve[{x^3 - fq25[99] == 0, 0 < x < 2}, x]   
+\end{lstlisting}	
+
+\begin{lstlisting}[language = Mathematica]
+{1.43932}
+\end{lstlisting}	
+
+In the above code, prefixing the call to \verb|NSolve|  with \verb|x/.|, is such that the output will be in the form of a list of solutions for $x$.\\
+
+In this case it may be concluded that $x \approx 1.43932 $ is the only root to this function on the interval $x \in \left( 0,2 \right)$ 
+
+\begin{flushright}
+{\rule{0.7em}{0.7em}}
+\end{flushright}
+
+\newpage 
+
+\section{Question 27}
+\subsection{Problem}
+Define a matrix by:
+
+$$
+A = \begin{pmatrix}
+  1+ x+ y & 2x +  y +  y^2 \\
+  x +  x^2 +  2y & 1 +  x^2 +  y ^2
+\end{pmatrix}
+$$
+and find its determinant $\left| A \right|$.\\
+Use \verb|ContourPlot[]| to show where in the rectangle $-20 \leq x, y \leq 10$, this determinant is zero.
+
+\subsection{Solution}
+
+First Define the Matrix:
+
+\begin{lstlisting}[language = Mathematica]
+A = {{1 + x + y, 2*x + y + y^2}, {x + x^2 + 2*y, 1 + x^2 + y^2}}
+\end{lstlisting}	
+
+Now solve the Determinant Value:
+
+\begin{lstlisting}[language = Mathematica]
+Det[A]
+\end{lstlisting}	
+
+\begin{lstlisting}[language = Mathematica]
+1 + x - x^2 - x^3 + y - 5 x y - y^2 - x^2 y^2 - y^3
+\end{lstlisting}	
+
+Hence the determinant value is:
+
+$$
+\left| A \right|= 1 +  x -  x^2 - x^3 +  y -  5xy -  y^2 -  x^2y^2- y^3
+$$
+A contour plot may be used to find values where this determinant is zero (which could be useful, for example, as a means to find non-trivial solutions to systems of equations):
+
+\begin{lstlisting}[language = Mathematica]
+ContourPlot[
+ Det[A], {x, -20, 10}, {y, -20, 10},
+ PlotTheme -> "Classic",
+ FrameLabel -> {"x-values", "y-values"},
+ PlotLabel -> "Determinant of Matrix varying over x and y",
+ LabelStyle -> {GrayLevel[0]}
+ ]
+\end{lstlisting}	
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{ContPlot}
+	\caption{Contour Plot of Determinant of Matrix varying for $x, y$ values}
+	\label{fig:contplot}
+\end{figure}
+
+
+
+From the Contour Plot in Figure \ref{fig:contplot} it can be seen that the determinant is zero for values of $x,y$ along the distinct line moving from $x \approx 5$ through the centre of the plot to $y \approx 5$.
+
+
+
+\begin{flushright}
+{\rule{0.7em}{0.7em}}
+\end{flushright}
+ 
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

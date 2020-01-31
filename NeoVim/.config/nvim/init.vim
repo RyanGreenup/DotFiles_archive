@@ -37,6 +37,7 @@ nmap <Leader><Space> :Commands<CR>
 nmap <C-x><C-k> :bd<CR>
 nmap <Leader>rr "
 nmap <leader>wd :q<CR>
+nmap <leader>w <C-w>
 
 """" Plugins
 "############################## 
@@ -446,7 +447,7 @@ inoremap <C-c><C-f>  <Esc>b0"tD:NV<C-r>t<BS><CR>
 :set iskeyword+=#
 " [[https://vi.stackexchange.com/questions/4009/include-symbols-in-cword]]
 "map <Space>fg :Rg <C-r><C-w>
-map <Space>fg :NV <C-r><C-w> <CR>
+nmap <Leader>fg :NV <C-r><C-w> <CR>
 
 """"" Markdown Preview
 """""" iamcco
