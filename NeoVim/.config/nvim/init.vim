@@ -9,7 +9,7 @@
 "####### Generic Settings #####
 "##############################
 
-set autochdir " this might bake plugins but it's just way too fucking confusing otherwise, I keep forgetting to hit `SPC f c d`
+ set autochdir " this might bake plugins but it's just way too fucking confusing otherwise, I keep forgetting to hit `SPC f c d`
 set nocompatible
 set mouse=a " this is brillian for touch screen ; requires `apt install vim-gtk`
 filetype plugin on
@@ -499,7 +499,7 @@ let g:mkdp_open_ip = ''
 " default: ''
 "let g:mkdp_browser = ''
 " chromium is way too slow
-let g:mkdp_browser = 'vivaldi'
+let g:mkdp_browser = 'firefox'
 "let g:mkdp_browser = '/usr/bin/epiphany-browser'
 
 " set to 1, echo preview page url in command line when open preview page
