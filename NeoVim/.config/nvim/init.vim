@@ -9,7 +9,7 @@
 "####### Generic Settings #####
 "##############################
 
- set autochdir " this might bake plugins but it's just way too fucking confusing otherwise, I keep forgetting to hit `SPC f c d`
+" set autochdir " this might bake plugins but it's just way too fucking confusing otherwise, I keep forgetting to hit `SPC f c d`
 set nocompatible
 set mouse=a " this is brillian for touch screen ; requires `apt install vim-gtk`
 filetype plugin on
@@ -539,6 +539,8 @@ let g:mkdp_preview_options = {
 "let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Emacs/dotemacs/org-css/Killercup.css'
 "
 let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/gitOrgWrapped.css'
+
+"let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/HugoThemes/hugo-theme-basic/static/css/style.css'
 "let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/iamccoGithub.css'
     " This is the default but I must specify it in order to change the
     " Code Block Preview
@@ -706,10 +708,12 @@ nnoremap <C-b> <C-^>
 inoremap <C-b> <esc><C-^>
 
 "Cycle Buffers (p. 64 Mastering Vim)
-noremap <C-k> :bprev<CR>
+noremap <C-k> :nohl<CR>
+noremap <C-h> :bprev<CR>
 map backspace :bprev<CR>
 map <leader>bp :bprev<CR>
-noremap <C-j> :bnext<CR>
+"noremap <C-j> :bnext<CR>
+noremap <C-l> :bnext<CR>
 map <Leader>bn :bnext<CR>
 
 
