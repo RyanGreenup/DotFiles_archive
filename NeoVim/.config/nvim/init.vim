@@ -188,6 +188,12 @@ hi clear Conceal "This removes the stupid highlighting
 
 """""" Markdown Stuff
 
+" Paste Images
+Plug 'ferrine/md-img-paste.vim'
+autocmd FileType markdown nmap <silent> <leader>cp :call mdip#MarkdownClipboardImage()<CR>
+" there are some defaults for image directory and image name, you can change them
+ let g:mdip_imgdir = '../attachments'
+
 "PlasticBoy Plugin
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'

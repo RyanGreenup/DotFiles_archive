@@ -188,7 +188,7 @@ elif [[ "$1" == *-y* ]]; then
     fi
 # **** List the Files Matching the Filter
     if [[ "$2" == *f* ]]; then
-       cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
+       cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs -d '\n' rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
       exit 0 # pipe doesn't work well here
     fi
 # **** Preview matches in =fzf --preview=
