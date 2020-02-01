@@ -38,6 +38,7 @@ nmap <C-x><C-k> :bd<CR>
 nmap <Leader>rr "
 nmap <leader>wd :q<CR>
 nmap <leader>w <C-w>
+nmap <leader>fd :! rm "%"
 
 """" Plugins
 "############################## 

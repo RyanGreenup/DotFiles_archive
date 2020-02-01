@@ -1,6 +1,3 @@
-rename h20
-rename m2h
-rename m2hRaw
 find ns
 shell ns
 filter notes
@@ -20,7 +17,6 @@ search config
 open_with 
 search no
 filter no
-filter No
 filter R
 search tags
 filter index
@@ -40,11 +36,15 @@ rename ~Notes
 unmark 
 find ./ -name '\.fzf\.bash'
 filter bash
-filter 
 filter fzf
 shell 
 filter Te
 open_with h
 open_with dD
-delete
 open_with hhhh
+filter note
+filter No
+filter or
+filter 
+delete
+find s
