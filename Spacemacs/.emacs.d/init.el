@@ -445,6 +445,9 @@ same directory as the org-buffer and insert a link to this file."
 
 
 
+;;;;; Install org-ref
+;;;;; Set Agenda to be entire =~/notes/Org/= dir
+(setq org-agenda-files '("~/Notes/Org"))
 ;;;;;  Eval AFter Load (babel etc.)
 (with-eval-after-load 'org
 ;; all org stuff must be wrapped

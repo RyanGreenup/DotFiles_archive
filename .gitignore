@@ -1,2 +1,6 @@
 ./NeoVim/.vim/plugged/YouCompleteMe/
+./NeoVim/.vim/plugged/markdown-preview.nvim
+./NeoVim/.vim/plugged/jedi-vim
+./NeoVim/.vim/bundle
+./DoomEmacs/.emacs.d/.local
 
