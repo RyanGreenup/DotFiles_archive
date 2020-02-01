@@ -1,4 +1,3 @@
-rename h20
 rename m2h
 rename m2hRaw
 find ns
@@ -40,11 +39,12 @@ rename ~Notes
 unmark 
 find ./ -name '\.fzf\.bash'
 filter bash
-filter 
 filter fzf
 shell 
 filter Te
 open_with h
 open_with dD
-delete
 open_with hhhh
+filter vidar's invalid
+delete
+filter 
