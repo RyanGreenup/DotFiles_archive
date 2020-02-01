@@ -138,6 +138,8 @@ Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'jalvesaq/Nvim-R'
 Plug 'gaalcaras/ncm-R'
+"""""" CSV Vim
+ Plug 'chrisbra/csv.vim'
 """""" Linting
 Plug 'dense-analysis/ale'
 
