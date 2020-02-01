@@ -739,7 +739,7 @@ map <Space> <Leader>
 " Write file leader-clip-reymap
 "
 "
-nnoremap <Leader>fs :w<CR> 
+nnoremap <Leader>fs h:w<CR> 
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
