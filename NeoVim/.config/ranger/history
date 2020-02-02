@@ -1,5 +1,3 @@
-rename m2hRaw
-find ns
 shell ns
 filter notes
 search notes
@@ -45,6 +43,8 @@ open_with dD
 open_with hhhh
 filter vidar's invalid
 filter 
-delete
 
 filter ema
+filter em
+delete
+filter do

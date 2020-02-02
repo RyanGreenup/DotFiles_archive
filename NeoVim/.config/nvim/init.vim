@@ -142,7 +142,7 @@ Plug 'gaalcaras/ncm-R'
  Plug 'chrisbra/csv.vim'
 """""" Linting
 Plug 'dense-analysis/ale'
-
+autocmd BufEnter *.R :ALEDisable
 """"" Python-Mode
 Plug 'python-mode/python-mode'
 Plug 'davidhalter/jedi-vim'

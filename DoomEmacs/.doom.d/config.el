@@ -26,7 +26,7 @@
 (setq doom-theme 'doom-one)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/Notes/Org")
+(setq org-directory "~/org/")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -48,3 +48,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+(defadvice! debug-log (&rest _)
+  :before #'ws-butler-after-change
+  (message "-- %s %s %s"
+           (current-buffer)
+           buffer-file-name
+           major-mode))
