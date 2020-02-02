@@ -177,10 +177,10 @@
 (setq create-lockfiles nil) ;All the other crap didn't do anything, THIS is what fixed everything!!!
 ;;;;; Add Outline-Cycling
 ; by default =outline-mode= doesn't have cycling although =outshine= introduces this, =outshine= conflicts with =latex-mode=, this doesn't and just extends the default package (wheras outshine is a buggier newer implementation.)
-(eval-after-load 'outline
-  '(progn
-     (require 'outline-magic)
-     (define-key outline-minor-mode-map (kbd "<C-tab>") 'outline-cycle)))
+;(eval-after-load 'outline
+;  '(progn
+;     (require 'outline-magic)
+;     (define-key outline-minor-mode-map (kbd "<C-tab>") 'outline-cycle)))
 ;;;;; Jump to fold
 (evil-define-key 'normal evil-org-mode-map
 "zk" 'outline-up-heading
@@ -252,8 +252,8 @@
 
  ;;;; Code Folding Outshine
  ; Require packages for following code
- (require 'dash)
- (require 'outshine)
+; (require 'dash)
+; (require 'outshine)
 
  ;;;;;; Required for outshine
 ; (add-hook 'outline-minor-mode-hook 'outshine-mode)
@@ -272,23 +272,23 @@
 
 
  ;;;;;; Narrowing now works within the headline rather than requiring to be on it
- (advice-add 'outshine-narrow-to-subtree :before
-             (lambda (&rest args) (unless (outline-on-heading-p t)
-                                    (outline-previous-visible-heading 1))))
-
-
- (let ((kmap outline-minor-mode-map))
-   (define-key kmap (kbd "M-RET") 'outshine-insert-heading)
-   (define-key kmap (kbd "<backtab>") 'outshine-cycle-buffer)
-
-   ;; Evil outline navigation keybindings
-   (evil-define-key '(normal visual motion) kmap
-     "gh" 'outline-up-heading
-     "gj" 'outline-forward-same-level
-     "gk" 'outline-backward-same-level
-     "gl" 'outline-next-visible-heading
-     "gu" 'outline-previous-visible-heading))
-
+;     (advice-add 'outshine-narrow-to-subtree :before
+;                 (lambda (&rest args) (unless (outline-on-heading-p t)
+;                                        (outline-previous-visible-heading 1))))
+;
+;
+;     (let ((kmap outline-minor-mode-map))
+;       (define-key kmap (kbd "M-RET") 'outshine-insert-heading)
+;       (define-key kmap (kbd "<backtab>") 'outshine-cycle-buffer)
+;
+;       ;; Evil outline navigation keybindings
+;       (evil-define-key '(normal visual motion) kmap
+;         "gh" 'outline-up-heading
+;         "gj" 'outline-forward-same-level
+;         "gk" 'outline-backward-same-level
+;         "gl" 'outline-next-visible-heading
+;         "gu" 'outline-previous-visible-heading))
+;
 
 ;;;;; Temporary Buffer for ~helm-ag~
 ;  (custom-set-variables
@@ -301,8 +301,8 @@
 ;  (custom-set-variables
 ;   '(helm-ag-use-temp-buffer t))
 ;  ;;;;; org-wiki
-;  (require 'org-wiki)
-;   (setq org-wiki-location "~/Dropbox/Notes/Org")
+;;  (require 'org-wiki)
+   (setq org-wiki-location "~/Dropbox/Notes/Org")
 
 
 
@@ -319,10 +319,10 @@
 ;;;;; Use magic symbols
 ; for reference
 ;(require 'magic-latex-buffer)
-;(add-hook 'from-mode-hook 'what to do)
- ;pretty symbols enabled below
-;(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
-;(add-hook 'latex-mode-hook 'magic-latex-buffer)
+;   (add-hook 'from-mode-hook 'what to do)
+; pretty symbols enabled below
+(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
+(add-hook 'latex-mode-hook 'magic-latex-buffer)
 ;;;; Snippets
 ;;;;; Remove tab binding
 ; The default is a ghastly =M-/= in spacemacs so this is just an example
@@ -368,7 +368,7 @@
 
 ;;;; Org-Mode Settings
 ;;;;; Use `org-id' to make links
-(require 'org-id)
+;(require 'org-id)
 (setq org-id-link-to-org-use-id t)
 ;;;;; Insert ScreenShot
 (defun my-org-screenshot ()
@@ -389,11 +389,11 @@ same directory as the org-buffer and insert a link to this file."
 
 ;;;;;; LaTeX Export
 ; Export using the 'listings package
-(require 'ox-latex)
+;(require 'ox-latex)
 
 (setq org-latex-listings t)
-(add-to-list 'org-latex-packages-alist '("" "listings"))
-(add-to-list 'org-latex-packages-alist '("" "color"))
+;(add-to-list 'org-latex-packages-alist '("" "listings"))
+;(add-to-list 'org-latex-packages-alist '("" "color"))
 
 
 ; Export using the 'minted package (Using XeLaTeX)
@@ -425,7 +425,7 @@ same directory as the org-buffer and insert a link to this file."
 
 ; Bigger preview images (the default was too small, this wan't affect export)
 ; For Org
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
+;(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
 ; For latex-mode
 (set-default 'preview-scale-function 1.62178)
 
@@ -477,20 +477,6 @@ same directory as the org-buffer and insert a link to this file."
        (message "Custom header file %s doesnt exist")))))
 
 
-;;;;; Install org-ref
-
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
-(when (< emacs-major-version 24)
- ;;; For compatibility
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
-
-
-
-
-
-
 
 
 ;;;;; Install org-ref
@@ -539,7 +525,7 @@ same directory as the org-buffer and insert a link to this file."
 
 ;;;;;; org-attach image
 ; when you point to a link it will attach it to the file
- (require 'org-attach)
+ ;(require 'org-attach)
  (setq org-link-abbrev-alist '(("att" . org-attach-expand-link)))
 
 ;;;;;; Generate Random ID
