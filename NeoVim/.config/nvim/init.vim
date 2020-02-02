@@ -339,6 +339,9 @@ autocmd BufEnter *.cson :set syntax=markdown
 nnoremap <Leader>t :setlocal filetype=tex<CR>
 nnoremap <Leader>m :set syntax=markdown<CR> 
 nnoremap <Leader>m :setlocal filetype=markdown<CR> 
+nnoremap <C-x><C-t><C-m> :setlocal filetype=markdown<CR> 
+nnoremap <C-x><C-t><C-t> :setlocal filetype=tex<CR> 
+nnoremap <C-x><C-t><C-r> :e!<CR>
 
 "nnoremap <Leader>r :set syntax=expand('%:e')<CR> 
 "nnoremap <Leader>r :e!<CR>
