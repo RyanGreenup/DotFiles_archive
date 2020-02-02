@@ -417,8 +417,7 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent=2
 "let g:vim_markdown_new_list_item_indent
 if (&ft=='md' || &ft=='markdown')
-nnoremap <Leader>it :Tocv<CR>
-nmap ,it :Tocv<CR>
+nmap <Leader>it :Tocv<CR>
 nmap <leader>m2h "+y"!$HOME/bin/m2hRaw
 
 endif

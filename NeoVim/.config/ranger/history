@@ -1,23 +1,3 @@
-shell ns
-filter notes
-search notes
-rename css
-q
-search .confi
-search au
-search bin
-search 
-filter ser
-shell vim N
-search dropbox
-rename NotesBackup2020Jan
-rename ZZNotesBackup2020Jan
-search config
-open_with 
-search no
-filter no
-filter No
-filter R
 search tags
 filter index
 filter Ap
@@ -28,23 +8,43 @@ filter citep
 shell mkdir elpa
 cle
 filter cite
-w
 filter bin
-filter
 rename ~Notes
-unmark 
 find ./ -name '\.fzf\.bash'
 filter bash
 filter fzf
-shell 
 filter Te
 open_with h
 open_with dD
 open_with hhhh
 filter vidar's invalid
-filter 
 
 filter ema
 filter em
-delete
 filter do
+rename Statistics.pdf
+rename IntroDataSci.pdf
+rename MathModelling
+rename Java
+rename IntroDataSci
+shell 
+find y
+rename ComputerAlgebra
+rename Analysis
+search .
+filter .md
+rename 05_Continuity_Analysis.md
+filter
+search 02_
+filter 05
+unmark 
+filter 
+flat 0
+flat -1
+search notes
+filter notes
+delete
+rename 02_Sequences_and_
+filter 02
+rename 02_Sequences_and_Functions.md
+w
