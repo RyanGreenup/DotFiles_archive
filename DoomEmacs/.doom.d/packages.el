@@ -36,6 +36,7 @@
 (package! treemacs-magit)
 (package! outshine)
 (package! outline-magic)
+(package! indent-guide)
 ;(package! magic-latex-buffer)
 
 
