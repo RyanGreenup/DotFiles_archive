@@ -1,4 +1,3 @@
-rename m2h
 rename m2hRaw
 find ns
 shell ns
@@ -35,7 +34,6 @@ w
 filter bin
 filter
 rename ~Notes
-
 unmark 
 find ./ -name '\.fzf\.bash'
 filter bash
@@ -46,5 +44,7 @@ open_with h
 open_with dD
 open_with hhhh
 filter vidar's invalid
-delete
 filter 
+delete
+
+filter ema
