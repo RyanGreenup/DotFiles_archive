@@ -158,6 +158,9 @@ autocmd BufEnter *.R :imap <A--> <-
 imap <A-->  <- 
 " I've also got NCM-R under the NCM2 Stuff
 
+"""""" Codi REPL
+Plug 'metakirby5/codi.vim'
+
 """""" CSV Vim
  Plug 'chrisbra/csv.vim'
 """""" Linting
@@ -165,7 +168,7 @@ Plug 'dense-analysis/ale'
 autocmd BufEnter *.R :ALEDisable
 """"" Python-Mode
 Plug 'python-mode/python-mode'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 
 """"" AutoComplete (NCM2)
 " This Has No completion source for R
