@@ -127,6 +127,12 @@ Plug 'kyuhi/vim-emoji-complete'
 """"" Smooth Scroll
 Plug 'yuttie/comfortable-motion.vim'
 
+""""" Citations (Zotero)
+" I'm  not going to implement this just yet,
+" Pandoc will lead to failures all the time
+Plug 'jalvesaq/zotcite'
+Plug 'Shougo/unite.vim'
+Plug 'rafaqz/citation.vim'
 
 """"" Nvim-R
 Plug 'jalvesaq/Nvim-R'
@@ -143,8 +149,8 @@ autocmd BufEnter *.R :ALEDisable
 Plug 'python-mode/python-mode'
 Plug 'davidhalter/jedi-vim'
 
-""""" Deoplete
-"" This Has No completion source for R
+""""" AutoComplete (NCM2)
+" This Has No completion source for R
 " It does autosuggest the omni-completion
 " but I've switched to NCM2 below simply
 " for the R support.
@@ -208,7 +214,7 @@ Plug 'filipekiss/ncm2-look.vim'
 "Plug 'ncm2/ncm2-match-highlight'
 Plug 'fgrsnau/ncm2-otherbuf'
 
-""""" YouCompleteMe
+"""""" YouCompleteMe
 " I'm dropping this, it's too unstable, I blink and it's broken
 " It offers fuck-all for the time investment, I can't spend 
 " 3hours debugging this every 1-2 weeks, I just can't use it.
@@ -930,3 +936,4 @@ set modelineexpr  "This does all the magic folding
 " vim:fde=getline(v\:lnum)=~'^""'?'>'.(matchend(getline(v\:lnum),'""*')-2)\:'='
 "
 " Comments MUST be on the first column or this will break, that's the issue
+  
