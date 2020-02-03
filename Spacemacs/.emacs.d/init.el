@@ -218,7 +218,7 @@
  (interactive)
  (async-shell-command
 ;  (format "gvim +%d %s"
-  (format "gnome-terminal -- nvim +%d %s"
+  (format "kitty -e nvim +%d %s"
       (+ (if (bolp) 1 0) (count-lines 1 (point)))
       (shell-quote-argument buffer-file-name))))
 

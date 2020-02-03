@@ -1,6 +1,3 @@
-search config
-open_with 
-search no
 filter no
 filter No
 filter R
@@ -15,7 +12,6 @@ shell mkdir elpa
 cle
 filter cite
 w
-filter bin
 filter
 rename ~Notes
 unmark 
@@ -28,23 +24,27 @@ open_with h
 open_with dD
 open_with hhhh
 filter vidar's invalid
-filter 
 filter ema
 filter em
 filter do
-delete
 search index
 paste dest=fto
-filter pdf
 fzf
 fzf_rga_documents_search cauchy
-search 
 fzf_rga_documents_search 'limit first princ'
 flat -1
 flat 0
 fzf_rga_documents_search "limit first princ"
-
 fzf_rga_documents_search limit
 fzf_rga_documents_search convenient
 shell nvim GitCommitMessage.txt
 q
+delete
+search 
+search bind
+search bin
+filter bin
+filter pdf
+find s
+filter 
+
