@@ -57,7 +57,6 @@
 (add-hook 'sh-mode-hook 'indent-guide-mode)
 (add-hook 'sh-mode-hook 'flycheck-mode)
 (add-hook 'sh-mode-hook 'company-mode)
-(global-set-key (kbd "C-c v") 'open-term-copy-path)
 ;;;;; Auto Preview Math
 
 
@@ -211,8 +210,6 @@
  (filename)
  (open-gnome-terminal))
 
-(global-set-key (kbd "C-c v") 'open-term-copy-path)
-(global-set-key "\C-cv" 'open-term-copy-path)
 
 (defun my-open-current-file-in-vim ()
  (interactive)
@@ -222,6 +219,7 @@
       (+ (if (bolp) 1 0) (count-lines 1 (point)))
       (shell-quote-argument buffer-file-name))))
 
+(global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
 
 
