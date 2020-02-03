@@ -1,1 +1,0 @@
-../../../../FZF/.fzf/shell/key-bindings.fish

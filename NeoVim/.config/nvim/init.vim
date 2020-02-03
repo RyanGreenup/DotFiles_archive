@@ -170,6 +170,10 @@ autocmd BufEnter *.R :ALEDisable
 Plug 'python-mode/python-mode'
 "Plug 'davidhalter/jedi-vim'
 
+""""" Julia Syntax Highlighting
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'davidhalter/jedi-vim'
+
 """"" AutoComplete (NCM2)
 " This Has No completion source for R
 " It does autosuggest the omni-completion
