@@ -133,6 +133,24 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'jalvesaq/zotcite'
 Plug 'Shougo/unite.vim'
 Plug 'rafaqz/citation.vim'
+let g:citation_vim_cache_path='~/.vim/cacheForUniteCite/'
+let g:citation_vim_bibtex_file="~/Dropbox/Studies/Papers/references.bib"
+let g:citation_vim_mode="bibtex"
+let g:citation_vim_outer_prefix="["
+let g:citation_vim_inner_prefix="@"
+let g:citation_vim_suffix="]"
+let g:citation_vim_et_al_limit=2
+nmap <leader>u [unite]
+nnoremap [unite] <nop>
+nnoremap <silent>[unite]c       :<C-u>Unite -buffer-name=citation-start-insert -default-action=append      citation/key<cr>
+nnoremap <silent>[unite]co :<C-u>Unite -input=<C-R><C-W> -default-action=start -force-immediately citation/file<cr>
+nnoremap <silent><leader>cu :<C-u>Unite -input=<C-R><C-W> -default-action=start -force-immediately citation/url<cr>
+nnoremap <silent>[unite]cf :<C-u>Unite -input=<C-R><C-W> -default-action=file -force-immediately citation/file<cr>
+nnoremap <silent>[unite]ci :<C-u>Unite -input=<C-R><C-W> -default-action=preview -force-immediately citation/combined<cr>
+nnoremap <silent>[unite]cp :<C-u>Unite -default-action=yank citation/your_source_here<cr>
+nnoremap <silent>[unite]cs :<C-u>Unite  -default-action=yank  citation/key:<C-R><C-W><cr>
+vnoremap <silent>[unite]cs :<C-u>exec "Unite  -default-action=start citation/key:" . escape(@*,' ') <cr>
+
 
 """"" Nvim-R
 Plug 'jalvesaq/Nvim-R'
