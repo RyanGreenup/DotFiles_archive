@@ -132,12 +132,8 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'jalvesaq/Nvim-R'
 autocmd BufEnter *.R :imap <A--> <-
 imap <A-->  <- 
-"""""" Ncm-R
-Plug 'gaalcaras/ncm-R'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'jalvesaq/Nvim-R'
-Plug 'gaalcaras/ncm-R'
+" I've also got NCM-R under the NCM2 Stuff
+
 """""" CSV Vim
  Plug 'chrisbra/csv.vim'
 """""" Linting
@@ -148,14 +144,69 @@ Plug 'python-mode/python-mode'
 Plug 'davidhalter/jedi-vim'
 
 """"" Deoplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+"" This Has No completion source for R
+" It does autosuggest the omni-completion
+" but I've switched to NCM2 below simply
+" for the R support.
+"if has('nvim')
+"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+"  Plug 'Shougo/deoplete.nvim'
+"  Plug 'roxma/nvim-yarp'
+"  Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+"let g:deoplete#enable_at_startup = 1
+"call deoplete#custom#option('omni_patterns', {
+"		\ 'r': '[^. *\t]\.\w*',
+"		\})
+"
+
+
+"""""" NCM2
+Plug 'ncm2/ncm2'
+
+if !has('nvim')
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
+Plug 'Shougo/neco-vim'
+Plug 'roxma/nvim-yarp'
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+"
+
+""""""" Sources
+" R
+Plug 'gaalcaras/ncm-R'
+" Go
+Plug 'ncm2/ncm2-go'
+" Python
+Plug 'ncm2/ncm2-jedi'
+" Java
+Plug 'ObserverOfTime/ncm2-jc2' 
+" CSS
+Plug 'ncm2/ncm2-cssomni'
+" VimScript
+Plug 'ncm2/ncm2-vim'
+" UltiSnips Completion Source
+Plug 'ncm2/ncm2-ultisnips'
+
+"""""""" General 
+" Words in Buffer
+Plug 'ncm2/ncm2-bufword'
+" Path 
+Plug 'ncm2/ncm2-path'
+
+"""""""" Potentially Annoying
+" Single Line Clipboard Looks in clipboard history
+"Plug 'svermeulen/ncm2-yoink' " This caused an error
+" Word Completion Looks up possible words
+Plug 'filipekiss/ncm2-look.vim'
+" Highlights what caused the match
+"Plug 'ncm2/ncm2-match-highlight'
+Plug 'fgrsnau/ncm2-otherbuf'
 
 """"" YouCompleteMe
 " I'm dropping this, it's too unstable, I blink and it's broken
@@ -171,7 +222,6 @@ let g:deoplete#enable_at_startup = 1
 " cpanm
 
 
-""""" DeoPlete
 
 """"" LaTeX Stuff
 " 
@@ -834,10 +884,10 @@ nnoremap <leader>bW :Buffers<CR>
 
 """" Deoplete Bindings
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#close_popup() . "\<CR>"
-endfunction
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function() abort
+"  return deoplete#close_popup() . "\<CR>"
+"endfunction
 
 """ Themes 
 " Theme Must go at the bottom
