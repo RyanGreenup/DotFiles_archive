@@ -51,6 +51,9 @@
 ;;; My Settings
 ;;;; Housekeeping
 ;;;; IDE Stuff
+;;;;; Golden Ratio Windo Management
+(require 'golden-ratio)
+(golden-ratio-mode 1)
 ;;;;; Hook start indent-guide-mode in shell and py mode
 ;;;;; Fold indents
 ;;;;;; add a hook
@@ -106,6 +109,23 @@
 
 (provide 'org-equation-live-preview)
 
+;;;; Org-Brain
+;(push '("b" "Brain" plain (function org-brain-goto-end)
+;        "* %i%?" :empty-lines 1)
+;      org-capture-templates)
+(use-package org-brain :ensure t
+  :init
+  (setq org-brain-path "~/Notes/Org")
+  ;; For Evil users
+  (with-eval-after-load 'evil
+    (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
+  :config
+  (setq org-id-track-globally t)
+  (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-title-max-length 12)
+  (setq org-brain-include-file-entries nil
+        org-brain-file-entries-use-title nil))
 ;;;; AutoExport OrgMode to HTML
 (defun toggle-html-export-on-save ()
   "Enable or disable export HTML when saving current buffer."
@@ -215,9 +235,20 @@
  (interactive)
  (async-shell-command
 ;  (format "gvim +%d %s"
-  (format "kitty -e nvim +%d %s"
+  (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
       (+ (if (bolp) 1 0) (count-lines 1 (point)))
       (shell-quote-argument buffer-file-name))))
+
+
+; no popup
+; https://stackoverflow.com/a/22982525
+(defun my-open-current-file-in-vim ()
+  (interactive)
+  (call-process-shell-command
+                                        ;  (format "gvim +%d %s"
+   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+           (+ (if (bolp) 1 0) (count-lines 1 (point)))
+           (shell-quote-argument buffer-file-name))))
 
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
@@ -295,7 +326,7 @@
 ;;;; Wiki Stuff
 ; <Spc> w w opens the wiki file
 (spacemacs/set-leader-keys "ww" (lambda () (interactive) (find-file "~/Notes/MD/notes/index.md")))
-(spacemacs/set-leader-keys "wo" (lambda () (interactive) (find-file "~/Notes/Org/0index.org")))
+(spacemacs/set-leader-keys "wo" (lambda () (interactive) (find-file "~/Notes/Org/index.org")))
 ;;;;; Show preview Buffer Helm-ag
 (custom-set-variables
  '(helm-ag-use-temp-buffer t))
@@ -397,6 +428,7 @@ same directory as the org-buffer and insert a link to this file."
 
 ; Export using the 'minted package (Using XeLaTeX)
 ; I have templates for listings but what's annoying is that it only supports a few languages, minted has way more support
+(add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
 (setq org-latex-listings 'minted
      org-latex-packages-alist '(("" "minted"))
      org-latex-pdf-process
@@ -408,6 +440,7 @@ same directory as the org-buffer and insert a link to this file."
  (setq org-babel-latex-htlatex "htlatex")
  (defmacro by-backend (&rest body)
    `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
+
 
 ;;;;; use =dvisvgm= not =dvipng= for math preview
                                        ;; Theres a problem with =dvipng= in =org-mode= where it will not preview choose any foreground colour other than black despite the settings, this is not related to ghostscript an is a bug inside org-mode, instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.

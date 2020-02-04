@@ -1,18 +1,4 @@
-filter No
-filter R
-search tags
-filter index
-filter Ap
-rename marktext
-find bin
-find binlll
-filter citep
-shell mkdir elpa
-cle
-filter cite
-w
 filter bin
-filter
 rename ~Notes
 unmark 
 find ./ -name '\.fzf\.bash'
@@ -24,7 +10,6 @@ open_with h
 open_with dD
 open_with hhhh
 filter vidar's invalid
-filter 
 filter ema
 filter em
 filter do
@@ -46,5 +31,20 @@ filter conf
 filter con
 filter fis
 filter omf
-delete
 q
+shell vim PDF
+rename PDFNote
+rename PDF
+w
+filter .ema
+filter .org
+shell touch .org-id-locations
+filter org
+filter Org
+filter
+filter 
+filter Fun
+delete
+filter natu
+shell mkdir elpa
+shell mkdir citepro

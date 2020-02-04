@@ -66,7 +66,7 @@
 (add-hook 'sh-mode-hook 'indent-guide-mode)
 (add-hook 'sh-mode-hook 'flycheck-mode)
 (add-hook 'sh-mode-hook 'company-mode)
-(global-set-key (kbd "C-c v") 'open-term-copy-path)
+;(global-set-key (kbd ";C-c v") 'open-term-copy-path)
 ;;;;; Auto Preview Math
 
 
@@ -220,17 +220,18 @@
  (filename)
  (open-gnome-terminal))
 
-(global-set-key (kbd "C-c v") 'open-term-copy-path)
+;(global-set-key (kbd "C-c v") 'open-term-copy-path)
 (global-set-key "\C-cv" 'open-term-copy-path)
 
 (defun my-open-current-file-in-vim ()
  (interactive)
  (async-shell-command
 ;  (format "gvim +%d %s"
-  (format "gnome-terminal -- nvim +%d %s"
+  (format "~/.local/bin/kitty -e nvim +%d %s"
       (+ (if (bolp) 1 0) (count-lines 1 (point)))
       (shell-quote-argument buffer-file-name))))
 
+(global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
 
 
@@ -398,6 +399,7 @@ same directory as the org-buffer and insert a link to this file."
 
 ; Export using the 'minted package (Using XeLaTeX)
 ; I have templates for listings but what's annoying is that it only supports a few languages, minted has way more support
+(add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
 (setq org-latex-listings 'minted
      org-latex-packages-alist '(("" "minted"))
      org-latex-pdf-process
