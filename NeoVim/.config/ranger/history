@@ -36,7 +36,6 @@ shell vim PDF
 rename PDFNote
 rename PDF
 w
-filter .ema
 filter .org
 shell touch .org-id-locations
 filter org
@@ -48,3 +47,4 @@ delete
 filter natu
 shell mkdir elpa
 shell mkdir citepro
+filter .ema
