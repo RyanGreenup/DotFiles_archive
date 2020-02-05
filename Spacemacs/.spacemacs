@@ -112,7 +112,7 @@ This function should only modify configuration layer settings."
                     (treemacs-magit)
                     (outshine)
                     (outline-magic)
-
+                    (org-pdfview)
                                       )
 
    ;; A list of packages that cannot be updated.

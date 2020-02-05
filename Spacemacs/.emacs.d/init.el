@@ -331,7 +331,7 @@
 (custom-set-variables
  '(helm-ag-use-temp-buffer t))
 ;;;;; org-wiki
-(require 'org-wiki)
+(require 'org-wiki) 
  (setq org-wiki-location "~/Dropbox/Notes/Org")
 
 
