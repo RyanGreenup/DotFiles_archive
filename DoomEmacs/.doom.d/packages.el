@@ -63,7 +63,8 @@
 (package! citeproc)
 (package! citeproc-org)
 (package! minimap)
-;(package! magic-latex-buffer)
+(package! golden-ratio)
+(package! magic-latex-buffer)
 
 
 

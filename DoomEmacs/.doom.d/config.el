@@ -61,6 +61,7 @@
 ;;; My Settings
 ;;;; Housekeeping
 ;;;; IDE Stuff
+(golden-ratio-mode 1)
 ;;;;; Hook start indent-guide-mode in shell and py mode
 ;;;;; Fold indents
 ;;;;;; add a hook
@@ -226,7 +227,7 @@
 
 (defun my-open-current-file-in-vim ()
  (interactive)
- (async-shell-command
+ (call-process-shell-command
 ;  (format "gvim +%d %s"
   (format "~/.local/bin/kitty -e nvim +%d %s"
       (+ (if (bolp) 1 0) (count-lines 1 (point)))
