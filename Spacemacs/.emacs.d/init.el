@@ -532,7 +532,12 @@ same directory as the org-buffer and insert a link to this file."
 
 
 
-;;;;; Install org-ref
+;;;;; Use PDF-Tools
+(eval-after-load 'org '(require 'org-pdfview))
+
+(add-to-list 'org-file-apps 
+             '("\\.pdf\\'" . (lambda (file link)
+                               (org-pdfview-open link))))
 ;;;;; Set Agenda to be entire =~/notes/Org/= dir
 (setq org-agenda-files '("~/Notes/Org"))
 ;;;;;  Eval AFter Load (babel etc.)
