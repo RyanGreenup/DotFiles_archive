@@ -50,6 +50,8 @@
 
 ;;; My Settings
 ;;;; Housekeeping
+;;;;; Defaults
+(auto-fill-mode 1)
 ;;;; IDE Stuff
 ;;;;; Golden Ratio Windo Management
 (require 'golden-ratio)

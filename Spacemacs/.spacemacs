@@ -112,6 +112,8 @@ This function should only modify configuration layer settings."
                     (treemacs-magit)
                     (outshine)
                     (outline-magic)
+                    (emojify)
+                    (helm-unicode)
 
                                       )
 
