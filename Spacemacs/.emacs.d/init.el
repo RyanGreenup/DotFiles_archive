@@ -345,7 +345,9 @@
 
 (with-eval-after-load 'tex
   (add-to-list 'safe-local-variable-values
-               '(TeX-command-extra-options . "-shell-escape")))
+               '(TeX-command-extra-options . "-shell-escape")
+               '(TeX-command-extra-options . "-synctex=1")))
+;synctex is necessary to play ball with PDF tools
 ;;;;; Use magic symbols
 ; for reference
 (require 'magic-latex-buffer)
