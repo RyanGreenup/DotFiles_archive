@@ -114,7 +114,7 @@ This function should only modify configuration layer settings."
                     (outline-magic)
                     (emojify)
                     (helm-unicode)
-
+                    (org-pdfview)
                                       )
 
    ;; A list of packages that cannot be updated.
