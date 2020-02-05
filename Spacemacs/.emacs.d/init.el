@@ -598,6 +598,10 @@ same directory as the org-buffer and insert a link to this file."
      (dotimes (_i (+ (random (- (or max-length 10) (or min-length 5) -1)) (or min-length 5)))
        (push (aref our-charset (random our-charset-length)) string))
      (concat string)))
+
+(Add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
+
+
 ;;;;;; Closing )
 )
 (put 'TeX-narrow-to-group 'disabled nil)
