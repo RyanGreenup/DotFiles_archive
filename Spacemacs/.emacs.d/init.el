@@ -398,11 +398,16 @@
 
 
 
+;;;; Helm Settings
+; open swoop and rifle to the left
+(setq helm-split-window-default-side 'left)
+(helm-autoresize-mode 1)
 ;;;; Org-Mode Settings
 ;;;;; Identity and Directory
 (setq user-full-name "Ryan G"
       user-mail-address "exogenesis@protonmail.com")
 (setq org-directory "~/Notes/Org/")
+(setq org-agenda-files '("~/Notes/Org"))
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type `relative)
@@ -452,8 +457,9 @@ same directory as the org-buffer and insert a link to this file."
 
 
 ;;;;; use =dvisvgm= not =dvipng= for math preview
-                                       ;; Theres a problem with =dvipng= in =org-mode= where it will not preview choose any foreground colour other than black despite the settings, this is not related to ghostscript an is a bug inside org-mode, instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
+;; Theres a problem with =dvipng= in =org-mode= where it will not preview choose any foreground colour other than black despite the settings, this is not related to ghostscript an is a bug inside org-mode, instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
 (setq org-preview-latex-default-process `dvisvgm)
+;(setq org-preview-latex-default-process `dvipng)
 
 ;;;;;; This is to preview tikz
 (add-to-list 'org-latex-packages-alist
@@ -462,13 +468,14 @@ same directory as the org-buffer and insert a link to this file."
 (eval-after-load "preview"
   '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
 ;this might conflict with the setting above [[use =dvisvgm= not =dvipng= for math preview]]
-(setq org-latex-create-formula-image-program 'imagemagick)
+;(setq org-latex-create-formula-image-program 'imagemagick)
 
 ; Bigger preview images (the default was too small, this wan't affect export)
 ; For Org
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
+; This just doesn't look right
+;(setq org-format-latex-options (plist-put org-format-latex-options :background "Transparent"))
 ; For latex-mode
-(set-default 'preview-scale-function 1.62178)
 
 ;;;;; Prettify by Default
 (add-hook 'TeX-mode-hook 'prettify-symbols-mode )
