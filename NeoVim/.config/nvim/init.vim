@@ -468,7 +468,7 @@ let g:vimtex_compiler_latexmk = {
 "disable errors but for good cause
 " to view quickfix warning buffer use `<leader>le` 
 " they disappear with =fks= mode
-let g:vimtex_quickfix_enabled=0
+"let g:vimtex_quickfix_enabled=0
 
 
 """"" Castel Dev

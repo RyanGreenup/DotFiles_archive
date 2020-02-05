@@ -397,6 +397,13 @@
 
 
 ;;;; Org-Mode Settings
+;;;;; Identity and Directory
+(setq user-full-name "Ryan G"
+      user-mail-address "exogenesis@protonmail.com")
+(setq org-directory "~/Notes/Org/")
+;; If you want to change the style of line numbers, change this to `relative' or
+;; `nil' to disable it:
+(setq display-line-numbers-type `relative)
 ;;;;; Use `org-id' to make links
 (require 'org-id)
 (setq org-id-link-to-org-use-id t)
