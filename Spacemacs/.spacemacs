@@ -118,6 +118,9 @@ This function should only modify configuration layer settings."
      (emojify)
      (restart-emacs)
      (indent-guide)
+     (highlight-numbers)
+     (rainbow-delimiters)
+     (rainbow-mode)
    )
 
    ;; A list of packages that cannot be updated.
@@ -536,7 +539,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(indent-guide restart-emacs nrepl-eval-sexp-fu powerline-evil citeproc-org org-wiki yasnippet-snippets yapfify yaml-mode xterm-color which-key web-mode web-beautify vterm vimrc-mode use-package treemacs-projectile treemacs-magit treemacs-evil toml-mode toc-org terminal-here tagedit smeargle slim-mode shell-pop scss-mode sass-mode ranger racer pytest pyenv-mode py-isort pug-mode prettier-js pippel pipenv pip-requirements pcre2el ox-gfm overseer outshine outline-magic orgit org-ref org-re-reveal org-present org-pomodoro org-pdfview org-mime org-download org-cliplink org-bullets org-brain nodejs-repl nameless multi-term mmm-mode markdown-toc magit-svn magit-section magit-gitflow magic-latex-buffer macrostep livid-mode live-py-mode json-navigator json-mode js2-refactor js-doc insert-shebang importmagic impatient-mode hyperbole hybrid-mode helm-xref helm-themes helm-swoop helm-pydoc helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-package flycheck-elsa flycheck-bashate fish-mode evil-org evil-mc evil-magit ess-R-data-view eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dracula-theme dotenv-mode diminish darkroom dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-reftex company-lua company-auctex company-anaconda citeproc cargo browse-at-remote blacken bind-map auto-yasnippet auto-dictionary auto-compile auctex-latexmk ace-jump-helm-line ac-ispell)))
+   '(rainbow-mode rainbow-delimiters highlight-numbers indent-guide restart-emacs nrepl-eval-sexp-fu powerline-evil citeproc-org org-wiki yasnippet-snippets yapfify yaml-mode xterm-color which-key web-mode web-beautify vterm vimrc-mode use-package treemacs-projectile treemacs-magit treemacs-evil toml-mode toc-org terminal-here tagedit smeargle slim-mode shell-pop scss-mode sass-mode ranger racer pytest pyenv-mode py-isort pug-mode prettier-js pippel pipenv pip-requirements pcre2el ox-gfm overseer outshine outline-magic orgit org-ref org-re-reveal org-present org-pomodoro org-pdfview org-mime org-download org-cliplink org-bullets org-brain nodejs-repl nameless multi-term mmm-mode markdown-toc magit-svn magit-section magit-gitflow magic-latex-buffer macrostep livid-mode live-py-mode json-navigator json-mode js2-refactor js-doc insert-shebang importmagic impatient-mode hyperbole hybrid-mode helm-xref helm-themes helm-swoop helm-pydoc helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-package flycheck-elsa flycheck-bashate fish-mode evil-org evil-mc evil-magit ess-R-data-view eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dracula-theme dotenv-mode diminish darkroom dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-reftex company-lua company-auctex company-anaconda citeproc cargo browse-at-remote blacken bind-map auto-yasnippet auto-dictionary auto-compile auctex-latexmk ace-jump-helm-line ac-ispell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -544,3 +547,4 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+

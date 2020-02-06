@@ -267,6 +267,8 @@
 ;; instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
 (setq org-preview-latex-default-process `dvisvgm)
 ;;;;; Exports
+;;;;; HTML Attachment Links
+(setq org-attach-dir-relative t)
 ;;;;;; Export-all
 (defun publish-dir-org ()
   "Publish all org files in a directory"
