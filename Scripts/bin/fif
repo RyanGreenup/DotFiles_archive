@@ -1,22 +1,18 @@
-#!/bin/bash
+#!/bin/zsh
 # Don't forget to adjust the permissions with:
 #chmod +x ~/somecrazyfolder/script1
 
 
 ## Test for Dependencies
 
- command -v rg >/dev/null 2>&1 || { echo >&2 "I require RipGrep but it's not installed.  Aborting."; exit 1; }
-command -v highlight >/dev/null 2>&1 || { echo >&2 "I require highlight but it's not installed. install it with sudo apt install highlight  Aborting."; exit 1; }
-command -v fzf >/dev/null 2>&1 || { echo >&2 "I require fzf but it's not installed.  Aborting."; exit 1; }
+  command -v rg >/dev/null 2>&1 || { echo >&2 "I require RipGrep but it's not installed.  Aborting."; exit 1; }
+ command -v highlight >/dev/null 2>&1 || { echo >&2 "I require highlight but it's not installed. install it with sudo apt install highlight  Aborting."; exit 1; }
+ command -v fzf >/dev/null 2>&1 || { echo >&2 "I require fzf but it's not installed.  Aborting."; exit 1; }
 
 #if [[  !(command -v highlight) ]]; then
 #	echo "you need to install highlight first"
 
 ## Program 
-
-rgf='rg --files-with-matches --no-messages'
-
-
 
 ### Input Test
 # Theres no point using this if there is no recursive term to search for,
@@ -24,9 +20,11 @@ rgf='rg --files-with-matches --no-messages'
 #  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
 
 ### Searching
-rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+#
+rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1'"
 
-
+# Breaks in Fish because `or` not `||`
+# rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 
 # if [[ "$1" == "" ]]; then
 # 	echo "Warning: No Search Arguments Given"
