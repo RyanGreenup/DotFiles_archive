@@ -58,7 +58,8 @@
 (setq helm-ff-auto-update-initial-value t)
 ;; Display Below
 ;;(setq helm-split-window-default-side 'left)
-(setq helm-split-window-default-side 'below)
+;; I think Helm might automatically decide given resolution???
+;; (setq helm-split-window-default-side 'below)
 ;(helm-autoresize-mode 1)
 ;;;;; Golden Ratio Windo Management
 (require 'golden-ratio)
