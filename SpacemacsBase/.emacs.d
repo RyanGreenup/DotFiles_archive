@@ -1,1 +1,0 @@
-../Spacemacs/.emacs.d
