@@ -119,6 +119,8 @@
 (spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
 
 
+;; Change this if every you want to actually edit the symlink
+(setq vc-follow-symlinks t)
 ;;;; Programming
 (setq-default auto-fill-function 'do-auto-fill)
 ;;;;; ESS and R Stuff
