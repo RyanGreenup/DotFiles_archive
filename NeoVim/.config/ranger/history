@@ -1,50 +1,50 @@
-filter bin
-rename ~Notes
-unmark 
-find ./ -name '\.fzf\.bash'
-filter bash
-filter fzf
-shell 
-filter Te
-open_with h
-open_with dD
-open_with hhhh
-filter vidar's invalid
-filter ema
-filter em
-filter do
-search index
-paste dest=fto
-filter pdf
-fzf
-fzf_rga_documents_search cauchy
-fzf_rga_documents_search 'limit first princ'
-flat -1
-flat 0
-fzf_rga_documents_search "limit first princ"
-fzf_rga_documents_search limit
-fzf_rga_documents_search convenient
-shell nvim GitCommitMessage.txt
-
-search 
-filter conf
-filter con
-filter fis
-filter omf
-q
-shell vim PDF
-rename PDFNote
-rename PDF
-w
-filter .org
 shell touch .org-id-locations
 filter org
 filter Org
-filter
-filter 
 filter Fun
-delete
 filter natu
 shell mkdir elpa
 shell mkdir citepro
 filter .ema
+filzf
+flat 0
+filter
+filter med
+filter svg
+filter .md
+filter pdf
+filter .pdf
+shell Calculus
+shell mkdir Calculus
+rename SequencesAndFunctions.pdf
+rename SupremaAndInfima.pdf
+shell 
+rename ProvingLimitFromFirstPrinciple04.pdf
+rename SequencesAndFunctions02.pdf
+rename SupremaAndInfima02-3.pdf
+rename 3.5CauchyCriterionFirstPrinciples.pdf
+rename 03_Wk4_Note
+rename 04_Limits.pdf
+shell mkdir
+shell mk Complex
+shell mkdir Complex
+rename 07_ComplexVariables
+open_with 
+rename 07_ComplexVariables.pdf
+rename 07_ComplexNumbers.pdf
+rename 08_complexVariables.pdf
+rename 09_ElementaryFunctions.pdf
+rename 09_functions.pdf
+rename 08-2_ElementaryFunctionsExample.pdf
+rename 10_integralsComplex.pdf
+rename 08-2FunctionsofComplexVar.pdf
+shell mkdir Analysis
+bulkrename 
+flat -1
+filter f_
+delete
+filter 
+find sk
+unmark 
+
+q

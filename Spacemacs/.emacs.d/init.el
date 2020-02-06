@@ -51,7 +51,8 @@
 
 ;;; My settings
 ; Load last location
-(desktop-save-mode 1)
+;; this makes loading slower
+;; (desktop-save-mode 1)
 ;;;; Window/Folding Settings
 ;;;;; Helm Settings
 ;; Auto Complete Path
@@ -119,6 +120,7 @@
 
 
 ;;;; Programming
+(setq-default auto-fill-function 'do-auto-fill)
 ;;;;; ESS and R Stuff
 ;; R Binding for <-
  ;; https://develop.spacemacs.org/layers/+lang/ess/README.html
@@ -265,6 +267,17 @@
 ;; instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
 (setq org-preview-latex-default-process `dvisvgm)
 ;;;;; Exports
+;;;;;; Export-all
+(defun publish-dir-org ()
+  "Publish all org files in a directory"
+  (interactive)
+  (save-excursion
+    (mapc
+     (lambda (file)
+       (with-current-buffer
+           (find-file-noselect file)
+         (org-export-as-html-batch)))
+     (file-expand-wildcards  "*.org")))) 
 ;;;;;; 5. Tolerate broken links
 (require 'org-ref)
 (setq org-export-with-broken-links t)

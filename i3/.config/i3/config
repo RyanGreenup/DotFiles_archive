@@ -62,7 +62,7 @@ floating_modifier $mod
 bindsym Control+mod1+t exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -391,7 +391,9 @@ exec firefox https://i3wm.org/docs/refcard.html
 exec https://i3wm.org/docs/userguide.html#_the_tree_consists_of_containers
 exec signal-desktop
 exec (dropbox start)
-exec gnome-terminal
+# exec gnome-terminal
+exec kitty
+exec emacs
 
 ### Remember Windows (Resurrect)
 ### Colour focused windows
