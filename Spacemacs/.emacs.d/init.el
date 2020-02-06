@@ -48,7 +48,6 @@
         (message "Starting a server...")
         (server-start)))))
 
-<<<<<<< HEAD
 
 ;;; My settings
 ; Load last location
@@ -61,13 +60,6 @@
 ;;(setq helm-split-window-default-side 'left)
 (setq helm-split-window-default-side 'below)
 ;(helm-autoresize-mode 1)
-=======
-;;; My Settings
-;;;; Housekeeping
-;;;;; Defaults
-(auto-fill-mode 1)
-;;;; IDE Stuff
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
 ;;;;; Golden Ratio Windo Management
 (require 'golden-ratio)
 (golden-ratio-mode 1)
@@ -213,15 +205,7 @@
 ;; This breaks gh-pages
 (setq create-lockfiles nil) ;All the other crap didn't do anything, THIS is what fixed everything!!!
 
-<<<<<<< HEAD
 ;;;; Org-Mode
-=======
-;;;; Helm Settings
-; open swoop and rifle to the left
-(setq helm-split-window-default-side 'left)
-(helm-autoresize-mode 1)
-;;;; Org-Mode Settings
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
 ;;;;; Identity and Directory
 (setq user-full-name "Ryan G"
       user-mail-address "exogenesis@protonmail.com")
@@ -253,71 +237,25 @@
 ;;  (insert (concat "[[" filename "]]"))
 ;;  (org-display-inline-images))
 ;;;;; Run Code without prompt
-<<<<<<< HEAD
 (setq org-confirm-babel-evaluate nil)
 ;;;;; In Buffer Format
 ;;;;;; Prettify by Default
 (add-hook 'TeX-mode-hook 'prettify-symbols-mode )
 (add-hook 'org-mode-hook 'prettify-symbols-mode )
-=======
-   (setq org-confirm-babel-evaluate nil)
-
-;;;;;; LaTeX Export
-; Export using the 'listings package
-(require 'ox-latex)
-
-(setq org-latex-listings t)
-(add-to-list 'org-latex-packages-alist '("" "listings"))
-(add-to-list 'org-latex-packages-alist '("" "color"))
-
-
-; Export using the 'minted package (Using XeLaTeX)
-; I have templates for listings but what's annoying is that it only supports a few languages, minted has way more support
-(add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
-(setq org-latex-listings 'minted
-     org-latex-packages-alist '(("" "minted"))
-     org-latex-pdf-process
-     '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
-       "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
-
-;;;;;; Tikz
-;Backend Test
- (setq org-babel-latex-htlatex "htlatex")
- (defmacro by-backend (&rest body)
-   `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
-
-
-;;;;; use =dvisvgm= not =dvipng= for math preview
-;; Theres a problem with =dvipng= in =org-mode= where it will not preview choose any foreground colour other than black despite the settings, this is not related to ghostscript an is a bug inside org-mode, instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
-(setq org-preview-latex-default-process `dvisvgm)
-;(setq org-preview-latex-default-process `dvipng)
-
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
 ;;;;;; This is to preview tikz
 (add-to-list 'org-latex-packages-alist
              '("" "tikz" t))
 
 (eval-after-load "preview"
   '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
-<<<<<<< HEAD
                                         ;this might conflict with the setting above [[use =dvisvgm= not =dvipng= for math preview]]
 (setq org-latex-create-formula-image-program 'imagemagick)
-=======
-;this might conflict with the setting above [[use =dvisvgm= not =dvipng= for math preview]]
-;(setq org-latex-create-formula-image-program 'imagemagick)
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
 
                                         ; Bigger preview images (the default was too small, this wan't affect export)
                                         ; For Org
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
-<<<<<<< HEAD
                                         ; For latex-mode
 (set-default 'preview-scale-function 1.62178)
-=======
-; This just doesn't look right
-;(setq org-format-latex-options (plist-put org-format-latex-options :background "Transparent"))
-; For latex-mode
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
 
 ;;;;;; use =dvisvgm= not =dvipng= for math preview
 ;; Theres a problem with =dvipng= in =org-mode= where it will not

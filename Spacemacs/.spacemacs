@@ -96,7 +96,6 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
 
-<<<<<<< HEAD
      (yasnippet-snippets)
      (citeproc)
      (golden-ratio)
@@ -120,28 +119,6 @@ This function should only modify configuration layer settings."
      (restart-emacs)
      (indent-guide)
    )
-=======
-                    (yasnippet-snippets)
-                    (citeproc)
-                    (golden-ratio)
-                    (hyperbole)
-                    (darkroom)
-                    (dracula-theme)
-                    (ranger)
-                    (org-wiki)
-                    (citeproc-org)
-                    (treemacs
-                      :variables treemacs-use-git-mode 'deferred)
-                    (treemacs-evil)
-                    (treemacs-projectile)
-                    (treemacs-magit)
-                    (outshine)
-                    (outline-magic)
-                    (emojify)
-                    (helm-unicode)
-                    (org-pdfview)
-                                      )
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -558,14 +535,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-<<<<<<< HEAD
-=======
- '(evil-want-Y-yank-to-eol nil)
- '(helm-ag-use-temp-buffer t)
- '(helm-split-window-default-side 'left)
- '(org-agenda-files
-   '("/home/ryan/Notes/Org/02_Practical_org.org" "/home/ryan/Notes/Org/1.org" "/home/ryan/Notes/Org/8443f5ac-1a3b-491a-84b3-6178ba0e571c.org" "/home/ryan/Notes/Org/AbstractAlgebraNotes.org" "/home/ryan/Notes/Org/CSS.org" "/home/ryan/Notes/Org/Converted_Markdown_to_Test_Minted.org" "/home/ryan/Notes/Org/DataVizGGPlot2.org" "/home/ryan/Notes/Org/Fundamental_Theorem_of_Calculus.org" "/home/ryan/Notes/Org/NoteTaking.org" "/home/ryan/Notes/Org/Stats.org" "/home/ryan/Notes/Org/StatsExport.org.org" "/home/ryan/Notes/Org/StatsExport2.org" "/home/ryan/Notes/Org/TSANotes.org" "/home/ryan/Notes/Org/VimNotes.org" "/home/ryan/Notes/Org/abs2delme.org" "/home/ryan/Notes/Org/inbox.org" "/home/ryan/Notes/Org/index.org" "/home/ryan/Notes/Org/init.org" "/home/ryan/Notes/Org/manual.org" "/home/ryan/Notes/Org/notes.org" "/home/ryan/Notes/Org/scratch.org" "/home/ryan/Notes/Org/test27272.org"))
->>>>>>> df8cdb63102f8cff7c2fce5ad6c61c3b1c9127a5
  '(package-selected-packages
    '(indent-guide restart-emacs nrepl-eval-sexp-fu powerline-evil citeproc-org org-wiki yasnippet-snippets yapfify yaml-mode xterm-color which-key web-mode web-beautify vterm vimrc-mode use-package treemacs-projectile treemacs-magit treemacs-evil toml-mode toc-org terminal-here tagedit smeargle slim-mode shell-pop scss-mode sass-mode ranger racer pytest pyenv-mode py-isort pug-mode prettier-js pippel pipenv pip-requirements pcre2el ox-gfm overseer outshine outline-magic orgit org-ref org-re-reveal org-present org-pomodoro org-pdfview org-mime org-download org-cliplink org-bullets org-brain nodejs-repl nameless multi-term mmm-mode markdown-toc magit-svn magit-section magit-gitflow magic-latex-buffer macrostep livid-mode live-py-mode json-navigator json-mode js2-refactor js-doc insert-shebang importmagic impatient-mode hyperbole hybrid-mode helm-xref helm-themes helm-swoop helm-pydoc helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-package flycheck-elsa flycheck-bashate fish-mode evil-org evil-mc evil-magit ess-R-data-view eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dracula-theme dotenv-mode diminish darkroom dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-reftex company-lua company-auctex company-anaconda citeproc cargo browse-at-remote blacken bind-map auto-yasnippet auto-dictionary auto-compile auctex-latexmk ace-jump-helm-line ac-ispell)))
 (custom-set-faces
