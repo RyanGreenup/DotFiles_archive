@@ -1,6 +1,6 @@
 ;;; init.el --- Spacemacs Initialization File
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -12,42 +12,29 @@
 ;; Without this comment emacs25 adds (package-initialize) here
 ;; (package-initialize)
 
-;; Avoid garbage collection during startup.
-;; see `SPC h . dotspacemacs-gc-cons' for more info
-(defconst emacs-start-time (current-time))
-(setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
-(load (concat (file-name-directory load-file-name)
-              "core/core-versions.el")
-      nil (not init-file-debug))
-(load (concat (file-name-directory load-file-name)
-              "core/core-load-paths.el")
-      nil (not init-file-debug))
-(load (concat spacemacs-core-directory "core-dumper.el")
-      nil (not init-file-debug))
+;; Increase gc-cons-threshold, depending on your system you may set it back to a
+;; lower value in your dotfile (function `dotspacemacs/user-config')
+(setq gc-cons-threshold 100000000)
+
+(defconst spacemacs-version         "0.200.13" "Spacemacs version.")
+(defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
 
 (if (not (version<= spacemacs-emacs-min-version emacs-version))
     (error (concat "Your version of Emacs (%s) is too old. "
                    "Spacemacs requires Emacs version %s or above.")
            emacs-version spacemacs-emacs-min-version)
-  ;; Disable file-name-handlers for a speed boost during init
-  (let ((file-name-handler-alist nil))
-    (require 'core-spacemacs)
-    (spacemacs/dump-restore-load-path)
-    (configuration-layer/load-lock-file)
-    (spacemacs/init)
-    (configuration-layer/stable-elpa-init)
-    (configuration-layer/load)
-    (spacemacs-buffer/display-startup-note)
-    (spacemacs/setup-startup-hook)
-    (spacemacs/dump-eval-delayed-functions)
-    (when (and dotspacemacs-enable-server (not (spacemacs-is-dumping-p)))
-      (require 'server)
-      (when dotspacemacs-server-socket-dir
-        (setq server-socket-dir dotspacemacs-server-socket-dir))
-      (unless (server-running-p)
-        (message "Starting a server...")
-        (server-start)))))
+  (load-file (concat (file-name-directory load-file-name)
+                     "core/core-load-paths.el"))
+  (require 'core-spacemacs)
+  (spacemacs/init)
+  (configuration-layer/sync)
+  (spacemacs-buffer/display-startup-note)
+  (spacemacs/setup-startup-hook)
+  (require 'server)
+  (unless (server-running-p) (server-start)))
 
+;; Garbage Collection
+(setq gc-cons-threshold 1000000000 gc-cons-percentage 0.6)
 
 ;;; My settings
 ; Load last location
@@ -171,11 +158,14 @@
                '(TeX-command-extra-options . "-synctex=1")))
                                         ;synctex is necessary to play ball with PDF tools
 ;;;;; Use magic symbols
-                                        ; for reference
-(require 'magic-latex-buffer)
-                                        ;(add-hook 'from-mode-hook 'what to do)
-                                        ;pretty symbols enabled below
-                                        ;(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
+;; for reference
+;; This is already in the space latex layer
+;;  if you leave spacemacs youll need to list it
+;;  other wise leave it off
+;; (require 'magic-latex-buffer)
+;;(add-hook 'from-mode-hook 'what to do)
+;;pretty symbols enabled below
+;;(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
 (add-hook 'latex-mode-hook 'magic-latex-buffer)
 ;;;; Snippets
 ;;;;; Get Snipet Suggestions in Company mode
@@ -461,4 +451,3 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'LaTeX-narrow-to-environment 'disabled nil)
-

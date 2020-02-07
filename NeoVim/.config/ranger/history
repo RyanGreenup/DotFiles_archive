@@ -1,5 +1,3 @@
-shell touch .org-id-locations
-filter org
 filter Org
 filter Fun
 filter natu
@@ -48,3 +46,5 @@ find sk
 unmark 
 
 q
+filter .conf
+filter i3lh
