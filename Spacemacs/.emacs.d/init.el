@@ -14,7 +14,7 @@
 
 ;; Increase gc-cons-threshold, depending on your system you may set it back to a
 ;; lower value in your dotfile (function `dotspacemacs/user-config')
-(setq gc-cons-threshold 100000000)
+(setq gc-cons-threshold 20000000)
 
 (defconst spacemacs-version         "0.200.13" "Spacemacs version.")
 (defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
@@ -103,7 +103,9 @@
 ;;(global-set-key [C-mouse-4] 'text-scale-increase)
 ;;(global-set-key [C-mouse-5] 'text-scale-decrease)
 ;;;;; Fokus Mode
-(spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
+;; (spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
+(spacemacs/set-leader-keys "fk" 'darkroom-mode)
+
 
 
 ;; Change this if every you want to actually edit the symlink
@@ -196,11 +198,28 @@
 ;; <Spc> w w opens the wiki file
 (spacemacs/set-leader-keys "ww" (lambda () (interactive) (find-file "~/Notes/MD/notes/index.md")))
 (spacemacs/set-leader-keys "wo" (lambda () (interactive) (find-file "~/Notes/Org/index.org")))
+(setq org-return-follows-link t)
+(with-eval-after-load 'evil-maps
+  (define-key evil-motion-state-map (kbd "SPC") nil)
+  (define-key evil-motion-state-map (kbd "RET") nil)
+  (define-key evil-motion-state-map (kbd "TAB") nil))
+
 ;;;;; No Lock Files
 ;; This breaks gh-pages
-(setq create-lockfiles nil) ;All the other crap didn't do anything, THIS is what fixed everything!!!
+;; All the other crap didn't do anything, THIS is what fixed everything!!!
+(setq create-lockfiles nil)
+
 
 ;;;; Org-Mode
+;;;;; Helm-Org-Rifle
+;; use Tab for Preview
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+(spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
+; rifle buffer/dir/headlines ripgrep
+(spacemacs/set-leader-keys "srod" 'helm-org-rifle-org-directory)
+
 ;;;;; Identity and Directory
 (setq user-full-name "Ryan G"
       user-mail-address "exogenesis@protonmail.com")
@@ -258,6 +277,9 @@
 ;; settings, this is not related to ghostscript an is a bug inside org-mode,
 ;; instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
 (setq org-preview-latex-default-process `dvisvgm)
+;;;;;; Make nice pretty bullets
+(add-hook 'org-mode-hook 'org-bullets-mode)
+
 ;;;;; Exports
 ;;;;; HTML Attachment Links
 (setq org-attach-dir-relative t)
@@ -406,7 +428,6 @@
 ;;;;;; Enable global tags autocomplete
 ;; this may break marking with Space.
  (setq org-complete-tags-always-offer-all-agenda-tags t)
-
 
  (setq org-tag-alist '((:startgrouptag)
                        ("GTD")
