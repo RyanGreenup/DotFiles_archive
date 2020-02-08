@@ -14,7 +14,7 @@
 
 ;; Increase gc-cons-threshold, depending on your system you may set it back to a
 ;; lower value in your dotfile (function `dotspacemacs/user-config')
-(setq gc-cons-threshold 20000000)
+;(setq gc-cons-threshold 20000000)
 
 (defconst spacemacs-version         "0.200.13" "Spacemacs version.")
 (defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
@@ -34,7 +34,7 @@
   (unless (server-running-p) (server-start)))
 
 ;; Garbage Collection
-(setq gc-cons-threshold 1000000000 gc-cons-percentage 0.6)
+;(setq gc-cons-threshold 1000000000 gc-cons-percentage 0.6)
 
 ;;; My settings
 ; Load last location
@@ -42,6 +42,10 @@
 ;; (desktop-save-mode 1)
 ;;;; Window/Folding Settings
 ;;;;; Helm Settings
+;; Popup Window
+(setq helm-display-function 'helm-display-buffer-in-own-frame
+      helm-display-buffer-reuse-frame t
+      helm-use-undecorated-frame-option t)
 ;; Auto Complete Path
 (setq helm-ff-auto-update-initial-value t)
 ;; Display Below
@@ -218,7 +222,8 @@
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 (spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
 ; rifle buffer/dir/headlines ripgrep
-(spacemacs/set-leader-keys "srod" 'helm-org-rifle-org-directory)
+(spacemacs/set-leader-keys "srd" 'helm-org-rifle-org-directory)
+(spacemacs/set-leader-keys "srb" 'helm-org-rifle-current-buffer)
 
 ;;;;; Identity and Directory
 (setq user-full-name "Ryan G"
