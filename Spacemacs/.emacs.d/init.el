@@ -46,14 +46,15 @@
 (setq helm-display-function 'helm-display-buffer-in-own-frame
       helm-display-buffer-reuse-frame t
       helm-use-undecorated-frame-option t)
+(setq ivy-posframe-mode 1)
 ;; Auto Complete Path
 (setq helm-ff-auto-update-initial-value t)
 ;; Display Below
 ;;(setq helm-split-window-default-side 'left)
 ;; I think Helm might automatically decide given resolution???
 ;; (setq helm-split-window-default-side 'below)
-;(helm-autoresize-mode 1)
-;;;;; Golden Ratio Windo Management
+;;(helm-autoresize-mode 1)
+;;;;; Golden Ratio Window Management
 (require 'golden-ratio)
 (golden-ratio-mode 1)
 ; Allow Auto Adjust
@@ -224,6 +225,8 @@
 ; rifle buffer/dir/headlines ripgrep
 (spacemacs/set-leader-keys "srd" 'helm-org-rifle-org-directory)
 (spacemacs/set-leader-keys "srb" 'helm-org-rifle-current-buffer)
+(spacemacs/set-leader-keys "srh" 'helm-org-agenda-files-headings)
+(spacemacs/set-leader-keys "/" 'helm-org-in-buffer-headings)
 
 ;;;;; Identity and Directory
 (setq user-full-name "Ryan G"
@@ -285,6 +288,10 @@
 ;;;;;; Make nice pretty bullets
 (add-hook 'org-mode-hook 'org-bullets-mode)
 
+;;;;;; Mixed Pitch
+; (require 'mixed-pitch)
+(add-hook 'org-mode-hook 'mixed-pitch-mode)
+(add-hook 'org-mode-hook 'company-posframe-mode)
 ;;;;; Exports
 ;;;;; HTML Attachment Links
 (setq org-attach-dir-relative t)
@@ -301,7 +308,8 @@
      (file-expand-wildcards  "*.org")))) 
 ;;;;;; 5. Tolerate broken links
 (require 'org-ref)
-(setq org-export-with-broken-links t)
+;; The warning is nice, don't forget about it though
+;(setq org-export-with-broken-links t)
 ;;;;;; LaTeX Export
 ;;;;;;; Ordinary LaTeX
 ;; Export using the 'listings package

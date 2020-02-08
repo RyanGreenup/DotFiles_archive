@@ -37,10 +37,8 @@ rename 08-2_ElementaryFunctionsExample.pdf
 rename 10_integralsComplex.pdf
 rename 08-2FunctionsofComplexVar.pdf
 shell mkdir Analysis
-bulkrename 
 flat -1
 filter f_
-delete
 filter 
 find sk
 unmark 
@@ -48,3 +46,5 @@ unmark
 q
 filter .conf
 filter i3lh
+delete
+bulkrename 
