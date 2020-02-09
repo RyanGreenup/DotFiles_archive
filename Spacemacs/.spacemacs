@@ -272,6 +272,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
+   ;; Make sure to use sudo apt install fonts-firacode
+   ;;  https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager
    dotspacemacs-default-font '("Fira Code Regular"
                                :size 10.0
                                :weight normal
