@@ -775,7 +775,7 @@ nmap <Leader>meelo :!pandoc -s --self-contained "%" --listings --toc -H ~/Dropbo
 
 nmap <Leader>meeho :!pandoc -s --self-contained "%"  --toc -H ~/Templates/CSS/gitOrgWrapped.css  -o /tmp/note.html ; cat ~/Templates/mathjax >> /tmp/note.html; xdg-open /tmp/note.html
 
-"nmap <Leader>meeho :!pandoc -s --self-contained "%" --mathml --toc -H ~/Templates/CSS/gitOrgWrapped.css  -o /tmp/note.html ;  xdg-open /tmp/note.html
+nmap <Leader>meehom :!pandoc -s --self-contained "%" --mathml --toc -H ~/Templates/CSS/gitOrgWrapped.css  -o /tmp/note.html ;  xdg-open /tmp/note.html
 
 
 """" Useful mappings
