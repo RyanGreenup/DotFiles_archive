@@ -241,6 +241,8 @@
 (require 'org-id)
 ;;(setq org-id-link-to-org-use-id t)
 (setq org-id-link-to-org-use-id nil)
+;;;;; PGP
+(require 'org-crypt)
 ;;;;; Insert ScreenShot
 ;; Don't use this, use org-download-screenshot instead
 ;; remember use = fzf | xargs rm = to remove a screenshot
@@ -258,6 +260,8 @@
 ;;  (call-process "import" nil nil nil filename)
 ;;  (insert (concat "[[" filename "]]"))
 ;;  (org-display-inline-images))
+;;;;; Open all Agenda Files
+(defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 ;;;;; Run Code without prompt
 (setq org-confirm-babel-evaluate nil)
 ;;;;; In Buffer Format
@@ -485,3 +489,4 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'LaTeX-narrow-to-environment 'disabled nil)
+

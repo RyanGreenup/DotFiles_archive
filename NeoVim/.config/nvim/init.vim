@@ -395,7 +395,9 @@ function! StrPadLeft(s, w)
     let s = substitute(a:s, '^\s\+\|\s\+$', '', 'g')
     return repeat(' ', a:w - strwidth(s)) . s
 endfunction
-"""" FileType Remap
+"""" Open in Emacs
+nmap <C-c>E :! emacsclient --create-frame "%" & disown
+nmap <C-c>e :! /usr/bin/env XLIB_SKIP_ARGB_VISUALS=1 emacs "%" & disown
 
 """" AutoCmd
 
