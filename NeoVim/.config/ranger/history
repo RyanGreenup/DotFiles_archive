@@ -1,11 +1,3 @@
-filter Org
-filter Fun
-filter natu
-shell mkdir elpa
-shell mkdir citepro
-filter .ema
-filzf
-flat 0
 filter
 filter med
 filter svg
@@ -41,10 +33,18 @@ flat -1
 filter f_
 find sk
 unmark 
-
 q
 filter .conf
 filter i3lh
-delete
 bulkrename 
+filter un
+search zf .un
+filter -r .*\.un
 filter 
+filter -r .*\.swp
+
+unmark
+delete
+wq
+filter emp
+rename CSS

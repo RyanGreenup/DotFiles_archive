@@ -60,6 +60,8 @@ Plug '907th/vim-auto-save'
 " example
 let g:nv_search_paths = ['~/Notes/MD/notes/', '~/Dropbox/Notes/MD/notes/', '~/writing', '~/code', 'docs.md' , './notes.md']
 
+" Open in Last Place
+Plug 'farmergreg/vim-lastplace'
 
 " Airline Display bar
 Plug 'vim-airline/vim-airline'
@@ -767,6 +769,13 @@ nmap <Leader>b :silent ! vivaldi "0.0.0.0:8351/%:t" & disown <CR>
 "for e in emoji#list()
 "  call append(line('$'), printf('%s (%s)', emoji#for(e), e))
 "endfor
+
+""""" Export Mapping
+nmap <Leader>meelo :!pandoc -s --self-contained "%" --listings --toc -H ~/Dropbox/profiles/Templates/LaTeX/ScreenStyle.sty --pdf-engine-opt=-shell-escape -o /tmp/note.pdf ; xdg-open /tmp/note.pdf
+
+nmap <Leader>meeho :!pandoc -s --self-contained "%"  --toc -H ~/Templates/CSS/gitOrgWrapped.css  -o /tmp/note.html ; cat ~/Templates/mathjax >> /tmp/note.html; xdg-open /tmp/note.html
+
+"nmap <Leader>meeho :!pandoc -s --self-contained "%" --mathml --toc -H ~/Templates/CSS/gitOrgWrapped.css  -o /tmp/note.html ;  xdg-open /tmp/note.html
 
 
 """" Useful mappings
