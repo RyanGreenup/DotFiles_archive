@@ -11,6 +11,14 @@
     # LaTeX in Vim but Bash in emacs
         # Probably R in Rstudio (and some vim for math and maybe emacs for folding)
 
+#' TODO move the 00TagMatch directory under ~/Documents without
+#' breaking anything (because the whole script is relative),
+#' do this in order to:
+#'     + have consistency between =YAML= tags and =#tags=
+#'     + not have duplicates in Notable
+#' This isn't gamebreaking like the =YAML= tags were so i'll
+#' leave it for now, but, for the most part this is something I should get around to.
+
 
 # * Program
 
