@@ -39,7 +39,6 @@ rename 08-2FunctionsofComplexVar.pdf
 shell mkdir Analysis
 flat -1
 filter f_
-filter 
 find sk
 unmark 
 
@@ -48,3 +47,4 @@ filter .conf
 filter i3lh
 delete
 bulkrename 
+filter 
