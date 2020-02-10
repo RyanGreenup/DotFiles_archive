@@ -1,5 +1,3 @@
-filter
-filter med
 filter svg
 filter .md
 filter pdf
@@ -48,3 +46,5 @@ delete
 wq
 filter emp
 rename CSS
+filter .ema
+shell baobab .

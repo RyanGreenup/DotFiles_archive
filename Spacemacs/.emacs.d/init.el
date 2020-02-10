@@ -295,7 +295,7 @@
 ;;;;;; Mixed Pitch
 ; (require 'mixed-pitch)
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
-(add-hook 'org-mode-hook 'company-posframe-mode)
+(setq company-posframe-mode 1)
 ;;;;; Exports
 ;;;;; HTML Attachment Links
 (setq org-attach-dir-relative t)
