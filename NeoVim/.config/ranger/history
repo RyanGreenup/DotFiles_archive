@@ -30,7 +30,6 @@ shell mkdir Analysis
 flat -1
 filter f_
 find sk
-unmark 
 q
 filter .conf
 filter i3lh
@@ -40,11 +39,12 @@ search zf .un
 filter -r .*\.un
 filter 
 filter -r .*\.swp
-
 unmark
-delete
 wq
 filter emp
 rename CSS
 filter .ema
 shell baobab .
+unmark 
+delete
+

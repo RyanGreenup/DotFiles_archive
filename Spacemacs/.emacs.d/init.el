@@ -313,7 +313,7 @@
 ;;;;;; 5. Tolerate broken links
 (require 'org-ref)
 ;; The warning is nice, don't forget about it though
-;(setq org-export-with-broken-links t)
+(setq org-export-with-broken-links t)
 ;;;;;; LaTeX Export
 ;;;;;;; Ordinary LaTeX
 ;; Export using the 'listings package
