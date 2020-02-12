@@ -303,7 +303,10 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 
 "R-Markdown Preview
-Plug 'vim-pandoc/vim-rmarkdown'
+"Plug 'vim-pandoc/vim-rmarkdown'
+" I installed this because of this issue:
+" https://github.com/jalvesaq/Nvim-R/issues/197
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 
 """"""" Text Objects
