@@ -161,8 +161,8 @@ vnoremap <silent>[unite]cs :<C-u>exec "Unite  -default-action=start citation/key
 """"" Nvim-R
 Plug 'jalvesaq/Nvim-R'
 autocmd BufEnter *.R :imap <A--> <-
+autocmd BufEnter *.R :inoremap <C-|> %>%
 imap <A-->  <- 
-" I've also got NCM-R under the NCM2 Stuff
 
 """""" Codi REPL
 Plug 'metakirby5/codi.vim'
@@ -302,11 +302,12 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 
 
-"R-Markdown Preview
+"R-Markdown Preview (rmd)
 "Plug 'vim-pandoc/vim-rmarkdown'
 " I installed this because of this issue:
 " https://github.com/jalvesaq/Nvim-R/issues/197
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
 
 
 """"""" Text Objects
@@ -432,7 +433,7 @@ autocmd BufEnter *.cson :set syntax=markdown
 " nnoremap <Leader>t :set syntax=tex<CR> 
 nnoremap <Leader>t :setlocal filetype=tex<CR>
 nnoremap <Leader>m :set syntax=markdown<CR> 
-nnoremap <Leader>m :setlocal filetype=markdown<CR> 
+nmap <Leader>m :setlocal filetype=markdown<CR> 
 nnoremap <C-x><C-t><C-m> :setlocal filetype=markdown<CR> 
 nnoremap <C-x><C-t><C-t> :setlocal filetype=tex<CR> 
 nnoremap <C-x><C-t><C-r> :e!<CR>
@@ -514,7 +515,7 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent=2
 "let g:vim_markdown_new_list_item_indent
 if (&ft=='md' || &ft=='markdown')
-nmap <Leader>it :Tocv<CR>
+nnoremap <Leader>it :Tocv<CR>
 nmap <leader>m2h "+y"!$HOME/bin/m2hRaw
 
 endif
@@ -546,7 +547,9 @@ nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>
 "     b takes you to the beginning of the previous word
 "       won't change word will move from whitespace
 nnoremap <Leader>ft  b0"tD:NV<C-r>t<BS><CR>
+
 inoremap <C-c><C-f>  <Esc>b0"tD:NV<C-r>t<BS><CR>
+
 
 " Include # symbol in <C-r><C-w>
 :set iskeyword+=#
