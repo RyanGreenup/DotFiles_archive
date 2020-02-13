@@ -423,6 +423,7 @@ autocmd BufEnter *.cson :setlocal filetype=markdown
 """"" RMarkdown rmd
 "autocmd BufEnter *.Rmd :setlocal filetype=markdown 
 :autocmd BufEnter *.Rmd :set nowrap 
+:autocmd BufEnter *.Rmd :set nospell
 
 autocmd BufEnter *.t :setlocal filetype=javascript
 
