@@ -39,6 +39,7 @@ nmap <Leader>rr "
 nmap <leader>wd :q<CR>
 nmap <leader>w <C-w>
 nmap <leader>fd :! rm "%"
+nmap <leader>/ :BLines<CR>
 
 """" Plugins
 "############################## 

@@ -4,6 +4,7 @@ global !p
 import os
 from vimsnippets import complete
 
+
 FIELD_TYPES = [
 'character',
 'data.frame',
@@ -14,6 +15,20 @@ FIELD_TYPES = [
 'numeric',
 'vector']
 endglobal
+
+
+snippet kd "Inline Code" wA
+\`$1\` $0
+endsnippet
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`$2
+endsnippet
 
 snippet #! "#!/usr/bin/env Rscript" b
 #!/usr/bin/env Rscript
