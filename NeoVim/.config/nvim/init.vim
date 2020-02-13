@@ -174,7 +174,10 @@ Plug 'dense-analysis/ale'
 autocmd BufEnter *.R :ALEDisable
 """"" Python-Mode
 Plug 'python-mode/python-mode'
-"Plug 'davidhalter/jedi-vim'
+" Tabs are now Spaces Globally
+    set shiftwidth=4
+    "Plug 'davidhalter/jedi-vim'
+    " [stack answer](https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces)
 
 """"" Julia Syntax Highlighting
 Plug 'JuliaEditorSupport/julia-vim'
@@ -961,7 +964,6 @@ set t_Co=256   " This is may or may not needed.
 " going to prohibit deep nesting
 " using indent folding also allows manual folding with zfip or zfif (markdown
 " plugin)
-"set shiftwidth=2
 
 
 
