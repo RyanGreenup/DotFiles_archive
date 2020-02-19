@@ -149,7 +149,7 @@
   (interactive)
   (call-process-shell-command
                                         ;  (format "gvim +%d %s"
-   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s & disown"
            (+ (if (bolp) 1 0) (count-lines 1 (point)))
            (shell-quote-argument buffer-file-name))))
 
@@ -275,7 +275,7 @@
 (eval-after-load "preview"
   '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
                                         ;this might conflict with the setting above [[use =dvisvgm= not =dvipng= for math preview]]
-(setq org-latex-create-formula-image-program 'imagemagick)
+(setq org-latex-create-formula-image-programimage-program 'imagemagick)
 
                                         ; Bigger preview images (the default was too small, this wan't affect export)
                                         ; For Org
@@ -289,6 +289,7 @@
 ;; settings, this is not related to ghostscript an is a bug inside org-mode,
 ;; instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
 (setq org-preview-latex-default-process `dvisvgm)
+(setq org-preview-latex-default-process `dvipng)
 ;;;;;; Make nice pretty bullets
 (add-hook 'org-mode-hook 'org-bullets-mode)
 
@@ -297,6 +298,9 @@
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 (setq company-posframe-mode 1)
 ;;;;; Exports
+;;;;;; Resize LaTeX Images
+(setq org-image-actual-width nil)
+(setq org-latex-image-default-width "")
 ;;;;; HTML Attachment Links
 (setq org-attach-dir-relative t)
 ;;;;;; Export-all
@@ -330,8 +334,8 @@
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
       org-latex-pdf-process
-      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+      '("pdflatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
 ;;;;;;; Tikz
                                         ;Backend Test
