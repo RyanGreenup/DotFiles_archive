@@ -59,7 +59,7 @@ call plug#begin('~/.vim/plugged')
 "Auto-Save
 Plug '907th/vim-auto-save'
 " example
-let g:nv_search_paths = ['~/Notes/MD/notes/', '~/Dropbox/Notes/MD/notes/', '~/writing', '~/code', 'docs.md' , './notes.md']
+let g:nv_search_paths = ['~/Notes/MD/', '~/Dropbox/Notes/MD/notes/', '~/writing', '~/code', 'docs.md' , './notes.md']
 
 " Open in Last Place
 Plug 'farmergreg/vim-lastplace'
