@@ -68,7 +68,10 @@ bindsym Control+mod1+t exec i3-sensible-terminal
 #bindsym $mod+d exec dmenu_run
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -show drun -lines 10 -eh 2 -width 30 -padding 800 -font "Cantarell 36" -mathing fuzzy -show-icons 
+# bindsym $mod+d exec --no-startup-id rofi -show drun -lines 10 -eh 2 -width 30 -padding 800 -font "Cantarell 36" -mathing fuzzy -show-icons 
+ bindsym $mod+d exec rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons 
+
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that

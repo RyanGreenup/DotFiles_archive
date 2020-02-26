@@ -1,7 +1,3 @@
-filter svg
-filter .md
-filter pdf
-filter .pdf
 shell Calculus
 shell mkdir Calculus
 rename SequencesAndFunctions.pdf
@@ -46,5 +42,9 @@ rename CSS
 filter .ema
 shell baobab .
 unmark 
+flat 5
+filter
 
+filter confli
 delete
+flat 0

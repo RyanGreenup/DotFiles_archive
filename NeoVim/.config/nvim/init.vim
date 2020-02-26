@@ -927,7 +927,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
     imap <c-x><c-l> <plug>(fzf-complete-line)
 "   " Snippets
    nmap  <Leader>s :Snippets<CR>
-   imap  <Leader>s :Snippets<CR>
+"   imap  <Leader>s :Snippets<CR>
 " Remap FZF
 nnoremap <C-p> :<C-u>FZF<CR>
 "
