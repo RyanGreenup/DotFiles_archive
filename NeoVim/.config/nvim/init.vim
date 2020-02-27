@@ -414,7 +414,8 @@ nmap <C-c>e :! /usr/bin/env XLIB_SKIP_ARGB_VISUALS=1 emacs "%" & disown
 "Use F2 to Compile markdown
 autocmd BufEnter *.tex :map <f2> :w<cr><leader>ll 
 autocmd BufEnter *.md :map <f2> :! prevmd "%" <Enter> <Enter>
-autocmd BufEnter *.md :map <leader>lv  :! firefox --new-window "$(echo "%" \| cut -f 1 -d '.').html" & disown <Enter>
+"autocmd BufEnter *.md :map <leader>lv  :! firefox --new-window "$(echo "%" \| cut -f 1 -d '.').html" & disown <Enter>
+" This causes nvim-r to wait which is frustrating
 
 """"" Boostnote
 "autocmd BufEnter *.md :setlocal filetype=markdown
