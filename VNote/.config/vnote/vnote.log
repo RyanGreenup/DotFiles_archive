@@ -6144,3 +6144,48 @@ Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross ori
 Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
 Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
 Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Info:(main.cpp:211) VNote started "2.8.2" "Thu. Feb. 27 15:42:05 2020"
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vmdeditor.cpp:609) header accross multiple blocks, starting from block 27 "- [mathjax.cfg](../../attachments/b8f5332c-b11c-41c8-ad7e-72583d0c5526/ef48f54c.cfg)"
+Warning:(vmdeditor.cpp:609) header accross multiple blocks, starting from block 27 "- [mathjax.cfg](../../attachments/b8f5332c-b11c-41c8-ad7e-72583d0c5526/ef48f54c.cfg)"
+Warning:(vmdeditor.cpp:609) header accross multiple blocks, starting from block 27 "- [mathjax.cfg](../../attachments/b8f5332c-b11c-41c8-ad7e-72583d0c5526/ef48f54c.cfg)"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/27"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/28"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/27"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/28"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/27"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/28"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/27"
+Info:(main.cpp:211) VNote started "2.8.2" "Mon. Mar. 2 10:44:32 2020"

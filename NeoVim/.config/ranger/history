@@ -1,8 +1,3 @@
-shell Calculus
-shell mkdir Calculus
-rename SequencesAndFunctions.pdf
-rename SupremaAndInfima.pdf
-shell 
 rename ProvingLimitFromFirstPrinciple04.pdf
 rename SequencesAndFunctions02.pdf
 rename SupremaAndInfima02-3.pdf
@@ -26,14 +21,12 @@ shell mkdir Analysis
 flat -1
 filter f_
 find sk
-q
 filter .conf
 filter i3lh
 bulkrename 
 filter un
 search zf .un
 filter -r .*\.un
-filter 
 filter -r .*\.swp
 unmark
 wq
@@ -46,5 +39,12 @@ flat 5
 filter
 
 filter confli
-delete
 flat 0
+filter otes
+shell mkdir ThinkingAboutData
+delete
+filter e
+filter .Rmd
+filter 
+q
+find dat
