@@ -462,7 +462,7 @@ autocmd BufEnter *.md :map <Space>fo :w<cr>:!marktext "%" & disown <Enter>
 
 """" Templates
 autocmd BufNewFile *.tex 0r  ~/Templates/LaTeX/LaTeX.tex
-%autocmd BufNewFile *.tex 0r  ~/Dropbox/profiles/Templates/LaTeX/LaTeX.tex
+"autocmd BufNewFile *.tex 0r  ~/Dropbox/profiles/Templates/LaTeX/LaTeX.tex
 autocmd BufNewFile *.sh 0r  ~/Dropbox/profiles/bin/hworld.sh
 autocmd BufNewFile *.R 0r  ~/Templates/RScriptTemplate.R
 

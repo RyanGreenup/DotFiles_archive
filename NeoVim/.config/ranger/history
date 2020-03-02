@@ -1,4 +1,3 @@
-rename ProvingLimitFromFirstPrinciple04.pdf
 rename SequencesAndFunctions02.pdf
 rename SupremaAndInfima02-3.pdf
 rename 3.5CauchyCriterionFirstPrinciples.pdf
@@ -29,7 +28,6 @@ search zf .un
 filter -r .*\.un
 filter -r .*\.swp
 unmark
-wq
 filter emp
 rename CSS
 filter .ema
@@ -48,3 +46,5 @@ filter .Rmd
 filter 
 q
 find dat
+filter gamma
+wq
