@@ -785,7 +785,7 @@ nmap <Leader>b :silent ! vivaldi "0.0.0.0:8351/%:t" & disown <CR>
 "endfor
 
 """"" Export Mapping
-nmap <Leader>meelo :!pandoc -s --self-contained "%" --listings --toc -H ~/Dropbox/profiles/Templates/LaTeX/ScreenStyle.sty --pdf-engine-opt=-shell-escape -o /tmp/note.pdf ; xdg-open /tmp/note.pdf
+nmap <Leader>meelo :!pandoc -s --self-contained "%" --listings --toc -H ~/Dropbox/profiles/Templates/LaTeX/ScreenStyle.sty --pdf-engine-opt=-shell-escape -o /tmp/note.pdf ; xdg-open /tmp/note.pdf & disown
 
 nmap <Leader>meeho :!pandoc -s --self-contained "%"  --toc -H ~/Templates/CSS/gitOrgWrapped.css  -o /tmp/note.html ; cat ~/Templates/mathjax >> /tmp/note.html; xdg-open /tmp/note.html
 
