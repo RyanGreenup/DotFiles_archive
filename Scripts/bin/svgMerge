@@ -3,7 +3,9 @@
 #svgfile=9d9af7b10ca33c3d1bf4e525a1e32af0a2dc5a9a.svg
 htmlfile=$1
 
-
+command -v pdf2svg >/dev/null 2>&1 || { echo >&2 "I require pdf2svg but it's not
+installed. If you're on Ubuntu or Arch it should be in the repos so try
+something like sudo apt install pdf2svg or sudo pacman -Syu pdf2svg or whatever.  Aborting."; exit 1; }
 
 if [ "$1" == "-h" ]; then
   echo "`basename $0` <SVG> <HTML>"

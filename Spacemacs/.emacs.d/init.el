@@ -42,11 +42,13 @@
 ;; (desktop-save-mode 1)
 ;;;; Window/Folding Settings
 ;;;;; Helm Settings
-;; Popup Window
-(setq helm-display-function 'helm-display-buffer-in-own-frame
-      helm-display-buffer-reuse-frame t
-      helm-use-undecorated-frame-option t)
-(setq ivy-posframe-mode 1)
+;; Popup Window (floating window)
+;; Just remember the xserver window is called a frame
+;;                 the internal split is called a window
+; (setq helm-display-function 'helm-display-buffer-in-own-frame
+;       helm-display-buffer-reuse-frame t
+;       helm-use-undecorated-frame-option t)
+; (setq ivy-posframe-mode 1)
 ;; Auto Complete Path
 (setq helm-ff-auto-update-initial-value t)
 ;; Display Below

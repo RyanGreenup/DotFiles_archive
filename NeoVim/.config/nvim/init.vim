@@ -164,6 +164,20 @@ Plug 'jalvesaq/Nvim-R'
 autocmd BufEnter *.R :imap <A--> <-
 autocmd BufEnter *.R :inoremap <C-|> %>%
 imap <A-->  <- 
+" Vim Can't do <C-S-m> so put up with <C-m>.
+  " [[https://stackoverflow.com/questions/1506764/how-to-map-ctrla-and-ctrlshifta-differently]]
+autocmd BufEnter *.R :imap <C0m> %>% 
+
+" the rmd pandoc plugin creates a bunch of <leader>l bindings
+"  this means that when you want to run a line you have to wait a moment for
+"  the next key, to fix this change `timeoutlen` (in ms) and rebind:
+"
+
+"   \l          *@:call SendLineToR("stay")<CR>
+
+set timeoutlen=300
+" imap <M-CR> *@:call SendLineToR("stay")<CR>
+
 
 """""" Codi REPL
 Plug 'metakirby5/codi.vim'
@@ -412,7 +426,7 @@ nmap <C-c>e :! /usr/bin/env XLIB_SKIP_ARGB_VISUALS=1 emacs "%" & disown
 """" AutoCmd
 
 "Use F2 to Compile markdown
-autocmd BufEnter *.tex :map <f2> :w<cr><leader>ll 
+"autocmd BufEnter *.tex :map <f2> :w<cr><leader>ll 
 autocmd BufEnter *.md :map <f2> :! prevmd "%" <Enter> <Enter>
 "autocmd BufEnter *.md :map <leader>lv  :! firefox --new-window "$(echo "%" \| cut -f 1 -d '.').html" & disown <Enter>
 " This causes nvim-r to wait which is frustrating

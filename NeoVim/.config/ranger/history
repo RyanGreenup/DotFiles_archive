@@ -1,11 +1,3 @@
-rename 3.5CauchyCriterionFirstPrinciples.pdf
-rename 03_Wk4_Note
-rename 04_Limits.pdf
-shell mkdir
-shell mk Complex
-shell mkdir Complex
-rename 07_ComplexVariables
-open_with 
 rename 07_ComplexVariables.pdf
 rename 07_ComplexNumbers.pdf
 rename 08_complexVariables.pdf
@@ -20,7 +12,6 @@ filter f_
 find sk
 filter .conf
 filter i3lh
-bulkrename 
 filter un
 search zf .un
 filter -r .*\.un
@@ -30,21 +21,30 @@ filter emp
 rename CSS
 filter .ema
 shell baobab .
-unmark 
-flat 5
 filter
 filter confli
-flat 0
 filter otes
 shell mkdir ThinkingAboutData
 delete
 filter e
 filter .Rmd
-filter 
-q
 find dat
 filter gamma
 wq
 shell mkdir AnalyticsProgramming
 
+flat 3
+search 
+flat 5
+filter .rmd
+flat 0
+filter 
+search social
+rename 01_Data_Structures.rmd
 shell 
+shell cp /tmp/note.pdf /tmp/note.html ./
+unmark 
+bulkrename 
+shell firefox 01_R_Basics.html
+shell jj
+q

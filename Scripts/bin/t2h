@@ -9,6 +9,11 @@ if [ "$1" == "-h" ]; then
 fi
 
 
+# Test to see if required packages are installed
+command -v pdf2svg >/dev/null 2>&1 || { echo >&2 "I require pdf2svg but it's not
+installed. If you're on Ubuntu or Arch it should be in the repos so try
+something like sudo apt install pdf2svg or sudo pacman -Syu pdf2svg or whatever.  Aborting."; exit 1; }
+
 # As for variables only if not specified
 if [[ "$1" != *".tex" ]]; then
     echo "Please Give me a *.TeX file, You can't drag and drop,
