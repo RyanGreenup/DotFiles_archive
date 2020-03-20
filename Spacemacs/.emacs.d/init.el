@@ -295,7 +295,7 @@
 ;;;;;; Make nice pretty bullets
 (add-hook 'org-mode-hook 'org-bullets-mode)
 
-;;;;;; Mixed Pitch
+;;;;;; Mixed Pitch (Sans Serif Font)
 ; (require 'mixed-pitch)
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 (setq company-posframe-mode 1)

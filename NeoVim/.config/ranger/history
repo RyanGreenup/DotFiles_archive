@@ -1,11 +1,3 @@
-rename 07_ComplexVariables.pdf
-rename 07_ComplexNumbers.pdf
-rename 08_complexVariables.pdf
-rename 09_ElementaryFunctions.pdf
-rename 09_functions.pdf
-rename 08-2_ElementaryFunctionsExample.pdf
-rename 10_integralsComplex.pdf
-rename 08-2FunctionsofComplexVar.pdf
 shell mkdir Analysis
 flat -1
 filter f_
@@ -25,7 +17,6 @@ filter
 filter confli
 filter otes
 shell mkdir ThinkingAboutData
-delete
 filter e
 filter .Rmd
 find dat
@@ -36,15 +27,24 @@ shell mkdir AnalyticsProgramming
 flat 3
 search 
 flat 5
-filter .rmd
-flat 0
-filter 
 search social
 rename 01_Data_Structures.rmd
-shell 
 shell cp /tmp/note.pdf /tmp/note.html ./
 unmark 
 bulkrename 
 shell firefox 01_R_Basics.html
 shell jj
+filter Visual
+filter social
+delete
+shell mkdir Social_Web_Analytics
+flat 4
+filter .rmd
+shell cd /home/ryan/Dropbox/Studies/2020Autumn/Social_Web_Analytics
+flat 0
+filter 
+filter rmd
+rename 02_Introduction_to_R.rmd
+shell rstudio 02_Introduction_to_R.rmd & disown
 q
+shell 

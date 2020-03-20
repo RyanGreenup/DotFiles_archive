@@ -21,13 +21,12 @@
 
 
 # * Program
-
 # ** Description
 # This will search and filter tags in the ~/Notes directory, returning results into temporary file and working from that
 
 # ** Code
 
-     cd ~/Notes/MD/notes
+     cd ~/Notes/MD/
 
 # *** Help Statement
 if [ "$1" == "-h" ] || [ "$1" == "--help"  ]; then
