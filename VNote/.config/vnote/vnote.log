@@ -10011,3 +10011,143 @@ Warning:(:0) QXcbClipboard: SelectionRequest too old
 Warning:(:0) QXcbClipboard: SelectionRequest too old
 Warning:(:0) The X11 connection broke (error 1). Did the X11 server die?
 Info:(main.cpp:211) VNote started "2.8.2" "Fri. Mar. 20 20:12:10 2020"
+Info:(main.cpp:211) VNote started "2.8.2" "Sat. Mar. 21 12:39:32 2020"
+Info:(main.cpp:211) VNote started "2.8.2" "Sat. Mar. 21 12:40:42 2020"
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0

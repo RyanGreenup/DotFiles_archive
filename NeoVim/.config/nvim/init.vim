@@ -557,8 +557,8 @@ endif
 "
 " MUST be preceeded and terminated with a space
 "
-imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename $HOME/Notes/MD/notes -t md \| sort -u')
-imap <expr> <C-c><C-y> fzf#vim#complete('cat ~/Notes/MD/notes/00tags.csv')
+imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename $HOME/Notes/MD -t md \| sort -u')
+imap <expr> <C-c><C-y> fzf#vim#complete('cat /tmp/00tags.csv')
 "nnoremap <expr> <Space>fg :Rg expand('<cword>') <CR>
 nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>
 
@@ -835,6 +835,8 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 " Remap F4 to CopyFileDirectory
 noremap <silent> <F4> :let @+=expand("%:p")<CR>
 noremap <silent> <leader>fy :let @+=expand("%:p")<CR>
+noremap <Leader>fL :! readlink -f "%" \| xclip -selection clipboard
+noremap <Leader>gL :
 noremap <silent> <leader>fty :let @+=expand("%:t")<CR>
 
 " Return to previous Buffer

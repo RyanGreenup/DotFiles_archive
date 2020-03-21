@@ -19,14 +19,22 @@
 #' This isn't gamebreaking like the =YAML= tags were so i'll
 #' leave it for now, but, for the most part this is something I should get around to.
 
+# ** TODO Fix all this
+# Make an alias to jump directly to a note rather than recreating a symlink
+# and/or just us tmsu?
+# Rewrite this script much neater
 
 # * Program
+
 # ** Description
 # This will search and filter tags in the ~/Notes directory, returning results into temporary file and working from that
 
 # ** Code
 
-     cd ~/Notes/MD/
+     notes_dir=~/Notes/MD
+     cd $notes_dir
+     match_list=/tmp/00TagMatchList       # Not yet implemented
+     match_dir=/tmp/00TagMatchDir         # Not yet implemented
 
 # *** Help Statement
 if [ "$1" == "-h" ] || [ "$1" == "--help"  ]; then
@@ -141,7 +149,11 @@ ag, ack (or grep)!] (<https://github.com/sampson-chen/sack>)
   # This should really come after the generated part but I through it in here so it could be an else if, that wasn't clever?
 elif [[ "$1" == *--tmsu* ]]; then
     cd ~/Notes/MD/notes
-    rg --pcre2 '(?<=\s#)[a-zA-Z]+(?=\s)' *.md -o \
+    # So this first searches for md files then greps them:
+    # find ./ -name '*.md' | xargs rg --pcre2 '(?<=\s#)[a-zA-Z]+(?=\s)' *.md -o \
+        #     | sed s+:+\ + | sed s/^/tmsu\ tag\ / | bash
+    # This one only searches through markdown files (use rg --type-list)
+    rg --pcre2 '(?<=\s#)[a-zA-Z]+(?=\s)' -t markdown -o \
         | sed s+:+\ + | sed s/^/tmsu\ tag\ / | bash
   # **** TODO Mount the TMSU somewhere
 #    Do I want to do this everytime?
@@ -190,21 +202,21 @@ elif [[ "$1" == *-y* ]]; then
 # **** Regenerate List (calling ListTags.R)
     # Filter based on the Yaml Tags, option g will regen list
     if [[ "$2" == *g* ]]; then
-        Rscript ./ListTags.R
+        Rscript ~/bin/ListTags.R
        # cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
     fi
 # **** List the Files Matching the Filter
     if [[ "$2" == *f* ]]; then
-       cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs -d '\n' rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
+       cat /tmp/00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs -d '\n' rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
       exit 0 # pipe doesn't work well here
     fi
 # **** Preview matches in =fzf --preview=
     if [[ "$2" == *z* ]]; then
-       cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd | fzf --preview 'cat {}'
+       cat /tmp/00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd | fzf --preview 'cat {}'
        exit 0
     fi
 # **** Create sag shortcuts for the Tag (TODO this is slow)
-    cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
+    cat /tmp/00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
     exit 0
 else
 # *** Filter out the tags must Run First (TODO this should be at the top of the script)
@@ -219,7 +231,9 @@ else
             	echo "subsequent search";
      else
               # List in order of modification Date, top newest
-            	ls -t *.md > 00TagMatchList; 
+            	# ls -t *.md > 00TagMatchList; 
+            	find ./ -name '*.md' | sort > 00TagMatchList;
+
      fi
      
 # **** Unused Slow Method
