@@ -98,7 +98,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(
 
      (yasnippet-snippets)
-     (poly-r)
+     (poly-R)
      (poly-markdown)
      (citeproc)
      (golden-ratio)

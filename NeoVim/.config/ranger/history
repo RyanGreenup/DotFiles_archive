@@ -1,8 +1,3 @@
-filter .conf
-filter i3lh
-filter un
-search zf .un
-filter -r .*\.un
 filter -r .*\.swp
 unmark
 filter emp
@@ -32,7 +27,6 @@ shell firefox 01_R_Basics.html
 shell jj
 filter Visual
 filter social
-delete
 shell mkdir Social_Web_Analytics
 flat 4
 filter .rmd
@@ -48,3 +42,9 @@ cd -
 find datas
 filter 
 filter Rmd
+rename .Rproj.user
+cd /home/ryan/Notes/DataSci/ThinkingAboutData
+filter .md
+filter -g \.md
+filter 02_Q
+delete

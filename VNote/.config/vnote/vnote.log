@@ -10151,3 +10151,759 @@ Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross ori
 Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
 Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
 Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Critical:(dom-to-image.js:607) Uncaught TypeError: Cannot read property 'keyPressEvent' of undefined
+Warning:(:0) inotify_add_watch("/home/ryan/Notes/DataSci/_Vnote-Notebook/Data Camp") failed: "No such file or directory"
+Info:(main.cpp:211) VNote started "2.8.2" "Sat. Mar. 21 14:26:40 2020"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/ThinkingAboutData/01_Randomness.md"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md"
+Critical:(dom-to-image.js:27) Not allowed to load local resource: file:///home/ryan/.config/vnote/resources/common.css
+Critical:(dom-to-image.js:28) Not allowed to load local resource: file:///home/ryan/.config/vnote/themes/v_detorte/v_detorte.css
+Critical:(dom-to-image.js:29) Not allowed to load local resource: file:///home/ryan/.config/vnote/themes/v_detorte/v_detorte_codeblock.css
+Critical:(dom-to-image.js:52) Not allowed to load local resource: file:///home/ryan/.config/vnote/themes/v_detorte/v_detorte_mermaid.css
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md"
+Critical:(dom-to-image.js:0) Not allowed to load local resource: file:///home/ryan/Dropbox/Apps/MathJax-2.7.3/MathJax.js?config=TeX-MML-AM_HTMLorMML
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md"
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md"
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md" to "/home/ryan/Notes/MD/_v_recycle_bin/20200321/01_Lecture.md"
+Warning:(vnotefile.cpp:214) fail to delete "01_Lecture.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md"
+Warning:(vnotefile.cpp:461) fail to delete file "01_Lecture.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Lecture.md"
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Summarising_Data_Prac.md"
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Summarising_Data_Prac.md" to "/home/ryan/Notes/MD/_v_recycle_bin/20200321/01_Summarising_Data_Prac.md"
+Warning:(vnotefile.cpp:214) fail to delete "01_Summarising_Data_Prac.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Summarising_Data_Prac.md"
+Warning:(vnotefile.cpp:461) fail to delete file "01_Summarising_Data_Prac.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/01_Summarising_Data_Prac.md"
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/03_vectors.md"
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/SocialWebAnalytics/03_vectors.md" to "/home/ryan/Notes/MD/_v_recycle_bin/20200321/03_vectors.md"
+Warning:(vnotefile.cpp:214) fail to delete "03_vectors.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/03_vectors.md"
+Warning:(vnotefile.cpp:461) fail to delete file "03_vectors.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/03_vectors.md"
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Matrices.md"
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Matrices.md" to "/home/ryan/Notes/MD/_v_recycle_bin/20200321/04_Matrices.md"
+Warning:(vnotefile.cpp:214) fail to delete "04_Matrices.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Matrices.md"
+Warning:(vnotefile.cpp:461) fail to delete file "04_Matrices.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Matrices.md"
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/SocialWebAnalytics/05_TopDown_Game_of_Life_2.R" to "/home/ryan/Notes/MD/_v_recycle_bin/20200321/05_TopDown_Game_of_Life_2.R"
+Warning:(vnotefile.cpp:214) fail to delete "05_TopDown_Game_of_Life_2.R" "/home/ryan/Notes/MD/University/SocialWebAnalytics/05_TopDown_Game_of_Life_2.R"
+Warning:(vnotefile.cpp:461) fail to delete file "05_TopDown_Game_of_Life_2.R" "/home/ryan/Notes/MD/University/SocialWebAnalytics/05_TopDown_Game_of_Life_2.R"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/Analytics_Programming/05_TopDown_Game_of_Life_2.R" to "/home/ryan/Notes/MD/_v_recycle_bin/20200322/05_TopDown_Game_of_Life_2.R"
+Warning:(vnotefile.cpp:214) fail to delete "05_TopDown_Game_of_Life_2.R" "/home/ryan/Notes/MD/University/Analytics_Programming/05_TopDown_Game_of_Life_2.R"
+Warning:(vnotefile.cpp:461) fail to delete file "05_TopDown_Game_of_Life_2.R" "/home/ryan/Notes/MD/University/Analytics_Programming/05_TopDown_Game_of_Life_2.R"
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Info:(main.cpp:211) VNote started "2.8.2" "Sun. Mar. 22 11:01:57 2020"
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Warning:(vstyleparser.cpp:108) unimplemented format attr type: 7
+Info:(main.cpp:211) VNote started "2.8.2" "Sun. Mar. 22 11:02:38 2020"
+Info:(main.cpp:211) VNote started "2.8.2" "Sun. Mar. 22 11:03:42 2020"
+Info:(main.cpp:211) VNote started "2.8.2" "Sun. Mar. 22 11:04:30 2020"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:160) Unhandled property update: content::undefined
