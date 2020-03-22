@@ -95,7 +95,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'ron89/thesaurus_query.vim'
 
 
-
 "Org Mode
 Plug 'jceb/vim-orgmode'
 "Universal Text Links

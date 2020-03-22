@@ -45,7 +45,7 @@
 ;; Popup Window (floating window)
 ;; Just remember the xserver window is called a frame
 ;;                 the internal split is called a window
-; (setq helm-display-function 'helm-display-buffer-in-own-frame
+                                        ; (setq helm-display-function 'helm-display-buffer-in-own-frame
 ;       helm-display-buffer-reuse-frame t
 ;       helm-use-undecorated-frame-option t)
 ; (setq ivy-posframe-mode 1)
@@ -218,6 +218,9 @@
 
 
 ;;;; Org-Mode
+;;;;; Agenda Settings
+;;;;;; Show Effort in Column View
+(setq org-columns-default-format "%60ITEM(Task) %TODO %6Effort(Estim){:}  %6CLOCKSUM(Clock) %TAGS")
 ;;;;; Helm-Org-Rifle
 ;; use Tab for Preview
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
