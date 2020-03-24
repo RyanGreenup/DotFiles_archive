@@ -95,6 +95,43 @@ $2
 $0
 endsnippet
 
+snippet fldk "Folding Code Block" wA
+<details open><summary>Question</summary>
+<p>
+
+$1{$\int 4x^3 \mathrm{d}x$}
+
+<details closed><summary>Solution</summary>
+<p>
+
+$2{$x^4$}
+
+</p>
+</details>
+
+<details closed><summary>Code</summary>
+<p>
+
+\`\`\`{py}
+from __future__ import division
+from sympy import *
+x, y, z, t = symbols('x y z t')
+k, m, n = symbols('k m n', integer=True)
+f, g, h = symbols('f g h', cls=Function)
+init_printing()
+$4{integrate(4*x**3, x)}
+\`\`\`
+
+
+</p>
+</details>
+
+</p>
+</details>
+$0
+endsnippet
+
+
 
 snippet det "Details"
   <!-- Sometimes you need a dot, <br> ruins the spacing Important --><details ${6: open} markdown="1"><summary><p>
