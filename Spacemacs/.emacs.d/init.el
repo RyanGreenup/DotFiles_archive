@@ -299,7 +299,8 @@
 (setq org-preview-latex-default-process `dvisvgm)
 (setq org-preview-latex-default-process `dvipng)
 ;;;;;; Make nice pretty bullets
-(add-hook 'org-mode-hook 'org-bullets-mode)
+;(add-hook 'org-mode-hook 'org-bullets-mode)
+(add-hook 'org-mode-hook 'org-superstar-mode)
 
 ;;;;;; Mixed Pitch (Sans Serif Font)
 ; (require 'mixed-pitch)

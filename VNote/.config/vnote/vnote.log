@@ -11338,3 +11338,5 @@ Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
 Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
 Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
 Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
+Info:(main.cpp:211) VNote started "2.8.2" "Fri. Mar. 27 07:15:22 2020"
+Critical:(markdown_template.js:607) Uncaught TypeError: Cannot read property 'keyPressEvent' of undefined
