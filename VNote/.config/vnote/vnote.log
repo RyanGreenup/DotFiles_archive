@@ -11104,3 +11104,237 @@ Warning:(:0) QXcbClipboard: SelectionRequest too old
 Warning:(:0) QXcbClipboard: SelectionRequest too old
 Warning:(:0) QXcbClipboard: SelectionRequest too old
 Warning:(vcodeblockhighlighthelper.cpp:221) fail to parse highlighted result stamp: 2 index: 3 "<pre><code class=\"lang-markdown\"><span class=\"xml\"><span class=\"hljs-comment\">&lt;!--- Mathematica --&gt;</span></span><span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">details</span>  <span class=\"hljs-attr\">closed</span> <span class=\"hljs-attr\">markdown</span>=<span class=\"hljs-string\">\"1\"</span>&gt;</span></span><span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">summary</span>&gt;</span></span>\n\n<span class=\"hljs-section\">### Mathematica</span>\n<span class=\"xml\"><span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">summary</span>&gt;</span></span><span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">p</span>&gt;</span></span>\n<span class=\"hljs-code\">    </span>\n<span class=\"hljs-bullet\">* </span>[<span class=\"hljs-string\">Mathematica from the terminal</span>](<span class=\"hljs-link\">./Mathematica_from_the_terminal.md</span>)\n<span class=\"hljs-bullet\">* </span>[<span class=\"hljs-string\">Substitution and Pattern Matching</span>](<span class=\"hljs-link\">./Substitution_and_Pattern_Matching.md</span>)\n\n<span class=\"hljs-code\">    </span>\n<span class=\"xml\"><span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">p</span>&gt;</span></span>\n\n<span class=\"xml\"><span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">details</span>&gt;</span></span>\n</code></pre>\n"
+Info:(main.cpp:211) VNote started "2.8.2" "Tue. Mar. 24 13:39:26 2020"
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/SoWkIImgISaluN98pKi1qLpAoieAlgb5kOcPALnSK8P2Ph52Oavnla9PQb6bGa5-GMbEOX5NGa92BbHXUb5YGOP2Y8irbm8GEEhgsZaXcCuGfXEG2LNW36420000. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access. The response had HTTP status code 504.
+Warning:(vcodeblockhighlighthelper.cpp:221) fail to parse highlighted result stamp: 886 index: 6 "<pre><code class=\"lang-puml\">\n\n<span class=\"http\">\n\n<span class=\"dockerfile\">@startdot\ndigraph notebook {\n  math [<span class=\"hljs-keyword\">label</span><span class=\"bash\">=<span class=\"hljs-string\">\"Math Online Wiki\"</span>,URL=<span class=\"hljs-string\">\"http://mathonline.wikidot.com/\"</span>]\n</span>  wikip [<span class=\"hljs-keyword\">label</span><span class=\"bash\">=<span class=\"hljs-string\">\"Wikipedia\"</span>,URL=<span class=\"hljs-string\">\"https://www.wikipedia.org/\"</span>]\n</span>  reddit [<span class=\"hljs-keyword\">label</span><span class=\"bash\">=<span class=\"hljs-string\">\"Reddit\"</span>,URL=<span class=\"hljs-string\">\"https://www.reddit.com/\"</span>]\n</span>  reddit -&gt; math;\n  reddit -&gt; wikip;\n  wikip  -&gt; math;\n}\n@enddot\n</span></span></code></pre>\n"
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Critical:(:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
+Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
+Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
+Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.

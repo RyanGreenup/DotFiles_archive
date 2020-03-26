@@ -56,11 +56,14 @@
 ;; I think Helm might automatically decide given resolution???
 ;; (setq helm-split-window-default-side 'below)
 ;;(helm-autoresize-mode 1)
+;;;;; Relative Line Numbers
+(require 'linum-relative)
+(linum-relative-mode 1)
 ;;;;; Golden Ratio Window Management
 (require 'golden-ratio)
 (golden-ratio-mode 1)
 ; Allow Auto Adjust
-(add-hook 'buffer-list-update-hook #'golden-ratio) 
+(add-hook 'buffer-list-update-hook #'golden-ratio)
 (add-hook 'focus-in-hook           #'golden-ratio)
 (add-hook 'focus-out-hook          #'golden-ratio)
 ;;;;; OutShine
@@ -303,6 +306,54 @@
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
 (setq company-posframe-mode 1)
 ;;;;; Exports
+;;;;;; Org-Publish
+;; Each call of setq org-publish overwrites the last
+;; You must have one big list
+;; Refer to    [[file:~/Notes/Org/VisualAnalytics.org::*Publishing Pathway][Publishing Pathway]] 
+
+;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+;; (toggle-org-custom-inline-style)
+  (setq org-publish-project-alist
+        '(
+
+          ("Aut_orgfiles"
+           :base-directory "~/Notes/Org/"
+           :base-extension "org"
+           :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+           :publishing-function org-html-publish-to-html
+           :exclude ".*" ;; Regexp
+           :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+                     "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+           :headline-levels 3
+           :recursive t
+           :section-numbers nil
+           :with-toc t
+           :html-head "<link rel=\"stylesheet\"
+           href=\"./style.css\" type=\"text/css\"/>"
+           :html-preamble t)
+
+
+          ("Aut_images"
+           :base-directory "~/Notes/Org/"
+           :base-extension "jpg\\|gif\\|png"
+           :exclude ".*ltximg.*" ;; regexp
+           :recursive t
+           :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+           :publishing-function org-publish-attachment)
+
+          ("Aut_other"
+           :base-directory "~/Notes/Org/"
+           :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+           :exclude "journal.*" ;; Regexp
+           :recursive t
+           :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+           :publishing-function org-publish-attachment)
+
+          ("Autumn" :components ("orgfiles" "images" "other"))))
+
+; ;;;;;; Ox-Hugo
+; (withheval-after-load 'ox
+;                       (require 'ox-hugo))
 ;;;;;; Resize LaTeX Images
 (setq org-image-actual-width nil)
 (setq org-latex-image-default-width "")
@@ -364,7 +415,7 @@
      (message "Added %s to %s" (symbol-name fun) (symbol-name hook)))))
 
 ; Enable Css hook by default
-(add-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+;(add-hook 'org-mode-hook 'toggle-org-custom-inline-style)
 
 (defun org-theme ()
   (interactive)
@@ -477,6 +528,9 @@
   '((R          . t)
     (latex       . t)
     (python      . t)
+    (dot         . t)
+    (mermaid     . t)
+    (plantuml    . t)
     (gnuplot     . t)
     (java        . t)
     (sed         . t)
@@ -487,10 +541,19 @@
 ;; write =#+BEGIN_SRC vim= to get =vimrc-mode= behaviour
  (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
 
+ ;; write =#+BEGIN_SRC vim= to get =vimrc-mode= behaviour
+ (add-to-list 'org-src-lang-modes (cons "plantuml" 'javascript))
+
 ;;;;;; org-attach image
 ; when you point to a link it will attach it to the file
  (require 'org-attach)
  (setq org-link-abbrev-alist '(("att" . org-attach-expand-link)))
+
+;;;;;; Set up Plant UML
+ (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
+ (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+;;;;;; Mermaid CLI Tool
+(setq ob-mermaid-cli-path "home/ryan/.nvm/versions/node/v13.6.0/bin/mmdc")
 
 ;;;;;; Closing )
 )
