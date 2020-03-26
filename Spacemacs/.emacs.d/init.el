@@ -349,7 +349,7 @@
            :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
            :publishing-function org-publish-attachment)
 
-          ("Autumn" :components ("orgfiles" "images" "other"))))
+          ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))))
 
 ; ;;;;;; Ox-Hugo
 ; (withheval-after-load 'ox
