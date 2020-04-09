@@ -204,3 +204,33 @@ endsnippet
 snippet vec
 ${1:var} <- c("${0:${VISUAL:/ /","/g}}")
 endsnippet
+
+############################################################
+########### My Snippets ####################################
+############################################################
+
+snippet nttg "Note Tag" wA
+<p style = "font-family:Courier New,Courier, monospace,serif;font-size:22px;font-style:italic; " align="right"  color=blue>
+    <b> 
+        #standardise<br>
+    </b>
+</p>
+endsnippet
+
+snippet dnshist "Desnity Histogram" wA
+dens_hist <- function(vec, main = paste("Histogram With Density Curve"), col = "purple", fill = "lightblue") {
+    
+  # Make the Histogram
+  hist(vec, freq = FALSE, col = fill, main = main)
+  c_int <- quantile(x = vec, c(0.05, 0.95))
+  
+  # Plot the Curve
+  x <- 1:2000
+  curve(dnorm(x = x, mean = mean(vec), sd = sd(vec)), add = TRUE, col = col)
+  abline(v = c_int[1], col = col, lwd = 2, lty = 2)
+  abline(v = c_int[2], col = col, lwd = 2, lty = 2)
+  
+}
+endsnippet
+
+

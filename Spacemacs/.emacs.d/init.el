@@ -158,6 +158,7 @@
            (+ (if (bolp) 1 0) (count-lines 1 (point)))
            (shell-quote-argument buffer-file-name))))
 
+
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
 ;;;; AucTeX

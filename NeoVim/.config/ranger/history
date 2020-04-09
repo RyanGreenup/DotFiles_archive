@@ -1,19 +1,7 @@
-unmark
-filter emp
-rename CSS
-filter .ema
-shell baobab .
-filter
-filter confli
-filter otes
-shell mkdir ThinkingAboutData
-filter e
-filter .Rmd
 find dat
 filter gamma
 wq
 shell mkdir AnalyticsProgramming
-
 flat 3
 search 
 flat 5
@@ -34,7 +22,6 @@ flat 0
 filter rmd
 rename 02_Introduction_to_R.rmd
 shell rstudio 02_Introduction_to_R.rmd & disown
-q
 shell 
 shell cd -
 cd -
@@ -46,5 +33,18 @@ cd /home/ryan/Notes/DataSci/ThinkingAboutData
 filter .md
 filter -g \.md
 filter 02_Q
-delete
 filter Anal
+shel
+rename output-39.png
+rename ggplot2_layers.p9ng
+rename layer_elements.png
+rename ggplot2_layers.png
+rename 00output-46.png
+unmark
+shell cp ~/tmp/note.html ./05
+qw
+q
+filter Visual_Analy
+
+filter Vis
+delete
