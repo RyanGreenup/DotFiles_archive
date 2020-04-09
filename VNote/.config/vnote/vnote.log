@@ -11340,3 +11340,1024 @@ Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
 Critical:(:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
 Info:(main.cpp:211) VNote started "2.8.2" "Fri. Mar. 27 07:15:22 2020"
 Critical:(markdown_template.js:607) Uncaught TypeError: Cannot read property 'keyPressEvent' of undefined
+<<<<<<< HEAD
+Info:(main.cpp:211) VNote started "2.8.2" "Tue. Mar. 31 06:34:32 2020"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Info:(main.cpp:211) VNote started "2.8.2" "Tue. Mar. 31 16:26:33 2020"
+Warning:(vpalette.cpp:60) cyclic palette definitions found QHash(("pushbutton_disabled_bg", "pushbutton_bg"))
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+=======
+Info:(main.cpp:211) VNote started "2.8.2" "Fri. Mar. 27 19:36:01 2020"
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+<<<<<<< HEAD
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ContentAccessDenied)
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Info:(main.cpp:211) VNote started "2.8.2" "Wed. Apr. 1 14:03:31 2020"
+Warning:(vpalette.cpp:60) cyclic palette definitions found QHash(("pushbutton_disabled_bg", "pushbutton_bg"))
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(dom-to-image.js:160) Unhandled property update: content::undefined
+Info:(main.cpp:211) VNote started "2.8.2" "Fri. Apr. 3 14:12:40 2020"
+Warning:(vpalette.cpp:60) cyclic palette definitions found QHash(("pushbutton_disabled_bg", "pushbutton_bg"))
+Warning:(qwebchannel.js:160) Unhandled property update: content::undefined
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+=======
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+Warning:(vdownloader.cpp:15) download reply error QNetworkReply::NetworkError(ProtocolUnknownError)
+<<<<<<< HEAD
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(qwebchannel.js:138) Unhandled signal: content::11
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Critical:(qwebchannel.js:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/. Redirect from 'http://www.plantuml.com/plantuml/svg/' to 'http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access.
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(qwebchannel.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(qwebchannel.js:524) cannot fetch resource: about:blank, status: 0
+Info:(main.cpp:211) VNote started "2.8.2" "Tue. Apr. 7 16:22:25 2020"
+Warning:(vpalette.cpp:60) cyclic palette definitions found QHash(("pushbutton_disabled_bg", "pushbutton_bg"))
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/3"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/4"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/3"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/4"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/3"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/4"
+Warning:(:0) "No such interface 'org.freedesktop.DBus.Properties' on object at path /org/freedesktop/NetworkManager/ActiveConnection/3"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+=======
+Warning:(vcodeblockhighlighthelper.cpp:221) fail to parse highlighted result stamp: 2 index: 6 "<pre><code>wvf.hy0i[]b\u001Bpa](\u001BA)\u001B\u001B0j\n</code></pre>\n"
+Info:(main.cpp:211) VNote started "2.8.2" "Sat. Mar. 28 20:47:19 2020"
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+<<<<<<< HEAD
+=======
+Info:(main.cpp:211) VNote started "2.8.2" "Thu. Apr. 9 11:05:31 2020"
+Info:(main.cpp:211) VNote started "2.8.2" "Thu. Apr. 9 11:05:43 2020"
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a

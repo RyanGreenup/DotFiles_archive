@@ -1,4 +1,5 @@
-unmark
+<<<<<<< HEAD
+=======
 filter emp
 rename CSS
 filter .ema
@@ -9,12 +10,16 @@ filter otes
 shell mkdir ThinkingAboutData
 filter e
 filter .Rmd
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 find dat
 filter gamma
 wq
 shell mkdir AnalyticsProgramming
-
+<<<<<<< HEAD
 flat 3
+=======
+
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 search 
 flat 5
 search social
@@ -34,17 +39,35 @@ flat 0
 filter rmd
 rename 02_Introduction_to_R.rmd
 shell rstudio 02_Introduction_to_R.rmd & disown
-q
 shell 
 shell cd -
 cd -
 find datas
-filter 
 filter Rmd
 rename .Rproj.user
 cd /home/ryan/Notes/DataSci/ThinkingAboutData
 filter .md
 filter -g \.md
 filter 02_Q
-delete
 filter Anal
+<<<<<<< HEAD
+shel
+rename output-39.png
+rename ggplot2_layers.p9ng
+rename layer_elements.png
+rename ggplot2_layers.png
+rename 00output-46.png
+unmark
+shell cp ~/tmp/note.html ./05
+qw
+q
+filter Visual_Analy
+
+filter Vis
+delete
+=======
+flat 3
+filter conflicted copy
+delete
+filter 
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
