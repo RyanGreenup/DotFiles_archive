@@ -128,32 +128,6 @@
 (setq-default dotspacemacs-configuration-layers '((ess :variables
                                                        ess-assign-key "\M--")))
 
-(defun R_assignment ()
-  "R - <- operator or 'Assignment' operator"
-  (interactive)
-  (just-one-space 1)
-  (insert "<-")
-  (just-one-space 1))
-
-(define-key ess-mode-map (kbd "M--") 'R_assignment)
-(define-key inferior-ess-mode-map (kbd "C--") 'then_R_operator)
-
-
-;; R Binding for %>%
-(defun then_R_operator ()
-  "R - %>% operator or 'then' pipe operator"
-  (interactive)
-  (just-one-space 1)
-  (insert "%>%")
-  (reindent-then-newline-and-indent))
-(define-key ess-mode-map (kbd "C-%") 'then_R_operator)
-(define-key inferior-ess-mode-map (kbd "C-%") 'then_R_operator)
-(define-key ess-mode-map (kbd "C-S-m") 'then_R_operator)
-(define-key inferior-ess-mode-map (kbd "C-S-m") 'then_R_operator)
-(define-key ess-mode-map (kbd "C-S-m") 'then_R_operator)
-(define-key inferior-ess-mode-map (kbd "C-S-m") 'then_R_operator)
-
-
 ;;;;; Make Evaluated code Flash
 
 (require 'nrepl-eval-sexp-fu)
@@ -183,7 +157,6 @@
    (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s & disown"
            (+ (if (bolp) 1 0) (count-lines 1 (point)))
            (shell-quote-argument buffer-file-name))))
-
 
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
