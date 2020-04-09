@@ -1,8 +1,25 @@
+<<<<<<< HEAD
+=======
+filter emp
+rename CSS
+filter .ema
+shell baobab .
+filter
+filter confli
+filter otes
+shell mkdir ThinkingAboutData
+filter e
+filter .Rmd
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 find dat
 filter gamma
 wq
 shell mkdir AnalyticsProgramming
+<<<<<<< HEAD
 flat 3
+=======
+
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 search 
 flat 5
 search social
@@ -26,7 +43,6 @@ shell
 shell cd -
 cd -
 find datas
-filter 
 filter Rmd
 rename .Rproj.user
 cd /home/ryan/Notes/DataSci/ThinkingAboutData
@@ -34,6 +50,7 @@ filter .md
 filter -g \.md
 filter 02_Q
 filter Anal
+<<<<<<< HEAD
 shel
 rename output-39.png
 rename ggplot2_layers.p9ng
@@ -48,3 +65,9 @@ filter Visual_Analy
 
 filter Vis
 delete
+=======
+flat 3
+filter conflicted copy
+delete
+filter 
+>>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
