@@ -45,20 +45,18 @@ This function should only modify configuration layer settings."
      ;; git
      ;; lsp
      ;; markdown
-     multiple-cursors
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
-     treemacs
      ;; version-control
      shell-scripts
      yaml
      rust
      python
-     mermaid
+     ;; mermaid
      javascript
      lua
      vimscript
@@ -281,7 +279,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Fira Code Regular"
+   dotspacemacs-default-font '("Fira Code"
                                :size 10.0
                                :weight normal
                                :width normal)

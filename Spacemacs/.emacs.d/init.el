@@ -125,8 +125,36 @@
 ;;;;; ESS and R Stuff
 ;; R Binding for <-
  ;; https://develop.spacemacs.org/layers/+lang/ess/README.html
-(setq-default dotspacemacs-configuration-layers '((ess :variables
-                                                       ess-assign-key "\M--")))
+;; (setq-default dotspacemacs-configuration-layers '((ess :variables ess-assign-key "\M--")))
+
+  (defun R_assignment ()
+    "R - <- operator or 'Assignment' operator"
+    (interactive)
+    (just-one-space 1)
+    (insert "<-")
+    (just-one-space 1))
+
+
+(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "M--") 'R_assignment))
+(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "M--") 'R_assignment))
+
+
+;;;;;; R Binding for %>%
+(defun then_R_operator ()
+  "R - %>% operator or 'then' pipe operator"
+  (interactive)
+  (just-one-space 1)
+  (insert "%>%")
+  (reindent-then-newline-and-indent))
+
+(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "C-S-m") 'then_R_operator))
+(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-S-m") 'then_R_operator))
+
+;;;;;; More Senible bindings
+(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "<M-return>") 'ess-eval-line))
+(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "<M-return>") 'ess-eval-line))
+(eval-after-load "poly-markdown-mode" '(define-key poly-markdown+R-mode-map (kbd "<C-S-return>") 'polymode-eval-chunk))
+
 
 ;;;;; Make Evaluated code Flash
 
@@ -530,7 +558,7 @@
     (latex       . t)
     (python      . t)
     (dot         . t)
-    (mermaid     . t)
+;;    (mermaid     . t)
     (plantuml    . t)
     (gnuplot     . t)
     (java        . t)
@@ -554,7 +582,7 @@
  (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
  (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 ;;;;;; Mermaid CLI Tool
-(setq ob-mermaid-cli-path "home/ryan/.nvm/versions/node/v13.6.0/bin/mmdc")
+;; (setq ob-mermaid-cli-path "home/ryan/.nvm/versions/node/v13.6.0/bin/mmdc")
 
 ;;;;;; Closing )
 )
