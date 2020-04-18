@@ -12361,3 +12361,124 @@ Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
 Info:(main.cpp:211) VNote started "2.8.2" "Thu. Apr. 9 11:05:31 2020"
 Info:(main.cpp:211) VNote started "2.8.2" "Thu. Apr. 9 11:05:43 2020"
 >>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
+Info:(main.cpp:211) VNote started "2.8.2" "Wed. Apr. 15 10:58:19 2020"
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Warning:(:0) QXcbClipboard: SelectionRequest too old
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Critical:(dom-to-image.js:27) Not allowed to load local resource: file:///home/ryan/.config/vnote/resources/common.css
+Critical:(dom-to-image.js:28) Not allowed to load local resource: file:///home/ryan/.config/vnote/themes/v_pure/v_pure.css
+Critical:(dom-to-image.js:29) Not allowed to load local resource: file:///home/ryan/.config/vnote/themes/v_pure/v_pure_codeblock.css
+Critical:(dom-to-image.js:52) Not allowed to load local resource: file:///home/ryan/.config/vnote/themes/v_pure/v_pure_mermaid.css
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Critical:(dom-to-image.js:0) Not allowed to load local resource: file:///home/ryan/Dropbox/Apps/MathJax-2.7.3/MathJax.js?config=TeX-MML-AM_HTMLorMML
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vnotefile.cpp:68) fail to rename file "04_Simple_Exposure_Analysis.md" to "03_Simple_Exposure_Analysis.md" in disk
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vedittab.cpp:162) file is missing when check file's outside change "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vfile.cpp:48) file does not exist "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vutils.cpp:1325) fail to move "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md" to "/home/ryan/Notes/MD/_v_recycle_bin/20200417/04_Simple_Exposure_Analysis.md"
+Warning:(vnotefile.cpp:214) fail to delete "04_Simple_Exposure_Analysis.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Warning:(vnotefile.cpp:461) fail to delete file "04_Simple_Exposure_Analysis.md" "/home/ryan/Notes/MD/University/SocialWebAnalytics/04_Simple_Exposure_Analysis.md"
+Info:(main.cpp:211) VNote started "2.8.2" "Fri. Apr. 17 18:51:05 2020"
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:0) XMLHttpRequest cannot load http://www.plantuml.com/plantuml/svg/IrI8vm80. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'file://' is therefore not allowed access. The response had HTTP status code 504.
+Warning:(:0) QPainter::begin: Paint device returned engine == 0, type: 2
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Critical:(dom-to-image.js:484) XMLHttpRequest cannot load about:blank. Cross origin requests are only supported for protocol schemes: http, data, chrome, https.
+Critical:(dom-to-image.js:524) cannot fetch resource: about:blank, status: 0
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:138) Unhandled signal: content::11
+Warning:(dom-to-image.js:160) Unhandled property update: content::undefined

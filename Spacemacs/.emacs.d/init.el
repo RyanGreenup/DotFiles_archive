@@ -151,10 +151,22 @@
 (eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "C-S-m") 'then_R_operator))
 
 ;;;;;; More Senible bindings
-(eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "<M-return>") 'ess-eval-line))
-(eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "<M-return>") 'ess-eval-line))
-(eval-after-load "poly-markdown-mode" '(define-key poly-markdown+R-mode-map (kbd "<C-S-return>") 'polymode-eval-chunk))
-
+; (eval-after-load "ess-mode" '(define-key inferior-ess-mode-map (kbd "<M-return>") 'ess-eval-line))
+; (eval-after-load "ess-mode" '(define-key ess-mode-map (kbd "<M-return>") 'ess-eval-line))
+; (eval-after-load "poly-markdown-mode" '(define-key poly-markdown+R-mode-map (kbd "<C-S-return>") 'polymode-eval-chunk))
+; (spacemacs/set-leader-keys "oc" 'polymode-eval-chunk)
+; (spacemacs/set-leader-keys "ol" 'ess-eval-line)
+; (spacemacs/set-leader-keys "od" 'polymode-eval-chunk)
+; ;; So you have to wait for ESS to load and trying to make emacs do that is
+; ;; actually a pain in the ass, a hook to change the keys on the other hand is easy
+ (add-hook 'markdown-mode-hook
+           (lambda ()
+             (local-set-key [3 112] 'ess-eval-paragraph)
+             (local-set-key [M-return] 'ess-eval-line)
+             (local-set-key [C-S-return] 'polymode-eval-chunk)
+             (local-set-key [3 24 21] 'markdown-toggle-url-hiding)
+             (local-set-key [3 24 12] 'org-toggle-latex-fragment)
+             ))
 
 ;;;;; Make Evaluated code Flash
 
