@@ -556,7 +556,7 @@ endif
 "
 " MUST be preceeded and terminated with a space
 "
-imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename $HOME/Notes/MD -t md \| sort -u')
+imap <expr> <C-c>C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename $HOME/Notes/MD -t md \| sort -u')
 imap <expr> <C-c><C-y> fzf#vim#complete('cat /tmp/00tags.csv')
 "nnoremap <expr> <Space>fg :Rg expand('<cword>') <CR>
 nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>
@@ -699,9 +699,9 @@ let g:mkdp_page_title = '「${name}」'
 "refer to ~/Notes/Notable/KaTeX_and_MD_Notes.md
 "
 """"" VimWiki
-let g:vimwiki_list = [{'path': '~/Notes/MD/notes/',
+let g:vimwiki_list = [{'path': '~/Notes/MD/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_list = [{'path': '~/Notes/MD/notes/',
+let g:vimwiki_list = [{'path': '~/Notes/MD/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folder

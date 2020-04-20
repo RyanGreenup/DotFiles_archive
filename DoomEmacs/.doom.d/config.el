@@ -583,6 +583,7 @@
 
 ;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
 ;; (toggle-org-custom-inline-style)
+;;;; Github Autumn Files
 (setq org-publish-project-alist
       '(
 
@@ -620,7 +621,8 @@
          :publishing-function org-publish-attachment)
 
         ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))))
-
+;;;; Server Autumn Files
+;; todo, but be mindful to move apache from root
 ;; Ox-Hugo
 ;; (withheval-after-load 'ox
 ;;                       (require 'ox-hugo))
