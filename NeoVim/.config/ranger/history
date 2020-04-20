@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-=======
-filter emp
-rename CSS
-filter .ema
-shell baobab .
-filter
-filter confli
-filter otes
-shell mkdir ThinkingAboutData
-filter e
-filter .Rmd
->>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
-find dat
-filter gamma
-wq
-shell mkdir AnalyticsProgramming
-<<<<<<< HEAD
-flat 3
-=======
-
->>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 search 
 flat 5
 search social
@@ -64,10 +42,9 @@ q
 filter Visual_Analy
 
 filter Vis
-delete
 =======
 flat 3
 filter conflicted copy
-delete
 filter 
 >>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
+delete
