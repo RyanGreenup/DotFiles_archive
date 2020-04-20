@@ -395,7 +395,7 @@
 ;;;;;; Use PDF-Tools
 ;(eval-after-load 'org '(require 'org-pdfview))
 
-(after! org
+;; (after! org
 ;; (add-to-list 'org-file-apps
 ;;              '("\\.pdf\\'" . (lambda (file link)
 ;;                                (org-pdfview-open link))))
@@ -409,6 +409,21 @@
 ;;  + transforming cite:key to \cite{key} on LaTeX export
 ;;
 (after! org
+
+ (setq org-link-abbrev-alist
+       '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
+         ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
+         ("google"    . "http://www.google.com/search?q=")
+         ("gmap"      . "http://maps.google.com/maps?q=%s")
+         ("vidar"     . "http://121.210.19.69/")
+         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
+         ("ads"       . "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\""))))
+
+ (add-to-list 'auto-mode-alist '("\\.pdf\\'" . doc-view-mode-maybe))
+  (after! org
+  (add-to-list 'org-file-apps
+               '("\\.pdf\\'" . (lambda (file link)
+                                 (org-pdfview-open link))))
 
 (use-package! citeproc-org
   :load-path "~/DotFiles/Spacemacs/Downloads/citeproc-org-0.2.2"
