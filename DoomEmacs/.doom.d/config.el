@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Ryan G"
-      user-mail-address "exogenesis@protonmail.com")
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -20,15 +20,13 @@
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "monospace" :size 14))
 
-
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
 (setq doom-theme 'doom-one)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/Notes/Org/")
-(setq org-agenda-files '("~/Notes/Org"))
+(setq org-directory "~/org/")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -51,347 +49,280 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(defadvice! debug-log (&rest _)
-  :before #'ws-butler-after-change
-  (message "-- %s %s %s"
-           (current-buffer)
-           buffer-file-name
-           major-mode))
 
-;;; My Settings
-;;;; Housekeeping
-;;;; IDE Stuff
-(golden-ratio-mode 1)
-;;;;; Hook start indent-guide-mode in shell and py mode
-;;;;; Fold indents
-;;;;;; add a hook
-(add-hook 'sh-mode-hook 'indent-guide-mode)
-(add-hook 'sh-mode-hook 'flycheck-mode)
-(add-hook 'sh-mode-hook 'company-mode)
-;(global-set-key (kbd ";C-c v") 'open-term-copy-path)
-;;;;; Auto Preview Math
+;;; My settings
+;;;; Font
+;; (setq doom-font (font-spec :family "monospace" :size 22 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :size 22 ))
+ (setq doom-font (font-spec :family "monospace" :size 22 :weight 'semi-light))
 
-
-(defvar org-equation-live-preview-buffer-name "*Equation Live*")
-(defvar org-equation-live-preview-split-size 30)
-(defvar org-equation-live-preview-idle-time 0.5)
-(defvar org-equation-live-preview--timer)
-(defvar org-equation-live-preview--org-buffer)
-(defvar org-equation-live-preview--preview-buffer)
-
-(defun org-equation-live-preview--preview ()
-  (interactive)
-  (let ((datum (org-element-context)))
-    (and (memq (org-element-type datum) '(latex-environment latex-fragment))
-         (let* ((beg (org-element-property :begin datum))
-                (end (org-element-property :end datum))
-                (text (buffer-substring-no-properties beg end)))
-           (with-current-buffer org-equation-live-preview--preview-buffer
-             (let ((inhibit-read-only t))
-               (erase-buffer) (insert (replace-regexp-in-string "\n$" "" text))
-               (org-preview-latex-fragment)))))))
-
-(defun org-equation-live-preview--open-buffer ()
-  (interactive)
-  (setq org-equation-live-preview--org-buffer (current-buffer))
-  (let ((buffer-name org-equation-live-preview-buffer-name))
-    (setq org-equation-live-preview--preview-buffer
-          (get-buffer-create buffer-name))
-    (split-window-vertically org-equation-live-preview-split-size)
-    (other-window 1)
-    (switch-to-buffer buffer-name)
-    (special-mode)
-    (other-window -1)))
-
-(defun org-equation-live-preview--activate ()
-  (interactive)
-  (org-equation-live-preview--open-buffer)
-  (message "Activating org-equation-live-preview")
-  (setq org-equation-live-preview--timer
-        (run-with-idle-timer org-equation-live-preview-idle-time t 'org-equation-live-preview--preview)))
-
-(defun org-equation-live-preview--deactivate ()
-  (interactive)
-  (delete-other-windows)
-  (message "Deactivating org-equation-live-preview")
-  (cancel-function-timers 'org-equation-live-preview--preview))
-
-(provide 'org-equation-live-preview)
-
-;;;; AutoExport OrgMode to HTML
-(defun toggle-html-export-on-save ()
-  "Enable or disable export HTML when saving current buffer."
-  (interactive)
-  (when (not (eq major-mode 'org-mode))
-    (error "Not an org-mode file!"))
-  (if (memq 'org-html-export-to-html after-save-hook)
-      (progn (remove-hook 'after-save-hook 'org-html-export-to-html t)
-             (message "Disabled org html export on save"))
-    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
-    (set-buffer-modified-p t)
-    (message "Enabled org html export on save")))
-;;;;; Auto-Complete Skeleton Template
-;; (auto-insert-mode)
-;; ;; *NOTE* Trailing slash important
-;; (setq auto-insert-directory "/path/to/template/directory/")
-;; (setq auto-insert-query nil)
-;; (define-auto-insert "\\.tex$" "my-latex-template.tex")
-;;;;; Disable Auto-backup
-; hidden files brakes hugo/jekyll so I'm just going move where they get saved
-;; backup in one place. flat, no tree structure
-    ; I did this in the customise-variables window
-;; disable auto-save and auto-backup
-;; store all backup and autosave files in the tmp dir
-;use =auto-save-visited-mode= to save to the actual file.
-
-;; Do civilized backup names.  Added by dbrady 2003-03-07, taken from
-;; http://emacswiki.wikiwikiweb.de/cgi-bin/wiki.pl?BackupDirectory
-;;
-;; Don't forget to mkdir ~/saves
-(setq
- backup-by-copying t         ; don't clobber symlinks
- backup-directory-alist
- '(("." . "~/.emacssaves"))        ; don't litter my fs tree
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t)          ; use versioned backups
-
-(global-set-key "\M-g" 'goto-line)
-(setq-default c-basic-offset 2)
-(setq-default indent-tabs-mode nil)
-                                        ;(setq-default indent-tabs-mode t)
-(setq default-tab-width 2)
-
-     ; These are independent.
-; I would like to have it working, but, I cannot find a way to make the backups go into a different directory
-;;;;;; LaTeX
-(auto-insert-mode)
-;; *NOTE* Trailing slash important
-(setq auto-insert-directory "~/Dropbox/profiles/Templates/LaTeX/")
-(setq auto-insert-query nil)
-(define-auto-insert "\\.tex$" "LaTeX.tex")
-;;;;; Make Auto-Save Visit enable for MD and Org
-(add-hook 'markdown-mode-hook 'auto-save-visited-mode)
-(add-hook 'org-mode-hook 'auto-save-visited-mode)
-; The issue is creating these lock files,
-;these cause hugo and other programs like rsync to crash
-(setq create-lockfiles nil) ;All the other crap didn't do anything, THIS is what fixed everything!!!
-;;;;; Add Outline-Cycling
-; by default =outline-mode= doesn't have cycling although =outshine= introduces this, =outshine= conflicts with =latex-mode=, this doesn't and just extends the default package (wheras outshine is a buggier newer implementation.)
-;(eval-after-load 'outline
-;  '(progn
-;     (require 'outline-magic)
-;     (define-key outline-minor-mode-map (kbd "<C-tab>") 'outline-cycle)))
-;;;;; Jump to fold
-(evil-define-key 'normal evil-org-mode-map
-"zk" 'outline-up-heading
-"zk" 'outline-down-heading)
-
-
-;;;;; Use mouse to zoom
-(global-set-key [C-mouse-4] 'text-scale-increase)
-(global-set-key [C-mouse-5] 'text-scale-decrease)
-
-;;;;; Open File in Vim
-
-(defun prelude-open-with ()
-"Simple function that allows us to open the underlying
-  file of a buffer in an external program. only works with GTK
-  not terminal programs like Vim"
-
-(interactive)
-(when buffer-file-name
-  (shell-command (concat
-                  (if (eq system-type 'darwin)
-                      "open"
-                    (read-shell-command "Open current file with: "))
-                  " "
-                  buffer-file-name))))
-
-
-;;;;; Open a terminal in the working directory
-
-(defun open-gnome-terminal ()
- (interactive)
- (shell-command "gnome-terminal"))
-
-(defun open-term-copy-path ()
- "Run `gnome terminal' and `filename' in sequence."
- (interactive)
- (filename)
- (open-gnome-terminal))
-
-;(global-set-key (kbd "C-c v") 'open-term-copy-path)
-(global-set-key "\C-cv" 'open-term-copy-path)
-
-(defun my-open-current-file-in-vim ()
- (interactive)
- (call-process-shell-command
-;  (format "gvim +%d %s"
-  (format "~/.local/bin/kitty -e nvim +%d %s"
-      (+ (if (bolp) 1 0) (count-lines 1 (point)))
-      (shell-quote-argument buffer-file-name))))
-
-(global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
-(global-set-key (kbd "C-c s") 'company-yasnippet)
-
-
-;;;;; Save Desktop Session
-;Automatically save layout of emacs and then magically reload it
-;https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
-(desktop-save-mode 1)
-
-;;;;; scroll one line at a time (less "jumpy" than defaults)
-; there was lag here
-; You will need to increas gc-cons-threshold to like 6*10^8
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;;; one line at a time
-;(setq mouse-wheel-progressive-speed nil) ;;; don't accelerate scrolling
-;(setq mouse-wheel-follow-mouse 't) ;;; scroll window under mouse
-;(setq scroll-step 1) ;;; keyboard scroll one line at a time
+; Load last location
+;; this makes loading slower
+;; (desktop-save-mode 1)
+;;;; Window/Folding Settings
+;;;;; Ivy Settings
+; (require 'ivy-posframe)
+;; display at `ivy-posframe-style'
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-center)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-bottom-left)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-bottom-left)))
+ (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
+(ivy-posframe-mode 1)
 
 
 
 
- ;;;; Code Folding Outshine
- ; Require packages for following code
-; (require 'dash)
-; (require 'outshine)
 
- ;;;;;; Required for outshine
-; (add-hook 'outline-minor-mode-hook 'outshine-mode)
-; This does not work well in latex at all
-; Just enable it manually whenever you need to edit config files
-; be mindful though, that, if you collaps things with outline mode and then load
-; outshine mode, it won't work properly, you'll need to kill the buffer with =C-x k RET= and then reopen and then immediately enable outshine-mode, it's a bit glitchy but it's so nice to use, much nicer that raw outline.
-
- ;;;;;; Enables outline-minor-mode for *ALL* programming buffers
-;(add-hook 'prog-mode-hook 'outline-minor-mode)
+;;;;; Helm Settings
+; Allow Auto Adjust
+(add-hook 'buffer-list-update-hook #'golden-ratio)
+(add-hook 'focus-in-hook           #'golden-ratio)
+(add-hook 'focus-out-hook          #'golden-ratio)
+;;;;; OutShine
+; Require packages for following code
+;(require 'dash)
+;(require 'outshine)
+; Enables outline-minor-mode for *ALL* programming buffers
+(add-hook 'prog-mode-hook 'outline-minor-mode)
 (add-hook 'prog-mode-hook 'outshine-mode)
 (add-hook 'emacs-lisp-mode-hook 'outshine-mode)
 (add-hook 'latex-mode-hook  'outline-minor-mode)
+;;;;;; Key Bindings
+; Narrowing now works within the headline rather than requiring to be on it
+(advice-add 'outshine-narrow-to-subtree :before
+            (lambda (&rest args) (unless (outline-on-heading-p t)
+                                   (outline-previous-visible-heading 1))))
 
-
-
-
- ;;;;;; Narrowing now works within the headline rather than requiring to be on it
-;     (advice-add 'outshine-narrow-to-subtree :before
-;                 (lambda (&rest args) (unless (outline-on-heading-p t)
-;                                        (outline-previous-visible-heading 1))))
+;(spacemacs/set-leader-keys
+;  ;; Narrowing
+;  "nn" 'outshine-narrow-to-subtree
+;  "nw" 'widen
 ;
+;  ;; Structural edits
+;  "nj" 'outline-move-subtree-down
+;  "nk" 'outline-move-subtree-up
+;  "nh" 'outline-promote
+;  "nl" 'outline-demote)
 ;
-;     (let ((kmap outline-minor-mode-map))
-;       (define-key kmap (kbd "M-RET") 'outshine-insert-heading)
-;       (define-key kmap (kbd "<backtab>") 'outshine-cycle-buffer)
+;(let ((kmap outline-minor-mode-map))
+;  (define-key kmap (kbd "M-RET") 'outshine-insert-heading)
+;  (define-key kmap (kbd "<backtab>") 'outshine-cycle-buffer)
 ;
-;       ;; Evil outline navigation keybindings
-;       (evil-define-key '(normal visual motion) kmap
-;         "gh" 'outline-up-heading
-;         "gj" 'outline-forward-same-level
-;         "gk" 'outline-backward-same-level
-;         "gl" 'outline-next-visible-heading
-;         "gu" 'outline-previous-visible-heading))
+;  ;; Evil outline navigation keybindings
+;  (evil-define-key nil evil-normal-state-map
+;    "zk" 'outline-up-heading
+;    "zj" 'outline-previous-visible-heading
+;    "zj" 'outline-next-visible-heading)
+;                                       )
+; consider also
+   ; 'outline-forward-same-level
+   ; 'outline-backward-same-level
+   ; 'outline-previous-visible-heading
+
+
+;;;;;; LaTeX Mode Fix
+;;;;; Use mouse to zoom
+;;(global-set-key [C-mouse-4] 'text-scale-increase)
+;;(global-set-key [C-mouse-5] 'text-scale-decrease)
+;;;;; Fokus Mode
+;; (spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
+
+
+
+;; Change this if every you want to actually edit the symlink
+(setq vc-follow-symlinks t)
+;;;; Programming
+(setq-default auto-fill-function 'do-auto-fill)
+;;;;; ESS and R Stuff
+;; R Binding for <-
+ ;; https://develop.spacemacs.org/layers/+lang/ess/README.html
+(setq-default dotspacemacs-configuration-layers '((ess :variables
+                                                       ess-assign-key "\M--")))
+
+;;;;; Make Evaluated code Flash
+
+;(require 'nrepl-eval-sexp-fu)
+;(setq nrepl-eval-sexp-fu-flash-duration 0.25)
 ;
+;(defadvice lisp-eval-region (around lisp-eval-region-flash activate)
+;  "Flash any calls to lisp-eval-region (and the functions that depend on it, like lisp-eval-defun)."
+;  (let* ((start (ad-get-arg 0))
+;         (end (ad-get-arg 1))
+;         (flasher (nrepl-eval-sexp-fu-flash (cons start end)))
+;         (hi (cadr flasher))
+;         (unhi (caddr flasher)))
+;    (nrepl-eval-sexp-fu-flash-doit-simple '(lambda () ad-do-it) hi unhi)))
 
-;;;;; Temporary Buffer for ~helm-ag~
-;  (custom-set-variables
-;   '(helm-ag-use-temp-buffer t))
-;  ;;;; Wiki Stuff
-;  ; <Spc> w w opens the wiki file
-;  (doom-leader-key "ww" (lambda () (interactive) (find-file "~/Notes/MD/notes/index.md")))
-;  (doom-leader-key "wo" (lambda () (interactive) (find-file "~/Notes/Org/0index.org")))
-;  ;;;;; Show preview Buffer Helm-ag
-;  (custom-set-variables
-;   '(helm-ag-use-temp-buffer t))
-;  ;;;;; org-wiki
-;;  (require 'org-wiki)
-   (setq org-wiki-location "~/Dropbox/Notes/Org")
+;;;;; Shell
+(add-hook 'sh-mode-hook 'indent-guide-mode)
+(add-hook 'sh-mode-hook 'flycheck-mode)
+(add-hook 'sh-mode-hook 'company-mode)
 
+;;;;; Open Current File in Kitty / neovim
+;; no popup
+;; https://stackoverflow.com/a/22982525
+(defun my-open-current-file-in-vim ()
+  (interactive)
+  (call-process-shell-command
+                                        ;  (format "gvim +%d %s"
+   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+           (+ (if (bolp) 1 0) (count-lines 1 (point)))
+           (shell-quote-argument buffer-file-name))))
 
-
-;;;; Fokus Mode
-; (spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
-
+(global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
+(global-set-key (kbd "C-c s") 'company-yasnippet)
 ;;;; AucTeX
 ;;;;; use shell-escape flag (withpdflatex)
 (setq LaTeX-command-style '(("" "%(PDF)%(latex) -shell-escape %S%(PDFout)")))
 
 (with-eval-after-load 'tex
   (add-to-list 'safe-local-variable-values
-               '(TeX-command-extra-options . "-shell-escape")))
+               '(TeX-command-extra-options . "-shell-escape")
+               '(TeX-command-extra-options . "-synctex=1")))
+                                        ;synctex is necessary to play ball with PDF tools
 ;;;;; Use magic symbols
-; for reference
-;(require 'magic-latex-buffer)
-;   (add-hook 'from-mode-hook 'what to do)
-; pretty symbols enabled below
-(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
+;; for reference
+;; This is already in the space latex layer
+;;  if you leave spacemacs youll need to list it
+;;  other wise leave it off
+;; (require 'magic-latex-buffer)
+;;(add-hook 'from-mode-hook 'what to do)
+;;pretty symbols enabled below
+;;(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
 (add-hook 'latex-mode-hook 'magic-latex-buffer)
 ;;;; Snippets
-;;;;; Remove tab binding
-; The default is a ghastly =M-/= in spacemacs so this is just an example
-;(define-key yas-minor-mode-map (kbd "<tab>") nil)
-;(define-key yas-minor-mode-map (kbd "TAB") nil)
-
+;;;;; Get Snipet Suggestions in Company mode
+;; I cannot figure this out, again this is better in vim
+;; If you want snippets with auto suggestion, just hit =C-c v=
 ;;;;; Better expand keybindings
-;; Bind `SPC' to `yas-expand' when snippet expansion available (it
-;; will still call `self-insert-command' otherwise).
-; space might get annoying
+;; just use =SPC i s= for =helm-yas=, that's the simplest way for now
+;; in reality snippets are easier in Vim and I'm already set up
+;; What you NEED is company mode, snippets are a nicety but
+;; I might as well jump to vim when I NEED Electric+Comp Snippets
+;; Otherwise for org-babel Company is sufficient.
 (yas-global-mode 1)
-(define-key yas-minor-mode-map [kbd "M-l"]     'yas-expand)
-(define-key yas-minor-mode-map [(tab)]        nil)
-(define-key yas-minor-mode-map (kbd "TAB")    nil)
-(define-key yas-minor-mode-map (kbd "<tab>")  nil)
+;(define-key yas-minor-mode-map [kbd "l"]     'yas-expand)
+;(define-key yas-minor-mode-map [(tab)]        nil)
+;(define-key yas-minor-mode-map (kbd "TAB")    nil)
+;(define-key yas-minor-mode-map (kbd "<tab>")  nil)
+;;;; templates
+;; (auto-insert-mode)
+;; ;; *NOTE* Trailing slash important
+;; (setq auto-insert-directory "/path/to/template/directory/")
+;; (setq auto-insert-query nil)
+;; (define-auto-insert "\\.tex$" "my-latex-template.tex")
+   (define-auto-insert "\\.sh$" "~/bin/hworld.sh")
+
+;;;; Wiki Stuff
+;(require 'org-wiki)
+;(setq org-wiki-location "~/Dropbox/Notes/Org")
+;;; <Spc> w w opens the wiki file
+;;(spacemacs/set-leader-keys "ww" (lambda () (interactive) (find-file "~/Notes/MD/notes/index.md")))
+;;(spacemacs/set-leader-keys "wo" (lambda () (interactive) (find-file "~/Notes/Org/index.org")))
+;(setq org-return-follows-link t)
+;(with-eval-after-load 'evil-maps
+;  (define-key evil-motion-state-map (kbd "SPC") nil)
+;  (define-key evil-motion-state-map (kbd "RET") nil)
+;  (define-key evil-motion-state-map (kbd "TAB") nil))
+
+;;;;; No Lock Files
+;; This breaks gh-pages
+;; All the other crap didn't do anything, THIS is what fixed everything!!!
+(setq create-lockfiles nil)
 
 
-;;;; Use citeproc to replace all references upon export
-                                        ; This means I'm only using org-ref for
-                                        ;  + internal references being passed to LaTeX
-                                        ;  + the handy shortcuts for inserting bibtex citations
-                                        ;      + because this respects that syntax
-                                        ;  + transforming cite:key to \cite{key} on LaTeX export
-(defun citeproc-org-setup ()
-  "Add citeproc-org rendering to the `org-export-before-parsing-hook' hook."
-  (interactive)
-  (add-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
-(defun citeproc-off ()
-  "remove citeproc-org rendering from the `org-export-before-parsing-hook' hook."
-  (interactive)
-  (remove-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
+;;;; Org-Mode
+;;;;; Helm-Org-Rifle
+;; use Tab for Preview
+;(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+;(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+;(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;(spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
+; rifle buffer/dir/headlines ripgrep
 
-(citeproc-org-setup)
-
-
-;;;; ESS and R Stuff
-;R Binding for <-
-; https://develop.spacemacs.org/layers/+lang/ess/README.html
-; (setq-default dotspacemacs-configuration-layers '((ess :variables
- ;                                                      ess-assign-key "\M--")))
-
-
-
-;;;; Org-Mode Settings
+;;;;; Identity and Directory
+(setq user-full-name "Ryan G"
+      user-mail-address "exogenesis@protonmail.com")
+(setq org-directory "~/Notes/Org/") ;; <<89238>>
+(setq org-agenda-files '("~/Notes/Org"))
+;; If you want to change the style of line numbers, change this to `relative' or
+;; `nil' to disable it:
+(setq display-line-numbers-type `relative)
 ;;;;; Use `org-id' to make links
+; This can make it faster but it makes it confusing too
 ;(require 'org-id)
-(setq org-id-link-to-org-use-id t)
+;;(setq org-id-link-to-org-use-id t)
+(setq org-id-link-to-org-use-id nil)
 ;;;;; Insert ScreenShot
-(defun my-org-screenshot ()
-  "Take a screenshot into a time stamped unique-named file in the
-same directory as the org-buffer and insert a link to this file."
-  (interactive)
-  (setq filename
-        (concat
-         (make-temp-name
-          (concat (buffer-file-name)
-                  "_"
-                  (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
-  (call-process "import" nil nil nil filename)
-  (insert (concat "[[" filename "]]"))
-  (org-display-inline-images))
+;; Don't use this, use org-download-screenshot instead
+;; remember use = fzf | xargs rm = to remove a screenshot
+;; If you take it out of org mode
+;;(defun my-org-screenshot ()
+;;  "Take a screenshot into a time stamped unique-named file in the
+;;same directory as the org-buffer and insert a link to this file."
+;;  (interactive)
+;;  (setq filename
+;;        (concat
+;;         (make-temp-name
+;;          (concat (buffer-file-name)
+;;                  "_"
+;;                  (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
+;;  (call-process "import" nil nil nil filename)
+;;  (insert (concat "[[" filename "]]"))
+;;  (org-display-inline-images))
 ;;;;; Run Code without prompt
-   (setq org-confirm-babel-evaluate nil)
+(setq org-confirm-babel-evaluate nil)
+;;;;; In Buffer Format
+;;;;;; Prettify by Default
+(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
+(add-hook 'org-mode-hook 'prettify-symbols-mode )
+;;;;;; This is to preview tikz
+;(add-to-list 'org-latex-packages-alist '("" "tikz" t))
+;(add-to-list 'org-latex-packages-alist '("" "listings"))
+;(add-to-list 'org-latex-packages-alist '("" "color"))
+;
+;(eval-after-load "preview"
+;  '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
+;                                        ;this might conflict with the setting above [[use =dvisvgm= not =dvipng= for math preview]]
+;(setq org-latex-create-formula-image-program 'imagemagick)
+;
+;                                        ; Bigger preview images (the default was too small, this wan't affect export)
+;                                        ; For Org
+;(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
+;                                        ; For latex-mode
+;(set-default 'preview-scale-function 1.62178)
 
+;;;;;; use =dvisvgm= not =dvipng= for math preview
+;; Theres a problem with =dvipng= in =org-mode= where it will not
+;; preview choose any foreground colour other than black despite the
+;; settings, this is not related to ghostscript an is a bug inside org-mode,
+;; instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
+(setq org-preview-latex-default-process `dvisvgm)
+;;;;;; Make nice pretty bullets
+;; (add-hook 'org-mode-hook 'org-bullets-mode)
+
+;;;;; Exports
+;;;;; HTML Attachment Links
+(setq org-attach-dir-relative t)
+;;;;;; Export-all
+(defun publish-dir-org ()
+  "Publish all org files in a directory"
+  (interactive)
+  (save-excursion
+    (mapc
+     (lambda (file)
+       (with-current-buffer
+           (find-file-noselect file)
+         (org-export-as-html-batch)))
+     (file-expand-wildcards  "*.org"))))
+;;;;;; 5. Tolerate broken links
+;(require 'org-ref)
+(setq org-export-with-broken-links t)
 ;;;;;; LaTeX Export
-; Export using the 'listings package
+;;;;;;; Ordinary LaTeX
+;; Export using the 'listings package
 ;(require 'ox-latex)
 
 (setq org-latex-listings t)
@@ -399,48 +330,24 @@ same directory as the org-buffer and insert a link to this file."
 ;(add-to-list 'org-latex-packages-alist '("" "color"))
 
 
-; Export using the 'minted package (Using XeLaTeX)
-; I have templates for listings but what's annoying is that it only supports a few languages, minted has way more support
-;     (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
-
+                                        ; Export using the 'minted package (Using XeLaTeX)
+                                        ; I have templates for listings but what's annoying is that it only supports a few languages, minted has way more support
+;; (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
 (setq org-latex-listings 'minted
-     org-latex-packages-alist '(("" "minted"))
-     org-latex-pdf-process
-     '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
-       "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
-;;;;;; Tikz
-;Backend Test
- (setq org-babel-latex-htlatex "htlatex")
- (defmacro by-backend (&rest body)
-   `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
-
-;;;;; use =dvisvgm= not =dvipng= for math preview
-                                       ;; Theres a problem with =dvipng= in =org-mode= where it will not preview choose any foreground colour other than black despite the settings, this is not related to ghostscript an is a bug inside org-mode, instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
-(setq org-preview-latex-default-process `dvisvgm)
-
-;;;;;; This is to preview tikz
-(add-to-list 'org-latex-packages-alist
-             '("" "tikz" t))
-
-(eval-after-load "preview"
-  '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
-;this might conflict with the setting above [[use =dvisvgm= not =dvipng= for math preview]]
-(setq org-latex-create-formula-image-program 'imagemagick)
-
-; Bigger preview images (the default was too small, this wan't affect export)
-; For Org
-;(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
-; For latex-mode
-(set-default 'preview-scale-function 1.62178)
-
-;;;;; Prettify by Default
-(add-hook 'TeX-mode-hook 'prettify-symbols-mode )
-(add-hook 'org-mode-hook 'prettify-symbols-mode )
-;;;;;  Add CSS to HTML
-; Add CSS (Be mindful that you may want to implement this in a more sensible way, similar to how beorg does it
-;;;;;;  Put your css files there
-(defvar org-theme-css-dir "~/.emacs.d/org-css/")
+;;;;;;; Tikz
+                                        ;Backend Test
+(setq org-babel-latex-htlatex "htlatex")
+(defmacro by-backend (&rest body)
+  `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
+;;;;;;  Add CSS to HTML
+;; Add CSS (Be mindful that you may want to implement this in a more sensible way, similar to how beorg does it
+;; Put your css files there
+(defvar org-theme-css-dir "~/Templates/CSS/Org-CSS/")
 
 (defun toggle-org-custom-inline-style ()
  (interactive)
@@ -454,7 +361,10 @@ same directory as the org-buffer and insert a link to this file."
      (message "Added %s to %s" (symbol-name fun) (symbol-name hook)))))
 
 ; Enable Css hook by default
-(add-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+;; I think this is better as opt in
+;; Also I still need to set up the image embedding part, which I have been
+;working on in visual analytics I just haven't made a nice function.
+;; (add-hook 'org-mode-hook 'toggle-org-custom-inline-style)
 
 (defun org-theme ()
   (interactive)
@@ -482,18 +392,81 @@ same directory as the org-buffer and insert a link to this file."
        (message "Custom header file %s doesnt exist")))))
 
 
+;;;;;; Use PDF-Tools
+;(eval-after-load 'org '(require 'org-pdfview))
+
+(after! org
+(add-to-list 'org-file-apps
+             '("\\.pdf\\'" . (lambda (file link)
+                               (org-pdfview-open link))))
+)
+;;;;;; References
+;;;;;;; Use citeproc to replace all references upon export
+;; This means I'm only using org-ref for
+;;  + internal references being passed to LaTeX
+;;  + the handy shortcuts for inserting bibtex citations
+;;      + because this respects that syntax
+;;  + transforming cite:key to \cite{key} on LaTeX export
+;;
+(after! org
+
+(use-package! citeproc-org
+  :load-path "~/DotFiles/Spacemacs/Downloads/citeproc-org-0.2.2"
+  ;; :config
+    ;;  configure your package here
+  )
+
+(defun citeproc-org-setup ()
+  "Add citeproc-org rendering to the `org-export-before-parsing-hook' hook."
+  (interactive)
+  (add-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
+(defun citeproc-off ()
+  "remove citeproc-org rendering from the `org-export-before-parsing-hook' hook."
+  (interactive)
+  (remove-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
+
+(citeproc-org-setup)
+)
+
+;;;;;;; Install org-ref
+;;(after! package
+;;(add-to-list 'package-archives
+;;	           '("melpa" . "http://melpa.org/packages/") t)
+;;(when (< emacs-major-version 24)
+;;  ;; For compatibility
+;;  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+;;)
+;; This makes a warning but might be necessary ???
+;; (package-initialize)
 
 
-;;;;; Install org-ref
-;;;;; Set Agenda to be entire =~/notes/Org/= dir
-(setq org-agenda-files '("~/Notes/Org"))
+
+
+
+
+
+
+;;;;; Generate Random ID for org-babel
+;; useful for org-babel languages
+(defconst our-charset "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+(defconst our-charset-length (length our-charset))
+
+(defun random-string (&optional max-length min-length)
+  "Generate a random string."
+  (let (string)
+    (dotimes (_i (+ (random (- (or max-length 10) (or min-length 5) -1)) (or min-length 5)))
+      (push (aref our-charset (random our-charset-length)) string))
+    (concat string)))
+
+
+
+
 ;;;;;  Eval AFter Load (babel etc.)
 (with-eval-after-load 'org
 ;; all org stuff must be wrapped
 ;;;;;; Enable global tags autocomplete
-; this may break marking with Space.
+;; this may break marking with Space.
  (setq org-complete-tags-always-offer-all-agenda-tags t)
-
 
  (setq org-tag-alist '((:startgrouptag)
                        ("GTD")
@@ -511,8 +484,6 @@ same directory as the org-buffer and insert a link to this file."
 ;(:grouptags)
 ;(:endgrouptag)
 
-
-
 ;;;;;; Active Babel languages
  (org-babel-do-load-languages
   'org-babel-load-languages
@@ -526,26 +497,68 @@ same directory as the org-buffer and insert a link to this file."
     (mathematica . t)
     (emacs-lisp  . t)))
 
+;; write =#+BEGIN_SRC vim= to get =vimrc-mode= behaviour
+; (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
+; (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
 
+; Doom loads things differently to operate faster this won't work:
+; (eval-after-load "org"
+;   (add-to-list 'org-src-lang-modes '("vim" . vimrc))
+;   )
+
+;; Instead you'll need to use something like this [fn:gh]
+(after! org
+  (add-to-list 'org-src-lang-modes '("vim" . vimrc)))
 
 ;;;;;; org-attach image
 ; when you point to a link it will attach it to the file
  ;(require 'org-attach)
  (setq org-link-abbrev-alist '(("att" . org-attach-expand-link)))
 
-;;;;;; Generate Random ID
- (defconst our-charset "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
- (defconst our-charset-length (length our-charset))
-
- (defun random-string (&optional max-length min-length)
-   "Generate a random string."
-   (let (string)
-     (dotimes (_i (+ (random (- (or max-length 10) (or min-length 5) -1)) (or min-length 5)))
-       (push (aref our-charset (random our-charset-length)) string))
-     (concat string)))
 ;;;;;; Closing )
 )
 (put 'TeX-narrow-to-group 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'LaTeX-narrow-to-environment 'disabled nil)
+;;; KeyBindings
+(map! :leader
+;; #' delimits namespace, i.e. local var
+      "h L" #'global-keycast-mode
+      "f t" #'find-in-dotfiles
+      "f T" #'browse-dotfiles
+      "f k" #'darkroom-mode ;; Just use zen mode with SPC t z
+      "i n" 'open-wiki-index
+      "r o" 'helm-org-rifle-org-directory ;; [[89238]] ord-dir is different to agenda
+      "r b" 'helm-org-rifle-current-buffer
+      "r d" 'helm-org-rifle-directories
+      "o !" 'open-all-org-agenda-files
+      "/"   'helm-rg
+      "r hh" 'helm-org-in-buffer-headings
+      "r ha" 'helm-org-agenda-files-headings
+      )
+;; eval chunk
+
+;; eval line
+;; insert assignment
+     (add-hook 'ess-mode-hook
+       (lambda ()
+        (local-set-key "M--" 'polymode-eval-chunk)))
+
+(after! company (setq company-idle-delay 1))
+(after! company (setq company-tooltip-idle-delay 1))
+
+
+
+(defun open-wiki-index ()
+  "Opens the Org Wiki Index"
+  (interactive)
+  (find-file "~/Notes/Org/index.org"))
+
+(after! org
+(defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
+)
+
+;; * Footnotes
+
+;; [fn:gh] https://github.com/hlissner/doom-emacs/issues/2059
