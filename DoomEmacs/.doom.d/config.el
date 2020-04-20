@@ -396,10 +396,10 @@
 ;(eval-after-load 'org '(require 'org-pdfview))
 
 (after! org
-(add-to-list 'org-file-apps
-             '("\\.pdf\\'" . (lambda (file link)
-                               (org-pdfview-open link))))
-)
+;; (add-to-list 'org-file-apps
+;;              '("\\.pdf\\'" . (lambda (file link)
+;;                                (org-pdfview-open link))))
+;; )
 ;;;;;; References
 ;;;;;;; Use citeproc to replace all references upon export
 ;; This means I'm only using org-ref for
