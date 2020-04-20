@@ -483,6 +483,8 @@
 
 ;(:grouptags)
 ;(:endgrouptag)
+;
+(after! org
 
 ;;;;;; Active Babel languages
  (org-babel-do-load-languages
@@ -490,6 +492,8 @@
   '((R          . t)
     (latex       . t)
     (python      . t)
+    (plantuml    . t)
+    (dot         . t)
     (gnuplot     . t)
     (java        . t)
     (sed         . t)
@@ -497,6 +501,12 @@
     (mathematica . t)
     (emacs-lisp  . t)))
 
+
+;;;;;; Set up Plant UML
+ (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
+ (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+ )
+;; (setq ob-mermaid-cli-path "home/ryan/.nvm/versions/node/v13.6.0/bin/mmdc")
 ;; write =#+BEGIN_SRC vim= to get =vimrc-mode= behaviour
 ; (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
 ; (add-to-list 'org-src-lang-modes (cons "vim" 'vimrc))
@@ -513,7 +523,7 @@
 ;;;;;; org-attach image
 ; when you point to a link it will attach it to the file
  ;(require 'org-attach)
- (setq org-link-abbrev-alist '(("att" . org-attach-expand-link)))
+;; (setq org-link-abbrev-alist '(("att" . org-attach-expand-link)))
 
 ;;;;;; Closing )
 )
