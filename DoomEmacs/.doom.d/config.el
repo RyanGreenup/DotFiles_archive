@@ -408,28 +408,12 @@
 ;;      + because this respects that syntax
 ;;  + transforming cite:key to \cite{key} on LaTeX export
 ;;
-(after! org
 
- (setq org-link-abbrev-alist
-       '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
-         ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
-         ("google"    . "http://www.google.com/search?q=")
-         ("gmap"      . "http://maps.google.com/maps?q=%s")
-         ("vidar"     . "http://121.210.19.69/")
-         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
-         ("ads"       . "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\""))))
+  (after! org
 
- (add-to-list 'auto-mode-alist '("\\.pdf\\'" . doc-view-mode-maybe))
-  (after! org
-  (add-to-list 'org-file-apps
-               '("\\.pdf\\'" . (lambda (file link)
-                                 (org-pdfview-open link))))
-  ;;
-;; To enable this automatically, use:
-  (after! org
+    ;; load pdfview
      (eval-after-load 'org '(require 'org-pdfview))
-    )
- ;; If you want, you can also configure the org-mode default open PDF file function.
+     ;; Use pdfview in org-mode
  (add-to-list 'org-file-apps '("\\.pdf\\'" . (lambda (file link) (org-pdfview-open link))))
 
 (use-package! citeproc-org
@@ -646,3 +630,17 @@
 ;; Footnotes
 
 ;; [fn:gh] https://github.com/hlissner/doom-emacs/issues/2059
+;;;; Org-Mode Stuff
+;;;;
+(after! org
+;; File Links
+ (setq org-link-abbrev-alist
+       '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
+         ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
+         ("google"    . "http://www.google.com/search?q=")
+         ("gmap"      . "http://maps.google.com/maps?q=%s")
+         ("vidar"     . "http://121.210.19.69/")
+         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
+         ("ads"       .
+          "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")))
+ )
