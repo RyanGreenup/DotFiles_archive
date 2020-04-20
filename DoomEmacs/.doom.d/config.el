@@ -559,6 +559,58 @@
 (defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 )
 
-;; * Footnotes
+(after! org
+;;; Org-Publish
+;; Each call of setq org-publish overwrites the last
+;; You must have one big list
+;; Refer to    [[file:~/Notes/Org/VisualAnalytics.org::*Publishing Pathway][Publishing Pathway]]
+
+;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+;; (toggle-org-custom-inline-style)
+(setq org-publish-project-alist
+      '(
+
+        ("Aut_orgfiles"
+         :base-directory "~/Notes/Org/"
+         :base-extension "org"
+         :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+         :publishing-function org-html-publish-to-html
+         :exclude ".*" ;; Regexp
+         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+                   "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+         :headline-levels 3
+         :recursive t
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\"
+         href=\"./style.css\" type=\"text/css\"/>"
+         :html-preamble t)
+
+
+        ("Aut_images"
+         :base-directory "~/Notes/Org/"
+         :base-extension "jpg\\|gif\\|png"
+         :exclude ".*ltximg.*" ;; regexp
+         :recursive t
+         :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+         :publishing-function org-publish-attachment)
+
+        ("Aut_other"
+         :base-directory "~/Notes/Org/"
+         :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+         :exclude "journal.*" ;; Regexp
+         :recursive t
+         :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+         :publishing-function org-publish-attachment)
+
+        ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))))
+
+;; Ox-Hugo
+;; (withheval-after-load 'ox
+;;                       (require 'ox-hugo))
+  )
+
+
+;; Footnotes
 
 ;; [fn:gh] https://github.com/hlissner/doom-emacs/issues/2059
