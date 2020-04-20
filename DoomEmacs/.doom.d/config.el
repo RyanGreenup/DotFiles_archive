@@ -393,7 +393,6 @@
 
 
 ;;;;;; Use PDF-Tools
-;(eval-after-load 'org '(require 'org-pdfview))
 
 ;; (after! org
 ;; (add-to-list 'org-file-apps
