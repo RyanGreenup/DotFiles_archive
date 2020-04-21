@@ -247,6 +247,39 @@
       user-mail-address "exogenesis@protonmail.com")
 (setq org-directory "~/Notes/Org/") ;; <<89238>>
 (setq org-agenda-files '("~/Notes/Org"))
+;; currently I'm using this to load all the files I like into the agenda, what I
+;; should do instead is define a function to open all files in a directory and
+;; then I would have a much leaner argenda
+(global-set-key (kbd "C-c b") '(kbd "C-c a"))
+
+(defun my-open-current-file-in-vim ()
+  (interactive)
+  (call-process-shell-command
+                                        ;  (format "gvim +%d %s"
+   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+           (+ (if (bolp) 1 0) (count-lines 1 (point)))
+           (shell-quote-argument buffer-file-name))))
+
+
+;; Macro for Day View
+(global-set-key (kbd "C-c a") 'org-agenda)
+(fset 'my-day-page
+   (kmacro-lambda-form [?\C-c ?a ?a ?\C-c ?\C-x ?\C-c] 0 "%d"))
+(global-set-key (kbd "C-c b") 'my-day-page)
+(global-set-key (kbd "C-c C-x C-l") 'org-toggle-latex-fragment)
+
+
+     (add-hook 'mardkown-mode-hook
+       (lambda ()
+         (local-set-key (kbd "C-c C-x C-l") 'org-toggle-latex-fragment)
+         (local-set-key (kbd "C-c C-x C-u") 'markdown-toggle-url-hiding)
+         ))
+
+
+
+
+
+
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type `relative)
@@ -585,7 +618,7 @@
 ;;;; Github Autumn Files
 (setq org-publish-project-alist
       '(
-
+;; (https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html)
         ("Aut_orgfiles"
          :base-directory "~/Notes/Org/"
          :base-extension "org"
@@ -619,10 +652,56 @@
          :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
          :publishing-function org-publish-attachment)
 
-        ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))))
+        ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))
+
 ;;;; Server Autumn Files
+
+        ("Server_Org"
+         :base-directory "~/Notes/Org/"
+         :base-extension "org"
+         :index-filename "index.org"
+         :auto-index t
+         :auto-sitemap t                ; Generate sitemap.org automagically...
+         :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
+         :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
+         :publishing-directory "~/Public/html/Org/"
+         :publishing-function org-html-publish-to-html
+         :exclude "*jour.*" ;; Regexp
+;;         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+ ;;                  "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+         :headline-levels 3
+         :recursive t
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\"
+         href=\"./style.css\" type=\"text/css\"/>"
+         :html-preamble t)
+
+
+        ("Server_Images"
+         :base-directory "~/Notes/Org/"
+         :base-extension "jpg\\|gif\\|png"
+         :exclude ".*ltximg.*" ;; regexp
+         :recursive t
+         :publishing-directory "~/Public/html/Org/"
+         :publishing-function org-publish-attachment)
+
+        ("Server_Other"
+         :base-directory "~/Notes/Org/"
+         :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+         :exclude "journal.*" ;; Regexp
+         :recursive t
+         :publishing-directory "~/Public/html/Org/"
+         :publishing-function org-publish-attachment)
+
+        ("Server" :components ("Server_Org" "Server_Images" "Server_Other"))
+
+        ))
 ;; todo, but be mindful to move apache from root
 ;; Ox-Hugo
+;; If you do want to split an org-file up into multiple pieces look at these:
+;; [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-08/msg01283.html]]
+;; [[https://github.com/mbork/org-one-to-many]]
 ;; (withheval-after-load 'ox
 ;;                       (require 'ox-hugo))
   )

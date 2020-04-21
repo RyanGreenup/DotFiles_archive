@@ -38,9 +38,7 @@ rename 00output-46.png
 unmark
 shell cp ~/tmp/note.html ./05
 qw
-q
 filter Visual_Analy
-
 filter Vis
 =======
 flat 3
@@ -48,3 +46,5 @@ filter conflicted copy
 filter 
 >>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 delete
+
+q
