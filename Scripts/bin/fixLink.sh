@@ -19,8 +19,7 @@
 brokenPath=$(xclip -o -selection clipboard)
 #find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf | xclip -selection clipboard
 NewFile=$(find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf)
-  # Do I really want the path or the file name or just a term?
-      # basename just makes this more complicated??
+echo $NewFile | xclip -selection clipboard
 
 echo "
 Put the path of the source file in the clipboard and Press any Key to Continue
@@ -38,15 +37,13 @@ sourceFile=$(xclip -o -selection clipboard)
 
 echo "
 SOURCE_FILE.......$sourceFile
-NEW_ATTACHMENT....$NewFile 
+NEW_ATTACHMENT....$NewFile
 "
 
 
 sourcePath=$(dirname $sourceFile)
 
-relativePath=$(realpath --relative-to $sourcePath $NewFile)
-# relativePath=$(realpath --relative-to=$sourcePath $NewFile)
-echo $relativePath
+relativePath=$(realpath --relative-to=$sourcePath $NewFile)
 relPathWithDot="./"$relativePath
 echo $relPathWithDot | xclip -selection clipboard
 
@@ -58,4 +55,3 @@ Success! Relative path is in clipboard
 exit 0
 ## vim:fdm=expr:fdl=0
 ## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
-
