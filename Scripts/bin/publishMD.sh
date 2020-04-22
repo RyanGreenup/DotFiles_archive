@@ -13,6 +13,7 @@ Notes=/home/ryan/Notes # Location of mkdocs.yml
 
 ## Change Directory
 cd $Notes/
+rm -r ~/Notes/MD/00TagMatch
 
 ## Build the Documentation
 ##
@@ -21,11 +22,11 @@ if [ "$1" == "-h" ]; then
   echo "Usage: `basename $0`
              # -c or --clean for clean build, defaults to --dirty"
   exit 0
-elif [[ "$1" == *-c* || "$1" == *--clean* ]]; then
-/home/ryan/.local/bin/mkdocs build --site-dir $Server/MD/
+elif [[ "$1" == *-d* || "$1" == *--dirty* ]]; then
+/home/ryan/.local/bin/mkdocs build --dirty --site-dir $Server/MD/
 exit 0
 else
-/home/ryan/.local/bin/mkdocs build --dirty --site-dir $Server/MD/
+/home/ryan/.local/bin/mkdocs build --clean --site-dir $Server/MD/
 exit 0
 fi
 ## TODO Clean, Dirty

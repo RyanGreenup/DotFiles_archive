@@ -26,6 +26,7 @@
 ;; (package! hyperbole)
 (package! darkroom)
 (package! ranger)
+(package! elmacro)
 ;; (package! org-wiki)
 (package! outshine)
 (package! outline-magic)

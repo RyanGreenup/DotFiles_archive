@@ -19,7 +19,6 @@
 brokenPath=$(xclip -o -selection clipboard)
 #find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf | xclip -selection clipboard
 NewFile=$(find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf)
-echo $NewFile | xclip -selection clipboard
   # Do I really want the path or the file name or just a term?
       # basename just makes this more complicated??
 
@@ -45,7 +44,9 @@ NEW_ATTACHMENT....$NewFile
 
 sourcePath=$(dirname $sourceFile)
 
-relativePath=$(realpath --relative-to=$sourcePath $NewFile)
+relativePath=$(realpath --relative-to $sourcePath $NewFile)
+# relativePath=$(realpath --relative-to=$sourcePath $NewFile)
+echo $relativePath
 relPathWithDot="./"$relativePath
 echo $relPathWithDot | xclip -selection clipboard
 

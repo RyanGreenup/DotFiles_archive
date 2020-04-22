@@ -339,6 +339,7 @@
 ;;;;; Exports
 ;;;;; HTML Attachment Links
 (setq org-attach-dir-relative t)
+;; Links are weird, see [[https://orgmode.org/manual/Attachment-links.html#Attachment-links]]
 ;;;;;; Export-all
 (defun publish-dir-org ()
   "Publish all org files in a directory"

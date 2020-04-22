@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 # Don't forget to adjust the permissions with:
 #chmod +x ~/somecrazyfolder/script1
 
@@ -8,6 +9,13 @@
     # LaTeX in Vim but Bash in emacs
         # Probably R in Rstudio (and some vim for math and maybe emacs for folding)
 
+# You may need to change shells with:
+#
+#   grep tecmint /etc/passwd
+#   chsh --shell /bin/sh tecmint
+#   grep tecmint /etc/passwd
+
+#
 
 ## Help Statement
 if [ "$1" == "-h" ]; then
