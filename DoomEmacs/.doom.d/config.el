@@ -290,7 +290,8 @@
 (setq org-id-link-to-org-use-id nil)
 ;;;;; Insert ScreenShot
 ;; Don't use this, use org-download-screenshot instead
-;; remember use = fzf | xargs rm = to remove a screenshot
+;;   Also there is =org-download-dnd=
+;; remember use ~ fzf | xargs rm ~ to remove a screenshot
 ;; If you take it out of org mode
 ;;(defun my-org-screenshot ()
 ;;  "Take a screenshot into a time stamped unique-named file in the
