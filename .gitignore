@@ -2,10 +2,9 @@
 ./NeoVim/.vim/plugged/YouCompleteMe/
 ./NeoVim/.vim/plugged/markdown-preview.nvim
 ./NeoVim/.vim/plugged/jedi-vim
-
 ./NeoVim/.vim/bundle
 
+## Actually I want all of plugged gone so:
+./NeoVim/.vim/*
 
-# It was way too greedy I just made a seperate file for DoomEmacs
-# [[./DoomEmacs/.emacs.d/.gitignore]]]
 
