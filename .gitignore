@@ -6,6 +6,8 @@
 
 ## Actually I want all of plugged gone so:
 ./NeoVim/.vim/*
+  ## Obviously I want my snippets though
+!./NeoVim/.vim/UltiSnips/*.snippets
 
 ## Remove Fish History
 ./Shells/.local/share/fish/fish_history
