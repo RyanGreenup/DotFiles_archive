@@ -9,6 +9,8 @@
 
 ## Remove Fish History
 ./Shells/.local/share/fish/fish_history
+# Remember to use afterwards:
+#    git rm --cached ./Shells/.local/share/fish/fish_history
 
 
 
