@@ -7,4 +7,8 @@
 ## Actually I want all of plugged gone so:
 ./NeoVim/.vim/*
 
+## Remove Fish History
+./Shells/.local/share/fish/fish_history
+
+
 
