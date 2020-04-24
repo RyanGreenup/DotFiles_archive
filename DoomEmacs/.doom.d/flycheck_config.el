@@ -590,7 +590,6 @@
       "r hh" 'helm-org-in-buffer-headings
       "r ha" 'helm-org-agenda-files-headings
       )
-(evil-define-key* 'insert general-override-mode-map "\M-," #'doom/leader)
 ;;;;; ESS
 ;; insert assignment
      (add-hook 'ess-mode-hook
