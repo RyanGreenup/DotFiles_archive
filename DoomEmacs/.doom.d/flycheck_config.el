@@ -135,6 +135,8 @@
 (setq vc-follow-symlinks t)
 ;;;; Programming
 (setq-default auto-fill-function 'do-auto-fill)
+(after! company (setq company-idle-delay 1))
+(after! company (setq company-tooltip-idle-delay 1))
 ;;;;; ESS and R Stuff
 ;; R Binding for <-
  ;; https://develop.spacemacs.org/layers/+lang/ess/README.html
@@ -218,7 +220,7 @@
 ;;;; Wiki Stuff
 ;(require 'org-wiki)
 ;(setq org-wiki-location "~/Dropbox/Notes/Org")
-;;; <Spc> w w opens the wiki file
+;;;;; <Spc> w w opens the wiki file
 ;;(spacemacs/set-leader-keys "ww" (lambda () (interactive) (find-file "~/Notes/MD/notes/index.md")))
 ;;(spacemacs/set-leader-keys "wo" (lambda () (interactive) (find-file "~/Notes/Org/index.org")))
 ;(setq org-return-follows-link t)
@@ -227,14 +229,14 @@
 ;  (define-key evil-motion-state-map (kbd "RET") nil)
 ;  (define-key evil-motion-state-map (kbd "TAB") nil))
 
-;;;;; No Lock Files
+;;;;;; No Lock Files
 ;; This breaks gh-pages
 ;; All the other crap didn't do anything, THIS is what fixed everything!!!
 (setq create-lockfiles nil)
 
 
-;;;; Org-Mode
-;;;;; Helm-Org-Rifle
+;;;;; Org-Mode
+;;;;;; Helm-Org-Rifle
 ;; use Tab for Preview
 ;(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 ;(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
@@ -242,7 +244,7 @@
 ;(spacemacs/set-leader-keys "fk" (lambda () (interactive) (darkroom-mode)))
 ; rifle buffer/dir/headlines ripgrep
 
-;;;;; Identity and Directory
+;;;;;; Identity and Directory
 (setq user-full-name "Ryan G"
       user-mail-address "exogenesis@protonmail.com")
 (setq org-directory "~/Notes/Org/") ;; <<89238>>
@@ -283,12 +285,12 @@
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type `relative)
-;;;;; Use `org-id' to make links
+;;;;;; Use `org-id' to make links
 ; This can make it faster but it makes it confusing too
 ;(require 'org-id)
 ;;(setq org-id-link-to-org-use-id t)
 (setq org-id-link-to-org-use-id nil)
-;;;;; Insert ScreenShot
+;;;;;; Insert ScreenShot
 ;; Don't use this, use org-download-screenshot instead
 ;;   Also there is =org-download-dnd=
 ;; remember use ~ fzf | xargs rm ~ to remove a screenshot
@@ -306,13 +308,13 @@
 ;;  (call-process "import" nil nil nil filename)
 ;;  (insert (concat "[[" filename "]]"))
 ;;  (org-display-inline-images))
-;;;;; Run Code without prompt
+;;;;;; Run Code without prompt
 (setq org-confirm-babel-evaluate nil)
-;;;;; In Buffer Format
-;;;;;; Prettify by Default
+;;;;;; In Buffer Format
+;;;;;;; Prettify by Default
 (add-hook 'TeX-mode-hook 'prettify-symbols-mode )
 (add-hook 'org-mode-hook 'prettify-symbols-mode )
-;;;;;; This is to preview tikz
+;;;;;;; This is to preview tikz
 ;(add-to-list 'org-latex-packages-alist '("" "tikz" t))
 ;(add-to-list 'org-latex-packages-alist '("" "listings"))
 ;(add-to-list 'org-latex-packages-alist '("" "color"))
@@ -328,20 +330,20 @@
 ;                                        ; For latex-mode
 ;(set-default 'preview-scale-function 1.62178)
 
-;;;;;; use =dvisvgm= not =dvipng= for math preview
+;;;;;;; use =dvisvgm= not =dvipng= for math preview
 ;; Theres a problem with =dvipng= in =org-mode= where it will not
 ;; preview choose any foreground colour other than black despite the
 ;; settings, this is not related to ghostscript an is a bug inside org-mode,
 ;; instead switching to =dvisvgm= fixes that, but, breakes transparency for some reason.
 (setq org-preview-latex-default-process `dvisvgm)
-;;;;;; Make nice pretty bullets
+;;;;;;; Make nice pretty bullets
 ;; (add-hook 'org-mode-hook 'org-bullets-mode)
 
-;;;;; Exports
-;;;;; HTML Attachment Links
+;;;;;; Exports
+;;;;;; HTML Attachment Links
 (setq org-attach-dir-relative t)
 ;; Links are weird, see [[https://orgmode.org/manual/Attachment-links.html#Attachment-links]]
-;;;;;; Export-all
+;;;;;;; Export-all
 (defun publish-dir-org ()
   "Publish all org files in a directory"
   (interactive)
@@ -352,11 +354,11 @@
            (find-file-noselect file)
          (org-export-as-html-batch)))
      (file-expand-wildcards  "*.org"))))
-;;;;;; 5. Tolerate broken links
+;;;;;;; 5. Tolerate broken links
 ;(require 'org-ref)
 (setq org-export-with-broken-links t)
-;;;;;; LaTeX Export
-;;;;;;; Ordinary LaTeX
+;;;;;;; LaTeX Export
+;;;;;;;  Ordinary LaTeX
 ;; Export using the 'listings package
 ;(require 'ox-latex)
 
@@ -374,12 +376,12 @@
       '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
-;;;;;;; Tikz
+;;;;;;;  Tikz
                                         ;Backend Test
 (setq org-babel-latex-htlatex "htlatex")
 (defmacro by-backend (&rest body)
   `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
-;;;;;;  Add CSS to HTML
+;;;;;;;  Add CSS to HTML
 ;; Add CSS (Be mindful that you may want to implement this in a more sensible way, similar to how beorg does it
 ;; Put your css files there
 (defvar org-theme-css-dir "~/Templates/CSS/Org-CSS/")
@@ -427,15 +429,15 @@
        (message "Custom header file %s doesnt exist")))))
 
 
-;;;;;; Use PDF-Tools
+;;;;;;; Use PDF-Tools
 
 ;; (after! org
 ;; (add-to-list 'org-file-apps
 ;;              '("\\.pdf\\'" . (lambda (file link)
 ;;                                (org-pdfview-open link))))
 ;; )
-;;;;;; References
-;;;;;;; Use citeproc to replace all references upon export
+;;;;;;; References
+;;;;;;;  Use citeproc to replace all references upon export
 ;; This means I'm only using org-ref for
 ;;  + internal references being passed to LaTeX
 ;;  + the handy shortcuts for inserting bibtex citations
@@ -468,7 +470,7 @@
 (citeproc-org-setup)
 )
 
-;;;;;;; Install org-ref
+;;;;;;;  Install org-ref
 ;;(after! package
 ;;(add-to-list 'package-archives
 ;;	           '("melpa" . "http://melpa.org/packages/") t)
@@ -486,7 +488,7 @@
 
 
 
-;;;;; Generate Random ID for org-babel
+;;;;;; Generate Random ID for org-babel
 ;; useful for org-babel languages
 (defconst our-charset "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 (defconst our-charset-length (length our-charset))
@@ -501,10 +503,10 @@
 
 
 
-;;;;;  Eval AFter Load (babel etc.)
+;;;;;;  Eval AFter Load (babel etc.)
 (with-eval-after-load 'org
 ;; all org stuff must be wrapped
-;;;;;; Enable global tags autocomplete
+;;;;;;; Enable global tags autocomplete
 ;; this may break marking with Space.
  (setq org-complete-tags-always-offer-all-agenda-tags t)
 
@@ -526,7 +528,7 @@
 ;
 (after! org
 
-;;;;;; Active Babel languages
+;;;;;;; Active Babel languages
  (org-babel-do-load-languages
   'org-babel-load-languages
   '((R          . t)
@@ -542,7 +544,7 @@
     (emacs-lisp  . t)))
 
 
-;;;;;; Set up Plant UML
+;;;;;;; Set up Plant UML
  (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
  (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
  )
@@ -560,18 +562,19 @@
 (after! org
   (add-to-list 'org-src-lang-modes '("vim" . vimrc)))
 
-;;;;;; org-attach image
+;;;;;;; org-attach image
 ; when you point to a link it will attach it to the file
  ;(require 'org-attach)
 ;; (setq org-link-abbrev-alist '(("att" . org-attach-expand-link)))
 
-;;;;;; Closing )
+;;;;;;; Closing )
 )
 (put 'TeX-narrow-to-group 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'LaTeX-narrow-to-environment 'disabled nil)
-;;; KeyBindings
+;;;; KeyBindings
+;;;;; General
 (map! :leader
 ;; #' delimits namespace, i.e. local var
       "h L" #'global-keycast-mode
@@ -587,37 +590,44 @@
       "r hh" 'helm-org-in-buffer-headings
       "r ha" 'helm-org-agenda-files-headings
       )
-;; eval chunk
-
-;; eval line
+(evil-define-key* 'insert general-override-mode-map "\M-," #'doom/leader)
+;;;;; ESS
 ;; insert assignment
      (add-hook 'ess-mode-hook
        (lambda ()
         (local-set-key "M--" 'polymode-eval-chunk)))
-
-(after! company (setq company-idle-delay 1))
-(after! company (setq company-tooltip-idle-delay 1))
-
-
-
+;;;;; Wiki
 (defun open-wiki-index ()
   "Opens the Org Wiki Index"
   (interactive)
   (find-file "~/Notes/Org/index.org"))
-
 (after! org
 (defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 )
 
+;;;; Org-Mode Stuff
 (after! org
-;;; Org-Publish
+;;;;
+(after! org
+;; File Links
+ (setq org-link-abbrev-alist
+       '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
+         ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
+         ("google"    . "http://www.google.com/search?q=")
+         ("gmap"      . "http://maps.google.com/maps?q=%s")
+         ("vidar"     . "http://121.210.19.69/")
+         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
+         ("ads"       .
+          "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")))
+ )
+;;;;; Org-Publish
 ;; Each call of setq org-publish overwrites the last
 ;; You must have one big list
 ;; Refer to    [[file:~/Notes/Org/VisualAnalytics.org::*Publishing Pathway][Publishing Pathway]]
 
 ;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
 ;; (toggle-org-custom-inline-style)
-;;;; Github Autumn Files
+;;;;;; Github Autumn Files
 (setq org-publish-project-alist
       '(
 ;; (https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html)
@@ -656,7 +666,7 @@
 
         ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))
 
-;;;; Server Autumn Files
+;;;;;; Server Autumn Files
 
         ("Server_Org"
          :base-directory "~/Notes/Org/"
@@ -712,17 +722,3 @@
 ;; Footnotes
 
 ;; [fn:gh] https://github.com/hlissner/doom-emacs/issues/2059
-;;;; Org-Mode Stuff
-;;;;
-(after! org
-;; File Links
- (setq org-link-abbrev-alist
-       '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
-         ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
-         ("google"    . "http://www.google.com/search?q=")
-         ("gmap"      . "http://maps.google.com/maps?q=%s")
-         ("vidar"     . "http://121.210.19.69/")
-         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
-         ("ads"       .
-          "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")))
- )
