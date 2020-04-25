@@ -1,66 +1,24 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; This is where you install packages, by declaring them with the `package!'
-;; macro, then running 'doom refresh' on the command line. You'll need to
-;; restart Emacs for your changes to take effect! Or at least, run M-x
-;; `doom/reload'.
-;;
-;; WARNING: Don't disable core packages listed in ~/.emacs.d/core/packages.el.
-;; Doom requires these, and disabling them may have terrible side effects.
-;;
-;; Here are a couple examples:
+;; To install a package with Doom you must declare them here, run 'doom sync' on
+;; the command line, then restart Emacs for the changes to take effect.
+;; Alternatively, use M-x doom/reload.
 
+(package! dash)
+(package! org-pdfview)
 
-;; All of Doom's packages are pinned to a specific commit, and updated from
-;; release to release. To un-pin all packages and live on the edge, do:
-;(setq doom-pinned-packages nil)
-
-;; ...but to unpin a single package:
-;(package! pinned-package :pin nil)
+;; Doom's packages are pinned to a specific commit and updated from release to
+;; release. The `unpin!' macro allows you to unpin single packages...
+;(unpin! pinned-package)
+;; ...or multiple packages
+;(unpin! pinned-package another-pinned-package)
+;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
+;(unpin! t)
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
-;; (package! yasnippet-snippets)
-;; (package! hyperbole)
-(package! darkroom)
-(package! ranger)
-(package! elmacro)
-;; (package! org-wiki)
-(package! outshine)
-(package! outline-magic)
-(package! indent-guide)
-;;(package! treemacs)
-;;(package! treemacs-evil)
-;;(package! treemacs-projectile)
-;;(package! treemacs-magit)
-(package! dash)
-(package! org-id)
-(package! magic-latex-buffer)
-;; (package! auctex)
-;; (package! company-auctex)
-(package! company-fuzzy)
-;; (package! ox-latex)
-(package! org-ref)
-(package! org-attach)
-(package! org-id)
-(package! org-ref-wos)
-(package! org-ref-scopus)
-(package! org-ref-pubmed)
-(package! golden-ratio)
-(package! magic-latex-buffer)
-(package! helm-org-rifle)
-(package! dash) ;; Required for citeproc
-(package! org-pdfview)
-(package! org-pdftools)
-(package! ivy-posframe)
-(package! org-mode)
-;; (package! company-go)
-;(package! go-autocomplete)
-;; (package! go-complete)
-
-
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
@@ -78,7 +36,6 @@
 ;; If you'd like to disable a package included with Doom, for whatever reason,
 ;; you can do so here with the `:disable' property:
 ;(package! builtin-package :disable t)
-;(ws-butler! builtin-package :disable t)
 
 ;; You can override the recipe of a built in package without having to specify
 ;; all the properties for `:recipe'. These will inherit the rest of its recipe
