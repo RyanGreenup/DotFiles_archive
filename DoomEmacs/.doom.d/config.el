@@ -194,6 +194,10 @@
 ;;;; Open all org-agenda files
 (defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 
+;;;; Offer all Tags for Autocomplete
+  ;; this may break marking with Space.
+ (setq org-complete-tags-always-offer-all-agenda-tags t)
+
 )
 
 ;;; Keybindings
