@@ -192,7 +192,23 @@
 
 
 ;;;; Open all org-agenda files
+(defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 
 )
 
-;;;
+;;; Keybindings
+(map! :leader
+;; #' delimits namespace, i.e. local var
+      "h L" #'global-keycast-mode
+      "f t" #'find-in-dotfiles
+      "f T" #'browse-dotfiles
+      "f k" #'darkroom-mode ;; Just use zen mode with SPC t z
+      "i n" 'open-wiki-index
+      "r o" 'helm-org-rifle-org-directory ;; [[89238]] ord-dir is different to agenda
+      "r b" 'helm-org-rifle-current-buffer
+      "r d" 'helm-org-rifle-directories
+      "o !" 'open-all-org-agenda-files
+      "/"   'helm-rg
+      "r hh" 'helm-org-in-buffer-headings
+      "r ha" 'helm-org-agenda-files-headings
+      )
