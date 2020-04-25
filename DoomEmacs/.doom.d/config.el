@@ -238,3 +238,11 @@
       "r hh" 'helm-org-in-buffer-headings
       "r ha" 'helm-org-agenda-files-headings
       )
+;;;; Open in vim
+(defun my-open-current-file-in-vim ()
+  (interactive)
+  (call-process-shell-command
+                                        ;  (format "gvim +%d %s"
+   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+           (+ (if (bolp) 1 0) (count-lines 1 (point)))
+           (shell-quote-argument buffer-file-name))))
