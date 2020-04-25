@@ -222,6 +222,13 @@
 
 )
 
+;;; ESS Settings
+;;;; Auto-Scroll Inferior Buffer
+;; (setq comint-prompt-read-only t) ;; Avoid this, causes problems [[https://stackoverflow.com/a/2710510/10593632]]
+(setq comint-scroll-to-bottom-on-input t) ;; does
+(setq comint-scroll-to-bottom-on-output t)
+(setq comint-move-point-for-output t)
+
 ;;; Keybindings
 (map! :leader
 ;; #' delimits namespace, i.e. local var
@@ -246,3 +253,6 @@
    (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
            (+ (if (bolp) 1 0) (count-lines 1 (point)))
            (shell-quote-argument buffer-file-name))))
+
+(global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
+(global-set-key (kbd "C-c s") 'company-yasnippet)
