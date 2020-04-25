@@ -198,6 +198,28 @@
   ;; this may break marking with Space.
  (setq org-complete-tags-always-offer-all-agenda-tags t)
 
+;;;; org-babel languages
+
+;;;;;;; Active Babel languages
+ (org-babel-do-load-languages
+  'org-babel-load-languages
+  '((R           . t)
+    (latex       . t)
+    (python      . t)
+    (plantuml    . t)
+    (dot         . t)
+    (gnuplot     . t)
+    (java        . t)
+    (sed         . t)
+    (shell       . t)
+    (mathematica . t)
+    (emacs-lisp  . t)))
+
+
+;;;;;;; Set up Plant UML
+ (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
+ (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+
 )
 
 ;;; Keybindings
