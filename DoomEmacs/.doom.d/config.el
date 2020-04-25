@@ -198,6 +198,7 @@
   ;; this may break marking with Space.
  (setq org-complete-tags-always-offer-all-agenda-tags t)
 
+)
 
 ;;; Keybindings
 (map! :leader
