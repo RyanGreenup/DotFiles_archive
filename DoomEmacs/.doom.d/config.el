@@ -77,4 +77,122 @@
   (remove-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
 
 (citeproc-org-setup)
+
+
+
+
+;;;;
+;; File Links
+ (setq org-link-abbrev-alist
+       '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
+         ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
+         ("google"    . "http://www.google.com/search?q=")
+         ("gmap"      . "http://maps.google.com/maps?q=%s")
+         ("vidar"     . "http://121.210.19.69/")
+         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
+         ("ads"       .
+          "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")))
+
+;;;;; Org-Publish
+;; Each call of setq org-publish overwrites the last
+;; You must have one big list
+;; Refer to    [[file:~/Notes/Org/VisualAnalytics.org::*Publishing Pathway][Publishing Pathway]]
+
+;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+;; (toggle-org-custom-inline-style)
+;;;;;; Github Autumn Files
+(setq org-publish-project-alist
+      '(
+;; (https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html)
+        ("Aut_orgfiles"
+         :base-directory "~/Notes/Org/"
+         :base-extension "org"
+         :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+         :publishing-function org-html-publish-to-html
+         :exclude ".*" ;; Regexp
+         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+                   "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+         :headline-levels 3
+         :recursive t
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\"
+         href=\"./style.css\" type=\"text/css\"/>"
+         :html-preamble t)
+
+
+        ("Aut_images"
+         :base-directory "~/Notes/Org/"
+         :base-extension "jpg\\|gif\\|png"
+         :exclude ".*ltximg.*" ;; regexp
+         :recursive t
+         :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+         :publishing-function org-publish-attachment)
+
+        ("Aut_other"
+         :base-directory "~/Notes/Org/"
+         :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+         :exclude "journal.*" ;; Regexp
+         :recursive t
+         :publishing-directory "~/Documents/ryangreenup.github.io/Org-Publish/"
+         :publishing-function org-publish-attachment)
+
+        ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))
+
+;;;;;; Server Autumn Files
+
+        ("Server_Org"
+         :base-directory "~/Notes/Org/"
+         :base-extension "org"
+         :index-filename "index.org"
+         :auto-index t
+         :auto-sitemap t                ; Generate sitemap.org automagically...
+         :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
+         :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
+         :publishing-directory "~/Public/html/Org/"
+         :publishing-function org-html-publish-to-html
+         :exclude "*jour.*" ;; Regexp
+;;         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+ ;;                  "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+         :headline-levels 3
+         :recursive t
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\"
+         href=\"./style.css\" type=\"text/css\"/>"
+         :html-preamble t)
+
+
+        ("Server_Images"
+         :base-directory "~/Notes/Org/"
+         :base-extension "jpg\\|gif\\|png"
+         :exclude ".*ltximg.*" ;; regexp
+         :recursive t
+         :publishing-directory "~/Public/html/Org/"
+         :publishing-function org-publish-attachment)
+
+        ("Server_Other"
+         :base-directory "~/Notes/Org/"
+         :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+         :exclude "journal.*" ;; Regexp
+         :recursive t
+         :publishing-directory "~/Public/html/Org/"
+         :publishing-function org-publish-attachment)
+
+        ("Server" :components ("Server_Org" "Server_Images" "Server_Other"))
+
+        ))
+;; todo, but be mindful to move apache from root
+;; Ox-Hugo
+;; If you do want to split an org-file up into multiple pieces look at these:
+;; [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-08/msg01283.html]]
+;; [[https://github.com/mbork/org-one-to-many]]
+;; (withheval-after-load 'ox
+;;                       (require 'ox-hugo))
+
+
+;;;; Open all org-agenda files
+
 )
+
+;;;
