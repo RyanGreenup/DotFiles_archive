@@ -196,8 +196,8 @@
 
 ;;;; Offer all Tags for Autocomplete
   ;; this may break marking with Space.
- (setq org-complete-tags-always-offer-all-agenda-tags t)
-
+(setq org-complete-tags-always-offer-all-agenda-tags t)
+(setq org-tags-column 80)
 ;;;; org-babel languages
 
 ;;;;;;; Active Babel languages
@@ -228,6 +228,9 @@
 (setq comint-scroll-to-bottom-on-input t) ;; does
 (setq comint-scroll-to-bottom-on-output t)
 (setq comint-move-point-for-output t)
+;;;; Company mode Auto complete delay
+(after! company (setq company-idle-delay 1))
+(after! company (setq company-tooltip-idle-delay 1))
 
 ;;; Keybindings
 (map! :leader
