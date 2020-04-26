@@ -117,7 +117,7 @@
        ;;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
-       (ess +lsp)               ; emacs speaks statistics
+       ess               ; emacs speaks statistics
        ;;faust             ; dsp, but you get to keep your soul
        ;;fsharp           ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
@@ -139,14 +139,15 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org +roam
-            +dragndrop
             ;; +hugo
             ;; +brain
             ;; +gnuplot
             ;; +ipython
             ;; +pandoc
             ;; +journal
-            ;; +pomodoro)               ; organize your plain life in plain text
+            ;; +pomodoro
+            +dragndrop)
+                           ; organize your plain life in plain text
 
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
