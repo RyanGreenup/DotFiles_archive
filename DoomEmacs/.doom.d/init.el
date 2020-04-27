@@ -90,7 +90,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       lsp
+       ;;lsp
        ;;macos             ; MacOS-specific commands
        (magit +forge)             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
@@ -131,8 +131,8 @@
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +latexmk
               +cdlatex
-              +fold
-              +lsp)            ; writing papers in Emacs has never been so fun
+            ;;  +lsp            ; writing papers in Emacs has never been so fun
+              +fold)
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
