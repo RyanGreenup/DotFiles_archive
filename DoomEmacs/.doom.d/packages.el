@@ -6,6 +6,7 @@
 ;; Alternatively, use M-x doom/reload.
 
 (package! dash)
+(package! outshine)
 (package! org-pdfview)
 
 ;; Doom's packages are pinned to a specific commit and updated from release to

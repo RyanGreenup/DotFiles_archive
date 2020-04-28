@@ -227,6 +227,18 @@
         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 )
 
+;;; Programming
+;;;; Outshine Mode
+(use-package! outshine :load-path "~/.doom.d/local/"
+  :hook ((outline-minor-mode . outshine-mode))
+  :config
+  (map! :map outline-minor-mode-map
+        :nm [tab] #'outshine-cycle
+        :nm [backtab] #'outshine-cycle-buffer))
+
+;; (define-key outline-minor-mode-map [tab] (lambda () (interactive) (+fold/toggle)))
+;; (define-key outline-minor-mode-map [tab] (lambda () (interactive) (outshine-cycle)))
+;; (define-key outline-minor-mode-map [backtab] (lambda () (interactive) (#'outshine-cycle-buffer)))
 ;;; ESS Settings
 ;;;; Auto-Scroll Inferior Buffer
 ;; (setq comint-prompt-read-only t) ;; Avoid this, causes problems [[https://stackoverflow.com/a/2710510/10593632]]
