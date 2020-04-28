@@ -227,6 +227,53 @@
         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 )
 
+;;;;; Inline Style Sheet
+;; Add CSS (Be mindful that you may want to implement this in a more sensible way, similar to how beorg does it
+;; Put your css files there
+(defvar org-theme-css-dir "~/Templates/CSS/Org-CSS/")
+
+(defun toggle-org-custom-inline-style ()
+ (interactive)
+ (let ((hook 'org-export-before-parsing-hook)
+       (fun 'set-org-html-style))
+   (if (memq fun (eval hook))
+       (progn
+         (remove-hook hook fun 'buffer-local)
+         (message "Removed %s from %s" (symbol-name fun) (symbol-name hook)))
+     (add-hook hook fun nil 'buffer-local)
+     (message "Added %s to %s" (symbol-name fun) (symbol-name hook)))))
+
+; Enable Css hook by default
+;; I think this is better as opt in
+;; Also I still need to set up the image embedding part, which I have been
+;working on in visual analytics I just haven't made a nice function.
+;; (add-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+
+(defun org-theme ()
+  (interactive)
+  (let* ((cssdir org-theme-css-dir)
+         (css-choices (directory-files cssdir nil ".css$"))
+         (css (completing-read "theme: " css-choices nil t)))
+    (concat cssdir css)))
+(defun set-org-html-style (&optional backend)
+ (interactive)
+ (when (or (null backend) (eq backend 'html))
+(let ((f (or (and (boundp 'org-theme-css) org-theme-css) (org-theme))))
+     (if (file-exists-p f)
+         (progn
+           (set (make-local-variable 'org-theme-css) f)
+           (set (make-local-variable 'org-html-head)
+                (with-temp-buffer
+                  (insert "<style type=\"text/css\">\n<!-- [CDATA] -->\n")
+                  (insert-file-contents f)
+                  (goto-char (point-max))
+                  (insert "\n/;]]>;/-->\n</style>\n")
+                  (buffer-string)))
+           (set (make-local-variable 'org-html-head-include-default-style)
+                nil)
+           (message "Set custom style from %s" f))
+       (message "Custom header file %s doesnt exist")))))
+
 ;;; Programming
 ;;;; Outshine Mode
 (use-package! outshine :load-path "~/.doom.d/local/"
