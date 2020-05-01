@@ -148,7 +148,7 @@ ag, ack (or grep)!] (<https://github.com/sampson-chen/sack>)
   # *** Pass the Tags to TMSU
   # This should really come after the generated part but I through it in here so it could be an else if, that wasn't clever?
 elif [[ "$1" == *--tmsu* ]]; then
-    cd ~/Notes/MD/notes
+    cd ~/Notes/MD/
     # So this first searches for md files then greps them:
     # find ./ -name '*.md' | xargs rg --pcre2 '(?<=\s#)[a-zA-Z]+(?=\s)' *.md -o \
         #     | sed s+:+\ + | sed s/^/tmsu\ tag\ / | bash

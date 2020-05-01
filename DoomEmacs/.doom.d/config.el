@@ -89,6 +89,7 @@
          ("google"    . "http://www.google.com/search?q=")
          ("gmap"      . "http://maps.google.com/maps?q=%s")
          ("vidar"     . "http://121.210.19.69/")
+;;         ("DataSci"     . "~/Notes/DataSci/")  ; This isn't made relative upon HTML export
          ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
          ("ads"       .
           "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")))
