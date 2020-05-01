@@ -313,6 +313,8 @@
       "r hh" 'helm-org-in-buffer-headings
       "r ha" 'helm-org-agenda-files-headings
       )
+;;;; Remap Esc
+(setq evil-escape-key-sequence "jj")
 ;;;; Open in vim
 (defun my-open-current-file-in-vim ()
   (interactive)
