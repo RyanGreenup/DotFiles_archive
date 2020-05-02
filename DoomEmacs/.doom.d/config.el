@@ -310,6 +310,7 @@
         (message (number-to-string num))
           (insert "## * ")
           (insert hname)
+
           (insert " ")
           (insert
             (apply 'concat (make-list (- 75 hlen) "-"))
@@ -366,7 +367,7 @@
 (add-hook 'ess-mode-hook
   (lambda ()
     (local-set-key (kbd "C-S-r") 'Insert-R-Heading-1)
-    (local-set-key (kbd "C-S-m") 'myR/tidyverse-pipe)
+    (local-set-key (kbd "C-|") 'myR/tidyverse-pipe)
     (local-unset-key (kbd "M--"))
     (local-set-key (kbd "M--") 'myR/assign)
   )
