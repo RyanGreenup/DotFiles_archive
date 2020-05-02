@@ -210,6 +210,7 @@
     (dot         . t)
     (gnuplot     . t)
     (java        . t)
+    (javascript        . t)
     (sed         . t)
     (shell       . t)
     (mathematica . t)
@@ -297,7 +298,52 @@
 (after! company (setq company-idle-delay 1))
 (after! company (setq company-tooltip-idle-delay 1))
 
+;;;; Insert R Heading
+(defun Insert-R-Heading ()
+  (interactive)
+  (outshine-mode)
+  (let ((hname (read-from-minibuffer "Heading Name: ")))
+    (message (number-to-string (length hname)))
+    (let ((hlen (length hname)))
+      (let ((num (- 80 hlen)))
+        (message (number-to-string num))
+          (insert "## * ")
+          (insert hname)
+          (insert
+            (apply 'concat (make-list (- 75 hlen) "-"))
+           )
+       )
+     )
+    )
+)
+
+(defun myR/tidyverse-pipe ()
+  (interactive)
+  (insert " %>% "))
+
+(defun myR/assign ()
+  (interactive)
+  (insert " <- "))
+
+(add-hook 'ess-mode-hook
+  (lambda ()
+    (local-set-key (kbd "C-S-r") 'Insert-R-Heading)
+    (local-set-key (kbd "C-S-m") 'myR/tidyverse-pipe)
+    (local-unset-key (kbd "M--"))
+    (local-set-key (kbd "M--") 'myR/assign)
+  )
+)
+
 ;;; Keybindings
+;; I can't actually get these working in ESS
+;; (map!  :after ess-mode
+;;        :map ess-mode-map
+;;        :localleader
+;;        "l" #'ess-eval-region-or-function-or-paragraph
+;;        "d" #'ess-eval-region-or-function-or-paragraph-and-step
+;; )
+
+
 (map! :leader
 ;; #' delimits namespace, i.e. local var
       "h L" #'global-keycast-mode
