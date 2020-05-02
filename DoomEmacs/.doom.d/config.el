@@ -402,6 +402,8 @@
       )
 ;;;; Remap Esc
 (setq evil-escape-key-sequence "jj")
+;;;; Agenda
+(global-set-key (kbd "C-c a") 'org-agenda)
 ;;;; Open in vim
 (defun my-open-current-file-in-vim ()
   (interactive)
