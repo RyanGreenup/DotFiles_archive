@@ -1,7 +1,11 @@
 #!/bin/bash
 
+
+# TODO make this the time
+tmpfile=myemail
+
 # Make a working File from clipboard
-xclip -o -selection clipboard >> myemail
+xclip -o -selection clipboard >> $tmpfile
 
 # Decide the format
 if [ "$1" == "-h" ]; then
@@ -9,8 +13,8 @@ if [ "$1" == "-h" ]; then
   style=~/Dropbox/profiles/Emacs/org-css/github-org.css
   exit 0
 elif [[ "$1" == *-m* ]]; then
-    mv myemail myemail.md
-    EmailFile=myemail.md
+    mv $tmpfile $tmpfile.md
+    EmailFile=$tmpfile.md
     if [[ "$2" == "" ]]; then
         style=~/Dropbox/profiles/Emacs/org-css/github-org.css
         echo "This is using Default Style with Org Support"
@@ -19,8 +23,8 @@ elif [[ "$1" == *-m* ]]; then
         echo "The stylesheet is" $2
     fi
 elif [[ "$1" == *-o* ]]; then
-    mv myemail myemail.org
-    EmailFile=myemail.org
+    mv $tmpfile $tmpfile.org
+    EmailFile=$tmpfile.org
     if [[ "$2" == "" ]]; then
         style=~/Dropbox/profiles/Emacs/org-css/github-org.css
         echo "This is using Default Style with Org Support"
@@ -41,28 +45,28 @@ elif [[ "$1" == *-t* ]]; then
      # I could but sometimes it doesn't embed the CSS unless
      # all the mathml works out, so, you might as well manually embed the CSS
      # embedding all the SVG is the real work, but, I've already done it.
-mv myemail myemail.tex
+mv $tmpfile $tmpfile.tex
 
 #TODO Use `sed` or `sd` to replace $$\begin{aligned} \end{aligned}$$ with \begin{align} \end{align}
 
-t2h myemail.tex $style -std --mathml 
- # pandoc --mathml --from latex+raw_tex --standalone --toc -c $style --lua-filter ~/bin/tikz.lua -s myemail.tex -o myemail.html
+t2h $tmpfile.tex $style -std --mathml
+ # pandoc --mathml --from latex+raw_tex --standalone --toc -c $style --lua-filter ~/bin/tikz.lua -s $tmpfile.tex -o $tmpfile.html
    # This will not include the svg files, instead you need to use ~sed~ to put them inside the HTML, I'm not going to do that here, instead I'm going to do that inside the `svgmerge` script, that way it's all maintained in one script.
-rm myemail.tex
- echo "<style>" >> myemail.html 
- cat ~/Dropbox/profiles/Emacs/org-css/github-org.css >> myemail.html
- echo "</style>" >> myemail.html
-cat myemail.html | xclip -selection clipboard
- rm myemail.html
+rm $tmpfile.tex
+ echo "<style>" >> $tmpfile.html
+ cat ~/Dropbox/profiles/Emacs/org-css/github-org.css >> $tmpfile.html
+ echo "</style>" >> $tmpfile.html
+cat $tmpfile.html | xclip -selection clipboard
+ rm $tmpfile.html
  echo "Success, Clipboard is HTML with CSS:" $stlye
  exit 0 # I might want to restructure this, exiting here is not very clean.
 else
-    mv myemail myemail.org
-    EmailFile=myemail.org
+    mv $tmpfile $tmpfile.org
+    EmailFile=$tmpfile.org
 fi
 
 
-pandoc -s --toc --self-contained --mathml $EmailFile -o myemail.html
+pandoc -s --toc --self-contained --mathml $EmailFile -o $tmpfile.html
 rm $EmailFile
 # 
 # ## CSS
@@ -70,16 +74,16 @@ rm $EmailFile
 # #
 # #> Be mindful that you will want to use a CSS coresponding to an `org-file` if you use `org` that way to-do items and schedules will come out looking sensible.
 # 
- echo "<style>" >> myemail.html 
- cat ~/Dropbox/profiles/Emacs/org-css/github-org.css >> myemail.html
- echo "</style>" >> myemail.html
- cat myemail.html | xclip -selection clipboard
+ echo "<style>" >> $tmpfile.html
+ cat ~/Dropbox/profiles/Emacs/org-css/github-org.css >> $tmpfile.html
+ echo "</style>" >> $tmpfile.html
+ cat $tmpfile.html | xclip -selection clipboard
 
 #TODO Add support for Custom CSS and markdown/tex files
 
-thunderbird --compose "message=myemail.html,format='html'"
+thunderbird --compose "message=$tmpfile.html,format='html'"
 
- rm myemail.html
+ rm $tmpfile.html
 
 
 exit 0
