@@ -420,7 +420,9 @@
       "r ha" 'helm-org-agenda-files-headings
       )
 ;;;; Remap Esc
-(setq evil-escape-key-sequence "jj")
+(setq evil-escape-key-sequence "jk") ;; This is better because the cursor will
+                                     ;; remain stationary, no pressing kk after
+                                     ;; a jj
 ;;;; Agenda
 (global-set-key (kbd "C-c a") 'org-agenda)
 ;;;; Open in vim
