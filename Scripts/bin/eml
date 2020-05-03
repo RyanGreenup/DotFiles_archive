@@ -74,8 +74,12 @@ rm $EmailFile
  cat ~/Dropbox/profiles/Emacs/org-css/github-org.css >> myemail.html
  echo "</style>" >> myemail.html
  cat myemail.html | xclip -selection clipboard
- rm myemail.html
 
 #TODO Add support for Custom CSS and markdown/tex files
 
-thunderbird --compose "body='TODO Figure out how to copy into here',format='html'"
+thunderbird --compose "message=myemail.html,format='html'"
+
+ rm myemail.html
+
+
+exit 0

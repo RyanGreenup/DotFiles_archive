@@ -277,6 +277,25 @@
            (message "Set custom style from %s" f))
        (message "Custom header file %s doesnt exist")))))
 
+;;;;; Email
+(defun export-email ()
+  (interactive)
+  (message "Beginning Email Export")
+  (yank-visible-org-buffer)
+  (call-eml)
+)
+  (defun yank-visible-org-buffer ()
+    (interactive)
+    (goto-char (point-min))
+    (mark-page)
+    ;; (evil-yank (point-min) (point-max))
+    (org-copy-visible (point-min) (point-max))
+  )
+
+  (defun call-eml ()
+    (async-shell-command (format "~/bin/eml -o"))
+  )
+
 ;;; Programming
 ;;;; Outshine Mode
 (use-package! outshine :load-path "~/.doom.d/local/"

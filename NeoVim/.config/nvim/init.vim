@@ -22,8 +22,10 @@ nnoremap <silent><Leader>fcd :cd %:p:h<CR>
 nnoremap <silent><Leader>fcd :lcd %:p:h<CR>
 
 set relativenumber
-imap jj <Esc>
-imap fd <Esc>
+imap jj <Esc> " What I'm Used to
+imap fd <Esc> " What Spacemacs Uses
+imap jk <Esc> " What Doom Uses
+
 " If latent files get annoying consider doing:
 " set undodir/.vim/undodir
 " 	Or whatever directory
@@ -460,6 +462,7 @@ nnoremap <C-x><C-t><C-r> :e!<CR>
 "nnoremap <Leader>r :set syntax=expand('%:e')<CR> 
 "nnoremap <Leader>r :e!<CR>
 nmap <Leader>r :e!<CR>
+nmap <Leader>fp :e ~/.vimrc <CR>
 
 "Map F3 to XeLaTeX
 
@@ -469,6 +472,7 @@ nmap <Leader>r :e!<CR>
 autocmd BufEnter *.tex :map <f12> :w<cr>:!texstudio "%" <Enter>
 autocmd BufEnter *.md :map <f12> :w<cr>:!typora "%" & disown <Enter>
 autocmd BufEnter *.md :map <Space>fo :w<cr>:!marktext "%" & disown <Enter>
+autocmd BufEnter *.md :map <Space>foa :w<cr>:!atom "%" & disown <Enter>
 "autocmd BufEnter *.md :map <f12> :w<cr>:!marktext "%" & disown <Enter>
 "autocmd BufEnter *.Rmd :map <f12> :w<cr>:!marktext "%" & disown <Enter>
 
