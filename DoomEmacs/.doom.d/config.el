@@ -332,7 +332,7 @@
 
           (insert " ")
           (insert
-            (apply 'concat (make-list (- 75 hlen) "-"))
+            (app5y 'concat (make-list (- 73 hlen) "-"))
            )
        )
      )
@@ -350,7 +350,7 @@
           (insert hname)
           (insert " ")
           (insert
-            (apply 'concat (make-list (- 74 hlen) "="))
+            (apply 'concat (make-list (- 72 hlen) "="))
            )
        )
      )
@@ -368,7 +368,7 @@
           (insert hname)
           (insert " ")
           (insert
-            (apply 'concat (make-list (- 74 hlen) "#"))
+            (apply 'concat (make-list (- 71 hlen) "#"))
            )
        )
      )
