@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: R Code Block
+# key: rkd
+# --
+
+#+NAME: lfcd
+#+CAPTION: Load the Packages for **/R/**
+#+begin_src R
+#+end_src
