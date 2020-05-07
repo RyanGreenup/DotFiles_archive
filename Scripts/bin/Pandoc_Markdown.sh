@@ -1,4 +1,15 @@
 #!/bin/bash
+## This will fail if resources are not found in the path,
+## So, instead of taking the input from the clipboard,
+## this should be executed from the directory of the
+## Markdown file, Pointing to the markdown file.
+
+## Steps
+## 1. Change to the MD File Location using realpath
+## 2. Execute essentially this scripts
+## 3. Decide whether to put the output in tmp or in the same Location
+  ## I think the same location tbh.
+
 
 function main() {
   parseArguments
@@ -13,25 +24,25 @@ function main() {
 
   function WriteClipboardToFile() {
     ClipFile=$(mktemp)
-    trap "rm $ClipFile" EXIT
+#    trap "rm $ClipFile" EXIT
     xclip -o -selection clipboard > $ClipFile.md
     echo $ClipFile.md
   }
 
   function ConvertToHTML() {
-  echo $ClipFile.md  
+  echo $ClipFile.md
     pandoc -f markdown -t html -s --self-contained $ClipFile.md -o $ClipFile.html
-    nvim $ClipFile.html
   }
 
   function AddMathJaxandStyle() {
     CreateStyle
     pandoc -f html -t html $ClipFile.html -s -B $wrapped --mathjax -o $ClipFile.html
+    atom $ClipFile.html
   }
 
   function CreateStyle() {
     wrapped=$(mktemp)
-    trap "rm $wrapped" EXIT
+#    trap "rm $wrapped" EXIT
 
     echo "<style>" > $wrapped
     cat $style >> $wrapped
