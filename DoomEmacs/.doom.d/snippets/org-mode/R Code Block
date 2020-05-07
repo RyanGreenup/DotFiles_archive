@@ -3,7 +3,9 @@
 # key: rkd
 # --
 
-#+NAME: lfcd
-#+CAPTION: Load the Packages for **/R/**
+#+NAME: $1
+#+CAPTION: $2
 #+begin_src R
+$3
 #+end_src
+$0

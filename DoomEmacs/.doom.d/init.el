@@ -146,7 +146,7 @@
             ;; +brain
             ;; +gnuplot
              +ipython
-            ;; +pandoc
+             +pandoc
             ;; +journal
             ;; +pomodoro
             +dragndrop)
