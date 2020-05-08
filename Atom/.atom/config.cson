@@ -1,0 +1,40 @@
+"*":
+  "atom-notes":
+    directory: "/tmp/notes"
+    orderByFuzzyFileNameMatch: true
+  core:
+    disabledPackages: [
+      "markdown-preview"
+      "markdown-preview-plus"
+      "language-gfm"
+      "git-diff"
+    ]
+  editor:
+    fontSize: 12
+    scrollPastEnd: true
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "1cc89b6d-5c42-4a3c-8a1e-e9613918d14f"
+  "markdown-preview-enhanced":
+    codeBlockTheme: "atom-dark.css"
+    frontMatterRenderingOption: "table"
+    mathRenderingOption: "MathJax"
+    previewTheme: "atom-dark.css"
+  "markdown-preview-plus":
+    markdownItConfig:
+      useToc: true
+    mathConfig:
+      enableLatexRenderingByDefault: true
+    useGitHubStyle: true
+  organized: {}
+  "tool-bar":
+    visible: false
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: true
+".gfm.source":
+  arpeggio:
+    chords:
+      fun: "function"
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
