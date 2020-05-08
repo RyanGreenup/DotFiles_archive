@@ -12,6 +12,10 @@
 (package! citeproc)
 (package! helm-org-rifle)
 
+;; Both of these must be here otherwise poly mode crashes all the time
+(package! polymode)
+(package! poly-R)
+
 ;; Doom's packages are pinned to a specific commit and updated from release to
 ;; release. The `unpin!' macro allows you to unpin single packages...
 ;(unpin! pinned-package)
