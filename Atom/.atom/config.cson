@@ -64,7 +64,7 @@
   "custom-folds":
     prefix_0: "<editor-fold \\*\\ "
   editor:
-    fontSize: 11
+    fontSize: 12
     scrollPastEnd: true
     showIndentGuide: true
   "exception-reporting":
