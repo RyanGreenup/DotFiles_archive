@@ -61,14 +61,10 @@
     packagesWithKeymapsDisabled: [
       "Hydrogen"
     ]
-    themes: [
-      "atom-material-ui"
-      "atom-light-syntax"
-    ]
   "custom-folds":
     prefix_0: "<editor-fold \\*\\ "
   editor:
-    fontSize: 13
+    fontSize: 11
     scrollPastEnd: true
     showIndentGuide: true
   "exception-reporting":
@@ -85,10 +81,11 @@
       "source.gfm.notes"
     ]
   "markdown-preview-enhanced":
+    codeBlockTheme: "darcula.css"
     enableScriptExecution: true
     fileExtension: ".md, .mmark, .markdown, .rmd, .Rmd"
     frontMatterRenderingOption: "table"
-    previewTheme: "one-dark.css"
+    previewTheme: "atom-dark.css"
   "markdown-preview-plus":
     markdownItConfig:
       useFootnote: true
@@ -112,6 +109,9 @@
       "text.restructuredtext"
       "source.gfm.notes"
     ]
+  "terminal-plus":
+    core:
+      mapTerminalsToAutoOpen: true
   "tree-view": {}
   "vim-mode-plus":
     useClipboardAsDefaultRegister: true
