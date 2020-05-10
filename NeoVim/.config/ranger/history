@@ -1,5 +1,3 @@
-search social
-rename 01_Data_Structures.rmd
 shell cp /tmp/note.pdf /tmp/note.html ./
 unmark 
 bulkrename 
@@ -22,7 +20,6 @@ find datas
 filter Rmd
 rename .Rproj.user
 cd /home/ryan/Notes/DataSci/ThinkingAboutData
-filter .md
 filter -g \.md
 filter 02_Q
 filter Anal
@@ -45,6 +42,9 @@ filter
 >>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
 
 q
-delete
 search doom
 cd /tmp/tags
+flat -1
+filter .md
+cd /tmp/notes/
+delete
