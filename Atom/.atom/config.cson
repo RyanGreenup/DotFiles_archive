@@ -61,6 +61,7 @@
     packagesWithKeymapsDisabled: [
       "Hydrogen"
     ]
+    telemetryConsent: "limited"
   "custom-folds":
     prefix_0: "<editor-fold \\*\\ "
   editor:
@@ -118,6 +119,8 @@
   "vk-terminal":
     style:
       theme: "dracula"
+  welcome:
+    showOnStartup: false
 ".breakpoints.hydrogen":
   editor:
     scrollPastEnd: true
