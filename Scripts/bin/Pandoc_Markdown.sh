@@ -9,35 +9,32 @@
 ## 2. Execute essentially this scripts
 ## 3. Decide whether to put the output in tmp or in the same Location
   ## I think the same location tbh.
-
+mdfile=$1
+style=$2
+echo $style
 
 function main() {
+  echo Creating HTML from $1
   parseArguments
-  echo parsed
-  WriteClipboardToFile
-  echo made file
+  goToFile
   ConvertToHTML
-  echo first html
   AddMathJaxandStyle
-  echo finally done
 }
 
-  function WriteClipboardToFile() {
-    ClipFile=$(mktemp)
-#    trap "rm $ClipFile" EXIT
-    xclip -o -selection clipboard > $ClipFile.md
-    echo $ClipFile.md
+  function goToFile() {
+    echo $mdfile
+    cd $(realpath $mdfile | xargs dirname)
   }
 
   function ConvertToHTML() {
-  echo $ClipFile.md
-    pandoc -f markdown -t html -s --self-contained $ClipFile.md -o $ClipFile.html
+    pandoc -f markdown -t html -s --self-contained $mdfile -o /tmp/$mdfile.html
+    cd /tmp
   }
 
   function AddMathJaxandStyle() {
     CreateStyle
-    pandoc -f html -t html $ClipFile.html -s -B $wrapped --mathjax -o $ClipFile.html
-    atom $ClipFile.html
+    pandoc -f html -t html $mdfile.html -s -B $wrapped --mathjax -o $mdfile.html
+    atom $mdfile.html
   }
 
   function CreateStyle() {
@@ -52,11 +49,11 @@ function main() {
   }
 
 function parseArguments() {
-  if [[ $1="" ]]; then
+  if [[ $style=="" ]]; then
     style=~/Templates/CSS/jekyllTypora.css
-  else
     echo "Using $style becuase nothing specified"
-    style=$2
+  else
+    echo "Using $style as specified"
   fi
 }
 main
