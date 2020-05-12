@@ -178,7 +178,7 @@
          :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
          :exclude "journal.*" ;; Regexp
          :recursive t
-         :publishing-directory "/var/www/html//Org/"
+         :publishing-directory "/var/www/html/Org/"
          :publishing-function org-publish-attachment)
 
         ("Server" :components ("Server_Org" "Server_Images" "Server_Other"))
