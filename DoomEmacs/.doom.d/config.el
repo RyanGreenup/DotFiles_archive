@@ -151,7 +151,7 @@
          :auto-sitemap t                ; Generate sitemap.org automagically...
          :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
          :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
-         :publishing-directory "~/Public/html/Org/"
+         :publishing-directory "/var/www/html/Org/"
          :publishing-function org-html-publish-to-html
          :exclude "*jour.*" ;; Regexp
 ;;         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
@@ -170,7 +170,7 @@
          :base-extension "jpg\\|gif\\|png"
          :exclude ".*ltximg.*" ;; regexp
          :recursive t
-         :publishing-directory "~/Public/html/Org/"
+         :publishing-directory "/var/www/html//Org/"
          :publishing-function org-publish-attachment)
 
         ("Server_Other"
@@ -178,7 +178,7 @@
          :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
          :exclude "journal.*" ;; Regexp
          :recursive t
-         :publishing-directory "~/Public/html/Org/"
+         :publishing-directory "/var/www/html//Org/"
          :publishing-function org-publish-attachment)
 
         ("Server" :components ("Server_Org" "Server_Images" "Server_Other"))
