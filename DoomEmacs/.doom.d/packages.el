@@ -6,6 +6,8 @@
 ;; Alternatively, use M-x doom/reload.
 
 (package! dash)
+(package! hyperbole)
+(package! simple-httpd)
 (package! outshine)
 (package! org-pdfview)
 (package! citeproc)

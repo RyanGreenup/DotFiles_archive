@@ -79,9 +79,6 @@
 
 (citeproc-org-setup)
 
-
-
-
 ;;;;
 ;; File Links
  (setq org-link-abbrev-alist
@@ -439,6 +436,7 @@
 ;;; EAF
 ;; Beware this takes about 2 seconds to load so it makes things feel slow.
 (after! org
+  ;; Load EAF
 (use-package eaf
   :load-path "~/.emacs.d/site-lisp/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
   :custom
@@ -447,4 +445,11 @@
   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
   (eaf-bind-key take_photo "p" eaf-camera-keybinding))
+
+;; Load Org-Roam Server
+;; https://github.com/org-roam/org-roam-server
+(use-package org-roam-server
+;;  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/org-roam-server/" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
   )
+)
