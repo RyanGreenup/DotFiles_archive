@@ -70,7 +70,7 @@ bindsym Control+mod1+t exec i3-sensible-terminal
 #bindsym $mod+d exec --no-startup-id dmenu_recency
 # bindsym $mod+d exec --no-startup-id rofi -show drun -lines 10 -eh 2 -width 30 -padding 800 -font "Cantarell 36" -mathing fuzzy -show-icons 
  bindsym $mod+d exec rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons
- bindsym $mod+/ exec rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons
+ bindsym $mod+slash exec rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons
 
 
 
@@ -392,7 +392,8 @@ mode "$mode_gaps_left" {
 for_window [class="^.*"] border pixel 2
 gaps inner 20 
 gaps outer 10
-exec ~/.fehbg 
+exec ~/.fehbg
+output "*" bg /home/ryan/Pictures/MathWallpapers.png fill
 exec firefox https://i3wm.org/docs/refcard.html
 exec https://i3wm.org/docs/userguide.html#_the_tree_consists_of_containers
 exec signal-desktop
@@ -428,6 +429,22 @@ set $i3_resurrect i3-resurrect
 
 #Get this working :(
 
+
+
+### Media Keys
+### This requires the =acpilight= package (in arch)
+### Also requires this to be set in =visudo=
+    ## No Password
+    ## %wheel ALL=(ALL) NOPASSWD: ALL
+## bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+## bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+## bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+## bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
+## bindsym XF86AudioPlay exec playerctl play-pause
+## bindsym XF86AudioNext exec playerctl next
+## bindsym XF86AudioPrev exec playerctl previous
 
 
 
