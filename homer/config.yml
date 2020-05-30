@@ -65,7 +65,7 @@ services:
         tag: "todo"
         url: "./volition"
       - name: "Pi Hole"
-        logo: "assets/tools/volition.png"
+        logo: "assets/tools/pihole.png"
         subtitle: "Network Monitoring"
         tag: "monit"
         url: "./pihole"
