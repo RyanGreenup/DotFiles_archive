@@ -1,0 +1,381 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter 4. Wayland Protocol and Model of Operation</title><link rel="stylesheet" type="text/css" href="css/default.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="index.html" title="Wayland"><link rel="up" href="index.html" title="Wayland"><link rel="prev" href="ch03.html" title="Chapter 3. Wayland Architecture"><link rel="next" href="ch05.html" title="Chapter 5. X11 Application Support"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 4. Wayland Protocol and Model of Operation</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch05.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="chap-Protocol"></a>Chapter 4. Wayland Protocol and Model of Operation</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="ch04.html#sect-Protocol-Basic-Principles">Basic Principles</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Code-Generation">Code Generation</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Wire-Format">Wire Format</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Interfaces">Interfaces</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Versioning">Versioning</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Connect-Time">Connect Time</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Security-and-Authentication">Security and Authentication</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Creating-Objects">Creating Objects</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Compositor">Compositor</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Surface">Surfaces</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Input">Input</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Output">Output</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-data-sharing">Data sharing between clients</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Basic-Principles"></a>Basic Principles</h2></div></div></div><p>
+      The Wayland protocol is an asynchronous object oriented protocol.  All
+      requests are method invocations on some object.  The requests include
+      an object ID that uniquely identifies an object on the server.  Each
+      object implements an interface and the requests include an opcode that
+      identifies which method in the interface to invoke.
+    </p><p>
+      The protocol is message-based.  A message sent by a client to the server
+      is called request.  A message from the server to a client is called event.
+      A message has a number of arguments, each of which has a certain type (see
+      <a class="xref" href="ch04.html#sect-Protocol-Wire-Format" title="Wire Format">the section called “Wire Format”</a> for a list of argument types).
+    </p><p>
+      Additionally, the protocol can specify <span class="type">enum</span>s which associate
+      names to specific numeric enumeration values.  These are primarily just
+      descriptive in nature: at the wire format level enums are just integers.
+      But they also serve a secondary purpose to enhance type safety or
+      otherwise add context for use in language bindings or other such code.
+      This latter usage is only supported so long as code written before these
+      attributes were introduced still works after; in other words, adding an
+      enum should not break API, otherwise it puts backwards compatibility at
+      risk.
+    </p><p>
+      <span class="type">enum</span>s can be defined as just a set of integers, or as
+      bitfields.  This is specified via the <span class="type">bitfield</span> boolean
+      attribute in the <span class="type">enum</span> definition.  If this attribute is true,
+      the enum is intended to be accessed primarily using bitwise operations,
+      for example when arbitrarily many choices of the enum can be ORed
+      together; if it is false, or the attribute is omitted, then the enum
+      arguments are a just a sequence of numerical values.
+    </p><p>
+      The <span class="type">enum</span> attribute can be used on either <span class="type">uint</span>
+      or <span class="type">int</span> arguments, however if the <span class="type">enum</span> is
+      defined as a <span class="type">bitfield</span>, it can only be used on
+      <span class="type">uint</span> args.
+    </p><p>
+      The server sends back events to the client, each event is emitted from
+      an object.  Events can be error conditions.  The event includes the
+      object ID and the event opcode, from which the client can determine
+      the type of event.  Events are generated both in response to requests
+      (in which case the request and the event constitutes a round trip) or
+      spontaneously when the server state changes.
+    </p><p>
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	    State is broadcast on connect, events are sent
+	    out when state changes. Clients must listen for
+	    these changes and cache the state.
+	    There is no need (or mechanism) to query server state.
+	  </p></li><li class="listitem"><p>
+	    The server will broadcast the presence of a number of global objects,
+	    which in turn will broadcast their current state.
+	  </p></li></ul></div><p>
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Code-Generation"></a>Code Generation</h2></div></div></div><p>
+      The interfaces, requests and events are defined in
+      <code class="filename">protocol/wayland.xml</code>.
+      This xml is used to generate the function prototypes that can be used by
+      clients and compositors.
+    </p><p>
+      The protocol entry points are generated as inline functions which just
+      wrap the <code class="function">wl_proxy_*</code> functions.  The inline functions aren't
+      part of the library ABI and language bindings should generate their
+      own stubs for the protocol entry points from the xml.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Wire-Format"></a>Wire Format</h2></div></div></div><p>
+      The protocol is sent over a UNIX domain stream socket, where the endpoint
+      usually is named <code class="systemitem">wayland-0</code>
+      (although it can be changed via <span class="emphasis"><em>WAYLAND_DISPLAY</em></span>
+      in the environment). Beginning in Wayland 1.15, implementations can
+      optionally support server socket endpoints located at arbitrary
+      locations in the filesystem by setting <span class="emphasis"><em>WAYLAND_DISPLAY</em></span>
+      to the absolute path at which the server endpoint listens.
+    </p><p>
+      Every message is structured as 32-bit words; values are represented in the
+      host's byte-order.  The message header has 2 words in it:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	    The first word is the sender's object ID (32-bit).
+	  </p></li><li class="listitem"><p>
+	    The second has 2 parts of 16-bit.  The upper 16-bits are the message
+	    size in bytes, starting at the header (i.e. it has a minimum value of 8).The lower is the request/event opcode.
+	  </p></li></ul></div><p>
+      The payload describes the request/event arguments.  Every argument is always
+      aligned to 32-bits. Where padding is required, the value of padding bytes is
+      undefined. There is no prefix that describes the type, but it is
+      inferred implicitly from the xml specification.
+    </p><p>
+
+      The representation of argument types are as follows:
+      </p><div class="variablelist"><dl class="variablelist"><dt><span class="term">int, </span><span class="term">uint</span></dt><dd><p>
+	      The value is the 32-bit value of the signed/unsigned
+	      int.
+	    </p></dd><dt><span class="term">fixed</span></dt><dd><p>
+	      Signed 24.8 decimal numbers. It is a signed decimal type which
+	      offers a sign bit, 23 bits of integer precision and 8 bits of
+	      decimal precision. This is exposed as an opaque struct with
+	      conversion helpers to and from double and int on the C API side.
+	    </p></dd><dt><span class="term">string</span></dt><dd><p>
+	      Starts with an unsigned 32-bit length, followed by the
+	      string contents, including terminating null byte, then padding
+	      to a 32-bit boundary.
+	    </p></dd><dt><span class="term">object</span></dt><dd><p>
+	      32-bit object ID.
+	    </p></dd><dt><span class="term">new_id</span></dt><dd><p>
+	      The 32-bit object ID.  Generally, the interface used for the new
+	      object is inferred from the xml, but in the case where it's not
+	      specified, a new_id is preceeded by a <code class="code">string</code> specifying
+	      the interface name, and a <code class="code">uint</code> specifying the version.
+	    </p></dd><dt><span class="term">array</span></dt><dd><p>
+	      Starts with 32-bit array size in bytes, followed by the array
+	      contents verbatim, and finally padding to a 32-bit boundary.
+	    </p></dd><dt><span class="term">fd</span></dt><dd><p>
+	      The file descriptor is not stored in the message buffer, but in
+	      the ancillary data of the UNIX domain socket message (msg_control).
+	    </p></dd></dl></div><p>
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Interfaces"></a>Interfaces</h2></div></div></div><p>
+      The protocol includes several interfaces which are used for
+      interacting with the server.  Each interface provides requests,
+      events, and errors (which are really just special events) as described
+      above.  Specific compositor implementations may have their own
+      interfaces provided as extensions, but there are several which are
+      always expected to be present.
+    </p><p>
+      Core interfaces:
+      </p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_display" title="wl_display - core global object">wl_display</a></span></dt><dd>core global object</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_registry" title="wl_registry - global registry object">wl_registry</a></span></dt><dd>global registry object</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_callback" title="wl_callback - callback object">wl_callback</a></span></dt><dd>callback object</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_compositor" title="wl_compositor - the compositor singleton">wl_compositor</a></span></dt><dd>the compositor singleton</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_shm_pool" title="wl_shm_pool - a shared memory pool">wl_shm_pool</a></span></dt><dd>a shared memory pool</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_shm" title="wl_shm - shared memory support">wl_shm</a></span></dt><dd>shared memory support</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_buffer" title="wl_buffer - content for a wl_surface">wl_buffer</a></span></dt><dd>content for a wl_surface</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_data_offer" title="wl_data_offer - offer to transfer data">wl_data_offer</a></span></dt><dd>offer to transfer data</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_data_source" title="wl_data_source - offer to transfer data">wl_data_source</a></span></dt><dd>offer to transfer data</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_data_device" title="wl_data_device - data transfer device">wl_data_device</a></span></dt><dd>data transfer device</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_data_device_manager" title="wl_data_device_manager - data transfer interface">wl_data_device_manager</a></span></dt><dd>data transfer interface</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_shell" title="wl_shell - create desktop-style surfaces">wl_shell</a></span></dt><dd>create desktop-style surfaces</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_shell_surface" title="wl_shell_surface - desktop-style metadata interface">wl_shell_surface</a></span></dt><dd>desktop-style metadata interface</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_surface" title="wl_surface - an onscreen surface">wl_surface</a></span></dt><dd>an onscreen surface</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_seat" title="wl_seat - group of input devices">wl_seat</a></span></dt><dd>group of input devices</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_pointer" title="wl_pointer - pointer input device">wl_pointer</a></span></dt><dd>pointer input device</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_keyboard" title="wl_keyboard - keyboard input device">wl_keyboard</a></span></dt><dd>keyboard input device</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_touch" title="wl_touch - touchscreen input device">wl_touch</a></span></dt><dd>touchscreen input device</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_output" title="wl_output - compositor output region">wl_output</a></span></dt><dd>compositor output region</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_region" title="wl_region - region interface">wl_region</a></span></dt><dd>region interface</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_subcompositor" title="wl_subcompositor - sub-surface compositing">wl_subcompositor</a></span></dt><dd>sub-surface compositing</dd><dt><span class="term"><a class="link" href="apa.html#protocol-spec-wl_subsurface" title="wl_subsurface - sub-surface interface to a wl_surface">wl_subsurface</a></span></dt><dd>sub-surface interface to a wl_surface</dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Versioning"></a>Versioning</h2></div></div></div><p>
+      Every interface is versioned and every protocol object implements a
+      particular version of its interface.  For global objects, the maximum
+      version supported by the server is advertised with the global and the
+      actual version of the created protocol object is determined by the
+      version argument passed to wl_registry.bind().  For objects that are
+      not globals, their version is inferred from the object that created
+      them.
+    </p><p>
+      In order to keep things sane, this has a few implications for
+      interface versions:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	    The object creation hierarchy must be a tree.  Otherwise,
+	    infering object versions from the parent object becomes a much
+	    more difficult to properly track.
+	  </p></li><li class="listitem"><p>
+	    When the version of an interface increases, so does the version
+	    of its parent (recursively until you get to a global interface)
+	  </p></li><li class="listitem"><p>
+	    A global interface's version number acts like a counter for all
+	    of its child interfaces.  Whenever a child interface gets
+	    modified, the global parent's interface version number also
+	    increases (see above).  The child interface then takes on the
+	    same version number as the new version of its parent global
+	    interface.
+	  </p></li></ul></div><p>
+    </p><p>
+      To illustrate the above, consider the wl_compositor interface.  It
+      has two children, wl_surface and wl_region.  As of wayland version
+      1.2, wl_surface and wl_compositor are both at version 3.  If
+      something is added to the wl_region interface, both wl_region and
+      wl_compositor will get bumpped to version 4.  If, afterwards,
+      wl_surface is changed, both wl_compositor and wl_surface will be at
+      version 5.  In this way the global interface version is used as a
+      sort of "counter" for all of its child interfaces.  This makes it
+      very simple to know the version of the child given the version of its
+      parent.  The child is at the highest possible interface version that
+      is less than or equal to its parent's version.
+    </p><p>
+      It is worth noting a particular exception to the above versioning
+      scheme.  The wl_display (and, by extension, wl_registry) interface
+      cannot change because it is the core protocol object and its version
+      is never advertised nor is there a mechanism to request a different
+      version.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Connect-Time"></a>Connect Time</h2></div></div></div><p>
+      There is no fixed connection setup information, the server emits
+      multiple events at connect time, to indicate the presence and
+      properties of global objects: outputs, compositor, input devices.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Security-and-Authentication"></a>Security and Authentication</h2></div></div></div><p>
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	    mostly about access to underlying buffers, need new drm auth
+	    mechanism (the grant-to ioctl idea), need to check the cmd stream?
+	  </p></li><li class="listitem"><p>
+	    getting the server socket depends on the compositor type, could
+	    be a system wide name, through fd passing on the session dbus.
+	    or the client is forked by the compositor and the fd is
+	    already opened.
+	  </p></li></ul></div><p>
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Creating-Objects"></a>Creating Objects</h2></div></div></div><p>
+      Each object has a unique ID.  The IDs are allocated by the entity
+      creating the object (either client or server).  IDs allocated by the
+      client are in the range [1, 0xfeffffff] while IDs allocated by the
+      server are in the range [0xff000000, 0xffffffff].  The 0 ID is
+      reserved to represent a null or non-existant object.
+
+      For efficiency purposes, the IDs are densely packed in the sense that
+      the ID N will not be used until N-1 has been used.  Any ID allocation
+      algorithm that does not maintain this property is incompatible with
+      the implementation in libwayland.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Compositor"></a>Compositor</h2></div></div></div><p>
+      The compositor is a global object, advertised at connect time.
+    </p><p>
+      See <a class="xref" href="apa.html#protocol-spec-wl_compositor" title="wl_compositor - the compositor singleton">the section called “wl_compositor
+	- the compositor singleton”</a> for the
+      protocol description.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Surface"></a>Surfaces</h2></div></div></div><p>
+      A surface manages a rectangular grid of pixels that clients create
+      for displaying their content to the screen.  Clients don't know
+      the global position of their surfaces, and cannot access other
+      clients' surfaces.
+    </p><p>
+      Once the client has finished writing pixels, it 'commits' the
+      buffer; this permits the compositor to access the buffer and read
+      the pixels.  When the compositor is finished, it releases the
+      buffer back to the client.
+    </p><p>
+      See <a class="xref" href="apa.html#protocol-spec-wl_surface" title="wl_surface - an onscreen surface">the section called “wl_surface
+	- an onscreen surface”</a> for the protocol
+      description.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Input"></a>Input</h2></div></div></div><p>
+      A seat represents a group of input devices including mice,
+      keyboards and touchscreens. It has a keyboard and pointer
+      focus. Seats are global objects. Pointer events are delivered
+      in surface-local coordinates.
+    </p><p>
+      The compositor maintains an implicit grab when a button is
+      pressed, to ensure that the corresponding button release
+      event gets delivered to the same surface. But there is no way
+      for clients to take an explicit grab. Instead, surfaces can
+      be mapped as 'popup', which combines transient window semantics
+      with a pointer grab.
+    </p><p>
+      To avoid race conditions, input events that are likely to
+      trigger further requests (such as button presses, key events,
+      pointer motions) carry serial numbers, and requests such as
+      wl_surface.set_popup require that the serial number of the
+      triggering event is specified. The server maintains a
+      monotonically increasing counter for these serial numbers.
+    </p><p>
+      Input events also carry timestamps with millisecond granularity.
+      Their base is undefined, so they can't be compared against
+      system time (as obtained with clock_gettime or gettimeofday).
+      They can be compared with each other though, and for instance
+      be used to identify sequences of button presses as double
+      or triple clicks.
+    </p><p>
+      See <a class="xref" href="apa.html#protocol-spec-wl_seat" title="wl_seat - group of input devices">the section called “wl_seat
+	- group of input devices”</a> for the
+      protocol description.
+    </p><p>
+      Talk about:
+
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	    keyboard map, change events
+	  </p></li><li class="listitem"><p>
+	    xkb on Wayland
+	  </p></li><li class="listitem"><p>
+	    multi pointer Wayland
+	  </p></li></ul></div><p>
+    </p><p>
+      A surface can change the pointer image when the surface is the pointer
+      focus of the input device.  Wayland doesn't automatically change the
+      pointer image when a pointer enters a surface, but expects the
+      application to set the cursor it wants in response to the pointer
+      focus and motion events.  The rationale is that a client has to manage
+      changing pointer images for UI elements within the surface in response
+      to motion events anyway, so we'll make that the only mechanism for
+      setting or changing the pointer image.  If the server receives a request
+      to set the pointer image after the surface loses pointer focus, the
+      request is ignored.  To the client this will look like it successfully
+      set the pointer image.
+    </p><p>
+      The compositor will revert the pointer image back to a default image
+      when no surface has the pointer focus for that device.  Clients can
+      revert the pointer image back to the default image by setting a NULL
+      image.
+    </p><p>
+      What if the pointer moves from one window which has set a special
+      pointer image to a surface that doesn't set an image in response to
+      the motion event?  The new surface will be stuck with the special
+      pointer image.  We can't just revert the pointer image on leaving a
+      surface, since if we immediately enter a surface that sets a different
+      image, the image will flicker.  Broken app, I suppose.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-Output"></a>Output</h2></div></div></div><p>
+      An output is a global object, advertised at connect time or as it
+      comes and goes.
+    </p><p>
+      See <a class="xref" href="apa.html#protocol-spec-wl_output" title="wl_output - compositor output region">the section called “wl_output
+	- compositor output region”</a> for the protocol
+      description.
+    </p><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	  laid out in a big (compositor) coordinate system
+	</p></li><li class="listitem"><p>
+	  basically xrandr over Wayland
+	</p></li><li class="listitem"><p>
+	  geometry needs position in compositor coordinate system
+	</p></li><li class="listitem"><p>
+	  events to advertise available modes, requests to move and change
+	  modes
+	</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Protocol-data-sharing"></a>Data sharing between clients</h2></div></div></div><p>
+      The Wayland protocol provides clients a mechanism for sharing
+      data that allows the implementation of copy-paste and
+      drag-and-drop. The client providing the data creates a
+      <code class="function">wl_data_source</code> object and the clients
+      obtaining the data will see it as <code class="function">wl_data_offer</code>
+      object. This interface allows the clients to agree on a mutually
+      supported mime type and transfer the data via a file descriptor
+      that is passed through the protocol.
+    </p><p>
+      The next section explains the negotiation between data source and
+      data offer objects. <a class="xref" href="ch04.html#sect-Protocol-data-sharing-devices" title="Data devices">the section called “Data devices”</a>
+      explains how these objects are created and passed to different
+      clients using the <code class="function">wl_data_device</code> interface
+      that implements copy-paste and drag-and-drop support.
+    </p><p>
+      See <a class="xref" href="apa.html#protocol-spec-wl_data_offer" title="wl_data_offer - offer to transfer data">the section called “wl_data_offer
+	- offer to transfer data”</a>,
+      <a class="xref" href="apa.html#protocol-spec-wl_data_source" title="wl_data_source - offer to transfer data">the section called “wl_data_source
+	- offer to transfer data”</a>,
+      <a class="xref" href="apa.html#protocol-spec-wl_data_device" title="wl_data_device - data transfer device">the section called “wl_data_device
+	- data transfer device”</a> and
+      <a class="xref" href="apa.html#protocol-spec-wl_data_device_manager" title="wl_data_device_manager - data transfer interface">the section called “wl_data_device_manager
+	- data transfer interface”</a> for
+      protocol descriptions.
+    </p><p>
+      MIME is defined in RFC's 2045-2049. A
+      <a class="ulink" href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_top">
+      registry of MIME types</a> is maintained by the Internet Assigned
+      Numbers Authority (IANA).
+    </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm445"></a>Data negotiation</h3></div></div></div><p>
+	A client providing data to other clients will create a <code class="function">wl_data_source</code>
+	object and advertise the mime types for the formats it supports for
+	that data through the <code class="function">wl_data_source.offer</code>
+	request. On the receiving end, the data offer object will generate one
+	<code class="function">wl_data_offer.offer</code> event for each supported mime
+	type.
+      </p><p>
+	The actual data transfer happens when the receiving client sends a
+	<code class="function">wl_data_offer.receive</code> request. This request takes
+	a mime type and a file descriptor as arguments. This request will generate a
+	<code class="function">wl_data_source.send</code> event on the sending client
+	with the same arguments, and the latter client is expected to write its
+	data to the given file descriptor using the chosen mime type.
+      </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="sect-Protocol-data-sharing-devices"></a>Data devices</h3></div></div></div><p>
+	Data devices glue data sources and offers together. A data device is
+	associated with a <code class="function">wl_seat</code> and is obtained by the clients using the
+	<code class="function">wl_data_device_manager</code> factory object, which is also responsible for
+	creating data sources.
+      </p><p>
+	Clients are informed of new data offers through the
+	<code class="function">wl_data_device.data_offer</code> event. After this
+	event is generated the data offer will advertise the available mime
+	types. New data offers are introduced prior to their use for
+	copy-paste or drag-and-drop.
+      </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm461"></a>Selection</h4></div></div></div><p>
+	  Each data device has a selection data source. Clients create a data
+	  source object using the device manager and may set it as the
+	  current selection for a given data device. Whenever the current
+	  selection changes, the client with keyboard focus receives a
+	  <code class="function">wl_data_device.selection</code> event. This event is
+	  also generated on a client immediately before it receives keyboard
+	  focus.
+	</p><p>
+	  The data offer is introduced with
+	  <code class="function">wl_data_device.data_offer</code> event before the
+	  selection event.
+	</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm467"></a>Drag and Drop</h4></div></div></div><p>
+	  A drag-and-drop operation is started using the
+	  <code class="function">wl_data_device.start_drag</code> request. This
+	  requests causes a pointer grab that will generate enter, motion and
+	  leave events on the data device. A data source is supplied as
+	  argument to start_drag, and data offers associated with it are
+	  supplied to clients surfaces under the pointer in the
+	  <code class="function">wl_data_device.enter</code> event. The data offer
+	  is introduced to the client prior to the enter event with the
+	  <code class="function">wl_data_device.data_offer</code> event.
+	</p><p>
+	  Clients are expected to provide feedback to the data sending client
+	  by calling the <code class="function">wl_data_offer.accept</code> request with
+	  a mime type it accepts. If none of the advertised mime types is
+	  supported by the receiving client, it should supply NULL to the
+	  accept request. The accept request causes the sending client to
+	  receive a <code class="function">wl_data_source.target</code> event with the
+	  chosen mime type.
+	</p><p>
+	  When the drag ends, the receiving client receives a
+	  <code class="function">wl_data_device.drop</code> event at which it is expected
+	  to transfer the data using the
+	  <code class="function">wl_data_offer.receive</code> request.
+	</p></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. Wayland Architecture </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. X11 Application Support</td></tr></table></div></body></html>

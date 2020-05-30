@@ -1,0 +1,80 @@
+.TH "wl_shm_pool" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_shm_pool
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwl_shm_pool_unref\fP (struct \fBwl_shm_pool\fP *pool)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_resource\fP * \fBresource\fP"
+.br
+.ti -1c
+.RI "int \fBinternal_refcount\fP"
+.br
+.ti -1c
+.RI "int \fBexternal_refcount\fP"
+.br
+.ti -1c
+.RI "char * \fBdata\fP"
+.br
+.ti -1c
+.RI "int32_t \fBsize\fP"
+.br
+.ti -1c
+.RI "int32_t \fBnew_size\fP"
+.br
+.ti -1c
+.RI "bool \fBsigbus_is_impossible\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void wl_shm_pool_unref (struct \fBwl_shm_pool\fP * pool)"
+Unreference a shm_pool
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpool\fP The pool object
+.RE
+.PP
+Drops a reference to a \fBwl_shm_pool\fP object\&.
+.PP
+This is only necessary if the compositor has explicitly taken a reference with \fBwl_shm_buffer_ref_pool()\fP, otherwise the pool will be automatically destroyed when appropriate\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_shm_buffer_ref_pool\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "char* wl_shm_pool::data"
+
+.SS "int wl_shm_pool::external_refcount"
+
+.SS "int wl_shm_pool::internal_refcount"
+
+.SS "int32_t wl_shm_pool::new_size"
+
+.SS "struct \fBwl_resource\fP* wl_shm_pool::resource"
+
+.SS "bool wl_shm_pool::sigbus_is_impossible"
+
+.SS "int32_t wl_shm_pool::size"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

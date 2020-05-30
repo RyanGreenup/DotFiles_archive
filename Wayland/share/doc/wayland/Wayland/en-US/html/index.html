@@ -1,0 +1,93 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Wayland</title><link rel="stylesheet" type="text/css" href="css/default.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Wayland is a protocol for a compositor to talk to its clients as well as a C library implementation of that protocol. The compositor can be a standalone display server running on Linux kernel modesetting and evdev input devices, an X application, or a Wayland client itself. The clients can be traditional applications, X servers (rootless or fullscreen) or other display servers."><link rel="home" href="index.html" title="Wayland"><link rel="next" href="pr01.html" title="Preface"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Wayland</th></tr><tr><td width="20%" align="left"> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="pr01.html">Next</a></td></tr></table><hr></div><div class="book"><div class="titlepage"><div><div><h1 class="title"><a name="idm1"></a>Wayland</h1></div><div><h2 class="subtitle">The Wayland Protocol</h2></div><div><h3 class="corpauthor">
+    <span class="inlinemediaobject"><img src="images/wayland.png" alt="Wayland logo"></span>
+  </h3></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Kristian</span> <span class="surname">Høgsberg</span></h3><div class="affiliation"><span class="orgname">Intel Corporation<br></span></div><code class="email">&lt;<a class="email" href="mailto:krh@bitplanet.net">krh@bitplanet.net</a>&gt;</code></div></div></div><div><div lang="en-US" class="legalnotice"><a name="idm17"></a><p>
+      Copyright <span class="trademark"></span>© 2012 Kristian Høgsberg, Intel Corporation
+    </p><p>
+	  Permission is hereby granted, free of charge, to any person obtaining a
+	  copy of this software and associated documentation files (the "Software"),
+	  to deal in the Software without restriction, including without limitation
+	  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+	  and/or sell copies of the Software, and to permit persons to whom the
+	  Software is furnished to do so, subject to the following conditions:
+	</p><p>
+	  The above copyright notice and this permission notice (including the next
+	  paragraph) shall be included in all copies or substantial portions of the
+	  Software.
+	</p><p>
+	  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+	  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+	  DEALINGS IN THE SOFTWARE.
+	</p></div></div><div><div class="abstract"><p class="title"><b>Abstract</b></p><p>
+      Wayland is a protocol for a compositor to talk to
+      its clients as well as a C library implementation of
+      that protocol. The compositor can be a standalone
+      display server running on Linux kernel modesetting
+      and evdev input devices, an X application, or a
+      Wayland client itself. The clients can be
+      traditional applications, X servers (rootless or
+      fullscreen) or other display servers.
+    </p></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="preface"><a href="pr01.html">Preface</a></span></dt><dt><span class="preface"><a href="pr02.html">Acknowledgments</a></span></dt><dt><span class="chapter"><a href="ch01.html">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="ch01.html#sect-Motivation">Motivation</a></span></dt><dt><span class="section"><a href="ch01.html#sect-Compositing-manager-display-server">The compositing manager as the display server</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch02.html">2. Types of Compositors</a></span></dt><dd><dl><dt><span class="section"><a href="ch02.html#sect-Compositors-System-Compositor">System Compositor</a></span></dt><dt><span class="section"><a href="ch02.html#sect-Compositors-Session-Compositor">Session Compositor</a></span></dt><dt><span class="section"><a href="ch02.html#sect-Compositors-Embedding-Compositor">Embedding Compositor</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch03.html">3. Wayland Architecture</a></span></dt><dd><dl><dt><span class="section"><a href="ch03.html#sect-Wayland-Architecture-wayland_architecture">X vs. Wayland Architecture</a></span></dt><dt><span class="section"><a href="ch03.html#sect-Wayland-Architecture-wayland_rendering">Wayland Rendering</a></span></dt><dt><span class="section"><a href="ch03.html#sect-Wayland-Architecture-wayland_hw_enabling">Hardware Enabling for Wayland</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch04.html">4. Wayland Protocol and Model of Operation</a></span></dt><dd><dl><dt><span class="section"><a href="ch04.html#sect-Protocol-Basic-Principles">Basic Principles</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Code-Generation">Code Generation</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Wire-Format">Wire Format</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Interfaces">Interfaces</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Versioning">Versioning</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Connect-Time">Connect Time</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Security-and-Authentication">Security and Authentication</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Creating-Objects">Creating Objects</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Compositor">Compositor</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Surface">Surfaces</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Input">Input</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-Output">Output</a></span></dt><dt><span class="section"><a href="ch04.html#sect-Protocol-data-sharing">Data sharing between clients</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch05.html">5. X11 Application Support</a></span></dt><dd><dl><dt><span class="section"><a href="ch05.html#sect-X11-Application-Support-introduction">Introduction</a></span></dt><dt><span class="section"><a href="ch05.html#sect-X11-Application-Support-two-modes">Two Modes for Foreign Windows</a></span></dt><dt><span class="section"><a href="ch05.html#sect-X11-Application-Support-architecture">Architecture</a></span></dt><dt><span class="section"><a href="ch05.html#sect-X11-Application-Support-xwm">X Window Manager (XWM)</a></span></dt></dl></dd><dt><span class="appendix"><a href="apa.html">A. Wayland Protocol Specification</a></span></dt><dd><dl><dt><span class="section"><a href="apa.html#protocol-spec-wl_display">wl_display
+	- core global object</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_registry">wl_registry
+	- global registry object</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_callback">wl_callback
+	- callback object</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_compositor">wl_compositor
+	- the compositor singleton</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_shm_pool">wl_shm_pool
+	- a shared memory pool</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_shm">wl_shm
+	- shared memory support</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_buffer">wl_buffer
+	- content for a wl_surface</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_data_offer">wl_data_offer
+	- offer to transfer data</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_data_source">wl_data_source
+	- offer to transfer data</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_data_device">wl_data_device
+	- data transfer device</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_data_device_manager">wl_data_device_manager
+	- data transfer interface</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_shell">wl_shell
+	- create desktop-style surfaces</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_shell_surface">wl_shell_surface
+	- desktop-style metadata interface</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_surface">wl_surface
+	- an onscreen surface</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_seat">wl_seat
+	- group of input devices</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_pointer">wl_pointer
+	- pointer input device</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_keyboard">wl_keyboard
+	- keyboard input device</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_touch">wl_touch
+	- touchscreen input device</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_output">wl_output
+	- compositor output region</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_region">wl_region
+	- region interface</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_subcompositor">wl_subcompositor
+	- sub-surface compositing</a></span></dt><dt><span class="section"><a href="apa.html#protocol-spec-wl_subsurface">wl_subsurface
+	- sub-surface interface to a wl_surface</a></span></dt></dl></dd><dt><span class="appendix"><a href="apb.html">B. Client API</a></span></dt><dd><dl><dt><span class="section"><a href="apb.html#idm3181">Introduction</a></span></dt><dt><span class="section"><a href="apb.html#Client-unionwl__argument">wl_argument
+                - 
+Protocol message argument data types.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__array">wl_array
+                - 
+Dynamic array.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__display">wl_display
+                - 
+Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__event__queue">wl_event_queue
+                - 
+A queue for wl_proxy object events.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__interface">wl_interface
+                - 
+Protocol object interface.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__list">wl_list
+                - 
+Doubly-linked list.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__message">wl_message
+                - 
+Protocol message signature.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__object">wl_object
+                - 
+A protocol object.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__proxy">wl_proxy
+                - 
+Represents a protocol object on the client side.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-Functions">Functions</a></span></dt></dl></dd><dt><span class="appendix"><a href="apc.html">C. Server API</a></span></dt><dd><dl><dt><span class="section"><a href="apc.html#idm4767">Introduction</a></span></dt><dt><span class="section"><a href="apc.html#Server-unionwl__argument">wl_argument
+                - 
+Protocol message argument data types.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__array">wl_array
+                - 
+Dynamic array.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__client">wl_client</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__display">wl_display</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__event__loop">wl_event_loop
+                - 
+An event loop context.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__event__source">wl_event_source
+                - 
+An abstract event source.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__global">wl_global</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__interface">wl_interface
+                - 
+Protocol object interface.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__list">wl_list
+                - 
+Doubly-linked list.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__listener">wl_listener
+                - 
+A single listener for Wayland signals.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__message">wl_message
+                - 
+Protocol message signature.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__object">wl_object
+                - 
+A protocol object.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__protocol__logger">wl_protocol_logger</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__protocol__logger__message">wl_protocol_logger_message</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__resource">wl_resource</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__resource__iterator__context">wl_resource_iterator_context</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__shm__buffer">wl_shm_buffer</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__shm__pool">wl_shm_pool</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__shm__sigbus__data">wl_shm_sigbus_data</a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__signal">wl_signal
+                - 
+A source of a type of observable event.     </a></span></dt><dt><span class="section"><a href="apc.html#Server-structwl__socket">wl_socket</a></span></dt><dt><span class="section"><a href="apc.html#Server-Functions">Functions</a></span></dt></dl></dd></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>3.1. <a href="ch03.html#idm107">X architecture diagram</a></dt><dt>3.2. <a href="ch03.html#idm130">Wayland architecture diagram</a></dt><dt>5.1. <a href="ch05.html#idm496">Xwayland architecture diagram</a></dt></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="pr01.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"> </td><td width="40%" align="right" valign="top"> Preface</td></tr></table></div></body></html>

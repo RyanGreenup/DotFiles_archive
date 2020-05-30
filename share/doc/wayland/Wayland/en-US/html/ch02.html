@@ -1,0 +1,77 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter 2. Types of Compositors</title><link rel="stylesheet" type="text/css" href="css/default.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="index.html" title="Wayland"><link rel="up" href="index.html" title="Wayland"><link rel="prev" href="ch01.html" title="Chapter 1. Introduction"><link rel="next" href="ch03.html" title="Chapter 3. Wayland Architecture"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 2. Types of Compositors</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch03.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="chap-Compositors"></a>Chapter 2. Types of Compositors</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="ch02.html#sect-Compositors-System-Compositor">System Compositor</a></span></dt><dt><span class="section"><a href="ch02.html#sect-Compositors-Session-Compositor">Session Compositor</a></span></dt><dt><span class="section"><a href="ch02.html#sect-Compositors-Embedding-Compositor">Embedding Compositor</a></span></dt></dl></div><p>
+    Compositors come in different types, depending on which
+    role they play in the overall architecture of the OS.
+    For instance, a
+    <a class="link" href="ch02.html#sect-Compositors-System-Compositor" title="System Compositor">system compositor</a>
+    can be used for booting the system, handling multiple user switching, a
+    possible console terminal emulator and so forth. A different compositor, a
+    <a class="link" href="ch02.html#sect-Compositors-Session-Compositor" title="Session Compositor">session compositor</a>
+    would provide the actual desktop environment. There are many ways for
+    different types of compositors to co-exist.
+  </p><p>
+    In this section, we introduce three types of Wayland compositors relying
+    on <a class="link" href="apc.html" title="Appendix C. Server API">libwayland-server</a>.
+  </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Compositors-System-Compositor"></a>System Compositor</h2></div></div></div><p>
+      A system compositor can run from early boot until shutdown.
+      It effectively replaces the kernel vt system, and can tie in
+      with the systems graphical boot setup and multiseat support.
+    </p><p>
+      A system compositor can host different types of session
+      compositors, and let us switch between multiple sessions
+      (fast user switching, or secure/personal desktop switching).
+    </p><p>
+      A linux implementation of a system compositor will typically
+      use libudev, egl, kms, evdev and cairo.
+    </p><p>
+      For fullscreen clients, the system compositor can reprogram the
+      video scanout address to read directly from the client provided
+      buffer.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Compositors-Session-Compositor"></a>Session Compositor</h2></div></div></div><p>
+      A session compositor is responsible for a single user session.
+      If a system compositor is present, the session compositor will
+      run nested under the system compositor. Nesting is feasible because
+      the protocol is asynchronous; roundtrips would be too expensive
+      when nesting is involved. If no system compositor is present, a
+      session compositor can run directly on the hardware.
+     </p><p>
+      X applications can continue working under a session compositor
+      by means of a root-less X server that is activated on demand.
+     </p><p>
+       Possible examples for session compositors include
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+	    gnome-shell
+	  </p></li><li class="listitem"><p>
+	    moblin
+	  </p></li><li class="listitem"><p>
+	    kwin
+	  </p></li><li class="listitem"><p>
+	    kmscon
+	  </p></li><li class="listitem"><p>
+	    rdp session
+	  </p></li><li class="listitem"><p>
+	    Weston with X11 or Wayland backend is a session compositor nested
+	    in another session compositor.
+	  </p></li><li class="listitem"><p>
+	    fullscreen X session under Wayland
+	  </p></li></ul></div><p>
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect-Compositors-Embedding-Compositor"></a>Embedding Compositor</h2></div></div></div><p>
+      X11 lets clients embed windows from other clients, or lets clients
+      copy pixmap contents rendered by another client into their window.
+      This is often used for applets in a panel, browser plugins and similar.
+      Wayland doesn't directly allow this, but clients can communicate GEM
+      buffer names out-of-band, for example, using D-Bus, or command line
+      arguments when the panel launches the applet.  Another option is to
+      use a nested Wayland instance.  For this, the Wayland server will have
+      to be a library that the host application links to.  The host
+      application will then pass the Wayland server socket name to the
+      embedded application, and will need to implement the Wayland
+      compositor interface.  The host application composites the client
+      surfaces as part of it's window, that is, in the web page or in the
+      panel.  The benefit of nesting the Wayland server is that it provides
+      the requests the embedded client needs to inform the host about buffer
+      updates and a mechanism for forwarding input events from the host
+      application.
+    </p><p>
+      An example for this kind of setup is firefox embedding the flash
+      player as a kind of special-purpose compositor.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 1. Introduction </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 3. Wayland Architecture</td></tr></table></div></body></html>

@@ -1,0 +1,345 @@
+.TH "wl_list" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_list \- Doubly-linked list\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-util\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwl_list_init\fP (struct \fBwl_list\fP *list)"
+.br
+.ti -1c
+.RI "void \fBwl_list_insert\fP (struct \fBwl_list\fP *list, struct \fBwl_list\fP *elm)"
+.br
+.ti -1c
+.RI "void \fBwl_list_remove\fP (struct \fBwl_list\fP *elm)"
+.br
+.ti -1c
+.RI "int \fBwl_list_length\fP (const struct \fBwl_list\fP *list)"
+.br
+.ti -1c
+.RI "int \fBwl_list_empty\fP (const struct \fBwl_list\fP *list)"
+.br
+.ti -1c
+.RI "void \fBwl_list_insert_list\fP (struct \fBwl_list\fP *list, struct \fBwl_list\fP *other)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_list\fP * \fBprev\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_list\fP * \fBnext\fP"
+.br
+.in -1c
+.SS "Related Functions"
+(Note that these are not member functions\&.) 
+.in +1c
+.ti -1c
+.RI "#define \fBwl_list_for_each\fP(pos,  head,  member)"
+.br
+.ti -1c
+.RI "#define \fBwl_list_for_each_safe\fP(pos,  tmp,  head,  member)"
+.br
+.ti -1c
+.RI "#define \fBwl_list_for_each_reverse\fP(pos,  head,  member)"
+.br
+.ti -1c
+.RI "#define \fBwl_list_for_each_reverse_safe\fP(pos,  tmp,  head,  member)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Doubly-linked list\&. 
+
+On its own, an instance of \fCstruct \fBwl_list\fP\fP represents the sentinel head of a doubly-linked list, and must be initialized using \fBwl_list_init()\fP\&. When empty, the list head's \fCnext\fP and \fCprev\fP members point to the list head itself, otherwise \fCnext\fP references the first element in the list, and \fCprev\fP refers to the last element in the list\&.
+.PP
+Use the \fCstruct \fBwl_list\fP\fP type to represent both the list head and the links between elements within the list\&. Use \fBwl_list_empty()\fP to determine if the list is empty in O(1)\&.
+.PP
+All elements in the list must be of the same type\&. The element type must have a \fCstruct \fBwl_list\fP\fP member, often named \fClink\fP by convention\&. Prior to insertion, there is no need to initialize an element's \fClink\fP - invoking \fBwl_list_init()\fP on an individual list element's \fCstruct \fBwl_list\fP\fP member is unnecessary if the very next operation is \fBwl_list_insert()\fP\&. However, a common idiom is to initialize an element's \fClink\fP prior to removal - ensure safety by invoking \fBwl_list_init()\fP before \fBwl_list_remove()\fP\&.
+.PP
+Consider a list reference \fCstruct \fBwl_list\fP foo_list\fP, an element type as \fCstruct element\fP, and an element's link member as \fCstruct \fBwl_list\fP link\fP\&.
+.PP
+The following code initializes a list and adds three elements to it\&.
+.PP
+.PP
+.nf
+struct wl_list foo_list;
+
+struct element {
+        int foo;
+        struct wl_list link;
+};
+struct element e1, e2, e3;
+
+wl_list_init(&foo_list);
+wl_list_insert(&foo_list, &e1\&.link);   // e1 is the first element
+wl_list_insert(&foo_list, &e2\&.link);   // e2 is now the first element
+wl_list_insert(&e2\&.link, &e3\&.link); // insert e3 after e2
+.fi
+.PP
+.PP
+The list now looks like \fI[e2, e3, e1]\fP\&.
+.PP
+The \fC\fBwl_list\fP\fP API provides some iterator macros\&. For example, to iterate a list in ascending order:
+.PP
+.PP
+.nf
+struct element *e;
+wl_list_for_each(e, foo_list, link) {
+        do_something_with_element(e);
+}
+.fi
+.PP
+.PP
+See the documentation of each iterator for details\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/list.h 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int wl_list_empty (const struct \fBwl_list\fP * list)"
+Determines if the list is empty\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist\fP List whose emptiness is to be determined
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 if empty, or 0 if not empty 
+.RE
+.PP
+
+.SS "void wl_list_init (struct \fBwl_list\fP * list)"
+Initializes the list\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist\fP List to initialize 
+.RE
+.PP
+
+.SS "void wl_list_insert (struct \fBwl_list\fP * list, struct \fBwl_list\fP * elm)"
+Inserts an element into the list, after the element represented by \fClist\fP\&. When \fClist\fP is a reference to the list itself (the head), set the containing struct of \fCelm\fP as the first element in the list\&.
+.PP
+\fBNote:\fP
+.RS 4
+If \fCelm\fP is already part of a list, inserting it again will lead to list corruption\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist\fP List element after which the new element is inserted 
+.br
+\fIelm\fP Link of the containing struct to insert into the list 
+.RE
+.PP
+
+.SS "void wl_list_insert_list (struct \fBwl_list\fP * list, struct \fBwl_list\fP * other)"
+Inserts all of the elements of one list into another, after the element represented by \fClist\fP\&.
+.PP
+\fBNote:\fP
+.RS 4
+This leaves \fCother\fP in an invalid state\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist\fP List element after which the other list elements will be inserted 
+.br
+\fIother\fP List of elements to insert 
+.RE
+.PP
+
+.SS "int wl_list_length (const struct \fBwl_list\fP * list)"
+Determines the length of the list\&.
+.PP
+\fBNote:\fP
+.RS 4
+This is an O(n) operation\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist\fP List whose length is to be determined
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of elements in the list 
+.RE
+.PP
+
+.SS "void wl_list_remove (struct \fBwl_list\fP * elm)"
+Removes an element from the list\&.
+.PP
+\fBNote:\fP
+.RS 4
+This operation leaves \fCelm\fP in an invalid state\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIelm\fP Link of the containing struct to remove from the list 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "#define wl_list_for_each(pos, head, member)\fC [related]\fP"
+\fBValue:\fP
+.PP
+.nf
+for (pos = wl_container_of((head)->next, pos, member);    \
+             &pos->member != (head);                                    \
+             pos = wl_container_of(pos->member\&.next, pos, member))
+.fi
+Iterates over a list\&.
+.PP
+This macro expresses a for-each iterator for \fBwl_list\fP\&. Given a list and \fBwl_list\fP link member name (often named \fClink\fP by convention), this macro assigns each element in the list to \fCpos\fP, which can then be referenced in a trailing code block\&. For example, given a \fBwl_list\fP of \fCstruct message\fP elements:
+.PP
+.PP
+.nf
+struct message {
+        char *contents;
+        wl_list link;
+};
+
+struct wl_list *message_list;
+// Assume message_list now "contains" many messages
+
+struct message *m;
+wl_list_for_each(m, message_list, link) {
+        do_something_with_message(m);
+}
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Cursor that each list element will be assigned to 
+.br
+\fIhead\fP Head of the list to iterate over 
+.br
+\fImember\fP Name of the link member within the element struct 
+.RE
+.PP
+
+.SS "#define wl_list_for_each_reverse(pos, head, member)\fC [related]\fP"
+\fBValue:\fP
+.PP
+.nf
+for (pos = wl_container_of((head)->prev, pos, member);       \
+             &pos->member != (head);                                    \
+             pos = wl_container_of(pos->member\&.prev, pos, member))
+.fi
+Iterates backwards over a list\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_list_for_each()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Cursor that each list element will be assigned to 
+.br
+\fIhead\fP Head of the list to iterate over 
+.br
+\fImember\fP Name of the link member within the element struct 
+.RE
+.PP
+
+.SS "#define wl_list_for_each_reverse_safe(pos, tmp, head, member)\fC [related]\fP"
+\fBValue:\fP
+.PP
+.nf
+for (pos = wl_container_of((head)->prev, pos, member),     \
+             tmp = wl_container_of((pos)->member\&.prev, tmp, member);     \
+             &pos->member != (head);                                    \
+             pos = tmp,                                                 \
+             tmp = wl_container_of(pos->member\&.prev, tmp, member))
+.fi
+Iterates backwards over a list, safe against removal of the list element\&.
+.PP
+\fBNote:\fP
+.RS 4
+Only removal of the current element, \fCpos\fP, is safe\&. Removing any other element during traversal may lead to a loop malfunction\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_list_for_each()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Cursor that each list element will be assigned to 
+.br
+\fItmp\fP Temporary pointer of the same type as \fCpos\fP 
+.br
+\fIhead\fP Head of the list to iterate over 
+.br
+\fImember\fP Name of the link member within the element struct 
+.RE
+.PP
+
+.SS "#define wl_list_for_each_safe(pos, tmp, head, member)\fC [related]\fP"
+\fBValue:\fP
+.PP
+.nf
+for (pos = wl_container_of((head)->next, pos, member),             \
+             tmp = wl_container_of((pos)->member\&.next, tmp, member);     \
+             &pos->member != (head);                                    \
+             pos = tmp,                                                 \
+             tmp = wl_container_of(pos->member\&.next, tmp, member))
+.fi
+Iterates over a list, safe against removal of the list element\&.
+.PP
+\fBNote:\fP
+.RS 4
+Only removal of the current element, \fCpos\fP, is safe\&. Removing any other element during traversal may lead to a loop malfunction\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_list_for_each()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Cursor that each list element will be assigned to 
+.br
+\fItmp\fP Temporary pointer of the same type as \fCpos\fP 
+.br
+\fIhead\fP Head of the list to iterate over 
+.br
+\fImember\fP Name of the link member within the element struct 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "struct \fBwl_list\fP* wl_list::next"
+Next list element 
+.SS "struct \fBwl_list\fP* wl_list::prev"
+Previous list element 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

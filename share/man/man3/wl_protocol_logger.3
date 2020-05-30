@@ -1,0 +1,53 @@
+.TH "wl_protocol_logger" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_protocol_logger
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwl_protocol_logger_destroy\fP (struct \fBwl_protocol_logger\fP *logger)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_list\fP \fBlink\fP"
+.br
+.ti -1c
+.RI "\fBwl_protocol_logger_func_t\fP \fBfunc\fP"
+.br
+.ti -1c
+.RI "void * \fBuser_data\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void wl_protocol_logger_destroy (struct \fBwl_protocol_logger\fP * logger)"
+Destroys a protocol logger\&.
+.PP
+This function destroys a protocol logger and removes it from the display it was added to with \fIwl_display_add_protocol_logger\fP\&. The \fIlogger\fP object becomes invalid after calling this function\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_display_add_protocol_logger\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBwl_protocol_logger_func_t\fP wl_protocol_logger::func"
+
+.SS "struct \fBwl_list\fP wl_protocol_logger::link"
+
+.SS "void* wl_protocol_logger::user_data"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

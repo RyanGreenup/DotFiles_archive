@@ -1,0 +1,657 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Appendix B. Client API</title><link rel="stylesheet" type="text/css" href="css/default.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="index.html" title="Wayland"><link rel="up" href="index.html" title="Wayland"><link rel="prev" href="apa.html" title="Appendix A. Wayland Protocol Specification"><link rel="next" href="apc.html" title="Appendix C. Server API"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix B. Client API</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apc.html">Next</a></td></tr></table><hr></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a name="sect-Library-Client"></a>Appendix B. Client API</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="apb.html#idm3181">Introduction</a></span></dt><dt><span class="section"><a href="apb.html#Client-unionwl__argument">wl_argument
+                - 
+Protocol message argument data types.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__array">wl_array
+                - 
+Dynamic array.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__display">wl_display
+                - 
+Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__event__queue">wl_event_queue
+                - 
+A queue for wl_proxy object events.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__interface">wl_interface
+                - 
+Protocol object interface.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__list">wl_list
+                - 
+Doubly-linked list.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-structwl__message">wl_message
+                - 
+Protocol message signature.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__object">wl_object
+                - 
+A protocol object.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-classwl__proxy">wl_proxy
+                - 
+Represents a protocol object on the client side.     </a></span></dt><dt><span class="section"><a href="apb.html#Client-Functions">Functions</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm3181"></a>Introduction</h2></div></div></div><p>
+    The open-source reference implementation of Wayland protocol is
+    split in two C libraries, libwayland-client and <a class="link" href="apc.html" title="Appendix C. Server API">libwayland-server</a>. Their main
+    responsibility is to handle the Inter-process communication
+    (<span class="emphasis"><em>IPC</em></span>) with each other, therefore guaranteeing
+    the protocol objects marshaling and messages synchronization.
+  </p><p>
+    A client uses libwayland-client to communicate with one or more
+    wayland servers. A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> object is
+    created and manages each open connection to a server. At least one
+    <a class="link" href="apb.html#Client-classwl__event__queue" title="wl_event_queue - A queue for wl_proxy object events.">wl_event_queue</a>
+    object is created for each wl_display, this holds events as they
+    are received from the server until they can be
+    processed. Multi-threading is supported by creating an additional
+    wl_event_queue for each additional thread, each object can have
+    it's events placed in a particular queue, so potentially a
+    different thread could be made to handle the events for each
+    object created.
+  </p><p>
+    Though some convenience functions are provided, libwayland-client
+    is designed to allow the calling code to wait for events, so that
+    different polling mechanisms can be used. A file descriptor is
+    provided, when it becomes ready for reading the calling code can
+    ask libwayland-client to read the available events from it into
+    the wl_event_queue objects.
+  </p><p>
+    The library only provides low-level access to the wayland objects.
+    Each object created by the client is represented by a <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> object that this
+    library creates. This includes the id that is actually
+    communicated over the socket to the server, a void* data pointer
+    that is intended to point at a client's representation of the
+    object, and a pointer to a static <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> object,
+    which is generated from the xml and identifies the object's class
+    and can be used for introspection into the messages and events.
+  </p><p>
+    Messages are sent by calling wl_proxy_marshal. This will write a
+    message to the socket, by using the message id and the
+    wl_interface to identify the types of each argument and convert
+    them into stream format.  Most software will call type-safe
+    wrappers generated from the xml description of the <a class="link" href="apa.html" title="Appendix A. Wayland Protocol Specification">Wayland protocols</a>. For
+    instance the C header file generated from the xml defines the
+    following inline function to transmit the <a class="link" href="apa.html#protocol-spec-wl_surface-request-attach" title="wl_surface::attach - set the surface contents">wl_surface::attach</a>
+    message:
+  </p><pre class="programlisting">static inline void
+wl_surface_attach(struct wl_surface *wl_surface, struct wl_buffer *buffer, int32_t x, int32_t y)
+{
+  wl_proxy_marshal((struct wl_proxy *) wl_surface, WL_SURFACE_ATTACH, buffer, x, y);
+}</pre><p>
+    Events (messages from the server) are handled by calling a
+    "dispatcher" callback the client stores in the wl_proxy for each
+    event. A language binding for a string-based interpreter, such as
+    CPython, might have a dispatcher that uses the event name from the
+    wl_interface to identify the function to call. The default
+    dispatcher uses the message id number to index an array of
+    functions pointers, called a wl_listener, and the wl_interface to
+    convert data from the stream into arguments to the function. The
+    C header file generated from the xml defines a per-class structure
+    that forces the function pointers to be of the correct type, for
+    instance the <a class="link" href="apa.html#protocol-spec-wl_surface-event-enter" title="wl_surface::enter - surface enters an output">wl_surface::enter</a>
+    event defines this pointer in the wl_surface_listener object:
+  </p><pre class="programlisting">struct wl_surface_listener {
+  void (*enter)(void *data, struct wl_surface *, struct wl_output *);
+  ...
+}</pre><p>
+  </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-unionwl__argument"></a>wl_argument
+                - 
+Protocol message argument data types.     </h2></div></div></div><p>This union represents all of the argument types in the Wayland protocol wire format. The protocol implementation uses <a class="link" href="apb.html#Client-unionwl__argument" title="wl_argument - Protocol message argument data types.">wl_argument</a> within its marshalling machinery for dispatching messages between a client and a compositor.</p><p>
+  See also: <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> 
+
+  See also: <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> 
+
+  See also: Wire Format 
+</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-structwl__array"></a>wl_array
+                - 
+Dynamic array.     </h2></div></div></div><p>A <a class="link" href="apb.html#Client-structwl__array" title="wl_array - Dynamic array.">wl_array</a> is a dynamic array that can only grow until released. It is intended for relatively small allocations whose size is variable or not known in advance. While construction of a <a class="link" href="apb.html#Client-structwl__array" title="wl_array - Dynamic array.">wl_array</a> does not require all elements to be of the same size, <a class="link" href="apb.html#Client-structwl__array_1ab050f7375dcae916506142763080ed80">wl_array_for_each()</a> does require all elements to have the same type and size. </p><div class="variablelist"><dl class="variablelist"><dt><a name="Client-structwl__array_1ae246c66cbd633063e2649c503d764d3f"></a><span class="term">size
+            - 
+Array size.         </span></dt><dd><pre class="synopsis">size_t wl_array::size</pre></dd><dt><a name="Client-structwl__array_1a4b33519c8f628d650631ebecee45b771"></a><span class="term">alloc
+            - 
+Allocated space.         </span></dt><dd><pre class="synopsis">size_t wl_array::alloc</pre></dd><dt><a name="Client-structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b"></a><span class="term">data
+            - 
+Array data.         </span></dt><dd><pre class="synopsis">void* wl_array::data</pre></dd><dt><a name="Client-structwl__array_1ada9b770427b901be34eaf3683cf04d5a"></a><span class="term">wl_array_init
+            - 
+Initializes the array.         </span></dt><dd><pre class="synopsis">void wl_array_init(struct wl_array *array)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">array</span></dt><dd>
+Array to initialize </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__array_1a0e8845f61f1e1fccfce050830ed5b279"></a><span class="term">wl_array_release
+            - 
+Releases the array data.         </span></dt><dd><pre class="synopsis">void wl_array_release(struct wl_array *array)</pre><p><span class="emphasis"><em>Note: Leaves the array in an invalid state.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">array</span></dt><dd>
+Array whose data is to be released </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__array_1a3c3d1079a20b0609f6e4914ea21c2d03"></a><span class="term">wl_array_add
+            - 
+Increases the size of the array by size bytes.         </span></dt><dd><pre class="synopsis">void * wl_array_add(struct wl_array *array, size_t size)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">array</span></dt><dd>
+Array whose size is to be increased </dd><dt><span class="term">size</span></dt><dd>
+Number of bytes to increase the size of the array by</dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A pointer to the beginning of the newly appended space, or NULL when resizing fails. </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__array_1a4de64390294de78da813dcfb16f47617"></a><span class="term">wl_array_copy
+            - 
+Copies the contents of source to array.         </span></dt><dd><pre class="synopsis">int wl_array_copy(struct wl_array *array, struct wl_array *source)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">array</span></dt><dd>
+Destination array to copy to </dd><dt><span class="term">source</span></dt><dd>
+Source array to copy from</dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success, or -1 on failure </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__array_1ab050f7375dcae916506142763080ed80"></a><span class="term">wl_array_for_each
+            - 
+Iterates over an array.         </span></dt><dd><pre class="synopsis"></pre><p>This macro expresses a for-each iterator for <a class="link" href="apb.html#Client-structwl__array" title="wl_array - Dynamic array.">wl_array</a>. It assigns each element in the array to pos, which can then be referenced in a trailing code block. pos must be a pointer to the array element type, and all array elements must be of the same type and size.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">pos</span></dt><dd>
+Cursor that each array element will be assigned to </dd><dt><span class="term">array</span></dt><dd>
+Array to iterate over</dd></dl></div><p>
+
+  See also: <a class="link" href="apb.html#Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</a> 
+</p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-classwl__display"></a>wl_display
+                - 
+Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.     </h2></div></div></div><p>A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> object represents a client connection to a Wayland compositor. It is created with either <a class="link" href="apb.html#Client-classwl__display_1af048371dfef7577bd39a3c04b78d0374">wl_display_connect()</a> or <a class="link" href="apb.html#Client-classwl__display_1a90663db371e1b11704be98c1568c5206">wl_display_connect_to_fd()</a>. A connection is terminated using <a class="link" href="apb.html#Client-classwl__display_1a9150a7e3213a58b469a6966e60a9f108">wl_display_disconnect()</a>.</p><p>A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> is also used as the <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> for the <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> singleton object on the compositor side.</p><p>A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> object handles all the data sent from and to the compositor. When a <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> marshals a request, it will write its wire representation to the display's write buffer. The data is sent to the compositor when the client calls <a class="link" href="apb.html#Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">wl_display_flush()</a>.</p><p>Incoming data is handled in two steps: queueing and dispatching. In the queue step, the data coming from the display fd is interpreted and added to a queue. On the dispatch step, the handler for the incoming event set by the client on the corresponding <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> is called.</p><p>A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> has at least one event queue, called the default queue. Clients can create additional event queues with <a class="link" href="apb.html#Client-classwl__display_1a9a44f497851dc7bd5b683121104015ac">wl_display_create_queue()</a> and assign <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a>'s to it. Events occurring in a particular proxy are always queued in its assigned queue. A client can ensure that a certain assumption, such as holding a lock or running from a given thread, is true when a proxy event handler is called by assigning that proxy to an event queue and making sure that this queue is only dispatched when the assumption holds.</p><p>The default queue is dispatched by calling <a class="link" href="apb.html#Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</a>. This will dispatch any events queued on the default queue and attempt to read from the display fd if it's empty. Events read are then queued on the appropriate queues according to the proxy assignment.</p><p>A user created queue is dispatched with <a class="link" href="apb.html#Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</a>. This function behaves exactly the same as <a class="link" href="apb.html#Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</a> but it dispatches given queue instead of the default queue.</p><p>A real world example of event queue usage is Mesa's implementation of eglSwapBuffers() for the Wayland platform. This function might need to block until a frame callback is received, but dispatching the default queue could cause an event handler on the client to start drawing again. This problem is solved using another event queue, so that only the events handled by the EGL code are dispatched during the block.</p><p>This creates a problem where a thread dispatches a non-default queue, reading all the data from the display fd. If the application would call poll(2) after that it would block, even though there might be events queued on the default queue. Those events should be dispatched with <a class="link" href="apb.html#Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</a> or <a class="link" href="apb.html#Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">wl_display_dispatch_queue_pending()</a> before flushing and blocking. </p><div class="variablelist"><dl class="variablelist"><dt><a name="Client-classwl__display_1a9a44f497851dc7bd5b683121104015ac"></a><span class="term">wl_display_create_queue
+            - 
+Create a new event queue for this display.         </span></dt><dd><pre class="synopsis">struct wl_event_queue * wl_display_create_queue(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A new event queue associated with this display or NULL on failure. </dd></dl></div><p>
+</p></dd><dt><a name="Client-classwl__display_1a90663db371e1b11704be98c1568c5206"></a><span class="term">wl_display_connect_to_fd
+            - 
+Connect to Wayland display on an already open fd.         </span></dt><dd><pre class="synopsis">struct wl_display * wl_display_connect_to_fd(int fd)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">fd</span></dt><dd>
+The fd to use for the connection </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> object or NULL on failure</dd></dl></div><p>
+The <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> takes ownership of the fd and will close it when the display is destroyed. The fd will also be closed in case of failure. </p></dd><dt><a name="Client-classwl__display_1af048371dfef7577bd39a3c04b78d0374"></a><span class="term">wl_display_connect
+            - 
+Connect to a Wayland display.         </span></dt><dd><pre class="synopsis">struct wl_display * wl_display_connect(const char *name)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">name</span></dt><dd>
+Name of the Wayland display to connect to </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> object or NULL on failure</dd></dl></div><p>
+Connect to the Wayland display named name. If name is NULL, its value will be replaced with the WAYLAND_DISPLAY environment variable if it is set, otherwise display "wayland-0" will be used.</p><p>If WAYLAND_SOCKET is set, it's interpreted as a file descriptor number referring to an already opened socket. In this case, the socket is used as-is and name is ignored.</p><p>If name is a relative path, then the socket is opened relative to the XDG_RUNTIME_DIR directory.</p><p>If name is an absolute path, then that path is used as-is for the location of the socket at which the Wayland server is listening; no qualification inside XDG_RUNTIME_DIR is attempted.</p><p>If name is NULL and the WAYLAND_DISPLAY environment variable is set to an absolute pathname, then that pathname is used as-is for the socket in the same manner as if name held an absolute path. Support for absolute paths in name and WAYLAND_DISPLAY is present since Wayland version 1.15. </p></dd><dt><a name="Client-classwl__display_1a9150a7e3213a58b469a6966e60a9f108"></a><span class="term">wl_display_disconnect
+            - 
+Close a connection to a Wayland display.         </span></dt><dd><pre class="synopsis">void wl_display_disconnect(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object</dd></dl></div><p>
+Close the connection to display and free all resources associated with it. </p></dd><dt><a name="Client-classwl__display_1a2d5d249e81cbf43c3521d4bce575f1ca"></a><span class="term">wl_display_get_fd
+            - 
+Get a display context's file descriptor.         </span></dt><dd><pre class="synopsis">int wl_display_get_fd(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>Display object file descriptor</dd></dl></div><p>
+Return the file descriptor associated with a display so it can be integrated into the client's main loop. </p></dd><dt><a name="Client-classwl__display_1a73f44c38fa4e535f5eaf700933b0b2e6"></a><span class="term">wl_display_roundtrip_queue
+            - 
+Block until all pending request are processed by the server.         </span></dt><dd><pre class="synopsis">int wl_display_roundtrip_queue(struct wl_display *display, struct wl_event_queue *queue)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd><dt><span class="term">queue</span></dt><dd>
+The queue on which to run the roundtrip </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of dispatched events on success or -1 on failure</dd></dl></div><p>
+This function blocks until the server has processed all currently issued requests by sending a request to the display server and waiting for a reply before returning.</p><p>This function uses <a class="link" href="apb.html#Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</a> internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</p><p><span class="emphasis"><em>Note: This function may dispatch other events being received on the given queue.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__display_1ab60f38c2f80980ac84f347e932793390">wl_display_roundtrip()</a> 
+</p></dd><dt><a name="Client-classwl__display_1ab60f38c2f80980ac84f347e932793390"></a><span class="term">wl_display_roundtrip
+            - 
+Block until all pending request are processed by the server.         </span></dt><dd><pre class="synopsis">int wl_display_roundtrip(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of dispatched events on success or -1 on failure</dd></dl></div><p>
+This function blocks until the server has processed all currently issued requests by sending a request to the display server and waiting for a reply before returning.</p><p>This function uses <a class="link" href="apb.html#Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</a> internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</p><p><span class="emphasis"><em>Note: This function may dispatch other events being received on the default queue. </em></span>
+</p></dd><dt><a name="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4"></a><span class="term">wl_display_read_events
+            - 
+Read events from display file descriptor.         </span></dt><dd><pre class="synopsis">int wl_display_read_events(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success or -1 on error. In case of error errno will be set accordingly</dd></dl></div><p>
+Calling this function will result in data available on the display file descriptor being read and read events will be queued on their corresponding event queues.</p><p>Before calling this function, depending on what thread it is to be called from, <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> or <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a> needs to be called. See <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> for more details.</p><p>When being called at a point where other threads have been prepared to read (using <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> or <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a>) this function will sleep until all other prepared threads have either been cancelled (using <a class="link" href="apb.html#Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</a>) or them self entered this function. The last thread that calls this function will then read and queue events on their corresponding event queues, and finally wake up all other <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a> calls causing them to return.</p><p>If a thread cancels a read preparation when all other threads that have prepared to read has either called <a class="link" href="apb.html#Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</a> or <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a>, all reader threads will return without having read any data.</p><p>To dispatch events that may have been queued, call <a class="link" href="apb.html#Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</a> or <a class="link" href="apb.html#Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">wl_display_dispatch_queue_pending()</a>.</p><p>
+  See also: <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a>, <a class="link" href="apb.html#Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</a>, <a class="link" href="apb.html#Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</a>, <a class="link" href="apb.html#Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</a> 
+</p></dd><dt><a name="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0"></a><span class="term">wl_display_prepare_read_queue
+            - 
+Prepare to read events from the display's file descriptor to a queue.         </span></dt><dd><pre class="synopsis">int wl_display_prepare_read_queue(struct wl_display *display, struct wl_event_queue *queue)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd><dt><span class="term">queue</span></dt><dd>
+The event queue to use </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success or -1 if event queue was not empty</dd></dl></div><p>
+This function (or <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a>) must be called before reading from the file descriptor using <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a>. Calling <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> announces the calling thread's intention to read and ensures that until the thread is ready to read and calls <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a>, no other thread will read from the file descriptor. This only succeeds if the event queue is empty, and if not -1 is returned and errno set to EAGAIN.</p><p>If a thread successfully calls <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a>, it must either call <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a> when it's ready or cancel the read intention by calling <a class="link" href="apb.html#Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</a>.</p><p>Use this function before polling on the display fd or integrate the fd into a toolkit event loop in a race-free way. A correct usage would be (with most error checking left out):</p><p>
+          </p><pre class="programlisting">while (wl_display_prepare_read_queue(display, queue) != 0)
+        wl_display_dispatch_queue_pending(display, queue);
+wl_display_flush(display);
+
+ret = poll(fds, nfds, -1);
+if (has_error(ret))
+        wl_display_cancel_read(display);
+else
+        wl_display_read_events(display);
+
+wl_display_dispatch_queue_pending(display, queue);
+</pre><p>
+        </p><p>Here we call <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a>, which ensures that between returning from that call and eventually calling <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a>, no other thread will read from the fd and queue events in our queue. If the call to <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> fails, we dispatch the pending events and try again until we're successful.</p><p>The <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> function doesn't acquire exclusive access to the display's fd. It only registers that the thread calling this function has intention to read from fd. When all registered readers call <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a>, only one (at random) eventually reads and queues the events and the others are sleeping meanwhile. This way we avoid races and still can read from more threads.</p><p>
+  See also: <a class="link" href="apb.html#Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</a>, <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a>, <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a> 
+</p></dd><dt><a name="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f"></a><span class="term">wl_display_prepare_read
+            - 
+Prepare to read events from the display's file descriptor.         </span></dt><dd><pre class="synopsis">int wl_display_prepare_read(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success or -1 if event queue was not empty</dd></dl></div><p>
+This function does the same thing as <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> with the default queue passed as the queue.</p><p>
+  See also: <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue</a> 
+</p></dd><dt><a name="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590"></a><span class="term">wl_display_cancel_read
+            - 
+Cancel read intention on display's fd.         </span></dt><dd><pre class="synopsis">void wl_display_cancel_read(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object</dd></dl></div><p>
+After a thread successfully called <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a> it must either call <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a> or <a class="link" href="apb.html#Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</a>. If the threads do not follow this rule it will lead to deadlock.</p><p>
+  See also: <a class="link" href="apb.html#Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</a>, <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a> 
+</p></dd><dt><a name="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17"></a><span class="term">wl_display_dispatch_queue
+            - 
+Dispatch events in an event queue.         </span></dt><dd><pre class="synopsis">int wl_display_dispatch_queue(struct wl_display *display, struct wl_event_queue *queue)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd><dt><span class="term">queue</span></dt><dd>
+The event queue to dispatch </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of dispatched events on success or -1 on failure</dd></dl></div><p>
+Dispatch events on the given event queue.</p><p>If the given event queue is empty, this function blocks until there are events to be read from the display fd. Events are read and queued on the appropriate event queues. Finally, events on given event queue are dispatched. On failure -1 is returned and errno set appropriately.</p><p>In a multi threaded environment, do not manually wait using poll() (or equivalent) before calling this function, as doing so might cause a dead lock. If external reliance on poll() (or equivalent) is required, see <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> of how to do so.</p><p>This function is thread safe as long as it dispatches the right queue on the right thread. It is also compatible with the multi thread event reading preparation API (see <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a>), and uses the equivalent functionality internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</p><p>It can be used as a helper function to ease the procedure of reading and dispatching events.</p><p><span class="emphasis"><em>Note: Since Wayland 1.5 the display has an extra queue for its own events (i. e. delete_id). This queue is dispatched always, no matter what queue we passed as an argument to this function. That means that this function can return non-0 value even when it haven't dispatched any event for the given queue.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</a>, <a class="link" href="apb.html#Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</a>, <a class="link" href="apb.html#Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">wl_display_dispatch_queue_pending()</a>, <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> 
+</p></dd><dt><a name="Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041"></a><span class="term">wl_display_dispatch_queue_pending
+            - 
+Dispatch pending events in an event queue.         </span></dt><dd><pre class="synopsis">int wl_display_dispatch_queue_pending(struct wl_display *display, struct wl_event_queue *queue)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd><dt><span class="term">queue</span></dt><dd>
+The event queue to dispatch </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of dispatched events on success or -1 on failure</dd></dl></div><p>
+Dispatch all incoming events for objects assigned to the given event queue. On failure -1 is returned and errno set appropriately. If there are no events queued, this function returns immediately.</p><p>
+  Since: 1.0.2 
+</p></dd><dt><a name="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d"></a><span class="term">wl_display_dispatch
+            - 
+Process incoming events.         </span></dt><dd><pre class="synopsis">int wl_display_dispatch(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of dispatched events on success or -1 on failure</dd></dl></div><p>
+Dispatch events on the default event queue.</p><p>If the default event queue is empty, this function blocks until there are events to be read from the display fd. Events are read and queued on the appropriate event queues. Finally, events on the default event queue are dispatched. On failure -1 is returned and errno set appropriately.</p><p>In a multi threaded environment, do not manually wait using poll() (or equivalent) before calling this function, as doing so might cause a dead lock. If external reliance on poll() (or equivalent) is required, see <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a> of how to do so.</p><p>This function is thread safe as long as it dispatches the right queue on the right thread. It is also compatible with the multi thread event reading preparation API (see <a class="link" href="apb.html#Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</a>), and uses the equivalent functionality internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</p><p><span class="emphasis"><em>Note: It is not possible to check if there are events on the queue or not. For dispatching default queue events without blocking, see <a class="link" href="apb.html#Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</a>.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</a>, <a class="link" href="apb.html#Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</a>, <a class="link" href="apb.html#Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</a> 
+</p></dd><dt><a name="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560"></a><span class="term">wl_display_dispatch_pending
+            - 
+Dispatch default queue events without reading from the display fd.         </span></dt><dd><pre class="synopsis">int wl_display_dispatch_pending(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of dispatched events or -1 on failure</dd></dl></div><p>
+This function dispatches events on the main event queue. It does not attempt to read the display fd and simply returns zero if the main queue is empty, i.e., it doesn't block.</p><p>
+  See also: <a class="link" href="apb.html#Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</a>, <a class="link" href="apb.html#Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</a>, <a class="link" href="apb.html#Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">wl_display_flush()</a> 
+</p></dd><dt><a name="Client-classwl__display_1a1ceca1c6f280ac1308ee0e16cd186f94"></a><span class="term">wl_display_get_error
+            - 
+Retrieve the last error that occurred on a display.         </span></dt><dd><pre class="synopsis">int wl_display_get_error(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The last error that occurred on display or 0 if no error occurred</dd></dl></div><p>
+Return the last error that occurred on the display. This may be an error sent by the server or caused by the local client.</p><p><span class="emphasis"><em>Note: Errors are fatal. If this function returns non-zero the display can no longer be used. </em></span>
+</p></dd><dt><a name="Client-classwl__display_1a8fbec062c9430f8cbdf71a12ec443f7d"></a><span class="term">wl_display_get_protocol_error
+            - 
+Retrieves the information about a protocol error:         </span></dt><dd><pre class="synopsis">uint32_t wl_display_get_protocol_error(struct wl_display *display, const struct wl_interface **interface, uint32_t *id)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The Wayland display </dd><dt><span class="term">interface</span></dt><dd>
+if not NULL, stores the interface where the error occurred, or NULL, if unknown. </dd><dt><span class="term">id</span></dt><dd>
+if not NULL, stores the object id that generated the error, or 0, if the object id is unknown. There's no guarantee the object is still valid; the client must know if it deleted the object. </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The error code as defined in the interface specification.</dd></dl></div><p>
+</p><pre class="programlisting">int err = wl_display_get_error(display);
+
+if (err == EPROTO) {
+       code = wl_display_get_protocol_error(display, &amp;interface, &amp;id);
+       handle_error(code, interface, id);
+}
+
+...
+</pre><p> </p></dd><dt><a name="Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429"></a><span class="term">wl_display_flush
+            - 
+Send all buffered requests on the display to the server.         </span></dt><dd><pre class="synopsis">int wl_display_flush(struct wl_display *display)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">display</span></dt><dd>
+The display context object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The number of bytes sent on success or -1 on failure</dd></dl></div><p>
+Send all buffered data on the client side to the server. Clients should always call this function before blocking on input from the display fd. On success, the number of bytes sent to the server is returned. On failure, this function returns -1 and errno is set appropriately.</p><p><a class="link" href="apb.html#Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">wl_display_flush()</a> never blocks. It will write as much data as possible, but if all data could not be written, errno will be set to EAGAIN and -1 returned. In that case, use poll on the display file descriptor to wait for it to become writable again. </p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-classwl__event__queue"></a>wl_event_queue
+                - 
+A queue for wl_proxy object events.     </h2></div></div></div><p>Event queues allows the events on a display to be handled in a thread-safe manner. See <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> for details. </p><div class="variablelist"><dl class="variablelist"><dt><a name="Client-classwl__event__queue_1acfbc75d82d1f8a90e805712b972c4edf"></a><span class="term">wl_event_queue_destroy
+            - 
+Destroy an event queue.         </span></dt><dd><pre class="synopsis">void wl_event_queue_destroy(struct wl_event_queue *queue)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">queue</span></dt><dd>
+The event queue to be destroyed</dd></dl></div><p>
+Destroy the given event queue. Any pending event on that queue is discarded.</p><p>The <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> object used to create the queue should not be destroyed until all event queues created with it are destroyed with this function. </p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-structwl__interface"></a>wl_interface
+                - 
+Protocol object interface.     </h2></div></div></div><p>A <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> describes the API of a protocol object defined in the Wayland protocol specification. The protocol implementation uses a <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> within its marshalling machinery for encoding client requests.</p><p>The name of a <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> is the name of the corresponding protocol interface, and version represents the version of the interface. The members method_count and event_count represent the number of methods (requests) and events in the respective <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> members.</p><p>For example, consider a protocol interface foo, marked as version 1, with two requests and one event.</p><p>
+    </p><pre class="programlisting">&lt;interface name="foo" version="1"&gt;
+  &lt;request name="a"&gt;&lt;/request&gt;
+  &lt;request name="b"&gt;&lt;/request&gt;
+  &lt;event name="c"&gt;&lt;/event&gt;
+&lt;/interface&gt;
+</pre><p>
+  </p><p>Given two <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> arrays foo_requests and foo_events, a <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> for foo might be:</p><p>
+    </p><pre class="programlisting">struct wl_interface foo_interface = {
+        "foo", 1,
+        2, foo_requests,
+        1, foo_events
+};
+</pre><p>
+  </p><p><span class="emphasis"><em>Note: The server side of the protocol may define interface implementation types that incorporate the term interface in their name. Take care to not confuse these server-side structs with a <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> variable whose name also ends in interface. For example, while the server may define a type struct wl_foo_interface, the client may define a struct <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> wl_foo_interface.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> 
+
+  See also: <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> 
+
+  See also: Interfaces 
+
+  See also: Versioning 
+</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-structwl__list"></a>wl_list
+                - 
+Doubly-linked list.     </h2></div></div></div><p>On its own, an instance of struct <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> represents the sentinel head of a doubly-linked list, and must be initialized using <a class="link" href="apb.html#Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</a>. When empty, the list head's next and prev members point to the list head itself, otherwise next references the first element in the list, and prev refers to the last element in the list.</p><p>Use the struct <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> type to represent both the list head and the links between elements within the list. Use <a class="link" href="apb.html#Client-structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a">wl_list_empty()</a> to determine if the list is empty in O(1).</p><p>All elements in the list must be of the same type. The element type must have a struct <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> member, often named link by convention. Prior to insertion, there is no need to initialize an element's link - invoking <a class="link" href="apb.html#Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</a> on an individual list element's struct <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> member is unnecessary if the very next operation is <a class="link" href="apb.html#Client-structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98">wl_list_insert()</a>. However, a common idiom is to initialize an element's link prior to removal - ensure safety by invoking <a class="link" href="apb.html#Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</a> before <a class="link" href="apb.html#Client-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">wl_list_remove()</a>.</p><p>Consider a list reference struct <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> foo_list, an element type as struct element, and an element's link member as struct <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> link.</p><p>The following code initializes a list and adds three elements to it.</p><p>
+    </p><pre class="programlisting">struct wl_list foo_list;
+
+struct element {
+        int foo;
+        struct wl_list link;
+};
+struct element e1, e2, e3;
+
+wl_list_init(&amp;foo_list);
+wl_list_insert(&amp;foo_list, &amp;e1.link);   // e1 is the first element
+wl_list_insert(&amp;foo_list, &amp;e2.link);   // e2 is now the first element
+wl_list_insert(&amp;e2.link, &amp;e3.link); // insert e3 after e2
+</pre><p>
+  </p><p>The list now looks like [e2, e3, e1].</p><p>The <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> API provides some iterator macros. For example, to iterate a list in ascending order:</p><p>
+    </p><pre class="programlisting">struct element *e;
+wl_list_for_each(e, foo_list, link) {
+        do_something_with_element(e);
+}
+</pre><p>
+  </p><p>See the documentation of each iterator for details. 
+  See also: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/list.h 
+</p><div class="variablelist"><dl class="variablelist"><dt><a name="Client-structwl__list_1a72c2827d3103691f9e3299babfbf0704"></a><span class="term">prev
+            - 
+Previous list element.         </span></dt><dd><pre class="synopsis">struct wl_list* wl_list::prev</pre></dd><dt><a name="Client-structwl__list_1aa0454596900ed769fb2f033fbb96bf2c"></a><span class="term">next
+            - 
+Next list element.         </span></dt><dd><pre class="synopsis">struct wl_list* wl_list::next</pre></dd><dt><a name="Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8"></a><span class="term">wl_list_init
+            - 
+Initializes the list.         </span></dt><dd><pre class="synopsis">void wl_list_init(struct wl_list *list)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">list</span></dt><dd>
+List to initialize </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98"></a><span class="term">wl_list_insert
+            - 
+Inserts an element into the list, after the element represented by list.         </span></dt><dd><pre class="synopsis">void wl_list_insert(struct wl_list *list, struct wl_list *elm)</pre><p>When list is a reference to the list itself (the head), set the containing struct of elm as the first element in the list.</p><p><span class="emphasis"><em>Note: If elm is already part of a list, inserting it again will lead to list corruption.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">list</span></dt><dd>
+List element after which the new element is inserted </dd><dt><span class="term">elm</span></dt><dd>
+Link of the containing struct to insert into the list </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83"></a><span class="term">wl_list_remove
+            - 
+Removes an element from the list.         </span></dt><dd><pre class="synopsis">void wl_list_remove(struct wl_list *elm)</pre><p><span class="emphasis"><em>Note: This operation leaves elm in an invalid state.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">elm</span></dt><dd>
+Link of the containing struct to remove from the list </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1a2710186b02864dc2b18a46993aa9c2e0"></a><span class="term">wl_list_length
+            - 
+Determines the length of the list.         </span></dt><dd><pre class="synopsis">int wl_list_length(const struct wl_list *list)</pre><p><span class="emphasis"><em>Note: This is an O(n) operation.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">list</span></dt><dd>
+List whose length is to be determined</dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>Number of elements in the list </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a"></a><span class="term">wl_list_empty
+            - 
+Determines if the list is empty.         </span></dt><dd><pre class="synopsis">int wl_list_empty(const struct wl_list *list)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">list</span></dt><dd>
+List whose emptiness is to be determined</dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>1 if empty, or 0 if not empty </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1ac714f6eedd52286c8b6d9884cc7c8492"></a><span class="term">wl_list_insert_list
+            - 
+Inserts all of the elements of one list into another, after the element represented by list.         </span></dt><dd><pre class="synopsis">void wl_list_insert_list(struct wl_list *list, struct wl_list *other)</pre><p><span class="emphasis"><em>Note: This leaves other in an invalid state.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">list</span></dt><dd>
+List element after which the other list elements will be inserted </dd><dt><span class="term">other</span></dt><dd>
+List of elements to insert </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb"></a><span class="term">wl_list_for_each
+            - 
+Iterates over a list.         </span></dt><dd><pre class="synopsis"></pre><p>This macro expresses a for-each iterator for <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a>. Given a list and <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> link member name (often named link by convention), this macro assigns each element in the list to pos, which can then be referenced in a trailing code block. For example, given a <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a> of struct message elements:</p><p>
+          </p><pre class="programlisting">struct message {
+        char *contents;
+        wl_list link;
+};
+
+struct wl_list *message_list;
+// Assume message_list now "contains" many messages
+
+struct message *m;
+wl_list_for_each(m, message_list, link) {
+        do_something_with_message(m);
+}
+</pre><p>
+        </p><div class="variablelist"><dl class="variablelist"><dt><span class="term">pos</span></dt><dd>
+Cursor that each list element will be assigned to </dd><dt><span class="term">head</span></dt><dd>
+Head of the list to iterate over </dd><dt><span class="term">member</span></dt><dd>
+Name of the link member within the element struct </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1a43d51e3b5ae8b58f3391f3d43687f852"></a><span class="term">wl_list_for_each_safe
+            - 
+Iterates over a list, safe against removal of the list element.         </span></dt><dd><pre class="synopsis"></pre><p><span class="emphasis"><em>Note: Only removal of the current element, pos, is safe. Removing any other element during traversal may lead to a loop malfunction.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</a>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">pos</span></dt><dd>
+Cursor that each list element will be assigned to </dd><dt><span class="term">tmp</span></dt><dd>
+Temporary pointer of the same type as pos </dd><dt><span class="term">head</span></dt><dd>
+Head of the list to iterate over </dd><dt><span class="term">member</span></dt><dd>
+Name of the link member within the element struct </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1a2ee1918119b03d36ed3004984efb9dc9"></a><span class="term">wl_list_for_each_reverse
+            - 
+Iterates backwards over a list.         </span></dt><dd><pre class="synopsis"></pre><p>
+  See also: <a class="link" href="apb.html#Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</a>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">pos</span></dt><dd>
+Cursor that each list element will be assigned to </dd><dt><span class="term">head</span></dt><dd>
+Head of the list to iterate over </dd><dt><span class="term">member</span></dt><dd>
+Name of the link member within the element struct </dd></dl></div><p>
+</p></dd><dt><a name="Client-structwl__list_1ac84e06e7914226b2678ff5f351d7f9e8"></a><span class="term">wl_list_for_each_reverse_safe
+            - 
+Iterates backwards over a list, safe against removal of the list element.         </span></dt><dd><pre class="synopsis"></pre><p><span class="emphasis"><em>Note: Only removal of the current element, pos, is safe. Removing any other element during traversal may lead to a loop malfunction.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</a>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">pos</span></dt><dd>
+Cursor that each list element will be assigned to </dd><dt><span class="term">tmp</span></dt><dd>
+Temporary pointer of the same type as pos </dd><dt><span class="term">head</span></dt><dd>
+Head of the list to iterate over </dd><dt><span class="term">member</span></dt><dd>
+Name of the link member within the element struct </dd></dl></div><p>
+</p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-structwl__message"></a>wl_message
+                - 
+Protocol message signature.     </h2></div></div></div><p>A <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> describes the signature of an actual protocol message, such as a request or event, that adheres to the Wayland protocol wire format. The protocol implementation uses a <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> within its demarshal machinery for decoding messages between a compositor and its clients. In a sense, a <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> is to a protocol message like a class is to an object.</p><p>The name of a <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> is the name of the corresponding protocol message.</p><p>The signature is an ordered list of symbols representing the data types of message arguments and, optionally, a protocol version and indicators for nullability. A leading integer in the signature indicates the since version of the protocol message. A ? preceding a data type symbol indicates that the following argument type is nullable. While it is a protocol violation to send messages with non-nullable arguments set to NULL, event handlers in clients might still get called with non-nullable object arguments set to NULL. This can happen when the client destroyed the object being used as argument on its side and an event referencing that object was sent before the server knew about its destruction. As this race cannot be prevented, clients should - as a general rule - program their event handlers such that they can handle object arguments declared non-nullable being NULL gracefully.</p><p>When no arguments accompany a message, signature is an empty string.</p><p>Symbols:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">i: int</li><li class="listitem">u: uint</li><li class="listitem">f: fixed</li><li class="listitem">s: string</li><li class="listitem">o: object</li><li class="listitem">n: new_id</li><li class="listitem">a: array</li><li class="listitem">h: fd</li><li class="listitem">?: following argument is nullable</li></ul></div><p>
+</p><p>While demarshaling primitive arguments is straightforward, when demarshaling messages containing object or new_id arguments, the protocol implementation often must determine the type of the object. The types of a <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> is an array of <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> references that correspond to o and n arguments in signature, with NULL placeholders for arguments with non-object types.</p><p>Consider the protocol event <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> delete_id that has a single uint argument. The <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> is:</p><p>
+    </p><pre class="programlisting">{ "delete_id", "u", [NULL] }
+</pre><p>
+  </p><p>Here, the message name is "delete_id", the signature is "u", and the argument types is [NULL], indicating that the uint argument has no corresponding <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> since it is a primitive argument.</p><p>In contrast, consider a wl_foo interface supporting protocol request bar that has existed since version 2, and has two arguments: a uint and an object of type wl_baz_interface that may be NULL. Such a <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> might be:</p><p>
+    </p><pre class="programlisting">{ "bar", "2u?o", [NULL, &amp;wl_baz_interface] }
+</pre><p>
+  </p><p>Here, the message name is "bar", and the signature is "2u?o". Notice how the 2 indicates the protocol version, the u indicates the first argument type is uint, and the ?o indicates that the second argument is an object that may be NULL. Lastly, the argument types array indicates that no <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> corresponds to the first argument, while the type wl_baz_interface corresponds to the second argument.</p><p>
+  See also: <a class="link" href="apb.html#Client-unionwl__argument" title="wl_argument - Protocol message argument data types.">wl_argument</a> 
+
+  See also: <a class="link" href="apb.html#Client-structwl__interface" title="wl_interface - Protocol object interface.">wl_interface</a> 
+
+  See also: Wire Format 
+</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-classwl__object"></a>wl_object
+                - 
+A protocol object.     </h2></div></div></div><p>A <a class="link" href="apb.html#Client-classwl__object" title="wl_object - A protocol object.">wl_object</a> is an opaque struct identifying the protocol object underlying a <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> or wl_resource.</p><p><span class="emphasis"><em>Note: Functions accessing a <a class="link" href="apb.html#Client-classwl__object" title="wl_object - A protocol object.">wl_object</a> are not normally used by client code. Clients should normally use the higher level interface generated by the scanner to interact with compositor objects. </em></span>
+</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-classwl__proxy"></a>wl_proxy
+                - 
+Represents a protocol object on the client side.     </h2></div></div></div><p>A <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> acts as a client side proxy to an object existing in the compositor. The proxy is responsible for converting requests made by the clients with <a class="link" href="apb.html#Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</a> into Wayland's wire format. Events coming from the compositor are also handled by the proxy, which will in turn call the handler set with <a class="link" href="apb.html#Client-classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7">wl_proxy_add_listener()</a>.</p><p><span class="emphasis"><em>Note: With the exception of function <a class="link" href="apb.html#Client-classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc">wl_proxy_set_queue()</a>, functions accessing a <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> are not normally used by client code. Clients should normally use the higher level interface generated by the scanner to interact with compositor objects. </em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><a name="Client-classwl__proxy_1a5917991abd28c23949ad200e9399e813"></a><span class="term">wl_proxy_create
+            - 
+Create a proxy object with a given interface.         </span></dt><dd><pre class="synopsis">struct wl_proxy * wl_proxy_create(struct wl_proxy *factory, const struct wl_interface *interface)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">factory</span></dt><dd>
+Factory proxy object </dd><dt><span class="term">interface</span></dt><dd>
+Interface the proxy object should use </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A newly allocated proxy object or NULL on failure</dd></dl></div><p>
+This function creates a new proxy object with the supplied interface. The proxy object will have an id assigned from the client id space. The id should be created on the compositor side by sending an appropriate request with <a class="link" href="apb.html#Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</a>.</p><p>The proxy will inherit the display and event queue of the factory object.</p><p><span class="emphasis"><em>Note: This should not normally be used by non-generated code.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a>, <a class="link" href="apb.html#Client-classwl__event__queue" title="wl_event_queue - A queue for wl_proxy object events.">wl_event_queue</a>, <a class="link" href="apb.html#Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</a> 
+</p></dd><dt><a name="Client-classwl__proxy_1a2d3fe909fed5b7ace56ca01178763381"></a><span class="term">wl_proxy_destroy
+            - 
+Destroy a proxy object.         </span></dt><dd><pre class="synopsis">void wl_proxy_destroy(struct wl_proxy *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy to be destroyed</dd></dl></div><p>
+proxy must not be a proxy wrapper. </p></dd><dt><a name="Client-classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7"></a><span class="term">wl_proxy_add_listener
+            - 
+Set a proxy's listener.         </span></dt><dd><pre class="synopsis">int wl_proxy_add_listener(struct wl_proxy *proxy, void(**implementation)(void), void *data)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">implementation</span></dt><dd>
+The listener to be added to proxy </dd><dt><span class="term">data</span></dt><dd>
+User data to be associated with the proxy </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success or -1 on failure</dd></dl></div><p>
+Set proxy's listener to implementation and its user data to data. If a listener has already been set, this function fails and nothing is changed.</p><p>implementation is a vector of function pointers. For an opcode n, implementation[n] should point to the handler of n for the given object.</p><p>proxy must not be a proxy wrapper. </p></dd><dt><a name="Client-classwl__proxy_1a30175804b647e683773172d50812c88f"></a><span class="term">wl_proxy_get_listener
+            - 
+Get a proxy's listener.         </span></dt><dd><pre class="synopsis">const void * wl_proxy_get_listener(struct wl_proxy *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The address of the proxy's listener or NULL if no listener is set</dd></dl></div><p>
+Gets the address to the proxy's listener; which is the listener set with <a class="link" href="apb.html#Client-classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7">wl_proxy_add_listener</a>.</p><p>This function is useful in clients with multiple listeners on the same interface to allow the identification of which code to execute. </p></dd><dt><a name="Client-classwl__proxy_1a45ec4f95c2cead639976b27bf4af55c1"></a><span class="term">wl_proxy_add_dispatcher
+            - 
+Set a proxy's listener (with dispatcher)         </span></dt><dd><pre class="synopsis">int wl_proxy_add_dispatcher(struct wl_proxy *proxy, wl_dispatcher_func_t dispatcher, const void *implementation, void *data)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">dispatcher</span></dt><dd>
+The dispatcher to be used for this proxy </dd><dt><span class="term">implementation</span></dt><dd>
+The dispatcher-specific listener implementation </dd><dt><span class="term">data</span></dt><dd>
+User data to be associated with the proxy </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success or -1 on failure</dd></dl></div><p>
+Set proxy's listener to use dispatcher_func as its dispatcher and dispatcher_data as its dispatcher-specific implementation and its user data to data. If a listener has already been set, this function fails and nothing is changed.</p><p>The exact details of dispatcher_data depend on the dispatcher used. This function is intended to be used by language bindings, not user code.</p><p>proxy must not be a proxy wrapper. </p></dd><dt><a name="Client-classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05"></a><span class="term">wl_proxy_marshal_array_constructor
+            - 
+Prepare a request to be sent to the compositor.         </span></dt><dd><pre class="synopsis">struct wl_proxy * wl_proxy_marshal_array_constructor(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">opcode</span></dt><dd>
+Opcode of the request to be sent </dd><dt><span class="term">args</span></dt><dd>
+Extra arguments for the given request </dd><dt><span class="term">interface</span></dt><dd>
+The interface to use for the new proxy</dd></dl></div><p>
+This function translates a request given an opcode, an interface and a <a class="link" href="apb.html#Client-unionwl__argument" title="wl_argument - Protocol message argument data types.">wl_argument</a> array to the wire format and writes it to the connection buffer.</p><p>For new-id arguments, this function will allocate a new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> and send the ID to the server. The new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will inherit their version from their parent.</p><p><span class="emphasis"><em>Note: This is intended to be used by language bindings and not in non-generated code.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</a> 
+</p></dd><dt><a name="Client-classwl__proxy_1ae61b4c579eba754bdbefd04c0e3f8b13"></a><span class="term">wl_proxy_marshal_array_constructor_versioned
+            - 
+Prepare a request to be sent to the compositor.         </span></dt><dd><pre class="synopsis">struct wl_proxy * wl_proxy_marshal_array_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface, uint32_t version)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">opcode</span></dt><dd>
+Opcode of the request to be sent </dd><dt><span class="term">args</span></dt><dd>
+Extra arguments for the given request </dd><dt><span class="term">interface</span></dt><dd>
+The interface to use for the new proxy </dd><dt><span class="term">version</span></dt><dd>
+The protocol object version for the new proxy</dd></dl></div><p>
+Translates the request given by opcode and the extra arguments into the wire format and write it to the connection buffer. This version takes an array of the union type <a class="link" href="apb.html#Client-unionwl__argument" title="wl_argument - Protocol message argument data types.">wl_argument</a>.</p><p>For new-id arguments, this function will allocate a new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> and send the ID to the server. The new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will have the version specified.</p><p><span class="emphasis"><em>Note: This is intended to be used by language bindings and not in non-generated code.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</a> 
+</p></dd><dt><a name="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f"></a><span class="term">wl_proxy_marshal
+            - 
+Prepare a request to be sent to the compositor.         </span></dt><dd><pre class="synopsis">void wl_proxy_marshal(struct wl_proxy *proxy, uint32_t opcode,...)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">opcode</span></dt><dd>
+Opcode of the request to be sent </dd><dt><span class="term">...</span></dt><dd>
+Extra arguments for the given request</dd></dl></div><p>
+This function is similar to <a class="link" href="apb.html#Client-classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28">wl_proxy_marshal_constructor()</a>, except it doesn't create proxies for new-id arguments.</p><p><span class="emphasis"><em>Note: This should not normally be used by non-generated code.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__proxy_1a5917991abd28c23949ad200e9399e813">wl_proxy_create()</a> 
+</p></dd><dt><a name="Client-classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28"></a><span class="term">wl_proxy_marshal_constructor
+            - 
+Prepare a request to be sent to the compositor.         </span></dt><dd><pre class="synopsis">struct wl_proxy * wl_proxy_marshal_constructor(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface,...)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">opcode</span></dt><dd>
+Opcode of the request to be sent </dd><dt><span class="term">interface</span></dt><dd>
+The interface to use for the new proxy </dd><dt><span class="term">...</span></dt><dd>
+Extra arguments for the given request </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> for the new_id argument or NULL on error</dd></dl></div><p>
+This function translates a request given an opcode, an interface and extra arguments to the wire format and writes it to the connection buffer. The types of the extra arguments must correspond to the argument types of the method associated with the opcode in the interface.</p><p>For new-id arguments, this function will allocate a new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> and send the ID to the server. The new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will inherit their version from their parent.</p><p><span class="emphasis"><em>Note: This should not normally be used by non-generated code. </em></span>
+</p></dd><dt><a name="Client-classwl__proxy_1a397e6d324ce0c262afe09d365be2b8e2"></a><span class="term">wl_proxy_marshal_constructor_versioned
+            - 
+Prepare a request to be sent to the compositor.         </span></dt><dd><pre class="synopsis">struct wl_proxy * wl_proxy_marshal_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface, uint32_t version,...)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">opcode</span></dt><dd>
+Opcode of the request to be sent </dd><dt><span class="term">interface</span></dt><dd>
+The interface to use for the new proxy </dd><dt><span class="term">version</span></dt><dd>
+The protocol object version of the new proxy </dd><dt><span class="term">...</span></dt><dd>
+Extra arguments for the given request </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> for the new_id argument or NULL on error</dd></dl></div><p>
+Translates the request given by opcode and the extra arguments into the wire format and write it to the connection buffer.</p><p>For new-id arguments, this function will allocate a new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> and send the ID to the server. The new <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will have the version specified.</p><p><span class="emphasis"><em>Note: This should not normally be used by non-generated code. </em></span>
+</p></dd><dt><a name="Client-classwl__proxy_1a8f4cc90edff2f7bd3dfbb2db57f7d873"></a><span class="term">wl_proxy_marshal_array
+            - 
+Prepare a request to be sent to the compositor.         </span></dt><dd><pre class="synopsis">void wl_proxy_marshal_array(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">opcode</span></dt><dd>
+Opcode of the request to be sent </dd><dt><span class="term">args</span></dt><dd>
+Extra arguments for the given request</dd></dl></div><p>
+This function is similar to <a class="link" href="apb.html#Client-classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05">wl_proxy_marshal_array_constructor()</a>, except it doesn't create proxies for new-id arguments.</p><p><span class="emphasis"><em>Note: This is intended to be used by language bindings and not in non-generated code.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</a> 
+</p></dd><dt><a name="Client-classwl__proxy_1a97fa4ee5b728a372cff9ac5164153fef"></a><span class="term">wl_proxy_set_user_data
+            - 
+Set the user data associated with a proxy.         </span></dt><dd><pre class="synopsis">void wl_proxy_set_user_data(struct wl_proxy *proxy, void *user_data)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">user_data</span></dt><dd>
+The data to be associated with proxy</dd></dl></div><p>
+Set the user data associated with proxy. When events for this proxy are received, user_data will be supplied to its listener. </p></dd><dt><a name="Client-classwl__proxy_1abc50a9d788e0007f144a7bea7f170c3f"></a><span class="term">wl_proxy_get_user_data
+            - 
+Get the user data associated with a proxy.         </span></dt><dd><pre class="synopsis">void * wl_proxy_get_user_data(struct wl_proxy *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The user data associated with proxy </dd></dl></div><p>
+</p></dd><dt><a name="Client-classwl__proxy_1a918c3bff4543bcfd0d6cb689d0666db2"></a><span class="term">wl_proxy_get_version
+            - 
+Get the protocol object version of a proxy object.         </span></dt><dd><pre class="synopsis">uint32_t wl_proxy_get_version(struct wl_proxy *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The protocol object version of the proxy or 0</dd></dl></div><p>
+Gets the protocol object version of a proxy object, or 0 if the proxy was created with unversioned API.</p><p>A returned value of 0 means that no version information is available, so the caller must make safe assumptions about the object's real version.</p><p><a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a>'s version will always return 0. </p></dd><dt><a name="Client-classwl__proxy_1acd609baf53e8691c5307fdaf12d4d176"></a><span class="term">wl_proxy_get_id
+            - 
+Get the id of a proxy object.         </span></dt><dd><pre class="synopsis">uint32_t wl_proxy_get_id(struct wl_proxy *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The id the object associated with the proxy </dd></dl></div><p>
+</p></dd><dt><a name="Client-classwl__proxy_1a29fdd13044058ecd12614f820c11a540"></a><span class="term">wl_proxy_set_tag
+            - 
+Set the tag of a proxy object.         </span></dt><dd><pre class="synopsis">void wl_proxy_set_tag(struct wl_proxy *proxy, const char *const *tag)</pre><p>A toolkit or application can set a unique tag on a proxy in order to identify whether an object is managed by itself or some external part.</p><p>To create a tag, the recommended way is to define a statically allocated constant char array containing some descriptive string. The tag will be the pointer to the non-const pointer to the beginning of the array.</p><p>For example, to define and set a tag on a surface managed by a certain subsystem:     static const char *my_tag = "my tag";
+
+    wl_proxy_set_tag((struct wl_proxy *) surface, &amp;my_tag);
+</p><p>Then, in a callback with wl_surface as an argument, in order to check whether it's a surface managed by the same subsystem.     const char * const *tag;
+
+    tag = wl_proxy_get_tag((struct wl_proxy *) surface);
+    if (tag != &amp;my_tag)
+    return;
+
+ ...
+</p><p>For debugging purposes, a tag should be suitable to be included in a debug log entry, e.g.     const char * const *tag;
+
+    tag = wl_proxy_get_tag((struct wl_proxy *) surface);
+    printf("Got a surface with the tag %p (%s)\n",
+           tag, (tag &amp;&amp; *tag) ? *tag : "");
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">tag</span></dt><dd>
+The tag</dd></dl></div><p>
+
+  Since: 1.17.90 
+</p></dd><dt><a name="Client-classwl__proxy_1a549012fa03e04b790dbd92fbb483b15e"></a><span class="term">wl_proxy_get_tag
+            - 
+Get the tag of a proxy object.         </span></dt><dd><pre class="synopsis">const char *const  * wl_proxy_get_tag(struct wl_proxy *proxy)</pre><p>See wl_proxy_set_tag for details.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object</dd></dl></div><p>
+
+  Since: 1.17.90 
+</p></dd><dt><a name="Client-classwl__proxy_1a365697bb1c59f3714e5654348d7b480a"></a><span class="term">wl_proxy_get_class
+            - 
+Get the interface name (class) of a proxy object.         </span></dt><dd><pre class="synopsis">const char * wl_proxy_get_class(struct wl_proxy *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The interface name of the object associated with the proxy </dd></dl></div><p>
+</p></dd><dt><a name="Client-classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc"></a><span class="term">wl_proxy_set_queue
+            - 
+Assign a proxy to an event queue.         </span></dt><dd><pre class="synopsis">void wl_proxy_set_queue(struct wl_proxy *proxy, struct wl_event_queue *queue)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object </dd><dt><span class="term">queue</span></dt><dd>
+The event queue that will handle this proxy or NULL</dd></dl></div><p>
+Assign proxy to event queue. Events coming from proxy will be queued in queue from now. If queue is NULL, then the display's default queue is set to the proxy.</p><p><span class="emphasis"><em>Note: By default, the queue set in proxy is the one inherited from parent.</em></span>
+
+  See also: <a class="link" href="apb.html#Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</a> 
+</p></dd><dt><a name="Client-classwl__proxy_1afb9d0eb81d1fd4931f566aed090d6f28"></a><span class="term">wl_proxy_create_wrapper
+            - 
+Create a proxy wrapper for making queue assignments thread-safe.         </span></dt><dd><pre class="synopsis">void * wl_proxy_create_wrapper(void *proxy)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy</span></dt><dd>
+The proxy object to be wrapped </dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>A proxy wrapper for the given proxy or NULL on failure</dd></dl></div><p>
+A proxy wrapper is type of 'struct <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a>' instance that can be used when sending requests instead of using the original proxy. A proxy wrapper does not have an implementation or dispatcher, and events received on the object is still emitted on the original proxy. Trying to set an implementation or dispatcher will have no effect but result in a warning being logged.</p><p>Setting the proxy queue of the proxy wrapper will make new objects created using the proxy wrapper use the set proxy queue. Even though there is no implementation nor dispatcher, the proxy queue can be changed. This will affect the default queue of new objects created by requests sent via the proxy wrapper.</p><p>A proxy wrapper can only be destroyed using <a class="link" href="apb.html#Client-classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99">wl_proxy_wrapper_destroy()</a>.</p><p>A proxy wrapper must be destroyed before the proxy it was created from.</p><p>If a user reads and dispatches events on more than one thread, it is necessary to use a proxy wrapper when sending requests on objects when the intention is that a newly created proxy is to use a proxy queue different from the proxy the request was sent on, as creating the new proxy and then setting the queue is not thread safe.</p><p>For example, a module that runs using its own proxy queue that needs to do display roundtrip must wrap the <a class="link" href="apb.html#Client-classwl__display" title="wl_display - Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.">wl_display</a> proxy object before sending the wl_display.sync request. For example:</p><pre class="programlisting">struct wl_event_queue *queue = ...;
+struct wl_display *wrapped_display;
+struct wl_callback *callback;
+
+wrapped_display = wl_proxy_create_wrapper(display);
+wl_proxy_set_queue((struct wl_proxy *) wrapped_display, queue);
+callback = wl_display_sync(wrapped_display);
+wl_proxy_wrapper_destroy(wrapped_display);
+wl_callback_add_listener(callback, ...);
+</pre><p> </p></dd><dt><a name="Client-classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99"></a><span class="term">wl_proxy_wrapper_destroy
+            - 
+Destroy a proxy wrapper.         </span></dt><dd><pre class="synopsis">void wl_proxy_wrapper_destroy(void *proxy_wrapper)</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">proxy_wrapper</span></dt><dd>
+The proxy wrapper to be destroyed </dd></dl></div><p>
+</p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Client-Functions"></a>Functions</h2></div></div></div><p></p><div class="variablelist"><dl class="variablelist"><dt><a name="Client-wayland-client-core_8h_1acfbc75d82d1f8a90e805712b972c4edf"></a><span class="term">wl_event_queue_destroy</span></dt><dd><pre class="synopsis">void wl_event_queue_destroy(struct wl_event_queue *queue)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a090ac75892250e69176e0bebabfc9dff"></a><span class="term">wl_proxy_marshal</span></dt><dd><pre class="synopsis">void wl_proxy_marshal(struct wl_proxy *p, uint32_t opcode,...)</pre></dd><dt><a name="Client-wayland-client-core_8h_1ac73b3ca33662501fd71e564d29f80fc2"></a><span class="term">wl_proxy_marshal_array</span></dt><dd><pre class="synopsis">void wl_proxy_marshal_array(struct wl_proxy *p, uint32_t opcode, union wl_argument *args)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a83b0c474e347e65075246d239c227eca"></a><span class="term">wl_proxy_create</span></dt><dd><pre class="synopsis">struct wl_proxy* wl_proxy_create(struct wl_proxy *factory, const struct wl_interface *interface)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a9fc96dd300247a74b07e5e97e7779d78"></a><span class="term">wl_proxy_create_wrapper</span></dt><dd><pre class="synopsis">void* wl_proxy_create_wrapper(void *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a0261dbfa5f690667643940ab2ec1ee99"></a><span class="term">wl_proxy_wrapper_destroy</span></dt><dd><pre class="synopsis">void wl_proxy_wrapper_destroy(void *proxy_wrapper)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a74b1e45b6cf8d73885bf60a0973ac27b"></a><span class="term">wl_proxy_marshal_constructor</span></dt><dd><pre class="synopsis">struct wl_proxy* wl_proxy_marshal_constructor(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface,...)</pre></dd><dt><a name="Client-wayland-client-core_8h_1ac50a545bda02164d6a8998df8656702f"></a><span class="term">wl_proxy_marshal_constructor_versioned</span></dt><dd><pre class="synopsis">struct wl_proxy* wl_proxy_marshal_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface, uint32_t version,...)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a7f71ea679958ca01e5febf391795a256"></a><span class="term">wl_proxy_marshal_array_constructor</span></dt><dd><pre class="synopsis">struct wl_proxy* wl_proxy_marshal_array_constructor(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a4d365f3486201a1c8da23d93a649dfa9"></a><span class="term">wl_proxy_marshal_array_constructor_versioned</span></dt><dd><pre class="synopsis">struct wl_proxy* wl_proxy_marshal_array_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface, uint32_t version)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a2d3fe909fed5b7ace56ca01178763381"></a><span class="term">wl_proxy_destroy</span></dt><dd><pre class="synopsis">void wl_proxy_destroy(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a29a8596b88ede807f96a63c128c6e8b7"></a><span class="term">wl_proxy_add_listener</span></dt><dd><pre class="synopsis">int wl_proxy_add_listener(struct wl_proxy *proxy, void(**implementation)(void), void *data)</pre></dd><dt><a name="Client-wayland-client-core_8h_1acb35a3a56239c15ad86856b4753d0684"></a><span class="term">wl_proxy_get_listener</span></dt><dd><pre class="synopsis">const void* wl_proxy_get_listener(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a1d4975c4e2f01bddd3beaf28dd3e2818"></a><span class="term">wl_proxy_add_dispatcher</span></dt><dd><pre class="synopsis">int wl_proxy_add_dispatcher(struct wl_proxy *proxy, wl_dispatcher_func_t dispatcher_func, const void *dispatcher_data, void *data)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a97fa4ee5b728a372cff9ac5164153fef"></a><span class="term">wl_proxy_set_user_data</span></dt><dd><pre class="synopsis">void wl_proxy_set_user_data(struct wl_proxy *proxy, void *user_data)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a46da640b2112269327958ff4efd3e79f"></a><span class="term">wl_proxy_get_user_data</span></dt><dd><pre class="synopsis">void* wl_proxy_get_user_data(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a918c3bff4543bcfd0d6cb689d0666db2"></a><span class="term">wl_proxy_get_version</span></dt><dd><pre class="synopsis">uint32_t wl_proxy_get_version(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1acd609baf53e8691c5307fdaf12d4d176"></a><span class="term">wl_proxy_get_id</span></dt><dd><pre class="synopsis">uint32_t wl_proxy_get_id(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a29fdd13044058ecd12614f820c11a540"></a><span class="term">wl_proxy_set_tag</span></dt><dd><pre class="synopsis">void wl_proxy_set_tag(struct wl_proxy *proxy, const char *const *tag)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a389c7a7cbebf460fed4ae024078eb297"></a><span class="term">wl_proxy_get_tag</span></dt><dd><pre class="synopsis">const char* const* wl_proxy_get_tag(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a26926726c79c73604235728d23c10b1a"></a><span class="term">wl_proxy_get_class</span></dt><dd><pre class="synopsis">const char* wl_proxy_get_class(struct wl_proxy *proxy)</pre></dd><dt><a name="Client-wayland-client-core_8h_1acc5f51ea5d172df68f61018b2879e0cc"></a><span class="term">wl_proxy_set_queue</span></dt><dd><pre class="synopsis">void wl_proxy_set_queue(struct wl_proxy *proxy, struct wl_event_queue *queue)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a86382b9754bbb891860e6ab4ff5efa20"></a><span class="term">wl_display_connect</span></dt><dd><pre class="synopsis">struct wl_display* wl_display_connect(const char *name)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a7ef5808b89561fb447cd012e9b9c7235"></a><span class="term">wl_display_connect_to_fd</span></dt><dd><pre class="synopsis">struct wl_display* wl_display_connect_to_fd(int fd)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a9150a7e3213a58b469a6966e60a9f108"></a><span class="term">wl_display_disconnect</span></dt><dd><pre class="synopsis">void wl_display_disconnect(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a2d5d249e81cbf43c3521d4bce575f1ca"></a><span class="term">wl_display_get_fd</span></dt><dd><pre class="synopsis">int wl_display_get_fd(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a30a9c4f020f3e77581c7a81ecdb4913d"></a><span class="term">wl_display_dispatch</span></dt><dd><pre class="synopsis">int wl_display_dispatch(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1ae027b09801474ac7c6b0f1ef25ff6e17"></a><span class="term">wl_display_dispatch_queue</span></dt><dd><pre class="synopsis">int wl_display_dispatch_queue(struct wl_display *display, struct wl_event_queue *queue)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a8a14a809eb2c083a806db2ee15523041"></a><span class="term">wl_display_dispatch_queue_pending</span></dt><dd><pre class="synopsis">int wl_display_dispatch_queue_pending(struct wl_display *display, struct wl_event_queue *queue)</pre></dd><dt><a name="Client-wayland-client-core_8h_1ac4b6b5ad31932bc3830ff362d2938560"></a><span class="term">wl_display_dispatch_pending</span></dt><dd><pre class="synopsis">int wl_display_dispatch_pending(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a1ceca1c6f280ac1308ee0e16cd186f94"></a><span class="term">wl_display_get_error</span></dt><dd><pre class="synopsis">int wl_display_get_error(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a8fbec062c9430f8cbdf71a12ec443f7d"></a><span class="term">wl_display_get_protocol_error</span></dt><dd><pre class="synopsis">uint32_t wl_display_get_protocol_error(struct wl_display *display, const struct wl_interface **interface, uint32_t *id)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a8463b6e5f4cf9a2a3ad2d543aedcf429"></a><span class="term">wl_display_flush</span></dt><dd><pre class="synopsis">int wl_display_flush(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a73f44c38fa4e535f5eaf700933b0b2e6"></a><span class="term">wl_display_roundtrip_queue</span></dt><dd><pre class="synopsis">int wl_display_roundtrip_queue(struct wl_display *display, struct wl_event_queue *queue)</pre></dd><dt><a name="Client-wayland-client-core_8h_1ab60f38c2f80980ac84f347e932793390"></a><span class="term">wl_display_roundtrip</span></dt><dd><pre class="synopsis">int wl_display_roundtrip(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a6607ab92946184c1ecefba21987b0a83"></a><span class="term">wl_display_create_queue</span></dt><dd><pre class="synopsis">struct wl_event_queue* wl_display_create_queue(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a40039c1169b153269a3dc0796a54ddb0"></a><span class="term">wl_display_prepare_read_queue</span></dt><dd><pre class="synopsis">int wl_display_prepare_read_queue(struct wl_display *display, struct wl_event_queue *queue)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a040dca18775e3177883f06bd6fdf395f"></a><span class="term">wl_display_prepare_read</span></dt><dd><pre class="synopsis">int wl_display_prepare_read(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a978fcabf13f1915e565435ab097bd590"></a><span class="term">wl_display_cancel_read</span></dt><dd><pre class="synopsis">void wl_display_cancel_read(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a1b1619d9b0930a6d1b70ccd1488335b4"></a><span class="term">wl_display_read_events</span></dt><dd><pre class="synopsis">int wl_display_read_events(struct wl_display *display)</pre></dd><dt><a name="Client-wayland-client-core_8h_1a2201f511aa0db7cdb2ecdcb01d61dc9f"></a><span class="term">wl_log_set_handler_client</span></dt><dd><pre class="synopsis">void wl_log_set_handler_client(wl_log_func_t handler)</pre></dd><dt><a name="Client-wayland-client_8c_1a2201f511aa0db7cdb2ecdcb01d61dc9f"></a><span class="term">wl_log_set_handler_client</span></dt><dd><pre class="synopsis">void wl_log_set_handler_client(wl_log_func_t handler)</pre></dd><dt><a name="Client-wayland-util_8h_1a3b28bd92b6af30b28f13c09e45269d5b"></a><span class="term">WL_EXPORT
+            - 
+Visibility attribute.         </span></dt><dd><pre class="synopsis"></pre></dd><dt><a name="Client-wayland-util_8h_1a9ef5a521a018de9c5b28a5ef9909cd33"></a><span class="term">WL_DEPRECATED
+            - 
+Deprecated attribute.         </span></dt><dd><pre class="synopsis"></pre></dd><dt><a name="Client-wayland-util_8h_1aa7cbf0ab788d6898c97f322630577424"></a><span class="term">WL_PRINTF
+            - 
+Printf-style argument attribute.         </span></dt><dd><pre class="synopsis"></pre><div class="variablelist"><dl class="variablelist"><dt><span class="term">x</span></dt><dd>
+Ordinality of the format string argument </dd><dt><span class="term">y</span></dt><dd>
+Ordinality of the argument to check against the format string</dd></dl></div><p>
+
+  See also: https://gcc.gnu.org/onlinedocs/gcc-3.2.1/gcc/Function-Attributes.html 
+</p></dd><dt><a name="Client-wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa"></a><span class="term">wl_container_of
+            - 
+Retrieves a pointer to a containing struct, given a member name.         </span></dt><dd><pre class="synopsis"></pre><p>This macro allows "conversion" from a pointer to a member to its containing struct. This is useful if you have a contained item like a <a class="link" href="apb.html#Client-structwl__list" title="wl_list - Doubly-linked list.">wl_list</a>, wl_listener, or wl_signal, provided via a callback or other means, and would like to retrieve the struct that contains it.</p><p>To demonstrate, the following example retrieves a pointer to example_container given only its destroy_listener member:</p><p>
+          </p><pre class="programlisting">struct example_container {
+        struct wl_listener destroy_listener;
+        // other members...
+};
+
+void example_container_destroy(struct wl_listener *listener, void *data)
+{
+        struct example_container *ctr;
+
+        ctr = wl_container_of(listener, ctr, destroy_listener);
+        // destroy ctr...
+}
+</pre><p>
+        </p><p><span class="emphasis"><em>Note: sample need not be a valid pointer. A null or uninitialised pointer is sufficient.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">ptr</span></dt><dd>
+Valid pointer to the contained member </dd><dt><span class="term">sample</span></dt><dd>
+Pointer to a struct whose type contains ptr </dd><dt><span class="term">member</span></dt><dd>
+Named location of ptr within the sample type</dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>The container for the specified pointer </dd></dl></div><p>
+</p></dd><dt><a name="Client-wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23"></a><span class="term">wl_iterator_result
+            - 
+Return value of an iterator function.         </span></dt><dd><pre class="synopsis"></pre><p>
+  See also: wl_client_for_each_resource_iterator_func_t 
+
+  See also: wl_client_for_each_resource 
+</p></dd><dt><a name="Client-wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb"></a><span class="term">wl_fixed_t
+            - 
+Fixed-point number.         </span></dt><dd><pre class="synopsis">typedef int32_t wl_fixed_t</pre><p>A wl_fixed_t is a 24.8 signed fixed-point number with a sign bit, 23 bits of integer precision and 8 bits of decimal precision. Consider wl_fixed_t as an opaque struct with methods that facilitate conversion to and from double and int types. </p></dd><dt><a name="Client-wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd"></a><span class="term">wl_dispatcher_func_t
+            - 
+Dispatcher function type alias.         </span></dt><dd><pre class="synopsis">typedef int(* wl_dispatcher_func_t) (const void *, void *, uint32_t, const struct wl_message *, union wl_argument *))(const void *, void *, uint32_t, const struct wl_message *, union wl_argument *)</pre><p>A dispatcher is a function that handles the emitting of callbacks in client code. For programs directly using the C library, this is done by using libffi to call function pointers. When binding to languages other than C, dispatchers provide a way to abstract the function calling process to be friendlier to other function calling systems.</p><p>A dispatcher takes five arguments: The first is the dispatcher-specific implementation associated with the target object. The second is the object upon which the callback is being invoked (either <a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> or wl_resource). The third and fourth arguments are the opcode and the <a class="link" href="apb.html#Client-structwl__message" title="wl_message - Protocol message signature.">wl_message</a> corresponding to the callback. The final argument is an array of arguments received from the other process via the wire protocol.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">const void *</span></dt><dd>
+Dispatcher-specific implementation data </dd><dt><span class="term">void *</span></dt><dd>
+Callback invocation target (<a class="link" href="apb.html#Client-classwl__proxy" title="wl_proxy - Represents a protocol object on the client side.">wl_proxy</a> or wl_resource) </dd><dt><span class="term">uint32_t</span></dt><dd>
+Callback opcode </dd><dt><span class="term">const struct wl_message *</span></dt><dd>
+Callback message signature </dd><dt><span class="term">union wl_argument *</span></dt><dd>
+Array of received arguments</dd></dl></div><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Returns:</span></dt><dd>0 on success, or -1 on failure </dd></dl></div><p>
+</p></dd><dt><a name="Client-wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c"></a><span class="term">wl_log_func_t
+            - 
+Log function type alias.         </span></dt><dd><pre class="synopsis">typedef void(* wl_log_func_t) (const char *, va_list))(const char *, va_list)</pre><p>The C implementation of the Wayland protocol abstracts the details of logging. Users may customize the logging behavior, with a function conforming to the wl_log_func_t type, via wl_log_set_handler_client and wl_log_set_handler_server.</p><p>A wl_log_func_t must conform to the expectations of vprintf, and expects two arguments: a string to write and a corresponding variable argument list. While the string to write may contain format specifiers and use values in the variable argument list, the behavior of any wl_log_func_t depends on the implementation.</p><p><span class="emphasis"><em>Note: Take care to not confuse this with wl_protocol_logger_func_t, which is a specific server-side logger for requests and events.</em></span>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">const char *</span></dt><dd>
+String to write to the log, containing optional format specifiers </dd><dt><span class="term">va_list</span></dt><dd>
+Variable argument list</dd></dl></div><p>
+
+  See also: <a class="link" href="apb.html#Client-wayland-client-core_8h_1a2201f511aa0db7cdb2ecdcb01d61dc9f">wl_log_set_handler_client</a> 
+
+  See also: wl_log_set_handler_server 
+</p></dd></dl></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="apc.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix A. Wayland Protocol Specification </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix C. Server API</td></tr></table></div></body></html>

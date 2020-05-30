@@ -1,0 +1,147 @@
+.TH "wl_array" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_array
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-util\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwl_array_init\fP (struct \fBwl_array\fP *array)"
+.br
+.ti -1c
+.RI "void \fBwl_array_release\fP (struct \fBwl_array\fP *array)"
+.br
+.ti -1c
+.RI "void * \fBwl_array_add\fP (struct \fBwl_array\fP *array, size_t \fBsize\fP)"
+.br
+.ti -1c
+.RI "int \fBwl_array_copy\fP (struct \fBwl_array\fP *array, struct \fBwl_array\fP *source)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBsize\fP"
+.br
+.ti -1c
+.RI "size_t \fBalloc\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.in -1c
+.SS "Related Functions"
+(Note that these are not member functions\&.) 
+.in +1c
+.ti -1c
+.RI "#define \fBwl_array_for_each\fP(pos,  array)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Dynamic array
+.PP
+A \fBwl_array\fP is a dynamic array that can only grow until released\&. It is intended for relatively small allocations whose size is variable or not known in advance\&. While construction of a \fBwl_array\fP does not require all elements to be of the same size, \fBwl_array_for_each()\fP does require all elements to have the same type and size\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void * wl_array_add (struct \fBwl_array\fP * array, size_t size)"
+Increases the size of the array by \fCsize\fP bytes\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP Array whose size is to be increased 
+.br
+\fIsize\fP Number of bytes to increase the size of the array by
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the beginning of the newly appended space, or NULL when resizing fails\&. 
+.RE
+.PP
+
+.SS "int wl_array_copy (struct \fBwl_array\fP * array, struct \fBwl_array\fP * source)"
+Copies the contents of \fCsource\fP to \fCarray\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP Destination array to copy to 
+.br
+\fIsource\fP Source array to copy from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, or -1 on failure 
+.RE
+.PP
+
+.SS "void wl_array_init (struct \fBwl_array\fP * array)"
+Initializes the array\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP Array to initialize 
+.RE
+.PP
+
+.SS "void wl_array_release (struct \fBwl_array\fP * array)"
+Releases the array data\&.
+.PP
+\fBNote:\fP
+.RS 4
+Leaves the array in an invalid state\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP Array whose data is to be released 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "#define wl_array_for_each(pos, array)\fC [related]\fP"
+\fBValue:\fP
+.PP
+.nf
+for (pos = (array)->data;                                    \
+             (const char *) pos < ((const char *) (array)->data + (array)->size); \
+             (pos)++)
+.fi
+Iterates over an array\&.
+.PP
+This macro expresses a for-each iterator for \fBwl_array\fP\&. It assigns each element in the array to \fCpos\fP, which can then be referenced in a trailing code block\&. \fCpos\fP must be a pointer to the array element type, and all array elements must be of the same type and size\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Cursor that each array element will be assigned to 
+.br
+\fIarray\fP Array to iterate over
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_list_for_each()\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "size_t wl_array::alloc"
+Allocated space 
+.SS "void* wl_array::data"
+Array data 
+.SS "size_t wl_array::size"
+Array size 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

@@ -1,0 +1,40 @@
+.TH "wl_event_queue" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_event_queue \- A queue for \fBwl_proxy\fP object events\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-client\-core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwl_event_queue_destroy\fP (struct \fBwl_event_queue\fP *queue)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A queue for \fBwl_proxy\fP object events\&. 
+
+Event queues allows the events on a display to be handled in a thread-safe manner\&. See \fBwl_display\fP for details\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void wl_event_queue_destroy (struct \fBwl_event_queue\fP * queue)"
+Destroy an event queue
+.PP
+\fBParameters:\fP
+.RS 4
+\fIqueue\fP The event queue to be destroyed
+.RE
+.PP
+Destroy the given event queue\&. Any pending event on that queue is discarded\&.
+.PP
+The \fBwl_display\fP object used to create the queue should not be destroyed until all event queues created with it are destroyed with this function\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

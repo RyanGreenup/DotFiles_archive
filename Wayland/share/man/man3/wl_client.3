@@ -1,0 +1,264 @@
+.TH "wl_client" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_client
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwl_client_flush\fP (struct \fBwl_client\fP *client)"
+.br
+.ti -1c
+.RI "struct \fBwl_display\fP * \fBwl_client_get_display\fP (struct \fBwl_client\fP *client)"
+.br
+.ti -1c
+.RI "void \fBwl_client_get_credentials\fP (struct \fBwl_client\fP *client, pid_t *pid, uid_t *uid, gid_t *gid)"
+.br
+.ti -1c
+.RI "int \fBwl_client_get_fd\fP (struct \fBwl_client\fP *client)"
+.br
+.ti -1c
+.RI "struct \fBwl_resource\fP * \fBwl_client_get_object\fP (struct \fBwl_client\fP *client, uint32_t id)"
+.br
+.ti -1c
+.RI "void \fBwl_client_post_implementation_error\fP (struct \fBwl_client\fP *client, char const *msg,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "struct \fBwl_list\fP * \fBwl_client_get_link\fP (struct \fBwl_client\fP *client)"
+.br
+.ti -1c
+.RI "struct \fBwl_client\fP * \fBwl_client_from_link\fP (struct \fBwl_list\fP *\fBlink\fP)"
+.br
+.ti -1c
+.RI "void \fBwl_client_add_resource_created_listener\fP (struct \fBwl_client\fP *client, struct \fBwl_listener\fP *listener)"
+.br
+.ti -1c
+.RI "void \fBwl_client_for_each_resource\fP (struct \fBwl_client\fP *client, \fBwl_client_for_each_resource_iterator_func_t\fP iterator, void *user_data)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct wl_connection * \fBconnection\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_event_source\fP * \fBsource\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_display\fP * \fBdisplay\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_resource\fP * \fBdisplay_resource\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_list\fP \fBlink\fP"
+.br
+.ti -1c
+.RI "struct wl_map \fBobjects\fP"
+.br
+.ti -1c
+.RI "struct wl_priv_signal \fBdestroy_signal\fP"
+.br
+.ti -1c
+.RI "struct ucred \fBucred\fP"
+.br
+.ti -1c
+.RI "int \fBerror\fP"
+.br
+.ti -1c
+.RI "struct wl_priv_signal \fBresource_created_signal\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void wl_client_add_resource_created_listener (struct \fBwl_client\fP * client, struct \fBwl_listener\fP * listener)"
+Add a listener for the client's resource creation signal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object 
+.br
+\fIlistener\fP The listener to be added
+.RE
+.PP
+When a new resource is created for this client the listener will be notified, carrying the new resource as the data argument\&. 
+.SS "void wl_client_flush (struct \fBwl_client\fP * client)"
+Flush pending events to the client
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object
+.RE
+.PP
+Events sent to clients are queued in a buffer and written to the socket later - typically when the compositor has handled all requests and goes back to block in the event loop\&. This function flushes all queued up events for a client immediately\&. 
+.SS "void wl_client_for_each_resource (struct \fBwl_client\fP * client, \fBwl_client_for_each_resource_iterator_func_t\fP iterator, void * user_data)"
+Iterate over all the resources of a client
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object 
+.br
+\fIiterator\fP The iterator function 
+.br
+\fIuser_data\fP The user data pointer
+.RE
+.PP
+The function pointed by \fIiterator\fP will be called for each resource owned by the client\&. The \fIuser_data\fP will be passed as the second argument of the iterator function\&. If the \fIiterator\fP function returns \fIWL_ITERATOR_CONTINUE\fP the iteration will continue, if it returns \fIWL_ITERATOR_STOP\fP it will stop\&.
+.PP
+Creating and destroying resources while iterating is safe, but new resources may or may not be picked up by the iterator\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_iterator_result\fP 
+.RE
+.PP
+
+.SS "struct \fBwl_client\fP * wl_client_from_link (struct \fBwl_list\fP * link)"
+Get a \fBwl_client\fP by its link
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlink\fP The link of a \fBwl_client\fP
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_client_for_each()\fP 
+.PP
+\fBwl_display_get_client_list()\fP 
+.PP
+\fBwl_client_get_link()\fP 
+.RE
+.PP
+
+.SS "void wl_client_get_credentials (struct \fBwl_client\fP * client, pid_t * pid, uid_t * uid, gid_t * gid)"
+Return Unix credentials for the client
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The display object 
+.br
+\fIpid\fP Returns the process ID 
+.br
+\fIuid\fP Returns the user ID 
+.br
+\fIgid\fP Returns the group ID
+.RE
+.PP
+This function returns the process ID, the user ID and the group ID for the given client\&. The credentials come from getsockopt() with SO_PEERCRED, on the client socket fd\&. All the pointers can be NULL, if the caller is not interested in a particular ID\&.
+.PP
+Be aware that for clients that a compositor forks and execs and then connects using socketpair(), this function will return the credentials for the compositor\&. The credentials for the socketpair are set at creation time in the compositor\&. 
+.SS "struct \fBwl_display\fP * wl_client_get_display (struct \fBwl_client\fP * client)"
+Get the display object for the given client
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The display object the client is associated with\&. 
+.RE
+.PP
+
+.SS "int wl_client_get_fd (struct \fBwl_client\fP * client)"
+Get the file descriptor for the client
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The display object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file descriptor to use for the connection
+.RE
+.PP
+This function returns the file descriptor for the given client\&.
+.PP
+Be sure to use the file descriptor from the client for inspection only\&. If the caller does anything to the file descriptor that changes its state, it will likely cause problems\&.
+.PP
+See also \fBwl_client_get_credentials()\fP\&. It is recommended that you evaluate whether \fBwl_client_get_credentials()\fP can be applied to your use case instead of this function\&.
+.PP
+If you would like to distinguish just between the client and the compositor itself from the client's request, it can be done by getting the client credentials and by checking the PID of the client and the compositor's PID\&. Regarding the case in which the socketpair() is being used, you need to be careful\&. Please note the documentation for \fBwl_client_get_credentials()\fP\&.
+.PP
+This function can be used for a compositor to validate a request from a client if there are additional information provided from the client's file descriptor\&. For instance, suppose you can get the security contexts from the client's file descriptor\&. The compositor can validate the client's request with the contexts and make a decision whether it permits or deny it\&. 
+.SS "struct \fBwl_list\fP * wl_client_get_link (struct \fBwl_client\fP * client)"
+Get the link by which a client is inserted in the client list
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_client_for_each()\fP 
+.PP
+\fBwl_display_get_client_list()\fP 
+.PP
+\fBwl_client_from_link()\fP 
+.RE
+.PP
+
+.SS "struct \fBwl_resource\fP * wl_client_get_object (struct \fBwl_client\fP * client, uint32_t id)"
+Look up an object in the client name space
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object 
+.br
+\fIid\fP The object id 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object or NULL if there is not object for the given ID
+.RE
+.PP
+This looks up an object in the client object name space by its object ID\&. 
+.SS "void wl_client_post_implementation_error (struct \fBwl_client\fP * client, char const * msg,  \&.\&.\&.)"
+Report an internal server error
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP The client object 
+.br
+\fImsg\fP A printf-style format string 
+.br
+\fI\&.\&.\&.\fP Format string arguments
+.RE
+.PP
+Report an unspecified internal implementation error and disconnect the client\&. 
+.SH "Field Documentation"
+.PP 
+.SS "struct wl_connection* wl_client::connection"
+
+.SS "struct wl_priv_signal wl_client::destroy_signal"
+
+.SS "struct \fBwl_display\fP* wl_client::display"
+
+.SS "struct \fBwl_resource\fP* wl_client::display_resource"
+
+.SS "int wl_client::error"
+
+.SS "struct \fBwl_list\fP wl_client::link"
+
+.SS "struct wl_map wl_client::objects"
+
+.SS "struct wl_priv_signal wl_client::resource_created_signal"
+
+.SS "struct \fBwl_event_source\fP* wl_client::source"
+
+.SS "struct ucred wl_client::ucred"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

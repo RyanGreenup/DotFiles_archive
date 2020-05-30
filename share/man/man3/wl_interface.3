@@ -1,0 +1,99 @@
+.TH "wl_interface" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_interface
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-util\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "int \fBversion\fP"
+.br
+.ti -1c
+.RI "int \fBmethod_count\fP"
+.br
+.ti -1c
+.RI "const struct \fBwl_message\fP * \fBmethods\fP"
+.br
+.ti -1c
+.RI "int \fBevent_count\fP"
+.br
+.ti -1c
+.RI "const struct \fBwl_message\fP * \fBevents\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Protocol object interface
+.PP
+A \fBwl_interface\fP describes the API of a protocol object defined in the Wayland protocol specification\&. The protocol implementation uses a \fBwl_interface\fP within its marshalling machinery for encoding client requests\&.
+.PP
+The \fCname\fP of a \fBwl_interface\fP is the name of the corresponding protocol interface, and \fCversion\fP represents the version of the interface\&. The members \fCmethod_count\fP and \fCevent_count\fP represent the number of \fCmethods\fP (requests) and \fCevents\fP in the respective \fBwl_message\fP members\&.
+.PP
+For example, consider a protocol interface \fCfoo\fP, marked as version \fC1\fP, with two requests and one event\&.
+.PP
+.PP
+.nf
+<interface name="foo" version="1">
+  <request name="a"></request>
+  <request name="b"></request>
+  <event name="c"></event>
+</interface>
+.fi
+.PP
+.PP
+Given two \fBwl_message\fP arrays \fCfoo_requests\fP and \fCfoo_events\fP, a \fBwl_interface\fP for \fCfoo\fP might be:
+.PP
+.PP
+.nf
+struct wl_interface foo_interface = {
+        "foo", 1,
+        2, foo_requests,
+        1, foo_events
+};
+.fi
+.PP
+.PP
+\fBNote:\fP
+.RS 4
+The server side of the protocol may define interface \fIimplementation types\fP that incorporate the term \fCinterface\fP in their name\&. Take care to not confuse these server-side \fCstruct\fPs with a \fBwl_interface\fP variable whose name also ends in \fCinterface\fP\&. For example, while the server may define a type \fCstruct wl_foo_interface\fP, the client may define a \fCstruct \fBwl_interface\fP wl_foo_interface\fP\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_message\fP 
+.PP
+\fBwl_proxy\fP 
+.PP
+\fCInterfaces\fP 
+.PP
+\fCVersioning\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "int wl_interface::event_count"
+Number of events 
+.SS "const struct \fBwl_message\fP* wl_interface::events"
+Event signatures 
+.SS "int wl_interface::method_count"
+Number of methods (requests) 
+.SS "const struct \fBwl_message\fP* wl_interface::methods"
+Method (request) signatures 
+.SS "const char* wl_interface::name"
+Interface name 
+.SS "int wl_interface::version"
+Interface version 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

@@ -1,0 +1,156 @@
+.TH "wl_event_loop" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_event_loop \- An event loop context\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-server\-core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_event_loop\fP * \fBwl_event_loop_create\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwl_event_loop_destroy\fP (struct \fBwl_event_loop\fP *loop)"
+.br
+.ti -1c
+.RI "void \fBwl_event_loop_dispatch_idle\fP (struct \fBwl_event_loop\fP *loop)"
+.br
+.ti -1c
+.RI "int \fBwl_event_loop_dispatch\fP (struct \fBwl_event_loop\fP *loop, int timeout)"
+.br
+.ti -1c
+.RI "int \fBwl_event_loop_get_fd\fP (struct \fBwl_event_loop\fP *loop)"
+.br
+.ti -1c
+.RI "void \fBwl_event_loop_add_destroy_listener\fP (struct \fBwl_event_loop\fP *loop, struct \fBwl_listener\fP *listener)"
+.br
+.ti -1c
+.RI "struct \fBwl_listener\fP * \fBwl_event_loop_get_destroy_listener\fP (struct \fBwl_event_loop\fP *loop, \fBwl_notify_func_t\fP notify)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An event loop context\&. 
+
+Usually you create an event loop context, add sources to it, and call \fBwl_event_loop_dispatch()\fP in a loop to process events\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_event_source\fP 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void wl_event_loop_add_destroy_listener (struct \fBwl_event_loop\fP * loop, struct \fBwl_listener\fP * listener)"
+Register a destroy listener for an event loop context
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloop\fP The event loop context whose destruction to listen for\&. 
+.br
+\fIlistener\fP The listener with the callback to be called\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_listener\fP 
+.RE
+.PP
+
+.SS "struct \fBwl_event_loop\fP * wl_event_loop_create (void)"
+Create a new event loop context
+.PP
+\fBReturns:\fP
+.RS 4
+A new event loop context object\&.
+.RE
+.PP
+This creates a new event loop context\&. Initially this context is empty\&. Event sources need to be explicitly added to it\&.
+.PP
+Normally the event loop is run by calling \fBwl_event_loop_dispatch()\fP in a loop until the program terminates\&. Alternatively, an event loop can be embedded in another event loop by its file descriptor, see \fBwl_event_loop_get_fd()\fP\&. 
+.SS "void wl_event_loop_destroy (struct \fBwl_event_loop\fP * loop)"
+Destroy an event loop context
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloop\fP The event loop to be destroyed\&.
+.RE
+.PP
+This emits the event loop destroy signal, closes the event loop file descriptor, and frees \fCloop\fP\&.
+.PP
+If the event loop has existing sources, those cannot be safely removed afterwards\&. Therefore one must call \fBwl_event_source_remove()\fP on all event sources before destroying the event loop context\&. 
+.SS "int wl_event_loop_dispatch (struct \fBwl_event_loop\fP * loop, int timeout)"
+Wait for events and dispatch them
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloop\fP The event loop whose sources to wait for\&. 
+.br
+\fItimeout\fP The polling timeout in milliseconds\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 for success, -1 for polling (or timer update) error\&.
+.RE
+.PP
+All the associated event sources are polled\&. This function blocks until any event source delivers an event (idle sources excluded), or the timeout expires\&. A timeout of -1 disables the timeout, causing the function to block indefinitely\&. A timeout of zero causes the poll to always return immediately\&.
+.PP
+All idle sources are dispatched before blocking\&. An idle source is destroyed when it is dispatched\&. After blocking, all other ready sources are dispatched\&. Then, idle sources are dispatched again, in case the dispatched events created idle sources\&. Finally, all sources marked with \fBwl_event_source_check()\fP are dispatched in a loop until their dispatch functions all return zero\&. 
+.SS "void wl_event_loop_dispatch_idle (struct \fBwl_event_loop\fP * loop)"
+Dispatch the idle sources
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloop\fP The event loop whose idle sources are dispatched\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_event_loop_add_idle()\fP 
+.RE
+.PP
+
+.SS "struct \fBwl_listener\fP * wl_event_loop_get_destroy_listener (struct \fBwl_event_loop\fP * loop, \fBwl_notify_func_t\fP notify)"
+Get the listener struct for the specified callback
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloop\fP The event loop context to inspect\&. 
+.br
+\fInotify\fP The destroy callback to find\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The \fBwl_listener\fP registered to the event loop context with the given callback pointer\&. 
+.RE
+.PP
+
+.SS "int wl_event_loop_get_fd (struct \fBwl_event_loop\fP * loop)"
+Get the event loop file descriptor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIloop\fP The event loop context\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The aggregate file descriptor\&.
+.RE
+.PP
+This function returns the aggregate file descriptor, that represents all the event sources (idle sources excluded) associated with the given event loop context\&. When any event source makes an event available, it will be reflected in the aggregate file descriptor\&.
+.PP
+When the aggregate file descriptor delivers an event, one can call \fBwl_event_loop_dispatch()\fP on the event loop context to dispatch all the available events\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

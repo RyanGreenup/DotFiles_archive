@@ -1,0 +1,101 @@
+.TH "wl_message" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_message
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-util\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "const char * \fBsignature\fP"
+.br
+.ti -1c
+.RI "const struct \fBwl_interface\fP ** \fBtypes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Protocol message signature
+.PP
+A \fBwl_message\fP describes the signature of an actual protocol message, such as a request or event, that adheres to the Wayland protocol wire format\&. The protocol implementation uses a \fBwl_message\fP within its demarshal machinery for decoding messages between a compositor and its clients\&. In a sense, a \fBwl_message\fP is to a protocol message like a class is to an object\&.
+.PP
+The \fCname\fP of a \fBwl_message\fP is the name of the corresponding protocol message\&.
+.PP
+The \fCsignature\fP is an ordered list of symbols representing the data types of message arguments and, optionally, a protocol version and indicators for nullability\&. A leading integer in the \fCsignature\fP indicates the \fIsince\fP version of the protocol message\&. A \fC?\fP preceding a data type symbol indicates that the following argument type is nullable\&. While it is a protocol violation to send messages with non-nullable arguments set to \fCNULL\fP, event handlers in clients might still get called with non-nullable object arguments set to \fCNULL\fP\&. This can happen when the client destroyed the object being used as argument on its side and an event referencing that object was sent before the server knew about its destruction\&. As this race cannot be prevented, clients should - as a general rule - program their event handlers such that they can handle object arguments declared non-nullable being \fCNULL\fP gracefully\&.
+.PP
+When no arguments accompany a message, \fCsignature\fP is an empty string\&.
+.PP
+Symbols:
+.PP
+.IP "\(bu" 2
+\fCi\fP: int
+.IP "\(bu" 2
+\fCu\fP: uint
+.IP "\(bu" 2
+\fCf\fP: fixed
+.IP "\(bu" 2
+\fCs\fP: string
+.IP "\(bu" 2
+\fCo\fP: object
+.IP "\(bu" 2
+\fCn\fP: new_id
+.IP "\(bu" 2
+\fCa\fP: array
+.IP "\(bu" 2
+\fCh\fP: fd
+.IP "\(bu" 2
+\fC?\fP: following argument is nullable
+.PP
+.PP
+While demarshaling primitive arguments is straightforward, when demarshaling messages containing \fCobject\fP or \fCnew_id\fP arguments, the protocol implementation often must determine the type of the object\&. The \fCtypes\fP of a \fBwl_message\fP is an array of \fBwl_interface\fP references that correspond to \fCo\fP and \fCn\fP arguments in \fCsignature\fP, with \fCNULL\fP placeholders for arguments with non-object types\&.
+.PP
+Consider the protocol event \fBwl_display\fP \fCdelete_id\fP that has a single \fCuint\fP argument\&. The \fBwl_message\fP is:
+.PP
+.PP
+.nf
+{ "delete_id", "u", [NULL] }
+.fi
+.PP
+.PP
+Here, the message \fCname\fP is \fC'delete_id'\fP, the \fCsignature\fP is \fC'u'\fP, and the argument \fCtypes\fP is \fC[NULL]\fP, indicating that the \fCuint\fP argument has no corresponding \fBwl_interface\fP since it is a primitive argument\&.
+.PP
+In contrast, consider a \fCwl_foo\fP interface supporting protocol request \fCbar\fP that has existed since version 2, and has two arguments: a \fCuint\fP and an object of type \fCwl_baz_interface\fP that may be \fCNULL\fP\&. Such a \fC\fBwl_message\fP\fP might be:
+.PP
+.PP
+.nf
+{ "bar", "2u?o", [NULL, &wl_baz_interface] }
+.fi
+.PP
+.PP
+Here, the message \fCname\fP is \fC'bar'\fP, and the \fCsignature\fP is \fC'2u?o'\fP\&. Notice how the \fC2\fP indicates the protocol version, the \fCu\fP indicates the first argument type is \fCuint\fP, and the \fC?o\fP indicates that the second argument is an object that may be \fCNULL\fP\&. Lastly, the argument \fCtypes\fP array indicates that no \fBwl_interface\fP corresponds to the first argument, while the type \fCwl_baz_interface\fP corresponds to the second argument\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_argument\fP 
+.PP
+\fBwl_interface\fP 
+.PP
+\fCWire Format\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "const char* wl_message::name"
+Message name 
+.SS "const char* wl_message::signature"
+Message signature 
+.SS "const struct \fBwl_interface\fP** wl_message::types"
+Object argument interfaces 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

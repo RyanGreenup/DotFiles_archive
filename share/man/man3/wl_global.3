@@ -1,0 +1,58 @@
+.TH "wl_global" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_global
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_display\fP * \fBdisplay\fP"
+.br
+.ti -1c
+.RI "const struct \fBwl_interface\fP * \fBinterface\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBname\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBversion\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "\fBwl_global_bind_func_t\fP \fBbind\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_list\fP \fBlink\fP"
+.br
+.ti -1c
+.RI "bool \fBremoved\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBwl_global_bind_func_t\fP wl_global::bind"
+
+.SS "void* wl_global::data"
+
+.SS "struct \fBwl_display\fP* wl_global::display"
+
+.SS "const struct \fBwl_interface\fP* wl_global::interface"
+
+.SS "struct \fBwl_list\fP wl_global::link"
+
+.SS "uint32_t wl_global::name"
+
+.SS "bool wl_global::removed"
+
+.SS "uint32_t wl_global::version"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

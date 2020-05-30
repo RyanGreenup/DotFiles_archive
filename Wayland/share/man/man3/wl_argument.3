@@ -1,0 +1,76 @@
+.TH "wl_argument" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_argument
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-util\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int32_t \fBi\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBu\fP"
+.br
+.ti -1c
+.RI "\fBwl_fixed_t\fP \fBf\fP"
+.br
+.ti -1c
+.RI "const char * \fBs\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_object\fP * \fBo\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBn\fP"
+.br
+.ti -1c
+.RI "struct \fBwl_array\fP * \fBa\fP"
+.br
+.ti -1c
+.RI "int32_t \fBh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Protocol message argument data types
+.PP
+This union represents all of the argument types in the Wayland protocol wire format\&. The protocol implementation uses \fBwl_argument\fP within its marshalling machinery for dispatching messages between a client and a compositor\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_message\fP 
+.PP
+\fBwl_interface\fP 
+.PP
+\fCWire Format\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "struct \fBwl_array\fP* wl_argument::a"
+\fCarray\fP 
+.SS "\fBwl_fixed_t\fP wl_argument::f"
+\fCfixed\fP 
+.SS "int32_t wl_argument::h"
+\fCfd\fP 
+.SS "int32_t wl_argument::i"
+\fCint\fP 
+.SS "uint32_t wl_argument::n"
+\fCnew_id\fP 
+.SS "struct \fBwl_object\fP* wl_argument::o"
+\fCobject\fP 
+.SS "const char* wl_argument::s"
+\fCstring\fP 
+.SS "uint32_t wl_argument::u"
+\fCuint\fP 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

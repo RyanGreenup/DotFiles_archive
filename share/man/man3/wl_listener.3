@@ -1,0 +1,81 @@
+.TH "wl_listener" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_listener \- A single listener for Wayland signals\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-server\-core\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_list\fP \fBlink\fP"
+.br
+.ti -1c
+.RI "\fBwl_notify_func_t\fP \fBnotify\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A single listener for Wayland signals\&. 
+
+\fBwl_listener\fP provides the means to listen for \fBwl_signal\fP notifications\&. Many Wayland objects use \fBwl_listener\fP for notification of significant events like object destruction\&.
+.PP
+Clients should create \fBwl_listener\fP objects manually and can register them as listeners to signals using \fBwl_signal_add\fP, assuming the signal is directly accessible\&. For opaque structs like \fBwl_event_loop\fP, adding a listener should be done through provided accessor methods\&. A listener can only listen to one signal at a time\&.
+.PP
+.PP
+.nf
+struct wl_listener your_listener;
+
+your_listener\&.notify = your_callback_method;
+
+// Direct access
+wl_signal_add(&some_object->destroy_signal, &your_listener);
+
+// Accessor access
+wl_event_loop *loop = \&.\&.\&.;
+wl_event_loop_add_destroy_listener(loop, &your_listener);
+.fi
+.PP
+.PP
+If the listener is part of a larger struct, \fBwl_container_of\fP can be used to retrieve a pointer to it:
+.PP
+.PP
+.nf
+void your_listener(struct wl_listener *listener, void *data)
+{
+        struct your_data *data;
+
+        your_data = wl_container_of(listener, data, your_member_name);
+}
+.fi
+.PP
+.PP
+If you need to remove a listener from a signal, use \fBwl_list_remove()\fP\&.
+.PP
+.PP
+.nf
+wl_list_remove(&your_listener\&.link);
+.fi
+.PP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwl_signal\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "struct \fBwl_list\fP wl_listener::link"
+
+.SS "\fBwl_notify_func_t\fP wl_listener::notify"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.

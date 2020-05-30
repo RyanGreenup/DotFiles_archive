@@ -1,0 +1,45 @@
+.TH "wl_protocol_logger_message" 3 "Sat May 23 2020" "Version 1.18.90" "Wayland" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+wl_protocol_logger_message
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <wayland\-server\-core\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct \fBwl_resource\fP * \fBresource\fP"
+.br
+.ti -1c
+.RI "int \fBmessage_opcode\fP"
+.br
+.ti -1c
+.RI "const struct \fBwl_message\fP * \fBmessage\fP"
+.br
+.ti -1c
+.RI "int \fBarguments_count\fP"
+.br
+.ti -1c
+.RI "const union \fBwl_argument\fP * \fBarguments\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "const union \fBwl_argument\fP* wl_protocol_logger_message::arguments"
+
+.SS "int wl_protocol_logger_message::arguments_count"
+
+.SS "const struct \fBwl_message\fP* wl_protocol_logger_message::message"
+
+.SS "int wl_protocol_logger_message::message_opcode"
+
+.SS "struct \fBwl_resource\fP* wl_protocol_logger_message::resource"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Wayland from the source code\&.
