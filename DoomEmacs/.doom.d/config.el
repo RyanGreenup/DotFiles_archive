@@ -453,3 +453,5 @@
   :load-path "~/.emacs.d/site-lisp/org-roam-server/" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
   )
 )
+(setq httpd-port 8327)
+(setq httpd-host "0.0.0.0")
