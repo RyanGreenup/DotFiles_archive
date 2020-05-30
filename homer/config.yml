@@ -25,6 +25,9 @@ links:
   - name: "Wiki"
     icon: "fas fa-book"
     url: "http://ryansnotes.org:81"
+  - name: "ToDO"
+    icon: "fas fa-note"
+    url: "https://todoist.com/app/"
 
 # Services
 # First level array represent a group.
