@@ -51,6 +51,11 @@ services:
   - name: "Tools"
     icon: "./assets/tools/monit.png"
     items:
+      - name: "NextCloud"
+        logo: "assets/tools/NextCloud.png"
+        subtitle: "My Next Cloud share"
+        tag: "public"
+        url: "./nextcloud"
       - name: "Pi Hole"
         logo: "assets/tools/pihole.png"
         subtitle: "Network Monitoring"
