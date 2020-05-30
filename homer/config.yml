@@ -30,7 +30,7 @@ links:
 # First level array represent a group.
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
-  - name: "Notes"
+  - name: "Static Notes"
     icon: "./assets/tools/notes.png"
     items:
       - name: "MD"
@@ -102,3 +102,11 @@ services:
 #        subtitle: "Pingdom public reports overview"
 #        tag: "CI"
 #        url: "https://www.pingdom.com/"
+  - name: "Dynamic Notes (LeaNote / WizNote / Joplin Web ???)"
+    icon: "./assets/tools/notes.png"
+    items:
+      - name: "MD"
+        logo: "assets/tools/MkDocs.png"
+        subtitle: "MkDocs Site"
+        tag: "CI"
+        url: "./MD"
