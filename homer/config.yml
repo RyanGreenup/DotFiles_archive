@@ -1,0 +1,99 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "Demo dashboard"
+subtitle: "Homer"
+logo: "assets/logo.png"
+# icon: "fas fa-skull-crossbones" Optional icon
+footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>'  # set false if you want to hide it.
+
+# Optional message
+message:
+  # url: https://....
+  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  title: "Demo !" 
+  content: "This is a dummy homepage demo. Find more information on github.com/bastienwirtz/homer"
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "ansible"
+    icon: "fab fa-github"
+    url: "https://github.com/bastienwirtz/homer"
+    target: '_blank' # optional html a tag target attribute
+  - name: "Wiki"
+    icon: "fas fa-book"
+    url: "https://www.wikipedia.org/"
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Notes"
+    icon: "./assets/tools/notes.png"
+    items:
+      - name: "MD"
+        logo: "assets/tools/MkDocs.png"
+        subtitle: "MkDocs Site"
+        tag: "CI"
+        url: "./MD"
+      - name: "Org Mode"
+        logo: "assets/tools/Org-Mode.png"
+        subtitle: "Org-Publish Org Mode"
+        tag: "org"
+        url: "./Org"
+      - name: "Org Roam Server"
+        logo: "assets/tools/Org-Mode.png"
+        subtitle: "Org-Publish Org Mode"
+        tag: "org"
+        url: "http://192.168.0.190:8327"
+  - name: "Tools"
+    icon: "fas fa-heartbeat"
+    items:
+      - name: "Pi Hole"
+        logo: "assets/tools/pihole.png"
+        subtitle: "Network Monitoring"
+        tag: "monit"
+        url: "./pihole"
+      - name: "Writing"
+        logo: "./assets/tools/Writing.png"
+        #        subtitle: "Metric analytics & dashboards"
+        url: "./writing"
+      - name: "WebDav"
+        logo: "assets/tools/webdav.jpeg"
+        subtitle: "Public Folder Sharing over HTTP"
+        tag: "elk"
+        url: "./webdav"
+      - name: "Public Folder"
+        logo: "assets/tools/Public.jpeg"
+        subtitle: "Anything in here is public"
+        tag: "public"
+        url: "./x"
+  - name: "Wikis"
+    icon: "fas fa-heartbeat"
+    items:
+      - name: "DSWiki"
+        logo: "assets/tools/MediaWiki.png"
+        subtitle: "Public MediaWiki"
+        tag: "mediawiki"
+        url: "./DSWiki"
+      - name: "MediaWiki"
+        logo: "assets/tools/MediaWiki.png"
+        subtitle: "Personal Mediawiki"
+        url: "./mediawiki"
+      - name: "Pepperminty"
+        logo: "assets/tools/Peppermint.jpeg"
+        subtitle: "Like a lighter simpler better version of TiddlyWiki"
+        tag: "wiki"
+        url: "./peppermint"
+      - name: "WikiJS"
+        logo: "assets/tools/WikiJS.png"
+        subtitle: "Markdown Integration with a wiki"
+        tag: "wiki"
+        url: "http://ryansnotes.org:81"
+#      - name: "Website monitoring"
+#        logo: "assets/tools/pingdom.png"
+#        subtitle: "Pingdom public reports overview"
+#        tag: "CI"
+#        url: "https://www.pingdom.com/"
