@@ -2,8 +2,8 @@
 # Homepage configuration
 # See https://fontawesome.com/icons for icons options
 
-title: "Demo dashboard"
-subtitle: "Homer"
+title: "My Home Page"
+subtitle: "El Psy Congroo"
 logo: "assets/logo.png"
 # icon: "fas fa-skull-crossbones" Optional icon
 footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>'  # set false if you want to hide it.
@@ -12,19 +12,19 @@ footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a hre
 message:
   # url: https://....
   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
-  title: "Demo !" 
-  content: "This is a dummy homepage demo. Find more information on github.com/bastienwirtz/homer"
+  title: "My Self Hosted Stuff!" 
+  content: "This is where I keep all my links and bookmarks and stuff."
 
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
 links:
-  - name: "ansible"
+  - name: "My GitHub"
     icon: "fab fa-github"
-    url: "https://github.com/bastienwirtz/homer"
+    url: "https://github.com/ryangreenup"
     target: '_blank' # optional html a tag target attribute
   - name: "Wiki"
     icon: "fas fa-book"
-    url: "https://www.wikipedia.org/"
+    url: "http://ryansnotes.org:81"
 
 # Services
 # First level array represent a group.
@@ -49,7 +49,7 @@ services:
         tag: "org"
         url: "http://192.168.0.190:8327"
   - name: "Tools"
-    icon: "fas fa-heartbeat"
+    icon: "./assets/tools/monit.png"
     items:
       - name: "Pi Hole"
         logo: "assets/tools/pihole.png"
