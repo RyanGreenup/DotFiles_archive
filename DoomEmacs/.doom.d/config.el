@@ -409,6 +409,7 @@
       "f k" #'darkroom-mode ;; Just use zen mode with SPC t z
       "i n" 'open-wiki-index
       "r o" 'helm-org-rifle-org-directory ;; [[89238]] ord-dir is different to agenda
+      "f z" 'counsel-fzf
       "r b" 'helm-org-rifle-current-buffer
       "r d" 'helm-org-rifle-directories
       "o !" 'open-all-org-agenda-files
