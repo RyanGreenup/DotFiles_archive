@@ -40,7 +40,6 @@ shell mkdir Lectures
 cd /tmp/MD
 cd /tmp
 shell mkdir MD
-delete
 shell mkdir notes
 flat -1
 flat 0
@@ -48,3 +47,4 @@ filter .md
 Bulkrename
 filter 
 bulkrename
+delete
