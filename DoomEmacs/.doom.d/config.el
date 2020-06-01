@@ -417,6 +417,14 @@
       "r hh" 'helm-org-in-buffer-headings
       "r ha" 'helm-org-agenda-files-headings
       )
+;;;; Markdown Mode
+;;;;
+(add-hook 'markdown-mode-hook
+  (lambda ()
+    (local-set-key (kbd "C-c C-x C-l") 'org-toggle-latex-fragment)
+    (local-set-key (kbd "C-c C-x C-u") 'markdown-toggle-url-hiding)
+  )
+)
 ;;;; Remap Esc
 (setq evil-escape-key-sequence "jk") ;; This is better because the cursor will
                                      ;; remain stationary, no pressing kk after

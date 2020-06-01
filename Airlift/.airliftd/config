@@ -1,0 +1,17 @@
+{
+    "Host": "localhost:60606",
+    "Port": 60606,
+    "Password": "IN+g/hiP/ALDdysS4MhLN8zoAqKRBP3ZHaAhc9KMdYo=",
+    "Salt": "nyDKxcDygonQVnFkkBb7Tz8DmoGYCK0wifIznDUjjKs=",
+    "Directory": "/home/ryan/.airliftd/uploads",
+    "HashLen": 5,
+    "MaxAgeEnable": false,
+    "Age": 0,
+    "MaxSizeEnable": false,
+    "Size": 0,
+    "AppendExt": false,
+    "TwitterCardEnable": false,
+    "TwitterHandle": "",
+    "SyntaxEnable": false,
+    "SyntaxTheme": "trac"
+}

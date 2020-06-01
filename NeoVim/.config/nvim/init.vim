@@ -669,6 +669,7 @@ let g:mkdp_preview_options = {
 "let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/pandocoffic.css'
 "let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Emacs/dotemacs/org-css/Killercup.css'
 "
+"
 let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/gitOrgWrapped.css'
 
 "let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/HugoThemes/hugo-theme-basic/static/css/style.css'
@@ -684,7 +685,8 @@ let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/gitOrgWrapp
 
 " use a custom highlight style must absolute path
 "let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
-let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
+"" I got sick of this
+" let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
 
 " let g:mkdp_highlight_css = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css'
 
@@ -703,10 +705,9 @@ let g:mkdp_page_title = '「${name}」'
 "refer to ~/Notes/Notable/KaTeX_and_MD_Notes.md
 "
 """"" VimWiki
-let g:vimwiki_list = [{'path': '~/Notes/MD/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_list = [{'path': '~/Notes/MD/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Notes/MD/', 'syntax': 'markdown', 'ext': '.md'}, {'path': '/var/www/html/peppermint', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:vimwiki_list = [{'path': '~/Notes/MD/',
+"                      \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folder
 " Change the Generated links
@@ -715,8 +716,7 @@ let g:vimwiki_global_ext = 0 "only set filetype of of markdown inside wiki folde
 nmap <leader>wc f[;yi[A(./pa.md)0;di[Vvhp0j
 " Clean up underscores inside name
 nmap <leader>wu f[vi[:s/\%V_/ /ge0j
- 
-
+nmap <C-x><C-w> <Esc>:VimwikiUISelect<Cr>
 """"" Default Maps
 
 "nmap <C-x> <Plug>MarkdownPreview
