@@ -58,7 +58,7 @@ StartTime <- Sys.time()
   # rstudio api requires rstudio to run (and generally adds 30ms to run time)
   # setwd(getSrcDirectory()[1]) didn't work
   # just set a bash script to cd; Rscript ListTags.R; exit 0
-setwd("~/Notes")
+setwd("~/Notes/MD")
 
 #### List all the Notes with a YAML Header =======================================
    # TODO use regex not slow list building
@@ -101,7 +101,7 @@ for (i in noteFiles){
   MDTags      <- (yamlExtract$tags)
   tagVector <- c(MDTags, tagVector)
 
-   gen_symlinks(i) # adds a lotof time.
+#   gen_symlinks(i) # adds a lotof time.
 } 
 #tagVector <- flatten_chr(tagVector)
 

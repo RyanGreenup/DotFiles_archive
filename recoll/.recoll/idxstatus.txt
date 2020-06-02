@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 2068
-filesdone = 3385
-fileerrors = 1438
-dbtotdocs = 2068
-totfiles = 3385
-fn = /home/ryan/Notes/Org/ThinkingAboutData.org
+docsdone = 2305
+filesdone = 3770
+fileerrors = 1527
+dbtotdocs = 2305
+totfiles = 3770
+fn = /home/ryan/Notes/MD/Programming/bash/Misc/Clipboard Conversion.md.vswp
 hasmonitor = 1
