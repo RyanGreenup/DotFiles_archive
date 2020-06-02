@@ -205,11 +205,19 @@ elif [[ "$1" == *-y* ]]; then
         Rscript ~/bin/ListTags.R
        # cat 00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs sag
     fi
-# **** List the Files Matching the Filter
+# **** List the files Matching the Filter
     if [[ "$2" == *f* ]]; then
-       cat /tmp/00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs -d '\n' rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd 
+        cat /tmp/00tags.csv  | rg ''  | fzf | xargs -d '\n' rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd | \
+            fzf --preview 'cat {}'
       exit 0 # pipe doesn't work well here
     fi
+
+# ***** List only the notebooks Matching the Filter
+    if [[ "$2" == *n* ]]; then
+       cat /tmp/00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs -d '\n' rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd
+      exit 0 # pipe doesn't work well here
+    fi
+
 # **** Preview matches in =fzf --preview=
     if [[ "$2" == *z* ]]; then
        cat /tmp/00tags.csv  | rg '[a-zA-Z0-9]+/[a-zA-Z0-9/]+'  | fzf | xargs rg -l > /tmp/kdkdjaksd; cat /tmp/kdkdjaksd | fzf --preview 'cat {}'
