@@ -1,4 +1,3 @@
-filter .rmd
 shell cd /home/ryan/Dropbox/Studies/2020Autumn/Social_Web_Analytics
 filter rmd
 rename 02_Introduction_to_R.rmd
@@ -41,10 +40,11 @@ cd /tmp/MD
 cd /tmp
 shell mkdir MD
 shell mkdir notes
-flat -1
 flat 0
 filter .md
 Bulkrename
 filter 
 bulkrename
 delete
+flat -1
+filter .pdf

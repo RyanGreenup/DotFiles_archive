@@ -102,6 +102,9 @@ for (i in noteFiles){
   tagVector <- c(MDTags, tagVector)
 
 #   gen_symlinks(i) # adds a lotof time.
+  ## TODO this should run on an argument
+  ## TODO this should gen a folder of symlinks under ~/Notes/MD/notes
+    ## Or just copy all the files?
 } 
 #tagVector <- flatten_chr(tagVector)
 

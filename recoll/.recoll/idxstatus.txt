@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 2377
-filesdone = 3847
+docsdone = 2463
+filesdone = 3939
 fileerrors = 1529
-dbtotdocs = 2377
-totfiles = 3847
-fn = /home/ryan/Notes/MD/University/Analytics-Programming/06_Sampling_Data.md
+dbtotdocs = 2463
+totfiles = 3939
+fn = /home/ryan/Notes/MD/notes/old-index.md
 hasmonitor = 1
