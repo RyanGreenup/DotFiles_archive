@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 2474
-filesdone = 3950
-fileerrors = 1529
-dbtotdocs = 2474
-totfiles = 3950
-fn = /home/ryan/Notes/MD/Mathematics/Abstract-Algebra/Abstract-Algebra-Summary.md.vswp
+docsdone = 1437
+filesdone = 2916
+fileerrors = 1425
+dbtotdocs = 1437
+totfiles = 3187
+fn = /home/ryan/Notes/MD/Document-Authoring/index.md
 hasmonitor = 1
