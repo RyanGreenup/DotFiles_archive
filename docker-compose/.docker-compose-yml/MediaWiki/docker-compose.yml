@@ -1,34 +1,34 @@
-## Taken from 
-## https://raw.githubusercontent.com/kristophjunge/docker-mediawiki/master/example/docker-compose/mysql/docker-compose.yml
-
-## usage
-# Do not forget to create a new database on your first run:
- # $ docker exec -it wiki /script/install.sh <username> <password>
-# Then copy the secret key that gets printed out into here
+# MediaWiki with MariaDB
+#
+# Access via "http://localhost:8080"
+#   (or "http://$(docker-machine ip):8080" if using docker-machine)
+## When Setting it up, this is very confusing, change:
+# database host
+# from localhost
+# to simply:
+# database
+## It seems wrong but it's the only thing that works, as described [here](https://stackoverflow.com/a/57312266)
 version: '3'
 services:
-  mediawiki_wiki:
-    build: ./../../../ # Uncomment to build from source
-    image: kristophjunge/mediawiki
-    container_name: mediawiki_wiki
-    environment:
-      MEDIAWIKI_SERVER: http://localhost:8080
-      MEDIAWIKI_SITENAME: MyWiki
-      MEDIAWIKI_LANGUAGE_CODE: en
-      MEDIAWIKI_SECRET_KEY: cfb3b1df2d781c71d430ea1161f08920f1cbcab3d16d4912963de80ab728d02f
-      MEDIAWIKI_DB_TYPE: sqlite
-      MEDIAWIKI_DB_NAME: wikidb
-      MEDIAWIKI_ENABLE_UPLOADS: 1
-      MEDIAWIKI_EXTENSION_VISUAL_EDITOR_ENABLED: 1
-      MEDIAWIKI_DEFAULT_SKIN: vector
-      MEDIAWIKI_DEBUG: 1
+  mediawiki:
+    image: mediawiki
+    restart: always
     ports:
-    - 8080:8080
+      - 8080:80
+    links:
+      - database
     volumes:
-    - mediawiki_images:/images
-    - mediawiki_data:/data
-    #- ./../../../testdata/logo.png:/var/www/mediawiki/resources/assets/wiki.png:ro
-    #- ./../../../testdata/ExtraLocalSettings.php:/var/www/mediawiki/ExtraLocalSettings.php:ro
-volumes:
-  mediawiki_images:
-  mediawiki_data:
+      - /var/www/html/images
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
+      # - ./LocalSettings.php:/var/www/html/LocalSettings.php
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      # @see https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php
+      MYSQL_DATABASE: my_wiki
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: example
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'

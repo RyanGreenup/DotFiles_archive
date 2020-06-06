@@ -52,6 +52,10 @@ StartTime <- Sys.time()
     library('purrr')
   }
 
+
+EndTime <- Sys.time()
+EndTime - StartTime
+
 #### Set Working Directory (Actually Don't) =====================================
 # Set Working Directory as Script Location
 # Set Working Directory
@@ -93,20 +97,36 @@ gen_symlinks <- function(file) {
 # Create an empty dynamic Vector
 tagVector <- c()
 
-# Run the following code over the entire folder
-c=0
-for (i in noteFiles){
-  c = c + 1
-  yamlExtract <- yaml_front_matter(input = i )
-  MDTags      <- (yamlExtract$tags)
-  tagVector <- c(MDTags, tagVector)
-
-#   gen_symlinks(i) # adds a lotof time.
-  ## TODO this should run on an argument
-  ## TODO this should gen a folder of symlinks under ~/Notes/MD/notes
-    ## Or just copy all the files?
-} 
+##    # Run the following code over the entire folder
+##    c=0
+##    for (i in noteFiles){
+##      c = c + 1
+##      yamlExtract <- yaml_front_matter(input = i )
+##      MDTags      <- (yamlExtract$tags)
+##      tagVector <- c(MDTags, tagVector)
+##
+##    #   gen_symlinks(i) # adds a lotof time.
+##      ## TODO this should run on an argument
+##      ## TODO this should gen a folder of symlinks under ~/Notes/MD/notes
+##        ## Or just copy all the files?
+##    }
 #tagVector <- flatten_chr(tagVector)
+                                        #
+                                        #
+c=0
+i <- 73
+replicate(length(noteFiles),{
+  i <- i+1
+yaml_front_matter(input = noteFiles[i] )$tags
+})
+
+?purrr::map
+
+noteFiles %>%
+       map(yaml_front_matter)
+
+
+
 
 EndTime <- Sys.time()
 
