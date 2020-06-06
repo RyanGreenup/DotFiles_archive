@@ -1,0 +1,34 @@
+## Taken from 
+## https://raw.githubusercontent.com/kristophjunge/docker-mediawiki/master/example/docker-compose/mysql/docker-compose.yml
+
+## usage
+# Do not forget to create a new database on your first run:
+ # $ docker exec -it wiki /script/install.sh <username> <password>
+# Then copy the secret key that gets printed out into here
+version: '3'
+services:
+  mediawiki_wiki:
+    build: ./../../../ # Uncomment to build from source
+    image: kristophjunge/mediawiki
+    container_name: mediawiki_wiki
+    environment:
+      MEDIAWIKI_SERVER: http://localhost:8080
+      MEDIAWIKI_SITENAME: MyWiki
+      MEDIAWIKI_LANGUAGE_CODE: en
+      MEDIAWIKI_SECRET_KEY: cfb3b1df2d781c71d430ea1161f08920f1cbcab3d16d4912963de80ab728d02f
+      MEDIAWIKI_DB_TYPE: sqlite
+      MEDIAWIKI_DB_NAME: wikidb
+      MEDIAWIKI_ENABLE_UPLOADS: 1
+      MEDIAWIKI_EXTENSION_VISUAL_EDITOR_ENABLED: 1
+      MEDIAWIKI_DEFAULT_SKIN: vector
+      MEDIAWIKI_DEBUG: 1
+    ports:
+    - 8080:8080
+    volumes:
+    - mediawiki_images:/images
+    - mediawiki_data:/data
+    #- ./../../../testdata/logo.png:/var/www/mediawiki/resources/assets/wiki.png:ro
+    #- ./../../../testdata/ExtraLocalSettings.php:/var/www/mediawiki/ExtraLocalSettings.php:ro
+volumes:
+  mediawiki_images:
+  mediawiki_data:
