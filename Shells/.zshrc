@@ -155,4 +155,4 @@ vg() {
 alias pz="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias bm='cd $(cat ~/.bookmarks | fzf)'
 alias x='xclip -selection clipboard'
-
+alias makemml='x -o| pandoc -f html+tex_math_dollars -t html --mathml | x'

@@ -225,6 +225,13 @@
       org-latex-pdf-process
       '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+
+
+;;;;; ODT Export uses MathML
+(setq org-latex-to-mathml-convert-command
+      "latexmlmath \"%i\" --presentationmathml=%o")
+
+
 )
 
 ;;;;; Inline Style Sheet

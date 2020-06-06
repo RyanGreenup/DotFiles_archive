@@ -1,0 +1,147 @@
+[2020-06-05 01:36:04.347] [exthost] [info] extension host started
+[2020-06-05 01:36:04.378] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-06-05 01:36:04.378] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/debug-auto-launch/dist/extension
+[2020-06-05 01:36:04.382] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-06-05 01:36:04.382] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/emmet/dist/extension
+[2020-06-05 01:36:04.404] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-06-05 01:36:04.404] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/git/dist/main
+[2020-06-05 01:36:04.451] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-06-05 01:36:04.451] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/github-authentication/dist/extension.js
+[2020-06-05 01:36:04.463] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-06-05 01:36:04.464] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/merge-conflict/dist/extension
+[2020-06-05 01:36:04.467] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-06-05 01:36:04.467] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/search-result/dist/extension.js
+[2020-06-05 01:36:04.468] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-06-05 01:36:04.468] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/vscode-account/dist/extension.js
+[2020-06-05 01:36:04.484] [exthost] [info] eager extensions activated
+[2020-06-05 07:15:14.980] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug-nightly {"startup":false,"extensionId":{"value":"ms-vscode.js-debug-nightly","_lower":"ms-vscode.js-debug-nightly"},"activationEvent":"onDebugInitialConfigurations"}
+[2020-06-05 07:15:14.980] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/ms-vscode.js-debug-nightly/src/extension.js
+[2020-06-05 07:15:15.215] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.node-debug2 {"startup":false,"extensionId":{"value":"ms-vscode.node-debug","_lower":"ms-vscode.node-debug"},"activationEvent":"onDebugInitialConfigurations"}
+[2020-06-05 07:15:15.215] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/ms-vscode.node-debug2/out/src/extension
+[2020-06-05 07:15:15.229] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.node-debug {"startup":false,"extensionId":{"value":"ms-vscode.node-debug","_lower":"ms-vscode.node-debug"},"activationEvent":"onDebugInitialConfigurations"}
+[2020-06-05 07:15:15.229] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/ms-vscode.node-debug/dist/extension.js
+[2020-06-05 07:16:02.187] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-server-ready {"startup":false,"extensionId":{"value":"vscode.debug-server-ready","_lower":"vscode.debug-server-ready"},"activationEvent":"onDebugResolve"}
+[2020-06-05 07:16:02.187] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/debug-server-ready/dist/extension
+[2020-06-05 07:16:47.801] [exthost] [info] extension host started
+[2020-06-05 07:16:47.825] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-06-05 07:16:47.826] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/debug-auto-launch/dist/extension
+[2020-06-05 07:16:47.830] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-06-05 07:16:47.830] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/emmet/dist/extension
+[2020-06-05 07:16:47.849] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-06-05 07:16:47.850] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/git/dist/main
+[2020-06-05 07:16:47.892] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-06-05 07:16:47.892] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/github-authentication/dist/extension.js
+[2020-06-05 07:16:47.902] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-06-05 07:16:47.902] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/merge-conflict/dist/extension
+[2020-06-05 07:16:47.905] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-06-05 07:16:47.905] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/search-result/dist/extension.js
+[2020-06-05 07:16:47.906] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-06-05 07:16:47.906] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/vscode-account/dist/extension.js
+[2020-06-05 07:16:47.920] [exthost] [info] eager extensions activated
+[2020-06-05 07:18:36.575] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:json"}
+[2020-06-05 07:18:36.575] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/configuration-editing/dist/extension
+[2020-06-05 07:18:36.594] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:json"}
+[2020-06-05 07:18:36.595] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/extension-editing/dist/extension
+[2020-06-05 07:18:36.629] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:json"}
+[2020-06-05 07:18:36.629] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/json-language-features/client/dist/jsonMain
+[2020-06-05 07:18:36.659] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug-nightly {"startup":false,"extensionId":{"value":"ms-vscode.js-debug-nightly","_lower":"ms-vscode.js-debug-nightly"},"activationEvent":"onLanguage:json"}
+[2020-06-05 07:18:36.660] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/ms-vscode.js-debug-nightly/src/extension.js
+[2020-06-05 07:18:36.884] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"extensionId":{"value":"vscode.npm","_lower":"vscode.npm"},"activationEvent":"onLanguage:json"}
+[2020-06-05 07:18:36.884] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/npm/dist/main
+[2020-06-05 07:18:36.892] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"onLanguage:markdown"}
+[2020-06-05 07:18:36.892] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/markdown-language-features/dist/extension
+[2020-06-05 08:16:38.758] [exthost] [info] extension host started
+[2020-06-05 08:16:38.850] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-06-05 08:16:38.850] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/debug-auto-launch/dist/extension
+[2020-06-05 08:16:38.854] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-06-05 08:16:38.854] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/emmet/dist/extension
+[2020-06-05 08:16:38.874] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-06-05 08:16:38.874] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/git/dist/main
+[2020-06-05 08:16:38.918] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-06-05 08:16:38.918] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/github-authentication/dist/extension.js
+[2020-06-05 08:16:38.928] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-06-05 08:16:38.928] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/merge-conflict/dist/extension
+[2020-06-05 08:16:38.931] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-06-05 08:16:38.931] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/search-result/dist/extension.js
+[2020-06-05 08:16:38.932] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-06-05 08:16:38.932] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/vscode-account/dist/extension.js
+[2020-06-05 08:16:38.945] [exthost] [info] eager extensions activated
+[2020-06-05 09:13:16.002] [exthost] [info] extension host started
+[2020-06-05 09:13:16.081] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-06-05 09:13:16.082] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/debug-auto-launch/dist/extension
+[2020-06-05 09:13:16.087] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-06-05 09:13:16.087] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/emmet/dist/extension
+[2020-06-05 09:13:16.109] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-06-05 09:13:16.110] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/git/dist/main
+[2020-06-05 09:13:16.153] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-06-05 09:13:16.153] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/github-authentication/dist/extension.js
+[2020-06-05 09:13:16.163] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-06-05 09:13:16.163] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/merge-conflict/dist/extension
+[2020-06-05 09:13:16.166] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-06-05 09:13:16.166] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/search-result/dist/extension.js
+[2020-06-05 09:13:16.167] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-06-05 09:13:16.167] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/vscode-account/dist/extension.js
+[2020-06-05 09:13:16.180] [exthost] [info] eager extensions activated
+[2020-06-05 09:14:12.356] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:markdown"}
+[2020-06-05 09:14:12.356] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/extension-editing/dist/extension
+[2020-06-05 09:14:12.367] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"extensionId":{"value":"yzhang.markdown-all-in-one","_lower":"yzhang.markdown-all-in-one"},"activationEvent":"onLanguage:markdown"}
+[2020-06-05 09:14:12.367] [exthost] [info] ExtensionService#loadCommonJSModule file:///node_modules/code-server/lib/vscode/extensions/markdown-language-features/dist/extension
+[2020-06-05 09:14:12.405] [exthost] [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one {"startup":false,"extensionId":{"value":"yzhang.markdown-all-in-one","_lower":"yzhang.markdown-all-in-one"},"activationEvent":"onLanguage:markdown"}
+[2020-06-05 09:14:12.405] [exthost] [info] ExtensionService#loadCommonJSModule file:///config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/extension
+[2020-06-05 09:14:12.409] [exthost] [error] Activating extension yzhang.markdown-all-in-one failed due to an error:
+[2020-06-05 09:14:12.411] [exthost] [error] Error: Cannot find module '/node_modules/code-server/lib/vscode/extensions/markdown-language-features/out/tableOfContentsProvider'
+Require stack:
+- /config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/util.js
+- /config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/print.js
+- /config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/extension.js
+- /node_modules/code-server/lib/vscode/out/vs/loader.js
+- /node_modules/code-server/lib/vscode/out/bootstrap-amd.js
+- /node_modules/code-server/lib/vscode/out/bootstrap-fork.js
+	at Function.Module._resolveFilename (internal/modules/cjs/loader.js:966:15)
+	at Function.Module._load (internal/modules/cjs/loader.js:842:27)
+	at Function.t._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:956:846)
+	at Function.n._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:926:106)
+	at Function.i._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:922:391)
+	at Module.require (internal/modules/cjs/loader.js:1026:19)
+	at require (internal/modules/cjs/helpers.js:72:18)
+	at Object.<anonymous> (/config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/util.js:7:19)
+	at Module._compile (internal/modules/cjs/loader.js:1138:30)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+	at Module.load (internal/modules/cjs/loader.js:986:32)
+	at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+	at Function.t._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:956:846)
+	at Function.n._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:926:106)
+	at Function.i._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:922:391)
+	at Module.require (internal/modules/cjs/loader.js:1026:19)
+	at require (internal/modules/cjs/helpers.js:72:18)
+	at Object.<anonymous> (/config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/print.js:7:16)
+	at Module._compile (internal/modules/cjs/loader.js:1138:30)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+	at Module.load (internal/modules/cjs/loader.js:986:32)
+	at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+	at Function.t._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:956:846)
+	at Function.n._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:926:106)
+	at Function.i._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:922:391)
+	at Module.require (internal/modules/cjs/loader.js:1026:19)
+	at require (internal/modules/cjs/helpers.js:72:18)
+	at Object.<anonymous> (/config/extensions/yzhang.markdown-all-in-one-1.3.0/out/src/extension.js:10:15)
+	at Module._compile (internal/modules/cjs/loader.js:1138:30)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+	at Module.load (internal/modules/cjs/loader.js:986:32)
+	at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+	at Function.t._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:956:846)
+	at Function.n._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:926:106)
+	at Function.i._load (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:922:391)
+	at Module.require (internal/modules/cjs/loader.js:1026:19)
+	at require (internal/modules/cjs/helpers.js:72:18)
+	at Function.s [as __$__nodeRequire] (/node_modules/code-server/lib/vscode/out/vs/loader.js:33:115)
+	at p._loadCommonJSModule (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:927:325)
+	at p._doActivateExtension (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:824:27)
+	at p._activateExtension (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:823:84)
+	at Object.actualActivateExtension (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:821:14)
+	at e._activateExtension (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:597:859)
+	at /node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:597:537
+	at Array.map (<anonymous>)
+	at e._activateExtensions (/node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:597:525)
+	at /node_modules/code-server/lib/vscode/out/vs/workbench/services/extensions/node/extensionHostProcess.js:597:630
+	at processTicksAndRejections (internal/process/task_queues.js:97:5)
