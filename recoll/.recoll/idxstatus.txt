@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 1554
-filesdone = 2804
-fileerrors = 1419
-dbtotdocs = 1554
+docsdone = 1556
+filesdone = 2806
+fileerrors = 1420
+dbtotdocs = 1556
 totfiles = 2907
-fn = /home/ryan/Notes/MD/University/Social-Web-Analytics/Exam/_vnote.json
+fn = /home/ryan/Notes/MD/University/Social-Web-Analytics/05_Visualisation_PCA_MDS.md
 hasmonitor = 1
