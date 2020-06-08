@@ -13,6 +13,8 @@
 (package! citeproc)
 (package! citeproc)
 (package! helm-org-rifle)
+;; I think Doom comes with counsel recoll
+;; (package! helm-recoll)
 
 ;; Both of these must be here otherwise poly mode crashes all the time
 (package! polymode)
