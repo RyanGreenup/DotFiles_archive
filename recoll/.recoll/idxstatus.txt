@@ -1,8 +1,8 @@
-phase = 5
-docsdone = 1964
-filesdone = 3305
-fileerrors = 1422
-dbtotdocs = 1964
-totfiles = 3305
-fn = /home/ryan/Notes/MD/Programming/bash/Misc/_vnote.json
-hasmonitor = 1
+phase = 6
+docsdone = 2892
+filesdone = 2875
+fileerrors = 1423
+dbtotdocs = 3023
+totfiles = 2875
+fn = 
+hasmonitor = 0

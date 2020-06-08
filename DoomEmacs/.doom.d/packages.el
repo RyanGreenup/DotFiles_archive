@@ -13,6 +13,7 @@
 (package! citeproc)
 (package! citeproc)
 (package! helm-org-rifle)
+(package! helm-recoll)
 ;; I think Doom comes with counsel recoll
 ;; (package! helm-recoll)
 

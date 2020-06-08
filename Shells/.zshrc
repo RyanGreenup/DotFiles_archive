@@ -157,3 +157,4 @@ alias bm='cd $(cat ~/.bookmarks | fzf)'
 alias x='xclip -selection clipboard'
 alias makemml='x -o| pandoc -f html+tex_math_dollars -t html --mathml | x'
 alias ns='recoll -b -t -q 'ext:md' -q'
+PATH=$PATH:/home/ryan/bin
