@@ -440,10 +440,10 @@ snippet ** "cdot" iA
 \cdot 
 endsnippet
 
-context "math()"
-snippet norm "norm" iA
-\|$1\|$0
-endsnippet
+# context "math()"
+# snippet norm "norm" iA
+# \|$1\|$0
+# endsnippet
 
 priority 100
 context "math()"
@@ -976,17 +976,6 @@ context "math()"
 priority 100
 snippet "([a-zA-Z][a-zA-Z][a-zA-Z])op" "operator" riA
 \mathrm{`!p snip.rv=match.group(1)`}
-endsnippet
-
-context "math()"
-snippet cos "Cos" wA
-\cos{$1}$0
-endsnippet
-
-
-context "math()"
-snippet sin "sin" wA
-\sin{$1}$0
 endsnippet
 
 context "math()"

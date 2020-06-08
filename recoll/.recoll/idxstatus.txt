@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 1644
-filesdone = 3129
-fileerrors = 1425
-dbtotdocs = 1644
-totfiles = 3187
-fn = /home/ryan/Notes/MD/Linux/Maintenance/_vnote.json
+docsdone = 1554
+filesdone = 2804
+fileerrors = 1419
+dbtotdocs = 1554
+totfiles = 2907
+fn = /home/ryan/Notes/MD/University/Social-Web-Analytics/Exam/_vnote.json
 hasmonitor = 1
