@@ -156,5 +156,5 @@ alias pz="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo 
 alias bm='cd $(cat ~/.bookmarks | fzf)'
 alias x='xclip -selection clipboard'
 alias makemml='x -o| pandoc -f html+tex_math_dollars -t html --mathml | x'
-alias ns='recoll -b -t -q 'ext:md' -q'
+alias ns='~/bin/ns.sh'
 PATH=$PATH:/home/ryan/bin
