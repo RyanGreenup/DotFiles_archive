@@ -158,3 +158,6 @@ alias x='xclip -selection clipboard'
 alias makemml='x -o| pandoc -f html+tex_math_dollars -t html --mathml | x'
 alias ns='~/bin/ns.sh'
 PATH=$PATH:/home/ryan/bin
+PATH=$PATH:/home/ryan/.local/bin
+
+source /home/ryan/.config/broot/launcher/bash/br

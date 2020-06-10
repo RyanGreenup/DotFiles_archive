@@ -1,4 +1,3 @@
-filter rmd
 rename 02_Introduction_to_R.rmd
 shell rstudio 02_Introduction_to_R.rmd & disown
 shell 
@@ -27,7 +26,6 @@ filter Vis
 flat 3
 filter conflicted copy
 >>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
-
 q
 search doom
 cd /tmp/tags
@@ -42,9 +40,11 @@ shell mkdir notes
 flat 0
 filter .md
 Bulkrename
-filter 
 bulkrename
 delete
 flat -1
 filter .pdf
 filter zh
+filter pdf
+filter 
+

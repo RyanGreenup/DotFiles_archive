@@ -16,3 +16,6 @@
 
 
 
+NeoVim/.local/bin/mdv
+.gitignore
+NeoVim/.local/bin/tabulate
