@@ -76,7 +76,8 @@ handle_extension() {
             exit 1;;
 
     md|markdown)
-	    glow -s dark "${FILE_PATH}" && { dump | trim; exit 5; }
+	    mdcat "${FILE_PATH}" && { dump | trim; exit 5; }
+	 #   glow -s dark "${FILE_PATH}" && { dump | trim; exit 5; }
 	    ;;
 
         # HTML
