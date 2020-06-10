@@ -161,3 +161,6 @@ PATH=$PATH:/home/ryan/bin
 PATH=$PATH:/home/ryan/.local/bin
 
 source /home/ryan/.config/broot/launcher/bash/br
+
+## Source Zoxide
+eval "$(zoxide init zsh)"
