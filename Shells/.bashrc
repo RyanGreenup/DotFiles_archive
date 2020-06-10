@@ -166,3 +166,6 @@ source /home/ryan/.config/broot/launcher/bash/br
 
 ## Source Zoxide
 eval "$(zoxide init bash)"
+
+## Better ls
+alias ls='lsd'
