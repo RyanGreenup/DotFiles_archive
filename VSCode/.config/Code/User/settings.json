@@ -8,7 +8,8 @@
     "terminal.integrated.shell.linux": "/bin/bash",
     "window.zoomLevel": 0,
     "markdown-preview-enhanced.frontMatterRenderingOption": "table",
-    "workbench.colorTheme": "Quiet Light"
+    "workbench.colorTheme": "Dracula",
+
 ////////////////////////////////////////////////////////////
 ///////////// VSSpace Settings /////////////////////////////
 ////////////////////////////////////////////////////////////
