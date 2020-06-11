@@ -1,6 +1,14 @@
-// Place your key bindings in this file to override the defaults
+// Place your key bindings in this file to override the defaultsauto[]
 [
- {
+    {
+        "key": "alt+space",
+        "command": "fuzzySearch.activeTextEditor"
+    },
+    {
+        "key": "ctrl+g ctrl+s",
+        "command": "extension.aceJump.multiChar"
+    },
+    {
         "key": "ctrl+j",
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
@@ -41,7 +49,19 @@
         "when": "listFocus && !inputFocus"
     },
     {
-        "key": "alt+i",
-        "command": "fuzzySearch.activeTextEditor"
+        "key": "alt+x",
+        "command": "workbench.action.showCommands",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "-editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
     }
+
 ]
