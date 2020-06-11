@@ -33,10 +33,10 @@ pandoc -s -f markdown -t org $filename -o $filename
 
 
 
-echo "
-This was converted from \`md\` to \`org\` using \`pandoc -f gfm\` at time: 
-$(date --utc +%FT%H-%M-%S)
-" >> $filename
+## echo "
+## This was converted from \`md\` to \`org\` using \`pandoc -f gfm\` at time:
+## $(date --utc +%FT%H-%M-%S)
+## " >> $filename
 
 cat $filename | xclip -selection clipboard
 rm $filename 
