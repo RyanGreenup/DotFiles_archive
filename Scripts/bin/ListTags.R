@@ -15,7 +15,7 @@ StartTime <- Sys.time()
 # head(mdDoc)
 # mdDoc <- read.delim(file = "~/Dropbox/Notable/notes/05 - Notes.md")
 # grep(pattern = "\s\S", x = mdDoc, perl)
-# Extracted_YAML <- 
+# Extracted_YAML <-
 # myyamlfile <- yaml::read_yaml(Extracted_YAML)
 
 ### * Using the RMarkdown Dependency ------------------------------------------
@@ -35,7 +35,7 @@ StartTime <- Sys.time()
     install.packages('R.utils')
     library('R.utils')
   }
-##### Load or Install dplyr ###################################################  
+##### Load or Install dplyr ###################################################
   if(require('dplyr')){
     library('dplyr')
   }else{
@@ -44,7 +44,7 @@ StartTime <- Sys.time()
   }
 
 ##### Load or Install Purrr ######################################################
-  
+
   if(require('purrr')){
     library('purrr')
   }else{
@@ -52,17 +52,13 @@ StartTime <- Sys.time()
     library('purrr')
   }
 
-
-EndTime <- Sys.time()
-EndTime - StartTime
-
 #### Set Working Directory (Actually Don't) =====================================
 # Set Working Directory as Script Location
 # Set Working Directory
   # rstudio api requires rstudio to run (and generally adds 30ms to run time)
   # setwd(getSrcDirectory()[1]) didn't work
   # just set a bash script to cd; Rscript ListTags.R; exit 0
-setwd("~/Notes/MD")
+setwd("~/Notes")
 
 #### List all the Notes with a YAML Header =======================================
    # TODO use regex not slow list building
@@ -77,12 +73,12 @@ gen_symlinks <- function(file) {
 #' + If you put it it under the directory ag will return both the symlink and the file
 #'   + Also Notable will have two copies of every file.
 #'     + This doesn't matter for =#tags= because that directory
-#'        because that directory is wiped by ~/bin/tagFilter.sh 
+#'        because that directory is wiped by ~/bin/tagFilter.sh
 #'        Every time tagFilter -s is run
 #'        + Actually maybe it does matter and maybe I should move that to documents
 #' + You will need to regularly delete this file upon restructuring
 #' + don't ust /temp because root issues will occur
-       
+
     for (tagDirPath in MDTags) {
         #actDirPath  <- paste0("./00Notebooks/", tagDirPath)
         actDirPath  <- paste0("~/Documents/00Notebooks/", tagDirPath)
@@ -97,36 +93,17 @@ gen_symlinks <- function(file) {
 # Create an empty dynamic Vector
 tagVector <- c()
 
-##    # Run the following code over the entire folder
-##    c=0
-##    for (i in noteFiles){
-##      c = c + 1
-##      yamlExtract <- yaml_front_matter(input = i )
-##      MDTags      <- (yamlExtract$tags)
-##      tagVector <- c(MDTags, tagVector)
-##
-##    #   gen_symlinks(i) # adds a lotof time.
-##      ## TODO this should run on an argument
-##      ## TODO this should gen a folder of symlinks under ~/Notes/MD/notes
-##        ## Or just copy all the files?
-##    }
-#tagVector <- flatten_chr(tagVector)
-                                        #
-                                        #
+# Run the following code over the entire folder
 c=0
-i <- 73
-replicate(length(noteFiles),{
-  i <- i+1
-yaml_front_matter(input = noteFiles[i] )$tags
-})
+for (i in noteFiles){
+  c = c + 1
+  yamlExtract <- yaml_front_matter(input = i )
+  MDTags      <- (yamlExtract$tags)
+  tagVector <- c(MDTags, tagVector)
 
-?purrr::map
-
-noteFiles %>%
-       map(yaml_front_matter)
-
-
-
+   gen_symlinks(i) # adds a lotof time.
+}
+#tagVector <- flatten_chr(tagVector)
 
 EndTime <- Sys.time()
 
@@ -134,8 +111,8 @@ EndTime <- Sys.time()
 cat("\n")
 tagVector <- as.matrix(tagVector)
 
-# tagFreq <- arrange(as.data.frame(table(tagVector)),-Freq) 
-# tagFreq <- arrange(as.data.frame(table(tagVector)),-Freq) 
+# tagFreq <- arrange(as.data.frame(table(tagVector)),-Freq)
+# tagFreq <- arrange(as.data.frame(table(tagVector)),-Freq)
 tagVector      <- unique(tagVector)
 
 
@@ -173,7 +150,7 @@ if (length(args)!=0) {
 
 print(paste(length(tagVector), "Tags Successfully Generated in ", round((EndTime- StartTime),3)*1000, "MilliSeconds"))
 
- 
+
 
 
 
