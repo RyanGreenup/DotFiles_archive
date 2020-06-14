@@ -425,7 +425,8 @@
       "r ha" 'helm-org-agenda-files-headings
       )
 ;;;; Markdown Mode
-;;;;
+;;;;; Copy Relative Path for file
+;;;;; Change Key Bindings for links
 (add-hook 'markdown-mode-hook
   (lambda ()
     (local-set-key (kbd "C-c C-x C-l") 'org-toggle-latex-fragment)
