@@ -54,7 +54,19 @@ if(require('dplyr')){
 ## changing this to an argument.                                                      ##
 ########################################################################################
 
-setwd("~/Notes/MD/notes")
+
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args)!=0) {
+
+  if (args[1]=="--help" | args[1]=="-h") {
+    print("Using the p argument will print the tags")
+    quit()
+  } else {
+      setwd(args[1])
+  }
+
+}
+
 
 #### List all the Notes with a YAML Header =======================================
    # TODO use regex not slow list building
@@ -125,18 +137,6 @@ print(paste("Output saved to", fileLocation))
 print(paste("You essentially want to run cat", fileLocation, "| bash"))
 print("Just make sure to check over the commands that will be run")
 
-#### Optional Arguments =========================================================
-# Print Statement
-
-args <- commandArgs(trailingOnly = TRUE)
-if (length(args)!=0) {
-  if (args[1]=="p" | args[1]=="-p") {
-    print(tagVector)
-  }
-  if (args[1]=="--help" | args[1]=="-h") {
-    print("Using the p argument will print the tags")
-  }
-}
 
 print(paste(length(tagVector), "Tags Successfully Generated in ", round((EndTime- StartTime),3)*1000, "MilliSeconds"))
 
