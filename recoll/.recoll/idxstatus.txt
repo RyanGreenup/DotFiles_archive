@@ -1,8 +1,8 @@
-phase = 6
-docsdone = 2892
-filesdone = 2875
-fileerrors = 1423
-dbtotdocs = 3023
-totfiles = 2875
-fn = 
-hasmonitor = 0
+phase = 5
+docsdone = 2039
+filesdone = 3426
+fileerrors = 1671
+dbtotdocs = 2039
+totfiles = 3426
+fn = /home/ryan/Notes/MD/notes/index.md
+hasmonitor = 1

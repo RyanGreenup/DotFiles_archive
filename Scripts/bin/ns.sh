@@ -7,7 +7,7 @@ command -v sk        >/dev/null 2>&1 || { echo >&2 "The skim package is a requir
 
 
 if [ "$1" == "-l" ]; then
-    sk --ansi -i -c 'recoll -b -t "{}ext:md" | cut -c 8-' --preview "mdcat {}" \
+    sk --ansi -i -c 'recoll -b -t "{} ext:md" | cut -c 8-' --preview "mdcat {}" \
         --bind pgup:preview-page-up,pgdn:preview-page-down
 else
     echo Enter the Search Query

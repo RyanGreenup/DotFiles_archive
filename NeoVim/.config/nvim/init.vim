@@ -560,7 +560,8 @@ endif
 "
 " MUST be preceeded and terminated with a space
 "
-imap <expr> <C-c><C-y> fzf#vim#complete('Rscript ~/bin/ListTags.R >  /dev/null 2>&1; cat /tmp/00tags.csv')
+"" imap <expr> <C-c><C-y> fzf#vim#complete('Rscript ~/bin/ListTags.R >  /dev/null 2>&1; cat /tmp/00tags.csv')
+imap <expr> <C-c><C-y> fzf#vim#complete('node ~/bin/printMarkdownTags/yaml-parse.js $HOME/Notes/MD/notes \| sort -u')
 imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename $HOME/Notes/MD -t md \| sort -u')
 "nnoremap <expr> <Space>fg :Rg expand('<cword>') <CR>
 nnoremap <expr> ib<Esc><Space>fg :NV expand('<cword>') <CR>

@@ -25,10 +25,10 @@ LocalFile=$filename.org
 
 pandoc -s  -f org -t markdown $filename -o $filename
 
-echo "
-This was converted from =org= to =md= using =pandoc -t gfm= at time: 
-$(date --utc +%FT%H-%M-%S)
-" >> $filename
+## echo "
+## This was converted from =org= to =md= using =pandoc -t gfm= at time:
+## $(date --utc +%FT%H-%M-%S)
+## " >> $filename
 
 cat $filename | xclip -selection clipboard
 rm $filename 

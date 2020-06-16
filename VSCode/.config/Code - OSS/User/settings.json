@@ -1,10 +1,10 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "GitHub Light",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -469,6 +469,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "mblode.pretty-formatter"
     },
-    "vsnotes.defaultNotePath": "/home/ryan/Notes/MD/",
-    "markdownTags.autorefresh": true
+    "markdownTags.autorefresh": true,
+    "vsnotes.defaultNotePath": "~/Notes/MD/notes"
 }

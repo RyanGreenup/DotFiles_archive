@@ -1,6 +1,3 @@
-rename 02_Introduction_to_R.rmd
-shell rstudio 02_Introduction_to_R.rmd & disown
-shell 
 shell cd -
 cd -
 find datas
@@ -17,7 +14,6 @@ rename ggplot2_layers.p9ng
 rename layer_elements.png
 rename ggplot2_layers.png
 rename 00output-46.png
-unmark
 shell cp ~/tmp/note.html ./05
 qw
 filter Visual_Analy
@@ -41,10 +37,14 @@ flat 0
 filter .md
 Bulkrename
 bulkrename
-delete
 flat -1
 filter .pdf
 filter zh
 filter pdf
 filter 
 
+search ode
+unmark
+delete
+rename attachments
+shell mkdir tags
