@@ -31,7 +31,7 @@
 
 # ** Code
 
-     notes_dir=~/Notes/MD
+     notes_dir=~/Notes/MD/notes
      cd $notes_dir
      match_list=/tmp/00TagMatchList       # Not yet implemented
      match_dir=/tmp/00TagMatchDir         # Not yet implemented

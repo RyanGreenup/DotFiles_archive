@@ -9,6 +9,11 @@
         "command": "extension.aceJump.multiChar"
     },
     {
+        "key": "ctrl+c ctrl+l",
+        "command": "fuzzySearch.activeTextEditor"
+//        "command": "extension.md-shortcut.toggleLink"
+    },
+    {
         "key": "ctrl+j",
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
@@ -73,6 +78,21 @@
         "key": "ctrl+k ctrl+l",
         "command": "-editor.toggleFold",
         "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+c ctrl+l",
+        "command": "md-shortcut.toggleLink",
+        "when": "editorTextFocus && markdownShortcuts:enabled"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-md-shortcut.toggleLink",
+        "when": "editorTextFocus && markdownShortcuts:enabled"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-md-shortcut.toggleLink",
+        "when": "editorTextFocus && markdownShortcuts:enabled"
     }
 
 ]

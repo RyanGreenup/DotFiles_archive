@@ -1,3 +1,9 @@
 [2020-06-14 05:05:42.877] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/config/data/Machine'
 [2020-06-14 05:05:47.340] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/config/data/Machine'
 [2020-06-14 05:05:47.340] [remoteagent] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/config/data/Machine'
+[2020-06-16 05:06:12.462] [remoteagent] [info] Installing extension: yzhang.markdown-all-in-one
+[2020-06-16 05:06:14.419] [remoteagent] [info] Downloaded extension: yzhang.markdown-all-in-one /tmp/a5095086-f1ec-40de-9ad8-56cf0205dfd4
+[2020-06-16 05:06:14.739] [remoteagent] [info] Extracted extension to /config/extensions/.yzhang.markdown-all-in-one-3.0.0: yzhang.markdown-all-in-one
+[2020-06-16 05:06:14.740] [remoteagent] [info] Renamed to /config/extensions/yzhang.markdown-all-in-one-3.0.0
+[2020-06-16 05:06:14.740] [remoteagent] [info] Installation completed. yzhang.markdown-all-in-one
+[2020-06-16 05:06:14.749] [remoteagent] [info] Extensions installed successfully: yzhang.markdown-all-in-one
