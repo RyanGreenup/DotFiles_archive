@@ -4,7 +4,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": -2,
+    "window.zoomLevel": 0,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -177,6 +177,10 @@
             "commands": ["editor.action.marker.prev"]
         },
         {
+            "before": ["<leader>", "f", "d"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
             "before": ["<leader>", "f", "e"],
             "commands": ["workbench.action.openGlobalSettings"]
         },
@@ -195,10 +199,6 @@
         {
             "before": ["<leader>", "f", "S"],
             "commands": ["workbench.action.files.saveAll"]
-        },
-        {
-            "before": ["<leader>", "f", "t"],
-            "commands": ["workbench.view.explorer"]
         },
         {
             "before": ["<leader>", "f", "T"],
