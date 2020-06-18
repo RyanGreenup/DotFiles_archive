@@ -1,8 +1,8 @@
-phase = 5
-docsdone = 1243
-filesdone = 2384
-fileerrors = 1208
-dbtotdocs = 1243
-totfiles = 2560
-fn = /home/ryan/Notes/MD/notes/Document-Authoring/Markdown/VSCode/Backup-VSCode-Extensions.md
-hasmonitor = 1
+phase = 6
+docsdone = 2642
+filesdone = 2562
+fileerrors = 1209
+dbtotdocs = 2642
+totfiles = 2562
+fn = 
+hasmonitor = 0
