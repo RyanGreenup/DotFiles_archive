@@ -407,6 +407,14 @@
         "d" #'ess-eval-region-or-function-or-paragraph-and-step
  )
 
+(map!  :after markdown-mode
+        :map markdown-mode-map
+        :localleader
+        "f z" 'my-open-current-file-in-zettlr
+        "f t" 'my-open-current-file-in-typora
+        "f m" 'my-open-current-file-in-marktext
+        "f c" 'my-open-current-file-in-vscode
+ )
 
 (map! :leader
 ;; #' delimits namespace, i.e. local var
@@ -423,8 +431,42 @@
       "/"   'helm-rg
       "r hh" 'helm-org-in-buffer-headings
       "r ha" 'helm-org-agenda-files-headings
+      "f mz" 'my-open-current-file-in-zettlr
+      "f mt" 'my-open-current-file-in-typora
+      "f mm" 'my-open-current-file-in-marktext
+      "f mc" 'my-open-current-file-in-vscode
       )
 ;;;; Markdown Mode
+;;;;; Open in Other programs
+
+(defun my-open-current-file-in-zettlr ()
+  (interactive)
+  (async-shell-command
+   (format "zettlr  %S"
+           (shell-quote-argument buffer-file-name))))
+
+(defun my-open-current-file-in-marktext ()
+  (interactive)
+  (async-shell-command
+   (format "marktext %S"
+           (shell-quote-argument buffer-file-name))))
+
+(defun my-open-current-file-in-typora ()
+  (interactive)
+  (async-shell-command
+   (format "typora %S"
+           (shell-quote-argument buffer-file-name))))
+
+(defun my-open-current-file-in-vscode ()
+  (interactive)
+  (async-shell-command
+                                       
+   (format "code --add ~/Notes/MD/notes --goto %S:%d"
+           (shell-quote-argument buffer-file-name)
+           (+ (if (bolp) 1 0) (count-lines 1 (point)))
+           )))
+
+
 ;;;;; Copy Relative Path for file
 ;;;;; Change Key Bindings for links
 (add-hook 'markdown-mode-hook
