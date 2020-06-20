@@ -9,7 +9,7 @@
         "command": "extension.aceJump.multiChar"
     },
     {
-        "key": "ctrl+c ctrl+l",
+        "key": "ctrl+space ctrl+s",
         "command": "fuzzySearch.activeTextEditor"
 //        "command": "extension.md-shortcut.toggleLink"
     },

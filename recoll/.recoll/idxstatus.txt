@@ -1,8 +1,8 @@
-phase = 6
-docsdone = 2642
-filesdone = 2562
-fileerrors = 1209
-dbtotdocs = 2642
-totfiles = 2562
-fn = 
-hasmonitor = 0
+phase = 5
+docsdone = 1542
+filesdone = 2793
+fileerrors = 1215
+dbtotdocs = 1542
+totfiles = 2793
+fn = /home/ryan/Notes/MD/notes/University/Thinking-About-Data/ANOVA-One-Way.md
+hasmonitor = 1

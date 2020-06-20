@@ -135,6 +135,23 @@ Plug 'kyuhi/vim-emoji-complete'
 """"" Smooth Scroll
 Plug 'yuttie/comfortable-motion.vim'
 
+""""" EasyMotion
+Plug 'easymotion/vim-easymotion'
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 """"" Citations (Zotero)
 " I'm  not going to implement this just yet,
 " Pandoc will lead to failures all the time
@@ -560,7 +577,7 @@ endif
 "
 " MUST be preceeded and terminated with a space
 "
-"" imap <expr> <C-c><C-y> fzf#vim#complete('Rscript ~/bin/ListTags.R >  /dev/null 2>&1; cat /tmp/00tags.csv')
+" imap <expr> <C-c><C-y> fzf#vim#complete('Rscript ~/bin/ListTags.R >  /dev/null 2>&1; cat /tmp/00tags.csv')
 imap <expr> <C-c><C-y> fzf#vim#complete('node ~/bin/printMarkdownTags/yaml-parse.js $HOME/Notes/MD/notes \| sort -u')
 imap <expr> <C-c><C-t> fzf#vim#complete('rg --pcre2 "\s#[a-zA-Z-@]+\s" -o --no-filename $HOME/Notes/MD -t md \| sort -u')
 "nnoremap <expr> <Space>fg :Rg expand('<cword>') <CR>
@@ -686,7 +703,7 @@ let g:mkdp_markdown_css = '/home/ryan/Dropbox/profiles/Templates/CSS/gitOrgWrapp
 
 " use a custom highlight style must absolute path
 "let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
-"" I got sick of this
+" I got sick of this
 " let g:mkdp_highlight_css = '/home/ryan/Dropbox/profiles/Templates/CSS/TomorrowNight_HighlightJS.css'
 
 " let g:mkdp_highlight_css = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css'

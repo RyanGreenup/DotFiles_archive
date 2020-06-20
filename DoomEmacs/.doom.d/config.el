@@ -441,33 +441,50 @@
 
 (defun my-open-current-file-in-zettlr ()
   (interactive)
-  (async-shell-command
-   (format "zettlr  %S"
-           (shell-quote-argument buffer-file-name))))
+  (save-window-excursion
+   (async-shell-command
+    (format "zettlr  %S"
+            (shell-quote-argument buffer-file-name))))
+  )
 
 (defun my-open-current-file-in-marktext ()
   (interactive)
+  (save-window-excursion
   (async-shell-command
    (format "marktext %S"
-           (shell-quote-argument buffer-file-name))))
+           (shell-quote-argument buffer-file-name)))))
 
 (defun my-open-current-file-in-typora ()
   (interactive)
-  (async-shell-command
-   (format "typora %S"
-           (shell-quote-argument buffer-file-name))))
+  (save-window-excursion
+   (async-shell-command
+    (format "typora %S"
+            (shell-quote-argument buffer-file-name)))
+   ))
 
 (defun my-open-current-file-in-vscode ()
   (interactive)
-  (async-shell-command
-                                       
-   (format "code --add ~/Notes/MD/notes --goto %S:%d"
-           (shell-quote-argument buffer-file-name)
-           (+ (if (bolp) 1 0) (count-lines 1 (point)))
-           )))
+  (save-window-excursion
+   (async-shell-command
+
+    (format "code --add ~/Notes/MD/notes --goto %S:%d"
+            (shell-quote-argument buffer-file-name)
+            (+ (if (bolp) 1 0) (count-lines 1 (point)))
+            ))
+   ))
 
 
 ;;;;; Copy Relative Path for file
+;;;;; Open Wiki Link Under Cursor
+(defun fzf-wiki-link-under-cursor ()
+  (interactive)
+  (setq last-command-event 118)
+  (evil-visual-char nil nil 'inclusive t)
+  (setq last-command-event 91)
+  (evil-inner-bracket nil 2705 2706 'inclusive)
+  (setq last-command-event 121)
+  (evil-yank 2703 2725 'inclusive nil nil)
+  (setq last-command-event 41))
 ;;;;; Change Key Bindings for links
 (add-hook 'markdown-mode-hook
   (lambda ()
@@ -484,11 +501,13 @@
 ;;;; Open in vim
 (defun my-open-current-file-in-vim ()
   (interactive)
-  (async-shell-command
+  (save-window-excursion
+   (async-shell-command
                                         ;  (format "gvim +%d %s"
-   (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
-           (+ (if (bolp) 1 0) (count-lines 1 (point)))
-           (shell-quote-argument buffer-file-name))))
+    (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+            (+ (if (bolp) 1 0) (count-lines 1 (point)))
+            (shell-quote-argument buffer-file-name)))
+   ))
 
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
@@ -514,3 +533,16 @@
 )
 (setq httpd-port 8327)
 (setq httpd-host "0.0.0.0")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(eaf-find-alternate-file-in-dired t t)
+ '(package-selected-packages '(elmacro fzf ranger)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

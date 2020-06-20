@@ -5,6 +5,7 @@ eamodio.gitlens
 Equinusocio.vsc-community-material-theme
 Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
+fabiospampinato.vscode-highlight
 formulahendry.terminal
 GitHub.github-vscode-theme
 jacobdufault.fuzzy-search
