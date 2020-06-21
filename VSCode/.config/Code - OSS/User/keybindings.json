@@ -8,11 +8,11 @@
         "key": "ctrl+g ctrl+s",
         "command": "extension.aceJump.multiChar"
     },
-    {
-        "key": "ctrl+space ctrl+s",
-        "command": "fuzzySearch.activeTextEditor"
+//    {
+//        "key": "ctrl+space ctrl+s",
+//        "command": "fuzzySearch.activeTextEditor"
 //        "command": "extension.md-shortcut.toggleLink"
-    },
+//    },
     {
         "key": "ctrl+j",
         "command": "workbench.action.quickOpenSelectNext",

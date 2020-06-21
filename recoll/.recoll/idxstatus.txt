@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 1542
-filesdone = 2793
-fileerrors = 1215
-dbtotdocs = 1542
-totfiles = 2793
-fn = /home/ryan/Notes/MD/notes/University/Thinking-About-Data/ANOVA-One-Way.md
+docsdone = 23706
+filesdone = 25051
+fileerrors = 22150
+dbtotdocs = 23706
+totfiles = 25051
+fn = /home/ryan/Notes/MD/notes/University/Thinking-About-Data/Normal-Theory-Chi.md
 hasmonitor = 1
