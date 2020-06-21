@@ -315,10 +315,16 @@
             "before": ["<leader>", "p", "g"],
             "commands": ["workbench.action.showEditorsInActiveGroup"]
         },
+
         {
             "before": ["<leader>", "<"],
             "commands": ["workbench.action.showEditorsInActiveGroup"]
         },
+        {
+            "before": ["<leader>", "f", "F"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+
         {
             "before": ["<leader>", "p", "l"],
             "commands": ["workbench.action.files.openFolder"]
@@ -491,3 +497,27 @@
     "gitlens.views.compare.location": "gitlens",
     "gitlens.views.search.location": "gitlens"
 }
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//// What I added to modify it//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+        // {
+        //     "before": ["<leader>", "<"],
+        //     "commands": ["workbench.action.showEditorsInActiveGroup"]
+        // },
+        // {
+        //     "before": ["<leader>", "f", "F"],
+        //     "commands": ["workbench.action.quickOpen"]
+        // },
+
+        // {
+        //     "before": ["<leader>", "s", "s"],
+        //     "commands": ["fuzzySearch.activeTextEditor"]
+        // },

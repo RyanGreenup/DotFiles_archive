@@ -14,11 +14,6 @@
 //        "command": "extension.md-shortcut.toggleLink"
 //    },
     {
-        "key": "ctrl+x b",
-        "command": "workbench.action.showEditorsInActiveGroup"
-    },
-
-    {
         "key": "ctrl+j",
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
@@ -98,6 +93,24 @@
         "key": "ctrl+l",
         "command": "-md-shortcut.toggleLink",
         "when": "editorTextFocus && markdownShortcuts:enabled"
+    },
+
+//////////////////////////////
+//// My Changes //////////////
+//////////////////////////////
+
+    {
+        "key": "ctrl+x b",
+        "command": "workbench.action.showEditorsInActiveGroup"
+    },
+    {
+        "key": "ctrl+x ctrl+b",
+        "command": "workbench.action.showEditorsInActiveGroup"
+    },
+    {
+        "key": "ctrl+x ctrl+f",
+        "command": "workbench.action.quickOpen"
     }
+
 
 ]
