@@ -43,7 +43,7 @@ NEW_ATTACHMENT....$NewFile
 
 sourcePath=$(dirname $sourceFile)
 
-relativePath=$(realpath --relative-to=$sourcePath $NewFile)
+relativePath=$(realpath --relative-to="$sourcePath" $NewFile)
 relPathWithDot="./"$relativePath
 echo $relPathWithDot | xclip -selection clipboard
 
