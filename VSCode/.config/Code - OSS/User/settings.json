@@ -316,6 +316,10 @@
             "commands": ["workbench.action.showEditorsInActiveGroup"]
         },
         {
+            "before": ["<leader>", "<"],
+            "commands": ["workbench.action.showEditorsInActiveGroup"]
+        },
+        {
             "before": ["<leader>", "p", "l"],
             "commands": ["workbench.action.files.openFolder"]
         },
