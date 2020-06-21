@@ -209,11 +209,6 @@
             "commands": ["workbench.action.files.copyPathOfActiveFile"]
         },
         {
-            "before": ["<leader>", "s", "s"],
-            "commands": ["fuzzySearch.activeTextEditor"]
-        },
-//        "command": "fuzzySearch.activeTextEditor"
-        {
             "before": ["<leader>", "g", "b"],
             "commands": ["git.checkout"]
         },
@@ -360,6 +355,11 @@
             "before": ["<leader>", "s", "P"],
             "after": ["v", "i", "w", "<leader>", "s", "p", "<Esc>"]
         },
+        {
+            "before": ["<leader>", "s", "s"],
+            "commands": ["fuzzySearch.activeTextEditor"]
+        },
+//        "command": "fuzzySearch.activeTextEditor"
         {
             "before": ["<leader>", "T", "F"],
             "commands": ["workbench.action.toggleFullScreen"]
