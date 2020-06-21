@@ -16,7 +16,9 @@
   # * xclip
 
 ### Code
-brokenPath=$(xclip -o -selection clipboard)
+#' You have to strip out the `~` characters, they are incompatible with `realpath`
+#' fzf returns /home/username/path/to/file so it doesn't matter
+brokenPath=$(xclip -o -selection clipboard | sed s/\~/\$HOME/)
 #find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf | xclip -selection clipboard
 NewFile=$(find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf)
 echo $NewFile | xclip -selection clipboard
