@@ -209,6 +209,11 @@
             "commands": ["workbench.action.files.copyPathOfActiveFile"]
         },
         {
+            "before": ["<leader>", "s", "s"],
+            "commands": ["fuzzySearch.activeTextEditor"]
+        },
+//        "command": "fuzzySearch.activeTextEditor"
+        {
             "before": ["<leader>", "g", "b"],
             "commands": ["git.checkout"]
         },
