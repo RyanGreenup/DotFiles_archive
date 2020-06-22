@@ -1,5 +1,5 @@
 #!/bin/bash
-
+OUTPUT_FORMAT="markdown_github+tex_math_dollars --atx-headers"
 
 # Print Help
 if [ "$1" == "-h" ]; then
@@ -23,7 +23,7 @@ LocalFile=$filename.org
 #        echo "The stylesheet is" $2
 #    fi
 
-pandoc -s  -f org -t markdown $filename -o $filename
+pandoc -s  -f org -t $OUTPUT_FORMAT $filename -o $filename
 
 ## echo "
 ## This was converted from =org= to =md= using =pandoc -t gfm= at time:
