@@ -15,16 +15,25 @@
   # * fzf
   # * xclip
 
+
+## WARNING, IF YOU USED `SPC F Y` FROM EMACS THIS WILL NOT WORK!!!
+## I DON'T KNOW WHY, I THINK IT'S BECAUSE OF Newline Characters at the end maybe?
+
+
+
 ### Code
 #' You have to strip out the `~` characters, they are incompatible with `realpath`
 #' fzf returns /home/username/path/to/file so it doesn't matter
-brokenPath=$(xclip -o -selection clipboard | sed s/\~/\$HOME/)
+brokenPath=$(xclip -o -selection clipboard)
 #find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf | xclip -selection clipboard
 NewFile=$(find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf)
 echo $NewFile | xclip -selection clipboard
 
 echo "
 Put the path of the source file in the clipboard and Press any Key to Continue
+
+(This doesn't work with a path taken from Emacs:buffer-file-name
+  I'd recommend using VSCode for this script)
 "
 
 # this will just continue after a key stroke
