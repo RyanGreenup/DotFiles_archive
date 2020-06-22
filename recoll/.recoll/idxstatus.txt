@@ -1,8 +1,8 @@
 phase = 5
-docsdone = 24125
-filesdone = 25472
-fileerrors = 22516
-dbtotdocs = 24125
-totfiles = 25472
-fn = /home/ryan/Notes/MD/notes/NoteTaking/Converting-Documents-to-Pandoc.md
+docsdone = 24251
+filesdone = 25605
+fileerrors = 22585
+dbtotdocs = 24251
+totfiles = 25605
+fn = /home/ryan/Notes/MD/notes/University/Analysis/texfrag/Cauchy_5FIntegral_5FFormula.md.prv/tmprGzLQ7/pr1-4.png
 hasmonitor = 1
