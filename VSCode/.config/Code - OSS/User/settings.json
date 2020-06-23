@@ -1,10 +1,10 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "Community Material Theme",
+    "workbench.colorTheme": "Dracula",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -2,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -199,6 +199,11 @@
         {
             "before": ["<leader>", "f", "S"],
             "commands": ["workbench.action.files.saveAll"]
+        },
+
+        {
+        "before": ["<leader>", "i", "s"],
+        "commands": ["editor.action.insertSnippet"]
         },
         {
             "before": ["<leader>", "f", "T"],
@@ -497,7 +502,11 @@
     "gitlens.views.compare.location": "gitlens",
     "gitlens.views.search.location": "gitlens",
     "markdown.extension.print.includeVscodeStylesheets": false,
-    "markdown.extension.syntax.plainTheme": true
+    "markdown.extension.syntax.plainTheme": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "rewrap.reformat": true
 }
 
 
