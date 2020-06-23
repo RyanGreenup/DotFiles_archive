@@ -1,10 +1,10 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Community Material Theme",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": -3,
+    "window.zoomLevel": 0,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -495,7 +495,9 @@
     "gitlens.views.fileHistory.location": "gitlens",
     "gitlens.views.lineHistory.location": "gitlens",
     "gitlens.views.compare.location": "gitlens",
-    "gitlens.views.search.location": "gitlens"
+    "gitlens.views.search.location": "gitlens",
+    "markdown.extension.print.includeVscodeStylesheets": false,
+    "markdown.extension.syntax.plainTheme": true
 }
 
 

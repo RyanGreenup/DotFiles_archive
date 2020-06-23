@@ -49,6 +49,11 @@
         "when": "listFocus && !inputFocus"
     },
     {
+        "key": "ctrl+j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
         "key": "ctrl+k",
         "command": "list.focusUp",
         "when": "listFocus && !inputFocus"
