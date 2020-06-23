@@ -1,6 +1,6 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "GitHub Light",
+    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
