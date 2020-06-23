@@ -1,10 +1,10 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "GitHub Light",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": -2,
+    "window.zoomLevel": -3,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",

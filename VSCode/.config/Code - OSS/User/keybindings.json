@@ -108,9 +108,15 @@
         "command": "workbench.action.showEditorsInActiveGroup"
     },
     {
+        "key": "ctrl+c ctrl+o",
+        "command": "editor.action.openLink"
+    },
+    {
         "key": "ctrl+x ctrl+f",
         "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+z ctrl+z",
+        "command": "markdown.showSource"
     }
-
-
 ]
