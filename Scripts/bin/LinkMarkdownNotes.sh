@@ -18,12 +18,13 @@ cd $NOTESDIR
  OUTPUTFILE=$(getNote_onlyShowFileName)
  INPUTFILE=$(xclip -o -selection clipboard)
 
-REL_PATH=$(realpath --relative-to $INPUTFILE $OUTPUTFILE)
+REL_PATH=$(realpath --relative-to $(dirname $INPUTFILE) $OUTPUTFILE)
 ## echo $REL_PATH | xclip -selection clipboard
 ##
 
 echo $(MarkdownLink)
 
+## TODO The Relative Path is in-FUCKING-correct
 
 
 }
