@@ -33,7 +33,7 @@ echo $(MarkdownLink)
 MarkdownLink() {
 
     name=$(basename $REL_PATH  | cut -f 1 -d '.')
-    echo "[$name]($REL_PATH)"
+    echo "[$name](./$REL_PATH)"
 }
 
 getNote() {
@@ -51,6 +51,8 @@ getNote() {
       ## treat as notebooks)
   ##
   ## This relies on the fact that each note has a unique name
+  ## If you've symlinked notes into two places you're a bad person
+  ## and it's your own fault that this has got you into hot water.
   ##
 getNote_onlyShowFileName() {
 
