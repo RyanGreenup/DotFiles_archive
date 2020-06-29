@@ -20,9 +20,14 @@ cd $NOTESDIR
 
 REL_PATH=$(realpath --relative-to $INPUTFILE $OUTPUTFILE)
 ## echo $REL_PATH | xclip -selection clipboard
+##
+MarkdownLink() {
 
-## echo $(MarkdownLink)
-echo $REL_PATH
+    name=$(basename $REL_PATH  | cut -f 1 -d '.')
+    echo "[$name]($REL_PATH)"
+}
+
+echo $(MarkdownLink)
 
 
 }
@@ -55,9 +60,6 @@ getNote_onlyShowFileName() {
         --bind pgup:preview-page-up,pgdn:preview-page-down | \
         xargs fd | xargs realpath
 
-MarkdownLink() {
-    name=$(echo "$filename" | cut -f 1 -d '.')
-}
 
 }
 
