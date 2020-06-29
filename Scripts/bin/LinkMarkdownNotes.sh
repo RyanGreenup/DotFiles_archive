@@ -21,17 +21,19 @@ cd $NOTESDIR
 REL_PATH=$(realpath --relative-to $INPUTFILE $OUTPUTFILE)
 ## echo $REL_PATH | xclip -selection clipboard
 ##
+
+echo $(MarkdownLink)
+
+
+
+}
+
+
 MarkdownLink() {
 
     name=$(basename $REL_PATH  | cut -f 1 -d '.')
     echo "[$name]($REL_PATH)"
 }
-
-echo $(MarkdownLink)
-
-
-}
-
 
 getNote() {
     fd \.md | sk \
