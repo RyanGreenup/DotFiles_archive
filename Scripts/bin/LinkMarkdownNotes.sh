@@ -17,10 +17,12 @@ cd $NOTESDIR
 
  OUTPUTFILE=$(getNote_onlyShowFileName)
  INPUTFILE=$(xclip -o -selection clipboard)
- realpath --relative-to $INPUTFILE $OUTPUTFILE
 
+REL_PATH=$(realpath --relative-to $INPUTFILE $OUTPUTFILE)
+## echo $REL_PATH | xclip -selection clipboard
 
-
+## echo $(MarkdownLink)
+echo $REL_PATH
 
 
 }
@@ -51,8 +53,11 @@ getNote_onlyShowFileName() {
     fd \.md | sd '^' 'basename "' | sd '$' '"' | bash | \
         fzf --preview "fd {} | xargs mdcat" \
         --bind pgup:preview-page-up,pgdn:preview-page-down | \
-        xargs fd \
+        xargs fd | xargs realpath
 
+MarkdownLink() {
+    name=$(echo "$filename" | cut -f 1 -d '.')
+}
 
 }
 
