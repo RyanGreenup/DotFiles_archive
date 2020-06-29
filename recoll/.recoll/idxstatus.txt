@@ -1,8 +1,8 @@
-phase = 5
-docsdone = 24251
-filesdone = 25605
-fileerrors = 22585
-dbtotdocs = 24251
-totfiles = 25605
-fn = /home/ryan/Notes/MD/notes/University/Analysis/texfrag/Cauchy_5FIntegral_5FFormula.md.prv/tmprGzLQ7/pr1-4.png
-hasmonitor = 1
+phase = 6
+docsdone = 5556
+filesdone = 5543
+fileerrors = 3996
+dbtotdocs = 14994
+totfiles = 5543
+fn = 
+hasmonitor = 0

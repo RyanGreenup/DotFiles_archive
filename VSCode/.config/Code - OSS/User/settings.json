@@ -4,7 +4,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": -2,
+    "window.zoomLevel": 0,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -271,11 +271,12 @@
         },
         {
             "before": ["g", "s", "s"],
-            "after": [
-                "leader",
-                "leader",
-                "s"
-            ]
+            "commands": ["markdown.showPreviewToSide"]
+    //        "after": [
+    //            "leader",
+    //            "leader",
+    //            "s"
+    //        ]
         },
         {
             "before": ["leader", "j", "j"],
@@ -456,6 +457,14 @@
             "commands": ["workbench.action.splitEditorDown"]
         },
         {
+            "before": ["<leader>", "t", "p"],
+            "commands": ["workbench.action.terminal.focusPrevious"]
+        },
+        {
+            "before": ["<leader>", "t", "n"],
+            "commands": ["workbench.action.terminal.focusNext"]
+        },
+        {
             "before": ["<leader>", "w", "v"],
             "commands": ["workbench.action.splitEditor"]
         },
@@ -506,8 +515,14 @@
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
-    "rewrap.reformat": true
-}
+    "rewrap.reformat": true,
+    "julia.enableTelemetry": true,
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "https://www.plantuml.com/plantuml",
+    "markdownExtended.disabledPlugins": "kbd",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.codeActionsOnSave": null
+
 
 
 
@@ -532,3 +547,6 @@
         //     "before": ["<leader>", "s", "s"],
         //     "commands": ["fuzzySearch.activeTextEditor"]
         // },
+
+}
+
