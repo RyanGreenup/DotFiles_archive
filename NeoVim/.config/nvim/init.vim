@@ -855,10 +855,12 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 
 " Remap F4 to CopyFileDirectory
 noremap <silent> <F4> :let @+=expand("%:p")<CR>
-noremap <silent> <leader>fy :let @+=expand("%:p")<CR>
+"noremap <silent> <leader>fy :let @+=expand("%:p")<CR>
+noremap <silent> <leader>fy :! echo "%" \| xargs realpath \| xclip -selection clipboard <CR><CR><CR>
 noremap <Leader>fL :! readlink -f "%" \| xclip -selection clipboard
 noremap <Leader>gL :
 noremap <silent> <leader>fty :let @+=expand("%:t")<CR>
+
 
 " Return to previous Buffer
 "Jump back to last edited buffer
