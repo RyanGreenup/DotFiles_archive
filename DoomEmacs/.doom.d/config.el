@@ -324,6 +324,11 @@
 (after! company (setq company-tooltip-idle-delay 1))
 
 ;;;; Insert R Heading
+
+
+
+
+
 (defun Insert-R-Heading-1 ()
   (interactive)
   (outshine-mode)
@@ -337,7 +342,7 @@
 
           (insert " ")
           (insert
-            (app5y 'concat (make-list (- 73 hlen) "-"))
+            (apply 'concat (make-list (- 73 hlen) "-"))
            )
        )
      )
@@ -436,6 +441,7 @@
       "f mt" 'my-open-current-file-in-typora
       "f mm" 'my-open-current-file-in-marktext
       "f mc" 'my-open-current-file-in-vscode
+      "f y" 'My-Copy-File-Path
       )
 ;;;; Markdown Mode
 ;;;;; Open in Other programs
@@ -493,6 +499,16 @@
     (local-set-key (kbd "C-c C-x C-u") 'markdown-toggle-url-hiding)
   )
 )
+;;;;; Copy File Path in a way that works with realpath
+(defun My-Copy-File-Path ()
+  (interactive)
+  (save-window-excursion
+(kill-new
+            (shell-quote-argument buffer-file-name))
+
+(message
+            (shell-quote-argument buffer-file-name))
+))
 ;;;; Remap Esc
 (setq evil-escape-key-sequence "jk") ;; This is better because the cursor will
                                      ;; remain stationary, no pressing kk after
