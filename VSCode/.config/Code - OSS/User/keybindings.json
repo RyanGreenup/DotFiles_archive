@@ -123,5 +123,9 @@
     {
         "key": "ctrl+z ctrl+z",
         "command": "markdown.showSource"
+    },
+    {
+        "key": "ctrl+k ctrl+enter",
+        "command": "workbench.action.minimizeOtherEditors"
     }
 ]
