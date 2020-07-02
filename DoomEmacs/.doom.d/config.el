@@ -541,6 +541,8 @@
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
   (eaf-bind-key take_photo "p" eaf-camera-keybinding))
 
+;; Give EAF a Github Token
+(setq eaf-grip-token "36329c7d10802b0d9a8f2a20559bf82f25918184")
 ;; Load Org-Roam Server
 ;; https://github.com/org-roam/org-roam-server
 (use-package org-roam-server
