@@ -14,7 +14,11 @@ else
     read -p 'Search: ' query
     echo searching for $query
 
-    recoll -b -t -q "ext:md $query" | cut -c 8- | \
-        fzf --bind pgup:preview-page-up,pgdn:preview-page-down --preview "mdcat {}" \
-        | xargs code -a
+    FILE=$(recoll -b -t -q "ext:md $query" | cut -c 8- | \
+        fzf --bind pgup:preview-page-up,pgdn:preview-page-down --preview "mdcat {}" )
+
+    ## Open only if a file was found.
+    if [ "$FILE" != "" ]; then
+        code -a $FILE
+    fi
 fi
