@@ -521,7 +521,17 @@
     "plantuml.server": "https://www.plantuml.com/plantuml",
     "markdownExtended.disabledPlugins": "kbd",
     "diffEditor.ignoreTrimWhitespace": true,
-    "editor.codeActionsOnSave": null
+    "editor.codeActionsOnSave": null,
+    "terminal.integrated.shell.linux": "/usr/bin/fish",
+    "editor.fontFamily": "'Fira Code Medium', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "emojisense.languages": {
+        "markdown": true,
+        "plaintext": false,
+        "julia": true,
+        "json": true,
+        "scminput": true // language used in the source control commit message box
+
+    }
 
 
 
