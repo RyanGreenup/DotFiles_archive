@@ -22,6 +22,7 @@
 
 ### Searching
 #
-rg --files-with-matches --no-messages "$1" | fzf --preview "mdcat {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1'"
+rg --files-with-matches --no-messages "$1" | fzf --bind pgup:preview-page-up,pgdn:preview-page-down  --preview "mdcat {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1'"
+
 
 ## sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'
