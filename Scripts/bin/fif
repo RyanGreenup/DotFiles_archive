@@ -7,6 +7,7 @@
 
   command -v rg >/dev/null 2>&1 || { echo >&2 "I require RipGrep but it's not installed.  Aborting."; exit 1; }
  command -v highlight >/dev/null 2>&1 || { echo >&2 "I require highlight but it's not installed. install it with sudo apt install highlight  Aborting."; exit 1; }
+ command -v mdcat >/dev/null 2>&1 || { echo >&2 "I require mdcat but it's not installed. install it with cargo install mdcat Aborting."; exit 1; }
  command -v fzf >/dev/null 2>&1 || { echo >&2 "I require fzf but it's not installed.  Aborting."; exit 1; }
 
 #if [[  !(command -v highlight) ]]; then
@@ -21,4 +22,6 @@
 
 ### Searching
 #
-rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1'"
+rg --files-with-matches --no-messages "$1" | fzf --preview "mdcat {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1'"
+
+## sk --ansi -i -c 'grep -rI --color=always --line-number "{}" .'
