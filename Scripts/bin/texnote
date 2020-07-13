@@ -61,6 +61,3 @@ fi
 echo opennvim
 #Open in Vim
 nvim +173 $filename.tex
-
-
-

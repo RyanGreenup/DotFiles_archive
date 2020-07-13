@@ -26,7 +26,8 @@
 #' fzf returns /home/username/path/to/file so it doesn't matter
 brokenPath=$(xclip -o -selection clipboard)
 #find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf | xclip -selection clipboard
-NewFile=$(find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf)
+## NewFile=$(find ~/Dropbox/ -name $(echo $(basename $brokenPath)) | fzf)
+NewFile=$(find ~/Notes/ -name $(echo $(basename $brokenPath)) | fzf)
 echo $NewFile | xclip -selection clipboard
 
 echo "

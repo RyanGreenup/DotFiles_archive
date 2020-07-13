@@ -1,6 +1,5 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "Dracula",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
@@ -531,7 +530,9 @@
         "json": true,
         "scminput": true // language used in the source control commit message box
 
-    }
+    },
+    "git.autofetch": true,
+    "workbench.colorTheme": "Noctis Viola"
 
 
 
