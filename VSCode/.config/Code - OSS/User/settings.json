@@ -3,7 +3,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 2,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -519,7 +519,7 @@
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "https://www.plantuml.com/plantuml",
     "markdownExtended.disabledPlugins": "kbd",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.codeActionsOnSave": null,
     "terminal.integrated.shell.linux": "/usr/bin/fish",
     "editor.fontFamily": "'Fira Code Medium', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -532,7 +532,12 @@
 
     },
     "git.autofetch": true,
-    "workbench.colorTheme": "Noctis Viola"
+    "workbench.colorTheme": "Noctis Viola",
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "markdownlint.config": {
+        "MD007": { "indent": 4 }
+        "MD013": false
+    }
 
 
 
