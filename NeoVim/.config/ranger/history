@@ -18,20 +18,16 @@ cd /tmp
 shell mkdir MD
 shell mkdir notes
 flat 0
-filter .md
 Bulkrename
 bulkrename
-flat -1
 filter .pdf
 filter zh
 filter pdf
 filter 
 search ode
 unmark
-delete
 rename attachments
 shell mkdir tags
-search 
 search cripts
 filter _
 search scr
@@ -44,7 +40,8 @@ filter .md
 search tmsu
 search .tmsu
 search .yarn
-delete
 q
 search 
 search vscode
+
+delete
