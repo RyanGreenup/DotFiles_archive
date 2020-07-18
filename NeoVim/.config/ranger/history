@@ -1,11 +1,3 @@
-rename .Rproj.user
-cd /home/ryan/Notes/DataSci/ThinkingAboutData
-filter -g \.md
-filter 02_Q
-filter Anal
-<<<<<<< HEAD
-shel
-rename output-39.png
 rename ggplot2_layers.p9ng
 rename layer_elements.png
 rename ggplot2_layers.png
@@ -14,11 +6,7 @@ shell cp ~/tmp/note.html ./05
 qw
 filter Visual_Analy
 filter Vis
-=======
 flat 3
-filter conflicted copy
->>>>>>> ab26d0e9730a3b25d37aec9364c5bdc6a8d1a88a
-q
 search doom
 cd /tmp/tags
 cd /tmp/notes/
@@ -38,7 +26,6 @@ filter .pdf
 filter zh
 filter pdf
 filter 
-
 search ode
 unmark
 delete
@@ -48,3 +35,16 @@ search
 search cripts
 filter _
 search scr
+search help
+search au
+search en
+search cat
+flat -1
+filter .md
+search tmsu
+search .tmsu
+search .yarn
+delete
+q
+search 
+search vscode
