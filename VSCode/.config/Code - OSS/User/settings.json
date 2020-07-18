@@ -8,7 +8,6 @@
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block",
-    "vim.easymotion": true,
 
 
     ////////////////////////////////////////////////
@@ -533,9 +532,9 @@
     },
     "git.autofetch": true,
     "workbench.colorTheme": "Noctis Viola",
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
     "markdownlint.config": {
-        "MD007": { "indent": 4 }
+        "MD007": { "indent": 4 },
         "MD013": false
     }
 
