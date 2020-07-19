@@ -882,7 +882,7 @@ map <Leader>bn :bnext<CR>
 
 
 """" Leader Key
-"This is probably for the best because matches spacemacs
+"This is probably for the best because matches spacemacs/Doom
 "let mapleader="\<Space>"
 map <Space> <Leader>
 

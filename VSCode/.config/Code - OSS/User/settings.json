@@ -1,15 +1,13 @@
 {
     "vscode-neovim.neovimPath": "/usr/bin/neovim",
-    "workbench.colorTheme": "Dracula",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 2,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block",
-    "vim.easymotion": true,
 
 
     ////////////////////////////////////////////////
@@ -520,8 +518,25 @@
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "https://www.plantuml.com/plantuml",
     "markdownExtended.disabledPlugins": "kbd",
-    "diffEditor.ignoreTrimWhitespace": true,
-    "editor.codeActionsOnSave": null
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.codeActionsOnSave": null,
+    "terminal.integrated.shell.linux": "/usr/bin/fish",
+    "editor.fontFamily": "'Fira Code Medium', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "emojisense.languages": {
+        "markdown": true,
+        "plaintext": false,
+        "julia": true,
+        "json": true,
+        "scminput": true // language used in the source control commit message box
+
+    },
+    "git.autofetch": true,
+    "workbench.colorTheme": "Noctis Viola",
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "markdownlint.config": {
+        "MD007": { "indent": 4 },
+        "MD013": false
+    }
 
 
 

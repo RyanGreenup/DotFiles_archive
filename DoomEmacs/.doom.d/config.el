@@ -207,6 +207,7 @@
     (plantuml    . t)
     (dot         . t)
     (gnuplot     . t)
+    (asymptote   . t)
     (java        . t)
     (javascript        . t)
     (sed         . t)
@@ -521,7 +522,7 @@
   (save-window-excursion
    (async-shell-command
                                         ;  (format "gvim +%d %s"
-    (format "~/.local/kitty.app/bin/kitty -e nvim +%d %s"
+    (format "/usr/bin/kitty -e nvim +%d %s"
             (+ (if (bolp) 1 0) (count-lines 1 (point)))
             (shell-quote-argument buffer-file-name)))
    ))
@@ -560,41 +561,45 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#272822" "#F92672" "#A6E22E" "#E6DB74" "#66D9EF" "#FD5FF0" "#A1EFE4" "#F8F8F2"])
+   ["#21242b" "#F92672" "#A6E22E" "#E6DB74" "#66D9EF" "#FD5FF0" "#A1EFE4" "#F8F8F2"])
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
- '(compilation-message-face 'default)
+ '(compilation-message-face (quote default))
  '(doom-modeline-mode t)
  '(eaf-find-alternate-file-in-dired t t)
  '(fci-rule-color "#3C3D37")
- '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
+ '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
-   '(("#3C3D37" . 0)
+   (quote
+    (("#3C3D37" . 0)
      ("#679A01" . 20)
      ("#4BBEAE" . 30)
      ("#1DB4D0" . 50)
      ("#9A8F21" . 60)
      ("#A75B00" . 70)
      ("#F309DF" . 85)
-     ("#3C3D37" . 100)))
+     ("#3C3D37" . 100))))
  '(jdee-db-active-breakpoint-face-colors (cons "#1E2029" "#bd93f9"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#1E2029" "#50fa7b"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1E2029" "#565761"))
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
-   '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
+   (quote
+    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(objed-cursor-color "#ff5555")
  '(package-selected-packages
-   '(leuven-theme afternoon-theme cyberpunk-2019-theme monokai-theme zenburn-theme dracula-theme texfrag elmacro fzf ranger))
- '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
+   (quote
+    (org-roam-server leuven-theme afternoon-theme cyberpunk-2019-theme monokai-theme zenburn-theme dracula-theme texfrag elmacro fzf ranger)))
+ '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
- '(preview-transparent-color '(highlight :background))
+ '(preview-transparent-color (quote (highlight :background)))
  '(rustic-ansi-faces
    ["#282a36" "#ff5555" "#50fa7b" "#f1fa8c" "#61bfff" "#ff79c6" "#8be9fd" "#f8f8f2"])
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   '((20 . "#F92672")
+   (quote
+    ((20 . "#F92672")
      (40 . "#CF4F1F")
      (60 . "#C26C0F")
      (80 . "#E6DB74")
@@ -611,10 +616,11 @@
      (300 . "#299BA6")
      (320 . "#2896B5")
      (340 . "#2790C3")
-     (360 . "#66D9EF")))
+     (360 . "#66D9EF"))))
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
-   '(unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0")))
+   (quote
+    (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
