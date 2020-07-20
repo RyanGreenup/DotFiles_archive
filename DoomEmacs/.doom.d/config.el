@@ -589,7 +589,7 @@
  '(objed-cursor-color "#ff5555")
  '(package-selected-packages
    (quote
-    (org-roam-server leuven-theme afternoon-theme cyberpunk-2019-theme monokai-theme zenburn-theme dracula-theme texfrag elmacro fzf ranger)))
+    (apache-mode org-roam-server leuven-theme afternoon-theme cyberpunk-2019-theme monokai-theme zenburn-theme dracula-theme texfrag elmacro fzf ranger)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
