@@ -9,6 +9,7 @@
 (package! hyperbole)
 (package! simple-httpd)
 (package! outshine)
+(package! texfrag)
 (package! org-pdfview)
 (package! citeproc)
 (package! citeproc)
