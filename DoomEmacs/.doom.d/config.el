@@ -54,6 +54,14 @@
 ;; they are implemented.
 
 ;;; Org Mode Settings
+;;;; Hooks
+;;;;; Enable TexFrag Mode
+;; Texfrag mode is way faster and looks nicer so use that instead
+(add-hook 'org-mode-hook
+  (lambda ()
+    (texfrag-mode)
+  )
+)
 (after! org
 ;;;; PDF Viewer (To view PDF files inside Emacs)
     ;; load pdfview
