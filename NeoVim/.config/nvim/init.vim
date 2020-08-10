@@ -312,8 +312,8 @@ Plug 'lervag/vimtex'
 
 "Conceal Tex
 Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} " for VimPlug
-autocmd BufEnter *.tex set conceallevel=2
-autocmd BufEnter *.md set conceallevel=2
+autocmd BufEnter *.tex set conceallevel=0
+autocmd BufEnter *.md set conceallevel=0
 let g:tex_conceal="abdgms"
 hi clear Conceal "This removes the stupid highlighting
 

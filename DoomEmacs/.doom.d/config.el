@@ -435,7 +435,8 @@
 (map!  :after org
         :map org-mode-map
         :localleader
-      "l r l" 'org-ref-helm-insert-label-link
+;;      "l r l" 'org-ref-helm-insert-ref-link
+      "l r l" 'org-ref-insert-ref-link
       "l r c" 'org-ref-helm-insert-cite-link
  )
 
