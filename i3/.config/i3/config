@@ -448,6 +448,21 @@ bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
 ## bindsym XF86AudioPrev exec playerctl previous
 
 
+## Scratch Term
+kitty --title=MainTerminal & disown
+bindsym $mod+t [title="scratchterm"] scratchpad show
+for_window [title="scratchterm"] move to position 650 0
+for_window [title="scratchterm"] border none
+for_window [title="scratchterm"] floating enable sticky enable
+for_window [title="scratchterm"] move scratchpad
+for_window [title="scratchterm"] resize set 920 600
+
+
+
 
 ## vim:fdm=expr:fdl=0
 ## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
+#
+#
+#
+#

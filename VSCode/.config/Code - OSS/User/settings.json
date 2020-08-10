@@ -531,12 +531,13 @@
 
     },
     "git.autofetch": true,
-    "workbench.colorTheme": "Noctis Viola",
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "workbench.colorTheme": "Dracula",
     "markdownlint.config": {
         "MD007": { "indent": 4 },
         "MD013": false
-    }
+    },
+    "python.dataScience.askForKernelRestart": false,
+    "python.dataScience.alwaysTrustNotebooks": true
 
 
 

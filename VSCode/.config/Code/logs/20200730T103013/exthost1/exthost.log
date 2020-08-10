@@ -1,0 +1,126 @@
+[2020-07-30 10:30:15.485] [exthost] [info] extension host started
+[2020-07-30 10:30:15.513] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-07-30 10:30:15.513] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/debug-auto-launch/dist/extension
+[2020-07-30 10:30:15.517] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-07-30 10:30:15.517] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/emmet/dist/extension
+[2020-07-30 10:30:15.537] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-07-30 10:30:15.537] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/git/dist/main
+[2020-07-30 10:30:15.573] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-07-30 10:30:15.573] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/github-authentication/dist/extension.js
+[2020-07-30 10:30:15.584] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-07-30 10:30:15.584] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/merge-conflict/dist/mergeConflictMain
+[2020-07-30 10:30:15.587] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":true,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"*"}
+[2020-07-30 10:30:15.587] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/microsoft-authentication/dist/extension.js
+[2020-07-30 10:30:15.595] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-07-30 10:30:15.595] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/search-result/dist/extension.js
+[2020-07-30 10:30:15.596] [exthost] [info] ExtensionService#_doActivateExtension alefragnani.Bookmarks {"startup":true,"extensionId":{"value":"alefragnani.Bookmarks","_lower":"alefragnani.bookmarks"},"activationEvent":"*"}
+[2020-07-30 10:30:15.596] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/alefragnani.bookmarks-11.3.1/dist/extension
+[2020-07-30 10:30:15.601] [exthost] [info] ExtensionService#_doActivateExtension bierner.emojisense {"startup":true,"extensionId":{"value":"bierner.emojisense","_lower":"bierner.emojisense"},"activationEvent":"*"}
+[2020-07-30 10:30:15.601] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/bierner.emojisense-0.7.0/dist/extension
+[2020-07-30 10:30:15.607] [exthost] [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense {"startup":true,"extensionId":{"value":"christian-kohler.path-intellisense","_lower":"christian-kohler.path-intellisense"},"activationEvent":"*"}
+[2020-07-30 10:30:15.607] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/christian-kohler.path-intellisense-2.2.1/out/extension.js
+[2020-07-30 10:30:15.619] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"extensionId":{"value":"CoenraadS.bracket-pair-colorizer","_lower":"coenraads.bracket-pair-colorizer"},"activationEvent":"*"}
+[2020-07-30 10:30:15.619] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2020-07-30 10:30:15.634] [exthost] [info] ExtensionService#_doActivateExtension cssho.vscode-svgviewer {"startup":true,"extensionId":{"value":"cssho.vscode-svgviewer","_lower":"cssho.vscode-svgviewer"},"activationEvent":"*"}
+[2020-07-30 10:30:15.634] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/cssho.vscode-svgviewer-2.0.0/out/src/extension
+[2020-07-30 10:30:15.656] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"extensionId":{"value":"dbaeumer.vscode-eslint","_lower":"dbaeumer.vscode-eslint"},"activationEvent":"*"}
+[2020-07-30 10:30:15.656] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/dbaeumer.vscode-eslint-2.1.8/client/out/extension
+[2020-07-30 10:30:15.667] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":true,"extensionId":{"value":"eamodio.gitlens","_lower":"eamodio.gitlens"},"activationEvent":"*"}
+[2020-07-30 10:30:15.667] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/eamodio.gitlens-10.2.2/dist/extension
+[2020-07-30 10:30:15.717] [exthost] [info] ExtensionService#_doActivateExtension fcrespo82.markdown-table-formatter {"startup":true,"extensionId":{"value":"fcrespo82.markdown-table-formatter","_lower":"fcrespo82.markdown-table-formatter"},"activationEvent":"*"}
+[2020-07-30 10:30:15.717] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/fcrespo82.markdown-table-formatter-2.1.0/dist/extension
+[2020-07-30 10:30:15.744] [exthost] [info] ExtensionService#_doActivateExtension hoovercj.vscode-power-mode {"startup":true,"extensionId":{"value":"hoovercj.vscode-power-mode","_lower":"hoovercj.vscode-power-mode"},"activationEvent":"*"}
+[2020-07-30 10:30:15.744] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/hoovercj.vscode-power-mode-2.2.0/out/src/extension
+[2020-07-30 10:30:15.756] [exthost] [info] ExtensionService#_doActivateExtension kbysiec.vscode-search-everywhere {"startup":true,"extensionId":{"value":"kbysiec.vscode-search-everywhere","_lower":"kbysiec.vscode-search-everywhere"},"activationEvent":"*"}
+[2020-07-30 10:30:15.756] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/kbysiec.vscode-search-everywhere-1.0.3/dist/extension.js
+[2020-07-30 10:30:15.765] [exthost] [info] ExtensionService#_doActivateExtension kortina.vscode-markdown-notes {"startup":true,"extensionId":{"value":"kortina.vscode-markdown-notes","_lower":"kortina.vscode-markdown-notes"},"activationEvent":"*"}
+[2020-07-30 10:30:15.765] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/kortina.vscode-markdown-notes-0.0.13/out/extension.js
+[2020-07-30 10:30:15.770] [exthost] [info] ExtensionService#_doActivateExtension lucax88x.codeacejumper {"startup":true,"extensionId":{"value":"lucax88x.codeacejumper","_lower":"lucax88x.codeacejumper"},"activationEvent":"*"}
+[2020-07-30 10:30:15.770] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/lucax88x.codeacejumper-3.3.2/dist/extension
+[2020-07-30 10:30:15.780] [exthost] [info] ExtensionService#_doActivateExtension mblode.pretty-formatter {"startup":true,"extensionId":{"value":"mblode.pretty-formatter","_lower":"mblode.pretty-formatter"},"activationEvent":"*"}
+[2020-07-30 10:30:15.780] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/mblode.pretty-formatter-0.2.1/out/extension.js
+[2020-07-30 10:30:15.794] [exthost] [info] ExtensionService#_doActivateExtension naumovs.color-highlight {"startup":true,"extensionId":{"value":"naumovs.color-highlight","_lower":"naumovs.color-highlight"},"activationEvent":"*"}
+[2020-07-30 10:30:15.794] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/naumovs.color-highlight-2.3.0/dist/extension
+[2020-07-30 10:30:15.804] [exthost] [info] ExtensionService#_doActivateExtension stkb.rewrap {"startup":true,"extensionId":{"value":"stkb.rewrap","_lower":"stkb.rewrap"},"activationEvent":"*"}
+[2020-07-30 10:30:15.805] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/stkb.rewrap-1.13.0/vscode/Extension
+[2020-07-30 10:30:15.853] [exthost] [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons {"startup":true,"extensionId":{"value":"vscode-icons-team.vscode-icons","_lower":"vscode-icons-team.vscode-icons"},"activationEvent":"*"}
+[2020-07-30 10:30:15.853] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vscode-icons-team.vscode-icons-10.2.0/dist/src/vscode-icons.bundle.js
+[2020-07-30 10:30:15.893] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"extensionId":{"value":"vscodevim.vim","_lower":"vscodevim.vim"},"activationEvent":"*"}
+[2020-07-30 10:30:15.893] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vscodevim.vim-1.16.0/out/extension
+[2020-07-30 10:30:15.960] [exthost] [info] ExtensionService#_doActivateExtension wayou.vscode-todo-highlight {"startup":true,"extensionId":{"value":"wayou.vscode-todo-highlight","_lower":"wayou.vscode-todo-highlight"},"activationEvent":"*"}
+[2020-07-30 10:30:15.960] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/wayou.vscode-todo-highlight-1.0.4/src/extension
+[2020-07-30 10:30:27.036] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-07-30 10:30:27.036] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/github/dist/extension.js
+[2020-07-30 10:30:27.051] [exthost] [info] eager extensions activated
+[2020-07-30 10:31:11.029] [exthost] [info] extension host started
+[2020-07-30 10:31:11.042] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-07-30 10:31:11.043] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/debug-auto-launch/dist/extension
+[2020-07-30 10:31:11.045] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-07-30 10:31:11.045] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/emmet/dist/extension
+[2020-07-30 10:31:11.054] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-07-30 10:31:11.054] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/git/dist/main
+[2020-07-30 10:31:11.072] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-07-30 10:31:11.072] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/github-authentication/dist/extension.js
+[2020-07-30 10:31:11.076] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-07-30 10:31:11.076] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/merge-conflict/dist/mergeConflictMain
+[2020-07-30 10:31:11.077] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":true,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"*"}
+[2020-07-30 10:31:11.077] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/microsoft-authentication/dist/extension.js
+[2020-07-30 10:31:11.080] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-07-30 10:31:11.080] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/search-result/dist/extension.js
+[2020-07-30 10:31:11.081] [exthost] [info] ExtensionService#_doActivateExtension alefragnani.Bookmarks {"startup":true,"extensionId":{"value":"alefragnani.Bookmarks","_lower":"alefragnani.bookmarks"},"activationEvent":"*"}
+[2020-07-30 10:31:11.081] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/alefragnani.bookmarks-11.3.1/dist/extension
+[2020-07-30 10:31:11.084] [exthost] [info] ExtensionService#_doActivateExtension bierner.emojisense {"startup":true,"extensionId":{"value":"bierner.emojisense","_lower":"bierner.emojisense"},"activationEvent":"*"}
+[2020-07-30 10:31:11.084] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/bierner.emojisense-0.7.0/dist/extension
+[2020-07-30 10:31:11.088] [exthost] [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense {"startup":true,"extensionId":{"value":"christian-kohler.path-intellisense","_lower":"christian-kohler.path-intellisense"},"activationEvent":"*"}
+[2020-07-30 10:31:11.088] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/christian-kohler.path-intellisense-2.2.1/out/extension.js
+[2020-07-30 10:31:11.100] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"extensionId":{"value":"CoenraadS.bracket-pair-colorizer","_lower":"coenraads.bracket-pair-colorizer"},"activationEvent":"*"}
+[2020-07-30 10:31:11.100] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2020-07-30 10:31:11.109] [exthost] [info] ExtensionService#_doActivateExtension cssho.vscode-svgviewer {"startup":true,"extensionId":{"value":"cssho.vscode-svgviewer","_lower":"cssho.vscode-svgviewer"},"activationEvent":"*"}
+[2020-07-30 10:31:11.109] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/cssho.vscode-svgviewer-2.0.0/out/src/extension
+[2020-07-30 10:31:11.125] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"extensionId":{"value":"dbaeumer.vscode-eslint","_lower":"dbaeumer.vscode-eslint"},"activationEvent":"*"}
+[2020-07-30 10:31:11.125] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/dbaeumer.vscode-eslint-2.1.8/client/out/extension
+[2020-07-30 10:31:11.128] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":true,"extensionId":{"value":"eamodio.gitlens","_lower":"eamodio.gitlens"},"activationEvent":"*"}
+[2020-07-30 10:31:11.128] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/eamodio.gitlens-10.2.2/dist/extension
+[2020-07-30 10:31:11.151] [exthost] [info] ExtensionService#_doActivateExtension fcrespo82.markdown-table-formatter {"startup":true,"extensionId":{"value":"fcrespo82.markdown-table-formatter","_lower":"fcrespo82.markdown-table-formatter"},"activationEvent":"*"}
+[2020-07-30 10:31:11.151] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/fcrespo82.markdown-table-formatter-2.1.0/dist/extension
+[2020-07-30 10:31:11.160] [exthost] [info] ExtensionService#_doActivateExtension hoovercj.vscode-power-mode {"startup":true,"extensionId":{"value":"hoovercj.vscode-power-mode","_lower":"hoovercj.vscode-power-mode"},"activationEvent":"*"}
+[2020-07-30 10:31:11.160] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/hoovercj.vscode-power-mode-2.2.0/out/src/extension
+[2020-07-30 10:31:11.169] [exthost] [info] ExtensionService#_doActivateExtension kbysiec.vscode-search-everywhere {"startup":true,"extensionId":{"value":"kbysiec.vscode-search-everywhere","_lower":"kbysiec.vscode-search-everywhere"},"activationEvent":"*"}
+[2020-07-30 10:31:11.169] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/kbysiec.vscode-search-everywhere-1.0.3/dist/extension.js
+[2020-07-30 10:31:11.176] [exthost] [info] ExtensionService#_doActivateExtension kortina.vscode-markdown-notes {"startup":true,"extensionId":{"value":"kortina.vscode-markdown-notes","_lower":"kortina.vscode-markdown-notes"},"activationEvent":"*"}
+[2020-07-30 10:31:11.176] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/kortina.vscode-markdown-notes-0.0.13/out/extension.js
+[2020-07-30 10:31:11.180] [exthost] [info] ExtensionService#_doActivateExtension lucax88x.codeacejumper {"startup":true,"extensionId":{"value":"lucax88x.codeacejumper","_lower":"lucax88x.codeacejumper"},"activationEvent":"*"}
+[2020-07-30 10:31:11.181] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/lucax88x.codeacejumper-3.3.2/dist/extension
+[2020-07-30 10:31:11.183] [exthost] [info] ExtensionService#_doActivateExtension mblode.pretty-formatter {"startup":true,"extensionId":{"value":"mblode.pretty-formatter","_lower":"mblode.pretty-formatter"},"activationEvent":"*"}
+[2020-07-30 10:31:11.183] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/mblode.pretty-formatter-0.2.1/out/extension.js
+[2020-07-30 10:31:11.187] [exthost] [info] ExtensionService#_doActivateExtension naumovs.color-highlight {"startup":true,"extensionId":{"value":"naumovs.color-highlight","_lower":"naumovs.color-highlight"},"activationEvent":"*"}
+[2020-07-30 10:31:11.188] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/naumovs.color-highlight-2.3.0/dist/extension
+[2020-07-30 10:31:11.192] [exthost] [info] ExtensionService#_doActivateExtension stkb.rewrap {"startup":true,"extensionId":{"value":"stkb.rewrap","_lower":"stkb.rewrap"},"activationEvent":"*"}
+[2020-07-30 10:31:11.192] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/stkb.rewrap-1.13.0/vscode/Extension
+[2020-07-30 10:31:11.236] [exthost] [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons {"startup":true,"extensionId":{"value":"vscode-icons-team.vscode-icons","_lower":"vscode-icons-team.vscode-icons"},"activationEvent":"*"}
+[2020-07-30 10:31:11.236] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vscode-icons-team.vscode-icons-10.2.0/dist/src/vscode-icons.bundle.js
+[2020-07-30 10:31:11.260] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"extensionId":{"value":"vscodevim.vim","_lower":"vscodevim.vim"},"activationEvent":"*"}
+[2020-07-30 10:31:11.261] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vscodevim.vim-1.16.0/out/extension
+[2020-07-30 10:31:11.297] [exthost] [info] ExtensionService#_doActivateExtension wayou.vscode-todo-highlight {"startup":true,"extensionId":{"value":"wayou.vscode-todo-highlight","_lower":"wayou.vscode-todo-highlight"},"activationEvent":"*"}
+[2020-07-30 10:31:11.298] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/wayou.vscode-todo-highlight-1.0.4/src/extension
+[2020-07-30 10:31:12.733] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-07-30 10:31:12.733] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/github/dist/extension.js
+[2020-07-30 10:31:12.738] [exthost] [info] eager extensions activated
+[2020-07-30 10:31:13.161] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:markdown"}
+[2020-07-30 10:31:13.161] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/extension-editing/dist/extension
+[2020-07-30 10:31:13.172] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"onLanguage:markdown"}
+[2020-07-30 10:31:13.172] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/markdown-language-features/dist/extension
+[2020-07-30 10:31:13.195] [exthost] [info] ExtensionService#_doActivateExtension DavidAnson.vscode-markdownlint {"startup":false,"extensionId":{"value":"DavidAnson.vscode-markdownlint","_lower":"davidanson.vscode-markdownlint"},"activationEvent":"onLanguage:markdown"}
+[2020-07-30 10:31:13.195] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/davidanson.vscode-markdownlint-0.36.2/bundle
+[2020-07-30 10:31:13.213] [exthost] [info] ExtensionService#_doActivateExtension svsool.markdown-memo {"startup":false,"extensionId":{"value":"svsool.markdown-memo","_lower":"svsool.markdown-memo"},"activationEvent":"onLanguage:markdown"}
+[2020-07-30 10:31:13.213] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/svsool.markdown-memo-0.1.11/dist/extension
+[2020-07-30 10:31:13.228] [exthost] [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one {"startup":false,"extensionId":{"value":"yzhang.markdown-all-in-one","_lower":"yzhang.markdown-all-in-one"},"activationEvent":"onLanguage:markdown"}
+[2020-07-30 10:31:13.228] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/yzhang.markdown-all-in-one-3.2.0/dist/extension
+[2020-07-30 10:31:13.325] [exthost] [info] ExtensionService#_doActivateExtension bierner.markdown-footnotes {"startup":false,"extensionId":{"value":"yzhang.markdown-all-in-one","_lower":"yzhang.markdown-all-in-one"},"activationEvent":"api"}
+[2020-07-30 10:31:13.325] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/bierner.markdown-footnotes-0.0.7/extension.js
+[2020-07-30 10:31:13.428] [exthost] [info] ExtensionService#_doActivateExtension bierner.markdown-mermaid {"startup":false,"extensionId":{"value":"yzhang.markdown-all-in-one","_lower":"yzhang.markdown-all-in-one"},"activationEvent":"api"}
+[2020-07-30 10:31:13.428] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/bierner.markdown-mermaid-1.5.1/index.js
+[2020-07-30 10:31:13.482] [exthost] [info] ExtensionService#_doActivateExtension geeklearningio.graphviz-markdown-preview {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"api"}
+[2020-07-30 10:31:13.482] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/geeklearningio.graphviz-markdown-preview-0.0.8/out/extension
+[2020-07-30 10:31:13.483] [exthost] [info] ExtensionService#_doActivateExtension jebbs.plantuml {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"api"}
+[2020-07-30 10:31:13.483] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/jebbs.plantuml-2.13.12/out/src/extension

@@ -453,16 +453,6 @@
       "f mc" 'my-open-current-file-in-vscode
       "f y" 'My-Copy-File-Path
       )
-
-;;;; Add Key Binding for org-ref insert label
-(add-hook 'org-mode-hook
-  (lambda ()
-    (local-set-key (kbd "C-c 8") 'org-ref-helm-insert-label-link)
-    (local-set-key (kbd "C-c C-x C-u") 'markdown-toggle-url-hiding)
-  )
-)
-
-
 ;;;; Markdown Mode
 ;;;;; Open in Other programs
 
@@ -587,7 +577,6 @@
  '(doom-modeline-mode t)
  '(eaf-find-alternate-file-in-dired t t)
  '(fci-rule-color "#3C3D37")
- '(frame-brackground-mode (quote dark))
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
    (quote
@@ -607,12 +596,9 @@
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(objed-cursor-color "#ff5555")
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/Studies/QuantProject/Current/Python-Quant/pythonQuant.org" "/home/ryan/Notes/Org/02_Practical_org.org" "/home/ryan/Notes/Org/1.org" "/home/ryan/Notes/Org/AbstractAlgebraNotes.org" "/home/ryan/Notes/Org/CSS.org" "/home/ryan/Notes/Org/DataVizGGPlot2.org" "/home/ryan/Notes/Org/Fundamental_Theorem_of_Calculus.org" "/home/ryan/Notes/Org/MathAdventuresWithPython.org" "/home/ryan/Notes/Org/NoteTaking.org" "/home/ryan/Notes/Org/Pepperminty-Arch-Wiki-Post.org" "/home/ryan/Notes/Org/Social_Web_Analytics.org" "/home/ryan/Notes/Org/StatisticsAllExport.org" "/home/ryan/Notes/Org/StatsExport2.org" "/home/ryan/Notes/Org/TSANotes.org" "/home/ryan/Notes/Org/Template.org" "/home/ryan/Notes/Org/ThinkingAboutData.org" "/home/ryan/Notes/Org/TimeSeries-MultipleLinearRegression.org" "/home/ryan/Notes/Org/VimNotes.org" "/home/ryan/Notes/Org/VisualAnalytics.org" "/home/ryan/Notes/Org/Visual_Analytics_Assignment1.org" "/home/ryan/Notes/Org/analytic_programming.org" "/home/ryan/Notes/Org/atom.org" "/home/ryan/Notes/Org/inbox.org" "/home/ryan/Notes/Org/index.org" "/home/ryan/Notes/Org/init.org" "/home/ryan/Notes/Org/journal.org" "/home/ryan/Notes/Org/manual.org" "/home/ryan/Notes/Org/notableTMSUPost.org" "/home/ryan/Notes/Org/notes.org" "/home/ryan/Notes/Org/py-search-app.org" "/home/ryan/Notes/Org/scratch.org" "/home/ryan/Notes/Org/sitemap.org" "/home/ryan/Notes/Org/todo.org" "/home/ryan/Notes/Org/usingPandoc.org")))
  '(package-selected-packages
    (quote
-    (zerodark-theme lsp-julia magic-latex-buffer dark-krystal-theme arc-dark-theme smart-mode-line-atom-one-dark-theme phoenix-dark-mono-theme gruber-darker-theme phoenix-dark-pink-theme flatui-dark-theme idea-darkula-theme darktooth-theme atom-dark-theme vscdark-theme dark-mint-theme company-jedi lsp-python-ms org-roam-server leuven-theme afternoon-theme cyberpunk-2019-theme monokai-theme zenburn-theme dracula-theme texfrag elmacro fzf ranger)))
+    (apache-mode org-roam-server leuven-theme afternoon-theme cyberpunk-2019-theme monokai-theme zenburn-theme dracula-theme texfrag elmacro fzf ranger)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
