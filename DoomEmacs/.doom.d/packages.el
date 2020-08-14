@@ -16,6 +16,7 @@
 (package! helm-org-rifle)
 (package! helm-recoll)
 (package! texfrag)
+(package! ob-mongo)
 ;; I think Doom comes with counsel recoll
 ;; (package! helm-recoll)
 
