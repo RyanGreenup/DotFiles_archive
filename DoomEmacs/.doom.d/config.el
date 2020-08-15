@@ -205,6 +205,14 @@
   ;; this may break marking with Space.
 (setq org-complete-tags-always-offer-all-agenda-tags t)
 (setq org-tags-column 80)
+;;;; Preview Tikz inside Org-Mode
+;; You'll need to use this with texfrag-mode
+;; It doesn't seem to work with org-latex-preview-fragment
+;; but texfrag mode is better anyway.
+(add-to-list 'org-latex-packages-alist
+             '("" "tikz" t))
+(eval-after-load "preview"
+  '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
 ;;;; org-babel languages
 ;;;;;;; Active Babel languages
  (org-babel-do-load-languages
