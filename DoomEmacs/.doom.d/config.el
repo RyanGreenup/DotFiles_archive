@@ -62,6 +62,12 @@
     (texfrag-mode)
   )
 )
+(add-hook 'markdown-mode-hook
+  (lambda ()
+    (texfrag-mode)
+  )
+)
+
 (after! org
 ;;;; PDF Viewer (To view PDF files inside Emacs)
     ;; load pdfview
