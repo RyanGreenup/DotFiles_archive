@@ -328,8 +328,6 @@ background color that is barely perceptible."
     (set-modeline-faces)
     (with-eval-after-load 'cus-edit (set-button-faces)))
 
-;; Set theme
-(elegance-dark)
 
 ;; Structural
 (set-face 'bold                                          'face-strong)
@@ -1290,3 +1288,6 @@ function is a convenience wrapper used by `describe-package-1'."
 (global-set-key (kbd "C-x C-x") 'execute-extended-command)
 
 (provide 'sanity)
+;; Set theme
+(elegance-dark)
+(elegance-light)
