@@ -22,7 +22,7 @@
 
 ;; Both of these must be here otherwise poly mode crashes all the time
 (package! polymode)
-;; (package! org-roam-server)
+(package! org-roam-server)
 (package! poly-R)
 (package! org-ref)
 

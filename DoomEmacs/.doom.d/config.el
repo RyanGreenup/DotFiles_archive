@@ -256,7 +256,21 @@
 (setq org-latex-to-mathml-convert-command
       "latexmlmath \"%i\" --presentationmathml=%o")
 
-
+;;;; Org Roam Server
+(use-package org-roam-server
+  :ensure t
+  :config
+  (setq org-roam-server-host "0.0.0.0"
+        org-roam-server-port 54632
+        org-roam-server-authenticate nil
+        org-roam-server-export-inline-images t
+        org-roam-server-serve-files t
+        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+        org-roam-server-network-poll t
+        org-roam-server-network-arrows t
+        org-roam-server-network-label-truncate t
+        org-roam-server-network-label-truncate-length 60
+        org-roam-server-network-label-wrap-length 20))
 )
 
 ;;;;; Inline Style Sheet
@@ -575,18 +589,8 @@
   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
   (eaf-bind-key take_photo "p" eaf-camera-keybinding))
-
-;; Give EAF a Github Token
-;; (setq eaf-grip-token "36329c7d10802b0d9a8f2a20559bf82f25918184")
-;; Load Org-Roam Server
-;; https://github.com/org-roam/org-roam-server
-(use-package org-roam-server
-;;  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/org-roam-server/" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
-  )
 )
-(setq httpd-port 8327)
-(setq httpd-host "0.0.0.0")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
