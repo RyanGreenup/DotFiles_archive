@@ -255,7 +255,26 @@
 ;;;;; ODT Export uses MathML
 (setq org-latex-to-mathml-convert-command
       "latexmlmath \"%i\" --presentationmathml=%o")
+;;;;; Pandoc Org-Mode HTML Export
+;; TODO offer CSS Choices
+;; TODO Have the file type read automatically?
+;; TODO MathJax could be put in more elegantly, maybe use a variable
+;; TODO Shouldn't check for the file name four times in a row.
 
+(defun export-org-as-self-contained-html-pandoc ()
+ (interactive)
+  (save-window-excursion
+   (async-shell-command
+    (format "pandoc %s.org --self-contained -s -B ~/.doom.d/mathjax.js -o %s.html"
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+   )
+  )
+ )
+)
 ;;;; Org Roam Server
 (use-package org-roam-server
   :ensure t
