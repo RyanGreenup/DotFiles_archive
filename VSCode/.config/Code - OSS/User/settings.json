@@ -531,13 +531,16 @@
 
     },
     "git.autofetch": true,
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Github Light Theme",
     "markdownlint.config": {
         "MD007": { "indent": 4 },
         "MD013": false
     },
     "python.dataScience.askForKernelRestart": false,
-    "python.dataScience.alwaysTrustNotebooks": true
+    "python.dataScience.alwaysTrustNotebooks": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Microsoft"
 
 
 
