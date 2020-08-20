@@ -75,7 +75,14 @@
      ;; Use pdfview in org-mode
  (add-to-list 'org-file-apps '("\\.pdf\\'" . (lambda (file link) (org-pdfview-open link))))
 
-;;;; citeproc for references in HTMl
+;;;; org-ref
+(setq reftex-default-bibliography '("~/Dropbox/Studies/Papers/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/Dropbox/Studies/Papers/notes.org"
+      org-ref-default-bibliography '("~/Dropbox/Studies/Papers/references.bib")
+      org-ref-pdf-directory "~/Dropbox/Studies/Papers/PDFS")
+;;;;; citeproc for references in HTMl
 (use-package! citeproc-org
   :load-path "~/DotFiles/Spacemacs/Downloads/citeproc-org-0.2.2"
   ;; :config
