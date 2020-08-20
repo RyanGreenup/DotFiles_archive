@@ -211,6 +211,7 @@
   ;; this may break marking with Space.
 (setq org-complete-tags-always-offer-all-agenda-tags t)
 (setq org-tags-column 80)
+(setq org-agenda-files '("~/Notes/Org"))
 ;;;; Preview Tikz inside Org-Mode
 ;; You'll need to use this with texfrag-mode
 ;; It doesn't seem to work with org-latex-preview-fragment
