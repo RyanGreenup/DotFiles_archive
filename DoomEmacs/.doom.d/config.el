@@ -216,7 +216,7 @@
 
 ;;;; Offer all Tags for Autocomplete
   ;; this may break marking with Space.
-(setq org-complete-tags-always-offer-all-agenda-tags t)
+(setq org-complete-tags-always-offer-all-agenda-tags nil)
 (setq org-tags-column 80)
 (setq org-agenda-files '("~/Notes/Org"))
 ;;;; Preview Tikz inside Org-Mode
