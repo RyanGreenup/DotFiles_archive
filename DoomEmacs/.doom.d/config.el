@@ -213,6 +213,9 @@
 
 ;;;; Open all org-agenda files
 (defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
+;;;;; Hide Finished Agenda Items
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-skip-deadline-if-done t)
 
 ;;;; Offer all Tags for Autocomplete
   ;; this may break marking with Space.
