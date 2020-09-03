@@ -83,8 +83,8 @@ openHelp () {
         echo  "Save (answer yes to any data conversion prompt with Alt+y)"
         echo  "The new math should be in the clipboard"
         echo ""
+        exit 0
     fi
-    exit 0
 }
 
 # * Call the Main Function
