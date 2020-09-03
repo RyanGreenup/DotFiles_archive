@@ -106,12 +106,12 @@
       <key variable="citation-number"/>
     </sort>
     <layout vertical-align="sup" delimiter=",">
-      <text variable="citation-number"/>
+      <text prefix="[" variable="citation-number" suffix="]"/>
     </layout>
   </citation>
   <bibliography et-al-min="6" et-al-use-first="1" second-field-align="flush" entry-spacing="0" line-spacing="2">
     <layout suffix=".">
-      <text variable="citation-number" suffix="."/>
+      <text prefix="[" variable="citation-number" suffix="]    "/>   <!--White space is U+2005 unicode-->
       <group delimiter=" ">
         <text macro="author" suffix="."/>
         <text macro="title" suffix="."/>
