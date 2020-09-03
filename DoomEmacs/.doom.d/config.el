@@ -605,6 +605,15 @@
             (shell-quote-argument buffer-file-name)))
    ))
 
+;;;; Edit Math with TexMacs
+(defun my-edit-clipboard-with-texmacs ()
+  (interactive)
+  (save-window-excursion
+    (async-shell-command (format "~/bin/FixMathWithTexMacs.sh"))
+  )
+)
+
+(global-set-key (kbd "C-c m") 'my-edit-clipboard-with-texmacs)
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
 ;;; EAF
