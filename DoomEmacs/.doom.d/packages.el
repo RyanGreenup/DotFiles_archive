@@ -17,6 +17,7 @@
 (package! helm-recoll)
 (package! texfrag)
 (package! ob-mongo)
+(package! leuven-theme)
 ;; I think Doom comes with counsel recoll
 ;; (package! helm-recoll)
 
