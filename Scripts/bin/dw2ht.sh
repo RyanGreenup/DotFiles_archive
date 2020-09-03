@@ -17,7 +17,7 @@ elif [[ "${1}" == -o ]]; then
 elif [[ "${1}" == "-m" ]]; then
     CLIP_OUT | \
     pandoc -f dokuwiki -t html | \
-    pandoc -f html+tex_math_dollars+tex_math_single_backslash -t markdown+raw_tex -s
+    pandoc -f html+tex_math_dollars+tex_math_single_backslash -t markdown+raw_tex -s |\
     CLIP_IN
 elif [[ "${1}" == "-p" ]]; then
     # TODO Merge this with Cadmus and do something like this:
