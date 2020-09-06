@@ -256,8 +256,8 @@
  (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 ;;;; Export
 ;;;;; LaTeX use minted package with python pygments
-(setq org-latex-listings 'minted
-      org-latex-packages-alist '(("" "minted"))
+(setq org-latex-listings 'listings
+      org-latex-packages-alist '(("" "listings"))
       org-latex-pdf-process
       '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
@@ -468,6 +468,7 @@
     (local-set-key (kbd "C-|") 'myR/tidyverse-pipe)
     (local-unset-key (kbd "M--"))
     (local-set-key (kbd "M--") 'myR/assign)
+    (outshine-mode)
   )
 )
 
@@ -606,6 +607,16 @@
    ))
 
 ;;;; Edit Math with TexMacs
+;; I should probably make this take the text as STDIN not CLIPBOARD
+(defun my-edit-region-with-texmacs ()
+  (interactive)
+  (clipboard-kill-region (region-beginning) (region-end))
+  (save-window-excursion
+    (async-shell-command (format "~/bin/FixMathWithTexMacs.sh"))
+  )
+;;  (clipboard-yank)
+)
+
 (defun my-edit-clipboard-with-texmacs ()
   (interactive)
   (save-window-excursion
@@ -613,6 +624,7 @@
   )
 )
 
+(global-set-key (kbd "C-c M") 'my-edit-region-with-texmacs)
 (global-set-key (kbd "C-c m") 'my-edit-clipboard-with-texmacs)
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
