@@ -205,11 +205,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
+
+
 
 ## My Settings
 
@@ -248,10 +245,6 @@ smart_borders no_gaps
 
 # Bar Heiight
 
-bar {
-    # Height in pixels
-    height 10 
-}
 
 
 ### Example from AirBlader Github
@@ -385,14 +378,27 @@ mode "$mode_gaps_left" {
 
 
 ### Gap Distance Settings
+  # pixel
+  # bar
 
 # Settings for I3 next gap git
 # https://github.com/Airblader/i3/tree/gaps-next
 # delete or uncomment the following lines if you do not have it or do not
 # want it
-for_window [class="^.*"] border pixel 2
-gaps inner 20 
-gaps outer 10
+gaps inner 2
+gaps outer 2
+for_window [class="^.*"] border pixel 5
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+#         status_command i3status
+#         height 30    # Disabled in favour or lxqt
+# }
+# The bar doesn't look nice with a Desktop Environment
+#  The reason for using lxde and lxqt is, essentially, to have xdg-open in a sane way
+#  I noteiced that xdg-open didn't work with LXQT, maybe worked with LXDE and worked really well with Mate
+
 # exec ~/.fehbg
 # output "*" bg /home/ryan/Pictures/MathWallpapers.png fill
 exec firefox https://i3wm.org/docs/refcard.html
@@ -414,7 +420,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
-for_window [class="^.*"] border pixel 8 
 
 
 ### Default Config
