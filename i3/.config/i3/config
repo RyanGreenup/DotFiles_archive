@@ -459,3 +459,5 @@ bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
 #
 #
 #
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod1+Tab workspace back_and_forth
