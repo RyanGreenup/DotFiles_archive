@@ -396,7 +396,7 @@ for_window [class="^.*"] border pixel 5
          height 30    # Disabled in favour or lxqt
  }
 # The bar doesn't look nice with a Desktop Environment
-#  The reason for using lxde and lxqt is, essentially, to have xdg-open in a sane way and nice notifications
+#  The reason for using lxde/lxqt or mate is, essentially, to have xdg-open in a sane way, nice notifications, vol/brightness control
 #  I noteiced that xdg-open didn't work with LXQT, maybe worked with LXDE and worked really well with Mate
 
 # exec ~/.fehbg
