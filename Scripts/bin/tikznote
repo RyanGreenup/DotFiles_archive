@@ -24,7 +24,7 @@ cd "${DIR}"
 echo "${TikzFile}" > "${FILE}"
 pdflatex "${FILE}" -shell-escape --interaction=nonstopmode > /dev/null
 zathura "${FILE_BASE}.pdf" & disown
-firefox 'https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing' 'https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ#Arcs' 'ryansnotes.org/dokuwiki' & disown
+firefox 'https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing' 'https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ#Arcs' 'ryansnotes.org/dokuwiki' 'https://mirror.aarnet.edu.au/pub/CTAN/graphics/pgf/base/doc/pgfmanual.pdf' & disown
 echo 'latexmk -pdf -pvc -shell-escape --interaction=nonstopmode' # In case I don't want to use shell-escape
 nvim "${FILE}"
 }
