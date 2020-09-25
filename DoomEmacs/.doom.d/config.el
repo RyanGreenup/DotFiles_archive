@@ -262,6 +262,12 @@
       '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
+;(setq org-latex-listings 'minted
+;      org-latex-packages-alist '(("" "minted"))
+;      org-latex-pdf-process
+;      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+;        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+
 
 ;;;;; ODT Export uses MathML
 (setq org-latex-to-mathml-convert-command
