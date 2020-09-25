@@ -1,24 +1,5 @@
-find ha
-filter hasc
-bulkrename 
-
-shell mkdir Proposal
-filter .pdf
-search diff
-filter
-flat 0
-flat -1
-filter pdf
-search ass
-search projectb
-search ProjectB
-search pro
-shell mkdir
-shell mkdir Problems
-w
 shell mkdir Report
 shell pwd
-shell pwd | x
 rename ProjectA
 g
 shell gitui
@@ -37,14 +18,33 @@ filter -g \.R
 filter otero
 filter rop
 search otero
-filter 
 search rop
-flat 5
 filter onflicted copy
 open_with 
 q
 q!
 rename ImplementingRandomSurfer
-unmark
-delete
 rename ImplementingPowerWalk
+filter
+open_with :q!
+flat 5
+filter conf
+search media
+
+filter luxor
+flat
+flat -4
+filter Self
+unmark
+shell pwd | x
+shell mkdir media
+filter png
+flat 4
+flat 3
+filter svg
+filter 
+flat 0
+rename Snowflake.tex
+delete
+search 
+filter .pdf

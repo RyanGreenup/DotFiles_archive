@@ -42,6 +42,7 @@ nmap <leader>wd :q<CR>
 nmap <leader>w <C-w>
 nmap <leader>fd :! rm "%"
 nmap <leader>ss :BLines<CR>
+nmap <leader>bb :Buffers<CR>
 
 """" Plugins
 "############################## 
@@ -223,6 +224,7 @@ Plug 'python-mode/python-mode'
 """"" Julia Syntax Highlighting
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'davidhalter/jedi-vim'
+Plug 'neovim/nvim-lsp'
 
 """"" AutoComplete (NCM2)
 " This Has No completion source for R
@@ -339,8 +341,9 @@ let g:vim_markdown_autowrite = 1
 " Conceal Bold etc.
 
 "Markdown Preview
-"Requires yarn and nodejs, they're in apt
+"Requires yarn and nodejs, they're available through apt and pacman
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+imap :MakrdownPreview<CR>
 " see if this one let's you follow links
 "Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
@@ -418,12 +421,11 @@ call plug#end()
 " Alt only seems to work in NeoVim, not in Vim,
 " I tried using M-j and A-j no dice, just use NeoVim.
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
- 
- let g:UltiSnipsExpandTrigger="<A-l>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"let g:UltiSnipsExpandTrigger="<M-l>"
+"
+
 let g:UltiSnipsJumpForwardTrigger="<A-l>"
+let g:UltiSnipsExpandTrigger="<A-l>"
+"let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<A-h>"
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips']
 
