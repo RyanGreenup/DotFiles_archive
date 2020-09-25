@@ -227,6 +227,43 @@
 
 
 
+;;;;
+(add-hook 'org-mode-hook (lambda ()
+   "Beautify Org Checkbox Symbol"
+   (push '("[ ]" .  "☐") prettify-symbols-alist)
+   (push '("[X]" . "☑" ) prettify-symbols-alist)
+   (push '("[-]" . "❍" ) prettify-symbols-alist)
+   (push '("#+begin_src" . "✨" ) prettify-symbols-alist)
+   (push '("#+BEGIN_SRC" . "✨" ) prettify-symbols-alist)
+   (push '("#+end_src" .   "✨" ) prettify-symbols-alist)
+   (push '("#+END_SRC" .   "✨" ) prettify-symbols-alist)
+   (push '("#+begin_quote" . "➲" ) prettify-symbols-alist)
+   (push '("#+BEGIN_QUOTE" . "➲ " ) prettify-symbols-alist)
+   (push '("#+end_quote" .   "➲" ) prettify-symbols-alist)
+   (push '("#+END_QUOTE" .   "➲" ) prettify-symbols-alist)
+   (push '("#+begin_comment" . "✀ " ) prettify-symbols-alist)
+   (push '("#+BEGIN_COMMENT" . "✀" ) prettify-symbols-alist)
+   (push '("#+end_comment" .   "✀") prettify-symbols-alist)
+   (push '("#+END_COMMENT" .   "✀") prettify-symbols-alist)
+   (push '("#+attr_html: :width" .   "?⇔🌍") prettify-symbols-alist)
+   (push '("#+attr_html: :width" .   "?⇔🌍") prettify-symbols-alist)
+   (push '("#+attr_latex: :width" .   "🖺") prettify-symbols-alist)
+   (push '("#+ATTR_LATEX: :width" .   "🖺") prettify-symbols-alist)
+   (push '("#+caption:" .   "✎") prettify-symbols-alist)
+   (push '("#+CAPTION:" .   "✎") prettify-symbols-alist)
+   (push '("#+caption:" .   "✎") prettify-symbols-alist)
+   (push '("#+NAME:" .   "㋿") prettify-symbols-alist)
+   (push '("#+name:" .   "㋿") prettify-symbols-alist)
+   (push '("DONE" .   "✅") prettify-symbols-alist)
+   (push '("TODO" .   "❢") prettify-symbols-alist)
+   (push '("STRT" .   "☯") prettify-symbols-alist)
+   (push '("#+begin_src python" .   "🐍") prettify-symbols-alist)
+   (push '("#+begin_src julia"  .   "🝆") prettify-symbols-alist)
+   (push '("#+begin_src R"      .   "𝓡") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC python" .   "🐍") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC julia"  .   "🝆") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC R"      .   "𝓡") prettify-symbols-alist)
+   (prettify-symbols-mode)))
 ;;;; Open all org-agenda files
 (defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 ;;;;; Hide Finished Agenda Items

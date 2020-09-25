@@ -14,10 +14,14 @@
 (package! citeproc)
 (package! citeproc)
 (package! helm-org-rifle)
-(package! helm-recoll)
 (package! texfrag)
 (package! ob-mongo)
 (package! leuven-theme)
+(package! magic-latex-buffer)
+(package! mediawiki)
+(package! emoji-fontset)
+(package! emoji-display)
+(package! org-superstar)
 ;; I think Doom comes with counsel recoll
 ;; (package! helm-recoll)
 
@@ -26,6 +30,10 @@
 (package! org-roam-server)
 (package! poly-R)
 (package! org-ref)
+
+;; Temporary
+(package! lsp-julia)  ;; This will eventually be in doom
+(package! eglot-jl)  ;; This will eventually be in doom
 
 ;; Doom's packages are pinned to a specific commit and updated from release to
 ;; release. The `unpin!' macro allows you to unpin single packages...
