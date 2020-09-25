@@ -472,6 +472,13 @@ bindsym $mod+Ctrl+less move workspace to output left
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod1+Tab workspace back_and_forth
 
-# Adjust brightness
 bindsym $mod+Ctrl+less move workspace to output left
-echo -e "enter brightness:\n"; read val; xrandr  --output DP-2 --brightness $val --output HDMI-0 --brightness $val --output HDMI-1  --brightness $val
+
+# Adjust brightness
+# echo -e "enter brightness:\n"; read val; xrandr  --output DP-2 --brightness $val --output HDMI-0 --brightness $val --output HDMI-1  --brightness $val
+
+# Flip Screen
+ bindsym $mod+Next exec xrandr  -o normal
+ bindsym $mod+Prior exec xrandr -o inverted
+ bindsym $mod+minus exec xrandr -o left
+ bindsym $mod+equal exec xrandr -o right
