@@ -21,6 +21,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "Fira Code" :size 24))
+(setq doom-variable-pitch-font (font-spec :family "Liberation Serif" :size 24))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -69,7 +70,10 @@
 )
 
 (after! org
-;;;; PDF Viewer (To view PDF files inside Emacs)
+;;;;; Enable org Superstar Mode
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-superstar-mode 1)));;;; PDF Viewer (To view PDF files inside Emacs)
     ;; load pdfview
      (eval-after-load 'org '(require 'org-pdfview))
      ;; Use pdfview in org-mode
@@ -254,6 +258,37 @@
 ;;;;;;; Set up Plant UML
  (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
  (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+;;;; Org Bullets (Super Star Mode)
+;;;;; LaTeX Style
+;; hide #+TITLE:
+(setq org-hidden-keywords '(title))
+;; set basic title font
+(set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+;; Low levels are unimportant => no scaling
+(set-face-attribute 'org-level-7 nil  :inherit 'org-level-8)
+(set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
+(set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
+(set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
+;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
+(set-face-attribute 'org-level-3 nil :family "Liberation Serif" :inherit 'org-level-8 :height 1.2) ;\large
+(set-face-attribute 'org-level-2 nil :family "Liberation Serif" :inherit 'org-level-8 :height 1.44) ;\Large
+(set-face-attribute 'org-level-1 nil :family "Liberation Serif" :inherit 'org-level-8 :height 1.728) ;\LARGE
+;; Only use the first 4 styles and do not cycle.
+(setq org-cycle-level-faces nil)
+(setq org-n-level-faces 4)
+;; Document Title, (\huge)
+(set-face-attribute 'org-document-title nil
+                    :height 2.074
+                    :foreground 'unspecified
+                    :inherit 'org-level-8)
+(setq org-superstar-headline-bullets-list '(" ")) ;; '("🞛" "◉" "○" "▷")
+;(setq org-superstar-headline-bullets-list '("🞛" "◉" "○" "▷")) ;; '("🞛" "◉" "○" "▷")
+; I'm hapy with the defaults
+; (setq org-superstar-item-bullet-alist
+;        '((?+ . ?•)
+;          (?* . ?➤)
+;          (?- . ?–)))
+(setq org-superstar-remove-leading-stars nil) ; This removes the indent
 ;;;; Export
 ;;;;; LaTeX use minted package with python pygments
 (setq org-latex-listings 'listings
