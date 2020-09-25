@@ -396,7 +396,11 @@ for_window [class="^.*"] border pixel 5
          height 30    # Disabled in favour or lxqt
  }
 # The bar doesn't look nice with a Desktop Environment
+<<<<<<< HEAD
+#  The reason for using lxde and lxqt is, essentially, to have xdg-open in a sane way and nice notifications and guake to play nice
+=======
 #  The reason for using lxde/lxqt or mate is, essentially, to have xdg-open in a sane way, nice notifications, vol/brightness control
+>>>>>>> 3e17231375707cbe4fefd4074703de042d9247f6
 #  I noteiced that xdg-open didn't work with LXQT, maybe worked with LXDE and worked really well with Mate
 
 # exec ~/.fehbg
@@ -469,9 +473,3 @@ bindsym $mod+Ctrl+less move workspace to output left
 #
 #
 #
-bindsym $mod+Tab workspace back_and_forth
-bindsym $mod1+Tab workspace back_and_forth
-
-# Adjust brightness
-bindsym $mod+Ctrl+less move workspace to output left
-echo -e "enter brightness:\n"; read val; xrandr  --output DP-2 --brightness $val --output HDMI-0 --brightness $val --output HDMI-1  --brightness $val
