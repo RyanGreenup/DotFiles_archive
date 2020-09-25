@@ -78,7 +78,6 @@
      (eval-after-load 'org '(require 'org-pdfview))
      ;; Use pdfview in org-mode
  (add-to-list 'org-file-apps '("\\.pdf\\'" . (lambda (file link) (org-pdfview-open link))))
-
 ;;;; org-ref
 (setq reftex-default-bibliography '("~/Dropbox/Studies/Papers/references.bib"))
 
@@ -86,6 +85,18 @@
 (setq org-ref-bibliography-notes "~/Dropbox/Studies/Papers/notes.org"
       org-ref-default-bibliography '("~/Dropbox/Studies/Papers/references.bib")
       org-ref-pdf-directory "~/Dropbox/Studies/Papers/PDFS")
+;;;;; Hide Citation Syntax
+(add-hook 'org-mode-hook
+  (lambda ()
+    (add-to-list 'font-lock-extra-managed-props 'display)
+    (font-lock-add-keywords nil
+     '((" \\(cite:[a-z0-9A-Z]\+\\)" 1 '(face nil display "🤔"))))
+
+    (add-to-list 'font-lock-extra-managed-props 'display)
+    (font-lock-add-keywords nil
+     '((" \\(\\[\\[cite:[a-z0-9A-Z]\+\\]\\[\.\*\\]\\]\\)" 1 '(face nil display "🤔"))))
+  )
+)
 ;;;;; citeproc for references in HTMl
 (use-package! citeproc-org
   :load-path "~/DotFiles/Spacemacs/Downloads/citeproc-org-0.2.2"
@@ -117,14 +128,14 @@
          ("ads"       .
           "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")))
 
-;;;;; Org-Publish
+;;;; Org-Publish
 ;; Each call of setq org-publish overwrites the last
 ;; You must have one big list
 ;; Refer to    [[file:~/Notes/Org/VisualAnalytics.org::*Publishing Pathway][Publishing Pathway]]
 
 ;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
 ;; (toggle-org-custom-inline-style)
-;;;;;; Github Autumn Files
+;;;;; Github Autumn Files
 (setq org-publish-project-alist
       '(
 ;; (https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html)
@@ -163,7 +174,7 @@
 
         ("Autumn" :components ("Aut_orgfiles" "Aut_images" "Aut_other"))
 
-;;;;;; Server Autumn Files
+;;;;; Server Autumn Files
 
         ("Server_Org"
          :base-directory "~/Notes/Org/"
@@ -213,6 +224,7 @@
 ;; [[https://github.com/mbork/org-one-to-many]]
 ;; (withheval-after-load 'ox
 ;;                       (require 'ox-hugo))
+
 
 
 ;;;; Open all org-agenda files
