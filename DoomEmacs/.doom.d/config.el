@@ -340,10 +340,10 @@
 (setq org-superstar-headline-bullets-list '(" ")) ;; '("🞛" "◉" "○" "▷")
 ;(setq org-superstar-headline-bullets-list '("🞛" "◉" "○" "▷")) ;; '("🞛" "◉" "○" "▷")
 ; I'm hapy with the defaults
-; (setq org-superstar-item-bullet-alist
-;        '((?+ . ?•)
-;          (?* . ?➤)
-;          (?- . ?–)))
+(setq org-superstar-item-bullet-alist
+       '((?+ . ?•)
+         (?* . ?➤)
+         (?- . ?–)))
 (setq org-superstar-remove-leading-stars nil) ; This removes the indent
 ;;;; Export
 ;;;;; LaTeX use minted package with python pygments
