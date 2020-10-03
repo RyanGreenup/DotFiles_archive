@@ -94,7 +94,9 @@
    (push '("#+BEGIN_SRC R"      .   "𝓡") prettify-symbols-alist)
    (push '("#+BEGIN_SRC bash"      .   "💻") prettify-symbols-alist)
    (push '("#+begin_src bash"      .   "💻") prettify-symbols-alist)
+   (push '("eqref:"      .   "⅀") prettify-symbols-alist)
    (prettify-symbols-mode)))
+
 ;;;;; Enable TexFrag Mode
 ;; Texfrag mode is way faster and looks nicer so use that instead
 (add-hook 'org-mode-hook
@@ -384,21 +386,22 @@
  )
 )
 ;;;; Org Roam Server
-(use-package org-roam-server
-  :ensure t
-  :config
+
+  ; Must Disable +smartparens  ; /home/ryan/DotFiles/DoomEmacs/.doom.d/init.el
+  ;  https://github.com/org-roam/org-roam-server/issues/75#issuecomment-672070399
+  ;  https://github.com/org-roam/org-roam-server/issues/84
   (setq org-roam-server-host "0.0.0.0"
-        org-roam-server-port 54632
+        org-roam-server-port 56432
         org-roam-server-authenticate nil
         org-roam-server-export-inline-images t
-        org-roam-server-serve-files t
+        org-roam-server-serve-files nil
         org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
         org-roam-server-network-poll t
-        org-roam-server-network-arrows t
+        org-roam-server-network-arrows nil
         org-roam-server-network-label-truncate t
         org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20))
-)
+        org-roam-server-network-label-wrap-length 20)
+
 
 ;;;;; Inline Style Sheet
 ;; Add CSS (Be mindful that you may want to implement this in a more sensible way, similar to how beorg does it
@@ -466,6 +469,8 @@
     (async-shell-command (format "~/bin/eml -o"))
   )
 
+;;;; Closing After Org
+)
 ;;; LaTeX Settings
 ;;; Programming
 ;;;; Outshine Mode
