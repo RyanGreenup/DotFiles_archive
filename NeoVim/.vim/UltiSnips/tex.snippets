@@ -515,7 +515,7 @@ endsnippet
 
 context "math()"
 snippet set "set" wA
-\\{$1\\} $0
+\left\\{$1\right\\} $0
 endsnippet
 
 snippet || "mid" iA
@@ -588,7 +588,12 @@ _\text{$1} $0
 endsnippet
 
 context "math()"
-snippet tt "text" iA
+snippet tt "TeleType" iA
+\mathtt{$1}$0
+endsnippet
+
+context "math()"
+snippet tx "Text" iA
 \text{$1}$0
 endsnippet
 
@@ -1168,10 +1173,6 @@ $0
 endsnippet
 
 
-snippet tt "Mid proof Text" wA
-\text{${1: Text}} $0
-endsnippet
-
 snippet assign "Assignment Table"
 %\begin{table}
 %  \centering
@@ -1196,23 +1197,31 @@ endsnippet
 
 
 
+# BF is really snow but FB is quick :shrug
 context "math()"
 priority 10
-snippet cfb "bold face emacs C-c C-f C-b" iA
+snippet fb "bold face emacs C-c C-f C-b" iA
 \mathbf{$1}$0
+endsnippet
+
+
+context "math()"
+priority 10
+snippet bb "bold face emacs C-c C-f C-b" iA
+\mathbb{$1}$0
 endsnippet
 
 context "math()"
 priority 10
-snippet bf "bf" iA
+snippet bf "bf" wA
 \mathbf{$1}$0
 endsnippet
 
-context "math()"
-priority 100
-snippet "([a-zA-Z])bf" "bf" riA
-\mathbf{`!p snip.rv=match.group(1)`}
-endsnippet
+#context "math()"
+#priority 100
+#snippet "([a-zA-Z])bf" "bf" riA
+#\mathbf{`!p snip.rv=match.group(1)`}
+#endsnippet
 
 
 context "math()"
@@ -1312,4 +1321,7 @@ snippet plot "Plot" w
 endsnippet
 
 
-
+context math()
+snippet D "Diagonal Scaling Matrix" wA
+\mathbf{D}_{$1}$0
+endsnippet
