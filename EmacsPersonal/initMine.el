@@ -32,3 +32,6 @@
                         :background (face-background 'default))
     )
 (dark)
+
+;; Enable counsel
+(require 'counsel)
