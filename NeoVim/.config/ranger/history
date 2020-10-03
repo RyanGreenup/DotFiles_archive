@@ -1,6 +1,3 @@
-shell mkdir Report
-shell pwd
-rename ProjectA
 g
 shell gitui
 shell mkdir EmailedInitialProblems
@@ -30,7 +27,6 @@ open_with :q!
 flat 5
 filter conf
 search media
-
 filter luxor
 flat
 flat -4
@@ -45,6 +41,10 @@ filter svg
 filter 
 flat 0
 rename Snowflake.tex
-delete
 search 
 filter .pdf
+cd 
+search abs
+cd ~/Notes
+delete
+
