@@ -67,7 +67,14 @@ Some Images: cite:ngStableAlgorithmsLink2001
 #+CAPTION: This is an example of embedded tikz
 #+attr_html: :width 400px
 #+attr_latex: :width 12cm
-@@latex: \includestandalone[]{./media/tikz/Snowflake}
+#+begin_export latex
+\begin{figure}
+\label{testtikzstd}
+\caption{this is an example of embedded tikz lkasjdf lkjasdf }
+\includestandalone[]{./media/tikz/Snowflake}
+\end{figure}
+#+end_export
+# @@latex: \includestandalone[]{./media/tikz/Snowflake} # This doesn't catch the #+NAME and #+CAPTION
 # [[file:media/tikz/Snowflake.png]]
 
 
