@@ -475,7 +475,7 @@
 ;;; Programming
 ;;;; Outshine Mode
 (use-package! outshine :load-path "~/.doom.d/local/"
-  :hook ((outline-minor-mode . outshine-mode))
+;  :hook ((outline-minor-mode . outshine-mode))  ; Outshine should not always be enabled, breaks latex
   :config
   (map! :map outline-minor-mode-map
         :nm [tab] #'outshine-cycle
