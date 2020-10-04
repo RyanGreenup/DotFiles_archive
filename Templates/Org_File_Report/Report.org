@@ -1,0 +1,138 @@
+:PREAMBLE:
+#+OPTIONS: broken-links:auto todo:nil H:9
+#+STARTUP: overview
+#+AUTHOR: Ryan Greenup & James Guerra
+#+INFOJS_OPT: view:showall toc:3
+#+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
+#+OPTIONS: tex:t
+# #+TODO: TODO IN-PROGRESS WAITING DONE
+#+CATEGORY: TAD
+:END:
+:HTML:
+#+INFOJS_OPT: view:info toc:3
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="./resources/style.css">
+# #+CSL_STYLE: /home/ryan/Templates/CSL/nature.csl
+:END:
+:R:
+#+PROPERTY: header-args:R :session TADMain :dir ./ :cache yes :eval never-export :exports both
+# exports: both (or code or whatever)
+# results: table (or output or whatever)
+:END:
+:LATEX:
+#+LATEX_HEADER: \IfFileExists{./resources/style.sty}{\usepackage{./resources/style}}{}
+#+LATEX_HEADER: \IfFileExists{./resources/referencing.sty}{\usepackage{./resources/referencing}}{}
+#+LATEX_HEADER: \addbibresource{./resources/references.bib}
+#+LATEX_HEADER: \usepackage[mode=buildnew]{standalone}
+# For TexFrag Mode inlclude TikZ here
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{decorations.fractals}
+#+LATEX_HEADER: \usetikzlibrary{lindenmayersystems}
+:END:
+
+* Cauchy Integral Formula
+  :PROPERTIES:
+  :CUSTOM_ID: cauchy-integral-formula
+  :END:
+
+This is from section 54 of the book, isn't it nice that it more or less
+just works hey? cite:zhangMakingEigenvectorBasedReputation2004
+
+\begin{align}
+f\left( a \right) \frac{1}{2\pi i} \oint \frac{f\left( z \right)}{z- a}\mathrm{d}z
+\end{align}
+
+In view of this equation then: cite:zhangMakingEigenvectorBasedReputation2004
+
+$$\begin{aligned}
+\left| \int_C \frac{f\left( z \right)}{z- z_0} \mathrm{d}z - 2 \pi i f\left( z_0 \right) \right|<2 \pi \varepsilon
+\end{aligned}$$
+
+Some Images: cite:ngStableAlgorithmsLink2001
+
+#+NAME: testim
+#+CAPTION: This image is for testing purposes cite:moskowitzLibraryGuidesWikipedia
+#+attr_html: :width 400px
+#+attr_latex: :width 12cm
+[[file:media/my-self-rep-frac.png]]
+
+#+NAME: testtikzins
+#+CAPTION: This is a tikz image inserted as a png from imagemagick
+#+attr_html: :width 400px
+#+attr_latex: :width 12cm
+[[file:media/tikz/Snowflake.png]]
+# @@latex: \includestandalone[]{./media/tikz/Snowflake}
+
+
+#+NAME: testtikzstd
+#+CAPTION: This is an example of embedded tikz
+#+attr_html: :width 400px
+#+attr_latex: :width 12cm
+@@latex: \includestandalone[]{./media/tikz/Snowflake}
+# [[file:media/tikz/Snowflake.png]]
+
+
+
+** Heading 2
+   :PROPERTIES:
+   :CUSTOM_ID: heading-2
+   :END:
+
+*** Heading 3
+    :PROPERTIES:
+    :CUSTOM_ID: heading-3
+    :END:
+
+#+BEGIN_SRC sh
+  echo "Hello World"
+#+END_SRC
+
+
+**** Heading 4
+     :PROPERTIES:
+     :CUSTOM_ID: heading-4
+     :END:
+
+
+***** Heading 5
+      :PROPERTIES:
+      :CUSTOM_ID: heading-5
+      :END:
+
+
+****** Heading 6
+       :PROPERTIES:
+       :CUSTOM_ID: heading-6
+       :END:
+
+Arbitrary Code:
+
+#+BEGIN_SRC sh
+  n/bash
+
+  # Print Help
+  if [ "$1" == "-h" ]; then
+      echo "Usage: `basename $0` <Format> <CSS>"
+      style=~/Dropbox/profiles/Emacs/org-css/github-org.css
+      exit 0
+  fi
+
+  # Make a working File from clipboard
+  filename=lkjdskjjalkjkj392jlkj
+  xclip -o -selection clipboard >> $filename
+  LocalFile=$filename.org
+
+  pandoc -s  -f org -t gfm $filename -o $filename
+
+  echo "
+  This was converted from `org` to `md` using `pandoc -t gfm` at time:
+  $(date --utc +%FT%H-%M-%S)
+  " >> $filename
+
+  cat $filename | xclip -selection clipboard
+  rm $filename
+
+  nv & disown
+  echo "Conversion from Org Successful, MD is in Clipboard"
+
+  exit 0
+#+END_SRC

@@ -1,0 +1,31 @@
+#+TITLE: Readme
+
+* Media
+- All media goes in ~./media~
+- Just use imagemagick as necessary:
+  + ~convert -resize 400x400 -density 1000 -quality 95 file.png file.png~
+
+
+** Tikz
+
+- All Tikz goes in ~./media/tikz
+- some tikz headers in org for TeXFrag
+- The idea is (see [[http://ryansnotes.org/mediawiki/index.php/Create_Diagrams_as_SVG_using_Tikz#Seperate_Files_with_Standalone_.28Preferred.29][Tikz in Org Mode]])
+* Referencing
+- References are in ~./resources/references.bib~
+- Instructions for references are in ~./resources/references.sty~
+  + be careful because style sheet stuff needs bo te relative to the ~.tex~ file NOT  the ~sty~ sheet
+    - This makes it confusing but seperating makes it easier to understand
+- the line ~\addbibresource{./resources/references.bib}~ is inside the ~.org~ file because that way ~org-ref~ knows about it.
+* Make File
+So there is a makefile that automates exporting the ~org~:
+
+- ~makefile_raw~ :: A makefile calling everything one by one
+- ~makefile~     :: A makefile that checks the ~.org~ file to export it and then merely uses ~latexmk~
+
+
+** Build File
+** TODO Add the Logic for a HTML Export
+- Make the ~html~ from pandoc
+- Make the references using the ~bib~ file and a ~CSL~ file
+** TODO Add the necessary elisp for org-ref to work so it all runs quicker
