@@ -9,6 +9,11 @@
 # If the makefile becomes a pain in the ass
 
 ### Code
+if [[ "${1:-}" == "-pvc" ]]; then
+    echo "Watching org file for changes, C-c to exit"
+    while true; do make --silent; sleep 1; done
+    exit 0
+fi
 # emacs -l ~/.emacs.d/init.el Report.org  --batch -f org-latex-export-to-latex --kill # if org-ref is installed globally
 emacs Report.org  --batch -f org-latex-export-to-latex --kill    
 sed -r \

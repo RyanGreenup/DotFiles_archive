@@ -1,7 +1,6 @@
 :PREAMBLE:
 #+OPTIONS: broken-links:auto todo:nil H:9
 #+STARTUP: overview
-#+AUTHOR: Ryan Greenup & James Guerra
 #+INFOJS_OPT: view:showall toc:3
 #+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
 #+OPTIONS: tex:t

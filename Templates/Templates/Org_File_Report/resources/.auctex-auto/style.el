@@ -1,8 +1,8 @@
 (TeX-add-style-hook
- "ScreenStyle"
+ "style"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("geometry" "margin=1in") ("biblatex" "citestyle=numeric" "bibstyle=numeric" "hyperref=true" "backref=true" "maxcitenames=3" "url=true" "backend=biber" "natbib=true")))
+                     '(("inputenc" "utf8") ("fontenc" "T1") ("libertine" "mono=false") ("geometry" "margin=0.75in")))
    (add-to-list 'LaTeX-verbatim-environments-local "minted")
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
@@ -29,12 +29,12 @@
     "ifxetex"
     "ifluatex"
     "lipsum"
+    "libertine"
     "geometry"
     "graphicx"
     "amsmath"
     "amssymb"
     "amsthm"
-    "biblatex"
     "bibentry"
     "hyperref"
     "titlesec"
@@ -45,8 +45,6 @@
     "etoolbox")
    (LaTeX-add-environments
     '("sol" LaTeX-env-args ["argument"] 0))
-   (LaTeX-add-bibliographies
-    "/home/ryan/Dropbox/Studies/Papers/references")
    (LaTeX-add-xcolor-definecolors
     "colsse"
     "colsss"
