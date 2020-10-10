@@ -114,15 +114,23 @@ snippet iff "iff" Ai
 \iff
 endsnippet
 
+# snippet mk "Math" wA
+# $${1}$`!p
+# if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+# 	snip.rv = ' '
+# else:
+# 	snip.rv = ''
+# `$2
+# endsnippet
+
 snippet mk "Math" wA
-$${1}$`!p
+\(${1}\)`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
 else:
 	snip.rv = ''
 `$2
 endsnippet
-
 
 snippet ali "Align" bA
 \begin{align}
@@ -716,11 +724,11 @@ snippet ddx "Derivative Rto x Operator" wA
 endsnippet
 
 snippet dm "Math" wA
-$$
+\[
 \begin{aligned}
 ${1:${VISUAL}}
 \end{aligned}
-$$
+\]
 endsnippet
 
 context "math()"
