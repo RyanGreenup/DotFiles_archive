@@ -11,8 +11,6 @@
 (package! outshine)
 (package! texfrag)
 (package! org-pdfview)
-(package! citeproc)
-(package! citeproc)
 (package! helm-org-rifle)
 (package! texfrag)
 (package! ob-mongo)
@@ -30,6 +28,8 @@
 (package! org-roam-server)
 (package! poly-R)
 (package! org-ref)
+(package! citeproc) ; I don't think I need this anymore, just export -> latex -> HTML (pandoc) to keep refs
+(package! biblio)
 
 ;; Temporary
 (package! lsp-julia)  ;; This will eventually be in doom

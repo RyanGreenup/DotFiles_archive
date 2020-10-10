@@ -1,3 +1,4 @@
+
 ;; Set up package.el to work with MELPA
 (require 'package)
 ; Slow Start
@@ -5,6 +6,20 @@
               '("melpa" . "https://melpa.org/packages/"))
  (package-initialize)
 ; (package-refresh-contents)
+
+
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+
+(unless (package-installed-p 'texfrag)
+  (package-install 'texfrag))
+
+(unless (package-installed-p 'counsel)
+  (package-install 'counsel))
+
+(unless (package-installed-p 'org-ref)
+  (package-install 'org-ref))
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
@@ -35,3 +50,7 @@
 
 ;; Enable counsel
 (require 'counsel)
+(require 'org-ref)
+
+
+

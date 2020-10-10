@@ -124,12 +124,12 @@
      ;; Use pdfview in org-mode
  (add-to-list 'org-file-apps '("\\.pdf\\'" . (lambda (file link) (org-pdfview-open link))))
 ;;;; org-ref
-(setq reftex-default-bibliography '("~/Dropbox/Studies/Papers/references.bib"))
+(setq reftex-default-bibliography '("~/Sync/Studies/Papers/references.bib"))
 
 ;; see org-ref for use of these variables
-(setq org-ref-bibliography-notes "~/Dropbox/Studies/Papers/notes.org"
-      org-ref-default-bibliography '("~/Dropbox/Studies/Papers/references.bib")
-      org-ref-pdf-directory "~/Dropbox/Studies/Papers/PDFS")
+(setq org-ref-bibliography-notes "~/Sync/Studies/Papers/notes.org"
+      org-ref-default-bibliography '("~/Sync/Studies/Papers/references.bib")
+      org-ref-pdf-directory "~/Sync/Studies/Papers/PDFS")
 ;;;;; Hide Citation Syntax
 (add-hook 'org-mode-hook
   (lambda ()
@@ -348,18 +348,22 @@
          (?- . ?–)))
 (setq org-superstar-remove-leading-stars nil) ; This removes the indent
 ;;;; Export
-;;;;; LaTeX use minted package with python pygments
-(setq org-latex-listings 'listings
-      org-latex-packages-alist '(("" "listings"))
-      org-latex-pdf-process
-      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+;;;;; LaTeX
+;;;;;; Captions go Below Table
+(setq org-latex-caption-above nil)
 
-;(setq org-latex-listings 'minted
-;      org-latex-packages-alist '(("" "minted"))
+;;;;;; LaTeX Call
+;(setq org-latex-listings 'listings
+;      org-latex-packages-alist '(("" "listings"))
 ;      org-latex-pdf-process
 ;      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
 ;        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
 
 ;;;;; ODT Export uses MathML
@@ -469,7 +473,7 @@
     (async-shell-command (format "~/bin/eml -o"))
   )
 
-;;;; Closing After Org
+;;; Closing After Org
 )
 ;;; LaTeX Settings
 ;;; Programming
