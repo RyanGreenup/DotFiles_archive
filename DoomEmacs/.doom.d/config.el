@@ -357,13 +357,22 @@
 ;      org-latex-packages-alist '(("" "listings"))
 ;      org-latex-pdf-process
 ;      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+;        "biber %b.bcf"
 ;        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
+; (setq org-latex-listings 'minted
+;       org-latex-packages-alist '(("" "minted"))
+;       org-latex-pdf-process
+;       '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+;         "biber %b.bcf"
+;         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+
+; LaTeXMk is more efficient
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
       org-latex-pdf-process
-      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+      '("latexmk -f -xelatex -interaction=nonstopmode %F")
+        )
 
 
 ;;;;; ODT Export uses MathML
