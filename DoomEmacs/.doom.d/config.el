@@ -374,6 +374,10 @@
       '("latexmk -f -xelatex -interaction=nonstopmode %F")
         )
 
+; Press f5 to Export Macro (NOTE: Use el:macro)
+(fset 'Async\ Export\ Latex
+   (kmacro-lambda-form [?\C-c ?\C-e ?\C-a ?l ?p] 0 "%d"))
+(global-set-key [f5] 'Async\ Export\ Latex)
 
 ;;;;; ODT Export uses MathML
 (setq org-latex-to-mathml-convert-command

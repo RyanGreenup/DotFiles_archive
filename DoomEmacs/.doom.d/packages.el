@@ -29,7 +29,7 @@
 (package! poly-R)
 (package! org-ref)
 (package! citeproc) ; I don't think I need this anymore, just export -> latex -> HTML (pandoc) to keep refs
-(package! biblio)
+(package! elmacro)
 
 ;; Temporary
 (package! lsp-julia)  ;; This will eventually be in doom
