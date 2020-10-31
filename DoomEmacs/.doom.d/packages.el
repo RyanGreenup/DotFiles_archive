@@ -30,6 +30,7 @@
 (package! org-ref)
 (package! citeproc) ; I don't think I need this anymore, just export -> latex -> HTML (pandoc) to keep refs
 (package! elmacro)
+(package! figlet) ; Makes nice headings
 
 ;; Temporary
 (package! lsp-julia)  ;; This will eventually be in doom

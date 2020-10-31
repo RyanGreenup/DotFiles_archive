@@ -118,6 +118,9 @@
 (after! org
 ;;;;; Initial Visibility
 (setq org-startup-folded "overview")
+;;;;; Org-Download
+(setq org-download-method 'directory)
+(setq-default org-download-image-dir "./media/")
 ;;;; PDF Viewer (To view PDF files inside Emacs)
     ;; load pdfview
      (eval-after-load 'org '(require 'org-pdfview))
@@ -339,8 +342,8 @@
                     :height 2.074
                     :foreground 'unspecified
                     :inherit 'org-level-8)
-(setq org-superstar-headline-bullets-list '(" ")) ;; '("🞛" "◉" "○" "▷")
-;(setq org-superstar-headline-bullets-list '("🞛" "◉" "○" "▷")) ;; '("🞛" "◉" "○" "▷")
+;(setq org-superstar-headline-bullets-list '(" ")) ;; '("🞛" "◉" "○" "▷")
+(setq org-superstar-headline-bullets-list '("🞛" "◉" "○" "▷")) ;; '("🞛" "◉" "○" "▷")
 ; I'm hapy with the defaults
 (setq org-superstar-item-bullet-alist
        '((?+ . ?•)
@@ -368,16 +371,27 @@
 ;         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 
 ; LaTeXMk is more efficient
+;; Execute either depending on which one you want, and or swap order
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
       org-latex-pdf-process
-      '("latexmk -f -xelatex -interaction=nonstopmode %F")
+      '("latexmk -f -shell-escape -xelatex -interaction=nonstopmode %F")
         )
+
+;; (setq org-latex-listings 'listings
+;;       org-latex-packages-alist '(("" "listings"))
+;;       org-latex-pdf-process
+;;       '("latexmk -f -shell-escape -xelatex -interaction=nonstopmode %F")
+;;         )
 
 ; Press f5 to Export Macro (NOTE: Use el:macro)
 (fset 'Async\ Export\ Latex
    (kmacro-lambda-form [?\C-c ?\C-e ?\C-a ?l ?p] 0 "%d"))
 (global-set-key [f5] 'Async\ Export\ Latex)
+
+; (fset 'wrap-in-tcolorbox
+;    (kmacro-lambda-form [?/ ?# ?\\ ?+ ?e ?n ?d ?_ ?s ?r ?c return ?j ?x ?i ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?b ?e ?g ?i ?n ?\{ ?t ?c ?o ?l ?o ?r ?b ?o ?x ?\} return ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?e ?n ?d ?\{ ?t ?c ?o ?l ?o ?r ?b ?o ?x escape ?k ?o ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?t ?c ?b ?l ?o ?w ?e ?r escape ?k ?o escape ?p] 0 "%d"))
+; (global-set-key "c-x\c-k\c-b" 'wrap-in-tcolorbox)
 
 ;;;;; ODT Export uses MathML
 (setq org-latex-to-mathml-convert-command
@@ -489,6 +503,24 @@
 ;;; Closing After Org
 )
 ;;; LaTeX Settings
+;; ;; Use XeLatex
+;; (setq-default TeX-engine 'xetex) ;; see also ~M-x TeX-engine-set~
+;; ;; Make PDF by default
+;; (setq-default TeX-PDF-mode t)
+;; ;; Use Shell-Escape (https://tex.stackexchange.com/a/161303)
+;; (setq LaTeX-command-style '(("" "%(PDF)%(latex) -shell-escape %S%(PDFout)")))
+
+
+
+;; see also:    (these NEVER work though grrr!)
+;; %%% Local Variables:
+;; %%% TeX-command-extra-options: "-shell-escape"
+;; %%% coding: utf-8
+;; %%% mode: latex
+;; %%% TeX-engine: xetex
+;; %%% End:
+
+
 ;;; Programming
 ;;;; Outshine Mode
 (use-package! outshine :load-path "~/.doom.d/local/"
