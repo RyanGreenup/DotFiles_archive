@@ -54,3 +54,8 @@
 
 
 
+
+;; Shell Escape in AucTeX
+(with-eval-after-load 'tex
+  (add-to-list 'safe-local-variable-values
+               '(TeX-command-extra-options . "-shell-escape")))
