@@ -80,6 +80,11 @@ handle_extension() {
 	 #   glow -s dark "${FILE_PATH}" && { dump | trim; exit 5; }
 	    ;;
 
+    org)
+	    pandoc -f org -t markdown "${FILE_PATH}" | mdcat && { dump | trim; exit 5; }
+	 #   glow -s dark "${FILE_PATH}" && { dump | trim; exit 5; }
+	    ;;
+
         # HTML
         htm|html|xhtml)
             # Preview as text conversion

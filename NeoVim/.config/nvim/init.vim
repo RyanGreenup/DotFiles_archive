@@ -224,7 +224,6 @@ Plug 'python-mode/python-mode'
 """"" Julia Syntax Highlighting
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'davidhalter/jedi-vim'
-Plug 'neovim/nvim-lsp'
 
 """"" AutoComplete (NCM2)
 " This Has No completion source for R
