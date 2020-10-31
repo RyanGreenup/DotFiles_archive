@@ -1,0 +1,1 @@
+.config/latexmk/latexmkrc
