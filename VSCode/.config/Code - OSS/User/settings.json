@@ -3,7 +3,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -3,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -531,7 +531,7 @@
 
     },
     "git.autofetch": true,
-    "workbench.colorTheme": "Github Light Theme",
+    "workbench.colorTheme": "Dracula",
     "markdownlint.config": {
         "MD007": { "indent": 4 },
         "MD013": false
@@ -540,7 +540,8 @@
     "python.dataScience.alwaysTrustNotebooks": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.languageServer": "Microsoft"
+    "python.languageServer": "Microsoft",
+    "diffEditor.renderSideBySide": true
 
 
 
