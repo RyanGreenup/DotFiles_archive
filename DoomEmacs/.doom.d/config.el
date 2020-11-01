@@ -730,6 +730,7 @@
     (local-set-key (kbd "C-c C-x C-u") 'markdown-toggle-url-hiding)
   )
 )
+
 ;;;;; Copy File Path in a way that works with realpath
 (defun My-Copy-File-Path ()
   (interactive)
@@ -771,9 +772,59 @@
 (defun my-edit-clipboard-with-texmacs ()
   (interactive)
   (save-window-excursion
-    (async-shell-command (format "~/bin/FixMathWithTexMacs.sh"))
+    (async-shell-command (format "xclip -selection clipboard -o | figlet | xclip -selection clipboard"))
   )
 )
+
+
+
+(let ((hname (read-from-minibuffer "Heading Name: ")))
+    (message (number-to-string (length hname)))
+    )
+
+(defun my-take-screenshot ()
+    (interactive)
+    (let
+        ;; Read Filename from Minibuffer
+        ((filename (read-from-minibuffer "image file name: "))
+        (directory "_media"))
+
+        ;; Use maim to screenshot
+        (shell-command (format "maim --select %s/%s/%s.png" default-directory directory filename ))
+
+        ;; Insert formatted link at point
+        (save-excursion (insert(format
+        "#+attr_html: :width 400px \n #+attr_latex: :width 0.4\\textwidth \n [[file:%s/%s.png]]"
+        directory filename)))
+
+        ;; Message success to the minibuffer
+        (message "saved to %s as %s.png" directory filename)
+    )
+)
+
+(defun my-insert-clipboard-png ()
+    (interactive)
+    (let
+        ;; Read Filename from Minibuffer
+        ((filename (read-from-minibuffer "image file name: "))
+        (directory "_media"))
+
+        ;; Use maim to screenshot
+        (shell-command (format "mkdir %s/%s" default-directory directory))
+        (shell-command (format "xclip -selection clipboard -t image/png -o > %s/%s/%s.png" default-directory directory filename ))
+
+        ;; Insert formatted link at point
+        (save-excursion (insert(format
+        "#+attr_html: :width 400px \n #+attr_latex: :width 0.4\\textwidth \n [[file:%s/%s.png]]"
+        directory filename)))
+
+        ;; Message success to the minibuffer
+        (message "saved to %s as %s.png" directory filename)
+    )
+)
+
+
+
 
 (global-set-key (kbd "C-c M") 'my-edit-region-with-texmacs)
 (global-set-key (kbd "C-c m") 'my-edit-clipboard-with-texmacs)
