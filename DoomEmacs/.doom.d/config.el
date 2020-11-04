@@ -170,7 +170,7 @@
          ("url-to-ja" . "http://translate.google.fr/translate?sl=en&tl=ja&u=%h")
          ("google"    . "http://www.google.com/search?q=")
          ("gmap"      . "http://maps.google.com/maps?q=%s")
-         ("vidar"     . "http://121.210.19.69/")
+         ("vidar"     . "http://192.168.50.190/")
 ;;         ("DataSci"     . "~/Notes/DataSci/")  ; This isn't made relative upon HTML export
          ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
          ("ads"       .
@@ -184,6 +184,11 @@
 ;; (remove-hook 'org-mode-hook 'toggle-org-custom-inline-style)
 ;; (toggle-org-custom-inline-style)
 ;;;;; Github Autumn Files
+;; Often times the export fails due to broken links
+;; this setting prevents that
+;; with org-roam sometimes the links are not even broken!
+(setq org-export-with-broken-links t)
+
 (setq org-publish-project-alist
       '(
 ;; (https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html)
@@ -263,6 +268,50 @@
          :publishing-function org-publish-attachment)
 
         ("Server" :components ("Server_Org" "Server_Images" "Server_Other"))
+
+
+;;;;; Local HTML Files
+
+        ("Export_Org"
+         :base-directory "~/Notes/Org/"
+         :base-extension "org"
+         :index-filename "index.org"
+         :auto-index t
+         :auto-sitemap t                ; Generate sitemap.org automagically...
+         :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
+         :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
+         :publishing-directory "~/Notes/Org/export"
+         :publishing-function org-html-publish-to-html
+;;         :exclude "*jour.*" ;; Regexp
+;;         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+ ;;                  "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+         :headline-levels 3
+         :recursive t
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\"
+         href=\"./style.css\" type=\"text/css\"/>"
+         :html-preamble t)
+
+
+        ("Export_Images"
+         :base-directory "~/Notes/Org/"
+         :base-extension "jpg\\|gif\\|png"
+         :exclude ".*ltximg.*" ;; regexp
+         :recursive t
+         :publishing-directory "~/Notes/Org/export"
+         :publishing-function org-publish-attachment)
+
+        ("Export_Other"
+         :base-directory "~/Notes/Org/"
+         :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+         :exclude "journal.*" ;; Regexp
+         :recursive t
+         :publishing-directory "~/Notes/Org/export"
+         :publishing-function org-publish-attachment)
+
+        ("Export" :components ("Export_Org" "Export_Images" "Export_Other"))
+
 
         ))
 ;; todo, but be mindful to move apache from root
@@ -388,6 +437,15 @@
 (fset 'Async\ Export\ Latex
    (kmacro-lambda-form [?\C-c ?\C-e ?\C-a ?l ?p] 0 "%d"))
 (global-set-key [f5] 'Async\ Export\ Latex)
+
+
+;; send region to buffer below (i.e. term) and press enter
+;; bound to C-c m
+(fset 'send-org-block-below
+   (kmacro-lambda-form [?\C-c ?\' ?g ?g ?V ?G ?y ?\C-c ?\C-k ?\C-w ?j ?p ?\C-w ?k] 0 "%d"))
+(global-set-key (kbd "C-c m") 'send-org-block-below)
+
+
 
 ; (fset 'wrap-in-tcolorbox
 ;    (kmacro-lambda-form [?/ ?# ?\\ ?+ ?e ?n ?d ?_ ?s ?r ?c return ?j ?x ?i ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?b ?e ?g ?i ?n ?\{ ?t ?c ?o ?l ?o ?r ?b ?o ?x ?\} return ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?e ?n ?d ?\{ ?t ?c ?o ?l ?o ?r ?b ?o ?x escape ?k ?o ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?t ?c ?b ?l ?o ?w ?e ?r escape ?k ?o escape ?p] 0 "%d"))
@@ -778,9 +836,7 @@
 
 
 
-(let ((hname (read-from-minibuffer "Heading Name: ")))
-    (message (number-to-string (length hname)))
-    )
+
 
 (defun my-take-screenshot ()
     (interactive)
@@ -810,12 +866,12 @@
         (directory "_media"))
 
         ;; Use maim to screenshot
-        (shell-command (format "mkdir %s/%s" default-directory directory))
+        (shell-command (format "mkdir -p %s/%s" default-directory directory))
         (shell-command (format "xclip -selection clipboard -t image/png -o > %s/%s/%s.png" default-directory directory filename ))
 
         ;; Insert formatted link at point
         (save-excursion (insert(format
-        "#+attr_html: :width 400px \n #+attr_latex: :width 0.4\\textwidth \n [[file:%s/%s.png]]"
+        "#+attr_html: :width 400px \n#+attr_latex: :width 0.4\\textwidth \n[[file:%s/%s.png]]"
         directory filename)))
 
         ;; Message success to the minibuffer
@@ -826,8 +882,8 @@
 
 
 
-(global-set-key (kbd "C-c M") 'my-edit-region-with-texmacs)
-(global-set-key (kbd "C-c m") 'my-edit-clipboard-with-texmacs)
+;; (global-set-key (kbd "C-c M") 'my-edit-region-with-texmacs)
+;; (global-set-key (kbd "C-c m") 'my-edit-clipboard-with-texmacs)
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 (global-set-key (kbd "C-c s") 'company-yasnippet)
 ;;; EAF
