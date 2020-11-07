@@ -395,6 +395,8 @@ for_window [class="^.*"] border pixel 5
          status_command i3status
          height 30    # Disabled in favour or lxqt
  }
+
+
 # The bar doesn't look nice with a Desktop Environment
 #  The reason for using lxde/lxqt or mate is, essentially, to have xdg-open in a sane way, nice notifications, vol/brightness control
 #  I noteiced that xdg-open didn't work with LXQT, maybe worked with LXDE and worked really well with Mate
@@ -482,3 +484,7 @@ bindsym $mod+Ctrl+less move workspace to output left
  bindsym $mod+Prior exec xrandr -o inverted
  bindsym $mod+minus exec xrandr -o left
  bindsym $mod+equal exec xrandr -o right
+
+
+# Take Screenshot
+bindsym $mod+Print maim --select | xclip -selection clipboard -target image/png
