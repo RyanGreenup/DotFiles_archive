@@ -1,32 +1,50 @@
 
   h1 {
-    color: white;
-    font-weight: 300;
-    background-color: #414650;
+      color: white;
+    font-weight: 400;
+    background-color: #6272a4;
     width: 100%;
-    border: 3px solid  #414650;
+    border: 3px solid  #6272a4;
   }
 
   h2 {
-    color: white;
-    font-weight: 400;
-    background-color: #414650;
+    /* margin: 2em; */
+      color: white;
+    font-weight: 300;
+    background-color: #6272a4;
     width: 100%;
-    border: 2px solid  #414650;
+    border: 2px solid  #6272a4;
   }
 
 
   h3 {
-    color: white;
-    font-weight: 150;
-    background-color: #606776;
+      /* margin: 3em; */
+      color: white;
+    font-weight: 200;
+    background-color: #6272a4;
   }
 
   h4 {
-    color: black;
-    font-weight: 100;
+      /* margin: 3em; */
+      color: white;
+    font-weight: 150;
+    background-color: #6272a4;
+  }
+
+  h5 {
+      margin: 4em;
+    /* color: black; */
+    font-weight: 125;
     width: 100%;
     text-decoration: underline;
+  }
+
+  h6 {
+      margin: 4em;
+    /* color: black; */
+    font-weight: 100;
+    width: 100%;
+    text-decoration: italic;
   }
 
 
@@ -85,7 +103,7 @@ pre code {
     overflow-x: auto;
     padding: 0.3em;
     /* color: #222222; */    /* (Disable for theme-agnostic (i.e. white when using dracula theme) */
-    border: 0.075em solid #6272a4;
+    /* border: 0.075em solid #6272a4; */
     border-left: .75em solid #6272a4;
     /* border-radius: 7px; */ /* Make it rounded */
     /* margin-left: 1em; */ /*Indent Margin, but this causes ugly background colours*/
@@ -135,13 +153,13 @@ table {
 
 table tr {
    border-top: 2px solid #cccccc;
-   background-color: white;
+   /* background-color: white; */
    margin: 0;
    padding: 0;
 }
 
 table tr:nth-child(2n) {
-   background-color: #f8f8f8;
+   /* background-color: #f8f8f8; */
 }
 
 table tr th {
