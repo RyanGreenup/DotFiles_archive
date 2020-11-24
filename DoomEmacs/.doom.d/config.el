@@ -879,6 +879,12 @@
     )
 )
 
+(defun org-copy-src-block ()
+  (interactive)
+  (org-edit-special nil)
+  (mark-whole-buffer)
+  (kill-ring-save 38 1 1)
+  (org-edit-src-abort))
 
 
 
