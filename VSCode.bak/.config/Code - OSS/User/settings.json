@@ -3,7 +3,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.fontSize": 18,
    "powermode.enabled": true,
-    "window.zoomLevel": -3,
+    "window.zoomLevel": 0,
     "editor.mouseWheelZoom": true,
     "workbench.iconTheme": "vscode-icons",
     "vim.cursorStylePerMode.insert": "line",
@@ -531,7 +531,7 @@
 
     },
     "git.autofetch": true,
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Visual Studio Light",
     "markdownlint.config": {
         "MD007": { "indent": 4 },
         "MD013": false
@@ -541,7 +541,8 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Microsoft",
-    "diffEditor.renderSideBySide": true
+    "diffEditor.renderSideBySide": true,
+    "joplin.token": "2bfb3057256e41283f08e010f8b967805b6a2637c5c21319945352371f60cc1664ec1c2cc565279c84e345e65dafc492c1b27bb8d2c12ca1424b3358b5691840"
 
 
 
