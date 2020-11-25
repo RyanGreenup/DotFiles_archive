@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{φ} \PYG{o}{=} \PYG{l+m+mf}{1.61803398875}
+\PYG{n}{ψ} \PYG{o}{=} \PYG{n+nb}{φ}\PYG{o}{\PYGZca{}\PYGZhy{}}\PYG{l+m+mi}{1}
+\PYG{n}{ψ} \PYG{o}{=} \PYG{l+m+mf}{0.61803398875}
+\PYG{k}{function} \PYG{n}{sfSeeds}\PYG{p}{(}\PYG{n}{ratio}\PYG{p}{)}
+\PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{k}{for} \PYG{n}{θ} \PYG{k+kp}{in} \PYG{p}{[(}\PYG{n}{ratio}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n+nb}{π}\PYG{p}{)}\PYG{o}{*}\PYG{n}{i} \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{3000}\PYG{p}{]}
+        \PYG{n}{gsave}\PYG{p}{()}
+        \PYG{n}{scale}\PYG{p}{(}\PYG{l+m+mf}{0.05}\PYG{p}{)}
+        \PYG{n}{rotate}\PYG{p}{(}\PYG{n}{θ}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}        Pencolor(♘, rand(1)[1], rand(1)[1], rand(1)[1])}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{n}{Rectangle}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{)}
+        \PYG{n}{grestore}\PYG{p}{()}
+    \PYG{k}{end}
+    \PYG{n}{label} \PYG{o}{=} \PYG{n}{string}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Ratio = \PYGZdq{}}\PYG{p}{,} \PYG{n}{round}\PYG{p}{(}\PYG{n}{ratio}\PYG{p}{,} \PYG{n}{digits} \PYG{o}{=} \PYG{l+m+mi}{8}\PYG{p}{))}
+    \PYG{n}{textcentered}\PYG{p}{(}\PYG{n}{label}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n+nd}{@svg} \PYG{k}{begin}
+    \PYG{n}{sfSeeds}\PYG{p}{(}\PYG{n+nb}{φ}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{600} \PYG{l+m+mi}{600}
+\end{Verbatim}

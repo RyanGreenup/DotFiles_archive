@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[usenames]{color}
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+% Package longtable omitted
+% Package wrapfig omitted
+% Package rotating omitted
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+% Package capt-of omitted
+% Package hyperref omitted
+\pagestyle{empty}             % do not remove
+% The settings below are copied from fullpage.sty
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-3cm}
+\setlength{\oddsidemargin}{1.5cm}
+\addtolength{\oddsidemargin}{-2.54cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-3cm}
+\setlength{\topmargin}{1.5cm}
+\addtolength{\topmargin}{-2.54cm}
+
+\IfFileExists{./resources/style.sty}{\usepackage{./resources/style}}{}
+\IfFileExists{./resources/classicThesis.sty}{\usepackage{./resources/classicThesis}}{}
+\IfFileExists{./resources/referencing.sty}{\usepackage{./resources/referencing}}{}
+\addbibresource{../Resources/references.bib}
+\usepackage[mode=buildnew]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+
+\begin{document}
+$$\begin{aligned}
+G_n &= \frac{F_{n} }{F_{n - 1} } \\
+\end{aligned}$$
+$$\begin{aligned}
+F_n = F_{n- 1} +  F_{n- 2} ; \quad F_1 = F_2 = 1
+\end{aligned}$$
+$$\begin{aligned}
+F_{n} &> 0 \\
+0 &< F_{n} \\
+ \implies   0 &< F_{n - 2} +  F_{n- 1} \quad \forall n > 2 \\
+  F_{n- 2} &< F_{n- 1}  \\
+   \implies  F_n & < F_{n+1}
+\end{aligned}$$
+$$\begin{aligned}
+F_{n} &> 0 \\
+0 &< F_{n} \\
+ \implies   0 &< F_{n - 2} +  F_{n- 1} \quad \forall n > 2 \\
+  F_{n- 2} &< F_{n- 1}  \\
+   \implies  F_n & < F_{n+1}
+\end{aligned}$$
+$$\begin{aligned}
+G &= \frac{F_{n} +  F_{n+  1} }{F_{n+  1} } \\
+&= 1 +  \frac{F_{n- 1} }{F_n} \\
+\text{Recall that $F_n > 0 \forall n$}\\
+&=  1 +  \frac{1}{    \left\lvert G \right\rvert } \\
+ \implies  0 &= G^2- G +  1; \quad G > 0  \\
+  \implies  G = \varphi &=  \frac{\sqrt{5} - 1  }{2} \quad  \square
+\end{aligned}$$
+\[\begin{aligned}
+F_{n+ 1} - F_{n} = F_{n- 1} \quad \forall n > 1
+\end{aligned}\]
+$e^x$
+$$\begin{aligned}
+\frac{\mathrm{d} }{\mathrm{d} x}\left( e^x \right) \ldots
+\end{aligned}$$
+$$\begin{aligned}
+\lim_{n     \rightarrow \infty }\left[ \frac{F_n}{F_{n- 1} }  \right] &= \varphi \\
+\lim_{n     \rightarrow \infty }\left[ \frac{F_n}{F_{n- 1} }  \right] &= \psi \\
+\varphi - \psi &=  1 \\
+\varphi \times  \psi  &= 1 \\
+\frac{\psi}{\varphi}  = \frac{1}{\varphi^2} = \frac{1}{1-\varphi} &= \frac{1}{2-\varphi} = \frac{2}{3 - \sqrt{5}  }
+\end{aligned}$$
+\end{document}
+%%Local Variables:
+%%TeX-master: t
+%%End:

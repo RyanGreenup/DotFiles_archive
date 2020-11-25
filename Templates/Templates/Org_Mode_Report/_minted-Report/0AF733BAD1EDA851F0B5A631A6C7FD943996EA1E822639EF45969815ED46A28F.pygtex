@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{matJoin}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}
+    \PYG{k}{function} \PYG{n}{nrow}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{size}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{k}{end}
+    \PYG{k}{function} \PYG{n}{ncol}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{size}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+    \PYG{k}{end}
+    \PYG{n}{emptymat} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{k+kt}{Bool}\PYG{p}{,} \PYG{n}{max}\PYG{p}{(}\PYG{n}{size}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{size}\PYG{p}{(}\PYG{n}{B}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{p}{,}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)} \PYG{o}{+} \PYG{n}{ncol}\PYG{p}{(}\PYG{n}{B}\PYG{p}{))} \PYG{p}{)}
+    \PYG{n}{emptymat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nrow}\PYG{p}{(}\PYG{n}{A}\PYG{p}{),} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)]} \PYG{o}{=} \PYG{n}{A}
+    \PYG{n}{emptymat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nrow}\PYG{p}{(}\PYG{n}{B}\PYG{p}{),} \PYG{p}{(}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{:}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{emptymat}\PYG{p}{)]} \PYG{o}{=} \PYG{n}{B}
+    \PYG{k}{return} \PYG{n}{emptymat}
+\PYG{k}{end}
+
+\PYG{k}{function} \PYG{n}{mywalk}\PYG{p}{(}\PYG{n}{B}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{n}
+        \PYG{n}{B} \PYG{o}{=} \PYG{n}{matJoin}\PYG{p}{(}\PYG{n}{B}\PYG{p}{,} \PYG{n}{rotl90}\PYG{p}{(}\PYG{n}{B}\PYG{p}{));}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{n}{B}
+\PYG{k}{end}
+
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{mywalk}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{l+m+mi}{9}\PYG{p}{))}
+\end{Verbatim}

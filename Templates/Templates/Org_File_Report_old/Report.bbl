@@ -1,0 +1,194 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{moskowitzLibraryGuidesWikipedia}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7e7d97153ad34b288b2e2a40a0deae89}{%
+           family={Moskowitz},
+           familyi={M\bibinitperiod},
+           given={Paula},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e7d97153ad34b288b2e2a40a0deae89}
+      \strng{fullhash}{7e7d97153ad34b288b2e2a40a0deae89}
+      \strng{bibnamehash}{7e7d97153ad34b288b2e2a40a0deae89}
+      \strng{authorbibnamehash}{7e7d97153ad34b288b2e2a40a0deae89}
+      \strng{authornamehash}{7e7d97153ad34b288b2e2a40a0deae89}
+      \strng{authorfullhash}{7e7d97153ad34b288b2e2a40a0deae89}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This guide will discuss to use or to not use Wikipedia in research.}
+      \field{langid}{english}
+      \field{shorttitle}{Library {{Guides}}}
+      \field{title}{Library {{Guides}}: {{Wikipedia}}: {{Should You Use Wikipedia}}?}
+      \field{urlday}{19}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/U7TBWA3U/c.html
+      \endverb
+      \verb{urlraw}
+      \verb https://mville.libguides.com/c.php?g=370066&p=2500344
+      \endverb
+      \verb{url}
+      \verb https://mville.libguides.com/c.php?g=370066&p=2500344
+      \endverb
+    \endentry
+    \entry{ngStableAlgorithmsLink2001}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=49e889356ff39df159461bc2895c7e16}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Andrew\bibnamedelima Y.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=7db7e2699fdef7f3893c06da82760343}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Alice\bibnamedelima X.},
+           giveni={A\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+        {{hash=8a36116840c7ee55901618c95fd08a58}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael\bibnamedelima I.},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{4aedde36ca9272241426413cf79a0d10}
+      \strng{fullhash}{4aedde36ca9272241426413cf79a0d10}
+      \strng{bibnamehash}{4aedde36ca9272241426413cf79a0d10}
+      \strng{authorbibnamehash}{4aedde36ca9272241426413cf79a0d10}
+      \strng{authornamehash}{4aedde36ca9272241426413cf79a0d10}
+      \strng{authorfullhash}{4aedde36ca9272241426413cf79a0d10}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Kleinberg HITS and the Google PageRank algorithms are eigenvector methods for identifying ``authoritative'' or ``influential'' articles, given hyperlink or citation information. That such algorithms should give reliable or consistent answers is surely a desideratum, and in\textasciitilde\textbackslash cite\{ijcaiPaper\}, we analyzed when they can be expected to give stable rankings under small perturbations to the linkage patterns. In this paper, we extend the analysis and show how it gives insight into ways of designing stable link analysis methods. This in turn motivates two new algorithms, whose performance we study empirically using citation data and web hyperlink data.}
+      \field{booktitle}{Proceedings of the 24th Annual International {{ACM SIGIR}} Conference on {{Research}} and Development in Information Retrieval}
+      \field{day}{1}
+      \field{isbn}{978-1-58113-331-8}
+      \field{month}{9}
+      \field{series}{{{SIGIR}} '01}
+      \field{title}{Stable Algorithms for Link Analysis}
+      \field{urlday}{19}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{258\bibrangedash 266}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1145/383952.384003
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/B3KE4TRH/Ng et al. - 2001 - Stable algorithms for link analysis.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.org/10.1145/383952.384003
+      \endverb
+      \verb{url}
+      \verb http://doi.org/10.1145/383952.384003
+      \endverb
+    \endentry
+    \entry{zhangMakingEigenvectorBasedReputation2004}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=0f5b8b674eea6432492c32e093925682}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b9f86630475050f998c1380d54906d21}{%
+           family={Goel},
+           familyi={G\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9de30571000234dcf364444191100a99}{%
+           family={Govindan},
+           familyi={G\bibinitperiod},
+           given={Ramesh},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bddd5d1a9d85e744924ec72efab20452}{%
+           family={Mason},
+           familyi={M\bibinitperiod},
+           given={Kahn},
+           giveni={K\bibinitperiod}}}%
+        {{hash=912e5e2d55c83bd48c04351b24e99269}{%
+           family={Van\bibnamedelima Roy},
+           familyi={V\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=c60b9ca2c20f403ed661846be625a8d8}{%
+           family={Leonardi},
+           familyi={L\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{fullhash}{079e9ee29d6f9c138cc98bfcc348b8e4}
+      \strng{bibnamehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{authorbibnamehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{authornamehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{authorfullhash}{079e9ee29d6f9c138cc98bfcc348b8e4}
+      \strng{editorbibnamehash}{c60b9ca2c20f403ed661846be625a8d8}
+      \strng{editornamehash}{c60b9ca2c20f403ed661846be625a8d8}
+      \strng{editorfullhash}{c60b9ca2c20f403ed661846be625a8d8}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Eigenvector based methods in general, and Google’s PageRank algorithm for rating web pages in particular, have become an important component of information retrieval on the Web. In this paper, we study the efficacy of, and countermeasures for, collusions designed to improve user rating in such systems.We define a metric, called the amplification factor, which captures the amount of PageRank-inflation obtained by a group due to collusions. We prove that the amplification factor can be at most 1/ε, where ε is the reset probability of the PageRank random walk. We show that colluding nodes (e.g., web-pages) can achieve this amplification and increase their rank significantly in realistic settings; further, several natural schemes to address this problem are demonstrably inadequate.We propose a relatively simple modification to PageRank which renders the algorithm insensitive to such collusion attempts. Our scheme is based on the observation that nodes which cheat do so by “stalling” the random walk in a small portion of the web graph and, hence, their PageRank must be especially sensitive to the reset probability ε. We perform exhaustive simulations on the Web graph to demonstrate that our scheme successfully prevents colluding nodes from improving their rank, yielding an algorithm that is robust to gaming.}
+      \field{booktitle}{Algorithms and {{Models}} for the {{Web}}-{{Graph}}}
+      \field{isbn}{978-3-540-30216-2}
+      \field{langid}{english}
+      \field{series}{Lecture {{Notes}} in {{Computer Science}}}
+      \field{title}{Making {{Eigenvector}}-{{Based Reputation Systems Robust}} to {{Collusion}}}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{pages}{92\bibrangedash 104}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/978-3-540-30216-2_8
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/SF2BHL3C/Zhang et al. - 2004 - Making Eigenvector-Based Reputation Systems Robust.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

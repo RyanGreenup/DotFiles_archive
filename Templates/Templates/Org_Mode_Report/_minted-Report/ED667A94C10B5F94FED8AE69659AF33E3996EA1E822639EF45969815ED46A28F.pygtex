@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} * Use GR to Save many images}
+  \PYG{c}{\PYGZsh{}\PYGZsh{} GR is faster than PyPlot}
+\PYG{k}{using} \PYG{n}{GR}
+\PYG{k}{function} \PYG{n}{save\PYGZus{}images}\PYG{p}{(}\PYG{n}{count}\PYG{p}{,} \PYG{n}{res}\PYG{p}{)}
+    \PYG{k}{try}
+        \PYG{n}{mkdir}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/gifs\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{catch}
+    \PYG{k}{end}
+    \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{count}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{40}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n+nb}{π}\PYG{p}{)}
+        \PYG{n}{j} \PYG{o}{=} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1}
+        \PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{n}{res}\PYG{p}{,} \PYG{n}{res}\PYG{p}{,} \PYG{n}{z} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{z}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mf}{0.8}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{i}\PYG{o}{*}\PYG{n+nb}{im}\PYG{o}{*}\PYG{l+m+mi}{9}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)))} \PYG{c}{\PYGZsh{} PyPlot uses interpolation = \PYGZdq{}None\PYGZdq{}}
+        \PYG{n}{name} \PYG{o}{=} \PYG{n}{string}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/gifs/j\PYGZdq{}}\PYG{p}{,} \PYG{n}{lpad}\PYG{p}{(}\PYG{n}{j}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{),} \PYG{l+s}{\PYGZdq{}.png\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{GR}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{name}\PYG{p}{)}
+    \PYG{k}{end}
+\PYG{k}{end}
+
+\PYG{n}{save\PYGZus{}images}\PYG{p}{(}\PYG{l+m+mi}{1200}\PYG{p}{,} \PYG{l+m+mi}{1500}\PYG{p}{)} \PYG{c}{\PYGZsh{} Number  and Res}
+\end{Verbatim}

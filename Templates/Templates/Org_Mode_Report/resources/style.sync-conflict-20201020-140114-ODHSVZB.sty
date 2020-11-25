@@ -1,0 +1,223 @@
+\ProvidesPackage{ScreenStyle}
+
+% I should split this up into a style sheet and a preamble.
+% Inside a style sheet, the correct behaviour is to use RequirePackage rather
+% than RequirePackage
+
+% * Packages
+% ** General
+%\RequirePackage{~/Dropbox/profiles/Templates/LaTeX/texnotePreamble.sty}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{fontspec} %More support for fonts in XeTeX
+\RequirePackage[Latin,Greek,Emoticons]{ucharclasses}
+% \RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{pgfplots}
+\RequirePackage{comment}
+\RequirePackage{import} %This is allows relative directories
+\RequirePackage{tikz, pstricks}
+\RequirePackage{pst-solides3d}
+\RequirePackage{svg} % Needed for sVG Images
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+%\usetikzlibrary{calc}
+%\RequirePackage{chngcntr}
+\RequirePackage[T1]{fontenc}
+%\RequirePackage{extsizes} % More Font Sizes
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{sectsty} %Need it for underlining Sections
+\RequirePackage{lmodern}
+\RequirePackage{enumitem}
+\RequirePackage{ifxetex,ifluatex} % This doesn't work with org-mode
+\RequirePackage{lipsum}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[margin=2cm]{geometry}
+\addtolength{\skip\footins}{2pc plus 5pt} %Add whitespace before footnotes`
+%\RequirePackage{tgadventor}
+% Titlesec is incompatible with org-mode
+% *** Multi Column
+\setlength{\tabcolsep}{6pt}
+% \twocolumn
+% \RequirePackage{cuted} % https://tex.stackexchange.com/a/255115 This let's us
+                       % use \begin{strip}\end{strip} which forces an equation
+                       % over all columns
+
+% ** Styles
+%\RequirePackage{titlesec} % Section Colours
+% *** Colours
+%\RequirePackage[svgnames, x11names, dvipsnames]{xcolor} %This is included with mdframed
+% ** Graphics
+
+\RequirePackage{graphicx}
+% ** AmsMath
+\RequirePackage{amsmath, amssymb, amsthm}
+
+%Use this to put it in TOC
+%\printbibliography[heading=bibintoc, title={Whole bibliography}]
+%\printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+% ** Bibliography (refer to ./referencing.sty )
+% % \RequirePackage[citestyle=numeric, bibstyle=numeric,hyperref=true,backref=true, maxcitenames=3,url=true,backend=biber,natbib=true]{biblatex}
+% % \addbibresource{references.bib}
+% % \AtEndDocument{\printbibliography}
+
+%Use this to put it in TOC
+%\printbibliography[heading=bibintoc, title={Whole bibliography}]
+%\printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+% ** Hyperref (Last)
+
+%Hyperlinks----------------must load last ---------------
+\RequirePackage{bibentry}
+\RequirePackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=blue,
+	 colorlinks=true, %set true if you want colored links
+	 linktoc=all, %set to all if you want both sections and subsections linked
+   backref=page %hyperlink references
+}
+% * Styling/Aesthetics
+% ** Section Numbering
+%Remove Section Numbers----------------
+% \makeatletter
+% \renewcommand{\@seccntformat}[1]{}
+% \makeatother
+%
+% % Numbering
+ \renewcommand{\thesection}{}
+ \renewcommand{\thesubsection}{}
+ \renewcommand{\thesection}{~\arabic{section}~}
+ \setcounter{subsection}{1}
+ \renewcommand{\thesubsection}{~\arabic{section}.\arabic{subsection}~}
+ \setcounter{subsubsection}{1}
+ \renewcommand{\thesubsubsection}{~\arabic{section}.\arabic{subsection}.\arabic{subsubsection}~}
+
+
+% ** Font Style
+%Change the Font------------------------------
+%\RequirePackage{PoiretOne}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+% ** Rule AFter Sectioning
+% Add rule after sections ------------------------------
+\RequirePackage{titlesec}
+
+	% Formatting----------------------------------------
+	\widowpenalty=1000
+	\clubpenalty=1000
+% ** Page Breaks
+% ** Problem Boxes
+
+% Problem boxes --------------------------------------
+
+%\newtheorem*{prob}{Problem}
+%\theoremstyle{working}{\cmss}
+%\newtheorem*{working}{Worked Solution}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newenvironment{sol}[1][Problem]{%
+	\proof[\nopunct]  %
+}{\endproof}
+
+%\renewenvironment{proof}{{\bfseries \fontfamily{ccr} \selectfont Proof}}{*something*}
+% ** Heading Colours
+% *** Define Heading Colours
+\definecolor{colsse}{RGB}{136, 73, 143}
+\definecolor{colsss}{RGB}{156, 118, 160}
+\definecolor{colspg}{RGB}{218, 168, 224}
+\definecolor{coltit}{RGB}{84, 65, 86}
+\definecolor{colname}{RGB}{236, 66 ,255}
+		
+% *** Change Colours
+% **** Section
+\titleformat{\section}
+{\color{colsse}\normalfont\LARGE\bfseries}
+{\color{colsse}\thesection}{0em}{}
+\fontfamily{cmss}\selectfont
+% **** SubSection
+\titleformat{\subsection}
+{\color{colsss}\normalfont\Large\bfseries}
+{\color{colsss}\thesubsection}{0em}{}[\rule{0 in}{2pt}]
+\fontfamily{cmss}\selectfont
+% Change Font
+\fontfamily{cmss}\selectfont
+% **** Paragraph
+\titleformat{\paragraph}
+{\color{colsss}\normalfont\large}
+{\color{colsss}\theparagraph}{0em}{}[\rule{0 in}{1 pt}]
+\fontfamily{cmss}\selectfont
+% Change Font
+\fontfamily{cmss}\selectfont
+
+
+
+
+
+
+	
+% 	
+% * Code Blocks
+% ** Listings Package
+
+% Careful, this supports few languages
+\RequirePackage{listings}
+
+
+%Listings----------------------------------------
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+%  frame=tb,
+  frame=leftline,
+  framesep=15pt,
+  language=Java,
+  aboveskip=15pt,
+  belowskip=20pt,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+%  backgroundcolor=\color{Snow2},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  xleftmargin=1in,
+}
+
+% ** Minted Package
+% *** With Box
+% I prefer this because:
+   %+ It has support for more languages
+      %+ listings would break =org-mode= when using emacs-lisp or elisp
+   %+ linbreaks easily by default
+
+
+% you need to install python, pygments and compile latex with the =-shell-escape= flag
+
+\RequirePackage{minted}
+\setminted{linenos,tabsize=2,breaklines, breakanywhere}
+\RequirePackage{mdframed}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins,breakable} % Without this it will not break
+% \tcbset{enhanced jigsaw, breakable} % i might do this per box in case I want a centred one
+\RequirePackage{etoolbox}
+
+% Use tcolorbox, even though it breaks html conversion, it makes it way easier,
+  %if you need to fix the html conversion just remove the box by commenting this out.
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}[
+		colback=blue!1!white,colframe=blue!75!black,colbacktitle=red!20!blue!8,
+		coltitle=blue,
+        enhanced jigsaw, breakable,
+%		title=\textbf{\textit{R}}\ ,fonttitle=\it,
+		left=0.6cm, %Indent for the line numbers, % use line numbers because line-breaks
+		 /tcb/left skip=0.5 cm %Indent the whole box
+		 ]}%
+	\AfterEndEnvironment{minted}{  \end{tcolorbox} }%

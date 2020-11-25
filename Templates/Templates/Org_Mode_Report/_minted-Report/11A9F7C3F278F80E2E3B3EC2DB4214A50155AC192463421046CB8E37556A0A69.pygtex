@@ -1,0 +1,46 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZpc{}}\PYG{n}{matplotlib} \PYG{n}{inline}
+\PYG{o}{\PYGZpc{}}\PYG{n}{config} \PYG{n}{InlineBackend}\PYG{o}{.}\PYG{n}{figure\PYGZus{}format} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}svg\PYGZsq{}}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k}{def} \PYG{n+nf}{escape\PYGZus{}test}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{num}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{} runs the process num amount of times and returns the count of}
+\PYG{l+s+sd}{    divergence\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+    \PYG{n}{c} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{z1} \PYG{o}{=} \PYG{n}{z}  \PYG{c+c1}{\PYGZsh{}Remember the original value that we are working with}
+    \PYG{c+c1}{\PYGZsh{} Iterate num times}
+    \PYG{k}{while} \PYG{n}{count} \PYG{o}{\PYGZlt{}=} \PYG{n}{num}\PYG{p}{:}
+        \PYG{n}{dist} \PYG{o}{=} \PYG{n+nb}{sum}\PYG{p}{([}\PYG{n}{n}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{k}{for} \PYG{n}{n} \PYG{o+ow}{in} \PYG{n}{z1}\PYG{p}{])}
+        \PYG{n}{distc} \PYG{o}{=} \PYG{n+nb}{sum}\PYG{p}{([}\PYG{n}{n}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{k}{for} \PYG{n}{n} \PYG{o+ow}{in} \PYG{n}{c}\PYG{p}{])}
+        \PYG{c+c1}{\PYGZsh{} check for divergence}
+        \PYG{k}{if} \PYG{n}{dist} \PYG{o}{\PYGZgt{}} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{distc}\PYG{p}{):}
+            \PYG{c+c1}{\PYGZsh{}return the step it diverged on}
+            \PYG{k}{return} \PYG{n}{count}
+        \PYG{c+c1}{\PYGZsh{}iterate z}
+        \PYG{n}{z1} \PYG{o}{=} \PYG{n}{cAdd}\PYG{p}{(}\PYG{n}{cMult}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{,} \PYG{n}{z1}\PYG{p}{),} \PYG{n}{c}\PYG{p}{)}
+        \PYG{n}{count}\PYG{o}{+=}\PYG{l+m+mi}{1}
+        \PYG{c+c1}{\PYGZsh{}if z hasn\PYGZsq{}t diverged by the end}
+    \PYG{k}{return} \PYG{n}{num}
+
+
+
+\PYG{n}{p} \PYG{o}{=} \PYG{l+m+mf}{0.25} \PYG{c+c1}{\PYGZsh{}horizontal, vertical, pinch (zoom)}
+\PYG{n}{res} \PYG{o}{=} \PYG{l+m+mi}{200}
+\PYG{n}{h} \PYG{o}{=} \PYG{n}{res}\PYG{o}{/}\PYG{l+m+mi}{2}
+\PYG{n}{v} \PYG{o}{=} \PYG{n}{res}\PYG{o}{/}\PYG{l+m+mi}{2}
+
+\PYG{n}{pic} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{([}\PYG{n}{res}\PYG{p}{,} \PYG{n}{res}\PYG{p}{])}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{pic}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]):}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{pic}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]):}
+        \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{j} \PYG{o}{\PYGZhy{}} \PYG{n}{h}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{p}\PYG{o}{*}\PYG{n}{res}\PYG{p}{)}
+        \PYG{n}{y} \PYG{o}{=} \PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{v}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{p}\PYG{o}{*}\PYG{n}{res}\PYG{p}{)}
+        \PYG{n}{z} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{]}
+        \PYG{n}{col} \PYG{o}{=} \PYG{n}{escape\PYGZus{}test}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
+        \PYG{n}{pic}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{col}
+
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{axis}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}off\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{pic}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} plt.show()}
+\end{Verbatim}

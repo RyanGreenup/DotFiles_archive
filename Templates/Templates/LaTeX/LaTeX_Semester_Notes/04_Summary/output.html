@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="limits">(4) Limits</h1>
+<h2 id="limits-of-functions-4.1">Limits of Functions [4.1]</h2>
+<p>Intuitively limits of functions are the expected value of a function at points that can’t be solved because they are undefined, e.g.<br />
+ <br />
+<span class="math inline">$\frac{(x-2)\left( x+2 \right)}{\left( x-2 \right)}$</span> would be undefined at x=2, however as x is made sufficiently close to 2, that value will become arbitrarily close to 4.</p>
+<h3 id="the-limit-generally">The Limit Generally</h3>
+<p>From early calculus the limit of <span class="math inline"><em>f</em>(<em>x</em>)</span>, as <span class="math inline"><em>x</em></span> approaches <span class="math inline"><em>a</em></span> was said to be some value L, denoted <span class="math inline">lim<sub><em>x</em> → <em>a</em></sub>(<em>f</em>(<em>x</em>)) = <em>L</em></span><br />
+<br /><span class="math display">$$\begin{aligned}
+  \forall \varepsilon &gt; 0, \enspace, \exists \delta: &amp; \notag \\
+  &amp; \qquad 0 &lt; \lvert x-a \rvert &lt; \delta \implies \lvert f\left( x \right) - L \rvert &lt; \varepsilon
+  \label{stewartlimdef}\end{aligned}$$</span><br /></p>
+<h5 id="remarks-on-this-definition">Remarks on this Definition</h5>
+<p>Observe that the following statements are equivalent:</p>
+<ol>
+<li><p><span class="math inline">$x\neq c \enspace \wedge \enspace \lvert x-a \rvert &lt; \delta$</span></p></li>
+<li><p><span class="math inline">0 &lt; |<em>x</em> − <em>a</em>|&lt;<em>δ</em></span></p></li>
+<li><p><span class="math inline">|<em>x</em> − <em>a</em>|∈(0,<em>δ</em>)</span></p></li>
+</ol>
+<h5 id="notation">Notation</h5>
+<p> <br />
+ <br />
+If <span class="math inline"><em>L</em></span> is a limit of <span class="math inline"><em>f</em></span> at <span class="math inline"><em>c</em></span>, then it is said that:</p>
+<ol>
+<li><p><span class="math inline"><em>f</em></span> converges to <span class="math inline"><em>L</em></span> at <span class="math inline"><em>c</em></span></p></li>
+<li><p><span class="math inline"><em>f</em>(<em>x</em>)</span> approaches <span class="math inline"><em>L</em></span> as <span class="math inline"><em>x</em></span> approaches <span class="math inline"><em>c</em></span> This is sometimes expressed with the symbolism <span class="math inline"><em>f</em>(<em>x</em>) → <em>L</em></span> as <span class="math inline"><em>x</em> → <em>c</em></span></p></li>
+</ol>
+<p> <br />
+And the following notation is used</p>
+<ol>
+<li><p><span class="math inline">lim<sub><em>x</em> → <em>c</em></sub>(<em>f</em>(<em>x</em>)) = <em>L</em></span></p></li>
+<li><p><span class="math inline">lim<sub><em>x</em> → <em>c</em></sub><em>f</em></span></p></li>
+</ol>
+<h3 id="the-limit-using-cluster-points">The Limit Using Cluster Points</h3>
+<p>In analysis we more or less use the same definition but we introduce the concept of cluster points to make it more rigorous.</p>
+<h5 id="neighborhoods-2.2.7">Neighborhoods [2.2.7]</h5>
+<p>A neighborhood is an interval about a value, e.g. the <span class="math inline"><em>ε</em></span>-neighborhood of <span class="math inline"><em>a</em></span> is some set <span class="math inline"><em>V</em><sub><em>ε</em></sub>(<em>a</em>)</span>: <br /><span class="math display">$$\begin{aligned}
+  V_{\varepsilon}(a) = \left( \varepsilon-a, \varepsilon+a \right) &amp;= \left\{ x : \varepsilon - a &lt; x &lt; \varepsilon + a \right\} \\
+  &amp;= \left\{ x : -\varepsilon &lt; x - a &lt; \varepsilon \right\} \\
+  &amp;= \left\{ x: \lvert x-a \rvert &lt; \varepsilon \right\}
+  \label{nebhdef}\end{aligned}$$</span><br /></p>
+<h5 id="cluster-points">Cluster Points</h5>
+<p>Let <span class="math inline"><em>c</em></span> be a real number and let <span class="math inline"><em>A</em></span> be a subset of the real numbers, <span class="math inline"><em>c</em></span> may or may not be contained by <span class="math inline"><em>A</em></span> it doesn’t matter.<br />
+Take some interval around <span class="math inline"><em>c</em></span>, or rather consider the <span class="math inline"><em>ε</em></span>-neighborhood of <span class="math inline"><em>c</em></span>,<br />
+if, some value (other than <span class="math inline"><em>c</em></span>) can be found inside that interval/neighborhood that is also inside <span class="math inline"><em>A</em></span>, regardless of how small that interval is made, Then <span class="math inline"><em>c</em></span> is said to be a cluster point of <span class="math inline"><em>A</em></span>.<br />
+ <br />
+i.e., if the following is true<br />
+<span class="math inline">$\forall \varepsilon &gt; 0, \enspace \exists x\neq c \in A\cap V_{\varepsilon}(c)$</span><br />
+then <span class="math inline"><em>c</em></span> is said to be a cluster point of <span class="math inline"><em>A</em></span>.<br />
+ <br />
+It basically means that there are infinitely infinitesimal points between any point in <span class="math inline"><em>A</em></span> and the value <span class="math inline"><em>c</em></span>.</p>
+<h6 id="example">Example</h6>
+<ul>
+<li><p>The point <span class="math inline">4</span> of the set <span class="math inline">{3,4,5}</span> is not a cluster point of that set because a 0.1-neighbourhood of 4 would be the set <span class="math inline"><em>V</em><sub>0.1</sub>(4)={4}</span>, this set does not contain a value <span class="math inline"><em>x</em> ≠ 4</span> that is also inside the original set.<br />
+</p></li>
+<li><p>The point 6 of <span class="math inline">(1,6) = {<em>x</em>:1&lt;<em>x</em>&lt;6}</span> is a cluster point of <span class="math inline">(1,6)</span> because no matter how small a neighborhood is made around 6, there will always be values <span class="math inline"><em>x</em> ≠ 6</span> inside that interval that are also inside <span class="math inline">(1,6)</span> also observe that in this case <span class="math inline">6 ∉ (1,6)</span></p></li>
+</ul>
+<h5 id="definition-of-the-limit-4.1.4">Definition of the Limit [4.1.4]</h5>
+<p>So this is the definition that we moreso use in this unit and the one to memorise (or the Neighborhoods one seems simpler to memorise).<br />
+ <br />
+Let <span class="math inline"><em>A</em> ⊆ ℝ</span> and let <span class="math inline"><em>c</em></span> be a cluster point of <span class="math inline"><em>A</em></span>.<br />
+ <br />
+Now take some function: <br /><span class="math display">$$\begin{aligned}
+    f: A \rightarrow \mathbb{R}
+    \label{clustlimdeffunc}
+  \end{aligned}$$</span><br /> It is said that <span class="math inline"><em>L</em></span> is a limit of <span class="math inline"><em>f</em></span> at <span class="math inline"><em>c</em></span> if: <br /><span class="math display">$$\begin{aligned}
+     \forall \varepsilon &gt; 0, &amp;\enspace \exists \delta &gt; 0:  \notag \\ 
+     \qquad &amp; \left( x \in A \enspace \wedge \enspace 0&lt;\lvert x-c \rvert &lt; \delta \right) \implies \lvert f\left( x \right) - L \rvert &lt; \varepsilon \tag{4.1.4}
+    \label{414}
+  \end{aligned}$$</span><br /></p>
+<h6 id="whats-the-distinction">What’s the Distinction</h6>
+<p>This is more or less the same as the typical definition given in early calculus ([stewartlimdef]), the distinction here is that we have specified that <span class="math inline"><em>c</em></span> must be a cluster point of <span class="math inline"><em>A</em></span>, this is more rigorous because c is always such that there are infinitely many values in any infinitesimal distance between intself and any <span class="math inline"><em>x</em> ∈ <em>A</em></span>,<br />
+So the limit will always mean a continuous approach as we expect, this is just a more thorough definition.</p>
+<h5 id="definition-using-neigborhoods-4.1.6">Definition using Neigborhoods [4.1.6]</h5>
+<p>A value <span class="math inline"><em>L</em></span> is said to be the limit of <span class="math inline"><em>f</em></span> as <span class="math inline"><em>x</em> → <em>c</em></span>, denoted <span class="math inline">lim<sub><em>x</em> → <em>c</em></sub>(<em>f</em>(<em>x</em>))</span> if and only if:<br />
+</p>
+<p><span>2em</span><span>0pt</span> <em>For any</em> given <span class="math inline"><em>ε</em></span>-neighbourhood of <span class="math inline"><em>L</em></span>, <span class="math inline">$\enspace V_{\varepsilon}(L)$</span><br />
+<em>There exists</em> a <span class="math inline"><em>δ</em></span>-neighbourhood of <span class="math inline"><em>c</em></span>, <span class="math inline">$\enspace V_{\delta}\left( L \right)$</span><br />
+</p>
+<p>such that:  <br />
+</p>
+<p><span>4em</span><span>0pt</span> =0.7cm <em>If</em> <span class="math inline"><em>x</em> ≠ <em>c</em></span> is in both <span class="math inline"><em>A</em></span> and <span class="math inline"><em>V</em><sub><em>δ</em></sub>(<em>c</em>)</span><br />
+=0.5cm <em>Then</em> <span class="math inline"><em>f</em>(<em>x</em>)</span> must be within the neighbourhood <span class="math inline"><em>V</em><sub><em>ε</em></sub>(<em>L</em>)</span></p>
+<h6 id="formally">Formally</h6>
+<p><br /><span class="math display">$$\begin{aligned}
+  \forall \varepsilon &gt; 0, &amp; \enspace \exists \delta &gt; 0:  \notag \\
+  &amp; \qquad x \neq c, \enspace  x \in A\cap V_{\varepsilon}\left( L \right) \implies f\left( x \right) \in V_{\delta}\left( c \right) \tag{4.1.6}
+  \label{416}\end{aligned}$$</span><br /></p>
+<p>Defintions ([416]) and ([414]) are equivalent, and are both consistent with the initial less rigorous definition ([stewartlimdef]).</p>
+<h5 id="only-one-limit-value-4.1.5">Only one Limit Value [4.1.5]</h5>
+<p>If <span class="math inline"><em>f</em> : <em>A</em> → ℝ</span> and <span class="math inline"><em>c</em></span> is a cluster point of <span class="math inline"><em>A</em></span>, then there is only one value L: <span class="math inline">lim<sub><em>x</em> → <em>c</em></sub>(<em>f</em>(<em>x</em>)) = <em>L</em></span></p>
+<h3 id="using-sequences-to-define-limits-4.1.8">Using Sequences to Define Limits [ 4.1.8 ]</h3>
+<p>Now that limits are defined we can use sequences to define them as well, this will give us more tools to use later and allows a connection to be made between material of Chapter 3 and 4.</p>
+<h5 id="definition">Definition</h5>
+<p>A value <span class="math inline"><em>L</em></span> is said to be the limit of <span class="math inline"><em>f</em></span> as <span class="math inline"><em>x</em> → <em>c</em></span>, denoted <span class="math inline">lim<sub><em>x</em> → <em>c</em></sub>(<em>f</em>(<em>x</em>))</span> if and only if:<br />
+</p>
+<p><span>2em</span><span>0pt</span> <em>For every</em> sequence <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> in <span class="math inline"><em>A</em></span>,<br />
+</p>
+<p><span>4em</span><span>0pt</span> <em>if</em> <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> converges to <span class="math inline"><em>c</em></span> such that <span class="math inline"><em>x</em><sub><em>n</em></sub> ≠ <em>c</em></span>,<br />
+</p>
+<p><span>4em</span><span>0pt</span> <em>Then</em> <span class="math inline">(<em>f</em>(<em>x</em><sub><em>n</em></sub>))</span> converges to <span class="math inline"><em>L</em></span></p>
+<p> <br />
+So basically, again, if <span class="math inline"><em>x</em></span> gets close to <span class="math inline"><em>c</em></span>, <span class="math inline"><em>f</em>(<em>x</em>)</span> gets close to L, but we took <span class="math inline"><em>x</em></span> from a sequence.</p>
+<h3 id="divergence-criteria-4.1.9">Divergence Criteria [ 4.1.9 ]</h3>
+<p>Now we can use the <em>Divergence Criteria</em> from [3.4.5] to determine whether or not a limit exists generally or at a point.</p>
+<h5 id="a-limit-is-not-a-specific-value">(a) Limit is not a Specific Value</h5>
+<p>If <span class="math inline"><em>L</em> ∈ ℝ</span>, then <span class="math inline"><em>f</em></span> does not have a limit at <span class="math inline"><em>c</em></span>, if and only if:<br />
+ <br />
+There is a sequence <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> in <span class="math inline"><em>A</em></span> with <span class="math inline"><em>x</em><sub><em>n</em></sub> ≠ <em>c</em></span>, such that:<br />
+<span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> converges to <span class="math inline"><em>c</em></span> but the sequence <span class="math inline"><em>f</em>(<em>x</em><sub><em>n</em></sub>)</span> does not converge to <span class="math inline"><em>L</em></span></p>
+<h5 id="b-no-limit-whatsover">(b) No Limit whatsover</h5>
+<p>If <span class="math inline"><em>L</em> ∈ ℝ</span>, then <span class="math inline"><em>f</em></span> does not have a limit at <span class="math inline"><em>c</em></span>, if and only if:<br />
+ <br />
+There is a sequence <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> in <span class="math inline"><em>A</em></span> with <span class="math inline"><em>x</em><sub><em>n</em></sub> ≠ <em>c</em></span>, such that:<br />
+<span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> converges to <span class="math inline"><em>c</em></span> but the sequence <span class="math inline"><em>f</em>(<em>x</em><sub><em>n</em></sub>)</span> does not converge in <span class="math inline">ℝ</span></p>
+<h5 id="the-signum-function">The Signum Function</h5>
+<p>The Signum function returns the sign of the input value:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  sgn\left( x \right) &amp;:= 
+  \begin{cases}
+    +&amp;1 \qquad \text{for} \enspace $x \textgreater \enspace  0$ \\
+    &amp;0 \qquad \text{for} \enspace $x= 0$ \\
+    -&amp;1 \qquad \text{for} \enspace $x \textless \enspace  0$
+  \end{cases} \tag{4.1.10}
+    \label{4110} \\
+    &amp;= \frac{x}{\lvert x \rvert} \notag\end{aligned}$$</span><br /></p>
+<h2 id="limit-theorems-4.2">Limit Theorems [4.2]</h2>
+<p>These are useful for calculating limits of functions, they are mostly extensions of [3.2].</p>
+<h3 id="bounded-functions">Bounded Functions</h3>
+<h5 id="definition-1">Definition</h5>
+<p>Let <span class="math inline"><em>A</em> ⊆ ℝ</span>, <span class="math inline"><em>f</em> : <em>A</em> → ℝ</span> and let <span class="math inline"><em>c</em> ∈ ℝ</span> be a cluster point of <span class="math inline"><em>A</em></span>.<br />
+It is said that <em>f is bounded on a neighbourhood of</em> <span class="math inline"><em>c</em></span> if:<br />
+</p>
+<p><span>2em</span><span>0pt</span> there exists a <span class="math inline"><em>δ</em></span>-neighborhood <span class="math inline"><em>V</em><sub><em>δ</em></sub>(<em>c</em>)</span> and some constant value <span class="math inline"><em>M</em> &gt; 0</span> such that:<br />
+</p>
+<p><span>4em</span><span>0pt</span> <span class="math inline">|<em>f</em>(<em>x</em>)|≤<em>M</em></span> for every <span class="math inline"><em>x</em> ∈ <em>A</em> ∩ <em>V</em><sub><em>δ</em></sub>(<em>c</em>)</span></p>
+<p> <br />
+So basically a function is said to be <em>bounded on a neighbourhood of <span class="math inline"><em>c</em></span></em> if:</p>
+<p><span>4em</span><span>0pt</span> for some interval (It doesn’t matter how small) around <span class="math inline"><em>c</em></span>,</p>
+<p><span>6em</span><span>0pt</span> <span class="math inline"><em>f</em>(<em>x</em>)</span> can be contained in some interval</p>
+<p> <br />
+</p>
+<p><span>4em</span><span>0pt</span> <span class="math inline">$\exists \delta&gt;0, \enspace \exists M&gt;0:$</span></p>
+<p><span>6em</span><span>0pt</span> <span class="math inline"><em>x</em> ∈ <em>V</em><sub><em>δ</em></sub>(<em>c</em>) ⟹ |<em>f</em>(<em>x</em>)|&lt;<em>M</em></span></p>
+<p> <br />
+So for example:</p>
+<ul>
+<li><p><span class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>3</sup></span> is <em>bounded on every neighborhood of every <span class="math inline"><em>x</em> ∈ ℝ</span></em> whereas,</p></li>
+<li><p><span class="math inline">$g\left( x \right) = \sfrac{1}{x}$</span> is <em><strong>not</strong> bounded on a neighborhood of 0</em> because <span class="math inline"><em>g</em>(<em>x</em>)</span> tends to infinity as <span class="math inline"><em>x</em> → 0</span>,</p>
+<ul>
+<li><p><span>furthermore <span class="math inline"><em>g</em>(<em>x</em>)</span> is <em>bounded on <strong>some but notall</strong> neighborhoods of 1</em>, because an interval around 1 must not be drawn large enough to encapsulate 0.</span></p></li>
+</ul></li>
+</ul>
+<h5 id="limits-imply-bounded-neighbourhoods-4.2.2">Limits imply Bounded Neighbourhoods [4.2.2 ]</h5>
+<p>A function is bounded on a neighborhood of a point that is a limit of that function.<br />
+If a function has a limit at <span class="math inline"><em>c</em></span>, then <span class="math inline"><em>f</em></span> must be <em>bounded on some neighborhood of <span class="math inline"><em>c</em></span></em>,<br />
+this flows from the initial definitions because we know that <span class="math inline"><em>c</em></span> is a cluster point and that <span class="math inline">(<em>f</em>(<em>x</em>))</span> moves closer to <span class="math inline"><em>L</em></span>,<br />
+hence it must be possible to draw a small enough interval (e.g. horizontal lines on the <span class="math inline"><em>y</em></span>-axis) to contain all <span class="math inline"><em>f</em>(<em>x</em>)</span> defined by</p>
+<h3 id="functions-and-arithmetic-4.2.3">Functions and Arithmetic [4.2.3]</h3>
+<p>Just like with sequences we can define arithmetic operations that relate to addition and multiplication with functions in order to manipulate them:<br />
+ <br />
+Let <span class="math inline"><em>A</em> ⊆ ℝ</span> , <br /><span class="math display">$$\begin{aligned}
+  f: A \rightarrow \mathbb{R} \qquad g: A \rightarrow \mathbb{R} \qquad h: A \rightarrow \mathbb{R}, \enspace h(x) \neq 0, \enspace \forall x \in A
+  \label{seqdefgen}\end{aligned}$$</span><br /></p>
+<p>We define the following Operations [4.2, p. 111]:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+{1}
+  \left( f+g \right) \left( x \right) &amp;:= f\left( x \right) + g\left( x \right) \label{addfundef} \\
+  \left( f-g \right) \left( x \right) &amp;:= f\left( x \right) + g\left( x \right) \label{subfundef} \\
+  \left( fg \right) \left( x \right) &amp;:= f\left( x \right)  \times g\left( x \right) \label{multfundef} \\
+  \left( bf \right) \left( x \right) &amp;:= b                  \times  f\left( x \right) \label{confundef} \\
+  \left( \frac{f}{h} \right)\left( x \right) &amp;:= \frac{f\left( x \right)}{h\left( x \right)} \end{aligned}$$</span><br /></p>
+<h6 id="limits-of-function-operations-4.2.4">Limits of Function Operations [4.2.4]</h6>
+<p>Because the limit of a function is essentially the expected value of the function around that value, it stands to reason that the limit will distribute over the basic operations:<br />
+<span>Let the functions be defined as they were in ([seqdefgen]) and let <span class="math inline"><em>c</em> ∈ ℝ</span> be a custer point of <span class="math inline"><em>A</em></span>.</span></p>
+<p><br /><span class="math display">$$\begin{aligned}
+  \lim_{x \rightarrow c}\left( f \right) = L \qquad \lim_{x \rightarrow c}\left( g \right) = M \quad \lim_{x\rightarrow c}\left( h \right)  = H \neq 0
+  \label{fundeflim}\end{aligned}$$</span><br /></p>
+<p>Then the limits are:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+{2}
+  \lim_{x\rightarrow c}  \left( f+g \right)       &amp;= \lim_{x\rightarrow c}\left( f \right) + \lim_{x\rightarrow c}\left( g \right)        &amp;= L + M
+  \label{addlimdef} \\[1em]
+  \lim_{x\rightarrow c}  \left( f-g \right)       &amp;= \lim_{x\rightarrow c} \left( f \right) - \lim_{x\rightarrow c} \left( g \right)      &amp;= x - y 
+  \label{minlimdef} \\[1em]
+  \lim_{x\rightarrow c}  \left( c \cdot f \right) &amp;= c \cdot \lim_{x\rightarrow c} \left( f \right)                                       &amp;= c \cdot x
+  \label{conmultlimdef} \\[1em]
+  \lim_{x\rightarrow c}  \left( f\times g \right) &amp;= \lim_{x\rightarrow c} \left( f \right) \times \lim_{x\rightarrow c} \left( g \right) &amp;= x \times y
+  \label{multlimdef} \\[1em]
+  \lim_{x\rightarrow c}  \left( f/h \right)       &amp;= \lim_{x\rightarrow c} \left( f \right) \div \lim_{x\rightarrow c} \left( h \right)   &amp;= \sfrac{x}{y} 
+  \label{divlimdef}\end{aligned}$$</span><br /></p>
+<h3 id="limit-theorems">Limit Theorems</h3>
+<p>The rest of the chapter just provides values of varios limits.<br />
+<span>Let the functions be defined as they were in ([seqdefgen]) and let <span class="math inline"><em>c</em> ∈ ℝ</span> be a custer point of <span class="math inline"><em>A</em></span>.</span></p>
+<h5 id="limits-captured-in-intervals-4.2.6">Limits Captured in Intervals [4.2.6]</h5>
+<p> <br />
+ <br />
+<em>if</em> <span class="math inline"><em>f</em>(<em>x</em>) ∈ [<em>a</em>,<em>b</em>]</span> for all <span class="math inline">$x \in A, \enspace x \neq c$</span>, and <span class="math inline">lim<sub><em>x</em> → <em>c</em></sub>(<em>f</em>)</span> exists,<br />
+</p>
+<p><span>2em</span><span>0pt</span> <em>then</em> <span class="math inline"><em>f</em>(<em>x</em>) ∈ [<em>a</em>,<em>b</em>]</span></p>
+<h5 id="squeeze-theorem-4.2.7">Squeeze Theorem [4.2.7]</h5>
+<p>if [4.2.6] is extended to functions, then we have the squeeze theorem:<br />
+<em>if</em> <span class="math inline"><em>g</em></span> is within an interval defined by the functions <span class="math inline"><em>f</em></span> and <span class="math inline"><em>h</em></span>:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  f\left( x \right) \leq g\left( x \right) \leq h\left( x \right), \quad \forall x\in A, \enspace x\neq c 
+  \label{squeezelimdist}\end{aligned}$$</span><br /></p>
+<p><span>2em</span><span>0pt</span> <em>then</em> the limit of g must also be 0</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow c}\left( g \right)=L
+  \label{limisL}\end{aligned}$$</span><br /></p>
+<h5 id="a-positive-limit-implies-a-neighbourhood-with-positive-values">A Positive Limit implies a neighbourhood with Positive Values</h5>
+<p>Let <span class="math inline"><em>A</em> ⊆ ℝ</span> and let <span class="math inline"><em>c</em> ∈ ℝ</span> be a cluster point of <span class="math inline"><em>A</em></span> as in (3.4.6) above.<br />
+<em>If</em>: <br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow c}\left( f \right) &gt; 0
+  \label{limneighbourpor}\end{aligned}$$</span><br /></p>
+<p><em>Then:</em></p>
+<p><span>4em</span><span>0pt</span> there is a neighborhood <span class="math inline"><em>V</em><sub><em>δ</em></sub>(<em>c</em>)</span> such that <span class="math inline">$f\left( x \right) &gt;0, \enspace \forall x \in A \cap V_{\delta}\left( c \right)$</span></p>
+<p> <br />
+This also holds for negative values and basically all it says, in more rigorous language, is that if the limit point is above the <span class="math inline"><em>x</em></span>-axis then there’s gotta be points to the left and right that are above the <span class="math inline"><em>x</em></span>-axis as well (because the whole cluster point thing means everything can be arbitrarily small).<br />
+ <br />
+Although this may start to seem a little pointless, the idea of making the definitions this rigorous is like writing code in a scripting language, by using this very precise language, the logical consequences give us exactly the concept that we want, even though we need to take a longer or alternate path to get to that concept than we would otherwise would generally take in order to describe the concept.</p>
+<h2 id="extensions-of-the-limit-concept-4.3">Extensions of the Limit Concept [4.3]</h2>
+<p>These are written in a particularly convoluted fashion, however if the preceeding material is understood the textbook can be used more or less as a reference, hence these notes will be brief.</p>
+<h3 id="one-sided-limits-4.3.1">One-Sided Limits [4.3.1]</h3>
+<h5 id="definition-4.3.1">Definition [4.3.1]</h5>
+<p>Let <span class="math inline"><em>c</em> ∈ ℝ</span> be a cluster point of <span class="math inline">$A\cap \left( c, \infty \right) = \left\{ x \in A \enspace : \enspace x &gt; c \right\}$</span><br />
+It is said that <span class="math inline"><em>L</em></span> is a <em>Right-hand limit of <span class="math inline"><em>f</em></span> at <span class="math inline"><em>c</em></span></em> and it is written: <br /><span class="math display">$$\begin{aligned}
+  \lim_{x \rightarrow c^+} \left( f \right) = L \tag{4.3.1}
+  \label{431}\end{aligned}$$</span><br /></p>
+<p>This can be extended to left-hand limits as well.</p>
+<h6 id="definition-in-term-of-sequences-4.3.2">Definition in Term of Sequences [4.3.2]</h6>
+<p>As above it is said that <span class="math inline"><em>L</em></span> is a <em>Right-hand limit of <span class="math inline"><em>f</em></span> at <span class="math inline"><em>c</em></span></em> if:</p>
+<p><span>2em</span><span>0pt</span> Every sequence <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> in <span class="math inline"><em>A</em></span> that converges to <span class="math inline"><em>c</em></span> is such that <span class="math inline"><em>f</em>(<em>x</em><sub><em>n</em></sub>)</span> converges to <span class="math inline"><em>L</em></span>, given that <span class="math inline">$x_n&gt;c, \enspace \forall n \in \mathbb{N}$</span></p>
+<h5 id="limit-must-be-equal-on-both-sides">Limit must be equal on both sides</h5>
+<p>A limit is defined only if the limit is equal from both directions <br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow c}\left( f \right) = L \iff \lim_{x\rightarrow c^+}\left( f \right) = L = \lim_{x\rightarrow c }\left( f \right) \tag{3.4.3}
+  \label{343}\end{aligned}$$</span><br /></p>
+<h3 id="infinite-limits-4.3.5">Infinite Limits [4.3.5]</h3>
+<p>Let <span class="math inline"><em>c</em> ∈ ℝ</span> be a cluster point of <span class="math inline"><em>A</em></span>,<br />
+It is aid that <span class="math inline"><em>f</em></span> tends to <span class="math inline">∞</span> as <span class="math inline"><em>x</em> → <em>c</em></span>, and it is written:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow c}\left( f \right) = \infty  \tag{4.3.5}
+  \label{435}\end{aligned}$$</span><br /></p>
+<p>If <span class="math inline">∀<em>α</em> ∈ ℝ</span>, <span class="math inline">$\enspace \exists \delta &gt; 0$</span>:</p>
+<p><span>6em</span><span>0pt</span> <span class="math inline">0 &lt; |<em>x</em> − <em>c</em>|&lt;<em>δ</em> ⟹ <em>f</em>(<em>x</em>)&gt;<em>α</em>,  ∀<em>x</em> ∈ <em>A</em></span></p>
+<h5 id="one-sided-limits-to-infinity-4.3.8">One-Sided Limits to Infinity [4.3.8]</h5>
+<p>Let <span class="math inline"><em>c</em> ∈ ℝ</span> be a cluster point of <span class="math inline">$A\cap \left( c, \infty \right) = \left\{ x \in A \enspace : \enspace x &gt; c \right\}$</span>,<br />
+It is aid that <span class="math inline"><em>f</em></span> tends to <span class="math inline">∞</span> as <span class="math inline"><em>x</em> → <em>c</em><sup>+</sup></span>, and it is written:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow c}\left( f \right) = \infty  \tag{4.3.8}
+  \label{438}\end{aligned}$$</span><br /></p>
+<p>If <span class="math inline">∀<em>α</em> ∈ ℝ</span>, <span class="math inline">$\enspace \exists \delta &gt; 0$</span>:</p>
+<p><span>6em</span><span>0pt</span> <span class="math inline">0 &lt; <em>x</em> − <em>c</em> &lt; <em>δ</em> ⟹ <em>f</em>(<em>x</em>)&gt;<em>α</em>,  ∀<em>x</em> ∈ <em>A</em></span></p>
+<h5 id="ordered-functions">Ordered Functions</h5>
+<p>If <span class="math inline"><em>f</em>(<em>x</em>) &lt; <em>g</em>(<em>x</em>)</span>, then: <br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow c}\left( f \right) = \infty &amp;\implies \lim_{x \rightarrow c}\left( g \right) = \infty \tag{4.3.7 (a)} \label{437a}\\
+  \lim_{x\rightarrow c}\left( g \right) = -\infty &amp;\implies \lim_{x \rightarrow c}\left( f \right) = -\infty \tag{4.3.7 (b)}
+  \label{437b}\end{aligned}$$</span><br /></p>
+<h3 id="limits-at-infinity-4.3.10">Limits at Infinity [4.3.10]</h3>
+<p>It is also useful to talk about limits as <span class="math inline"><em>x</em></span> tends to <span class="math inline">∞</span></p>
+<p>Let <span class="math inline">(<em>a</em>,∞) ⊆ <em>A</em> ⊆ ℝ</span> for some <span class="math inline"><em>a</em><em>i</em><em>n</em>ℝ</span><br />
+It is aid that the limit of <span class="math inline"><em>f</em></span> as <span class="math inline"><em>x</em> → ∞</span> is <span class="math inline"><em>L</em></span>, and it is written: <br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow \infty}\left( f \right) = L \tag{4.3.10}
+  \label{4310}\end{aligned}$$</span><br /></p>
+<p>If <span class="math inline">$ \forall \varepsilon &gt;0, \enspace \exists K &gt; 0$</span>:</p>
+<p><span>6em</span><span>0pt</span> <span class="math inline"><em>x</em> &gt; <em>K</em> ⟹ |<em>f</em>(<em>x</em>) − <em>L</em>|&lt;<em>ε</em></span></p>
+<h6 id="limits-at-infinity-in-terms-of-sequences-4.3.11">Limits at Infinity in Terms of Sequences [4.3.11]</h6>
+<p>equivalently to ([4310]), the definition can be expressed in terms of sequences:<br />
+</p>
+<p><span>2em</span><span>0pt</span> Every sequence <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> in <span class="math inline"><em>A</em> ∩ (<em>a</em>,∞)</span> that has <span class="math inline">lim(<em>x</em><sub><em>n</em></sub>)=∞</span> is such that the sequence <span class="math inline">(<em>f</em>(<em>x</em><sub><em>n</em></sub>))</span> converges to <span class="math inline"><em>L</em></span></p>
+<h5 id="infinite-limits-at-infinity">Infinite Limits at Infinity</h5>
+<p>So this basically combines [4.3.10] with [4.3.5]</p>
+<p>Let <span class="math inline">(<em>a</em>,∞) ⊆ <em>A</em> ⊆ ℝ</span> for some <span class="math inline"><em>a</em> ∈ ℝ</span><br />
+ <br />
+It is aid that <span class="math inline"><em>f</em></span> tends to <span class="math inline">∞</span> as <span class="math inline"><em>x</em> → ∞</span>, and it is written: <br /><span class="math display">$$\begin{aligned}
+  \lim_{x\rightarrow \infty}\left( f \right) = \infty \tag{4.3.13}
+  \label{4313}\end{aligned}$$</span><br /></p>
+<p>If <span class="math inline">$ \forall \varepsilon &gt;0, \enspace \exists K &gt; \alpha$</span>:</p>
+<p><span>6em</span><span>0pt</span> <span class="math inline"><em>x</em> &gt; <em>K</em> ⟹ <em>f</em>(<em>x</em>) &gt; <em>α</em></span></p>
+<h6 id="infinite-limits-at-infinity-in-terms-of-sequences-4.3.14">Infinite Limits at Infinity in Terms of Sequences [4.3.14]</h6>
+<p>equivalently to ([4313]), the definition can be expressed in terms of sequences:<br />
+</p>
+<p><span>2em</span><span>0pt</span> Every sequence <span class="math inline">(<em>x</em><sub><em>n</em></sub>)</span> in <span class="math inline"><em>A</em> ∩ (<em>a</em>,∞)</span> that has <span class="math inline">lim(<em>x</em><sub><em>n</em></sub>)=∞</span> is such that the limit of the sequence of function values <span class="math inline">lim (<em>f</em>(<em>x</em><sub><em>n</em></sub>)) = ∞</span></p>
+<h6 id="ratios-of-functions">Ratios of Functions</h6>
+<p>This result uses (4.3.14) to restate (3.6.5) in terms of functions:<br />
+If <span class="math inline">$g\left( x \right) &gt; 0 \enspace \forall x &gt; a$</span> and <span class="math inline"><em>L</em> ≠ 0</span> is defined:</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  lim_{x\rightarrow \infty}\left( \frac{f\left( x \right)}{g\left( x \right)} \right) \tag{4.3.15} 
+  \label{4315}\end{aligned}$$</span><br /></p>
+<p>then,</p>
+<p><br /><span class="math display">$$\begin{aligned}
+  L &gt; 0 \implies \lim_{x\rightarrow \infty}\left( f \right) = \infty \iff \lim_{x \rightarrow \infty \left( g \right) = \infty} \tag{4.3.15 (i)}
+  \label{4315i} \\
+  L &lt; 0 \implies \lim_{x\rightarrow \infty}\left( f \right) = - \infty \iff \lim_{x \rightarrow \infty \left( g \right) = \infty} \tag{4.3.15 (ii)}
+  \label{4315ii}\end{aligned}$$</span><br /></p>
+</body>
+</html>

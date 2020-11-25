@@ -1,0 +1,175 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using} \PYG{n}{GR}
+\PYG{k}{using} \PYG{n}{DataFrames}
+\PYG{k}{using} \PYG{n}{Gadfly}
+\PYG{k}{using} \PYG{n}{GLM}
+\PYG{k}{using} \PYG{n}{SharedArrays}
+\PYG{k}{using} \PYG{n}{Distributed}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Julia / Mandelbrot Functions \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{\PYGZsh{} Julia Set}
+\PYG{l+s}{Returns how many iterations it takes for a value on the complex plane to diverge}
+\PYG{l+s}{under recursion. if `boolQ` is specified as true a 1/0 will be returned to}
+\PYG{l+s}{indicate divergence or convergence.}
+
+\PYG{l+s}{\PYGZsh{}\PYGZsh{} Variables}
+\PYG{l+s}{\PYGZhy{} `z`}
+\PYG{l+s}{  \PYGZhy{} A value on the complex plane within the unit circle}
+\PYG{l+s}{\PYGZhy{} `num`}
+\PYG{l+s}{  \PYGZhy{} A number of iterations to perform before conceding that the value is not}
+\PYG{l+s}{    divergent.}
+\PYG{l+s}{\PYGZhy{} `my\PYGZus{}func`}
+\PYG{l+s}{  \PYGZhy{} A function to perform on `z`, for a julia set the function will be of the}
+\PYG{l+s}{    form `z \PYGZhy{}\PYGZgt{} z\PYGZca{}2 + a + im*b`}
+\PYG{l+s}{    \PYGZhy{} So for example the Douady Rabbit would be described by `z \PYGZhy{}\PYGZgt{} z\PYGZca{}2 \PYGZhy{}0.123+0.745*im`}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{juliaSet}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{num}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{,} \PYG{n}{boolQ}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{)}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{c}{\PYGZsh{} Define z1 as z}
+    \PYG{n}{z1} \PYG{o}{=} \PYG{n}{z}
+    \PYG{c}{\PYGZsh{} Iterate num times}
+    \PYG{k}{while} \PYG{n}{count} \PYG{o}{≤} \PYG{n}{num}
+        \PYG{c}{\PYGZsh{} check for divergence}
+        \PYG{k}{if} \PYG{n}{real}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{imag}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{boolQ}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{0} \PYG{k}{else} \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)} \PYG{k}{end}
+        \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}iterate z}
+        \PYG{n}{z1} \PYG{o}{=} \PYG{n}{my\PYGZus{}func}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)} \PYG{c}{\PYGZsh{} + z}
+        \PYG{n}{count}\PYG{o}{=}\PYG{n}{count}\PYG{o}{+}\PYG{l+m+mi}{1}
+    \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}if z hasn\PYGZsq{}t diverged by the end}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{boolQ}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{1} \PYG{k}{else} \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)} \PYG{k}{end}
+\PYG{k}{end}
+
+
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{\PYGZsh{} Mandelbrot Set}
+\PYG{l+s}{Returns how many iterations it takes for a value on the complex plane to diverge}
+\PYG{l+s}{under recursion of }\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}\PYG{l+s}{z }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{rightarrow z\PYGZca{}2 + z\PYGZus{}0}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}\PYG{l+s}{.}
+
+\PYG{l+s}{Values that converge represent constants of the julia set that lead to a}
+\PYG{l+s}{connected set. (TODO: Have I got that Vice Versa?)}
+
+
+\PYG{l+s}{\PYGZsh{}\PYGZsh{} Variables}
+\PYG{l+s}{\PYGZhy{} `z`}
+\PYG{l+s}{  \PYGZhy{} A value on the complex plane within the unit circle}
+\PYG{l+s}{\PYGZhy{} `num`}
+\PYG{l+s}{  \PYGZhy{} A number of iterations to perform before conceding that the value is not}
+\PYG{l+s}{    divergent.}
+\PYG{l+s}{\PYGZhy{} `boolQ`}
+\PYG{l+s}{  \PYGZhy{} `true` or `false` value indicating whether or not to return 1/0 values}
+\PYG{l+s}{    indicating divergence or convergence respectively or to return the number of}
+\PYG{l+s}{   iterations performed before conceding no divergence.}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{mandelbrot}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{num}\PYG{p}{,} \PYG{n}{boolQ} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{)}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{c}{\PYGZsh{} Define z1 as z}
+    \PYG{n}{z1} \PYG{o}{=} \PYG{n}{z}
+    \PYG{c}{\PYGZsh{} Iterate num times}
+    \PYG{k}{while} \PYG{n}{count} \PYG{o}{≤} \PYG{n}{num}
+        \PYG{c}{\PYGZsh{} check for divergence}
+        \PYG{k}{if} \PYG{n}{real}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{imag}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{boolQ}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{0} \PYG{k}{else} \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)} \PYG{k}{end}
+        \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}iterate z}
+        \PYG{n}{z1} \PYG{o}{=} \PYG{n}{z1}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{z}
+        \PYG{n}{count}\PYG{o}{=}\PYG{n}{count}\PYG{o}{+}\PYG{l+m+mi}{1}
+    \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}if z hasn\PYGZsq{}t diverged by the end}
+    \PYG{k}{return} \PYG{l+m+mi}{1} \PYG{c}{\PYGZsh{} Int(num)}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{boolQ}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{1} \PYG{k}{else} \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)} \PYG{k}{end}
+\PYG{k}{end}
+
+\PYG{k}{function} \PYG{n}{test}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{return} \PYG{n}{x} \PYG{k}{else} \PYG{k}{return} \PYG{n}{y} \PYG{k}{end}
+\PYG{k}{end}
+
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Build a Matrix Image \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{\PYGZsh{} Make a Picture}
+
+\PYG{l+s}{This maps a function on the complex plane to a matrix where each element of the}
+\PYG{l+s}{matrix corresponds to a single value on the complex plane. The matrix can be}
+\PYG{l+s}{interpreted as a greyscale image.}
+
+\PYG{l+s}{Inside the function is a `zoom` parameter that can be modified for different}
+\PYG{l+s}{fractals, fur the julia and mandelbrot sets this shouldn\PYGZsq{}t need to be adjusted.}
+
+\PYG{l+s}{The height and width should be interpreted as resolution of the image.}
+
+\PYG{l+s}{\PYGZhy{} `width`}
+\PYG{l+s}{  \PYGZhy{} width of the output matrix}
+\PYG{l+s}{\PYGZhy{} `height`}
+\PYG{l+s}{  \PYGZhy{} height of the output matrix}
+\PYG{l+s}{\PYGZhy{} `myfunc`}
+\PYG{l+s}{  \PYGZhy{} Complex Function to apply across the complex plane}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{n}{width}\PYG{p}{,} \PYG{n}{height}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+    \PYG{n}{pic\PYGZus{}mat} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{n}{width}\PYG{p}{,} \PYG{n}{height}\PYG{p}{)}
+    \PYG{n}{zoom} \PYG{o}{=} \PYG{l+m+mf}{0.3}
+    \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{pic\PYGZus{}mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{pic\PYGZus{}mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+            \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{width}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{width}\PYG{o}{*}\PYG{n}{zoom}\PYG{p}{)}
+            \PYG{n}{y} \PYG{o}{=} \PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{height}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{height}\PYG{o}{*}\PYG{n}{zoom}\PYG{p}{)}
+            \PYG{n}{pic\PYGZus{}mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{juliaSet}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{y}\PYG{o}{*}\PYG{n+nb}{im}\PYG{p}{,} \PYG{l+m+mi}{256}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+        \PYG{k}{end}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{n}{pic\PYGZus{}mat}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Make the Outline \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{\PYGZsh{} Outline}
+
+\PYG{l+s}{Sets all elements with neighbors on all sides to 0.}
+
+\PYG{l+s}{\PYGZhy{} `mat`}
+\PYG{l+s}{  \PYGZhy{} A matrix}
+\PYG{l+s}{    \PYGZhy{} If this matrix is the convergent values corresponding to a julia set the}
+\PYG{l+s}{      output will be the outline, which is the definition of the julia set.}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{outline}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)}
+    \PYG{n}{work\PYGZus{}mat} \PYG{o}{=} \PYG{n}{copy}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{col} \PYG{k+kp}{in} \PYG{l+m+mi}{2}\PYG{o}{:}\PYG{p}{(}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{row} \PYG{k+kp}{in} \PYG{l+m+mi}{2}\PYG{o}{:}\PYG{p}{(}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+            \PYG{c}{\PYGZsh{}\PYGZsh{} Make the inside 0, we only want the outline}
+            \PYG{n}{neighbourhood} \PYG{o}{=} \PYG{n}{mat}\PYG{p}{[}\PYG{n}{row}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{row}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{col}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{col}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}
+            \PYG{k}{if} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{neighbourhood}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{9} \PYG{c}{\PYGZsh{} 9 squares}
+                \PYG{n}{work\PYGZus{}mat}\PYG{p}{[}\PYG{n}{row}\PYG{p}{,}\PYG{n}{col}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+            \PYG{k}{end}
+        \PYG{k}{end}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{n}{work\PYGZus{}mat}
+\PYG{k}{end}
+
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Return many Scaled Values \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+
+
+\PYG{k}{function} \PYG{n}{scaleAndMeasure}\PYG{p}{(}\PYG{n}{min}\PYG{p}{,} \PYG{n}{max}\PYG{p}{,} \PYG{n}{n}\PYG{p}{,} \PYG{n}{func}\PYG{p}{)}
+    \PYG{c}{\PYGZsh{} The scale is equivalent to the resolution, the initial resolution could be}
+    \PYG{c}{\PYGZsh{} set as 10, 93, 72 or 1, it\PYGZsq{}s arbitrary (previously I had res and scale)}
+    \PYG{c}{\PYGZsh{} \PYGZsh{}TODO: Prove this}
+
+    \PYG{n}{scale} \PYG{o}{=} \PYG{p}{[}\PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{ceil}\PYG{p}{(}\PYG{n}{i}\PYG{p}{))} \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{n}{range}\PYG{p}{(}\PYG{n}{min}\PYG{p}{,} \PYG{n}{max}\PYG{p}{,} \PYG{n}{length}\PYG{o}{=}\PYG{n}{n}\PYG{p}{)} \PYG{p}{]}
+    \PYG{n}{mass} \PYG{o}{=} \PYG{n}{pmap}\PYG{p}{(}\PYG{n}{s} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{outline}\PYG{p}{(}\PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{s}\PYG{p}{),} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{s}\PYG{p}{),} \PYG{n}{func}\PYG{p}{)))} \PYG{p}{,} \PYG{n}{scale}\PYG{p}{)}
+
+    \PYG{n}{data} \PYG{o}{=} \PYG{n}{DataFrame}\PYG{p}{(}\PYG{n}{scale} \PYG{o}{=} \PYG{n}{scale}\PYG{p}{,} \PYG{n}{mass} \PYG{o}{=} \PYG{n}{mass}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{data}
+\PYG{k}{end}
+\end{Verbatim}

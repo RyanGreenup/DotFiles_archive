@@ -1,0 +1,78 @@
+%% ! TEX root = /home/ryan/Dropbox/Studies/MathModelling/Notes/Diffeq/latex_working/00_master.tex
+% Copy realpath with Spc-f-y
+
+\documentclass[12 pt]{article}
+\usepackage{/home/ryan/Dropbox/profiles/Templates/LaTeX/ScreenStyle}
+
+\input{./Dimension_Diagram_Styles.tikzstyles}
+\usepackage{tikzit}
+
+%\usepackage{~/Dropbox/profiles/Templates/LaTeX/ScreenStyle}
+%LaTeX doesn't work with the ~
+
+
+%%%%%%%Title
+\title{\color{coltit} \Huge Notes on the HaussDorf Measure and Dimension}
+\author{Ryan Greenup ; 1780-5315}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%4%%%%%%%%%
+%%%%%%%Document%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+%\input{./ShapeDiagram1.tikz}
+
+For small values of $s$ (i.e. less than the dimension of  $F$), the value of $\mathcal{H}^s$  will be $\infty$.
+
+Consider some value $s$ such that the Hausdorff measure is not infinite, i.e. values of $s$: 
+
+\footnote{Could fractal dimensions be complex? Maybe there could be a proof to show that the dimension is necessarily complex.}
+
+$$
+\begin{aligned}
+    \mathcal{H}^s = L \in \mathbb{R}
+\end{aligned}
+$$
+
+Consider a dimensional value $t$ that is larger than  $s$ and observe that:
+$$
+\begin{aligned}
+0<s<t  \implies   \sum_{i}  \left[ \left\levert U_i \right\rvert^t \right] &= \sum_{i}\left[ \left\levert U_i \right\rvert^{t- s} \cdot  \left\lvert U_i \right\rvert^s \right] \\
+									   &\leq \sum_{i} \left[ \delta^{t - s} \cdot \left\lvert U_i \right\rvert^s  \right]    \\
+									   &= \delta^{t- s}\sum_{i}   \left[ \left\lvert U_i \right\rvert^s \right] 									   \\
+									   
+\end{aligned}
+$$
+
+Now if $\lim_{\delta \rightarrow 0}\left[ \sum_{i}   \left\lvert U_i \right\rvert^s \right]$ is defined as a non-infinite value:
+
+$$
+\begin{aligned}
+    \lim_{\delta \rightarrow 0} \left( \sum_{i}   \left[ \left\lvert U_i \right\rvert^t \right]  \right) & \leq \lim_{\delta}\left( \delta^{t- s} \sum_{i}   \left[ \left\lvert U_i \right\rvert^s \right]  \right) \\
+													 &\leq \lim_{\delta \rightarrow 0}\left( \delta^{t - s} \right) \cdot  \lim_{\delta \rightarrow 0}\left( \sum_{i} \left[ \left\lvert U_i \right\rvert^s \right]    \right) \\
+													 &\leq 0
+\end{aligned}
+$$
+
+Thus for $\forall t > s$, if $s$ is a finite limit value:
+
+\begin{align}
+    s \in \mathbb{R}  \implies  \mathcal{H}^t\left( F \right)= 0 \label{eq:hdfzero}
+\end{align}
+
+hence the value of the hausdorff measure, across various dimension values of $s$ is only a finite, non-zero value, when $s = \mathrm{dim}\left( F \right)$ this is visualised in figure [[fig:hausdorff-vals]].
+
+\end{document}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "/home/ryan/Dropbox/Studies/MathModelling/Notes/Diffeq/latex_working/00_master.tex"
+%%% End: 
+

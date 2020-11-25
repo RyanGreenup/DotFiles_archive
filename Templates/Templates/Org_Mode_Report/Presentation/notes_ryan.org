@@ -1,0 +1,11 @@
+#+TITLE: Notes_ryan
+
+* Introduction
+- Originally wanted to look at Chaos Theory
+- It's just such a massive topic
+  + Hardly made a dent
+- Not much time, originally we were looking at python
+  + We got through all the problems very quickly
+* Fractals
+- Fractals gave us something to work on
+  + i.e. wasn't vague and could be programmed.

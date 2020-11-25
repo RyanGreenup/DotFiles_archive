@@ -1,0 +1,11 @@
+#+TITLE: Summary
+
+ This report looked at the emergence of ordered complex structures from natural phenomena and iterative processes.
+
+Primarily the investigation is concerned with fractals, complex shapes that tend
+to exhibit some sort of a pattern (e.g. snowflakes and coastlines), formally a definition for a fractal is actually quite a nuanced problem and
+is not something that appears to have been completely settled in the literature something discussed within the report.
+
+In order to investigate fractals this report provides methods to generate a variety of self-similar and non-self-similar fractals and measure a corresponding descriptive metric known as the /fractal dimension/.
+
+

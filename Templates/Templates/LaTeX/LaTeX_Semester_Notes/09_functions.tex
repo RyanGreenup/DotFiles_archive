@@ -1,0 +1,618 @@
+%\documentclass[article]{standalone}
+\documentclass[class=article, crop=false]{standalone}
+
+\usepackage{./resources/style}
+\usepackage{./resources/referencing}
+
+
+ \title{(09) Elementary Functions}
+\date{Analysis (200023)}
+\author{Analysis (200023)}
+
+\begin{document}
+%	\maketitle
+%	\tableofcontents
+
+\section{Polynomial Functions}
+    an $n^{\mathrm{th}}$ degree polynomial is given by:
+
+    \[
+      p\left( z \right)  =  w =  \alpha_0 +  \alpha_1z_1+  z_2 \dots \alpha_nz_n
+    \]
+        where:
+    \begin{itemize}
+      \item $\alpha$ is a complex constant
+      \item $z$ is a complex variable
+    \end{itemize}
+
+    \section{Rational Function}
+    A rational function is composed of two polynomial functions $P\left( z \right) $ and $Q\left( z \right) \neq 0$ :
+    \[
+      \frac{P\left( z \right) }{Q\left( z \right) }
+    \]
+
+
+\newpage
+
+
+    \section{Euler's Formula}
+    This is really important, and there are lots of proofs for it, for the most part though, just come to accept it, the best justification for \textit{Euler's Formula} that I've seen is by \href{https://www.youtube.com/watch?v=mvmuCPvRoWQ}{\textit{3Blue1Brown}}, Seriously, watch this, it's really good.
+
+    \begin{align*}
+      e^{i\theta} &=  \cos{\theta} +  i \cdot  \sin{\theta} \\
+      \implies   r \cdot e^{i\theta} &= r \left( \cos{\theta} +  i \cdot  \sin{\theta} \right) \\
+      r \cdot  e^{i\theta} &=  r \cdot  \mathrm{cis}{\left( \theta \right) } \\
+      &= z
+    \end{align*}
+
+    It is not uncommon to see Euler's formula used instead of polar notation, particularly in the \textit{Churchill} text, don't stress out, it has the same meaning in effect.
+
+    \section{Exponential Function}
+    The exponential function is defined for all complex values:
+    \begin{align*}
+      e^z =  e^{x +  iy} &= e^x \cdot e^iy \\
+      &= e^x \cdot  \left(  \cos{y} +  i \cdot  \cos{y} \right)
+    \end{align*}
+    \subsection{Modulus and Argument}
+    because:
+    \[
+    e^z = e^x\cdot \mathrm{cis}{\left( y \right) }
+    \]
+\noindent    we have the modulus:
+    \[
+            \left| e^z \right| = e^x
+    \]
+
+\noindent and the argument:
+    \[
+        \operatorname{arg}\left( e^z \right) = y + 2\pi k \qquad \left( k \in \mathbb{Z}^*  \right)
+    \]\\
+
+    \hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+      the notation $\mathbb{Z}^* $ means 'non-negative integers' so, $\left( 0, 1, 2, 3 \dots \right) $
+    \end{minipage}
+    \ \
+
+
+
+
+    \section{Properties of the exponential function}
+    \paragraph{Periodicity}
+    The complex exponential function is periodic:
+    \[
+      e^{z +  2\pi i} =  e^z
+    \]
+    This corresponds the sliding action of $z +  2 \pi i$ to a rotation of $x +  2 \pi$ radians of rotation, because the rotation has a period of $2 \pi$, the rotation will be $x$ radians.
+
+    For this reason we also have:
+    \begin{align*}
+    e^z &=  e^z\\
+    \left( e^z \right)^{\frac{1}{n}}  &=  e^{\frac{z +  2 k \pi}{n}}
+    \end{align*}
+
+    \paragraph{Principle Argument}
+    We choose the principle argument as $(-\pi, \pi]$, this is useful later on for dealing with logs.
+    \begin{itemize}
+      \item The Principle Argument of a complex function is denoted by a capital:
+        \subitem $\operatorname{Arg}\left( r \cdot \mathrm{cis}{\theta} \right) = \theta$
+      \item The general Argument of a complex function is denoted by lower case:
+        \subitem $\operatorname{arg}\left( r\cdot \mathrm{cis}{\left( \theta \right) } \right) = \theta +  2\pi k \qquad :\enspace k \in \mathbb{Z}^+$
+    \end{itemize}
+
+    \paragraph{Differentiating $e^z$}
+    So if you want to just move on:
+    \[
+    \frac{\operatorname{d} }{\operatorname{d} z}\left[ e^z \right] = e^z
+    \]
+    If you want to know why:
+
+    \begin{align*}
+      \frac{\operatorname{d} }{\operatorname{d} z}\left( e^z \right) &= \frac{\partial }{\partial x} \left[ e^{x +  iy} \right] +  i \cdot \frac{\partial }{\partial y}\left[ e^{x + iy} \right] \\
+      &= \frac{\partial }{\partial x}\left[ e^x \cos{y} \right] + \frac{\partial }{\partial x}\left[ e^x \sin{y} \right] \\
+      &= \cos{y}e^x +  \sin{y}e^x\\
+      &= e^{x + iy}\\
+      &= e^z
+    \end{align*}
+    \begin{flushright}
+    {\rule{0.7em}{0.7em}}
+    \end{flushright}
+
+    \paragraph{Polar Form}
+    The exponential function can be expressed as:
+    \begin{align*}
+    e^z &= e^x \cdot \left( \cos{y} +  i \sin{y} \right) \\
+    &= e^x\cdot \mathrm{cis}{y}
+    \end{align*}
+
+
+    \begin{alignat*}{5}
+    & \implies  &\operatorname{Arg}\left( e^z \right)& &= &y\\
+    & \implies  &\operatorname{arg}\left( e^z \right)& &= &y + 2\pi\\
+    &  \implies      &\left| e^z \right|& &= &e^x
+    \end{alignat*}
+
+    \paragraph{Additional Properties}
+    Consider that $\forall x,y \in \mathbb{R} $ $e^x \neq 0$ and also that $e^{iy} \neq 0$, hence:
+    \[
+      e^{z} = e^x \cdot e^{iy} \neq 0
+    \]
+
+    Although many things carry over, be careful because:
+    \[
+      e^x \nleq 0 \qquad \text{   however   } \qquad e^z < 0 \quad \vee  \quad  e^z > 0
+    \]
+
+\newpage
+
+    \section{The Log Function}
+
+
+    \subsection{Deriving the Log Function}
+    With real variables the motivation for the log function is a function for $y$ such that:
+    \[
+    e^y = x
+    \]
+    In the complex case the motivation is much the same:
+    \[
+    e^w =  z
+    \]
+    So in order to solve a value for the complex logarithm express $z$ in polar form and decompose $w$ into a real and complex part:
+
+   \begin{align*}
+   e^w =  z  \implies   e^{u +  iv} &=  r e^{i\theta}\\
+   	e^u \cdot  e^{iv} &=  re^{i\theta}
+  	\end{align*}
+
+        Equate the real and imaginary parts
+
+\begin{multicols}{2}
+  \begin{align*}
+    e^u &= r\\
+     \implies  u &= \ln{\left( r \right) }
+  \end{align*}\break
+  \begin{align*}
+      e^{iv} &= e^{i\theta}\\
+      \implies  v &=  \theta +  2\pi k, \qquad k \in \mathbb{Z}^+
+  \end{align*}
+\end{multicols}
+
+so the equation $e^w= z$ is satisfied if and only if:
+\begin{align*}
+  w &=   u +  iv\\
+  &=  \ln{\left( r \right) } +  i \cdot  \left(  \theta +  2\pi k \right) , \qquad k \in \mathbb{Z}^+\\
+    &= \ln{\left|      z   \right| } +  i \cdot \operatorname{arg}\left( z \right)
+\end{align*}
+
+
+\ \
+
+\ \
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{tcolorbox}
+
+  \subparagraph{Complex Logarithm}
+  A value in the complex plane $z= r\cdot e^{i\cdot \theta}=  r\cdot \mathrm{cis}{\left( \theta \right) } \in \mathbb{C} $ will have a logarithm:
+\begin{align}
+  \log_e{\left( z \right) } = \ln{     \left| z \right| + i\cdot \operatorname{arg}\left( z \right)  } \label{compdef}
+\end{align}
+\end{tcolorbox}
+
+\end{minipage}
+\ \\
+
+The Complex Logarithm isn't a function, it is what is known in complex analysis as a '\textit{multiple-valued function}' which is merely a \href{https://en.wikipedia.org/wiki/Multivalued_function}{\textit{binary relation}} \footnote{\url{https://en.wikipedia.org/wiki/Multivalued_function}}, this is really ambiguous though because clearly a function can only have one output, the terminology is used to respect the fact that if, for example, $\log_e{\left( z \right) }$, is restricted to a single branch, it is indeed a function.
+\ \\
+
+
+
+\newpage
+
+
+
+\subsection{Notation}
+
+
+
+    \paragraph{Base}\ \\
+    Also another really confusing point is that often times in complex analysis $\operatorname{log}\left( z \right)$ is used to represent the complex natural logarithm and $\ln{\left( x \right) }$ is used to represent the real natural logarithm, so you might see $\operatorname{log}$ and immediately think base-10, but don't, we deal excusively in $e$ with complex awnalysis.\\
+
+    It's all redundant anyway because the change of base formula applies also to complex logarithm's anyway.\\
+
+    For clarity sake, I'll write $\log_e{\left(  \right) }$ when dealing with complex natural logarithms and $\ln{\left(  \right) }$ when dealing with real natural logarithms.
+
+    \subsection{Change of Base}
+    So in this example our desired solution is $y$ :
+
+    \begin{align*}
+      10^y &= e +  4i\\
+      \mathrm{Log}_e{\left( 10^y \right) } &=  \mathrm{Log}_e{\left( 3 +  4i \right) } \\
+      y \cdot  \mathrm{Log}_e{\left( 10 \right) }&= \mathrm{Log}_e{\left( 3 +  4i \right) }\\
+      y &=  \frac{\mathrm{Log}_e{\left( 3 +  4i \right) }}{\mathrm{Log}_e{\left( 10 \right) }} \\
+&\implies      \mathrm{Log}_{10}{\left( 3 + 4i \right) } =  \frac{\mathrm{Log}_e{\left( 3 +  4i \right) }}{\mathrm{Log}_e{\left( 10 \right) }}
+    \end{align*}
+    \begin{flushright}
+    {\rule{0.7em}{0.7em}}
+    \end{flushright}
+
+
+    This works because $\mathrm{Log}_e{\left(  \right) }$ is a valid function, it should work with other branches but I'm not sure.
+
+
+\newpage
+
+
+
+\paragraph{Arguments}\ \\
+%The exponential function is periodic, so, it stands to reason that there will be multiple solutions for the logarithmic function.\\
+The principal argument corresponds to $\theta \in (-\pi,\pi]$ and is distinguished by using uppercase:
+    \begin{itemize}
+      \item Principal Argument:
+\subitem        $\operatorname{Arg}\left( z \right) = \Theta \qquad -\pi < \Theta \leq \pi$
+\subsubitem So less that or equal to $\pi$ but $\Theta \neq \pi$
+\item Argument:
+  \subitem $\operatorname{arg}\left( z \right) = \theta =  \Theta + 2\pi k  \qquad \left( k \in \mathbb{Z}  \right) $
+  \subsubitem This is periodic.
+    \end{itemize}
+    So for example, we may have $r \cdot \mathrm{cis}{\left( \theta \right) } =  r\cdot \mathrm{cis}{\left( \Theta \right) }$ the difference being that
+    \begin{itemize}
+      \item $\theta \in \mathbb{R} $
+      \item $\Theta \in (-\pi, \pi]$
+    \end{itemize}
+
+    \paragraph{Logarithms}
+    \ \
+
+    \hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+    \begin{tcolorbox}
+
+    \paragraph{Notation}\ \\
+    Where $z =  r \cdot \mathrm{cis}{\left( \theta \right) }$:\\
+    \ \\
+    The \textbf{Principal Value} of the $\log_e{\left(  \right) }$ function is given by:
+    \begin{align}
+      \mathrm{Log}_e{\left( z \right) } &= \ln{     \left| z \right|  } +  i \cdot  \operatorname{Arg}\left( z \right) \\
+      &= \ln{ \left( r \right)  } +  i \cdot \Theta
+      \label{prinlogdef}
+    \end{align}
+
+    The \textbf{multi-valued} log function is given by:
+
+    \begin{align}
+      \log_e{\left( z \right) } &= \ln{     \left| z \right|  } +  i \cdot \operatorname{arg}\left( z \right) \\
+      &= \ln{ \left( r \right)  } +  i \cdot \left( \Theta + 2\pi k \right) \qquad k \in \mathbb{Z}
+      \label{mvlogfunc}
+    \end{align}
+   \end{tcolorbox}
+
+    \end{minipage}
+    \ \\
+
+
+    \newpage
+
+
+
+      \subsection{Branches}
+      A branch of a function $f\left( z \right) $ that has multiple outputs  (e.g. $\log_e{\left( z \right) }$), is a function with a single output that is analytic in the domain. \\
+At every point of the domain, the single-valued function must assume exactly one of the various possible values that the original function might have given as output.\\
+\ \
+
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+  The requirement of analyticity prevents $F\left( z \right) $ from taking on a random selection of the values of $f\left( z \right) $.\\
+  So in the case of logs:\\
+\end{minipage}
+
+\ \
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{tcolorbox}
+
+  \subparagraph{Logarithmic Branches}\ \\
+
+  The \textbf{Principal Branch} of the logarithmic function is given by:
+  \begin{align}
+   \mathrm{Log}_e{\left( z \right) } &= \ln{ \left( r \right)  } +  i \cdot \Phi \qquad -\pi < \Phi < \pi
+    \label{pblog}
+  \end{align}
+  Any \textbf{Branch} of the logarithmic function is given by:
+  \begin{align}
+    \log_e{\left( z \right) } &= \ln{ \left( r \right)  } +  i \cdot \phi \qquad -\alpha < \phi <\alpha + 2 \pi k
+    \label{branchlogdef}
+  \end{align}
+\end{tcolorbox}
+
+\end{minipage}
+\ \\
+
+ here, the \textbf{Principal Value} of the complex log and the \textbf{Principal Branch} are denoted ambiguously by $\mathrm{Log}_e{\left(  \right) }$ but they are both different, for example $\mathrm{Log}_e{\left( -10 \right) }= \ln{ 10 } +  \pi\cdot i$ as the principal value, however, it is entirely undefined on the principal branch.\\
+
+ So basically, on the principal branch, we delete the entire non-positive $x$-axis (i.e. including zero), where as the principal value is allowed to take values there using $\pi$ (but not $-\pi$).\\
+
+ Now one might ask 'why on Earth would we do such a confusing and ambiguous thing?'\\
+ The reason is because it is the only way to make the $\log_e{\left(  \right) }$ function continuous and hence analytic.:\\
+ \ \
+
+ \hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+   Clearly we couldn't use the \textit{multi-valued} log functions as in (\ref{mvlogfunc}) because that has multiple outputs for a given input and so it is not a function, hence it clearly is not analytic.\\
+
+   Now why can't we restrict the domain to the principal argument of $\theta \in (-\pi, \pi]$?\\
+
+   \ \
+
+   \hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+   A function must be continuous in order to be differentiable and hence analytic, the condition for continuity is:\\
+   \[
+   \lim_{z     \rightarrow \alpha}\left[ \mathrm{Log}_e{\left( z \right) } \right] = \mathrm{Log}_e{\left( \alpha \right) }
+   \]
+But if we take a value on the negative $x$-axis:
+
+\begin{align*}
+    \lim_{z     \rightarrow -1}\left[ \mathrm{Log}_e{\left( z \right) } \right] &= + \pi \cdot i  \qquad \left( \text{From Above} \right) \\
+    \lim_{z     \rightarrow -1}\left[ \mathrm{Log}_e{\left( z \right) } \right] &= -  \pi \cdot i  \qquad \left( \text{From Below} \right)
+\end{align*}
+
+This implies that the limit does not exist, similarly it can be shown that the limit does not exist as $z$ approaches values on the non-posiitive $x$-axis, no limit means no continuity, which  means no differentiablility, which means not analytic.\\
+
+The solution here is to remove the negative $x$-axis and zero from the domain, then the $\mathrm{Log}_e{\left(  \right) }$ function will be analytic.j
+\ \\
+
+
+
+
+
+   \end{minipage}
+   \ \
+
+
+ \end{minipage}
+ \ \
+
+
+
+\newpage
+
+
+
+\paragraph{Branch Cuts}
+A branch cut is a curve that is introduced in order to define the multiply defined function $F\left( z \right) $, it's basically the line we have to delete.\\
+
+So imagine $\log_e{\left( z \right) }$:
+\ \
+
+\ \
+% \begin{figure}[h!]
+%
+% 	\includegraphics[width=0.4\linewidth]{}
+% 	\caption{Polar Representation of $z\in \mathbb{C}$}
+% 	\label{fig:handwriting}
+% \end{figure}
+
+The principal branch deletes the negative $x$-axis and $0$ as shown in blue below:
+
+% \begin{figure}[h!]
+% 	\includegraphics[width=0.4\linewidth]{"handwriting2"}
+% 	\caption{Principal Branch Cut}
+% 	\label{fig:handwriting-2}
+% \end{figure}
+
+\newpage
+
+
+So for the Complex Logarithm that we used as a definition at (\ref{branchlogdef}), the angle $\alpha$ from the origin is used as the branch cut in order to define a branch.
+
+\ \
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+  So for example, as above in Figure \ref{fig:handwriting-2}, the line drawn from $0$ at $-\pi$ radians corresponds to $\alpha = - \pi$ in the definition; This line is a branch cut of $\log_e{\left( z \right) }$ that we use to define the principal branch of the logarithmic function:
+  \[
+  \log_e{\left( z \right) } = \ln{ \left( r \right)  }+ i\cdot \Phi \qquad -\pi < \Phi < \pi
+  \]
+\end{minipage}
+\ \\
+
+Basically you just delete that line in the definition of the domain.\\
+
+Also be aware that the branch cut doesn't have to be a line, it could be a curve, this diagram is an example of a branch cut that would define a valid branch of the $\log_e{\left( z \right) }$ function:
+
+% \begin{figure}[h!]
+% 	\includegraphics[width=0.4\linewidth]{"handwriting3"}
+% 	\caption{}
+% 	\label{fig:handwriting-3}
+% \end{figure}
+
+It works because however far the value of $z$ is from the origin, the values of $\theta$ will still be restricted to one revolution.
+
+\subsection{Principal Branch as opposed to Principal Value}
+Be aware that there is a difference between the \textit{principal value} and the \textit{principal branch} of the complex natural logarithm:
+\begin{itemize}
+  \item The \textbf{Principal Value} of the complex logarithmic function of $z = r\cdot \mathrm{cis}{\left( \theta \right) }$ is:
+    \subitem $\log_e{\left( z \right) } = \ln{ \left( r \right)  }+ i \cdot \Theta \qquad \Theta \in  (-\pi, \pi]$
+  \item The \textbf{Principal Branch} of the complex logarithmic function of $z = r\cdot \mathrm{cis}{\left( \theta \right) }$ is:
+    \subitem $\log_e{\left( z \right) } =  \ln{ \left( r \right)  +  i \cdot \Phi \qquad -\pi < \Phi < \pi }$
+\end{itemize}
+
+So to be clear, the principal value of $\mathrm{Log}_e{\left( -1 \right) } = \pi i$, however this is entirely undefined on the principal branch.
+
+
+
+\newpage
+
+    \subsection{Properties of Complex Logs}
+    Familiar properties of logartithms in calculus are sometimes but not aways true in complex analysis, the problem is usually the multiple branches of the log function.
+
+    So one of the first things to be careful with is:
+    \[
+      e^{\log_e{\left( z \right) }} = z \qquad \text{by definition}
+    \]
+    However:
+
+    \[
+    \log_e{\left( e^z \right) } =  x +  i \cdot \left( y +  2\pi k \right)  \qquad k \in \mathbb{Z}^+ \\
+    \]
+    But if we take the principal branch:
+      \begin{align*}
+        \mathrm{Log}_e{\left( e^z \right) } &=  x +  i \cdot  y  \\
+        &= e^z
+      \end{align*}
+
+      Another one to be careful of, for example:
+      \[
+        \log_e{\left( i^2 \right) }\neq \frac{1}{2} \cdot \log_e{\left( i \right) }
+      \]
+      because:
+      \begin{multicols}{2}
+        \begin{align*}
+         \log_e{\left( i^2 \right) } =  \log_e{\left(  - 1 \right) } &= \ln{      \left|  - 1 \right|  } +  i \cdot  \operatorname{arg}\left( - 1 \right) \\
+         &=  0 +  \operatorname{arg}\left( - 1 \right) \cdot i\\
+         &=  \operatorname{arg}\left( - 1 \right) \cdot i\\
+         &= \left( \pi +  2 \pi k \right) \cdot  i\\
+         &=  \pi \left(1 +  2k \right) \cdot i
+        \end{align*}\break
+        \begin{align*}
+          2\cdot \log_e{\left( i \right) }&= 2\left[ \ln{     \left| i \right|  }+ \operatorname{arg}\left( i \right) \cdot i \right] \\
+          &= 2\left[ o +  \left( \frac{\pi}{2} +  2 \pi k \right) \cdot i \right] \\
+          &= i \cdot  \left[  \pi +  4 \pi k \right] \\
+          &= \pi\cdot i \left[ 4k+ 1 \right]
+        \end{align*}
+      \end{multicols}
+
+      If however we choose the principal branch that corresponds to $k =  0$:
+      \[
+      \log_e{\left( i^2 \right) } = \pi i =  2 \cdot \log_e{\left( i \right) }
+      \]
+
+
+
+      \newpage
+
+\subsection{Log Laws}
+\paragraph{Addition/Multiplication}\ \\
+because:
+\begin{align*}
+\operatorname{arg}\left( z_1 \cdot z_2 \right) &= \operatorname{arg} \left( z_1 \right) +  \operatorname{arg}\left( z_2 \right) \\
+\ln{ \left( x_1 \cdot  x_2 \right)  } &=  \ln{ \left( x_1 \right)  }+  \ln{  \left( x_2 \right)  }
+\end{align*}
+We have:
+\ \
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{tcolorbox}
+
+Addition of Logs
+\begin{align}
+  \log_e{\left( z_1 \cdot z_2 \right) }&= \log_e{\left( z_1 \right) } +  \log_e{\left( z_2 \right) }\\
+  \log_e{\left( \frac{z_1}{z_2} \right) } &= \log_e{\left( z_1 \right) } -  \log_e{\left( z_2 \right) } \qquad \left( z_2 \neq 0 \right)
+\end{align}
+\end{tcolorbox}
+
+\end{minipage}
+\ \\
+
+Also because:
+\[
+    \left| z_1 \cdot  z_2 \right|  =      \left| z_1 \right|  \cdot     \left| z_2 \right|
+\]
+we have:
+\[
+\log_e{\left(     \left| z_1 \cdot z_2 \right|  \right) } =  \log_e{\left(     \left| z_1 \right|  \right) } +  \log_e{\left(     \left| z_2 \right|  \right) }
+\]
+
+
+\subparagraph{Relationships to Roots}
+\begin{align*}
+    z^n &=  e^{n\cdot \log_e{\left( z \right) }}\\
+    z^\frac{1}{n} &=  e^{\frac{1}{n}\cdot \log_e{\left( z \right) }}\\
+    &= e^{\frac{1}{n} \ln{ r } +  \frac{i\left( \theta 2\pi k \right) }{n}}\\
+    &= \sqrt[n]{r} \cdot  e^{i \left( \frac{\theta}{n} +  \frac{2k \pi}{n} \right) }\\
+      &= \sqrt[n]{r} \cdot \mathrm{cis}{\left( \frac{\theta}{n} +  \frac{2\pi k}{n} \right) }
+\end{align*}
+
+\paragraph{Exponentiation}
+\begin{align*}
+  \log_e{\left( z^n \right) } &=  \ln{      \left| z^n \right|  } +  \operatorname{arg}\left( z^n \right) \\
+  &= \ln{ \left(     \left| z \right| ^n \right)  } +  \operatorname{arg}\left( \left[ r\cdot \mathrm{cis}{\theta}^n \right]  \right) \\
+  &= n\cdot \ln{     \left| z \right|  } +  \operatorname{arg} \left( rn \cdot \mathrm{cis}{\left( n\theta \right) } \right) \\
+  &= n\cdot \ln{     \left| z \right|  } +  \operatorname{arg}\left( \mathrm{cis}{\left( \theta\cdot n \right) } \right) \\
+&=   n\cdot \ln{     \left| z \right|  } +  \left( n\theta +  2\pi k \right) \qquad \exists k \in \mathbb{Z}\\
+\intertext{This is only valid for a branch of the logarithmic function, in this case choose the principal branch}
+  &= n\cdot \ln{     \left| z \right|  }+ n\theta\\
+  &= n\cdot \mathrm{Log}_e{\left( z^n \right) }
+\end{align*}
+
+Therefore the exponential log law carries over where we use a single branch of the complex logarithmic function.
+
+
+\newpage
+
+\subsection{Differentiating $\log_e{\left( z \right) }$}
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{tcolorbox}
+  \paragraph{Derivative of complex log}
+\begin{align}
+  \frac{\operatorname{d} }{\operatorname{d} z}\left( \mathrm{Log}_e{\left( z \right) } \right) &= \frac{1}{    \left| z \right| \cdot \mathrm{cis}{\left( \operatorname{Arg}\left( z \right)  \right) }} \label{logdiff}
+\end{align}
+If you're not dealing with the principal branch adjust the argument accordingly, the derivative is only defined for a branch of the logarithmic function.
+\end{tcolorbox}
+
+\end{minipage}
+\ \\
+\ \\
+The working for this is pretty straight-forward.
+\begin{align*}
+  f\left( z \right) = \log_e{\left( z \right) } &= \ln{     \left| z \right|  } +  i \left( \operatorname{arg}\left( z \right) + 2\pi k \right) \\
+  \intertext{Let $\theta =  \operatorname{arg}\left( z \right) $}
+  &= \ln{     \left| z \right|  } + \left( \theta +  2\pi k \right) \\
+  \intertext{Choose a branch of $\log_e{\left( z \right) }$ so that it is a function}
+  &= \ln{     \left| z \right| + i\Phi}  \qquad -\alpha < \Phi < \alpha + 2\pi k
+  \intertext{let $r =     \left| z \right| $}
+  &= \ln{ \left( r \right)  } +  i \Phi\\
+\end{align*}
+\begin{multicols}{2}
+  Let $u =  \ln{ \left( r \right)  }$:
+  \begin{flalign*}
+      u_r &= \frac{1}{r}&\\
+      u_\Phi &= 0
+  \end{flalign*}\break
+  Let $v =  \Phi $:
+  \begin{flalign*}
+    v_\Phi &= 1&\\
+    v_r &= 0
+  \end{flalign*}
+\end{multicols}
+Our domain is $r>0$, so $\frac{\partial u }{\partial r}$ and $\frac{\partial v }{\partial \Phi}$ are continuous on the entire domain.\\
+
+because $f\left( z \right) =  u\left( r,\Phi\right)  +  i \cdot  v\left( r, \Phi \right) $, use the polar form of the \textit{Cauchy Riemann} equations :
+\ \\
+\begin{multicols}{2}
+  First Condition:
+  \begin{flalign*}
+    r\cdot u_r &= v_\Phi&\\
+    r \cdot \frac{\partial }{\partial r} \cdot \left( \ln{ \left( r \right)  } \right) &= \frac{\partial }{\partial \Phi}\left( \Phi \right) &\\
+    r \times \frac{1}{r}&= 1 &\\
+    1 &= 1
+  \end{flalign*}\break
+  Second Condition:
+  \begin{flalign*}
+      u_\Phi &=  - r\cdot v_r&\\
+      \frac{\partial }{\partial \Phi}\left( \ln{ \left( r \right)  } \right) &= - r \times \frac{\partial }{\partial r}\left( \Phi \right) &\\
+      0 &=  - r \times 0 &\\
+      0 &= 0
+  \end{flalign*}
+\end{multicols}
+both the \textit{Cauchy Riemann} equations are satisfied so:
+\begin{align*}
+    \frac{\operatorname{d} }{\operatorname{d} z}\left( \log_e{\left( z \right) } \right) = e^{- i\Phi} \cdot \left( u_r + iv_r \right) \\
+    &= e^{- i\Phi}\cdot \left( \frac{1}{r} + i \times 0 \right) \\
+    &= \frac{1}{re^{i\Phi}}\\
+    &= \frac{1}{r\cdot \mathrm{cis}{\left( \Phi \right) }} \\
+    &= \frac{1}{    \left| z \right| \cdot \mathrm{cis}{\left( Arg\left( z \right)  \right) }}
+\end{align*}
+ \ \
+
+
+
+
+\end{document}

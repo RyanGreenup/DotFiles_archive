@@ -1,0 +1,26 @@
+\contentsline {section}{(05) Continuity}{1}{section*.1}% 
+\contentsline {subsection}{Continuous Functions {[}5.1{]}}{2}{section*.3}% 
+\contentsline {subsubsection}{Definition of Continuity}{2}{section*.4}% 
+\contentsline {paragraph}{Rigorous Definition}{2}{section*.5}% 
+\contentsline {subparagraph}{In Terms of Neighborhoods}{2}{section*.6}% 
+\contentsline {paragraph}{Conditions for Continuity}{3}{section*.7}% 
+\contentsline {subsubsection}{Sequential Criterion for Continuity {[}5.1.3{]}}{3}{section*.8}% 
+\contentsline {paragraph}{Discontinuity Criterion {[}5.1.4{]}}{3}{section*.9}% 
+\contentsline {subparagraph}{Example}{3}{section*.10}% 
+\contentsline {subsubsection}{Set Continuity}{3}{section*.11}% 
+\contentsline {subsubsection}{Defining a function to overcome Discontinuity}{4}{section*.12}% 
+\contentsline {subsection}{Combinations of Continuous Functions {[}5.2{]}}{4}{section*.13}% 
+\contentsline {subsubsection}{Absolute Values Preserve Continuity (5.2.4)}{4}{section*.14}% 
+\contentsline {subsubsection}{Square Roots Preserve Continuity}{4}{section*.15}% 
+\contentsline {subsubsection}{Compositions Preserve Continuity}{4}{section*.16}% 
+\contentsline {subsection}{Continuous Functions on Intervals {[}5.3{]}}{5}{section*.17}% 
+\contentsline {subsection}{Uniform continuity {[}5.4{]}}{5}{section*.18}% 
+\contentsline {subsection}{The Mean Value Theorem {[}6.2{]}}{5}{section*.19}% 
+\contentsline {subsubsection}{Maximum / Minimum {[}6.2.0{]}}{5}{section*.20}% 
+\contentsline {subsubsection}{Interior Extrema Theorem {[}6.2.1{]}}{5}{section*.21}% 
+\contentsline {subsubsection}{Rolle's Theorem {[}6.2.3{]}}{6}{section*.22}% 
+\contentsline {subsubsection}{Mean Value Theorem {[}6.2.4{]} }{7}{section*.23}% 
+\contentsline {subsection}{L'Hospital's Rules}{8}{section*.24}% 
+\contentsline {subsubsection}{Cauchy Mean Value Theorem}{8}{section*.25}% 
+\contentsline {paragraph}{Restrictions}{8}{section*.26}% 
+\contentsline {subparagraph}{Creating a stricter restriction}{8}{section*.27}% 

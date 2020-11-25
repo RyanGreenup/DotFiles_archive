@@ -1,0 +1,101 @@
+\documentclass[class=article, crop=false]{standalone}
+
+\usepackage{../resources/style}
+
+\begin{document}
+\section{Problem {\small Tutorial 1 Question 3 (iv)}}
+Show that for real-valued functions $f(x)$ and $g(x)$:
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{/home/ryan/Dropbox/Analysis/MD_Working_Directory/05_Continuity/pic}
+	\caption{}
+	\label{fig:pic}
+\end{figure}
+
+
+
+\begin{align}
+  \text{min}(f,g) = \frac{1}{2} \left( f\left( x \right) + g\left( x \right) \right) - \frac{1}{2} \mid f\left( x \right) -g\left( x \right) \mid
+\end{align}
+
+\section{Solution}
+
+The trick to proving this is:
+
+\begin{align}
+  \mid f\left( x \right) -g\left( x \right) \mid &= 
+  \begin{cases}
+    f\left( x \right) - g\left( x \right) , \enspace
+    \left( f\left( x \right) - g\left( x \right) \right) \geq 0\\ 
+    g\left( x \right) - f\left( x \right) , \enspace
+    \left( f\left( x \right) - g\left( x \right) \right) < 0\\ 
+  \end{cases}
+  \label{def1} \\
+  &= 
+  \begin{cases}
+    f\left( x \right) - g\left( x \right) , \enspace
+    f\left( x \right)   \geq g\left( x \right)\\ 
+    g\left( x \right) - f\left( x \right) , \enspace
+    f\left( x \right)   < g\left( x \right)\\ 
+  \end{cases}
+  \label{def2} \\
+  &= 
+  \begin{cases}
+    f\left( x \right) - g\left( x \right) , \enspace
+    \min \left( f, g \right) = g\left( x \right) \\
+    g\left( x \right) - f\left( x \right) , \enspace
+    \min \left( f, g \right) = f\left( x \right)
+  \end{cases}
+  \label{def3}
+\end{align}
+
+Now flowing from the \textit{Trichotomoy Princple} one of the following conditions must hold:
+
+\begin{equation}
+\min{\left( f, g \right)} = g \quad \vee \quad  \min{\left( f,g \right)} = f \quad \vee \quad f\left( x \right) = g\left( x \right)  \\
+  \label{trichotomy}
+\end{equation}
+
+\subsection{Assume $f\left( x \right) = g\left( x \right)$}
+\begin{align}
+\frac{1}{2} \left( f\left( x \right) + g\left( x \right) \right) - \frac{1}{2} \mid f\left( x \right) -g\left( x \right) \mid &= 
+\frac{1}{2} \left( f\left( x \right) + f\left( x \right) \right) - \frac{1}{2} \mid f\left( x \right) -f\left( x \right) \mid
+\notag \\
+&= \frac{1}{2} \left( f\left( x \right) + f\left( x \right) \right) \notag \\
+&= \frac{1}{2} \left( 2 \times f\left( x \right)  \right) \notag \\
+&=  f\left( x \right) = g\left( x \right) 
+\end{align}
+
+Given that it was assumed $f\left( x \right) = g\left( x \right)$ this result is consistent with this being the minimum value of the two functions.
+
+\subsection{assume $\min{\left( f, g \right)} = g \left( x \right)$}
+
+\begin{align}
+\frac{1}{2} \left( f\left( x \right) + g\left( x \right) \right) - \frac{1}{2} \mid f\left( x \right) -g\left( x \right) \mid
+&= \frac{1}{2} \left( f\left( x \right) + f\left( x \right) \right) - \frac{1}{2} \left( f\left( x \right) - g\left( x \right) \right) \notag \\
+&= \frac{f\left( x \right)}{2} + \frac{g\left( x \right)}{2}  - \frac{f\left( x \right)}{2} +   \frac{g\left( x \right)}{2} \notag \\
+&= \frac{g\left( x \right)}{2} +   \frac{g\left( x \right)}{2} \notag \\
+&= g\left( x \right) \notag \\
+&= \min{\left( f, g \right)} \dots \text{(From the initial assumption}
+\end{align}
+
+\subsection{assume $\min{\left( f, g \right)} = f \left( x \right)$}
+
+\begin{align}
+\frac{1}{2} \left( f\left( x \right) + g\left( x \right) \right) - \frac{1}{2} \mid f\left( x \right) -g\left( x \right) \mid
+&= \frac{1}{2} \left( f\left( x \right) + g\left( x \right) \right) - \frac{1}{2} \left( g\left( x \right) - f\left( x \right) \right) \notag \\
+&= \frac{f\left( x \right)}{2} + \frac{g\left( x \right)}{2} - \frac{g\left( x \right)}{2}  +   \frac{f\left( x \right)}{2} \notag  \\
+&= \frac{f\left( x \right)}{2} = \frac{f\left( x \right)}{2} \notag \\
+&= f\left( x \right) \notag \\
+&= \min{\left( f, g \right)} \dots \text{From the initial assumption}
+\end{align}
+
+\section{Conclusion}
+Given that the \textit{trichotomy principle} provides that the 3 above situations must hold and that in all cases the formula provides the minimum value, it stands that:
+
+\begin{align}
+  \text{min}(f,g) = \frac{1}{2} \left( f\left( x \right) + g\left( x \right) \right) - \frac{1}{2} \mid f\left( x \right) -g\left( x \right) \mid \notag
+\end{align}
+
+\end{document}

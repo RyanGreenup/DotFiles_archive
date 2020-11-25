@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{}!/bin/julia}
+\PYG{k}{function} \PYG{n}{juliaSet}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{num}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{,} \PYG{n}{boolQ}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{)}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{c}{\PYGZsh{} Iterate num times}
+    \PYG{k}{while} \PYG{n}{count} \PYG{o}{≤} \PYG{n}{num}
+        \PYG{c}{\PYGZsh{} check for divergence}
+        \PYG{k}{if} \PYG{n}{real}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{imag}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{boolQ}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{0} \PYG{k}{else} \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)} \PYG{k}{end}
+        \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}iterate z}
+        \PYG{n}{z} \PYG{o}{=} \PYG{n}{my\PYGZus{}func}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)} \PYG{c}{\PYGZsh{} + z}
+        \PYG{n}{count}\PYG{o}{=}\PYG{n}{count}\PYG{o}{+}\PYG{l+m+mi}{1}
+    \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}if z hasn\PYGZsq{}t diverged by the end}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{boolQ}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{1} \PYG{k}{else} \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)} \PYG{k}{end}
+\PYG{k}{end}
+\end{Verbatim}

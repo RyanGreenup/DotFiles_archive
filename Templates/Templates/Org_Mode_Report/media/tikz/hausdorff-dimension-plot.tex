@@ -1,0 +1,21 @@
+% \documentclass[tikz, convert={density=300,size=1080x800,outext=out_pic.png}]{standalone}
+\documentclass[tikz]{standalone}
+\begin{document}
+\begin{tikzpicture}[color=black, domain = 0:10, scale = 6/5]
+    \draw [thin, ->] (0,0) node(bl){} -- (4,0) node[below=1](x){$\mathrm{dim}_H \left( F \right)$} ;
+\draw (0,0) node(bl){} -- (4,0) ;
+\draw [thin, ->] (0,0) node(bl){} -- (0,4) node[left=1](y){$\mathcal{H}^s\left( F \right)$};
+\draw [dotted, blue] (1, 3) -- (1,0) ;
+\draw [thick, red] (0, 3) -- (1,3) node[circle,draw=black, fill=cyan, inner sep=0pt,minimum size=10pt];
+\draw [thick, ->, red] (1, 0)  node[circle,draw=black, fill=cyan, inner sep=0pt,minimum size=10pt] -- (4,0);
+\node[blue] (vals) at (3, 3) {$\mathcal{H}^s \left( F \right)$};
+\draw[->] (vals) .. controls (4,1) and (2, 2) ..  (1.1, 1.5);
+\end{tikzpicture}
+\end{document}
+
+% Use the following for live preview
+% latexmk -pdf -pvc -shell-escape --interaction=nonstopmode
+% convert -resize 1200x1200 -density 7200 -quality 75 file.pdf file.png
+% convert -resize 1200x1200 -density 7200 file.pdf file.svg
+
+

@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Use montage multiple times to get recursion for fun}
+montage \PYG{o}{(}ls *png \PYG{p}{|} sed \PYGZhy{}n \PYG{l+s+s1}{\PYGZsq{}1p;0\PYGZti{}600p\PYGZsq{}}\PYG{o}{)} 0a.png
+montage \PYG{o}{(}ls *png \PYG{p}{|} sed \PYGZhy{}n \PYG{l+s+s1}{\PYGZsq{}1p;0\PYGZti{}100p\PYGZsq{}}\PYG{o}{)} a.png
+montage \PYG{o}{(}ls *png \PYG{p}{|} sed \PYGZhy{}n \PYG{l+s+s1}{\PYGZsq{}1p;0\PYGZti{}50p\PYGZsq{}}\PYG{o}{)} \PYGZhy{}geometry 1000x1000  a.png
+
+\PYG{c+c1}{\PYGZsh{} Use ImageMagick to Produce a gif (unreliable)}
+convert \PYGZhy{}delay \PYG{l+m}{10} *.png \PYG{l+m}{0}.gif
+
+\PYG{c+c1}{\PYGZsh{} Use FFMpeg to produce a Gif instead}
+ffmpeg                    \PYG{l+s+se}{\PYGZbs{}}
+    \PYGZhy{}framerate \PYG{l+m}{60}         \PYG{l+s+se}{\PYGZbs{}}
+    \PYGZhy{}pattern\PYGZus{}type glob    \PYG{l+s+se}{\PYGZbs{}}
+    \PYGZhy{}i \PYG{l+s+s1}{\PYGZsq{}*.png\PYGZsq{}}            \PYG{l+s+se}{\PYGZbs{}}
+    \PYGZhy{}r \PYG{l+m}{15}                 \PYG{l+s+se}{\PYGZbs{}}
+    out.mov
+\end{Verbatim}

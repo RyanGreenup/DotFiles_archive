@@ -1,0 +1,116 @@
+% TODO Sort out the Chapter sections etc.
+% The idea is that chapter should only go in a master file, each standalone file should have a section as a tilte so it can be exported as a standalone article
+% Master is a book, sub files are articles.
+%
+% Title stuff needs to go above document class
+% so it can be accessed with [titlepage] option
+  % this will be on a seperate page though unline \maketitle
+\title{Analysis}
+\author{Ryan Greenup}
+\date{Autumn, 2019}
+\documentclass[fleqn, 10pt, titlepage, twoside]{report}
+%\twocolumn 
+ \usepackage{resources/style}
+
+\begin{document}
+
+%\maketitle
+\tableofcontents
+\setcounter{tocdepth}{4}
+\begin{abstract}
+These are the notes that I took in analysis, my working for class tests and working for tutorial problems, the latter two need to be typed it.
+
+I didn't cover anything up to and beyond Complex Series in Churchill's book, that's a shame and definitely something I want to get around to.
+\end{abstract}
+
+\part{Lecture Material}
+
+\chapter{Introduction}
+\input{01CompletenessPropertyReals.tex}
+
+\chapter{Sequences and Functions}
+\input{02SequencesAndFunctions.tex}
+
+\chapter{Infinite Series}
+\input{./03InfSeries.tex} %exemplar not tutorial problem
+\input{./03InfSeriesCauchyCriterion.tex}
+ %
+ \chapter{Limits}
+%  \input{./04_Summary} % This is totally corrupted, \textsl{I}l need to start it again
+ \input{04SimpleLimitsReal.tex}
+
+ \chapter{Continuity}
+
+
+
+ \input{./05_Wk5_Notes_Continuity_Pure.tex}
+ %\input{05_Continuity/texscratch.tex}
+ %
+ \chapter{Complex Values}
+ \input{./07_complex.tex}
+
+ \chapter{Complex Variables}
+ \input{./08_vars.tex}
+ \input{./08_vars2.tex}
+ %\input{08_vars/a5size/08_vars.tex}
+ %\input{08_vars/drawing.tex}
+ %
+ \chapter{Complex Functions}
+ \input{./09_functions.tex}
+ %\input{09_functions/expprob/09_functions.tex}
+ %
+
+ \chapter{Complex Integrals}
+ \input{./10_integrals.tex}
+ %\input{./10_integrals.tex}
+%\input{11_cauchyIntegrals/08_vars (copy).tex}
+ %
+ \chapter{Cauchy Integral Formula}
+ \input{./11_Complex_Series.tex}
+%\input{11_cauchyIntegrals/drawing.tex}
+ %\input{A1_SampleTest/notes.tex}
+ %
+ %\input{ExamProb/ExProb.tex}
+ %\input{classnotes/classnotes.tex}
+
+
+\part{Tutorial Workings}
+
+%\input{T1Q3.4/tut1abs 2019-03-09 10_25_13.tex}
+
+\part{Assessment Material}
+\begin{appendix}
+  \listoftables
+  \listoffigures
+\end{appendix}
+
+\end{document}
+
+%% TODO Titles
+    %% TODO Replace Section 1 with a title
+%% TODO tableofcontents
+    %% TODO Mini toc per section
+    %% TODO Not having multiple
+%% TODO MiniTOC
+%% TODO Rename Files
+%% TODO MakeFile or Build.sh
+  %% Makefile doesn't make much sense with latexmk
+  %% Build.sh is like a readme
+%% README
+  %%  How to export individual files to:
+    %% PDF
+    %% HTML (then that into markdown)
+    %% Org
+  %% How to do Tikz
+    %% Seperate files like Project
+  %% How to do Media
+    %% Media Directory with sub directories so files can be seperated
+      %% Mention that pandoc is also an option, I just wanted to avoid relying on it
+%% TODO Compile Seperate Documents
+%% TODO Images
+    %% TODO Rename them all and add captions
+%% TODO Tikz
+%% TODO Index
+%% DONE Folding
+  %% Disable outshine mode and enable outline-minor-mode
+    %% Beware of any hooks between the two in ~.emacs~

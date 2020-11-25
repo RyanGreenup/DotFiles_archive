@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{pascal}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+    \PYG{n}{mat} \PYG{o}{=} \PYG{p}{[}\PYG{n}{isodd}\PYG{p}{(}\PYG{n}{binomial}\PYG{p}{(}\PYG{k+kt}{BigInt}\PYG{p}{(}\PYG{n}{j}\PYG{o}{+}\PYG{n}{i}\PYG{p}{),}\PYG{k+kt}{BigInt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)))} \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{0}\PYG{o}{:}\PYG{n}{n}\PYG{p}{,} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{0}\PYG{o}{:}\PYG{n}{n}\PYG{p}{]}
+    \PYG{k}{return} \PYG{n}{mat}
+\PYG{k}{end}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{pascal}\PYG{p}{(}\PYG{l+m+mi}{999}\PYG{p}{))}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}../../Report/media/pascal\PYGZhy{}sierpinsky\PYGZhy{}triangle.png\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Calculate Dimension \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{n}{mat2} \PYG{o}{=} \PYG{n}{pascal}\PYG{p}{(}\PYG{l+m+mi}{3000}\PYG{p}{)}
+\PYG{n}{l2}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)}
+\PYG{n}{size2} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{mat1} \PYG{o}{=} \PYG{n}{pascal}\PYG{p}{(}\PYG{l+m+mi}{2000}\PYG{p}{)}
+\PYG{n}{l1}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)}
+\PYG{n}{size1} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} https://en.wikipedia.org/wiki/Sierpi\PYGZpc{}C5\PYGZpc{}84ski\PYGZus{}triangle}
+\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\end{Verbatim}

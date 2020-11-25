@@ -1,0 +1,563 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage{./resources/style}
+\title{Sequences and their Limits}
+\AfterBeginDocument{\tableofcontents}
+\begin{document}
+
+\section{Sequences and Their Limits}
+A sequence is a type of function that maps from $\mathbb{N} = \left\{ 1, 2, 3, \dots \right\}$
+into $\mathbb{R}$\\
+
+Such that the range is contained in some set $S$, e.g. \\
+\begin{align}
+S = \left\{ 1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \dots \right\}
+  \label{egset1}
+\end{align}
+
+In thise case (\ref{egset1}) is a the set of range values of a sequence, this sequence could be described by the function:
+
+\begin{align}
+  X : \mathbb{N} \rightarrow \mathbb{R} : x \mapsto \frac{1}{2^{x}}
+  \label{eg1asfunc}
+\end{align}
+
+\paragraph{Remarks on Sequences}
+
+Unlike a set, a sequence can have repeated elements and the order of elements does matter.\\
+Sequences are infinite because they are a function from $\mathbb{N}$ to $\mathbb{R}$.\\
+A sequence could be defined to be finite (simply by restricting the domain to an interval or subset of $\mathbb{N}$), however they are defined to be infinite, by nature of their descriptive function, because it is useful to later studies of functions and series (a series is different from a sequence).
+
+\subsection{Notation}
+This  (\ref{egset1}) would usually be denoted by the notation:
+\begin{equation}
+  x_n = \frac{1}{2^{n}} : n \in \mathbb{N}
+  \label{notegset}
+\end{equation}
+However such a sequence can commonly be denoted also:
+\begin{align}
+  X, \quad  \text{or} \quad  (x_{n}), \quad \text{or} \quad (x_{n} : n \in \mathbb{N})
+  \label{altnote}
+\end{align}
+
+\paragraph{Ordered Sequences} Ordered Sequences are denoted with parentheses, e.g.
+\begin{equation}
+  ( (-1)^{n} , n \in \mathbb{N}) = (-1, 1, -1, 1, -1, 1, \dots)
+  \label{parordered}
+\end{equation}
+
+\paragraph{Unordered Sets} Unordered Sets are denoted with cages/braces and represent the set of range values of a sequence:
+\begin{align}
+  \left\{ (-1)^n , n \in \mathbb{N} \right\} = \left\{ 1, -1 \right\}
+  \label{parunorder}
+\end{align}
+
+Be careful because (\ref{parordered}) and (\ref{parunorder}) are different things, one is a sequence of ordered values which could be described by a function, the latter is just the range of such a function.
+
+\subsection{Defining a Sequence}
+A sequence can be defined by listing the ordered terms until the rule of formation becomes clear or by specifying the formula, both are correct, so for (\ref{egset1})
+\begin{equation}
+  X := \left\{ 1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \dots\right\} = \left\{ 2^{-n} : n \in \mathbb{N} \right\}
+  \label{defineseq}
+\end{equation}
+
+\subsection{Limits of a sequence}
+An informal analogy for the limit of a sequence is:\\
+
+{\small The limit of $x:= \left( x_{n} : n \in \mathbb{N} \right)$ is the expected value of $x_{\infty}$.} \\
+
+\noindent The limit value is usualy denoted $\lim\left( X \right) = \lim\left( x_{n} \right) = x$
+
+\paragraph{The Precise Definition of a Limit} is:
+
+\begin{align}
+  \forall \varepsilon > 0, \enspace \exists K : & \notag \\
+  & n \geq k \Rightarrow \mid x_{n} - x \mid < \varepsilon 
+  \label{precicelimit}
+\end{align}
+
+Which says; If for all possible positive values of $\varepsilon$, there is some $k$ value such that if $n \geq K$ then $x_{n}$ is within the $\varepsilon$-neighborhood of the limit value $x$.
+
+%\begin{Theorem}{}{fermat}
+%  No three positive integers \(a\), \(b\) and \(c\) satisfy the equation \(a^{n}
+%  + b^{n} = c^{n}\) for any integer greater than two.
+%\end{Theorem}
+
+\paragraph{Limits are Unique} a sequence will only approach a single limit value.
+
+\paragraph{Equivalent Limit Definitions}
+\begin{enumerate}
+  \item $X$ converges to $x$ \\
+  \item $\forall \varepsilon > 0, \enspace \exists K : n\geq K \Rightarrow \mid x_{n} - x \mid < \varepsilon$
+  \item $\forall \varepsilon > 0, \enspace \exists K : n\geq K \Rightarrow \left( x- \varepsilon \right) < x_{n} < \left( x + \varepsilon \right)$
+  \item for every $\varepsilon$-neighborhood $V_{\varepsilon}\left( x \right)$, there exists some $K \in \mathbb{N}$:
+    \subitem $\forall n \geq K, \enspace x_{n} \in V_{\varepsilon}\left( x \right)$
+\end{enumerate}
+
+\paragraph{The Tail of a Sequence [ 3.1.9]} or the $m$-tail of a sequence is the sequence starting from the $m^{\text{th}}$ term, a tail will aproach the same limit as the original sequence because they will both have the same expected value for $x_{\infty}$
+
+
+\section{[3.2] Limit Theorems}
+\subsection{Intervals [2.5]}
+
+An \textbf{Open Interval} is defined:
+
+\begin{align}
+  \left( a,b \right) := \left\{ x \in \mathbb{R} : a<x<b \right\}
+  \label{openintdef}
+\end{align}
+
+A \textbf{Closed Interval} is defined:
+
+\begin{align}
+  \left[ a,b \right] := \left\{ x \in \mathbb{R} : a\leq x\leq b \right\}
+  \label{closedintdef}
+\end{align}
+
+\subsection{Bounded Sequences [3.2.1]}
+
+If $x_{n} \in \left[ -M, M \right]$, for some real positive $M$,  then $x_{n}$ is said to be bounded. \\
+
+{\small i.e. if the set of range values of a sequence $\left\{ x_{n} : n \in \mathbb{N} \right\}$ is a bounded set then the sequence is said to be a bounded sequence}
+
+\paragraph{Bounded Subsets [2.3.1]} are subsets of the real numbers that have a maximum and a minimum, Take for example:
+\begin{align}
+  \left\{ 1, 2, 3, 4, \dots 25, 50, 53, 54  \right\}
+  \label{boundedeg} \\
+  \left\{ p : p = 2n, n \in \mathbb{Z^+} \right\} 
+  \label{notbounded}
+\end{align}
+In the example above (\ref{boundedeg}) is bounded because the minimum is 1 and the maximum value is 54, also notice that (\ref{boundedeg}) is not a continuous subset of $\mathbb{R}$, it jumps from 25 to 50 and it doesn't include any quotient values, it is still however a bounded subset of $\mathbb{R}$. 
+
+However (\ref{notbounded}) is not a bounded subset because it does not have an upper bound value, it does have a lower bound, anything less than 1, but that means it is only bounded below and it is not a bounded subset of $\mathbb{R}$.
+
+\paragraph{Bounded Subsets and Convergence [3.2.2]} If a subset is Convergent it must be bounded because it has a starting value and it approaches another value, e.g.
+
+\begin{align}
+  \left\{ 1, \sfrac{1}{2}, \sfrac{1}{4}, \sfrac{1}{8}, \sfrac{1}{16}, \sfrac{1}{32} \dots  \right\}  
+  \label{boundconeg}
+\end{align}
+
+This set (\ref{boundconeg}) converges to 0 and starts from 1, so it must have an upper bound of 1\\ (because all $x_{n} \leq 1$, $x_n \geq 0$ (\small it is $\leq/\geq$ not $</>$)
+
+  If a subset is bounded however it doesn't necessarily need to be convergent, e.g.:
+
+  \begin{align}
+    \left( 1,2,1,2,1,2,1, \dots \right)
+    \label{unboundconeg}
+  \end{align}
+
+  This set (\ref{unboundconeg}) does not converge but is clearly bounded by 1 and 2, {\footnotesize \\
+    (however a monotone series that is bounded will converge but that's in [3.3])
+}
+
+%{\small basically if a sequence converges it must be possible to find a maximum and minimum value in the sequence even though the sequence isn't necessarily finite, if it is possible to find a maximum and minimum value then those two values are also upper and lower bounds respectively.
+
+%  This can be explained in terms of neighbourhoods as well, take some neighbourhood of the limit value $x$, there could very well be infinite terms within that neighbourhood but there must be finite terms outside that neighbourhood (because a sequence must have a starting value), the values outside the neigborhood are finite and finite sets must be bounded, the sets inside the neighbourhood are bounded by the neighborhood and hence the entire sequence of values is bounded.
+
+
+\paragraph{Arithmetic with Sequences}
+In order to manipulate sequences we will define operations that relate to addition and multiplication, this is by definition simply so we can use them. \\
+
+Let,
+
+\begin{align}
+  X = (x_n) \quad Y = (y_n) \quad Z = (z_n)
+  \label{seqdefgen}
+\end{align}
+
+We define the following Operations [3.2, p. 63]:
+
+\begin{align}
+  X+Y &= \left( x_{n} + y_{n} \right) \label{addseqdef} \\
+  X-Y &= \left( x_{n} - y_{n} \right) \label{minseqdef} \\ 
+  c \cdot X &= \left( c\cdot x_{n}\right) \label{conmultseqdef}\\
+  X\times Y &= \left( x_{n} \times y_{n} \right) \label{multseqdef} \\
+  X/Y &= \left( x_{n} \div y_{n} \right) 
+  \label{divseqdef}
+\end{align}
+
+
+%\begin{tabular}{<{$}l>{$}l<{$}@{}}
+ %Sequence Addition            &   X+Y = \left( x_{n} + y_{n} \right) \\
+ %Sequence Subtraction &   X-Y = \left( x_{n} - y_{n} \right) \\
+ %Sequence Constant Mult. &   c \cdot X = \left( c\cdot x_{n}\right) \\
+ %Sequence Multiplicaiton &   X\times Y = \left( x_{n} \times  y_{n} \right) \\
+ %Sequence Division &   X / Y = \left( x_{n} \div y_{n} \right) \\
+ %\end{tabular}
+
+
+
+\subparagraph{Limits of Sequences for Arithmetic with Sequences [3.2.3]}
+Because the limit of a sequence is essentially the expected value of $x_{\infty}$ it stands to reason that the limit will distribute over the basic operations: \\
+
+Let,
+
+\begin{align}
+  \lim X = \lim(x_n) =  x \quad \lim Y = \lim(y_n) = y \quad \lim Z = \lim(z_n) = z
+  \label{seqdeflim}
+\end{align}
+
+Then the limits are:
+
+\begin{alignat}{2}
+  \lim  \left( X+Y \right) &= \lim X + \lim Y &= x + y
+  \label{addlimdef} \\
+  \lim  \left( X-Y \right) &= \lim X - \lim Y &= x - y 
+  \label{minlimdef} \\
+  \lim  \left( c \cdot X \right) &= c \cdot \lim X  &= c \cdot x
+  \label{conmultlimdef} \\
+  \lim  \left( X\times Y \right) &= \lim X \times \lim Y &= x \times y
+  \label{multlimdef} \\
+  \lim  \left( X/Y \right) &= \lim X \div \lim Y &= \sfrac{x}{y} 
+  \label{divlimdef}
+\end{alignat}
+
+
+%\begin{tabular}{@{}>{$}l<{$}l>{$}l<{$}@{}}
+%m   & módulo            & m\textgreater 0\\
+%a   & multiplicador     & 0\textless a\textless m\\ c   & constante aditiva & 0\leq c<m\\
+%x_0 & valor inicial     & 0\leq x_0 <m
+%\end{tabular}
+
+
+
+
+
+\subsection{Limit Theorems}
+The rest of the chapter provides values of limits, it begins with this simple property of sequence limits:
+\begin{align}
+  &\text{\textbf{If} $X$ is convergent (i.e. a limit exists) and all $x_n\geq 0$}  \notag \\
+  &\text{\textbf{Then} $\lim\left( x_{n} \right)\geq 0$} \tag{3.2.4}
+  \label{324}
+\end{align}
+
+We can build on this theorem by generalising it a little bit:
+
+
+\begin{align}
+  &\text{\textbf{If} $X$ and $Y$ are convergent (i.e. limits exists) and all $x_n\leq y_n$}  \notag \\
+  &\text{\textbf{Then} $\lim\left( x_{n} \right)\leq \lim \left( y_n \right)$} \tag{3.2.5}
+  \label{325}
+\end{align}
+
+  If a sequence has a limit and exists within in an interval, then the limit is also within that interval.
+
+
+\begin{align}
+  &\text{\textbf{If} $X$ is convergent (i.e. a limit exists) and all $x_n \in \left[ a,b \right]$}  \notag \\
+  &\text{\textbf{Then} $\lim\left( x_{n} \right) \in \left[ a,b \right]$} \tag{3.2.6}
+  \label{326}
+\end{align}
+
+\paragraph{Squeeze Theorem} Now if a sequence is always between two other sequences and those sequences have the same limit, then the original sequence must share that limit. 
+
+
+\begin{align}
+  &\text{\textbf{If} $X, Y, Z$ are convergent (i.e. limits exist) and all $\left( x_n \right) \leq \left( y_n \right) \leq \left( z_n \right)$ and $\lim X = \lim Z$} \notag \\
+  &\text{\textbf{Then} $\lim X = \lim Y = \lim Z$} \tag{3.2.7}
+  \label{327}
+\end{align}
+
+\paragraph{Limits Sequence Functions} I'd be careful here because the textbook doesn't necessarily imply that all functions will demonstrate this behaviour:
+
+\begin{align}
+  \lvert \lim (x_n) \rvert = \lim \left( \lvert x_n \rvert \right) \tag{3.2.9}
+  \label{329} \\
+  \left( \sqrt{\lim \left( x_n \right)} \right) = \lim \left( \sqrt{x_n} \right) \tag{3.2.10} \label{3210}
+\end{align}
+
+\paragraph{Ratios}
+
+The next theorem is useful where a ratio of the next and preceeding term can be reduced into a form that must be less than one $\left( \frac{x_{n+1}}{x_n} < 1 \right)$.\\
+
+
+\begin{align}
+&  \text{\textbf{If} all $(x_n) > 0$ and $L := \lim \left( \frac{x_{n+1}}{x_n} \right)$ exists} \notag \\
+& \text{\textbf{Then} $L<1 \implies \lim X = 0$} \tag{3.2.11} \label{3211}
+%&    \text{\textbf{If} $L < 1$} \\
+%  &\text{\textbf{Then} $\lim X = 0$} \tag{3.2.11}
+%  \label{3211}
+\end{align}
+
+
+\section{[3.3] Monotone Sequences}
+A monotone sequence is a sequence that is either increasing or decreasing, where:\\
+\ \\
+$X = (x_n)$ is said to be \textbf{decreasing} if:
+\begin{align}
+  x_n \geq x_{n+1}, \enspace  \forall n \in \mathbb{N}
+  \label{331dec}
+\end{align}
+
+\noindent $X= (x_n)$ is said to be \textbf{increasing} if:
+\begin{align}
+  x_n \leq x_{n+1}, \enspace  \forall n \in \mathbb{N}
+  \label{331inc}
+\end{align}
+
+\subsection{Monotone Convergence Theorem [3.3.2]}
+A monotone sequence  $\left( x_n \right)$ is convergent $\iff$ it is bounded. {\tiny $\left( \left\{ x_n \right\} \in \mathbb{R} \right)$}
+
+{\footnotesize  Whereas an ordinary set is convergent $\implies$ Bounded (at 3.2.2)} \\
+
+Furthermore,
+\begin{enumerate}
+\item If $X = (x_n)$ is \textit{bounded} and \textit{increasing}, then:
+  \begin{align}
+    \lim (x_n) = \sup \left\{ x_n : n \in \mathbb{N} \right\}
+    \label{mctboundconinc}
+  \end{align}
+
+\item If $Y = (y_n)$ is \textit{bounded} and \textit{decreasing} then:
+  \begin{align}
+    \lim (y_n) = \inf \left\{ y_n : n \in \mathbb{N} \right\}
+    \label{mctboundcondec}
+  \end{align}
+\end{enumerate}
+
+\paragraph{Why this is Important} The \textit{Monotone Convergence Theorem} is important because it:
+
+\begin{enumerate}
+  \item Guarantees a Limit exists for a bounded Monotone Sequence
+  \item Gives us a way to solve that limit if we can evaluate the supremum/infimum
+    \subitem Supremum and Infimum are defined at [2.3.1]-[2.3.2]
+\end{enumerate}
+
+\paragraph{Example Application}
+\subparagraph{Deductive Sequence}
+Evaluate $\lim\left( \sfrac{1}{\sqrt{n}} \right)$ \\
+Observe that the corresponding sequence is $(x_n) = \left( x : x = \frac{1}{\sqrt{n}}, n \in \mathbb{N} \right)$ \\
+\ \\
+The set of range values would be $\left\{ x_n \right\} = \left\{ 1, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{3}}, \frac{1}{2}, \dots \right\} \in [1, 0)$ \\
+\ \\
+The Infimum (i.e. the largest value smaller than all $x_n$) of $x_n$ is 0, so the \textit{Monotone Convergence Theorem} provides  $\lim (x_n) = 0$
+
+\begin{flushright}
+  $\blacksquare$
+\end{flushright}
+
+\subparagraph{Inductive Sequence} Evaluate $x_{1} = 2, \enspace x_{n+1} = 2 + \frac{1}{x_n}$ \\
+Let the limit be:
+\begin{align}
+  \lim (x_n) = x
+  \label{limdefindeg}
+\end{align}
+
+We know that the limit must be equal to the limit of the $m$-tail of the sequence by [3.1.9], so:
+\begin{align}
+  \lim(x_n) = x&=\lim(x_{n+1})
+  \label{limdefegind} \\
+  &= \lim\left( 2+ \frac{1}{x_n} \right)  \notag \\
+  &= \lim \left( 2 \right) + \lim \left( \frac{1}{x_n} \right)  \notag && \text{Justified by (3.2.3)}\\
+  \intertext{This step is allowable if and only if $x_n \neq 0$, which means $x_n > 0$, hence it is now known that $\lim(x_n) > 0$ by (3.2.4) } \\
+  &= 2 + \frac{\lim{(1)}}{\lim{(x_n)}}  \notag  \\
+  \implies x&= 2 + \frac{1}{x} \notag \\
+  \implies  0 &= x^{2} -2x - 1 && x>0  \notag \\
+  \implies x &= 1 \pm \sqrt{2} \enspace  \wedge \enspace x>0  \notag \\
+  \implies x &= 1 + \sqrt{2}  \notag  
+\end{align}
+
+\paragraph{Solving Roots with the \textit{Monotone Convergence Theorem}[3.3.5]}
+This can be used to solve square roots, it's laid out in a very convoluted fashion in the text book.
+\paragraph{Euler's Number}
+Euler's number is the number $e = \lim(e_{n}): \enspace e_{n} = \left( 1 + \frac{1}{n} \right)^n$
+
+\begin{flushright}
+  $\blacksquare$
+\end{flushright}
+
+\section{[3.4] Subsequences}
+This section [3.4] is all about subsequences, and how they interact with convergence, it also introduces the limit superior/inferior.
+
+\subsection{Subsequences [3.4.1]}
+Let $X = \left( x_n \right)$ be a sequence of real numbers, from left to right pick values of $X$ (e.g. every third value or perhaps the 2nd, 3rd, 5th, 7th, 11th etc), these values also form a sequence and that sequence is a subsequence of $X$. \\
+
+Formally, a subsequence $X'$ of $X$ is a sequence, composed of elements of $(x_n)$, where $n_1 < n_2 < n_3 \dots \in \mathbb{N}$:
+
+\begin{align}
+  \left( x_{n_1}, x_{n_2}, x_{n_3}, \dots \right)
+  \label{341} \tag{3.4.1}
+\end{align}
+
+
+\paragraph{Convergence of Subsequences} If a sequence converges to some value $x=\lim X$, then the subsequence must also converge to that value (because a subsequence preserves the order of the original sequence).
+
+\paragraph{Non-Converging Subsequences [3.4.4]} The following are equivalent statements:
+
+\begin{enumerate}
+  \item The sequence $X=(x_n)$ does not converge to $x \in \mathbb{R}$
+  \item There exists some value $\varepsilon_0$, such that for any $k \in \mathbb{N}$, there exists $n_k\in \mathbb{N}$ such that $n\geq k$ and $\lvert x_{n_k} - x \rvert \geq \varepsilon_0$
+  \item There exists an $\varepsilon_0 > 0$ and a subsequence $X' = \left( x_{n_{k}} \right)$ of $X$ such that $\lvert x_{n_k} - x \rvert \geq \varepsilon_0$ for all $k \in \mathbb{N}$ 
+\end{enumerate}
+
+\paragraph{Divergence Criteria [3.4.5]}
+If either of the following properties is satisfied, a sequence $X$ can be shown to be divergent.
+
+\begin{enumerate}
+  \item $X$ has two convergent subsequences that converge to different limits
+    \subitem because there can only be one limit for a subsequence
+  \item $X$ is unbounded
+    \subitem If $X$ was convergent it would be necessarily bound by the starting and limit value.
+\end{enumerate}
+
+\subsection{Existence of Monotone Subsequences [3.4.7]}
+If $X = \left( x_n \right)$ is a sequence of real numbers, then there is a subsequence of $X$ that is monotone. \\
+Basically all this says is it is possible to pick values from $X$ in order so that they either increase or decrease (recall that the definition of increasing allows being equal to the previous value by (\ref{331dec})).
+
+
+\subsection{[3.4.8] The Bolzana-Weierstrass Theorem [3.4.8]}
+This is Italian-German, so it's pronounced (bolt-tza-no)-(vai-ya-strahzz). \\
+\ \\
+If a sequence is bounded then all subsequences are bounded (this is by definition (3.4.1)),\\ A monotone subsequence is guaranteed to exist by (3.4.7),\\ A bounded monotone subsequence must converge by the \textit{MCT} (3.3.2),\\ Hence a convergent subsequence must exist.\\ 
+\ \\ That's the Theorem: \textit{A bounded subsequence must always have a convergent subsequence}
+
+
+\subsection{Upper and Lower Bounds [2.3.1]}
+\paragraph{Upper Bound}
+An upper bound is any value greater than or equal to all elements of a set, e.g. $u$ is an upper bound of $A$ if: \\
+
+\begin{equation}
+  \forall s \in S, \exists u \in \mathbb{R} : u \geq s
+  \label{upperdef}
+\end{equation}
+
+
+\paragraph{Lower Bound}
+A lower bound is any value less than or equal to all elements of a set, e.g. $w$ is a lower bound of $A$ if: \\
+
+ \begin{equation}
+ \forall s \in S, \exists w \in \mathbb{R} : w \leq s
+ \label{lowerdef}
+\end{equation}
+
+
+\subsection{Supremum and Infima [2.3.2]}
+\paragraph{Supremum}
+The suprema of a set is the smallest upper bound value of some set.\\ 
+This value would be the maximum value of the set if the set had a maximum value.\\
+Let V be the set of all upper bound values, $u$ is a suprema iff:
+
+\begin{equation}
+ u \leq v, \forall v \in V 
+ \label{supdef}
+\end{equation}
+
+So if a set has a maximum value, the supremum is the maximum value of the set:
+\begin{align}
+  \exists \max\left\{ \left( x_n \right) \right\} \implies \max(x_n) = \sup \left\{ x_n \right\}
+  \label{maxassup}
+\end{align}
+If the set doesn't have a maximum, then the supremum is the next largest value, e.g.\\
+$\sup \left( 3, 5 \right) = 5$ and $\sup \left[ 3, 5 \right] = 5 = \max \left( \left[ 3, 5 \right] \right)$  
+
+\paragraph{Infimum}
+The infimum of a set is the largest lower bound value of some set. \\
+This value would be the maximum value of the set if the set had a maximum value.\\
+Let T be the set of all upper bound values, $w$ is a suprema iff:
+
+\begin{equation}
+  w \leq t, \forall t \in T 
+  \label{infdef}
+\end{equation}
+
+So if a set has a minimum value, the infimum is the minimum value of the set:
+\begin{align}
+  \exists \min\left\{ \left( x_n \right) \right\} \implies \min(x_n) = \inf \left\{ x_n \right\}
+  \label{minassup}
+\end{align}
+If the set doesn't have a minimum, then the infimum is the next largest value, e.g.\\
+$\inf \left( 3, 5 \right) = 3$ and $\inf \left[ 3, 5 \right] = 3 = \min \left( \left[ 3, 5 \right] \right)$  
+
+\subsection{Limit Superior and Limit Inferior [3.4.10]}
+So the textbook wasn't particularly helpful, instead this video by \textit{SplineGuyMath}\footnote{https://www.youtube.com/watch?v=khypO8MQpdc} was really good
+
+\paragraph{Summary}
+Sometimes it is useful to know the smallest and largest limits that subsequences can have. For this the limit inferior and limit superior are used.
+\subparagraph{Limit Inferior}
+The Limit Inferior is the smallest limit that any subsequence of $x_n$ can have; it is denoted:
+
+\begin{align}
+  \limsup \left( X \right) = \limsup \left( x_n \right) = \varlimsup \left( x_n \right) %use \limsup not \lim \sup because limits underneath will line up better
+  \label{limsupnotdef}
+\end{align}
+\subparagraph{Limit Superior} 
+The limit superior is the largest limit that ay subsequence of $x_n$ can have; it is denoted:
+
+\begin{align}
+  \liminf \left( X \right) = \liminf \left( x_n \right) = \varliminf \left( x_n \right) %use \liminf not \lim \sup because limits underneath will line up better
+  \label{liminfnotdef}
+\end{align}
+
+\paragraph{Definition}
+\subparagraph{Limit Superior} \ \\
+Let $X = x_{n}$ be bounded above, and  \\
+$M_n = \sup \left\{ x_n, x_{n+1}, x_{n+2}, \dots \right\} \qquad \qquad$ (This is the $\left( n-1 \right)$ tail of $x_n$) \\
+Then the limit superior of $x_n$ is:
+\begin{align}
+  \lim \sup \left\{ X \right\} = \lim \sup \left\{ x_n \right\} = \lim \left\{ M_n \right\}
+  \label{limsupdef}
+\end{align}
+
+This definition of a limit superior works because subsequences preserve order, so if the maximum value of a sequence approaches a limit as we move along that sequence (i.e. take tails), that limit must be the largest of all limits of possible subsequences.
+
+\subparagraph{Limit Inferior} \ \\
+Let $X = x_{n}$ be bounded below, and  \\
+$m_n = \inf \left\{ x_n, x_{n+1}, x_{n+2}, \dots \right\} \qquad \qquad$ (This is the $\left( n-1 \right)$ tail of $x_n$) \\
+Then the limit inferior of $x_n$ is:
+\begin{align}
+  \lim \inf \left\{ X \right\} = \lim \inf \left\{ x_n \right\} = \lim \left\{ m_n \right\}
+  \label{liminfdef}
+\end{align}
+
+This definition of a limit inferior works because subsequences preserve order, so if the minimum value of a sequence approaches a limit as we move along that sequence (i.e. take tails), that limit must be the smallest of all limits of possible subsequences.
+
+
+\subparagraph{Example} 
+Find the limit superior and limit inferior  of:
+\begin{align}
+  B = \left( b_n \right) = \left( 1+\frac{1}{2^n} \right) = \left( \frac{3}{2}, \frac{5}{4}, \frac{9}{8}, \frac{17}{16}, \dots \right)
+  \label{eglimb}
+\end{align}
+
+First consider the value of $M_n$:
+
+\begin{align}
+  M_n & = \sup \left\{ b_n, b_{n+1}, b_{n+2}, \dots \right\} \label{Mnvalinsupeg}\\
+  &= \left( 1.5, 1.25, 1.0625, 1.03125, 10.015625, \dots \right) \label{supsasdec} \\
+  \lim(M_n) &= 1 \label{Mnis1supeg} \\
+  \lim \sup (M_n) &= 1 \label{equivtolimsup}
+\end{align}
+
+
+Now consider the value of $m_n$:
+
+\begin{align}
+  m_n & = \inf\left\{ b_n, b_{n+1}, b_{n+2}, \dots \right\} \label{mnvalininfeg}\\
+  &= \left( 0, 0, 0, 0, 0, \dots \right) \label{infvals} \\
+  \lim(m_n) &= 0 \label{mnis1infeg} \\
+  \lim \inf (M_n) &= 0 \label{equivtoliminf}
+\end{align}
+
+Hence the largest limit that any subsequence of $\left( b_n \right)$ can have (i.e. the \textbf{Limit Superior}) is 1 and
+the smallest limit that any subsequence of $\left( b_n \right)$ can have (i.e. the \textbf{Limit Inferior}) is 0.
+
+\paragraph{Convergent Sequences and limit Superior/Inferior [3.4.12]}
+ If a sequence is bounded it must have a limit superior and a limit inferior, if it is convergent then:
+ \begin{align}
+   \varlimsup \left( x_n \right) = \lim \left( x_n \right) = \varliminf \left( x_n \right) \tag{3.4.12}
+   \label{3412}
+ \end{align}
+
+\paragraph{Equivalent Statements of Limit Inferior and Superior [3.4.11]}
+The following are equivalant statements that flow from the definition of the limit superior
+
+\begin{enumerate}
+  \item $x^* = \limsup \left( x_n \right)$\\
+  \item if $\varepsilon > 0$, there are only some values of $n \in \mathbb{N}$ such that $x^* + \varepsilon < x_n$, but there are unlimited numbers of $n \in \mathbb{N}$ such that $x^* - \varepsilon < x_n$. \\
+  \item if $u_m = \sup \left\{ x_n : n \geq m \right\}$, then $x^* = \inf \left\{ u_m: m \in \mathbb{N} \right\} = \lim \left( u_m \right)$. \\
+  \item if $S$ is the set of subsequential limits of $x_n$, then $x^* = \sup S$
+    \subitem This is the definition we used above in (\ref{limsupdef}).
+\end{enumerate}
+
+
+\end{document}

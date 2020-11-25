@@ -1,0 +1,51 @@
+(TeX-add-style-hook
+ "03InfSeries"
+ (lambda ()
+   (TeX-add-to-alist 'LaTeX-provided-class-options
+                     '(("standalone" "class=article" "crop=false")))
+   (TeX-run-style-hooks
+    "latex2e"
+    "standalone"
+    "standalone10")
+   (LaTeX-add-labels
+    "header-n3124"
+    "header-n3125"
+    "header-n3138"
+    "header-n3140"
+    "header-n3150"
+    "header-n3152"
+    "header-n3155"
+    "header-n3157"
+    "header-n3160"
+    "header-n3161"
+    "header-n3167"
+    "header-n3170"
+    "header-n3182"
+    "header-n3183"
+    "header-n3203"
+    "header-n3206"
+    "header-n3218"
+    "header-n3223"
+    "header-n3232"
+    "header-n3241"
+    "header-n3243"
+    "header-n3245"
+    "header-n3247"
+    "header-n3248"
+    "header-n3250"
+    "header-n3253"
+    "header-n3255"
+    "header-n3259"
+    "header-n3261"
+    "header-n3270"
+    "header-n3274"
+    "header-n3276"
+    "header-n3286"
+    "header-n3287"
+    "header-n3292"
+    "header-n3307"
+    "partsum"
+    "header-n3311"
+    "header-n3314"))
+ :latex)
+

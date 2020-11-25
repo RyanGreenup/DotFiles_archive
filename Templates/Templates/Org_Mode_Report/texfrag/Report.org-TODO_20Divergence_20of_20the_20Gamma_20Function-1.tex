@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[usenames]{color}
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+% Package longtable omitted
+% Package wrapfig omitted
+% Package rotating omitted
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+% Package capt-of omitted
+% Package hyperref omitted
+\pagestyle{empty}             % do not remove
+% The settings below are copied from fullpage.sty
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-3cm}
+\setlength{\oddsidemargin}{1.5cm}
+\addtolength{\oddsidemargin}{-2.54cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-3cm}
+\setlength{\topmargin}{1.5cm}
+\addtolength{\topmargin}{-2.54cm}
+
+\IfFileExists{./resources/style.sty}{\usepackage{./resources/style}}{}
+\IfFileExists{./resources/referencing.sty}{\usepackage{./resources/referencing}}{}
+\addbibresource{../Resources/references.bib}
+\usepackage[mode=buildnew]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+
+\begin{document}
+\begin{align}
+\Gamma (-p) &= \int_0^\infty t^{-p-1}e^{-t}\mathrm{d}t \quad , p \in \mathbb{Z}^{+}\\
+&= \int_0^1 \frac{1}{t^{p+1}e^t} \mathrm{d}t + \int_1^\infty \frac{1}{t^{p+1}e^t} \mathrm{d}t
+\end{align}
+\begin{align}
+I = \int_0^1 \frac{1}{t^{p+1}} \mathrm{d}t &= \lim_{a \to 0^+} \int_a^1 \frac{1}{t^{p+1}} \mathrm{d}t\\
+&= \lim_{a \to 0^+} \left[ \frac{t^{-(p+1)}}{-(p+1)+1} \right]_a^1\\
+&= \lim_{a \to 0^+} \left[ \frac{-t^{-(p+1)}}{p} \right]_a^1\\
+&= \lim_{a \to 0^+} \left[ \frac{-1}{p} + \frac{1}{a^{p+1}p} \right]\\
+&= \frac{-1}{p} + \lim_{a \to 0^+}\frac{1}{a^{p+1}p}\\
+&= \frac{-1}{p} + \infty\\
+&= \infty
+\end{align}
+$I$
+$$\int_0^1 \frac{1}{t^{p+1}e^t} \mathrm{d}t$$
+\begin{align}
+J = \int_1^\infty \frac{1}{e^t}\mathrm{d}t &= \lim_{a \to \infty} \int_1^a e^{-t}dt\\
+&= \lim_{a \to \infty} \left[ -e^{-t} \right]_1^a\\
+&= \lim_{a \to \infty} \left[ \frac{-1}{e^a} + \frac{1}{e} \right]\\
+&= 0 + \frac{1}{e}\\
+&= \frac{1}{e}
+\end{align}
+$J$
+$\int_1^\infty \frac{1}{t^{p+1}e^t}\mathrm{d}t$
+\begin{align}
+\int_0^1 \frac{1}{t^{p+1}e^t} \mathrm{d}t + \int_1^\infty \frac{1}{t^{p+1}e^t} \mathrm{d}t &= \infty + \frac{1}{e}\\
+&= \infty
+\end{align}
+$\Gamma(-p)$
+$p \in \mathbb{Z}^+$
+$\frac{1}{\Gamma\left(-p\right)} = 0 \forall p > 0$
+\end{document}
+%%Local Variables:
+%%TeX-master: t
+%%End:

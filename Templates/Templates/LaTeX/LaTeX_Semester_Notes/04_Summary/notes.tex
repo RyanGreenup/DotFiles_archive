@@ -1,0 +1,823 @@
+
+
+\iffalse
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\section{(4) Limits}\label{limits}
+
+\subsection{Limits of Functions
+{[}4.1{]}}\label{limits-of-functions-4.1}
+
+Intuitively limits of functions are the expected value of a function at
+points that can't be solved because they are undefined, e.g.\\
+\hspace*{0.333em}\\
+{\$\frac\{(x-2)left( x+2
+\right)\}\{left( x-2
+\right)\}\$} would be undefined at x=2, however as x is
+made sufficiently close to 2, that value will become arbitrarily close
+to 4.
+
+\subsubsection{The Limit Generally}\label{the-limit-generally}
+
+From early calculus the limit of {\emph{f}(\emph{x})}, as {\emph{x}}
+approaches {\emph{a}} was said to be some value L, denoted
+{lim\textsubscript{\emph{x} → \emph{a}}(\emph{f}(\emph{x})) = \emph{L}}\\[2\baselineskip]{$$\begin\{aligned\}
+\forall varepsilon \textgreater{} 0,
+\enspace, exists delta:
+\& \notag  \&
+\qquad 0 \textless{} lvert x-a
+\rvert \textless{} delta
+\implies lvert fleft( x
+\right) - L rvert \textless{}
+\varepsilon
+\label\{stewartlimdef\}end\{aligned\}$$}\\
+
+\subparagraph{Remarks on this
+Definition}\label{remarks-on-this-definition}
+
+Observe that the following statements are equivalent:
+
+\begin{enumerate}
+\item
+  {\$x\neq c enspace
+  \wedge enspace lvert
+  x-a \rvert \textless{} delta\$}
+\item
+  {0 \textless{} \textbar{}\emph{x} − \emph{a}\textbar{}\textless{}\emph{δ}}
+\item
+  {\textbar{}\emph{x} − \emph{a}\textbar{}∈(0,\emph{δ})}
+\end{enumerate}
+
+\subparagraph{Notation}\label{notation}
+
+~\\
+\hspace*{0.333em}\\
+If {\emph{L}} is a limit of {\emph{f}} at {\emph{c}}, then it is said
+that:
+
+\begin{enumerate}
+\item
+  {\emph{f}} converges to {\emph{L}} at {\emph{c}}
+\item
+  {\emph{f}(\emph{x})} approaches {\emph{L}} as {\emph{x}} approaches
+  {\emph{c}} This is sometimes expressed with the symbolism
+  {\emph{f}(\emph{x}) → \emph{L}} as {\emph{x} → \emph{c}}
+\end{enumerate}
+
+~\\
+And the following notation is used
+
+\begin{enumerate}
+\item
+  {lim\textsubscript{\emph{x} → \emph{c}}(\emph{f}(\emph{x})) = \emph{L}}
+\item
+  {lim\textsubscript{\emph{x} → \emph{c}}\emph{f}}
+\end{enumerate}
+
+\subsubsection{The Limit Using Cluster
+Points}\label{the-limit-using-cluster-points}
+
+In analysis we more or less use the same definition but we introduce the
+concept of cluster points to make it more rigorous.
+
+\subparagraph{Neighborhoods {[}2.2.7{]}}\label{neighborhoods-2.2.7}
+
+A neighborhood is an interval about a value, e.g. the
+{\emph{ε}}-neighborhood of {\emph{a}} is some set
+{\emph{V}\textsubscript{\emph{ε}}(\emph{a})}:\\
+{$$\begin\{aligned\}
+V\_\{\varepsilon\}(a) = left(
+\varepsilon-a, varepsilon+a
+\right) \&= left\{ x :
+\varepsilon - a \textless{} x \textless{}
+\varepsilon + a right\}
+\ \&=
+\left\{ x : -varepsilon
+\textless{} x - a \textless{} \varepsilon
+\right\}
+\&= \left\{ x: lvert x-a
+\rvert \textless{} varepsilon
+\right\}
+\label\{nebhdef\}end\{aligned\}$$}\\
+
+\subparagraph{Cluster Points}\label{cluster-points}
+
+Let {\emph{c}} be a real number and let {\emph{A}} be a subset of the
+real numbers, {\emph{c}} may or may not be contained by {\emph{A}} it
+doesn't matter.\\
+Take some interval around {\emph{c}}, or rather consider the
+{\emph{ε}}-neighborhood of {\emph{c}},\\
+if, some value (other than {\emph{c}}) can be found inside that
+interval/neighborhood that is also inside {\emph{A}}, regardless of how
+small that interval is made, Then {\emph{c}} is said to be a cluster
+point of {\emph{A}}.\\
+\hspace*{0.333em}\\
+i.e., if the following is true\\
+{\$\forall varepsilon \textgreater{} 0,
+\enspace exists xneq c
+\in Acap
+V\_\{\varepsilon\}(c)\$}\\
+then {\emph{c}} is said to be a cluster point of {\emph{A}}.\\
+\hspace*{0.333em}\\
+It basically means that there are infinitely infinitesimal points
+between any point in {\emph{A}} and the value {\emph{c}}.
+
+Example
+
+\begin{itemize}
+\item
+  The point {4} of the set {\{3,4,5\}} is not a cluster point of that
+  set because a 0.1-neighbourhood of 4 would be the set
+  {\emph{V}\textsubscript{0.1}(4)=\{4\}}, this set does not contain a
+  value {\emph{x} ≠ 4} that is also inside the original set.\\
+\item
+  The point 6 of {(1,6) = \{\emph{x}:1\textless{}\emph{x}\textless{}6\}}
+  is a cluster point of {(1,6)} because no matter how small a
+  neighborhood is made around 6, there will always be values
+  {\emph{x} ≠ 6} inside that interval that are also inside {(1,6)} also
+  observe that in this case {6 ∉ (1,6)}
+\end{itemize}
+
+\subparagraph{Definition of the Limit
+{[}4.1.4{]}}\label{definition-of-the-limit-4.1.4}
+
+So this is the definition that we moreso use in this unit and the one to
+memorise (or the Neighborhoods one seems simpler to memorise).\\
+\hspace*{0.333em}\\
+Let {\emph{A} ⊆ ℝ} and let {\emph{c}} be a cluster point of
+{\emph{A}}.\\
+\hspace*{0.333em}\\
+Now take some function:\\
+{$$\begin\{aligned\} f: A rightarrow
+\mathbb\{R\} label\{clustlimdeffunc\}
+\end\{aligned\}$$}\\
+It is said that {\emph{L}} is a limit of {\emph{f}} at {\emph{c}} if:\\
+{$$\begin\{aligned\} forall
+\varepsilon \textgreater{} 0, \&enspace
+\exists delta \textgreater{} 0:
+\notag
+\qquad \& left( x in A
+\enspace wedge enspace
+0\textless{}\lvert x-c rvert \textless{}
+\delta right) implies
+\lvert fleft( x right) -
+L \rvert \textless{} varepsilon
+\tag\{4.1.4\} label\{414\}
+\end\{aligned\}$$}\\
+
+What's the Distinction
+
+This is more or less the same as the typical definition given in early
+calculus ({[}stewartlimdef{]}), the distinction here is that we have
+specified that {\emph{c}} must be a cluster point of {\emph{A}}, this is
+more rigorous because c is always such that there are infinitely many
+values in any infinitesimal distance between intself and any
+{\emph{x} ∈ \emph{A}},\\
+So the limit will always mean a continuous approach as we expect, this
+is just a more thorough definition.
+
+\subparagraph{Definition using Neigborhoods
+{[}4.1.6{]}}\label{definition-using-neigborhoods-4.1.6}
+
+A value {\emph{L}} is said to be the limit of {\emph{f}} as
+{\emph{x} → \emph{c}}, denoted
+{lim\textsubscript{\emph{x} → \emph{c}}(\emph{f}(\emph{x}))} if and only
+if:\\
+
+{2em}{0pt} \emph{For any} given {\emph{ε}}-neighbourhood of {\emph{L}},
+{\$\enspace V\_\{varepsilon\}(L)\$}\\
+\emph{There exists} a {\emph{δ}}-neighbourhood of {\emph{c}},
+{\$\enspace
+V\_\{\delta\}left( L
+\right)\$}\\
+
+such that: ~\\
+
+{4em}{0pt} =0.7cm \emph{If} {\emph{x} ≠ \emph{c}} is in both {\emph{A}}
+and {\emph{V}\textsubscript{\emph{δ}}(\emph{c})}\\
+=0.5cm \emph{Then} {\emph{f}(\emph{x})} must be within the neighbourhood
+{\emph{V}\textsubscript{\emph{ε}}(\emph{L})}
+
+Formally
+
+{$$\begin\{aligned\} forall
+\varepsilon \textgreater{} 0, \& enspace
+\exists delta \textgreater{} 0:
+\notag  \&
+\qquad x neq c, enspace x
+\in Acap
+V\_\{\varepsilon\}left( L
+\right) implies fleft( x
+\right) in
+V\_\{\delta\}left( c
+\right) tag\{4.1.6\}
+\label\{416\}end\{aligned\}$$}\\
+
+Defintions ({[}416{]}) and ({[}414{]}) are equivalent, and are both
+consistent with the initial less rigorous definition
+({[}stewartlimdef{]}).
+
+\subparagraph{Only one Limit Value
+{[}4.1.5{]}}\label{only-one-limit-value-4.1.5}
+
+If {\emph{f} : \emph{A} → ℝ} and {\emph{c}} is a cluster point of
+{\emph{A}}, then there is only one value L:
+{lim\textsubscript{\emph{x} → \emph{c}}(\emph{f}(\emph{x})) = \emph{L}}
+
+\subsubsection{Using Sequences to Define Limits {[} 4.1.8
+{]}}\label{using-sequences-to-define-limits-4.1.8}
+
+Now that limits are defined we can use sequences to define them as well,
+this will give us more tools to use later and allows a connection to be
+made between material of Chapter 3 and 4.
+
+\subparagraph{Definition}\label{definition}
+
+A value {\emph{L}} is said to be the limit of {\emph{f}} as
+{\emph{x} → \emph{c}}, denoted
+{lim\textsubscript{\emph{x} → \emph{c}}(\emph{f}(\emph{x}))} if and only
+if:\\
+
+{2em}{0pt} \emph{For every} sequence
+{(\emph{x}\textsubscript{\emph{n}})} in {\emph{A}},\\
+
+{4em}{0pt} \emph{if} {(\emph{x}\textsubscript{\emph{n}})} converges to
+{\emph{c}} such that {\emph{x}\textsubscript{\emph{n}} ≠ \emph{c}},\\
+
+{4em}{0pt} \emph{Then} {(\emph{f}(\emph{x}\textsubscript{\emph{n}}))}
+converges to {\emph{L}}
+
+~\\
+So basically, again, if {\emph{x}} gets close to {\emph{c}},
+{\emph{f}(\emph{x})} gets close to L, but we took {\emph{x}} from a
+sequence.
+
+\subsubsection{Divergence Criteria {[} 4.1.9
+{]}}\label{divergence-criteria-4.1.9}
+
+Now we can use the \emph{Divergence Criteria} from {[}3.4.5{]} to
+determine whether or not a limit exists generally or at a point.
+
+\subparagraph{(a) Limit is not a Specific
+Value}\label{a-limit-is-not-a-specific-value}
+
+If {\emph{L} ∈ ℝ}, then {\emph{f}} does not have a limit at {\emph{c}},
+if and only if:\\
+\hspace*{0.333em}\\
+There is a sequence {(\emph{x}\textsubscript{\emph{n}})} in {\emph{A}}
+with {\emph{x}\textsubscript{\emph{n}} ≠ \emph{c}}, such that:\\
+{(\emph{x}\textsubscript{\emph{n}})} converges to {\emph{c}} but the
+sequence {\emph{f}(\emph{x}\textsubscript{\emph{n}})} does not converge
+to {\emph{L}}
+
+\subparagraph{(b) No Limit whatsover}\label{b-no-limit-whatsover}
+
+If {\emph{L} ∈ ℝ}, then {\emph{f}} does not have a limit at {\emph{c}},
+if and only if:\\
+\hspace*{0.333em}\\
+There is a sequence {(\emph{x}\textsubscript{\emph{n}})} in {\emph{A}}
+with {\emph{x}\textsubscript{\emph{n}} ≠ \emph{c}}, such that:\\
+{(\emph{x}\textsubscript{\emph{n}})} converges to {\emph{c}} but the
+sequence {\emph{f}(\emph{x}\textsubscript{\emph{n}})} does not converge
+in {ℝ}
+
+\subparagraph{The Signum Function}\label{the-signum-function}
+
+The Signum function returns the sign of the input value:
+
+{$$\begin\{aligned\} sgnleft( x
+\right) \&:= begin\{cases\} +\&1
+\qquad text\{for\}
+\enspace \$x textgreater
+\enspace 0\$  \&0
+\qquad text\{for\}
+\enspace \$x= 0\$  -\&1
+\qquad text\{for\}
+\enspace \$x textless
+\enspace 0\$ end\{cases\}
+\tag\{4.1.10\} label\{4110\}
+\ \&=
+\frac\{x\}\{lvert x
+\rvert\}
+\notagend\{aligned\}$$}\\
+
+\subsection{Limit Theorems {[}4.2{]}}\label{limit-theorems-4.2}
+
+These are useful for calculating limits of functions, they are mostly
+extensions of {[}3.2{]}.
+
+\subsubsection{Bounded Functions}\label{bounded-functions}
+
+\subparagraph{Definition}\label{definition-1}
+
+Let {\emph{A} ⊆ ℝ}, {\emph{f} : \emph{A} → ℝ} and let {\emph{c} ∈ ℝ} be
+a cluster point of {\emph{A}}.\\
+It is said that \emph{f is bounded on a neighbourhood of} {\emph{c}}
+if:\\
+
+{2em}{0pt} there exists a {\emph{δ}}-neighborhood
+{\emph{V}\textsubscript{\emph{δ}}(\emph{c})} and some constant value
+{\emph{M} \textgreater{} 0} such that:\\
+
+{4em}{0pt} {\textbar{}\emph{f}(\emph{x})\textbar{}≤\emph{M}} for every
+{\emph{x} ∈ \emph{A} ∩ \emph{V}\textsubscript{\emph{δ}}(\emph{c})}
+
+~\\
+So basically a function is said to be \emph{bounded on a neighbourhood
+of {\emph{c}}} if:
+
+{4em}{0pt} for some interval (It doesn't matter how small) around
+{\emph{c}},
+
+{6em}{0pt} {\emph{f}(\emph{x})} can be contained in some interval
+
+~\\
+
+{4em}{0pt} {\$\exists
+\delta\textgreater{}0, enspace
+\exists M\textgreater{}0:\$}
+
+{6em}{0pt}
+{\emph{x} ∈ \emph{V}\textsubscript{\emph{δ}}(\emph{c}) ⟹ \textbar{}\emph{f}(\emph{x})\textbar{}\textless{}\emph{M}}
+
+~\\
+So for example:
+
+\begin{itemize}
+\item
+  {\emph{f}(\emph{x}) = \emph{x}\textsuperscript{3}} is \emph{bounded on
+  every neighborhood of every {\emph{x} ∈ ℝ}} whereas,
+\item
+  {\$g\left( x right) =
+  \sfrac\{1\}\{x\}\$} is \emph{\textbf{not} bounded on a
+  neighborhood of 0} because {\emph{g}(\emph{x})} tends to infinity as
+  {\emph{x} → 0},
+
+  \begin{itemize}
+  \item
+    {furthermore {\emph{g}(\emph{x})} is \emph{bounded on \textbf{some
+    but notall} neighborhoods of 1}, because an interval around 1 must
+    not be drawn large enough to encapsulate 0.}
+  \end{itemize}
+\end{itemize}
+
+\subparagraph{Limits imply Bounded Neighbourhoods {[}4.2.2
+{]}}\label{limits-imply-bounded-neighbourhoods-4.2.2}
+
+A function is bounded on a neighborhood of a point that is a limit of
+that function.\\
+If a function has a limit at {\emph{c}}, then {\emph{f}} must be
+\emph{bounded on some neighborhood of {\emph{c}}},\\
+this flows from the initial definitions because we know that {\emph{c}}
+is a cluster point and that {(\emph{f}(\emph{x}))} moves closer to
+{\emph{L}},\\
+hence it must be possible to draw a small enough interval (e.g.
+horizontal lines on the {\emph{y}}-axis) to contain all
+{\emph{f}(\emph{x})} defined by
+
+\subsubsection{Functions and Arithmetic
+{[}4.2.3{]}}\label{functions-and-arithmetic-4.2.3}
+
+Just like with sequences we can define arithmetic operations that relate
+to addition and multiplication with functions in order to manipulate
+them:\\
+\hspace*{0.333em}\\
+Let {\emph{A} ⊆ ℝ} ,\\
+{$$\begin\{aligned\} f: A rightarrow
+\mathbb\{R\} qquad g: A
+\rightarrow mathbb\{R\}
+\qquad h: A rightarrow
+\mathbb\{R\}, enspace h(x)
+\neq 0, enspace forall x
+\in A
+\label\{seqdefgen\}end\{aligned\}$$}\\
+
+We define the following Operations {[}4.2, p. 111{]}:
+
+{$$\begin\{aligned\} \{1\} left( f+g
+\right) left( x right)
+\&:= f\left( x right) +
+g\left( x right)
+\label\{addfundef\}
+\left( f-g right) left( x
+\right) \&:= fleft( x
+\right) + gleft( x right)
+\label\{subfundef\}
+\left( fg right) left( x
+\right) \&:= fleft( x
+\right) times gleft( x
+\right) label\{multfundef\}
+\ left( bf
+\right) left( x right)
+\&:= b \times fleft( x
+\right) label\{confundef\}
+\ left(
+\frac\{f\}\{h\}
+\right)left( x right)
+\&:= \frac\{fleft( x
+\right)\}\{hleft( x
+\right)\} end\{aligned\}$$}\\
+
+Limits of Function Operations {[}4.2.4{]}
+
+Because the limit of a function is essentially the expected value of the
+function around that value, it stands to reason that the limit will
+distribute over the basic operations:\\
+{Let the functions be defined as they were in ({[}seqdefgen{]}) and let
+{\emph{c} ∈ ℝ} be a custer point of {\emph{A}}.}
+
+{$$\begin\{aligned\} lim\_\{x
+\rightarrow c\}left( f
+\right) = L qquad
+\lim\_\{x rightarrow
+c\}\left( g right) = M
+\quad lim\_\{xrightarrow
+c\}\left( h right) = H
+\neq 0
+\label\{fundeflim\}end\{aligned\}$$}\\
+
+Then the limits are:
+
+{$$\begin\{aligned\} \{2\}
+\lim\_\{xrightarrow c\}
+\left( f+g right) \&=
+\lim\_\{xrightarrow
+c\}\left( f right) +
+\lim\_\{xrightarrow
+c\}\left( g right) \&= L + M
+\label\{addlimdef\}
+\{[}1em{]}
+\lim\_\{xrightarrow c\}
+\left( f-g right) \&=
+\lim\_\{xrightarrow c\}
+\left( f right) -
+\lim\_\{xrightarrow c\}
+\left( g right) \&= x - y
+\label\{minlimdef\}
+\{[}1em{]}
+\lim\_\{xrightarrow c\}
+\left( c cdot f right)
+\&= c \cdot
+\lim\_\{xrightarrow c\}
+\left( f right) \&= c
+\cdot x label\{conmultlimdef\}
+\{[}1em{]}
+\lim\_\{xrightarrow c\}
+\left( ftimes g right)
+\&= \lim\_\{xrightarrow c\}
+\left( f right) times
+\lim\_\{xrightarrow c\}
+\left( g right) \&= x
+\times y label\{multlimdef\}
+\{[}1em{]}
+\lim\_\{xrightarrow c\}
+\left( f/h right) \&=
+\lim\_\{xrightarrow c\}
+\left( f right) div
+\lim\_\{xrightarrow c\}
+\left( h right) \&=
+\sfrac\{x\}\{y\}
+\label\{divlimdef\}end\{aligned\}$$}\\
+
+\subsubsection{Limit Theorems}\label{limit-theorems}
+
+The rest of the chapter just provides values of varios limits.\\
+{Let the functions be defined as they were in ({[}seqdefgen{]}) and let
+{\emph{c} ∈ ℝ} be a custer point of {\emph{A}}.}
+
+\subparagraph{Limits Captured in Intervals
+{[}4.2.6{]}}\label{limits-captured-in-intervals-4.2.6}
+
+~\\
+\hspace*{0.333em}\\
+\emph{if} {\emph{f}(\emph{x}) ∈ {[}\emph{a},\emph{b}{]}} for all {\$x
+\in A, enspace x neq
+c\$}, and {lim\textsubscript{\emph{x} → \emph{c}}(\emph{f})} exists,\\
+
+{2em}{0pt} \emph{then} {\emph{f}(\emph{x}) ∈ {[}\emph{a},\emph{b}{]}}
+
+\subparagraph{Squeeze Theorem {[}4.2.7{]}}\label{squeeze-theorem-4.2.7}
+
+if {[}4.2.6{]} is extended to functions, then we have the squeeze
+theorem:\\
+\emph{if} {\emph{g}} is within an interval defined by the functions
+{\emph{f}} and {\emph{h}}:
+
+{$$\begin\{aligned\} fleft( x
+\right) leq gleft( x
+\right) leq hleft( x
+\right), quad forall
+x\in A, enspace xneq c
+\label\{squeezelimdist\}end\{aligned\}$$}\\
+
+{2em}{0pt} \emph{then} the limit of g must also be 0
+
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+c\}\left( g right)=L
+\label\{limisL\}end\{aligned\}$$}\\
+
+\subparagraph{A Positive Limit implies a neighbourhood with Positive
+Values}\label{a-positive-limit-implies-a-neighbourhood-with-positive-values}
+
+Let {\emph{A} ⊆ ℝ} and let {\emph{c} ∈ ℝ} be a cluster point of
+{\emph{A}} as in (3.4.6) above.\\
+\emph{If}:\\
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+c\}\left( f right) \textgreater{} 0
+\label\{limneighbourpor\}end\{aligned\}$$}\\
+
+\emph{Then:}
+
+{4em}{0pt} there is a neighborhood
+{\emph{V}\textsubscript{\emph{δ}}(\emph{c})} such that
+{\$f\left( x right) \textgreater{}0,
+\enspace forall x in A
+\cap V\_\{delta\}left( c
+\right)\$}
+
+~\\
+This also holds for negative values and basically all it says, in more
+rigorous language, is that if the limit point is above the
+{\emph{x}}-axis then there's gotta be points to the left and right that
+are above the {\emph{x}}-axis as well (because the whole cluster point
+thing means everything can be arbitrarily small).\\
+\hspace*{0.333em}\\
+Although this may start to seem a little pointless, the idea of making
+the definitions this rigorous is like writing code in a scripting
+language, by using this very precise language, the logical consequences
+give us exactly the concept that we want, even though we need to take a
+longer or alternate path to get to that concept than we would otherwise
+would generally take in order to describe the concept.
+
+\subsection{Extensions of the Limit Concept
+{[}4.3{]}}\label{extensions-of-the-limit-concept-4.3}
+
+These are written in a particularly convoluted fashion, however if the
+preceeding material is understood the textbook can be used more or less
+as a reference, hence these notes will be brief.
+
+\subsubsection{One-Sided Limits
+{[}4.3.1{]}}\label{one-sided-limits-4.3.1}
+
+\subparagraph{Definition {[}4.3.1{]}}\label{definition-4.3.1}
+
+Let {\emph{c} ∈ ℝ} be a cluster point of {\$A\cap
+\left( c, infty right) =
+\left\{ x in A
+\enspace : enspace x \textgreater{} c
+\right\}\$}\\
+It is said that {\emph{L}} is a \emph{Right-hand limit of {\emph{f}} at
+{\emph{c}}} and it is written:\\
+{$$\begin\{aligned\} lim\_\{x
+\rightarrow c\^{}+\} left( f
+\right) = L tag\{4.3.1\}
+\label\{431\}end\{aligned\}$$}\\
+
+This can be extended to left-hand limits as well.
+
+Definition in Term of Sequences {[}4.3.2{]}
+
+As above it is said that {\emph{L}} is a \emph{Right-hand limit of
+{\emph{f}} at {\emph{c}}} if:
+
+{2em}{0pt} Every sequence {(\emph{x}\textsubscript{\emph{n}})} in
+{\emph{A}} that converges to {\emph{c}} is such that
+{\emph{f}(\emph{x}\textsubscript{\emph{n}})} converges to {\emph{L}},
+given that {\$x\_n\textgreater{}c, \enspace
+\forall n in
+\mathbb\{N\}\$}
+
+\subparagraph{Limit must be equal on both
+sides}\label{limit-must-be-equal-on-both-sides}
+
+A limit is defined only if the limit is equal from both directions\\
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+c\}\left( f right) = L
+\iff lim\_\{xrightarrow
+c\^{}+\}\left( f right) = L =
+\lim\_\{xrightarrow c
+\}\left( f right)
+\tag\{3.4.3\}
+\label\{343\}end\{aligned\}$$}\\
+
+\subsubsection{Infinite Limits {[}4.3.5{]}}\label{infinite-limits-4.3.5}
+
+Let {\emph{c} ∈ ℝ} be a cluster point of {\emph{A}},\\
+It is aid that {\emph{f}} tends to {∞} as {\emph{x} → \emph{c}}, and it
+is written:
+
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+c\}\left( f right) =
+\infty tag\{4.3.5\}
+\label\{435\}end\{aligned\}$$}\\
+
+If {∀\emph{α} ∈ ℝ}, {\$\enspace exists
+\delta \textgreater{} 0\$}:
+
+{6em}{0pt}
+{0 \textless{} \textbar{}\emph{x} − \emph{c}\textbar{}\textless{}\emph{δ} ⟹ \emph{f}(\emph{x})\textgreater{}\emph{α},  ∀\emph{x} ∈ \emph{A}}
+
+\subparagraph{One-Sided Limits to Infinity
+{[}4.3.8{]}}\label{one-sided-limits-to-infinity-4.3.8}
+
+Let {\emph{c} ∈ ℝ} be a cluster point of {\$A\cap
+\left( c, infty right) =
+\left\{ x in A
+\enspace : enspace x \textgreater{} c
+\right\}\$},\\
+It is aid that {\emph{f}} tends to {∞} as
+{\emph{x} → \emph{c}\textsuperscript{+}}, and it is written:
+
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+c\}\left( f right) =
+\infty tag\{4.3.8\}
+\label\{438\}end\{aligned\}$$}\\
+
+If {∀\emph{α} ∈ ℝ}, {\$\enspace exists
+\delta \textgreater{} 0\$}:
+
+{6em}{0pt}
+{0 \textless{} \emph{x} − \emph{c} \textless{} \emph{δ} ⟹ \emph{f}(\emph{x})\textgreater{}\emph{α},  ∀\emph{x} ∈ \emph{A}}
+
+\subparagraph{Ordered Functions}\label{ordered-functions}
+
+If {\emph{f}(\emph{x}) \textless{} \emph{g}(\emph{x})}, then:\\
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+c\}\left( f right) =
+\infty \&implies lim\_\{x
+\rightarrow c\}left( g
+\right) = infty
+\tag\{4.3.7 (a)\}
+\label\{437a\}
+\lim\_\{xrightarrow
+c\}\left( g right) =
+-\infty \&implies
+\lim\_\{x rightarrow
+c\}\left( f right) =
+-\infty tag\{4.3.7 (b)\}
+\label\{437b\}end\{aligned\}$$}\\
+
+\subsubsection{Limits at Infinity
+{[}4.3.10{]}}\label{limits-at-infinity-4.3.10}
+
+It is also useful to talk about limits as {\emph{x}} tends to {∞}
+
+Let {(\emph{a},∞) ⊆ \emph{A} ⊆ ℝ} for some {\emph{ain}ℝ}\\
+It is aid that the limit of {\emph{f}} as {\emph{x} → ∞} is {\emph{L}},
+and it is written:\\
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+\infty\}left( f right) =
+L \tag\{4.3.10\}
+\label\{4310\}end\{aligned\}$$}\\
+
+If {\$ \forall varepsilon
+\textgreater{}0, \enspace exists K
+\textgreater{} 0\$}:
+
+{6em}{0pt}
+{\emph{x} \textgreater{} \emph{K} ⟹ \textbar{}\emph{f}(\emph{x}) − \emph{L}\textbar{}\textless{}\emph{ε}}
+
+Limits at Infinity in Terms of Sequences {[}4.3.11{]}
+
+equivalently to ({[}4310{]}), the definition can be expressed in terms
+of sequences:\\
+
+{2em}{0pt} Every sequence {(\emph{x}\textsubscript{\emph{n}})} in
+{\emph{A} ∩ (\emph{a},∞)} that has
+{lim(\emph{x}\textsubscript{\emph{n}})=∞} is such that the sequence
+{(\emph{f}(\emph{x}\textsubscript{\emph{n}}))} converges to {\emph{L}}
+
+\subparagraph{Infinite Limits at
+Infinity}\label{infinite-limits-at-infinity}
+
+So this basically combines {[}4.3.10{]} with {[}4.3.5{]}
+
+Let {(\emph{a},∞) ⊆ \emph{A} ⊆ ℝ} for some {\emph{a} ∈ ℝ}\\
+\hspace*{0.333em}\\
+It is aid that {\emph{f}} tends to {∞} as {\emph{x} → ∞}, and it is
+written:\\
+{$$\begin\{aligned\}
+\lim\_\{xrightarrow
+\infty\}left( f right) =
+\infty tag\{4.3.13\}
+\label\{4313\}end\{aligned\}$$}\\
+
+If {\$ \forall varepsilon
+\textgreater{}0, \enspace exists K
+\textgreater{} \alpha\$}:
+
+{6em}{0pt}
+{\emph{x} \textgreater{} \emph{K} ⟹ \emph{f}(\emph{x}) \textgreater{} \emph{α}}
+
+Infinite Limits at Infinity in Terms of Sequences {[}4.3.14{]}
+
+equivalently to ({[}4313{]}), the definition can be expressed in terms
+of sequences:\\
+
+{2em}{0pt} Every sequence {(\emph{x}\textsubscript{\emph{n}})} in
+{\emph{A} ∩ (\emph{a},∞)} that has
+{lim(\emph{x}\textsubscript{\emph{n}})=∞} is such that the limit of the
+sequence of function values
+{lim (\emph{f}(\emph{x}\textsubscript{\emph{n}})) = ∞}
+
+Ratios of Functions
+
+This result uses (4.3.14) to restate (3.6.5) in terms of functions:\\
+If {\$g\left( x right) \textgreater{} 0
+\enspace forall x \textgreater{} a\$} and
+{\emph{L} ≠ 0} is defined:
+
+{$$\begin\{aligned\} lim\_\{xrightarrow
+\infty\}left(
+\frac\{fleft( x
+\right)\}\{gleft( x
+\right)\} right)
+\tag\{4.3.15\}
+\label\{4315\}end\{aligned\}$$}\\
+
+then,
+
+{$$\begin\{aligned\} L \textgreater{} 0
+\implies
+\lim\_\{xrightarrow
+\infty\}left( f right) =
+\infty iff lim\_\{x
+\rightarrow infty left( g
+\right) = infty\}
+\tag\{4.3.15 (i)\} label\{4315i\}
+\ L \textless{} 0 implies
+\lim\_\{xrightarrow
+\infty\}left( f right) =
+- \infty iff lim\_\{x
+\rightarrow infty left( g
+\right) = infty\}
+\tag\{4.3.15 (ii)\}
+\label\{4315ii\}end\{aligned\}$$}\\
+
+\end{document}
+
+\fi

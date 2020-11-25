@@ -1,0 +1,205 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using} \PYG{n}{Shapefile}
+\PYG{k}{using} \PYG{n}{Luxor}
+\PYG{k}{using} \PYG{n}{Pkg}
+
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Dragon Curve \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+
+\PYG{k}{function} \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
+    \PYG{n}{scale}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{level} \PYG{o}{==} \PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{90}\PYG{p}{)}
+        \PYG{n}{Rotate}\PYG{p}{(}\PYG{l+m+mi}{90}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}        Rectangle(♘, length, length)}
+        \PYG{k}{return}
+    \PYG{k}{end}
+    \PYG{n}{length} \PYG{o}{=} \PYG{n}{length}\PYG{o}{/}\PYG{l+m+mi}{9}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{180}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{n}{Pencolor}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{l+m+mf}{0.4}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{levels} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{levels}\PYG{p}{),} \PYG{n}{levels}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{800} \PYG{l+m+mi}{800} \PYG{l+s}{\PYGZdq{}./snowFlat600.png\PYGZdq{}}
+
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Flat Snowflake \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+
+\PYG{k}{function} \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
+    \PYG{n}{scale}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{level} \PYG{o}{==} \PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}        Rectangle(♘, length, length)}
+        \PYG{k}{return}
+    \PYG{k}{end}
+    \PYG{n}{length} \PYG{o}{=} \PYG{n}{length}\PYG{o}{/}\PYG{l+m+mi}{9}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{180}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{n}{Pencolor}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{l+m+mf}{0.4}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{levels} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{levels}\PYG{p}{),} \PYG{n}{levels}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{800} \PYG{l+m+mi}{800} \PYG{l+s}{\PYGZdq{}/tmp/snowFlat600.png\PYGZdq{}}
+
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Round Snowflake Working \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{k}{function} \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{if} \PYG{n}{level} \PYG{o}{==} \PYG{l+m+mi}{0}
+\PYG{c}{\PYGZsh{}    Forward(♘, length)}
+    \PYG{n}{Circle}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return}
+\PYG{k}{end}
+\PYG{n}{length} \PYG{o}{=} \PYG{n}{length}\PYG{o}{/}\PYG{l+m+mi}{9}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{60}\PYG{p}{)}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+\PYG{n+nd}{@svg} \PYG{k}{begin}
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{3}
+    \PYG{n}{levels} \PYG{o}{=} \PYG{l+m+mi}{9}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{levels}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{),} \PYG{n}{levels}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{120}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{k}{end} \PYG{l+m+mi}{2000} \PYG{l+m+mi}{2000} \PYG{l+s}{\PYGZdq{}/tmp/snowCurve.svg\PYGZdq{}}
+
+
+
+\PYG{l+m+mi}{0} \PYG{l+s}{\PYGZdq{}/tmp/snowCurve.png\PYGZdq{}}
+
+\PYG{c}{\PYGZsh{} The starting length must be such that the final length = 1 pixel}
+\PYG{c}{\PYGZsh{} this depends on the levels}
+\PYG{c}{\PYGZsh{} The levels must hence be fit to the resolution such that}
+\PYG{c}{\PYGZsh{} the only variable is the resolution.}
+\PYG{c}{\PYGZsh{} There is only two variables levels and resolution}
+\PYG{c}{\PYGZsh{} length depends on the levels and for a perfect snowflake}
+\PYG{c}{\PYGZsh{} the levels depends on the resolution.}
+
+
+\PYG{k}{using} \PYG{n}{Images}\PYG{p}{,} \PYG{n}{TestImages}\PYG{p}{,} \PYG{n}{Colors}\PYG{p}{,} \PYG{n}{ImageMagick}
+\PYG{c}{\PYGZsh{} Load Image Back in}
+\PYG{n}{img} \PYG{o}{=} \PYG{n}{load}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/snowCurve.png\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} Convert to Grayscale so only 2D}
+\PYG{n}{imgg} \PYG{o}{=} \PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} convert to Matrix}
+\PYG{n}{mat} \PYG{o}{=} \PYG{n}{convert}\PYG{p}{(}\PYG{k+kt}{Array}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{},} \PYG{n}{imgg}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} 1 is white}
+    \PYG{c}{\PYGZsh{} so make all 1s 0 and everything else 1}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}
+        \PYG{k}{else}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}
+        \PYG{k}{end}
+    \PYG{k}{end}
+\PYG{k}{end}
+
+
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)}
+
+\PYG{k}{using} \PYG{n}{GR}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)}
+\PYG{n}{mat}
+
+\PYG{n}{mat2} \PYG{o}{=} \PYG{n}{selfRep}\PYG{p}{(}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{n}{l2}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)}
+\PYG{n}{size2} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{mat1} \PYG{o}{=} \PYG{n}{selfRep}\PYG{p}{(}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{l+m+mi}{500}\PYG{p}{)}
+\PYG{n}{l1}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)}
+\PYG{n}{size1} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} https://en.wikipedia.org/wiki/Vicsek\PYGZus{}fractal\PYGZsh{}Construction}
+\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Dragon \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{k}{function} \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+    \PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)} \PYG{c}{\PYGZsh{} Don\PYGZsq{}t remove this or code breaks, I don\PYGZsq{}t know why?}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{o}{*}\PYG{l+m+mi}{45}\PYG{p}{)}
+    \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{k}{function} \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{n}{sign}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{order}\PYG{o}{==}\PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+    \PYG{k}{else}
+        \PYG{n}{rootHalf} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{p}{)}
+        \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{rootHalf}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{sign} \PYG{o}{*} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{90}\PYG{p}{)}
+        \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{rootHalf}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{end}
+\PYG{k}{end}
+\PYG{p}{;}\PYG{n}{mkdir} \PYG{o}{/}\PYG{n}{tmp}\PYG{o}{/}\PYG{n}{dragon}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{400}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{1000} \PYG{l+m+mi}{1000}
+
+\PYG{k}{using} \PYG{n}{Images}\PYG{p}{,} \PYG{n}{TestImages}\PYG{p}{,} \PYG{n}{Colors}\PYG{p}{,} \PYG{n}{ImageMagick}
+\PYG{c}{\PYGZsh{} Load Image Back in}
+\PYG{n}{img} \PYG{o}{=} \PYG{n}{load}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/dragon.png\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} Convert to Grayscale so only 2D}
+\PYG{n}{imgg} \PYG{o}{=} \PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} convert to Matrix}
+\PYG{n}{mat} \PYG{o}{=} \PYG{n}{convert}\PYG{p}{(}\PYG{k+kt}{Array}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{},} \PYG{n}{imgg}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} 1 is white}
+    \PYG{c}{\PYGZsh{} so make all 1s 0 and everything else 1}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}
+        \PYG{k}{else}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}
+        \PYG{k}{end}
+    \PYG{k}{end}
+\PYG{k}{end}
+\end{Verbatim}

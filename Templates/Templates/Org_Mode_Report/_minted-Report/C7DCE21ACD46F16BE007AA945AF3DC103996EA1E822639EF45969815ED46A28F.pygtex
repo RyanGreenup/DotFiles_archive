@@ -1,0 +1,124 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{matJoin}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}
+    \PYG{k}{function} \PYG{n}{nrow}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{size}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{k}{end}
+    \PYG{k}{function} \PYG{n}{ncol}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{size}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+    \PYG{k}{end}
+    \PYG{n}{emptymat} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{k+kt}{Bool}\PYG{p}{,} \PYG{n}{max}\PYG{p}{(}\PYG{n}{size}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{size}\PYG{p}{(}\PYG{n}{B}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{p}{,}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)} \PYG{o}{+} \PYG{n}{ncol}\PYG{p}{(}\PYG{n}{B}\PYG{p}{))} \PYG{p}{)}
+    \PYG{n}{emptymat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nrow}\PYG{p}{(}\PYG{n}{A}\PYG{p}{),} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)]} \PYG{o}{=} \PYG{n}{A}
+    \PYG{n}{emptymat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nrow}\PYG{p}{(}\PYG{n}{B}\PYG{p}{),} \PYG{p}{(}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{:}\PYG{n}{ncol}\PYG{p}{(}\PYG{n}{emptymat}\PYG{p}{)]} \PYG{o}{=} \PYG{n}{B}
+    \PYG{k}{return} \PYG{n}{emptymat}
+\PYG{k}{end}
+
+\PYG{k}{function} \PYG{n}{mywalk}\PYG{p}{(}\PYG{n}{B}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{n}
+        \PYG{n}{B} \PYG{o}{=} \PYG{n}{matJoin}\PYG{p}{(}\PYG{n}{B}\PYG{p}{,} \PYG{n}{rotl90}\PYG{p}{(}\PYG{n}{B}\PYG{p}{));}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{n}{B}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Use Plot for themes \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{k}{using} \PYG{n}{Plots}
+\PYG{c}{\PYGZsh{} SavePlot}
+\PYG{c}{\PYGZsh{}\PYGZsh{} Docstring}
+    \PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{\PYGZsh{} MakePlot}
+\PYG{l+s}{Saveplot will save a plot of the fractals}
+
+\PYG{l+s}{\PYGZhy{} `n`}
+\PYG{l+s}{  \PYGZhy{} Is the number of iterations to produce the fractal}
+\PYG{l+s}{    \PYGZhy{} ``}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{frac\PYGZob{}n!\PYGZcb{}\PYGZob{}k!(n \PYGZhy{} k)!\PYGZcb{} = }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{binom\PYGZob{}n\PYGZcb{}\PYGZob{}k\PYGZcb{}``}
+\PYG{l+s}{\PYGZhy{} `filename`}
+\PYG{l+s}{  \PYGZhy{} Is the File name}
+\PYG{l+s}{\PYGZhy{} `backend`}
+\PYG{l+s}{  \PYGZhy{} either `gr()` or `pyplot()`}
+\PYG{l+s}{    \PYGZhy{} Gr is faster}
+\PYG{l+s}{    \PYGZhy{} pyplot has lines}
+\PYG{l+s}{    \PYGZhy{} Avoiding this entirely and using `GR.image()` and}
+\PYG{l+s}{     `GR.savefig` is even faster but there is no support}
+\PYG{l+s}{     for changing the colour schemes}
+
+\PYG{l+s}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{makePlot}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{backend}\PYG{o}{=}\PYG{n}{pyplot}\PYG{p}{())}
+    \PYG{n}{backend}
+    \PYG{n}{plt} \PYG{o}{=} \PYG{n}{Plots}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{mywalk}\PYG{p}{([}\PYG{l+m+mi}{1} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{n}\PYG{p}{),}
+                     \PYG{n}{st}\PYG{o}{=:}\PYG{n}{heatmap}\PYG{p}{,} \PYG{n}{clim}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{),}
+                     \PYG{n}{color}\PYG{o}{=:}\PYG{n}{coolwarm}\PYG{p}{,}
+                    \PYG{n}{colorbar\PYGZus{}title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{ticks} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{,} \PYG{n}{legend} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{,} \PYG{n}{yflip} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{,} \PYG{n}{fmt} \PYG{o}{=} \PYG{o}{:}\PYG{n}{svg}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{plt}
+\PYG{k}{end}
+\PYG{n}{plt} \PYG{o}{=} \PYG{n}{makePlot}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}
+
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{\PYGZsh{} savePlot}
+\PYG{l+s}{Saves a Plot created with `Plots.jl` to disk (regardless of backend) as both an}
+\PYG{l+s}{svg, use ImageMagick to get a PNG if necessary}
+
+\PYG{l+s}{\PYGZhy{} `filename`}
+\PYG{l+s}{  \PYGZhy{} Location on disk to save image}
+\PYG{l+s}{\PYGZhy{} `plt`}
+\PYG{l+s}{  \PYGZhy{} A Plot object created by using `Plot.jl`}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{savePlot}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{plt}\PYG{p}{)}
+    \PYG{n}{filename} \PYG{o}{=} \PYG{n}{replace}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{l+s}{\PYGZdq{} \PYGZdq{}} \PYG{o}{=\PYGZgt{}} \PYG{l+s}{\PYGZdq{}\PYGZus{}\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{path} \PYG{o}{=} \PYG{n}{string}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}.svg\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{Plots}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{plt}\PYG{p}{,} \PYG{n}{path}\PYG{p}{)}
+    \PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Image saved to \PYGZdq{}}\PYG{p}{,} \PYG{n}{path}\PYG{p}{)}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Dimension \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{} Each time it iterates the image scales by phi}
+\PYG{c}{\PYGZsh{} and the number of pixels increases by 2}
+\PYG{c}{\PYGZsh{} so log(2)/log(1.618)}
+\PYG{c}{\PYGZsh{} lim(F\PYGZus{}n/F\PYGZus{}n\PYGZhy{}1)}
+\PYG{c}{\PYGZsh{} but the overall dimensions of the square increases by a factor of 3}
+\PYG{c}{\PYGZsh{} so 3\PYGZca{}D=5 ==\PYGZgt{} log\PYGZus{}3(5) = log(5)/log(3) = D}
+\PYG{k}{using} \PYG{n}{DataFrames}
+\PYG{k}{function} \PYG{n}{returnDim}\PYG{p}{()}
+    \PYG{n}{mat2} \PYG{o}{=} \PYG{n}{mywalk}\PYG{p}{(}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{l+m+mi}{10}\PYG{p}{)}
+    \PYG{n}{l2}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)}
+    \PYG{n}{size2} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{n}{mat1} \PYG{o}{=} \PYG{n}{mywalk}\PYG{p}{(}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{l+m+mi}{11}\PYG{p}{)}
+    \PYG{n}{l1}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)}
+    \PYG{n}{size1} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{n}{df} \PYG{o}{=} \PYG{n}{DataFrame}
+    \PYG{n}{df}\PYG{o}{.}\PYG{n}{measure} \PYG{o}{=} \PYG{p}{[}\PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)]}
+    \PYG{n}{df}\PYG{o}{.}\PYG{n}{actual}  \PYG{o}{=} \PYG{p}{[}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mf}{1.618}\PYG{p}{)} \PYG{p}{]}
+    \PYG{k}{return} \PYG{n}{df}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Main Functions \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{} Usually Main should go into a seperate .jl filename}
+\PYG{c}{\PYGZsh{} Then a compination of import, using, include will}
+\PYG{c}{\PYGZsh{} get the desired effect of top down programming.}
+\PYG{c}{\PYGZsh{} Combine this with using a tmp.jl and tst.jl and you\PYGZsq{}re set.}
+\PYG{c}{\PYGZsh{} See https://stackoverflow.com/a/24935352/12843551}
+\PYG{c}{\PYGZsh{} http://ryansnotes.org/mediawiki/index.php/Workflow\PYGZus{}Tips\PYGZus{}in\PYGZus{}Julia}
+
+\PYG{c}{\PYGZsh{} Produce and Save a Plot}
+\PYG{c+cm}{\PYGZsh{}=}
+\PYG{c+cm}{filename = \PYGZdq{}my\PYGZhy{}self\PYGZhy{}rep\PYGZhy{}frac\PYGZdq{};}
+\PYG{c+cm}{filename = string(pwd(), \PYGZdq{}/\PYGZdq{}, filename);}
+\PYG{c+cm}{savePlot(filename, makePlot(5))}
+\PYG{c+cm}{;convert \PYGZdl{}filename.svg \PYGZdl{}filename.png}
+\PYG{c+cm}{makePlot(5, pyplot())}
+\PYG{c+cm}{=\PYGZsh{}}
+\PYG{c}{\PYGZsh{} Return the Dimensions}
+\PYG{n}{returnDim}\PYG{p}{()}
+
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Render Image \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}yellow and purple\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{k}{using} \PYG{n}{GR}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{mywalk}\PYG{p}{([}\PYG{l+m+mi}{1} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{l+m+mi}{5}\PYG{p}{))}
+\end{Verbatim}
