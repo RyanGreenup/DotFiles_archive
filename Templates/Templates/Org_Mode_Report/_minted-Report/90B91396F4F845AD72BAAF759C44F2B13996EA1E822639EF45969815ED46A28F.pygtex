@@ -1,0 +1,41 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} * Define the Julia Set}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{Determine whether or not a value will converge under iteration}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{juliaSet}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{num}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{c}{\PYGZsh{} Remember the value of z}
+    \PYG{n}{z1} \PYG{o}{=} \PYG{n}{z}
+    \PYG{c}{\PYGZsh{} Iterate num times}
+    \PYG{k}{while} \PYG{n}{count} \PYG{o}{≤} \PYG{n}{num}
+        \PYG{c}{\PYGZsh{} check for divergence}
+        \PYG{k}{if} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{2}
+            \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)}
+        \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}iterate z}
+        \PYG{n}{z1} \PYG{o}{=} \PYG{n}{my\PYGZus{}func}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)} \PYG{c}{\PYGZsh{} + z}
+        \PYG{n}{count}\PYG{o}{=}\PYG{n}{count}\PYG{o}{+}\PYG{l+m+mi}{1}
+    \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}if z hasn\PYGZsq{}t diverged by the end}
+    \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{num}\PYG{p}{)}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{} * Make a Picture}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{Loop over a matrix and apply apply the julia\PYGZhy{}set function to}
+\PYG{l+s}{the corresponding complex value}
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{n}{width}\PYG{p}{,} \PYG{n}{height}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+    \PYG{n}{pic\PYGZus{}mat} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{n}{width}\PYG{p}{,} \PYG{n}{height}\PYG{p}{)}
+    \PYG{n}{zoom} \PYG{o}{=} \PYG{l+m+mf}{0.3}
+    \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{pic\PYGZus{}mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{pic\PYGZus{}mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+            \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{width}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{width}\PYG{o}{*}\PYG{n}{zoom}\PYG{p}{)}
+            \PYG{n}{y} \PYG{o}{=} \PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{height}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{height}\PYG{o}{*}\PYG{n}{zoom}\PYG{p}{)}
+            \PYG{n}{pic\PYGZus{}mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{juliaSet}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{y}\PYG{o}{*}\PYG{n+nb}{im}\PYG{p}{,} \PYG{l+m+mi}{256}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+        \PYG{k}{end}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{n}{pic\PYGZus{}mat}
+\PYG{k}{end}
+\end{Verbatim}

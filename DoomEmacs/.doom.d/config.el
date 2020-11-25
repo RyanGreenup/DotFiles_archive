@@ -843,9 +843,12 @@
     (let
         ;; Read Filename from Minibuffer
         ((filename (read-from-minibuffer "image file name: "))
-        (directory "_media"))
+        (directory "media"))
 
         ;; Use maim to screenshot
+          ;; make directory
+        (shell-command (format "mkdir -p %s/%s" default-directory directory))
+          ;; Screenshot
         (shell-command (format "maim --select %s/%s/%s.png" default-directory directory filename ))
 
         ;; Insert formatted link at point

@@ -1,0 +1,124 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage{resources/style}
+\title{Proving Limits from First Principles}
+\begin{document}
+\section{Proving Limits from First Principles}
+Prove:
+\begin{align}
+  \lim_{ x \rightarrow 1 }\left( \frac{1}{x} \right) = 1
+  \label{limdef}
+\end{align}
+\subsection{Precice Definition of a Limit}
+In order to establish this limit it must be shown that, $1$ is a contained in the domain of the function and is a cluster point of the function such that:
+
+\begin{align}
+  \forall \epsilon > 0, \enspace \exists \delta > 0& : \notag \\
+   &0 < \lvert x -1 \rvert < \delta \implies \lvert \frac{1}{x}-1 \rvert < \varepsilon
+  \label{precdeflim}
+\end{align}
+
+
+\paragraph{Consider the Domain} First observe that the domain of the function is $D\left( f \right) = \left\{ x \in \mathbb{R} : x \neq 0 \right\}$, and that 1 is contained by that domain and is a cluster point of that set.
+
+\subsection{How to find a sufficient $\delta$}
+First consider the restriction on $\varepsilon$ and try to deduce the value for $\delta$, in this case the restriction is:
+
+\begin{align}
+  \lvert \frac{1}{x} - 1 \rvert < \varepsilon
+  \label{epsrest}
+\end{align}
+
+If we can get the left hand side in the form of $\lvert x - 1 \rvert < f\left( \varepsilon \right)$ we are done because it would always be possible to find some $\varepsilon$ given a $\delta$, so let's try and do that.
+
+\subsection{Manipulate the $\varepsilon$ Restriction}
+\begin{align}
+  \lvert \frac{1}{x} - 1 \rvert &< \varepsilon \tag{\ref{epsrest}} \\
+  \lvert \frac{1-x}{x} \rvert &< \varepsilon \notag \\
+  \lvert -\frac{1-x}{x} \rvert &< \varepsilon \notag \\
+  \lvert \frac{x-1}{x} \rvert &< \varepsilon \notag \\
+  \frac{\lvert x - 1 \rvert}{\vert x \rvert} &< \varepsilon \label{finalepsform}
+\end{align}
+
+\subparagraph{A Note on getting the factor on the LHS}
+It should always be possible to get a factor for $|x-a|$ on the LHS for typical rational/polynomial functions because it is introduced by subtracting the limit value $|f(x)-L|$; So don't worry about not being able to get the factor to appear by way of algebraic manipulation, worst case scenario you could use polynomial long division to pull the factor out, it will be in there because it is introduced by subtracting $L$ from $f(x)$.\\
+\ \\
+
+So now we have $\lvert x-1 \rvert$ on the LHS but this endeavour has been somewhat upset by the denominator of $\lvert x \rvert$, \\
+now an interval of $\lvert x-1 \rvert$ will satisfy the inequality by the nature of absolute values, so we will pick a convenient value for $\delta$ and then see how it restricts the values of $\lvert x \rvert$. \\
+
+
+\ \\
+Choose $\delta \leq \frac{1}{2}$:
+\begin{align}
+  \lvert x - 1 \rvert &< \frac{1}{2} 
+  \tag{\ref{precdeflim}} \\
+  \implies -\frac{1}{2} < x-1 &< \frac{1}{2} \notag \\
+  \implies \frac{1}{2} < x &< \frac{3}{2} \notag \\
+  \implies \frac{1}{2} < \lvert x \rvert &< \frac{3}{2} \label{absxrestgd}
+\end{align}
+
+
+So if we choose $\delta = \frac{1}{2}$, then $\frac{1}{2} < \lvert x \rvert < \frac{3}{2}$.\\
+\ \\
+Now let's get this looking like our $\varepsilon$ form that we simplified (\ref{finalepsform}) 
+
+\begin{align}
+  \frac{1}{2} < \lvert x \rvert &< \frac{3}{2} \tag{\ref{absxrestgd}} \\
+  \frac{3}{2} < \frac{1}{\lvert x \rvert} &< 2 \notag \\
+   \frac{1}{\lvert x \rvert} &< 2 \notag \\
+   \lvert x-1 \rvert \cdot   \frac{1}{\lvert x \rvert} &< 2 \lvert x-1 \rvert \label{nearth}
+\end{align}
+
+So we have what we wanted on the left-side now, but now we also have $\lvert x-1 \rvert$ on the right-side.\\
+\ \\
+So again, as we did before we will just choose a convenient value for $\delta$,\\
+\ \\
+So we will choose $\delta$ such that: 
+\begin{align}
+  2 \cdot \lvert x-1 \rvert &< \varepsilon \notag \\
+  \lvert x-1 \rvert &< \frac{1}{2} \cdot \varepsilon \notag \\
+  &\implies \delta \leq \frac{\varepsilon}{2} \label{initdelval}
+\end{align}
+
+Now we have 
+\begin{align}
+  \lvert x-1 \rvert \cdot   \frac{1}{\lvert x \rvert} &< 2 \lvert x-1 \rvert \tag{\ref{nearth}}\\
+  \intertext{By the initial assumption/definition at (\ref{limdef})}
+    \lvert x-1 \rvert \cdot   \frac{1}{\lvert x \rvert} &< 2 \delta \\
+    \intertext{By using the $\delta$ value we chose in (\ref{initdelval})}
+  \lvert x-1 \rvert \cdot   \frac{1}{\lvert x \rvert} &< \varepsilon \label{finaldimpep}
+\end{align}
+So this is exactly what we were looking for,
+\paragraph{Summarise} So to summarise, \\
+If we let $\delta$ be some value $\delta \leq \frac{1}{2}$ and also let $\delta \leq \frac{\varepsilon}{2}$ then the restriction is satisfied for all values of $\varepsilon$. \\
+
+A mild problem here is that we need to chose a single value for $\varepsilon$ that hence implies the existence of a $\varepsilon$ value, so we will just choose the smallest value:
+\begin{align}
+  \delta = \min \left\{ \frac{1}{2}, \frac{\varepsilon}{2} \right\} = \inf \left\{ \frac{1}{2}, \frac{\varepsilon}{2} \right\} \label{deltval}
+\end{align}
+
+\newpage
+\subsection{The Actual Proof}
+Let $\varepsilon>0$, choose $\delta := \inf \left\{ \frac{1}{2}, \frac{\varepsilon}{2} \right\}$, then \\
+
+\begin{align}
+  \lvert \frac{1}{x} - 1 \rvert &= \lvert \frac{x-1}{x} \rvert \notag \\
+                                &= \lvert \frac{x-1}{x} \rvert \notag \\
+                                &= \frac{\lvert x-1 \rvert}{\lvert x \rvert} \notag \\
+                                &< 2 \cdot \lvert x-1 \rvert \notag && \text{As implied by $\delta < \frac{1}{2}$ at (\ref{finaldimpep})}\\
+                                & < 2 \delta \notag && \text{As implied by the definition at (\ref{precdeflim})} \\
+                                &< 2 \frac{\varepsilon}{2} \notag && \text{As implied by $\delta < \frac{\varepsilon}{2}$ at (\ref{deltval})} \\
+                                &< \varepsilon && \text{$\square$}
+\end{align}
+
+\subsection{Conclusion}
+Hence we have shown that for $ \delta = \min \left\{ \frac{1}{2}, \frac{\varepsilon}{2} \right\} = \inf \left\{ \frac{1}{2}, \frac{\varepsilon}{2} \right\}$ :
+
+\begin{align}
+  \forall \epsilon > 0, \enspace \exists \delta > 0& : \notag \\
+  &0 < \lvert x -1 \rvert < \delta \implies \lvert \frac{1}{x}-1 \rvert < \varepsilon \tag{\ref{precdeflim}}
+\end{align}
+
+
+
+\end{document}

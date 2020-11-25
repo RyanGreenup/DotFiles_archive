@@ -1,0 +1,1171 @@
+#+TITLE: Python Quantitative Project
+#+OPTIONS: broken-links:auto todo:nil H:9
+#+OPTIONS: tags:not-in-toc d:nil
+#+AUTHOR: Ryan Greenup & James Guerra
+#+INFOJS_OPT: view:showall toc:3
+#+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
+#+OPTIONS: tex:t
+# #+TODO: TODO IN-PROGRESS WAITING DONE
+#+CATEGORY: TAD
+:HTML:
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="style.css">
+#+CSL_STYLE: /home/ryan/Templates/CSL/nature.csl
+:END:
+:R:
+#+PROPERTY: header-args:R :session TADMain :dir ./ :cache yes :eval never-export :exports both
+# exports: both (or code or whatever)
+# results: table (or output or whatever)
+:END:
+# #+STARTUP: latexpreview
+# TexFrag Doesn't work with relative paths.
+:END:
+:LATEXBIB:
+#+latex_header:\usepackage[citestyle=numeric, bibstyle=numeric,hyperref=true,backref=true, maxcitenames=3,url=true,backend=biber,natbib=true]{biblatex}
+#+latex_header:\AtEndDocument{\printbibliography}
+# #+LATEX_HEADER: \usepackage{style}
+:END:
+#+latex_header: \addbibresource{../Resources/references.bib}
+
+
+#+begin_src bash
+code /home/ryan/Dropbox/Studies/QuantProject/Current/Python-Quant/ & disown
+#+end_src
+
+#+begin_comment
+- Headings (sections, subsections and subsubsections) only go up to 3 ~*~
+- use align and \nonumber
+- Delete the ~:LATEXBIB:~ draw after re-inserting the style.sty
+  - the style.sty seems to break ~texfrag~
+    - And it's generally slower anyway.
+- Use ~CUSTOM-ID:~ when referencing sections, the name of the section may
+  - As described [[file:~/Dropbox/Studies/2020Spring/QuantProject/Current/Python-Quant/Resources/org-manual.org::*Internal Links][here in the manual]].
+  change and that will get confusing
+  - Don't cross-reference a section that is less than three stars.
+
+#+end_comment
+
+#+RESULTS:
+
+* What the unit involves.                                                       :Ryan:James:
+Writing and presenting.
+* Matrix Exponentiation                                                         :Ryan:
+*** Implementation in Sympy
+The Matrix Exponential is implemented in areas of:
+
+- Graph Centrality modelling cite:parkPowerWalkRevisiting2013
+- Systems of Linear Differential Equations [[cite:Zil2009][Ch. 8.4]]
+- Theory of Algebraic Lie Groups [[cite:hallLieGroupsLie2015][Ch. 2]]
+
+However the method to implement matrix exponentiation provided [[https://docs.sympy.org/latest/tutorial/matrices.html][by the documentation]] cite:MatricesSymPyDocumentation2020 and [[https://github.com/sympy/sympy/issues/6218][referenced in the development repository]] cite:MatrixExponentialIssue2019 does not appear to be implemented very well, for example the following provides a very long result:
+
+#+BEGIN_SRC python
+  from __future__ import division
+  from sympy import *
+  x, y, z, t = symbols('x y z t')
+  k, m, n = symbols('k m n', integer=True)
+  f, g, h = symbols('f g h', cls=Function)
+  init_printing()
+  init_printing(use_latex='mathjax', latex_mode='equation')
+
+
+  import pyperclip
+  def lx(expr):
+      pyperclip.copy(latex(expr))
+      print(expr)
+#+END_SRC
+
+#+BEGIN_SRC python
+A = Matrix([
+    [11, 12, 13],
+    [21, 22, 23],
+    [31, 32, 33]
+])
+
+  expr = exp(A)
+  expr.doit()
+#+END_SRC
+
+$$
+{
+\scriptsize
+\left[\begin{matrix}- \frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}
+\left(\frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{26}{- \sqrt{1149} - 22}\right) - \frac{1}{\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}} \left(-1 - \frac{1}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}} \left(\frac{26}{- \sqrt{1149} - 22} - \frac{- \frac{6552}{-
+\sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} + 2\right)\right) \left(-
+\frac{13}{-22 + \sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} +
+276}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)} - \frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}
+\left(\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{13}{- \sqrt{1149} - 22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} -
+\frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right)\right) + \frac{1}{\left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 + \sqrt{1149}}} \left(-1 -
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{26}{-
+\sqrt{1149} - 22} - \frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(-
+\sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} + 2\right)\right) \left(- \frac{13}{-22 + \sqrt{1149}} +
+\frac{- \frac{3276}{-22 + \sqrt{1149}} + 276}{\left(-22 + \sqrt{1149}\right)
+\left(- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)}\right) + 1 +
+\left(\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{13}{- \sqrt{1149} - 22}\right) \left(- \frac{1}{\left(- \frac{33}{94} +
+\frac{5 \sqrt{1149}}{94}\right) \left(\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}\right)} \left(-1 - \frac{1}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}} \left(\frac{26}{- \sqrt{1149} - 22} - \frac{- \frac{6552}{-
+\sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} + 2\right)\right) \left(-
+\frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right) + \frac{2}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}}\right) e^{33 + \sqrt{1149}} & - \frac{1}{- \frac{33}{94} +
+\frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{3276}{- \sqrt{1149} - 22} +
+276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} - 22}\right) +
+\frac{1}{\left(- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(- \frac{13}{-22 +
+\sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} + 276}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)} -
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{3276}{-
+\sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} -
+22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 +
+\sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{-
+\frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)}\right)\right)
+\left(\frac{13}{- \sqrt{1149} - 22} - \frac{- \frac{3276}{- \sqrt{1149} - 22} +
+276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} + 1\right) - \frac{1}{\left(- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}\right) \left(\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}\right) e^{-33 + \sqrt{1149}}} \left(- \frac{13}{-22 +
+\sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} + 276}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right) \left(\frac{13}{- \sqrt{1149} - 22} - \frac{-
+\frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(-
+\frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 1\right) + \left(\frac{-
+\frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(-
+\frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} -
+22}\right) \left(\frac{1}{\left(- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}\right)^{2} \left(\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}\right)} \left(- \frac{26}{-22 + \sqrt{1149}} - \frac{-
+\frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right) \left(\frac{13}{- \sqrt{1149} - 22} - \frac{-
+\frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(-
+\frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 1\right) + \frac{1}{-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}}\right) e^{33 + \sqrt{1149}} &
+\frac{1}{\left(\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 +
+\sqrt{1149}}} \left(- \frac{13}{-22 + \sqrt{1149}} + \frac{- \frac{3276}{-22 +
+\sqrt{1149}} + 276}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right) - \frac{1}{\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}} \left(- \frac{13}{-22 + \sqrt{1149}} +
+\frac{- \frac{3276}{-22 + \sqrt{1149}} + 276}{\left(-22 + \sqrt{1149}\right)
+\left(- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)} - \frac{1}{-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{3276}{-
+\sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} -
+22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 +
+\sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{-
+\frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)}\right)\right) -
+\frac{e^{33 + \sqrt{1149}}}{\left(- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}\right) \left(\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}\right)} \left(\frac{- \frac{3276}{- \sqrt{1149} - 22} +
+276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} - 22}\right) \left(-
+\frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right)\\-2 - \frac{1}{\left(-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 + \sqrt{1149}}} \left(-1 -
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{26}{-
+\sqrt{1149} - 22} - \frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(-
+\sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} + 2\right)\right) \left(- \frac{273}{-22 +
+\sqrt{1149}} + 23\right) + \frac{2}{\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}} \left(-1 - \frac{1}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}} \left(\frac{26}{- \sqrt{1149} - 22} - \frac{- \frac{6552}{-
+\sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} + 2\right)\right) \left(-
+\frac{13}{-22 + \sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} +
+276}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)} - \frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}
+\left(\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{13}{- \sqrt{1149} - 22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} -
+\frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right)\right) + \frac{1}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}} \left(\frac{- \frac{13104}{- \sqrt{1149} - 22} + 1104}{\left(-
+\sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} - \frac{52}{- \sqrt{1149} - 22}\right) - \frac{e^{33 +
+\sqrt{1149}}}{- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}} \left(-
+\frac{1}{\left(- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(-1 - \frac{1}{-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{26}{- \sqrt{1149} - 22} -
+\frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right)
+\left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 2\right)\right)
+\left(- \frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} +
+23}{- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right) + \frac{2}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}}\right) \left(- \frac{273}{- \sqrt{1149} - 22} + 23\right) &
+\frac{\left(- \frac{273}{-22 + \sqrt{1149}} + 23\right) \left(\frac{13}{-
+\sqrt{1149} - 22} - \frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(-
+\sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} + 1\right)}{\left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right) \left(- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right)
+\left(\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 +
+\sqrt{1149}}} - \frac{2}{\left(- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right)
+\left(\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(-
+\frac{13}{-22 + \sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} +
+276}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)} - \frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}
+\left(\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{13}{- \sqrt{1149} - 22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} -
+\frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right)\right) \left(\frac{13}{- \sqrt{1149} - 22} -
+\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right)
+\left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 1\right) +
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{6552}{-
+\sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} - \frac{26}{- \sqrt{1149} -
+22}\right) - \frac{e^{33 + \sqrt{1149}}}{- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}} \left(\frac{1}{\left(- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}\right)^{2} \left(\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}\right)} \left(- \frac{26}{-22 + \sqrt{1149}} - \frac{-
+\frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right) \left(\frac{13}{- \sqrt{1149} - 22} - \frac{-
+\frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(-
+\frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 1\right) + \frac{1}{-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}}\right) \left(- \frac{273}{-
+\sqrt{1149} - 22} + 23\right) & \frac{1}{\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}} \left(- \frac{26}{-22 + \sqrt{1149}} + \frac{-
+\frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)} - \frac{2}{- \frac{33}{94} +
+\frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{3276}{- \sqrt{1149} - 22} +
+276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} - 22}\right) \left(-
+\frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right)\right) - \frac{- \frac{273}{-22 +
+\sqrt{1149}} + 23}{\left(- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)
+\left(\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 +
+\sqrt{1149}}} + \frac{e^{33 + \sqrt{1149}}}{\left(- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right) \left(\frac{33 \sqrt{1149}}{2303} +
+\frac{5745}{2303}\right)} \left(- \frac{273}{- \sqrt{1149} - 22} + 23\right)
+\left(- \frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} +
+23}{- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right)\\- \frac{1}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}} \left(\frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(-
+\sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} - \frac{26}{- \sqrt{1149} - 22}\right) -
+\frac{1}{\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}} \left(-1 - \frac{1}{-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{26}{- \sqrt{1149} - 22} -
+\frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right)
+\left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 2\right)\right)
+\left(- \frac{13}{-22 + \sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} +
+276}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)} - \frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}
+\left(\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{13}{- \sqrt{1149} - 22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} -
+\frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right)\right) + \frac{1}{\left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 + \sqrt{1149}}} \left(-1 -
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{26}{-
+\sqrt{1149} - 22} - \frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(-
+\sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} + 2\right)\right) + 1 + \left(- \frac{1}{\left(-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(-1 - \frac{1}{-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{26}{- \sqrt{1149} - 22} -
+\frac{- \frac{6552}{- \sqrt{1149} - 22} + 552}{\left(- \sqrt{1149} - 22\right)
+\left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 2\right)\right)
+\left(- \frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} +
+23}{- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right) + \frac{2}{- \frac{33}{94} + \frac{5
+\sqrt{1149}}{94}}\right) e^{33 + \sqrt{1149}} & - \frac{1}{- \frac{33}{94} +
+\frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{3276}{- \sqrt{1149} - 22} +
+276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} - 22}\right) +
+\frac{1}{\left(- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(- \frac{13}{-22 +
+\sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} + 276}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)} -
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}} \left(\frac{- \frac{3276}{-
+\sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59
+\sqrt{1149}}{95} - \frac{1837}{95}\right)} - \frac{13}{- \sqrt{1149} -
+22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 +
+\sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{-
+\frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}\right)}\right)\right)
+\left(\frac{13}{- \sqrt{1149} - 22} - \frac{- \frac{3276}{- \sqrt{1149} - 22} +
+276}{\left(- \sqrt{1149} - 22\right) \left(- \frac{59 \sqrt{1149}}{95} -
+\frac{1837}{95}\right)} + 1\right) - \frac{\frac{13}{- \sqrt{1149} - 22} -
+\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right)
+\left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 1}{\left(-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 + \sqrt{1149}}} +
+\left(\frac{1}{\left(- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right)^{2}
+\left(\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(-
+\frac{26}{-22 + \sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{-
+\frac{1837}{95} + \frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 +
+\sqrt{1149}} + 552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}\right)}\right) \left(\frac{13}{- \sqrt{1149} - 22} -
+\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} - 22\right)
+\left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} + 1\right) +
+\frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}\right) e^{33 + \sqrt{1149}}
+& \frac{1}{\left(\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}\right) e^{-33 +
+\sqrt{1149}}} - \frac{1}{\frac{33 \sqrt{1149}}{2303} + \frac{5745}{2303}}
+\left(- \frac{13}{-22 + \sqrt{1149}} + \frac{- \frac{3276}{-22 + \sqrt{1149}} +
+276}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)} - \frac{1}{- \frac{33}{94} + \frac{5 \sqrt{1149}}{94}}
+\left(\frac{- \frac{3276}{- \sqrt{1149} - 22} + 276}{\left(- \sqrt{1149} -
+22\right) \left(- \frac{59 \sqrt{1149}}{95} - \frac{1837}{95}\right)} -
+\frac{13}{- \sqrt{1149} - 22}\right) \left(- \frac{26}{-22 + \sqrt{1149}} -
+\frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} + 552}{\left(-22 +
+\sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right)\right) - \frac{e^{33 + \sqrt{1149}}}{\left(-
+\frac{33}{94} + \frac{5 \sqrt{1149}}{94}\right) \left(\frac{33
+\sqrt{1149}}{2303} + \frac{5745}{2303}\right)} \left(- \frac{26}{-22 +
+\sqrt{1149}} - \frac{- \frac{273}{-22 + \sqrt{1149}} + 23}{- \frac{1837}{95} +
+\frac{59 \sqrt{1149}}{95}} + \frac{- \frac{6552}{-22 + \sqrt{1149}} +
+552}{\left(-22 + \sqrt{1149}\right) \left(- \frac{1837}{95} + \frac{59
+\sqrt{1149}}{95}\right)}\right)\end{matrix}\right]
+}
+$$
+Simplifying this result doesn't seem to help either:
+
+#+BEGIN_SRC python
+simplify(expr)
+#+END_SRC
+
+$$
+{
+\scriptsize
+\left[\begin{matrix}\frac{1}{12 \left(-1065889 + 33298 \sqrt{1149}\right)
+e^{\sqrt{1149}}} \left(- 8625947 e^{33 + 2 \sqrt{1149}} - 2131778
+e^{\sqrt{1149}} - 2032943 e^{33} + 74651 \sqrt{1149} e^{33} + 66596 \sqrt{1149}
+e^{\sqrt{1149}} + 258329 \sqrt{1149} e^{33 + 2 \sqrt{1149}}\right) & \frac{1}{6
+\left(-1065889 + 33298 \sqrt{1149}\right) e^{\sqrt{1149}}} \left(- 965995
+e^{33 + 2 \sqrt{1149}} - 66596 \sqrt{1149} e^{\sqrt{1149}} - 1165783 e^{33} +
+36081 \sqrt{1149} e^{33} + 2131778 e^{\sqrt{1149}} + 30515 \sqrt{1149} e^{33 + 2
+\sqrt{1149}}\right) & \frac{1}{6 \left(-43187463 + 1274291 \sqrt{1149}\right)
+e^{\sqrt{1149}}} \left(- 2723224 \sqrt{1149} e^{33 + 2 \sqrt{1149}} - 43187463
+e^{\sqrt{1149}} - 49129419 e^{33} + 1448933 \sqrt{1149} e^{33} + 1274291
+\sqrt{1149} e^{\sqrt{1149}} + 92316882 e^{33 + 2 \sqrt{1149}}\right)\\\frac{1}{6
+\left(-1065889 + 33298 \sqrt{1149}\right) e^{\sqrt{1149}}} \left(- 66949 e^{33 +
+2 \sqrt{1149}} - 66596 \sqrt{1149} e^{\sqrt{1149}} - 2064829 e^{33} + 61128
+\sqrt{1149} e^{33} + 2131778 e^{\sqrt{1149}} + 5468 \sqrt{1149} e^{33 + 2
+\sqrt{1149}}\right) & \frac{1}{3 \left(4213 + 125 \sqrt{1149}\right)
+e^{\sqrt{1149}}} \left(44 e^{33} + 2 \sqrt{1149} e^{33} + 8426 e^{\sqrt{1149}} +
+250 \sqrt{1149} e^{\sqrt{1149}} + 4169 e^{33 + 2 \sqrt{1149}} + 123 \sqrt{1149}
+e^{33 + 2 \sqrt{1149}}\right) & \frac{1}{6 \left(-43187463 + 1274291
+\sqrt{1149}\right) e^{\sqrt{1149}}} \left(- 78841 \sqrt{1149} e^{33 + 2
+\sqrt{1149}} - 2548582 \sqrt{1149} e^{\sqrt{1149}} - 89061939 e^{33} + 2627423
+\sqrt{1149} e^{33} + 86374926 e^{\sqrt{1149}} + 2687013 e^{33 + 2
+\sqrt{1149}}\right)\\\frac{1}{12 \left(-1065889 + 33298 \sqrt{1149}\right)
+e^{\sqrt{1149}}} \left(- 236457 \sqrt{1149} e^{33 + 2 \sqrt{1149}} - 6226373
+e^{33} - 2131778 e^{\sqrt{1149}} + 66596 \sqrt{1149} e^{\sqrt{1149}} + 169861
+\sqrt{1149} e^{33} + 8358151 e^{33 + 2 \sqrt{1149}}\right) & \frac{1}{6
+\left(-1065889 + 33298 \sqrt{1149}\right) e^{\sqrt{1149}}} \left(- 25145
+\sqrt{1149} e^{33 + 2 \sqrt{1149}} - 66596 \sqrt{1149} e^{\sqrt{1149}} - 3163663
+e^{33} + 91741 \sqrt{1149} e^{33} + 2131778 e^{\sqrt{1149}} + 1031885 e^{33 + 2
+\sqrt{1149}}\right) & \frac{1}{6 \left(-43187463 + 1274291 \sqrt{1149}\right)
+e^{\sqrt{1149}}} \left(- 86942856 e^{33 + 2 \sqrt{1149}} - 128994459 e^{33} -
+43187463 e^{\sqrt{1149}} + 1274291 \sqrt{1149} e^{\sqrt{1149}} + 3805913
+\sqrt{1149} e^{33} + 2565542 \sqrt{1149} e^{33 + 2
+\sqrt{1149}}\right)\end{matrix}\right]
+}
+$$
+
+Methods suggested online only provide numerical solutions or partial sums:
+
+- [[https://stackoverflow.com/questions/47240208/sympy-symbolic-matrix-exponential][python -
+  Sympy Symbolic Matrix Exponential - Stack Overflow]]
+- [[https://stackoverflow.com/a/50718831/12843551][python - Exponentiate
+  symbolic matrix expression using SymPy - Stack Overflow]]
+- [[https://stackoverflow.com/a/54025116/12843551][Calculate state transition
+  matrix in python - Stack Overflow]]
+
+Instead this will need to be implemented from first principles.
+
+** Theory
+*** Matrix Exponentiation
+   :PROPERTIES:
+   :CUSTOM_ID: definition-of-a-matrix-exponential
+   :END:
+
+A Matrix Exponential is defined by using the ordinary exponential power series [[cite:hallLieGroupsLie2015][Ch. 2]],[[cite:Zil2009][Ch. 8.4]] (should we prove the power series generally?):
+
+\begin{align}
+    e^{\mathit{\mathbf{X}}} = \sum^{\infty}_{k= 0}   \left[ \frac{1}{k!} \cdot  \mathit{\mathbf{X^k}} \right] 
+\end{align}
+
+This definition can be expanded upon however by using properties of logarithms:
+
+\begin{align}
+    b &= e^{\log_e{\left( b \right) }}, \quad \forall b \in \mathbb{C} \label{eq:bydef}\\
+ \implies  b^{\mathbf{X}}&= \left( e^{\log_e{\left( b \right) }} \right)^{\mathbf{X}} \label{eq:tojustify} \\
+  \implies  b^{\mathbf{X}} &= e^{\log_e{b}  \mathbf{X} }
+\end{align}
+
+The identity in \eqref{eq:bydef} is justified by the definition of the complex log. However some discussion is required for \eqref{eq:tojustify}  because it is not clear that the
+exponential will generally distribute throught he parenthesis like so $\left( a\cdot b \right)^{k} = a^k\cdot b^k$, for example
+consider $\left( \left[ - 1 \right]^2 \cdot 3
+\right)^{\frac{1}{2}} \neq \left[ - 1 \right]^{\frac{2}{2}} \cdot
+3^{\frac{1}{2}}$.
+
+A sufficient condition for this identity is $k \in
+\mathbb{Z}^{*}$, consider this example which will be important later:
+
+\begin{align}
+    \left( \log_e{\left( b \right) }\mathbf{X} \right)^{k} , \quad \forall k \in \mathbb{Z^{*}}
+\end{align}
+
+Because multiplication is commutative $\forall z \in \mathbb{C}$, this could be
+re-expressed in the form:
+
+\begin{align}
+ \left( \log_e{\left( b \right) }\mathbf{X} \right)^{k} &=    \underbrace{\log_e{\left( b \right) }\cdot  \log_e{\left( b \right) } \cdot  \log_e{\left( b \right) }\ldots }_{k \text{ times}} \times \underbrace{\mathbf{X}\mathbf{X}\mathbf{X}\ldots}_{k \text{ times}} \notag \\
+ &= \log_e^k{\left( b \right) } \mathbf{X}^k \label{eq:matpower}
+\end{align}
+
+Now consider the the following by applying \eqref{eq:matpower}:
+
+\begin{align}
+    e^{X}&= \sum^{\infty}_{k= 0}   \left[ \frac{1}{k!} \mathbf{X}^{k} \right]  \notag \\
+    \implies  e^{bX}&= \sum^{\infty}_{k= 0}   \left[ \frac{1}{k!} \left( b\mathbf{X} \right)^{k} \right] \quad \forall b \in \mathbb{C} \notag \\
+    &= \sum^{\infty}_{k= 0}   \left[ \frac{1}{k!}b^k \mathbf{X}^k \right] \notag \\
+    &= \left( e^b \right)^{\mathbf{X}} \notag \\
+    &\implies  e^{b \mathbf{X}} = e^{\mathbf{X}b}= \left( e^b \right)^{\mathbf{X}}= \left( e^{\mathbf{X}} \right)^b  \qquad \qquad \square \label{eq:expmatpower}
+\end{align}
+
+So the matrix exponential for an arbitrary base could be given by:
+
+\begin{align}
+   b = e^{\log_e{\left( b \right) }}, \quad \forall b \in \mathbb{C} \notag \\
+    \implies  b^{\mathbf{X}} &= \left( e^{\log_e{\left( b \right) }} \right)^{\mathbf{X}} \notag \\
+     \text{as per \eqref{eq:expmatpower}} \notag \\
+    b^{\mathbf{X}} &=  e^{\log_e{\left( b \right) } {\mathbf{X}}}  \notag \\
+     b^{\mathbf{X}} &= \sum^{\infty}_{k= 0}   \left[ \frac{\left( \log_e{\left( b \right) }\mathbf{X} \right)^k}{k!} \right]  \notag \\
+     &= \sum^{\infty}_{k= 0}   \left[ \frac{\log_e ^{k}{\left( b \right) }}{k!}\mathbf{X}^{k} \right]
+\end{align}
+
+This is also consistent with the /McLaurin Series/ expansion of $b^{\mathbf{X}}
+\enspace (\forall b \in \mathbb{C})$:
+
+\begin{align*}
+f\left( x \right) &= \sum^{\infty}_{k= 0}   \left[ \frac{f^{\left( n \right)}\left( 0 \right)}{k!} x^{k} \right]  \\
+\implies  b^x &= \sum^{\infty}_{k= 0}  \left[ \frac{\frac{\mathrm{d}^n }{\mathrm{d} x^n}\left( b^x \right) \vert_{x=0}   }{k!} x^k \right]  \\
+\implies  b^{\mathbf{X}} &= \sum^{\infty}_{k= 0}   \left[ \frac{\frac{\mathrm{d}^n }{\mathrm{d}\mathbf{X}^n  } \left( b^{\mathbf{X}} \right) \vert_{\mathbf{X}= \mathbf{O}}}{k!} \mathbf{X}^k \right]
+\end{align*}
+
+By ordinary calculus identities we have$f\left( x \right) = b^{x} \implies
+f^{\left( n \right)}\left( x \right) = b^{x} \log_e^n{\left( b \right)}$ which
+distribute through a matrix and hence:
+
+\begin{align*}
+    b^x &= \sum^{\infty}_{k= 0}  \left[ \frac{b^0 \log_e^k{\left( b \right) }}{k!} x^k \right]  \\
+    \implies  b^{\mathbf{X}} &= \sum^{\infty}_{k= 0}  \left[ \frac{b^0 \log_e^k{\left( b \right) }}{k!} \mathbf{X}^k \right]
+\end{align*}
+
+By the previous identity:
+
+\begin{align*}
+\implies  b^{\mathbf{X}} &= \sum^{\infty}_{k= 0}  {\left[ \frac{{\left( \log_e{\left( b \right) } \mathbf{X} \right)}^k}{k!} \right]} \\
+    &= e^{\log_e{\left( b \right) } \mathbf{X}}
+\end{align*}
+
+*** Matrix-Matrix Exponentiation
+
+Matrix-Matrix exponentiation has applications in quantum mechanics [[cite:barradasIteratedExponentiationMatrixMatrix1994][p. 84]].
+
+As for Matrices with the requirements:
+
+1. Square
+2. Normal:
+   - Commutes with it's congugate transpose
+3. Non Singular
+4. Non Zero Determinant
+
+\begin{align*}
+    \left| \left| A-I \right| \right|<1  &\implies  e^{\log_e{\left( \mathbf{A} \right) }} = \mathbf{A} \enspace \text{(By Lie Groups Springer Textbook)}\\
+                     &\implies  \mathbf{A}^{\mathbf{B}} =\left( e^{\log_e{\left( \mathbf{A} \right) }} \right)^{\mathbf{B}} \\
+             & \text{Similar justification as \eqref{eq:expmatpower}} \\
+             & \implies  \mathbf{A}^{\mathbf{B}}= e^{\log_e{\left( \mathbf{A} \right) } \mathbf{B}}
+\end{align*}
+
+However the following identities are by *Definition* anyway: cite:barradasIteratedExponentiationMatrixMatrix1994
+
+\begin{align}
+\mathbf{A}^{\mathbf{B}}&= e^{\log_e{\left( \mathbf{A} \right) } \mathbf{B}} \\
+\ ^{\mathbf{B}} \mathbf{A} &= e^{ \mathbf{B} \log_e{\left( \mathbf{A} \right) } }
+\end{align}
+
+** An alternative Implementation in Sympy
+
+#+BEGIN_SRC python
+def matexp(mat, base = E):
+      """
+      Return the Matrix Exponential of a square matrix
+      """
+      import copy
+      import sympy
+  # Should realy test for sympy vs numpy array
+  # Test for Square Matrix
+      if mat.shape[0] != mat.shape[1]:
+          print("ERROR: Only defined for Square matrices")
+          return
+      m = zeros(mat.shape[0])
+      for i in range(m.shape[0]):
+          for j in range(m.shape[1]):
+              m[i,j] = Sum((mat[i,j]*ln(base))**k/factorial(k), (k, 0, oo)).doit()
+      return m
+#+END_SRC
+
+#+BEGIN_SRC python
+matexp(A, pi)
+#+END_SRC
+
+$$
+\left[\begin{matrix}\pi^{11} & \pi^{12} & \pi^{13}\\\pi^{21} & \pi^{22} &
+\pi^{23}\\\pi^{31} & \pi^{32} & \pi^{33}\end{matrix}\right]
+$$
+
+But it would be nice to expand this to matrix bases for there uses in quantum
+mechanics.
+
+The built in method for a**mat is not implemented.
+
+there is exp(mat) but this returns garbage (see github issue), (see other
+solution on stack exchange that is numeric and example)
+
+show our method with proofs of
+
+cauchy power taylor then exp
+
+then show our code
+
+#+BEGIN_SRC python
+A = Matrix([ [11,12,13], [21,22,23], [31,32,33] ])
+
+  B = Matrix([
+      [1,2,3],
+      [4,5,6],
+      [7,8,9]
+  ])
+
+
+  A**B
+#+END_SRC
+
+[fn:1] 
+
+       #+BEGIN_HTML
+         <html>
+       #+END_HTML
+
+       Park, Laurence A. F., and Simeon Simoff. "Power Walk: Revisiting the
+       Random Surfer." In Proceedings of the 18th Australasian Document
+       Computing Symposium, 50--57. ADCS '13. Brisbane, Queensland, Australia:
+       Association for Computing Machinery, 2013.
+       https://doi.org/10.1145/2537734.2537749.
+
+       #+BEGIN_HTML
+         </body>
+       #+END_HTML
+
+       #+BEGIN_HTML
+         </html>
+       #+END_HTML
+
+[fn:2] Zill, Dennis G., and Michael R. Cullen. "8.4 Matrix Exponential."
+       In /Differential Equations with Boundary-Value Problems/, 7th
+       ed. Belmont, CA: Brooks/Cole, Cengage Learning, 2009.
+
+[fn:3] Hall, Brian C. Lie Groups, Lie Algebras, and Representations: An
+       Elementary Introduction. Second edition. Graduate Texts in
+       Mathematics 222. Cham ; New York: Springer, 2015.
+
+[fn:4] Hall, Brian C. Lie Groups, Lie Algebras, and Representations: An
+       Elementary Introduction. Second edition. Graduate Texts in
+       Mathematics 222. Cham ; New York: Springer, 2015.
+
+[fn:5] Zill, Dennis G., and Michael R. Cullen. "8.4 Matrix Exponential."
+       In Differential Equations with Boundary-Value Problems, 7th
+       ed. Belmont, CA: Brooks/Cole, Cengage Learning, 2009.
+
+[fn:6] Hall, Brian C. Lie Groups, Lie Algebras, and Representations: An
+       Elementary Introduction. Second edition. Graduate Texts in
+       Mathematics 222. Cham ; New York: Springer, 2015.
+
+[fn:7] Barradas, I., and J. E. Cohen. "Iterated Exponentiation,
+       Matrix-Matrix Exponentiation, and Entropy." Journal of
+       Mathematical Analysis and Applications 183, no. 1 (April 1,
+       1994): 76--88. https://doi.org/10.1006/jmaa.1994.1132.
+
+[fn:8] Barradas, I., and J. E. Cohen. "Iterated Exponentiation,
+       Matrix-Matrix Exponentiation, and Entropy." Journal of
+       Mathematical Analysis and Applications 183, no. 1 (April 1,
+       1994): 76--88. https://doi.org/10.1006/jmaa.1994.1132.
+* Recursive Relations                                                           :Ryan:
+A linear recurrence relation is of the form:
+
+\begin{align}
+\sum^{\infty}_{n= 0}   \left[ c_i \cdot  a_n \right] = 0, \quad \exists c \in
+\mathbb{R}, \enspace \forall i<k\in\mathbb{Z}^+ \label{eq:recurrence-relation-def}
+\end{align}
+
+In order to find a solution for $a_n$, the following one-to-one
+correspondence can be used to relate the vector space of the sequence to the
+power series ring:(cite stackExchange[1]):
+
+\begin{align}
+g: \left( a_n \right)_{n\in\mathbb{Z}^+} \rightarrow \mathbb{C}\left[ \left[ x \right]  \right]: g\left( a_n \right) = \sum^{\infty}_{n= 0}\left[ \frac{x^n}{n!} a_n \right] \label{eq:gen-func-def}
+\end{align}
+
+This technique is referred to as generating functions.
+cite:lehmanReadingsMathematicsComputer2010
+
+
+** TODO Generating Functions
+*** STRT Generating Functions
+   :PROPERTIES:
+   :CUSTOM_ID: generating-functions
+   :END:
+
+A [[https://en.wikipedia.org/wiki/Generating_function][Generating Function]], as shown in eqref:eq:gen-func-def  is a way of encoding an [[https://en.wikipedia.org/wiki/Infinite_sequence][infinite series]] of numbers ($a_n$)
+by treating them as the coefficients of a power series ($\sum^\infty_{n = 0}
+\left[ a_nx^n \right]$) where the variable remains in an indeterminate form,
+they were first introduced by Abraham De Moivre in 1730 in order to solve the
+linear recurrence relations cite:knuthArtComputerProgramming1997, as shown in eqref:eq:recurrence-relation-def (such as the /Fibonacci Sequence/).
+
+*** STRT Example
+:PROPERTIES:
+:CUSTOM_ID: power-series-gen-func-example
+:END:
+Given the Linear Recurrence Relation:
+
+\begin{align*}
+a_0= 1 \\
+a_0= 1 \\
+a_{n+  2} =  a_{n+  1 +  2 a_n}, \quad n \geq 0
+\end{align*}
+
+To solve this we can use what's known as a
+[[https://en.wikipedia.org/wiki/Generating_function][Generating
+Function]], [[#generating-functions][see the disucssion below]]
+
+We will make consider the function $f(x)$ as shown below in:
+
+\begin{align}
+f\left( x \right)= \sum^{\infty}_{n= 0}   \left[ a_nx^n \right] \label{eq:pow-gen-func-np0}
+\end{align}
+
+
+It can be shown (see eqref:iterate-pow-gen-func) that:
+
+
+\begin{align}
+    \sum^{\infty}_{n= 0}  \left[ a_{n+  1} x^n \right] &= \frac{f\left( x \right)- a_0}{x} \label{eq:pow-gen-func-np1} \\
+\sum^{\infty}_{n= 0}  \left[ a_{n+  2} x^n \right]  &= \frac{f\left( x \right) - a_0 - a_1x}{x^2} \label{eq:pow-gen-func-np2}
+\end{align}
+
+So to use the generating Function consider:
+
+\begin{align}
+    2a_n +  a_{n+  1 }&= a_{n+  2} \nonumber \\
+    2a_nx^n +  a_{n+  1 } x^n &= a_{n+  2} x^n \nonumber \\
+    \sum^{\infty}_{n= 0}   \left[ 2a_nx^n \right] + \sum^{\infty}_{n= 0}   \left[  a_{n+  1 } x^n  \right]   &= \sum^{\infty}_{n= 0}   \left[ a_{n+  2} x^n   \right] \label{eq:series-rep-pow-example}
+\end{align}
+
+Observe that in eqref:eq:series-rep-pow-exampluse tuse te
+
+By applying the previous identity shown in eqref:eq:pow-gen-func-np0, eqref:eq:pow-gen-func-np1 and eqref:eq:pow-gen-func-np2:
+
+\begin{align}
+2f\left( x \right) +  \frac{f\left( x \right)- a_0}{x} &= \frac{f\left( x \right)- a_0}{- a_1x}x^2 \nonumber \\
+\implies  f\left( x \right) &=  \frac{1}{1- x- x^2} \label{eq:power-series-form-example}
+\end{align}
+
+| WARNING                                                                                                               |
+|-----------------------------------------------------------------------------------------------------------------------|
+| I accidently dropped the $2$ here, it doesn't matter but it does show that how this could be dealt with algebraically |
+
+The function $f(x)$ in eqref:eq:power-series-form-example can be solved by way of a power series, ( see for example [[./University/Analysis/11_Series.md][11_Series]]), but first it is
+necessary to use partial fractions to split it up:
+
+
+By partial fractions it is known:
+
+\begin{align*}
+    f\left( x \right)&= \frac{1}{1- x- x^2}\\
+&= \frac{- 1}{x^2 +  x -  1}\\
+&= \frac{- 1}{\left( x- 2 \right)\left( x- 1 \right)}\\
+&= \frac{A_1}{x- 2}+  \frac{A_2}{x- 1}, \quad A_i \in \mathbb{R}, i \in \mathbb{Z}^+ \\
+ \implies  - 1 &= A_1\left( x- 1 \right) +  A_2\left( x- 2 \right)\\
+ \text{Let $x$ = 2:}\\
+ - 1&= A_1\left( 2-1 \right) +  0 \\
+&= A_1 = - 1 \\
+ \text{Let $x$ = 1:}\\
+ - 1 &=  0 +  A_2 \left( 1- 2 \right) \\
+ \implies  A_2&= 1 \\
+ \text{Hence:}\\
+ f\left( x \right)&=    \frac{1}{x- 1} - \frac{1}{x- 2}
+\end{align*}
+
+By definition of the power series:
+
+\begin{align}
+\sum^{\infty}_{n= 0}\left[ rx^n \right] = \frac{1}{1- rx^n} \label{eq:pow-series-definition}
+\end{align}
+
+we can conclude that:
+
+\begin{align*}
+\frac{1}{x- 1}&= -\frac{1}{1 -\left( 1 \right) x} \\
+&= -\sum^{\infty}_{n= 0}\left[ x^n \right]  \\
+\frac{-1}{x- 2} &= \frac{1}{2- x} \\
+&= \frac{1}{2}\frac{1}{1-\frac{1}{2}x} \\
+&= \frac{1}{2} \sum^{\infty}_{n= 0}\left[ \left( \frac{1}{2}x \right) ^n \right]
+\end{align*}
+
+and so:
+
+\begin{align*}
+f\left( x \right) &= \frac{1}{2}\sum^{\infty}_{n= 0}\left[ \left( \frac{1}{2}x \right) ^n \right] - \sum^{\infty}_{n= 0}\left[ x^n \right] \\
+f\left( x \right) &= \sum^{\infty}_{n= 0}\left[ \frac{1}{2}\left( \frac{1}{2}x \right) ^n -x^n \right]  \\
+f\left( x \right) &= \sum^{\infty}_{n= 0}\left[ \frac{1}{2 \cdot 2^n} x^n -x^n \right]  \\
+f\left( x \right) &= \sum^{\infty}_{n= 0}\left[x^n {\left( {\frac{1}{2 \cdot 2^n} -1} \right) } \right]  \\
+\end{align*}
+\begin{align}
+ \implies  a_n &= \frac{1}{2 \cdot 2^n} - 1 \label{eq:seq-end-value}
+\end{align}
+
+** TODO Exponential Generating Function
+*** Motivation
+    :PROPERTIES:
+    :CUSTOM_ID: motivation
+    :END:
+
+Consider the /Fibonacci Sequence/:
+
+
+\begin{align}
+    a_{n}&= a_{n - 1} + a_{n - 2} \nonumber \\
+\iff a_{n+  2} &= a_{n+  1} +  a_n \label{eq:fib-def}
+\end{align}
+
+
+Solving this outright is quite difficult, a power
+series generating function can be used to solve it as shown in section [[#power-series-gen-func-example]], which provides a corresponding equation to the effect of:
+
+
+\begin{align*}
+x^2 f\left( x \right) -  x f \left( x \right) -  f\left( x \right)=  0
+\end{align*}
+
+This however still requires a little intuition, however, just from observation, this appears similar in structure to
+the following /ordinary differential equation/, which would be fairly easy to deal with:
+
+
+\begin{align*}
+f''\left( x \right)- f'\left( x \right)- f\left( x \right)=  0
+\end{align*}
+
+
+This would imply that $f\left( x \right) \propto e^{mx}, \quad \exists m \in \mathbb{Z}$ because
+$\frac{\mathrm{d}\left( e^x \right) }{\mathrm{d} x} = e^x$, but that's
+fine because we have a power series for that already:
+
+
+\begin{align*}
+f\left( x \right)= e^{rx} = \sum^{\infty}_{n= 0}   \left[ r \frac{x^n}{n!} \right]
+\end{align*}
+
+
+So this would give an easy means by which to solve the linear recurrence
+relation.
+
+*** Example
+    :PROPERTIES:
+    :CUSTOM_ID: solving-the-sequence
+    :END:
+
+Consider using the following generating function, (the derivative of the generating function as in eqref:eq:exp-gen-def-2 and eqref:eq:exp-gen-def-3 is provided in section [[#Derivative-exp-gen-function]])
+
+
+
+
+\begin{alignat}{2}
+    f \left( x \right) &=  \sum^{\infty}_{n= 0}   \left[ a_{n} \cdot  \frac{x^n}{n!} \right]   &= e^x \label{eq:exp-gen-def-1} \\
+    f'\left( x \right) &=  \sum^{\infty}_{n= 0}   \left[ a_{n+1} \cdot  \frac{x^n}{n!} \right]  &= e^x  \label{eq:exp-gen-def-2} \\
+    f''\left( x \right) &=  \sum^{\infty}_{n= 0}   \left[ a_{n+2} \cdot  \frac{x^n}{n!} \right] &= e^x  \label{eq:exp-gen-def-3}
+\end{alignat}
+
+
+So the recursive relation from ref:eq:fib-def  could be expressed :
+
+
+\begin{align*}
+a_{n+  2}    &= a_{n+  1} +  a_{n}\\
+\frac{x^n}{n!}   a_{n+  2}    &= \frac{x^n}{n!}\left( a_{n+  1} +  a_{n}  \right)\\
+\sum^{\infty}_{n= 0} \left[ \frac{x^n}{n!}   a_{n+  2} \right]        &= \sum^{\infty}_{n= 0}   \left[ \frac{x^n}{n!} a_{n+  1} \right]  + \sum^{\infty}_{n= 0}   \left[ \frac{x^n}{n!} a_{n}  \right]  \\
+f''\left( x \right) &= f'\left( x \right)+  f\left( x \right)
+\end{align*}
+
+
+Using the theory of higher order linear differential equations with
+constant coefficients it can be shown:
+
+
+\begin{align*}
+f\left( x \right)= c_1 \cdot  \mathrm{exp}\left[ \left( \frac{1- \sqrt{5} }{2} \right)x \right] +  c_2 \cdot  \mathrm{exp}\left[ \left( \frac{1 +  \sqrt{5} }{2} \right) \right]
+\end{align*}
+
+
+By equating this to the power series:
+
+
+\begin{align*}
+f\left( x \right)&= \sum^{\infty}_{n= 0}   \left[ \left( c_1\left( \frac{1- \sqrt{5} }{2} \right)^n +  c_2 \cdot  \left( \frac{1+ \sqrt{5} }{2} \right)^n \right) \cdot  \frac{x^n}{n} \right]
+\end{align*}
+
+
+Now given that:
+
+
+\begin{align*}
+f\left( x \right)= \sum^{\infty}_{n= 0}   \left[ a_n \frac{x^n}{n!} \right]
+\end{align*}
+
+
+We can conclude that:
+
+
+\begin{align*}
+a_n = c_1\cdot  \left( \frac{1- \sqrt{5} }{2} \right)^n +  c_2 \cdot  \left( \frac{1+  \sqrt{5} }{2} \right)
+\end{align*}
+
+
+By applying the initial conditions:
+
+
+\begin{align*}
+a_0= c_1 +  c_2  \implies  c_1= - c_2\\
+a_1= c_1 \left( \frac{1+ \sqrt{5} }{2} \right) -  c_1 \frac{1-\sqrt{5} }{2}  \implies  c_1 = \frac{1}{\sqrt{5} }
+\end{align*}
+
+
+And so finally we have the solution to the /Fibonacci Sequence/ ref:eq:fib-def:
+
+
+\begin{align}
+    a_n &= \frac{1}{\sqrt{5} } \left[ \left( \frac{1+  \sqrt{5} }{2}  \right)^n -  \left( \frac{1- \sqrt{5} }{2} \right)^n \right] \nonumber \\
+&= \frac{\varphi^n - \psi^n}{\sqrt{5} } \nonumber\\
+&=\frac{\varphi^n -  \psi^n}{\varphi - \psi} \label{eq:fib-sol}
+\end{align}
+
+
+where:
+
+- $\varphi = \frac{1+ \sqrt{5} }{2} \approx 1.61\ldots$
+- $\psi = 1-\varphi = \frac{1- \sqrt{5} }{2} \approx 0.61\ldots$
+
+*** Derivative of the Exponential Generating Function
+    :PROPERTIES:
+    :CUSTOM_ID: Derivative-exp-gen-function
+    :END:
+    Differentiating the exponential generating function has the effect of shifting the sequence to the backward: cite:lehmanReadingsMathematicsComputer2010
+
+\begin{align}
+    f\left( x \right) &= \sum^{\infty}_{n= 0}   \left[ a_n \frac{x^n}{n!} \right] \label{eq:exp-pow-series} \\
+f'\left( x \right)) &= \frac{\mathrm{d} }{\mathrm{d} x}\left( \sum^{\infty}_{n= 0}   \left[ a_n \frac{x^n}{n!} \right]  \right) \nonumber \\
+&= \frac{\mathrm{d}}{\mathrm{d} x} \left( a_0 \frac{x^0}{0!} +  a_1 \frac{x^1}{1!} +  a_2 \frac{x^2}{2!}+  a_3 \frac{x^3}{3! } +  \ldots \frac{x^k}{k!} \right) \nonumber \\
+&= \sum^{\infty}_{n= 0}   \left[ \frac{\mathrm{d} }{\mathrm{d} x}\left( a_n \frac{x^n}{n!} \right) \right] \nonumber \\
+&= \sum^{\infty}_{n= 0}   {\left[{ \frac{a_n}{{\left({ n- 1 }\right)!}} } x^{n- 1}  \right]} \nonumber \\
+\implies f'(x) &= \sum^{\infty}_{n= 0}   {\left[{ \frac{x^n}{n!}a_{n+  1} }\right]} \label{eq:exp-pow-series-sol}
+\end{align}
+
+If $f\left( x \right)= \sum^{\infty}_{n= 0 } \left[ a_n \frac{x^n}{n!} \right]$ can it be shown by induction that $\frac{\mathrm{d}^k }{\mathrm{d} x^k} \left(  f\left( x \right) \right)= f^{k} \left( x \right) \sum^{\infty}_{n= 0}   \left[ x^n \frac{a_{n+  k}}{n!} \right]$
+
+*** TODO Homogeneous Proof
+An equation of the form:
+
+\begin{align}
+\sum^{\infty}_{n=0} \left[ c_{i} \cdot f^{(n)}(x) \right] = 0 \label{eq:hom-ode}
+\end{align}
+
+is said to be a homogenous linear ODE:
+
+- Linear :: because the equation is linear with respect to $f(x)$
+- Ordinary :: because there are no partial derivatives (e.g. $\frac{\partial }{\partial x}{\left({ f{\left({ x }\right)} }\right)}$  )
+- Differential :: because the derivates of the function are concerned
+- Homogenous :: because the */RHS/* is 0
+  - A non-homogeous equation would have a non-zero RHS
+
+There will be $k$ solutions to a $k^{\mathrm{th}}$ order linear ODE, each may be summed to produce a superposition which will also be a solution to the equation, [[cite:Zil2009][Ch. 4]]  this will be considered as the desired complete solution (and this will be shown to be the only solution for the recurrence relation eqref:eq:recurrence-relation-def). These $k$ solutions will be in one of two forms:
+
+1. $f(x)=c_{i} \cdot e^{m_{i}x}$
+2. $f(x)=c_{i} \cdot x^{j}\cdot e^{m_{i}x}$
+
+where:
+
+- $\sum^{k}_{i=0}\left[  c_{i}m^{k-i} \right] = 0$
+  - This is referred to the characteristic equation of the recurrence relation or ODE cite:levinSolvingRecurrenceRelations2018
+- $\exists i,j \in \mathbb{Z}^{+} \cap \left[0,k\right]$
+  - These is often referred to as repeated roots cite:levinSolvingRecurrenceRelations2018,zillMatrixExponential2009 with a multiplicity corresponding to the number of repetitions of that root [[cite:nicodemiIntroductionAbstractAlgebra2007][\textsection 3.2]]
+ 
+**** Unique Roots of Characteristic Equation
+:PROPERTIES:
+:CUSTOM_ID: uniq-roots-recurrence
+:END:
+***** Example
+An example of a recurrence relation with all unique roots is the fibonacci sequence, as described in section [[#solving-the-sequence]].
+***** Proof
+Consider the linear recurrence relation eqref:eq:recurrence-relation-def:
+
+\begin{align}
+\sum^{\infty}_{n= 0}   \left[ c_i \cdot  a_n \right] = 0, \quad \exists c \in
+\mathbb{R}, \enspace \forall i<k\in\mathbb{Z}^+ \tag{$\textrm{\ref{eq:recurrence-relation-def}}^2$}
+\end{align}
+
+By implementing the exponential generating function as shown in eqref:eq:exp-gen-def-1, this provides:
+
+
+\begin{align}
+    \sum^{k}_{i= 0}   {\left[{ c_i \cdot a_n } \right]} = 0 \nonumber \\
+    \intertext{By Multiplying through and summing: } \notag \\
+     \implies  \sum^{k}_{i= 0}   {\left[{ \sum^{\infty}_{n= 0}   {\left[{ c_i a_n \frac{x^n}{n!} }\right]}  }\right]}  \nonumber = 0 \\
+     \sum^{k}_{i= 0}    {\left[{ c_i \sum^{\infty}_{n= 0}   {\left[{  a_n \frac{x^n}{n!} }\right]}  }\right]}  \nonumber = 0 \\
+\end{align}
+
+Recall from eqref:eq:exp-gen-def-1 the generating function $f{\left({ x }\right)}$:
+    
+\begin{align}
+\sum^{k}_{i= 0}   {\left[{ c_i f^{{\left({ k }\right)} } } {\left({ x }\right)} \right]} \label{eq:exp-gen-def-proof}  &= 0
+\end{align}
+
+
+Now assume that the solution exists and all roots of the characteristic polynomial are unique (i.e. the solution is of the form $f{\left({ x }\right)} \propto e^{m_i x}: \quad m_i \neq m_j \forall i\neq j$), this implies that [[cite:Zil2009][Ch. 4]] :
+
+\begin{align}
+    f{\left({ x }\right)} = \sum^{k}_{i= 0}   {\left[{ k_i e^{m_i x} }\right]}, \quad \exists m,k \in \mathbb{C} \nonumber
+\end{align}
+
+This can be re-expressed in terms of the exponential power series, in order to relate the solution of the function $f{\left({ x }\right)}$ back to a solution of the sequence $a_n$, (see section [[#prove-exp-power-series]] for a derivation of the exponential power series):
+
+\begin{align}
+    \sum^{k}_{i= 0}   {\left[{ k_i e^{m_i x}  }\right]}  &= \sum^{k}_{i= 0}   {\left[{ k_i \sum^{\infty}_{n= 0}   \frac{{\left({ m_i x }\right)}^n}{n!}  }\right]}  \nonumber \\
+							 &= \sum^{k}_{i= 0}  \sum^{\infty}_{n= 0}   k_i m_i^n \frac{x^n}{n!} \nonumber\\
+							 &=    \sum^{\infty}_{n= 0} \sum^{k}_{i= 0}   k_i m_i^n \frac{x^n}{n!} \nonumber \\
+							 &= \sum^{\infty}_{n= 0} {\left[{ \frac{x^n}{n!}  \sum^{k}_{i=0}   {\left[{ k_im^n_i }\right]}  }\right]}, \quad \exists k_i \in \mathbb{C}, \enspace \forall i \in \mathbb{Z}^+\cap {\left[{ 1, k }\right]}     \label{eq:unique-root-sol-power-series-form}
+\end{align}
+
+Recall the definition of the generating function from ref:eq:exp-gen-def-proof, by relating this to eqref:eq:unique-root-sol-power-series-form:
+
+\begin{align}
+    f{\left({ x }\right)} &= \sum^{\infty}_{n= 0}   {\left[{  \frac{x^n}{n!} a_n }\right]} \nonumber \\
+&= \sum^{\infty}_{n= 0} {\left[{ \frac{x^n}{n!}  \sum^{k}_{i=0}   {\left[{ k_im^n_i }\right]}  }\right]}  \nonumber \\
+      \implies  a_n &= \sum^{k}_{n= 0} {\left[{ k_im_i^n }\right]}     \nonumber \\ \nonumber
+\square
+\end{align}
+
+This can be verified by the fibonacci sequence as shown in section [[#solving-the-sequence]], the solution to the characteristic equation is $m_1 = \varphi, m_2 = {\left({ 1-\varphi }\right)}$ and the corresponding solution to the linear ODE and recursive relation are:
+
+\begin{alignat}{4}
+    f{\left({ x }\right)} &= &c_1 e^{\varphi x} +  &c_2 e^{{\left({ 1-\varphi }\right)} x}, \quad &\exists c_1, c_2 \in \mathbb{R} \subset \mathbb{C} \nonumber \\
+    \iff  a_n &= &k_1 n^{\varphi} +  &k_2 n^{1- \varphi}, &\exists k_1, k_2 \in \mathbb{R} \subset \mathbb{C} \nonumber
+\end{alignat}
+
+**** Repeated Roots of Characteristic Equation
+:PROPERTIES:
+:CUSTOM_ID: rep-roots-recurrence
+:END:
+***** Example
+Consider the following recurrence relation:
+
+\begin{align}
+    a_n -  10a_{n+ 1} +  25a_{n+  2}&= 0 \label{eq:hom-repeated-roots-recurrence} \\
+    \implies  \sum^{\infty}_{n= 0}   {\left[{ a_n \frac{x^n}{n!} }\right]} - 10 \sum^{\infty}_{n= 0}   {\left[{ \frac{x^n}{n!}+    }\right]} + 25 \sum^{\infty}_{n= 0 }   {\left[{  a_{n+  2 }\frac{x^n}{n!} }\right]}&= 0 \nonumber
+\end{align}
+
+By applying the definition of the exponential generating function at eqref:eq:exp-gen-def-1 :
+
+\begin{align}
+    f''{\left({ x }\right)}- 10f'{\left({ x }\right)}+  25f{\left({ x }\right)}= 0 \nonumber \label{eq:rep-roots-func-ode}
+\end{align}
+
+By implementing the already well-established theory of linear ODE's, the characteristic equation for eqref:eq:rep-roots-func-ode can be expressed as:
+
+\begin{align}
+    m^2- 10m+  25 = 0 \nonumber \\
+    {\left({ m- 5 }\right)}^2 = 0 \nonumber \\
+    m= 5 \label{eq:rep-roots-recurrence-char-sol}
+\end{align}
+
+Herein lies a complexity, in order to solve this, the solution produced from eqref:eq:rep-roots-recurrence-char-sol can be used with the /Reduction of Order/ technique to produce a solution that will be of the form [[cite:zillMatrixExponential2009][\textsection 4.3]].
+
+\begin{align}
+    f{\left({ x }\right)}= c_1e^{5x} +  c_2 x e^{5x} \label{eq:rep-roots-ode-sol}
+\end{align}
+
+eqref:eq:rep-roots-ode-sol can be expressed in terms of the exponential power series in order to try and relate the solution for the function back to the generating function,
+observe however the following power series identity (TODO Prove this in section [[#prove-ext-exp-power-series-rep-roots]]):
+
+\begin{align}
+    x^ke^x &= \sum^{\infty}_{n= 0}   {\left[{ \frac{x^n}{{\left({ n- k }\right)}!} }\right]}, \quad \exists k \in \mathbb{Z}^+ \label{eq:uniq-roots-pow-series-ident}
+\end{align}
+
+by applying identity eqref:eq:uniq-roots-pow-series-ident to equation eqref:eq:rep-roots-ode-sol
+
+\begin{align}
+    \implies  f{\left({ x }\right)} &= \sum^{\infty}_{n= 0}   {\left[{ c_1 \frac{{\left({ 5x }\right)}^n}{n!} }\right]}  +  \sum^{\infty}_{n= 0}   {\left[{ c_2 n \frac{{\left({ 5x^n }\right)}}{n{\left({ n-1 }\right)}!} }\right]} \nonumber \\
+ &= \sum^{\infty}_{n= 0}   {\left[{ \frac{x^n}{n!} {\left({ c_{1}5^n +  c_2 n 5^n   }\right)} }\right]} \nonumber
+\end{align}
+
+Given the defenition of the exponential generating function from eqref:eq:exp-gen-def-1
+
+\begin{align}
+    f{\left({ x }\right)}&=     \sum^{\infty}_{n= 0}   {\left[{ a_n \frac{x^n}{n!} }\right]} \nonumber \\
+    \iff a_n &= c_{15}^n +  c_2n_5^n \nonumber \\ \nonumber
+    \ \nonumber \\
+    \square \nonumber
+\end{align}
+***** Generalised Example
+
+***** TODO Proof
+In order to prove the the solution for a $k^{\mathrm{th}}$ order recurrence relation with $k$ repeated
+
+
+Consider a recurrence relation of the form:
+
+\begin{align}
+     \sum^{k}_{n= 0}   {\left[{ c_i a_n }\right]}  = 0 \nonumber \\
+      \implies  \sum^{\infty}_{n= 0}   \sum^{k}_{i= 0}   c_i a_n \frac{x^n}{n!} = 0 \nonumber \\
+      \sum^{k}_{i= 0}   \sum^{\infty}_{n= 0}   c_i a_n \frac{x^n}{n!} \nonumber
+\end{align}
+
+By substituting for the value of the generating function (from eqref:eq:exp-gen-def-1):
+
+\begin{align}
+    \sum^{k}_{i= 0}   {\left[{ c_if^{{\left({ k }\right)}}  {\left({ x }\right)}    }\right]} \label{eq:gen-form-rep-roots-ode}
+\end{align}
+
+Assume that eqref:eq:gen-form-rep-roots-ode corresponds to a charecteristic polynomial with only 1 root of multiplicity $k$, the solution would hence be of the form:
+
+\begin{align}
+			 & \sum^{k}_{i= 0}   {\left[{ c_i m^i }\right]} = 0 \wedge m=B, \enspace  \exists! B \in \mathbb{C} \nonumber \\
+ \implies      f{\left({ x }\right)}&= \sum^{k}_{i= 0}   {\left[{ x^i A_i e^{mx} }\right]}, \quad \exists A \in \mathbb{C}^+, \enspace \forall i \in {\left[{ 1,k }\right]} \cap \mathbb{N}  \label{eq:sol-rep-roots-ode} \\
+\end{align}
+
+Recall the following power series identity (proved in section xxx):
+
+\begin{align}
+x^k e^x = \sum^{\infty}_{n= 0} {\left[{ \frac{x^n}{{\left({ n- k }\right)}!} }\right]}     \nonumber
+\end{align}
+
+By applying this to eqref:eq:sol-rep-roots-ode :
+
+\begin{align}
+f{\left({ x }\right)}&=     \sum^{k}_{i= 0}   {\left[{ A_i \sum^{\infty}_{n= 0}   {\left[{ \frac{{\left({ x m }\right)}^n}{{\left({ n- i }\right)}!} }\right]}  }\right]} \nonumber \\
+&=     \sum^{\infty}_{n= 0}   {\left[{ \sum^{k}_{i=0} {\left[{ \frac{x^n}{n!}  \frac{n!}{{\left({ n- i }\right)}} A_i m^n }\right]}       }\right]} # \\
+&=     \sum^{\infty}_{n= 0} {\left[{ \frac{x^n}{n!}   \sum^{k}_{i=0} {\left[{  \frac{n!}{{\left({ n- i }\right)}} A_i m^n }\right]}       }\right]}
+\end{align}
+
+Recall the generating function that was used to get ref:eq:gen-form-rep-roots-ode:
+
+\begin{align}
+f{\left({ x }\right)}&= \sum^{\infty}_{n= 0}   {\left[{ a_n \frac{x^n}{n!} }\right]}      \nonumber \\
+ \implies  a_n &= \sum^{k}_{i= 0}   {\left[{ A_i \frac{n!}{{\left({ n- i }\right)}!} m^n  }\right]} \nonumber \\
+ &= \sum^{k}_{i= 0}   {\left[{ m^n A_i \prod_{0}^{k} {\left[{ n- {\left({ i- 1 }\right)} }\right]}   }\right]}
+& \intertext{$\because \enspace i \leq k$} \notag \\
+ &= \sum^{k}_{i= 0} {\left[{ A_i^* m^n n^i }\right]}, \quad \exists A_i \in \mathbb{C}, \enspace \forall i\leqk \in \mathbb{Z}^+ \nonumber \\
+\ \nonumber \\
+\square \nonumber
+\end{align}
+
+
+
+**** TODO General Proof
+In sections [[#uniq-roots-recurrence]] and [[*Unique Roots of Characteristic Equation]] it was shown that a recurrence relation can be related to an ODE and then that solution can be transformed to provide a solution for the recurrence relation, when the charecteristic polynomial has either complex roots or 1 repeated root. Generally the solution to a linear ODE will be a superposition of solutions for each root, repeated or unique and so here it will be shown that these two can be combined and that the solution will still hold.
+
+Consider a Recursive relation with constant coefficients:
+
+$$
+\sum^{\infty}_{n= 0}   \left[ c_i \cdot  a_n \right] = 0, \quad \exists c \in
+\mathbb{R}, \enspace \forall i<k\in\mathbb{Z}^+
+$$
+
+This can be expressed in terms of the exponential generating function:
+
+$$
+\sum^{\infty}_{n= 0}   \left[ c_i \cdot  a_n \right] = 0\\
+\implies \sum^{\infty}_{n= 0}   \left[\sum^{\infty}_{n= 0}   \left[ c_i \cdot
+a_n  \right]   \right] = 0
+$$
+
+- Use the Generating function to get an ODE
+- The ODE will have a solution that is a combination of the above two forms
+- The solution will translate back to a combination of both above forms
+
+
+
+** Links to references
+
+1. [[https://math.stackexchange.com/a/1775226]]
+2. [[https://math.stackexchange.com/a/593553]]
+3. [[https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/IvanNiven.pdf]]
+
+Misc
+
+1. [[https://brilliant.org/wiki/generating-functions-solving-recurrence-relations/]]
+2. [[https://www.math.cmu.edu/~af1p/Teaching/Combinatorics/Slides/Generating-Functions.pdf]]
+3. [[https://www.math.cmu.edu/~af1p/Teaching/Combinatorics/Slides/Generating-Functions.pdf]]
+
+* Prove the Power Series
+   :PROPERTIES:
+   :CUSTOM_ID: prove-power-series
+   :END:
+
+
+** General Power Series
+
+** Exponential Power Series
+   :PROPERTIES:
+   :CUSTOM_ID: prove-exp-power-series
+   :END:
+** Extended Power Series (for Repeated Roots)
+:PROPERTIES:
+:CUSTOM_ID: prove-ext-exp-power-series-rep-roots
+:END:
+
+** Taylor Series
+
+
+   When $n$ is set to 0, the /Taylor Series/ reduces to the /Mean Value Theorem/, when $a$ is set to 0 the series is referred to as the /Maclaurin Series/.
+

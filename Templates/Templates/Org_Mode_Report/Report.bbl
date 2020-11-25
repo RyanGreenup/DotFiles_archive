@@ -1,0 +1,2570 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Astropy}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{title}{Astropy}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/7KLAENEX/www.astropy.org.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.astropy.org/
+      \endverb
+      \verb{url}
+      \verb https://www.astropy.org/
+      \endverb
+    \endentry
+    \entry{baderSpacefillingCurvesIntroduction2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=2dd56e301e338cd758ff1d4b90965fda}{%
+           family={Bader},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Heidelberg ; New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{2dd56e301e338cd758ff1d4b90965fda}
+      \strng{fullhash}{2dd56e301e338cd758ff1d4b90965fda}
+      \strng{bibnamehash}{2dd56e301e338cd758ff1d4b90965fda}
+      \strng{authorbibnamehash}{2dd56e301e338cd758ff1d4b90965fda}
+      \strng{authornamehash}{2dd56e301e338cd758ff1d4b90965fda}
+      \strng{authorfullhash}{2dd56e301e338cd758ff1d4b90965fda}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{OCLC: ocn794710381}
+      \field{isbn}{978-3-642-31045-4}
+      \field{number}{9}
+      \field{pagetotal}{278}
+      \field{series}{Texts in Computational Science and Engineering}
+      \field{shorttitle}{Space-Filling Curves}
+      \field{title}{Space-Filling Curves: An Introduction with Applications in Scientific Computing}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \keyw{Curves,Curves on surfaces,Mathematical models}
+    \endentry
+    \entry{benedettapalazzoNumbersNatureFibonacci2016}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7000ceb7aac02cd97cb04bd33bad69c6}{%
+           family={{Benedetta Palazzo}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{7000ceb7aac02cd97cb04bd33bad69c6}
+      \strng{fullhash}{7000ceb7aac02cd97cb04bd33bad69c6}
+      \strng{bibnamehash}{7000ceb7aac02cd97cb04bd33bad69c6}
+      \strng{authorbibnamehash}{7000ceb7aac02cd97cb04bd33bad69c6}
+      \strng{authornamehash}{7000ceb7aac02cd97cb04bd33bad69c6}
+      \strng{authorfullhash}{7000ceb7aac02cd97cb04bd33bad69c6}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The Fibonacci Sequence has always attracted the attention of people since, as well as having special mathematical properties, other numbers so ubiquitous as those of Fibonacci do not exist anywhere else in mathematics: they appear in geometry, algebra, number theory, in many other fields of mathematics and even in nature! Let’s find out together what …}
+      \field{day}{27}
+      \field{hour}{10}
+      \field{journaltitle}{Eniscuola}
+      \field{minute}{48}
+      \field{month}{6}
+      \field{second}{35}
+      \field{shorttitle}{The Numbers of Nature}
+      \field{timezone}{+02\bibtzminsep 00}
+      \field{title}{The Numbers of Nature: The {{Fibonacci}} Sequence}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/VV6INWUL/the-numbers-of-nature-the-fibonacci-sequence.html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.eniscuola.net/en/2016/06/27/the-numbers-of-nature-the-fibonacci-sequence/
+      \endverb
+      \verb{url}
+      \verb http://www.eniscuola.net/en/2016/06/27/the-numbers-of-nature-the-fibonacci-sequence/
+      \endverb
+    \endentry
+    \entry{bezansonJuliaFreshApproach2017}{article}{}
+      \name{author}{4}{}{%
+        {{hash=17e68031e06f57a7e83caeb4e0aed827}{%
+           family={Bezanson},
+           familyi={B\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+        {{hash=01a6ca61fcd12a3a071ec49304df57f8}{%
+           family={Edelman},
+           familyi={E\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bca7c93f55e669f71c4ff95e68ac9538}{%
+           family={Karpinski},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=de802ff42d9c902868c57a332dbac5e0}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Viral\bibnamedelima B.},
+           giveni={V\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{07e3452af3652a626dc1d02355fda942}
+      \strng{fullhash}{651af5e2dc744eabe31cd448eb05d640}
+      \strng{bibnamehash}{07e3452af3652a626dc1d02355fda942}
+      \strng{authorbibnamehash}{07e3452af3652a626dc1d02355fda942}
+      \strng{authornamehash}{07e3452af3652a626dc1d02355fda942}
+      \strng{authorfullhash}{651af5e2dc744eabe31cd448eb05d640}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0036-1445, 1095-7200}
+      \field{journaltitle}{SIAM Review}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shortjournal}{SIAM Rev.}
+      \field{shorttitle}{Julia}
+      \field{title}{Julia: {{A Fresh Approach}} to {{Numerical Computing}}}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{volume}{59}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{65\bibrangedash 98}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1137/141000671
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/NKPQZ5WV/bezansonJuliaFreshApproach2017.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://epubs.siam.org/doi/10.1137/141000671
+      \endverb
+      \verb{url}
+      \verb https://epubs.siam.org/doi/10.1137/141000671
+      \endverb
+    \endentry
+    \entry{bohannonSunflowersShowComplex2016}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d604cef3ea7a417ec3d8113792f1a557}{%
+           family={Bohannon},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d604cef3ea7a417ec3d8113792f1a557}
+      \strng{fullhash}{d604cef3ea7a417ec3d8113792f1a557}
+      \strng{bibnamehash}{d604cef3ea7a417ec3d8113792f1a557}
+      \strng{authorbibnamehash}{d604cef3ea7a417ec3d8113792f1a557}
+      \strng{authornamehash}{d604cef3ea7a417ec3d8113792f1a557}
+      \strng{authorfullhash}{d604cef3ea7a417ec3d8113792f1a557}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Crowdsourced data finds patterns more complicated than ever reported}
+      \field{day}{17}
+      \field{hour}{12}
+      \field{journaltitle}{Science | AAAS}
+      \field{langid}{english}
+      \field{minute}{7}
+      \field{month}{5}
+      \field{second}{2}
+      \field{timezone}{-04\bibtzminsep 00}
+      \field{title}{Sunflowers Show Complex {{Fibonacci}} Sequences}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/ERY77GSJ/sunflowers-show-complex-fibonacci-sequences.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencemag.org/news/2016/05/sunflowers-show-complex-fibonacci-sequences
+      \endverb
+      \verb{url}
+      \verb https://www.sciencemag.org/news/2016/05/sunflowers-show-complex-fibonacci-sequences
+      \endverb
+    \endentry
+    \entry{bownScienceMandelbrotSet}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3c424656bf41828d2610d2aaa85d9fee}{%
+           family={Bown},
+           familyi={B\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c424656bf41828d2610d2aaa85d9fee}
+      \strng{fullhash}{3c424656bf41828d2610d2aaa85d9fee}
+      \strng{bibnamehash}{3c424656bf41828d2610d2aaa85d9fee}
+      \strng{authorbibnamehash}{3c424656bf41828d2610d2aaa85d9fee}
+      \strng{authornamehash}{3c424656bf41828d2610d2aaa85d9fee}
+      \strng{authorfullhash}{3c424656bf41828d2610d2aaa85d9fee}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{It's official: the Mandelbrot set is a fractal. A Japanese mathematician has finally proved something that everyone with a picture of chaos on their wall thought they already knew. In doing so, Mitsuhiro Shishikura of the Tokyo Institute of Technology has proved one of the longest-standing conjectures in fractal mathematics - that the dimension of \&hellip;}
+      \field{journaltitle}{New Scientist}
+      \field{langid}{american}
+      \field{shorttitle}{Science}
+      \field{title}{Science: {{Mandelbrot}} Set Is as Complex as It Could Be}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/FSNZHGQB/mg13117882-900-science-mandelbrot-set-is-as-complex-as-it-could-be.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.newscientist.com/article/mg13117882-900-science-mandelbrot-set-is-as-complex-as-it-could-be/
+      \endverb
+      \verb{url}
+      \verb https://www.newscientist.com/article/mg13117882-900-science-mandelbrot-set-is-as-complex-as-it-could-be/
+      \endverb
+    \endentry
+    \entry{simonbrassCCSearch2006}{online}{}
+      \name{author}{1}{}{%
+        {{hash=cea31a4853688eaf34f9847aaa9311ef}{%
+           family={Brass},
+           familyi={B\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{cea31a4853688eaf34f9847aaa9311ef}
+      \strng{fullhash}{cea31a4853688eaf34f9847aaa9311ef}
+      \strng{bibnamehash}{cea31a4853688eaf34f9847aaa9311ef}
+      \strng{authorbibnamehash}{cea31a4853688eaf34f9847aaa9311ef}
+      \strng{authornamehash}{cea31a4853688eaf34f9847aaa9311ef}
+      \strng{authorfullhash}{cea31a4853688eaf34f9847aaa9311ef}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Empowering the world to share through 6 simple licenses + a global community of advocates for open.}
+      \field{journaltitle}{Creative Commons}
+      \field{langid}{english}
+      \field{title}{{{CC Search}}}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2006, September 5}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/CDZ2ABE9/f126fc95-421f-4717-ab43-fb6a254bc0f9.html
+      \endverb
+      \verb{urlraw}
+      \verb https://search.creativecommons.org/
+      \endverb
+      \verb{url}
+      \verb https://search.creativecommons.org/
+      \endverb
+    \endentry
+    \entry{briggsTurbulentMirrorIllustrated1989}{book}{}
+      \name{author}{2}{}{%
+        {{hash=809cd918520dab379b5052758612358d}{%
+           family={Briggs},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ef8ff34479a333d5e62cc8862a222be7}{%
+           family={Peat},
+           familyi={P\bibinitperiod},
+           given={F.\bibnamedelimi David},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Harper \& Row}%
+      }
+      \strng{namehash}{d2e5b5ecfdcf7cc1cfe0d98ce237d19a}
+      \strng{fullhash}{d2e5b5ecfdcf7cc1cfe0d98ce237d19a}
+      \strng{bibnamehash}{d2e5b5ecfdcf7cc1cfe0d98ce237d19a}
+      \strng{authorbibnamehash}{d2e5b5ecfdcf7cc1cfe0d98ce237d19a}
+      \strng{authornamehash}{d2e5b5ecfdcf7cc1cfe0d98ce237d19a}
+      \strng{authorfullhash}{d2e5b5ecfdcf7cc1cfe0d98ce237d19a}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{1st ed}
+      \field{isbn}{978-0-06-016061-6}
+      \field{pagetotal}{222}
+      \field{shorttitle}{Turbulent Mirror}
+      \field{title}{Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \keyw{Chaotic behavior in systems}
+    \endentry
+    \entry{brownHistoryApplicationsFibonacci2019}{online}{}
+      \name{author}{6}{}{%
+        {{hash=ba0f875a2e518de68d3b474de01c0e9b}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ee1ed142ac6425a510d62a33fd52a631}{%
+           family={Finch},
+           familyi={F\bibinitperiod},
+           given={Sue},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7627a197de541c91082d3ff6a7f1181e}{%
+           family={Gordon},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=fe9edc0088d156670836b885fc79ea65}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c50a1876cd23dfe74e33766ce03691b5}{%
+           family={Mathews},
+           familyi={M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=59cc82be2fbb1ecb531744467227084a}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Ray},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d33ca71b85e00a8120171d9cf78645c8}
+      \strng{fullhash}{966cd01b8733279166fb396ec192001d}
+      \strng{bibnamehash}{d33ca71b85e00a8120171d9cf78645c8}
+      \strng{authorbibnamehash}{d33ca71b85e00a8120171d9cf78645c8}
+      \strng{authornamehash}{d33ca71b85e00a8120171d9cf78645c8}
+      \strng{authorfullhash}{966cd01b8733279166fb396ec192001d}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{2}
+      \field{month}{8}
+      \field{title}{History and Applications - {{Fibonacci}} Numbers}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://amsi.org.au/ESA_Senior_Years/SeniorTopic1/1d/1d_4history_2.html
+      \endverb
+      \verb{url}
+      \verb https://amsi.org.au/ESA_Senior_Years/SeniorTopic1/1d/1d_4history_2.html
+      \endverb
+    \endentry
+    \entry{churchillComplexVariablesApplications2014}{book}{}
+      \name{author}{2}{}{%
+        {{hash=1ac49cc8881054e17d9cba1e373c67f4}{%
+           family={Churchill},
+           familyi={C\bibinitperiod},
+           given={Ruel\bibnamedelima V.},
+           giveni={R\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=1158efb2f86524344159b0b54e47195d}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima Ward},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \strng{namehash}{ec19a6336b1a7affd609c240e1e0c693}
+      \strng{fullhash}{ec19a6336b1a7affd609c240e1e0c693}
+      \strng{bibnamehash}{ec19a6336b1a7affd609c240e1e0c693}
+      \strng{authorbibnamehash}{ec19a6336b1a7affd609c240e1e0c693}
+      \strng{authornamehash}{ec19a6336b1a7affd609c240e1e0c693}
+      \strng{authorfullhash}{ec19a6336b1a7affd609c240e1e0c693}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Ninth Edition}
+      \field{isbn}{978-0-07-338317-0}
+      \field{pagetotal}{461}
+      \field{series}{Brown and Churchill Series}
+      \field{title}{Complex Variables and Applications}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \keyw{Functions of complex variables}
+    \endentry
+    \entry{CTANPackageAnimate}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeltitlesource}{title}
+      \field{title}{{{CTAN}}: {{Package}} Animate}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/8GYMGG3T/animate.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/animate?lang=en
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/animate?lang=en
+      \endverb
+    \endentry
+    \entry{edgarMeasureTopologyFractal2008a}{book}{}
+      \name{author}{1}{}{%
+        {{hash=37265fa47659b0002144c692793634d9}{%
+           family={Edgar},
+           familyi={E\bibinitperiod},
+           given={Gerald\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{37265fa47659b0002144c692793634d9}
+      \strng{fullhash}{37265fa47659b0002144c692793634d9}
+      \strng{bibnamehash}{37265fa47659b0002144c692793634d9}
+      \strng{authorbibnamehash}{37265fa47659b0002144c692793634d9}
+      \strng{authornamehash}{37265fa47659b0002144c692793634d9}
+      \strng{authorfullhash}{37265fa47659b0002144c692793634d9}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: ocn190580786}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-387-74748-4}
+      \field{pagetotal}{268}
+      \field{series}{Undergraduate Texts in Mathematics}
+      \field{title}{Measure, Topology, and Fractal Geometry}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \keyw{Fractals,Measure theory,Topology}
+    \endentry
+    \entry{edgarMeasureTopologyFractal2008}{book}{}
+      \name{author}{1}{}{%
+        {{hash=37265fa47659b0002144c692793634d9}{%
+           family={Edgar},
+           familyi={E\bibinitperiod},
+           given={Gerald\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{37265fa47659b0002144c692793634d9}
+      \strng{fullhash}{37265fa47659b0002144c692793634d9}
+      \strng{bibnamehash}{37265fa47659b0002144c692793634d9}
+      \strng{authorbibnamehash}{37265fa47659b0002144c692793634d9}
+      \strng{authornamehash}{37265fa47659b0002144c692793634d9}
+      \strng{authorfullhash}{37265fa47659b0002144c692793634d9}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: ocn190580786}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-387-74748-4}
+      \field{pagetotal}{268}
+      \field{series}{Undergraduate Texts in Mathematics}
+      \field{title}{Measure, Topology, and Fractal Geometry}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/E6BR227L/edgarMeasureTopologyFractal2008.pdf
+      \endverb
+      \keyw{Fractals,Measure theory,Topology}
+    \endentry
+    \entry{falconerFractalGeometryMathematical2003b}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4c12e05a251255040261073154cca7bf}{%
+           family={Falconer},
+           familyi={F\bibinitperiod},
+           given={K.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chichester, England}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{4c12e05a251255040261073154cca7bf}
+      \strng{fullhash}{4c12e05a251255040261073154cca7bf}
+      \strng{bibnamehash}{4c12e05a251255040261073154cca7bf}
+      \strng{authorbibnamehash}{4c12e05a251255040261073154cca7bf}
+      \strng{authornamehash}{4c12e05a251255040261073154cca7bf}
+      \strng{authorfullhash}{4c12e05a251255040261073154cca7bf}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-470-84861-6 978-0-470-84862-3}
+      \field{pagetotal}{337}
+      \field{shorttitle}{Fractal Geometry}
+      \field{title}{Fractal Geometry: Mathematical Foundations and Applications}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \keyw{Fractals}
+    \endentry
+    \entry{falconerFractalGeometryMathematical2003}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4c12e05a251255040261073154cca7bf}{%
+           family={Falconer},
+           familyi={F\bibinitperiod},
+           given={K.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chichester, England}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{4c12e05a251255040261073154cca7bf}
+      \strng{fullhash}{4c12e05a251255040261073154cca7bf}
+      \strng{bibnamehash}{4c12e05a251255040261073154cca7bf}
+      \strng{authorbibnamehash}{4c12e05a251255040261073154cca7bf}
+      \strng{authornamehash}{4c12e05a251255040261073154cca7bf}
+      \strng{authorfullhash}{4c12e05a251255040261073154cca7bf}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-470-84861-6 978-0-470-84862-3}
+      \field{pagetotal}{337}
+      \field{shorttitle}{Fractal Geometry}
+      \field{title}{Fractal Geometry: Mathematical Foundations and Applications}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \keyw{Fractals}
+    \endentry
+    \entry{farrellMathAdventuresPython2019}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6dfb2c1b39eec1b0ffea1234ec092077}{%
+           family={Farrell},
+           familyi={F\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco}%
+      }
+      \list{publisher}{1}{%
+        {No Starch Press}%
+      }
+      \strng{namehash}{6dfb2c1b39eec1b0ffea1234ec092077}
+      \strng{fullhash}{6dfb2c1b39eec1b0ffea1234ec092077}
+      \strng{bibnamehash}{6dfb2c1b39eec1b0ffea1234ec092077}
+      \strng{authorbibnamehash}{6dfb2c1b39eec1b0ffea1234ec092077}
+      \strng{authornamehash}{6dfb2c1b39eec1b0ffea1234ec092077}
+      \strng{authorfullhash}{6dfb2c1b39eec1b0ffea1234ec092077}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{"Teaches math concepts through programming. Begins with a crash course in basic programming concepts and how to use Python's built-in Turtle module, and then explores topics like writing programs to solve equations and matrices, drawing polygons and fractals, and using the Processing graphics library to create interactive 2D and 3D models"--}
+      \field{isbn}{978-1-59327-867-0}
+      \field{pagetotal}{276}
+      \field{shorttitle}{Math Adventures with {{Python}}}
+      \field{title}{Math Adventures with {{Python}}: An Illustrated Guide to Exploring Math with Code}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \keyw{Computer-assisted instruction,Mathematics,Python (Computer program language)}
+    \endentry
+    \entry{Fractal2020}{inreference}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In mathematics, a fractal is a self-similar subset of Euclidean space whose fractal dimension strictly exceeds its topological dimension. Fractals appear the same at different levels, as illustrated in successive magnifications of the Mandelbrot set. Fractals exhibit similar patterns at increasingly small scales called self-similarity, also known as expanding symmetry or unfolding symmetry; if this replication is exactly the same at every scale, as in the Menger sponge, it is called affine self-similar. Fractal geometry lies within the mathematical branch of measure theory. One way that fractals are different from finite geometric figures is the way in which they scale. Doubling the edge lengths of a polygon multiplies its area by four, which is two (the ratio of the new to the old side length) raised to the power of two (the dimension of the space the polygon resides in). Likewise, if the radius of a sphere is doubled, its volume scales by eight, which is two (the ratio of the new to the old radius) to the power of three (the dimension that the sphere resides in). However, if a fractal's one-dimensional lengths are all doubled, the spatial content of the fractal scales by a power that is not necessarily an integer. This power is called the fractal dimension of the fractal, and it usually exceeds the fractal's topological dimension.Analytically, fractals are usually nowhere differentiable. An infinite fractal curve can be conceived of as winding through space differently from an ordinary line – although it is still 1-dimensional, its fractal dimension indicates that it also resembles a surface. Starting in the 17th century with notions of recursion, fractals have moved through increasingly rigorous mathematical treatment of the concept to the study of continuous but not differentiable functions in the 19th century by the seminal work of Bernard Bolzano, Bernhard Riemann, and Karl Weierstrass, and on to the coining of the word fractal in the 20th century with a subsequent burgeoning of interest in fractals and computer-based modelling in the 20th century. The term "fractal" was first used by mathematician Benoit Mandelbrot in 1975. Mandelbrot based it on the Latin frāctus, meaning "broken" or "fractured", and used it to extend the concept of theoretical fractional dimensions to geometric patterns in nature.There is some disagreement among mathematicians about how the concept of a fractal should be formally defined. Mandelbrot himself summarized it as "beautiful, damn hard, increasingly useful. That's fractals." More formally, in 1982 Mandelbrot stated that "A fractal is by definition a set for which the Hausdorff–Besicovitch dimension strictly exceeds the topological dimension." Later, seeing this as too restrictive, he simplified and expanded the definition to: "A fractal is a shape made of parts similar to the whole in some way." Still later, Mandelbrot settled on this use of the language: "...to use fractal without a pedantic definition, to use fractal dimension as a generic term applicable to all the variants".The consensus is that theoretical fractals are infinitely self-similar, iterated, and detailed mathematical constructs having fractal dimensions, of which many examples have been formulated and studied in great depth. Fractals are not limited to geometric patterns, but can also describe processes in time. Fractal patterns with various degrees of self-similarity have been rendered or studied in images, structures and sounds and found in nature, technology, art, architecture and law. Fractals are of particular relevance in the field of chaos theory, since the graphs of most chaotic processes are fractals.}
+      \field{annotation}{Page Version ID: 978464038}
+      \field{booktitle}{Wikipedia}
+      \field{day}{15}
+      \field{hour}{2}
+      \field{langid}{english}
+      \field{minute}{33}
+      \field{month}{9}
+      \field{second}{51}
+      \field{timezone}{Z}
+      \field{title}{Fractal}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/CDC5FAVB/index.html
+      \endverb
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Fractal&oldid=978464038
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Fractal&oldid=978464038
+      \endverb
+    \endentry
+    \entry{gilmoreTopologyChaosAlice2002}{book}{}
+      \name{author}{2}{}{%
+        {{hash=416eeccea7dca0e4eefc7999ba90b062}{%
+           family={Gilmore},
+           familyi={G\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c6eaad22a3bc8e6efad151481c7f07f8}{%
+           family={Lefranc},
+           familyi={L\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Wiley-Interscience}%
+      }
+      \strng{namehash}{d8b714fa096ea9b5189244741f373561}
+      \strng{fullhash}{d8b714fa096ea9b5189244741f373561}
+      \strng{bibnamehash}{d8b714fa096ea9b5189244741f373561}
+      \strng{authorbibnamehash}{d8b714fa096ea9b5189244741f373561}
+      \strng{authornamehash}{d8b714fa096ea9b5189244741f373561}
+      \strng{authorfullhash}{d8b714fa096ea9b5189244741f373561}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-0-471-40816-1}
+      \field{pagetotal}{495}
+      \field{shorttitle}{The Topology of Chaos}
+      \field{title}{The Topology of Chaos: {{Alice}} in Stretch and Squeezeland}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \keyw{Attractors (Mathematics),Chaotic behavior in systems}
+    \endentry
+    \entry{giordanoFirstCourseMathematical2014}{book}{}
+      \name{author}{3}{}{%
+        {{hash=813f50b397d0f7f3583f07308a75a0b9}{%
+           family={Giordano},
+           familyi={G\bibinitperiod},
+           given={Frank\bibnamedelima R.},
+           giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=de2e5a9dcc62206fde43e027c727232d}{%
+           family={Fox},
+           familyi={F\bibinitperiod},
+           given={William\bibnamedelima P.},
+           giveni={W\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=7144298393ec4775888ee8e75fea9e0f}{%
+           family={Horton},
+           familyi={H\bibinitperiod},
+           given={Steven\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Australia ; Boston, MA}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole, Cengage Learning}%
+      }
+      \strng{namehash}{3cc77baf28df1e223350bff0b3b76415}
+      \strng{fullhash}{3cc77baf28df1e223350bff0b3b76415}
+      \strng{bibnamehash}{3cc77baf28df1e223350bff0b3b76415}
+      \strng{authorbibnamehash}{3cc77baf28df1e223350bff0b3b76415}
+      \strng{authornamehash}{3cc77baf28df1e223350bff0b3b76415}
+      \strng{authorfullhash}{3cc77baf28df1e223350bff0b3b76415}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: ocn820108873}
+      \field{edition}{5th ed., International ed}
+      \field{isbn}{978-1-285-05090-4 978-1-285-07749-9}
+      \field{pagetotal}{676}
+      \field{title}{A First Course in Mathematical Modeling}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \keyw{Mathematical models}
+    \endentry
+    \entry{gomoryBenoitMandelbrot19242010}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2152ffdcf6138b22adb75bb06a1b15c1}{%
+           family={Gomory},
+           familyi={G\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{fullhash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{bibnamehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{authorbibnamehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{authornamehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{authorfullhash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Mathematician, and father of fractal geometry, who described the roughness of nature.}
+      \field{issn}{1476-4687}
+      \field{issue}{7322}
+      \field{journaltitle}{Nature}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{7322}
+      \field{title}{Benoît {{Mandelbrot}} (1924–2010)}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{468}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{378\bibrangedash 378}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/468378a
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/V65GVQG7/gomoryBenoitMandelbrot19242010.pdf;/home/ryan/Zotero/storage/LRDNZVVA/468378a.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/468378a
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/468378a
+      \endverb
+    \endentry
+    \entry{gouyetPhysicsFractalStructures1996}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f7830a1fa0a0e3304b6b980e410b10d5}{%
+           family={Gouyet},
+           familyi={G\bibinitperiod},
+           given={Jean-François},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris : New York}%
+      }
+      \list{publisher}{1}{%
+        {Masson ; Springer}%
+      }
+      \strng{namehash}{f7830a1fa0a0e3304b6b980e410b10d5}
+      \strng{fullhash}{f7830a1fa0a0e3304b6b980e410b10d5}
+      \strng{bibnamehash}{f7830a1fa0a0e3304b6b980e410b10d5}
+      \strng{authorbibnamehash}{f7830a1fa0a0e3304b6b980e410b10d5}
+      \strng{authornamehash}{f7830a1fa0a0e3304b6b980e410b10d5}
+      \strng{authorfullhash}{f7830a1fa0a0e3304b6b980e410b10d5}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-94153-0 978-3-540-94153-8 978-2-225-85130-8}
+      \field{langid}{english}
+      \field{pagetotal}{234}
+      \field{title}{Physics and Fractal Structures}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \keyw{Fractals,Mathematical physics}
+    \endentry
+    \entry{grahamConcreteMathematicsFoundation1994}{book}{}
+      \name{author}{3}{}{%
+        {{hash=65e6323adac2eec778c3822c50f54174}{%
+           family={Graham},
+           familyi={G\bibinitperiod},
+           given={Ronald\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=16ba958eaf56fad580491eef4f771cee}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima Ervin},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b5085a32ea3005cb2c63376fae9f0646}{%
+           family={Patashnik},
+           familyi={P\bibinitperiod},
+           given={Oren},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{1c5d452be763edc4479525b415e484d1}
+      \strng{fullhash}{1c5d452be763edc4479525b415e484d1}
+      \strng{bibnamehash}{1c5d452be763edc4479525b415e484d1}
+      \strng{authorbibnamehash}{1c5d452be763edc4479525b415e484d1}
+      \strng{authornamehash}{1c5d452be763edc4479525b415e484d1}
+      \strng{authorfullhash}{1c5d452be763edc4479525b415e484d1}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-201-55802-9}
+      \field{pagetotal}{657}
+      \field{shorttitle}{Concrete Mathematics}
+      \field{title}{Concrete Mathematics: A Foundation for Computer Science}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \keyw{Computer science,Mathematics}
+    \endentry
+    \entry{janwassenaarCantorDust2005}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d544de860cbfefc55ebecefaaa834221}{%
+           family={{jan wassenaar}},
+           familyi={j\bibinitperiod}}}%
+      }
+      \strng{namehash}{d544de860cbfefc55ebecefaaa834221}
+      \strng{fullhash}{d544de860cbfefc55ebecefaaa834221}
+      \strng{bibnamehash}{d544de860cbfefc55ebecefaaa834221}
+      \strng{authorbibnamehash}{d544de860cbfefc55ebecefaaa834221}
+      \strng{authornamehash}{d544de860cbfefc55ebecefaaa834221}
+      \strng{authorfullhash}{d544de860cbfefc55ebecefaaa834221}
+      \field{sortinit}{j}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{7}
+      \field{month}{1}
+      \field{title}{Cantor Dust}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/G4KPHMPB/fractald.html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.2dcurves.com/fractal/fractald.html
+      \endverb
+      \verb{url}
+      \verb http://www.2dcurves.com/fractal/fractald.html
+      \endverb
+    \endentry
+    \entry{jiangFractalAnalysisComplexity1998}{article}{}
+      \name{author}{2}{}{%
+        {{hash=168824006aafec926c06d487de20ba1c}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Junwei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bea4962f56b2ce0846504b54fbec2b45}{%
+           family={Plotnick},
+           familyi={P\bibinitperiod},
+           given={Roy\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{79fbb6f150136ae7685df2c7bbbb7c81}
+      \strng{fullhash}{79fbb6f150136ae7685df2c7bbbb7c81}
+      \strng{bibnamehash}{79fbb6f150136ae7685df2c7bbbb7c81}
+      \strng{authorbibnamehash}{79fbb6f150136ae7685df2c7bbbb7c81}
+      \strng{authornamehash}{79fbb6f150136ae7685df2c7bbbb7c81}
+      \strng{authorfullhash}{79fbb6f150136ae7685df2c7bbbb7c81}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Coastlines have long been used as a principal example of a natural feature that exhibits fractal structure. With the advent of large digitized databases, it has become possible to examine in detail large regions of coast and to examine differences in complexity, as measured by the fractal dimension, among regions. In this study, we have determined the fractal dimension of the Atlantic and Pacific coastlines of the conterminous United States. The traditional divider method was used in obtaining the fractal dimension of each coastline arc from the NOAA Medium-Resolution Shoreline Data Set. On average, the Atlantic coast has much higher fractal dimension than the Pacific coast. The results also indicate that the complexity of the Atlantic coast increases toward low latitudes. These results have implications for the interpretation of species distributions and diversity patterns along the coast and for the understanding of the dynamics of biotic recovery from mass extinctions.}
+      \field{day}{1}
+      \field{issn}{1573-8868}
+      \field{journaltitle}{Mathematical Geology}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{5}
+      \field{shortjournal}{Mathematical Geology}
+      \field{title}{Fractal {{Analysis}} of the {{Complexity}} of {{United States Coastlines}}}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{30}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{535\bibrangedash 546}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1023/A:1021790111404
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/GHSTCVFW/jiangFractalAnalysisComplexity1998.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1023/A:1021790111404
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1023/A:1021790111404
+      \endverb
+    \endentry
+    \entry{JuliaSet2020}{inreference}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the context of complex dynamics, a topic of mathematics, the Julia set and the Fatou set are two complementary sets (Julia "laces" and Fatou "dusts") defined from a function. Informally, the Fatou set of the function consists of values with the property that all nearby values behave similarly under repeated iteration of the function, and the Julia set consists of values such that an arbitrarily small perturbation can cause drastic changes in the sequence of iterated function values. Thus the behavior of the function on the Fatou set is "regular", while on the Julia set its behavior is "chaotic". The Julia set of a function f is commonly denoted J(f), and the Fatou set is denoted F(f). These sets are named after the French mathematicians Gaston Julia and Pierre Fatou whose work began the study of complex dynamics during the early 20th century.}
+      \field{annotation}{Page Version ID: 967264809}
+      \field{booktitle}{Wikipedia}
+      \field{day}{12}
+      \field{hour}{6}
+      \field{langid}{english}
+      \field{minute}{50}
+      \field{month}{7}
+      \field{second}{17}
+      \field{timezone}{Z}
+      \field{title}{Julia Set}
+      \field{urlday}{25}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/IT3KW3SP/index.html
+      \endverb
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Julia_set&oldid=967264809
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Julia_set&oldid=967264809
+      \endverb
+    \endentry
+    \entry{JuliaAstroJuliaAstro}{online}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labeltitlesource}{title}
+      \field{title}{{{JuliaAstro}} · {{JuliaAstro}}}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/8DRTSYTU/index.html
+      \endverb
+      \verb{urlraw}
+      \verb https://juliaastro.github.io/dev/index.html
+      \endverb
+      \verb{url}
+      \verb https://juliaastro.github.io/dev/index.html
+      \endverb
+    \endentry
+    \entry{JuliaGraphicsLuxorJl2020}{software}{}
+      \list{organization}{1}{%
+        {JuliaGraphics}%
+      }
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Simple drawings using vector graphics; Cairo "for tourists!"}
+      \field{day}{19}
+      \field{hour}{10}
+      \field{minute}{53}
+      \field{month}{10}
+      \field{origday}{24}
+      \field{orighour}{20}
+      \field{origminute}{9}
+      \field{origmonth}{11}
+      \field{origsecond}{6}
+      \field{origtimezone}{Z}
+      \field{origyear}{2014}
+      \field{second}{56}
+      \field{timezone}{Z}
+      \field{title}{{{JuliaGraphics}}/{{Luxor}}.Jl}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{origdateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/JuliaGraphics/Luxor.jl
+      \endverb
+      \verb{url}
+      \verb https://github.com/JuliaGraphics/Luxor.jl
+      \endverb
+      \keyw{2d-graphics,cairo,diagrams,drawing,graphics,julia,luxor,simple,turtle-graphics,vector-graphics,visualization}
+    \endentry
+    \entry{JuliaImagesImagesJl2020}{software}{}
+      \list{organization}{1}{%
+        {JuliaImages}%
+      }
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An image library for Julia. Contribute to JuliaImages/Images.jl development by creating an account on GitHub.}
+      \field{day}{13}
+      \field{hour}{18}
+      \field{minute}{59}
+      \field{month}{10}
+      \field{origday}{5}
+      \field{orighour}{14}
+      \field{origminute}{43}
+      \field{origmonth}{12}
+      \field{origsecond}{16}
+      \field{origtimezone}{Z}
+      \field{origyear}{2012}
+      \field{second}{42}
+      \field{timezone}{Z}
+      \field{title}{{{JuliaImages}}/{{Images}}.Jl}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{origdateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/JuliaImages/Images.jl
+      \endverb
+      \verb{url}
+      \verb https://github.com/JuliaImages/Images.jl
+      \endverb
+      \keyw{image-processing,julia}
+    \endentry
+    \entry{robertlambHowAreFibonacci2008}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9a5a2049abcc277da2679a225f5e8555}{%
+           family={Lamb},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a5a2049abcc277da2679a225f5e8555}
+      \strng{fullhash}{9a5a2049abcc277da2679a225f5e8555}
+      \strng{bibnamehash}{9a5a2049abcc277da2679a225f5e8555}
+      \strng{authorbibnamehash}{9a5a2049abcc277da2679a225f5e8555}
+      \strng{authornamehash}{9a5a2049abcc277da2679a225f5e8555}
+      \strng{authorfullhash}{9a5a2049abcc277da2679a225f5e8555}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Is there a magic equation to the universe? Probably not. But thanks to one man's obsession with rabbits, we have a sequence of numbers that reflect various patterns found in nature.}
+      \field{day}{24}
+      \field{hour}{3}
+      \field{journaltitle}{HowStuffWorks}
+      \field{langid}{english}
+      \field{minute}{0}
+      \field{month}{6}
+      \field{second}{0}
+      \field{timezone}{-04\bibtzminsep 00}
+      \field{title}{How Are {{Fibonacci}} Numbers Expressed in Nature?}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/VMBX83ZF/fibonacci-nature.html
+      \endverb
+      \verb{urlraw}
+      \verb https://science.howstuffworks.com/math-concepts/fibonacci-nature.htm
+      \endverb
+      \verb{url}
+      \verb https://science.howstuffworks.com/math-concepts/fibonacci-nature.htm
+      \endverb
+    \endentry
+    \entry{larsonElementaryLinearAlgebra1991}{book}{}
+      \name{author}{2}{}{%
+        {{hash=8199c3ea1d4ae7a5ccbdaac7e7d521e5}{%
+           family={Larson},
+           familyi={L\bibinitperiod},
+           given={Ron},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f956011e1a4f808000d3bd4d05e0e18b}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Bruce\bibnamedelima H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lexington, Mass}%
+      }
+      \list{publisher}{1}{%
+        {D.C. Heath}%
+      }
+      \strng{namehash}{25b9a5ae2e2b8415025fe9d7d08e72b4}
+      \strng{fullhash}{25b9a5ae2e2b8415025fe9d7d08e72b4}
+      \strng{bibnamehash}{25b9a5ae2e2b8415025fe9d7d08e72b4}
+      \strng{authorbibnamehash}{25b9a5ae2e2b8415025fe9d7d08e72b4}
+      \strng{authornamehash}{25b9a5ae2e2b8415025fe9d7d08e72b4}
+      \strng{authorfullhash}{25b9a5ae2e2b8415025fe9d7d08e72b4}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-669-24592-9}
+      \field{pagetotal}{592}
+      \field{title}{Elementary Linear Algebra}
+      \field{year}{1991}
+      \field{dateera}{ce}
+      \keyw{Algebras; Linear}
+    \endentry
+    \entry{lehmanReadingsMathematicsComputer2010}{online}{}
+      \name{author}{3}{}{%
+        {{hash=e9354f7da9d5e5cbaf657bca9e1daf67}{%
+           family={Lehman},
+           familyi={L\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=24aa5c49395c3600019d9a672fb58a9a}{%
+           family={Leighton},
+           familyi={L\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=af3075f8415a9256e7a556b4abd5d97a}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f16e742b1dc4d2cf7bf2d04c2faca163}
+      \strng{fullhash}{f16e742b1dc4d2cf7bf2d04c2faca163}
+      \strng{bibnamehash}{f16e742b1dc4d2cf7bf2d04c2faca163}
+      \strng{authorbibnamehash}{f16e742b1dc4d2cf7bf2d04c2faca163}
+      \strng{authornamehash}{f16e742b1dc4d2cf7bf2d04c2faca163}
+      \strng{authorfullhash}{f16e742b1dc4d2cf7bf2d04c2faca163}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This section contains the course notes, Mathematics for Computer Science.}
+      \field{day}{8}
+      \field{journaltitle}{MIT Open Courseware}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{title}{Readings | {{Mathematics}} for {{Computer Science}} | {{Electrical Engineering}} and {{Computer Science}} | {{MIT OpenCourseWare}}}
+      \field{urlday}{10}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/T8MH77LS/readings.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/readings/
+      \endverb
+      \verb{url}
+      \verb https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/readings/
+      \endverb
+    \endentry
+    \entry{levinSolvingRecurrenceRelations2018}{online}{}
+      \name{author}{1}{}{%
+        {{hash=902f4d627498372858aaaf35c5ce01c4}{%
+           family={Levin},
+           familyi={L\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{902f4d627498372858aaaf35c5ce01c4}
+      \strng{fullhash}{902f4d627498372858aaaf35c5ce01c4}
+      \strng{bibnamehash}{902f4d627498372858aaaf35c5ce01c4}
+      \strng{authorbibnamehash}{902f4d627498372858aaaf35c5ce01c4}
+      \strng{authornamehash}{902f4d627498372858aaaf35c5ce01c4}
+      \strng{authorfullhash}{902f4d627498372858aaaf35c5ce01c4}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{29}
+      \field{month}{1}
+      \field{title}{Solving {{Recurrence Relations}}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/GZJ3JX28/sec_recurrence.html
+      \endverb
+      \verb{urlraw}
+      \verb http://discrete.openmathbooks.org/dmoi2/sec_recurrence.html
+      \endverb
+      \verb{url}
+      \verb http://discrete.openmathbooks.org/dmoi2/sec_recurrence.html
+      \endverb
+    \endentry
+    \entry{liIntegrationFuzzyLogic2006}{book}{}
+      \name{editor}{3}{}{%
+        {{hash=2ea2f2471f02c6e3c0cc5e9d0c727a44}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=332220001eee16076e91cb488d72b330}{%
+           family={Halang},
+           familyi={H\bibinitperiod},
+           given={Wolfgang\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=34002606b4a6000b14a8974a306a2dae}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin ; New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{80ba755e6bdd2bc91b0c7438f8c788fd}
+      \strng{fullhash}{80ba755e6bdd2bc91b0c7438f8c788fd}
+      \strng{bibnamehash}{80ba755e6bdd2bc91b0c7438f8c788fd}
+      \strng{editorbibnamehash}{80ba755e6bdd2bc91b0c7438f8c788fd}
+      \strng{editornamehash}{80ba755e6bdd2bc91b0c7438f8c788fd}
+      \strng{editorfullhash}{80ba755e6bdd2bc91b0c7438f8c788fd}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: ocm63514100}
+      \field{isbn}{978-3-540-26899-4}
+      \field{number}{v. 187}
+      \field{pagetotal}{625}
+      \field{series}{Studies in Fuzziness and Soft Computing}
+      \field{title}{Integration of Fuzzy Logic and Chaos Theory}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \keyw{Chaotic behavior in systems,Fuzzy logic}
+    \endentry
+    \entry{ListFractalsHausdorff2020}{inreference}{}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Benoit Mandelbrot has stated that "A fractal is by definition a set for which the Hausdorff-Besicovitch dimension strictly exceeds the topological dimension." Presented here is a list of fractals ordered by increasing Hausdorff dimension, with the purpose of visualizing what it means for a fractal to have a low or a high dimension.}
+      \field{annotation}{Page Version ID: 977401154}
+      \field{booktitle}{Wikipedia}
+      \field{day}{8}
+      \field{hour}{16}
+      \field{langid}{english}
+      \field{minute}{38}
+      \field{month}{9}
+      \field{second}{50}
+      \field{timezone}{Z}
+      \field{title}{List of Fractals by {{Hausdorff}} Dimension}
+      \field{urlday}{24}
+      \field{urlmonth}{9}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/7U9MVMIH/index.html
+      \endverb
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=List_of_fractals_by_Hausdorff_dimension&oldid=977401154
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=List_of_fractals_by_Hausdorff_dimension&oldid=977401154
+      \endverb
+    \endentry
+    \entry{llcImageMagick}{online}{}
+      \name{author}{1}{}{%
+        {{hash=213ce2ce3a4880828b3832fad709e6c7}{%
+           family={LLC},
+           familyi={L\bibinitperiod},
+           given={ImageMagick\bibnamedelima Studio},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{213ce2ce3a4880828b3832fad709e6c7}
+      \strng{fullhash}{213ce2ce3a4880828b3832fad709e6c7}
+      \strng{bibnamehash}{213ce2ce3a4880828b3832fad709e6c7}
+      \strng{authorbibnamehash}{213ce2ce3a4880828b3832fad709e6c7}
+      \strng{authornamehash}{213ce2ce3a4880828b3832fad709e6c7}
+      \strng{authorfullhash}{213ce2ce3a4880828b3832fad709e6c7}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Create, Edit, Compose, or Convert Bitmap Images}
+      \field{langid}{english}
+      \field{title}{{{ImageMagick}}}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/2X6S9GNQ/index.html
+      \endverb
+      \verb{urlraw}
+      \verb https://imagemagick.org/
+      \endverb
+      \verb{url}
+      \verb https://imagemagick.org/
+      \endverb
+    \endentry
+    \entry{mandelbrotHowLongCoast1967}{article}{}
+      \name{author}{1}{}{%
+        {{hash=83ced72c407b4739f234545c111ae19f}{%
+           family={Mandelbrot},
+           familyi={M\bibinitperiod},
+           given={Benoit},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{83ced72c407b4739f234545c111ae19f}
+      \strng{fullhash}{83ced72c407b4739f234545c111ae19f}
+      \strng{bibnamehash}{83ced72c407b4739f234545c111ae19f}
+      \strng{authorbibnamehash}{83ced72c407b4739f234545c111ae19f}
+      \strng{authornamehash}{83ced72c407b4739f234545c111ae19f}
+      \strng{authorfullhash}{83ced72c407b4739f234545c111ae19f}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Geographical curves are so involved in their detail that their lengths are often infinite or, rather, undefinable. However, many are statistically "selfsimilar," meaning that each portion can be considered a reduced-scale image of the whole. In that case, the degree of complication can be described by a quantity D that has many properties of a "dimension," though it is fractional; that is, it exceeds the value unity associated with the ordinary, rectifiable, curves.}
+      \field{day}{5}
+      \field{eprinttype}{pmid}
+      \field{issn}{0036-8075, 1095-9203}
+      \field{journaltitle}{Science}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{3775}
+      \field{shorttitle}{How {{Long Is}} the {{Coast}} of {{Britain}}?}
+      \field{title}{How {{Long Is}} the {{Coast}} of {{Britain}}? {{Statistical Self}}-{{Similarity}} and {{Fractional Dimension}}}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{156}
+      \field{year}{1967}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{636\bibrangedash 638}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1126/science.156.3775.636
+      \endverb
+      \verb{eprint}
+      \verb 17837158
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/W6NTFYA2/mandelbrotHowLongCoast1967.pdf;/home/ryan/Zotero/storage/X6R6NDF3/636.html
+      \endverb
+      \verb{urlraw}
+      \verb https://science.sciencemag.org/content/156/3775/636
+      \endverb
+      \verb{url}
+      \verb https://science.sciencemag.org/content/156/3775/636
+      \endverb
+    \endentry
+    \entry{mandelbrotFractalGeometryNature1982}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d1efa9919078b1d84e99492d760dcc14}{%
+           family={Mandelbrot},
+           familyi={M\bibinitperiod},
+           given={Benoit\bibnamedelima B.},
+           giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco}%
+      }
+      \list{publisher}{1}{%
+        {W.H. Freeman}%
+      }
+      \strng{namehash}{d1efa9919078b1d84e99492d760dcc14}
+      \strng{fullhash}{d1efa9919078b1d84e99492d760dcc14}
+      \strng{bibnamehash}{d1efa9919078b1d84e99492d760dcc14}
+      \strng{authorbibnamehash}{d1efa9919078b1d84e99492d760dcc14}
+      \strng{authornamehash}{d1efa9919078b1d84e99492d760dcc14}
+      \strng{authorfullhash}{d1efa9919078b1d84e99492d760dcc14}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-7167-1186-5}
+      \field{pagetotal}{460}
+      \field{title}{The Fractal Geometry of Nature}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \keyw{Fractals,Geometry,Mathematical models,Stochastic processes}
+    \endentry
+    \entry{mandelbrotMisBehaviourMarkets2008}{book}{}
+      \name{author}{2}{}{%
+        {{hash=d1efa9919078b1d84e99492d760dcc14}{%
+           family={Mandelbrot},
+           familyi={M\bibinitperiod},
+           given={Benoit\bibnamedelima B.},
+           giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=7ba7bd472b5d5bf2ca296005e50bd8db}{%
+           family={Hudson},
+           familyi={H\bibinitperiod},
+           given={Richard\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Profile}%
+      }
+      \strng{namehash}{5d397a4258266110a20f0da4f532ef50}
+      \strng{fullhash}{5d397a4258266110a20f0da4f532ef50}
+      \strng{bibnamehash}{5d397a4258266110a20f0da4f532ef50}
+      \strng{authorbibnamehash}{5d397a4258266110a20f0da4f532ef50}
+      \strng{authornamehash}{5d397a4258266110a20f0da4f532ef50}
+      \strng{authorfullhash}{5d397a4258266110a20f0da4f532ef50}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{Pbk. ed}
+      \field{isbn}{978-1-84668-262-9}
+      \field{pagetotal}{326}
+      \field{shorttitle}{The (Mis)Behaviour of Markets}
+      \field{title}{The (Mis)Behaviour of Markets: A Fractal View of Risk, Ruin, and Reward}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \keyw{Capital market,Investment analysis,Prices,Risk management,Securities,Stocks}
+    \endentry
+    \entry{markpollicottFractalsDimensionTheory2005}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2e98ac0490ebc4c868435653f3dbadfe}{%
+           family={{Mark Pollicott}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e98ac0490ebc4c868435653f3dbadfe}
+      \strng{fullhash}{2e98ac0490ebc4c868435653f3dbadfe}
+      \strng{bibnamehash}{2e98ac0490ebc4c868435653f3dbadfe}
+      \strng{authorbibnamehash}{2e98ac0490ebc4c868435653f3dbadfe}
+      \strng{authornamehash}{2e98ac0490ebc4c868435653f3dbadfe}
+      \strng{authorfullhash}{2e98ac0490ebc4c868435653f3dbadfe}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Introductory Lecturs given in Porto}
+      \field{title}{Fractals and {{Dimension Theory}}}
+      \field{year}{2005-May}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/6FTX7SD7/dimension-total.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://warwick.ac.uk/fac/sci/maths/people/staff/mark_pollicott/p3
+      \endverb
+      \verb{url}
+      \verb https://warwick.ac.uk/fac/sci/maths/people/staff/mark_pollicott/p3
+      \endverb
+    \endentry
+    \entry{mathaiConstructingSunflowerHead1974}{article}{}
+      \name{author}{2}{}{%
+        {{hash=368f79a7d8c4a1f5244c602608c80365}{%
+           family={Mathai},
+           familyi={M\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a146cfae8e1f58a4b9ebe2f36e317b6d}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={T},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{0aa6dbcf3ad205c9b2ab862e89367cbe}
+      \strng{fullhash}{0aa6dbcf3ad205c9b2ab862e89367cbe}
+      \strng{bibnamehash}{0aa6dbcf3ad205c9b2ab862e89367cbe}
+      \strng{authorbibnamehash}{0aa6dbcf3ad205c9b2ab862e89367cbe}
+      \strng{authornamehash}{0aa6dbcf3ad205c9b2ab862e89367cbe}
+      \strng{authorfullhash}{0aa6dbcf3ad205c9b2ab862e89367cbe}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{By assigning the Fibonacci angle of 137.507… degrees between any two consecutive individual flowers (florets), and controlling the logarithmic scatter…}
+      \field{day}{1}
+      \field{issn}{0025-5564}
+      \field{journaltitle}{Mathematical Biosciences}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{1-2}
+      \field{title}{Constructing the Sunflower Head}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{20}
+      \field{year}{1974}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{117\bibrangedash 133}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/0025-5564(74)90072-8
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/GNB7A37B/0025556474900728.html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/0025556474900728
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/0025556474900728
+      \endverb
+    \endentry
+    \entry{mcmullenHausdorffDimensionConformal1998}{article}{}
+      \name{author}{1}{}{%
+        {{hash=424c782e057b66c3eae5081bc696616b}{%
+           family={McMullen},
+           familyi={M\bibinitperiod},
+           given={Curtis\bibnamedelima T.},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Johns Hopkins University Press}%
+      }
+      \strng{namehash}{424c782e057b66c3eae5081bc696616b}
+      \strng{fullhash}{424c782e057b66c3eae5081bc696616b}
+      \strng{bibnamehash}{424c782e057b66c3eae5081bc696616b}
+      \strng{authorbibnamehash}{424c782e057b66c3eae5081bc696616b}
+      \strng{authornamehash}{424c782e057b66c3eae5081bc696616b}
+      \strng{authorfullhash}{424c782e057b66c3eae5081bc696616b}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This paper presents an eigenvalue algorithm for accurately computing the Hausdorff dimension of limit sets of Kleinian groups and Julia sets of rational maps. The algorithm is applied to Schottky groups, quadratic polynomials and Blaschke products, yielding both numerical and theoretical results. Dimension graphs are presented for (a) the family of Fuchsian groups generated by reflections in 3 symmetric geodesics; (b) the family of polynomials \$f\_\{c\}(z)=z\^\{2\}+c,c\textbackslash in [-1,1/2]\$; and (c) the family of rational maps \$f\_\{t\}(z)=z/t+1/z,t\textbackslash in (0,1]\$. We also calculate H.dim (Λ) ≈ 1.305688 for the Apollonian gasket, and H.dim (J(f)) ≈ 1.3934 for Douady's rabbit, where \$f(z)=z\^\{2\}+c\$ satisfies \$f\^\{3\}(0)=0\$.}
+      \field{eprinttype}{jstor}
+      \field{issn}{0002-9327}
+      \field{journaltitle}{American Journal of Mathematics}
+      \field{number}{4}
+      \field{shorttitle}{Hausdorff {{Dimension}} and {{Conformal Dynamics}}, {{III}}}
+      \field{title}{Hausdorff {{Dimension}} and {{Conformal Dynamics}}, {{III}}: {{Computation}} of {{Dimension}}}
+      \field{volume}{120}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{pages}{691\bibrangedash 721}
+      \range{pages}{31}
+      \verb{eprint}
+      \verb 25098619
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/LRIDBL9V/mcmullenHausdorffDimensionConformal1998.pdf
+      \endverb
+    \endentry
+    \entry{MinarovaNikoletta2014TFSN}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fe47d8164db85ae46d04f47c3587b119}{%
+           family={Minarova},
+           familyi={M\bibinitperiod},
+           given={Nikoletta},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter Open}%
+      }
+      \strng{namehash}{fe47d8164db85ae46d04f47c3587b119}
+      \strng{fullhash}{fe47d8164db85ae46d04f47c3587b119}
+      \strng{bibnamehash}{fe47d8164db85ae46d04f47c3587b119}
+      \strng{authorbibnamehash}{fe47d8164db85ae46d04f47c3587b119}
+      \strng{authornamehash}{fe47d8164db85ae46d04f47c3587b119}
+      \strng{authorfullhash}{fe47d8164db85ae46d04f47c3587b119}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Fibonacci: a natural design, easy to recognise - yet difficult to understand. Why do flowers and plants grow in such a way? It comes down to nature's sequential secret…This paper discusses how and when the Fibonacci sequence occurs in flora.}
+      \field{issn}{1805-5117}
+      \field{journaltitle}{CRIS - Bulletin of the Centre for Research and Interdisciplinary Study}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{The Fibonacci Sequence: {{Nature}}’s Little Secret}
+      \field{volume}{2014}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{pages}{7\bibrangedash 17}
+      \range{pages}{11}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/J3QWL2KA/MinarovaNikoletta2014TFSN.pdf
+      \endverb
+    \endentry
+    \entry{mullerThisEquationWill2020}{video}{}
+      \name{editor}{1}{}{%
+        {{hash=c9b70b7c4b9b58909d3e3e0aba033f9a}{%
+           family={Muller},
+           familyi={M\bibinitperiod},
+           given={Derick},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9b70b7c4b9b58909d3e3e0aba033f9a}
+      \strng{fullhash}{c9b70b7c4b9b58909d3e3e0aba033f9a}
+      \strng{bibnamehash}{c9b70b7c4b9b58909d3e3e0aba033f9a}
+      \strng{editorbibnamehash}{c9b70b7c4b9b58909d3e3e0aba033f9a}
+      \strng{editornamehash}{c9b70b7c4b9b58909d3e3e0aba033f9a}
+      \strng{editorfullhash}{c9b70b7c4b9b58909d3e3e0aba033f9a}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The logistic map connects fluid convection, neuron firing, the Mandelbrot set and so much more. Fasthosts Techie Test competition is now closed! Learn more about Fasthosts here: https://www.fasthosts.co.uk/veritasium Code for interactives is available below... Animations, coding, interactives in this video by Jonny Hyman 🙌 Try the code yourself: https://github.com/jonnyhyman/Chaos References: James Gleick, Chaos Steven Strogatz, Nonlinear Dynamics and Chaos May, R. Simple mathematical models with very complicated dynamics. Nature 261, 459–467 (1976). https://doi.org/10.1038/261459a0 Robert Shaw, The Dripping Faucet as a Model Chaotic System https://archive.org/details/ShawRober... Crevier DW, Meister M. Synchronous period-doubling in flicker vision of salamander and man. J Neurophysiol. 1998 Apr;79(4):1869-78. Bing Jia, Huaguang Gu, Li Li, Xiaoyan Zhao. Dynamics of period-doubling bifurcation to chaos in the spontaneous neural firing patterns Cogn Neurodyn (2012) 6:89–106 DOI 10.1007/s11571-011-9184-7 A Garfinkel, ML Spano, WL Ditto, JN Weiss. Controlling cardiac chaos Science 28 Aug 1992: Vol. 257, Issue 5074, pp. 1230-1235 DOI: 10.1126/science.1519060 R. M. May, D. M. G. Wishart, J. Bray and R. L. Smith Chaos and the Dynamics of Biological Populations Source: Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences, Vol. 413, No. 1844, Dynamical Chaos (Sep. 8, 1987), pp. 27-44 Chialvo, D., Gilmour Jr, R. \&amp; Jalife, J. Low dimensional chaos in cardiac tissue. Nature 343, 653–657 (1990). https://doi.org/10.1038/343653a0 Xujun Ye, Kenshi Sakai. A new modified resource budget model for nonlinear dynamics in citrus production. Chaos, Solitons and Fractals 87 (2016) 51–60 Libchaber, A. \&amp; Laroche, C. \&amp; Fauve, Stephan. (1982). Period doubling cascade in mercury, a quantitative measurement. http://dx.doi.org/10.1051/jphyslet:01.... 43. 10.1051/jphyslet:01982004307021100. Special thanks to Patreon Supporters: Alfred Wallace, Arjun Chakroborty, Bryan Baker, DALE HORNE, Donal Botkin, halyoav, James Knight, Jasper Xin, Joar Wandborg, Lee Redden, Lyvann Ferrusca, Michael Krugman, Pindex, Ron Neal, Sam Lutfi, Tige Thorman, Vincent Special thanks to: Henry Reich for feedback on earlier versions of this video Raquel Nuno for enduring many earlier iterations (including parts she filmed that were replaced) Dianna Cowern for title suggestions and saying earlier versions weren't good Heather Zinn Brooks for feedback on an earlier version. Music from: https://epidemicsound.com "What We Discovered" "A Sound Foundation 1" "Seaweed" "Colored Spirals 4" https://ve42.co/Artlist "Busy World" "Children of Mystery"}
+      \field{day}{29}
+      \field{editortype}{director}
+      \field{month}{1}
+      \field{title}{This Equation Will Change How You See the World (the Logistic Map)}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=ovJcsL7vyrk&vl=en
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=ovJcsL7vyrk&vl=en
+      \endverb
+    \endentry
+    \entry{NatureGoldenRatio2018}{online}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Math is Fun}
+      \field{title}{Nature, {{The Golden Ratio}} and {{Fibonacci Numbers}}}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/GRM2MG2D/nature-golden-ratio-fibonacci.html;/home/ryan/Zotero/storage/W7I6XBHP/Nature, The Golden Ratio and Fibonacci Numbers (2020-08-28 1_05_24 PM).html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
+      \endverb
+      \verb{url}
+      \verb https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html
+      \endverb
+    \endentry
+    \entry{nicodemiIntroductionAbstractAlgebra2007}{book}{}
+      \name{author}{3}{}{%
+        {{hash=c4c18a360dba4df7294730d2aa312b46}{%
+           family={Nicodemi},
+           familyi={N\bibinitperiod},
+           given={Olympia},
+           giveni={O\bibinitperiod}}}%
+        {{hash=251e87cdbe6e2d924c77289bb1ee47d6}{%
+           family={Sutherland},
+           familyi={S\bibinitperiod},
+           given={Melissa\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=085b8b7f038738c294ca1b1711b92971}{%
+           family={Towsley},
+           familyi={T\bibinitperiod},
+           given={Gary\bibnamedelima W.},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, NJ}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Prentice Hall}%
+      }
+      \strng{namehash}{c65809013899687a317846080ba75019}
+      \strng{fullhash}{c65809013899687a317846080ba75019}
+      \strng{bibnamehash}{c65809013899687a317846080ba75019}
+      \strng{authorbibnamehash}{c65809013899687a317846080ba75019}
+      \strng{authornamehash}{c65809013899687a317846080ba75019}
+      \strng{authorfullhash}{c65809013899687a317846080ba75019}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: 253915717}
+      \field{isbn}{978-0-13-101963-8}
+      \field{langid}{english}
+      \field{pagetotal}{436}
+      \field{title}{An Introduction to Abstract Algebra with Notes to the Future Teacher}
+      \field{year}{2007}
+      \field{dateera}{ce}
+    \endentry
+    \entry{PdftexThereAny}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{TeX - LaTeX Stack Exchange}
+      \field{title}{Pdftex - {{Is}} There Any Way to Include an Animated {{GIF}} Directly?}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/59GVW9ZJ/is-there-any-way-to-include-an-animated-gif-directly.html
+      \endverb
+      \verb{urlraw}
+      \verb https://tex.stackexchange.com/questions/5396/is-there-any-way-to-include-an-animated-gif-directly
+      \endverb
+      \verb{url}
+      \verb https://tex.stackexchange.com/questions/5396/is-there-any-way-to-include-an-animated-gif-directly
+      \endverb
+    \endentry
+    \entry{peitgenChaosFractalsNew2004}{book}{}
+      \name{author}{3}{}{%
+        {{hash=eb70b371ce9072f960a51deeb6899925}{%
+           family={Peitgen},
+           familyi={P\bibinitperiod},
+           given={Heinz-Otto},
+           giveni={H\bibinithyphendelim O\bibinitperiod}}}%
+        {{hash=45604fc2aac7bfcf4db37fe1b1087561}{%
+           family={Jürgens},
+           familyi={J\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3585b44617dbef13b850eb74764b6ed2}{%
+           family={Saupe},
+           familyi={S\bibinitperiod},
+           given={Dietmar},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{909db0a798106039558a3c903d2cffd0}
+      \strng{fullhash}{909db0a798106039558a3c903d2cffd0}
+      \strng{bibnamehash}{909db0a798106039558a3c903d2cffd0}
+      \strng{authorbibnamehash}{909db0a798106039558a3c903d2cffd0}
+      \strng{authornamehash}{909db0a798106039558a3c903d2cffd0}
+      \strng{authorfullhash}{909db0a798106039558a3c903d2cffd0}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-387-20229-7}
+      \field{pagetotal}{864}
+      \field{shorttitle}{Chaos and Fractals}
+      \field{title}{Chaos and Fractals: New Frontiers of Science}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \keyw{Chaotic behavior in systems,Fractals}
+    \endentry
+    \entry{PillowPillowPIL}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labeltitlesource}{title}
+      \field{title}{Pillow — {{Pillow}} ({{PIL Fork}}) 8.0.0 Documentation}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/DRGW3H47/stable.html
+      \endverb
+      \verb{urlraw}
+      \verb https://pillow.readthedocs.io/en/stable/
+      \endverb
+      \verb{url}
+      \verb https://pillow.readthedocs.io/en/stable/
+      \endverb
+    \endentry
+    \entry{prasadHowFibonacciNumber2018}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7af3b76902d6a3dceec34681d170774e}{%
+           family={Prasad},
+           familyi={P\bibinitperiod},
+           given={Guru},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{7af3b76902d6a3dceec34681d170774e}
+      \strng{fullhash}{7af3b76902d6a3dceec34681d170774e}
+      \strng{bibnamehash}{7af3b76902d6a3dceec34681d170774e}
+      \strng{authorbibnamehash}{7af3b76902d6a3dceec34681d170774e}
+      \strng{authornamehash}{7af3b76902d6a3dceec34681d170774e}
+      \strng{authorfullhash}{7af3b76902d6a3dceec34681d170774e}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Facebook Twitter Reddit Almost 2 decades ago, I was introduced to the fascinating concept called Fibonacci series, by the book “Da Vinci Code” authored by Dan Brown, which was highly circulated among friends \& the most talked about book in our college back then. Thanks to the book, Fibonacci series \& its related concepts like […]}
+      \field{day}{22}
+      \field{hour}{17}
+      \field{journaltitle}{Guruprasad's Portal}
+      \field{langid}{american}
+      \field{minute}{19}
+      \field{month}{9}
+      \field{second}{3}
+      \field{timezone}{Z}
+      \field{title}{How {{Fibonacci}} Number Series Originated in {{Ancient India}}}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/6WWNJ9R8/fibonacci-number-series-originated-ancient-india.html
+      \endverb
+      \verb{urlraw}
+      \verb http://guruprasad.net/posts/fibonacci-number-series-originated-ancient-india/
+      \endverb
+      \verb{url}
+      \verb http://guruprasad.net/posts/fibonacci-number-series-originated-ancient-india/
+      \endverb
+    \endentry
+    \entry{rcoreteamLanguageEnvironmentStatistical2020}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=dcdebb6b35bff7c0568bf8c50ef8626d}{%
+           family={{R Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{organization}{1}{%
+        {R Foundation for Statistical Computing}%
+      }
+      \strng{namehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{fullhash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{bibnamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authorbibnamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authornamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authorfullhash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{R: {{A}} Language and Environment for Statistical Computing}
+      \field{type}{manual}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.R-project.org/
+      \endverb
+      \verb{url}
+      \verb https://www.R-project.org/
+      \endverb
+    \endentry
+    \entry{ridleyPackingEfficiencySunflower1982}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1815cd742bdf6001ef414d3793c2c21a}{%
+           family={Ridley},
+           familyi={R\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{1815cd742bdf6001ef414d3793c2c21a}
+      \strng{fullhash}{1815cd742bdf6001ef414d3793c2c21a}
+      \strng{bibnamehash}{1815cd742bdf6001ef414d3793c2c21a}
+      \strng{authorbibnamehash}{1815cd742bdf6001ef414d3793c2c21a}
+      \strng{authornamehash}{1815cd742bdf6001ef414d3793c2c21a}
+      \strng{authorfullhash}{1815cd742bdf6001ef414d3793c2c21a}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the mathematical description given by Vogel [1], the seeds on a sunflower head are centered at points on a “cyclotron spiral,” with constant diverg…}
+      \field{day}{1}
+      \field{issn}{0025-5564}
+      \field{journaltitle}{Mathematical Biosciences}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Packing Efficiency in Sunflower Heads}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{58}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{129\bibrangedash 139}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/0025-5564(82)90056-6
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/HZJHXAM7/0025556482900566.html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/0025556482900566
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/0025556482900566
+      \endverb
+    \endentry
+    \entry{ronknottFibonacciNumbersGolden2016}{online}{}
+      \name{author}{1}{}{%
+        {{hash=67fa42421463c5c279a17e0b1549147e}{%
+           family={{Ron Knott}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{67fa42421463c5c279a17e0b1549147e}
+      \strng{fullhash}{67fa42421463c5c279a17e0b1549147e}
+      \strng{bibnamehash}{67fa42421463c5c279a17e0b1549147e}
+      \strng{authorbibnamehash}{67fa42421463c5c279a17e0b1549147e}
+      \strng{authornamehash}{67fa42421463c5c279a17e0b1549147e}
+      \strng{authorfullhash}{67fa42421463c5c279a17e0b1549147e}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{25}
+      \field{journaltitle}{Dr Ron Knott's web pages on Mathematics}
+      \field{month}{9}
+      \field{title}{The {{Fibonacci Numbers}} and {{Golden}} Section in {{Nature}} - 1}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/F8IAHUAF/fibnat.html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibnat.html
+      \endverb
+      \verb{url}
+      \verb http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibnat.html
+      \endverb
+    \endentry
+    \entry{sandersonFractalsAreTypically2017}{video}{}
+      \name{editor}{1}{}{%
+        {{hash=5dd1de74b15229ad68590a5ce3ade3c5}{%
+           family={Sanderson},
+           familyi={S\bibinitperiod},
+           given={Grant},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{5dd1de74b15229ad68590a5ce3ade3c5}
+      \strng{fullhash}{5dd1de74b15229ad68590a5ce3ade3c5}
+      \strng{bibnamehash}{5dd1de74b15229ad68590a5ce3ade3c5}
+      \strng{editorbibnamehash}{5dd1de74b15229ad68590a5ce3ade3c5}
+      \strng{editornamehash}{5dd1de74b15229ad68590a5ce3ade3c5}
+      \strng{editorfullhash}{5dd1de74b15229ad68590a5ce3ade3c5}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An explanation of fractal dimension. Home page: https://www.3blue1brown.com/ Brought to you by you: https://3b1b.co/fractals-thanks And by Affirm: https://www.affirm.com/careers Music by Vince Rubinetti: https://soundcloud.com/vincerubinetti... One technical note: It's possible to have fractals with an integer dimension. The example to have in mind is some *very* rough curve, which just so happens to achieve roughness level exactly 2. Slightly rough might be around 1.1-dimension; quite rough could be 1.5; but a very rough curve could get up to 2.0 (or more). A classic example of this is the boundary of the Mandelbrot set. The Sierpinski pyramid also has dimension 2 (try computing it!). The proper definition of a fractal, at least as Mandelbrot wrote it, is a shape whose "Hausdorff dimension" is greater than its "topological dimension". Hausdorff dimension is similar to the box-counting one I showed in this video, in some sense counting using balls instead of boxes, and it coincides with box-counting dimension in many cases. But it's more general, at the cost of being a bit harder to describe. Topological dimension is something that's always an integer, wherein (loosely speaking) curve-ish things are 1-dimensional, surface-ish things are two-dimensional, etc. For example, a Koch Curve has topological dimension 1, and Hausdorff dimension 1.262. A rough surface might have topological dimension 2, but fractal dimension 2.3. And if a curve with topological dimension 1 has a Hausdorff dimension that *happens* to be exactly 2, or 3, or 4, etc., it would be considered a fractal, even though it's fractal dimension is an integer. See Mandelbrot's book "The Fractal Geometry of Nature" for the full details and more examples. ------------------ 3blue1brown is a channel about animating math, in all senses of the word animate. And you know the drill with YouTube, if you want to stay posted about new videos, subscribe, and click the bell to receive notifications (if you're into that). If you are new to this channel and want to see more, a good place to start is this playlist: https://www.youtube.com/playlist?list... Various social media stuffs: Twitter: https://twitter.com/3Blue1Brown Facebook: https://www.facebook.com/3blue1brown/ Reddit: https://www.reddit.com/r/3Blue1Brown}
+      \field{day}{27}
+      \field{editortype}{director}
+      \field{month}{1}
+      \field{title}{Fractals Are Typically Not Self-Similar}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=gB9n2gHsHN4&lc=Ugj8mIhm_S17y3gCoAEC
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=gB9n2gHsHN4&lc=Ugj8mIhm_S17y3gCoAEC
+      \endverb
+    \endentry
+    \entry{shellyallenFibonacciNature}{online}{}
+      \name{author}{1}{}{%
+        {{hash=1e347245170cc7f62e430ecc63df4410}{%
+           family={{Shelly Allen}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e347245170cc7f62e430ecc63df4410}
+      \strng{fullhash}{1e347245170cc7f62e430ecc63df4410}
+      \strng{bibnamehash}{1e347245170cc7f62e430ecc63df4410}
+      \strng{authorbibnamehash}{1e347245170cc7f62e430ecc63df4410}
+      \strng{authornamehash}{1e347245170cc7f62e430ecc63df4410}
+      \strng{authorfullhash}{1e347245170cc7f62e430ecc63df4410}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Fibonacci sequence of numbers forms the best whole number approximations to the Golden Proportion, which, some say, is most aesthetically beautiful to humans. “Empirical investigations of the aesthetic properties of the Golden Section date back to the very origins of scientific psychology itself, the first studies being conducted by Fechner in the 1860s” (Green 937).}
+      \field{journaltitle}{Fibonacci}
+      \field{langid}{american}
+      \field{title}{Fibonacci in {{Nature}}}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/DADRGHY8/nature-golden-ratio.html
+      \endverb
+      \verb{urlraw}
+      \verb https://fibonacci.com/nature-golden-ratio/
+      \endverb
+      \verb{url}
+      \verb https://fibonacci.com/nature-golden-ratio/
+      \endverb
+    \endentry
+    \entry{strogatzNonlinearDynamicsChaos2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b0115f77df78376c68429033349375fc}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boulder, CO}%
+      }
+      \list{publisher}{1}{%
+        {Westview Press, a member of the Perseus Books Group}%
+      }
+      \strng{namehash}{b0115f77df78376c68429033349375fc}
+      \strng{fullhash}{b0115f77df78376c68429033349375fc}
+      \strng{bibnamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authorbibnamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authornamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authorfullhash}{b0115f77df78376c68429033349375fc}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{OCLC: ocn842877119}
+      \field{edition}{Second edition}
+      \field{isbn}{978-0-8133-4910-7}
+      \field{pagetotal}{513}
+      \field{shorttitle}{Nonlinear Dynamics and Chaos}
+      \field{title}{Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \keyw{Chaotic behavior in systems,Dynamics,Nonlinear theories}
+    \endentry
+    \entry{tabachnikovDragonCurvesRevisited2014}{article}{}
+      \name{author}{1}{}{%
+        {{hash=819afc0572b7efbc7a5b578eba0b2035}{%
+           family={Tabachnikov},
+           familyi={T\bibinitperiod},
+           given={Sergei},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{819afc0572b7efbc7a5b578eba0b2035}
+      \strng{fullhash}{819afc0572b7efbc7a5b578eba0b2035}
+      \strng{bibnamehash}{819afc0572b7efbc7a5b578eba0b2035}
+      \strng{authorbibnamehash}{819afc0572b7efbc7a5b578eba0b2035}
+      \strng{authornamehash}{819afc0572b7efbc7a5b578eba0b2035}
+      \strng{authorfullhash}{819afc0572b7efbc7a5b578eba0b2035}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0343-6993, 1866-7414}
+      \field{journaltitle}{The Mathematical Intelligencer}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shortjournal}{Math Intelligencer}
+      \field{title}{Dragon {{Curves Revisited}}}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{36}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13\bibrangedash 17}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1007/s00283-013-9428-y
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/ZWA25ADQ/tabachnikovDragonCurvesRevisited2014.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s00283-013-9428-y
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s00283-013-9428-y
+      \endverb
+    \endentry
+    \entry{telChaoticDynamicsIntroduction2006}{book}{}
+      \name{author}{3}{}{%
+        {{hash=ef117faa4add1a95cb6e948809f06dc9}{%
+           family={Tél},
+           familyi={T\bibinitperiod},
+           given={Tamás},
+           giveni={T\bibinitperiod}}}%
+        {{hash=374b9852c9822667e8d7bc65b220f4a4}{%
+           family={Gruiz},
+           familyi={G\bibinitperiod},
+           given={Márton},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ad14e48292e85ab0b74e63cd9df515c1}{%
+           family={Kulacsy},
+           familyi={K\bibinitperiod},
+           given={Katalin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{b28636a6a84075687da7e61a4b417ca2}
+      \strng{fullhash}{b28636a6a84075687da7e61a4b417ca2}
+      \strng{bibnamehash}{b28636a6a84075687da7e61a4b417ca2}
+      \strng{authorbibnamehash}{b28636a6a84075687da7e61a4b417ca2}
+      \strng{authornamehash}{b28636a6a84075687da7e61a4b417ca2}
+      \strng{authorfullhash}{b28636a6a84075687da7e61a4b417ca2}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This work provides a clear introduction to chaos phenomena for undergraduate students in science, engineering, and mathematics, using examples that range from enginnering problems through to astronomical aspects.}
+      \field{annotation}{OCLC: 173845245}
+      \field{isbn}{9780511335044 9780511334467 9780511333125 9780511803277 9780511333804 9781281040114 9786611040116 9780511567216}
+      \field{langid}{Translated from Hungarian.}
+      \field{shorttitle}{Chaotic dynamics}
+      \field{title}{Chaotic dynamics: an introduction based on classical mechanics}
+      \field{urlday}{28}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://doi.org/10.1017/CBO9780511803277
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1017/CBO9780511803277
+      \endverb
+    \endentry
+    \entry{ventrellaSpaceFillingCurvesAre2014}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a182f90097fef38d945333d8672fb3af}{%
+           family={Ventrella},
+           familyi={V\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a182f90097fef38d945333d8672fb3af}
+      \strng{fullhash}{a182f90097fef38d945333d8672fb3af}
+      \strng{bibnamehash}{a182f90097fef38d945333d8672fb3af}
+      \strng{authorbibnamehash}{a182f90097fef38d945333d8672fb3af}
+      \strng{authornamehash}{a182f90097fef38d945333d8672fb3af}
+      \strng{authorfullhash}{a182f90097fef38d945333d8672fb3af}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Wikipedia says: “In mathematical analysis, a space-filling curve is a curve whose range contains the entire 2-dimensional unit square (or more generally an n-dimensional hypercube”. The…}
+      \field{day}{16}
+      \field{hour}{6}
+      \field{journaltitle}{Spacefilling Curves}
+      \field{langid}{english}
+      \field{minute}{25}
+      \field{month}{11}
+      \field{second}{49}
+      \field{timezone}{Z}
+      \field{title}{Space-{{Filling Curves Are Not Squares}}}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/9SK929L3/space-filling-curves-are-not-squares.html
+      \endverb
+      \verb{urlraw}
+      \verb https://spacefillingcurves.wordpress.com/2014/11/16/space-filling-curves-are-not-squares/
+      \endverb
+      \verb{url}
+      \verb https://spacefillingcurves.wordpress.com/2014/11/16/space-filling-curves-are-not-squares/
+      \endverb
+    \endentry
+    \entry{vicsekFractalGrowthPhenomena1992}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6ff33ab4371a3804415d624c6171ef14}{%
+           family={Vicsek},
+           familyi={V\bibinitperiod},
+           given={Tamás},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore ; New Jersey}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{6ff33ab4371a3804415d624c6171ef14}
+      \strng{fullhash}{6ff33ab4371a3804415d624c6171ef14}
+      \strng{bibnamehash}{6ff33ab4371a3804415d624c6171ef14}
+      \strng{authorbibnamehash}{6ff33ab4371a3804415d624c6171ef14}
+      \strng{authornamehash}{6ff33ab4371a3804415d624c6171ef14}
+      \strng{authorfullhash}{6ff33ab4371a3804415d624c6171ef14}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-981-02-0668-0 978-981-02-0669-7}
+      \field{pagetotal}{488}
+      \field{title}{Fractal Growth Phenomena}
+      \field{year}{1992}
+      \field{dateera}{ce}
+      \keyw{Fractals}
+    \endentry
+    \entry{vogelBetterWayConstruct1979}{article}{}
+      \name{author}{1}{}{%
+        {{hash=91445b1dede0fc6cce3585e4ba475c93}{%
+           family={Vogel},
+           familyi={V\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{91445b1dede0fc6cce3585e4ba475c93}
+      \strng{fullhash}{91445b1dede0fc6cce3585e4ba475c93}
+      \strng{bibnamehash}{91445b1dede0fc6cce3585e4ba475c93}
+      \strng{authorbibnamehash}{91445b1dede0fc6cce3585e4ba475c93}
+      \strng{authornamehash}{91445b1dede0fc6cce3585e4ba475c93}
+      \strng{authorfullhash}{91445b1dede0fc6cce3585e4ba475c93}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The flower or seed pattern in a sunflower head can be approximately constructed by the method of Davis and Mathai [1], which has inspired the cover of…}
+      \field{day}{1}
+      \field{issn}{0025-5564}
+      \field{journaltitle}{Mathematical Biosciences}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{3-4}
+      \field{title}{A Better Way to Construct the Sunflower Head}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{44}
+      \field{year}{1979}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{179\bibrangedash 189}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/0025-5564(79)90080-4
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/MR7A95YH/0025556479900804.html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/0025556479900804
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/0025556479900804
+      \endverb
+    \endentry
+    \entry{WelcomePythonOrg}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The official home of the Python Programming Language}
+      \field{journaltitle}{Python.org}
+      \field{langid}{english}
+      \field{title}{Welcome to {{Python}}.Org}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/KUH3WZ9T/www.python.org.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.python.org/
+      \endverb
+      \verb{url}
+      \verb https://www.python.org/
+      \endverb
+    \endentry
+    \entry{zhongFractalPropertiesShoreline2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3b99d9fb8e99115d3531c36ddf7bb9a8}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Xiaojing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=c476255801262401399b7c2ef207ff07}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=32a1f07d2babedd1a0e917c75ec29acb}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Shenliang},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{6bb51e1ba6f09e6061b1646726827b4f}
+      \strng{fullhash}{6bb51e1ba6f09e6061b1646726827b4f}
+      \strng{bibnamehash}{6bb51e1ba6f09e6061b1646726827b4f}
+      \strng{authorbibnamehash}{6bb51e1ba6f09e6061b1646726827b4f}
+      \strng{authornamehash}{6bb51e1ba6f09e6061b1646726827b4f}
+      \strng{authorfullhash}{6bb51e1ba6f09e6061b1646726827b4f}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Extreme storm events and their consequent shoreline changes are of great importance for understanding coastal evolution and assessing storm hazards. This work investigates the fractal properties of the spatial distributions of shoreline changes caused by storms. Wavelet analysis and upper-truncated power law (UTPL) fitting are used to study the power spectra of shoreline changes and to evaluate the upper limits of the cross-shore erosion and accretion. During a period affected by storms, the alongshore shoreline change patterns are strong on the 15\,km scale but are weak with lower spectral power on the 20\,km scale. The areas adjacent to the eroded shoreline are usually accrete, and the cross-shore extent of erosion is larger than that of accretion when the coast is affected by storms. The fractal properties of shoreline changes due to storms are found to be temporally continuous: the effects of later storms build on the preceding shoreline conditions, including both the effects of previous storms and the subsequent shoreline recoveries. This work provides a new perspective on the various scales of the spatial variations of the morphodynamics of storm-affected shorelines.}
+      \field{day}{15}
+      \field{issn}{2045-2322}
+      \field{issue}{1}
+      \field{journaltitle}{Scientific Reports}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{title}{Fractal Properties of Shoreline Changes on a Storm-Exposed Island}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{7}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{8274}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-017-08924-9
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/MFSSX2X3/zhongFractalPropertiesShoreline2017.pdf;/home/ryan/Zotero/storage/GRT3QNWJ/s41598-017-08924-9.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41598-017-08924-9
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41598-017-08924-9
+      \endverb
+    \endentry
+    \entry{zhuFractalMechanismCoastline2002}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1be4475acf4a043919f2fe9434907631}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xiao-hua},
+           giveni={X\bibinithyphendelim h\bibinitperiod}}}%
+        {{hash=c33641e67eeaefc87b7821dc9b51ff90}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3827fe9f1d747a2b11fac03f5c28faa0}
+      \strng{fullhash}{3827fe9f1d747a2b11fac03f5c28faa0}
+      \strng{bibnamehash}{3827fe9f1d747a2b11fac03f5c28faa0}
+      \strng{authorbibnamehash}{3827fe9f1d747a2b11fac03f5c28faa0}
+      \strng{authornamehash}{3827fe9f1d747a2b11fac03f5c28faa0}
+      \strng{authorfullhash}{3827fe9f1d747a2b11fac03f5c28faa0}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{MANDELBROT enunciated the uncertainty of the length of a coastline in his paper “How long is the coastline of Britain?” published in “Science” in 1967. The fractal concept was presented for the first time in that paper and has been applied to many fields ever since. According to the fractal theory and conditions of fractal research of coastline, the controls of faults and biologic function on the fractal character of coastline are preliminarily discussed on the basis of GIS in this paper. Finally, some significant conclusions are drawn: 1) the faults control the basic trends of coastlines of two study areas; 2) the fractal dimension of coastline of Taiwan is smaller than that of Changle — Lufeng, because the faults of Taiwan more intensely control the trend and fractal dimension of the coastline; 3) the larger the fractal dimension of the faults or the major faults, the more the controlling effect of them on the trend and fractal dimension of coastline; 4) the larger fractal dimension of the coastline of Changle — Lufeng indicates that the biologic function intensely shapes the coastline. In a word, the controls of faults and biologic function on the fractal character of coastline are discussed with a case study of China in this paper, it can be seen that faults and biologic function both have influence over the trend and fractal dimension of coastline, the fractal mechanism of coastline of two study areas may be so.}
+      \field{day}{1}
+      \field{issn}{1993-064X}
+      \field{journaltitle}{Chinese Geographical Science}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{Chin. Geograph.Sc.}
+      \field{title}{On Fractal Mechanism of Coastline}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{12}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{142\bibrangedash 145}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1007/s11769-002-0022-z
+      \endverb
+      \verb{file}
+      \verb /home/ryan/Zotero/storage/XFZJUKWX/zhuFractalMechanismCoastline2002.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s11769-002-0022-z
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s11769-002-0022-z
+      \endverb
+    \endentry
+    \entry{zillDifferentialEquations2009a}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ce0689f2d52c5a0939d5509701e4f498}{%
+           family={Zill},
+           familyi={Z\bibinitperiod},
+           given={Dennis\bibnamedelima G},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=724ffae515880969319e4b88c9995872}{%
+           family={Cullen},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima R},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole}%
+      }
+      \strng{namehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{fullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{bibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorbibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authornamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorfullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \field{extraname}{1}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Differential {{Equations}}}
+      \field{version}{7}
+      \field{year}{2009}
+      \field{dateera}{ce}
+    \endentry
+    \entry{zillMatrixExponential2009}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=ce0689f2d52c5a0939d5509701e4f498}{%
+           family={Zill},
+           familyi={Z\bibinitperiod},
+           given={Dennis\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=724ffae515880969319e4b88c9995872}{%
+           family={Cullen},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Belmont, CA}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole, Cengage Learning}%
+      }
+      \strng{namehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{fullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{bibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorbibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authornamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorfullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \field{extraname}{2}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Differential Equations with Boundary-Value Problems}
+      \field{edition}{7th ed}
+      \field{isbn}{978-0-495-10836-8}
+      \field{title}{8.4 {{Matrix Exponential}}}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \keyw{Boundary value problems,Differential equations,Textbooks}
+    \endentry
+    \entry{zillDifferentialEquationsBoundaryvalue2009}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ce0689f2d52c5a0939d5509701e4f498}{%
+           family={Zill},
+           familyi={Z\bibinitperiod},
+           given={Dennis\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=724ffae515880969319e4b88c9995872}{%
+           family={Cullen},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Belmont, CA}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole, Cengage Learning}%
+      }
+      \strng{namehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{fullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{bibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorbibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authornamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorfullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \field{extraname}{3}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7th ed}
+      \field{isbn}{978-0-495-10836-8}
+      \field{pagetotal}{526}
+      \field{title}{Differential Equations with Boundary-Value Problems}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \keyw{Boundary value problems,Differential equations,Textbooks}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

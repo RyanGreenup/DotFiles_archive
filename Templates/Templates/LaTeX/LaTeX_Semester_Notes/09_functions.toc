@@ -1,0 +1,64 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Polynomial Functions}{1}{section.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Rational Function}{1}{section.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Euler's Formula}{2}{section.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Exponential Function}{2}{section.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Modulus and Argument}{2}{subsection.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Properties of the exponential function}{2}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Periodicity}{2}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Principle Argument}{2}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Differentiating $e^z$}{3}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Polar Form}{3}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Additional Properties}{3}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}The Log Function}{4}{section.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Deriving the Log Function}{4}{subsection.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Complex Logarithm}{4}{subsection.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Notation}{5}{subsection.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Base}{5}{subsection.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3}Change of Base}{5}{subsection.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Arguments}{6}{subsection.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Logarithms}{6}{subsection.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Notation}{6}{subsection.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4}Branches}{7}{subsection.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Logarithmic Branches}{7}{subsection.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Branch Cuts}{9}{equation.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5}Principal Branch as opposed to Principal Value}{10}{subsection.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6}Properties of Complex Logs}{11}{subsection.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.7}Log Laws}{12}{subsection.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Addition/Multiplication}{12}{subsection.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Relationships to Roots}{12}{equation.6.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Exponentiation}{12}{equation.6.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.8}Differentiating $\qopname \relax o{log}_e{\left ( z \right ) }$}{13}{subsection.6.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Derivative of complex log}{13}{subsection.6.8}%

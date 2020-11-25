@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{scale}   \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{500}\PYG{p}{,} \PYG{l+m}{563}\PYG{p}{,} \PYG{l+m}{625}\PYG{p}{,} \PYG{l+m}{688}\PYG{p}{,} \PYG{l+m}{750}\PYG{p}{,} \PYG{l+m}{813}\PYG{p}{,} \PYG{l+m}{875}\PYG{p}{,} \PYG{l+m}{938}\PYG{p}{,} \PYG{l+m}{1000}\PYG{p}{)}
+\PYG{n}{measure} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}  \PYG{l+m}{4834}\PYG{p}{,} \PYG{l+m}{5754}\PYG{p}{,} \PYG{l+m}{6640}\PYG{p}{,} \PYG{l+m}{7584}\PYG{p}{,} \PYG{l+m}{8418}\PYG{p}{,} \PYG{l+m}{9550}\PYG{p}{,} \PYG{l+m}{10554}\PYG{p}{,} \PYG{l+m}{11710}\PYG{p}{,} \PYG{l+m}{12744}\PYG{p}{)}
+\PYG{n}{data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}\PYG{n}{scale}\PYG{p}{,} \PYG{n}{measure}\PYG{p}{)}
+
+\PYG{n+nf}{lm}\PYG{p}{(}\PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{measure}\PYG{p}{)} \PYG{o}{\PYGZti{}} \PYG{l+m}{0} \PYG{o}{+} \PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{scale}\PYG{p}{),} \PYG{n}{data}\PYG{p}{)}\PYG{o}{\PYGZdl{}}\PYG{n}{coefficients} \PYG{c+c1}{\PYGZsh{} set 0 intercept}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} 1.36720041333112}
+\end{Verbatim}

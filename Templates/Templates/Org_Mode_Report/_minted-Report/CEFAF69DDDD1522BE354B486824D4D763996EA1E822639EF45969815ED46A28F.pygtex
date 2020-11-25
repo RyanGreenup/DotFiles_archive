@@ -1,0 +1,50 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{mandelbrot}\PYG{p}{(}\PYG{n}{z}\PYG{p}{,} \PYG{n}{num}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{c}{\PYGZsh{} Define z1 as z}
+    \PYG{n}{z1} \PYG{o}{=} \PYG{n}{z}
+    \PYG{c}{\PYGZsh{} Iterate num times}
+    \PYG{k}{while} \PYG{n}{count} \PYG{o}{≤} \PYG{n}{num}
+        \PYG{c}{\PYGZsh{} check for divergence}
+        \PYG{k}{if} \PYG{n}{abs}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{2}
+            \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{count}\PYG{p}{)}
+        \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}iterate z}
+        \PYG{n}{z1} \PYG{o}{=} \PYG{n}{my\PYGZus{}func}\PYG{p}{(}\PYG{n}{z1}\PYG{p}{)} \PYG{o}{+} \PYG{n}{z}
+        \PYG{n}{count}\PYG{o}{=}\PYG{n}{count}\PYG{o}{+}\PYG{l+m+mi}{1}
+    \PYG{k}{end}
+        \PYG{c}{\PYGZsh{}if z hasn\PYGZsq{}t diverged by the end}
+    \PYG{k}{return} \PYG{k+kt}{Int}\PYG{p}{(}\PYG{n}{num}\PYG{p}{)}
+\PYG{k}{end}
+
+\PYG{k}{function} \PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{n}{width}\PYG{p}{,} \PYG{n}{height}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+    \PYG{n}{pic\PYGZus{}mat} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{n}{width}\PYG{p}{,} \PYG{n}{height}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{pic\PYGZus{}mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{pic\PYGZus{}mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+            \PYG{n}{x} \PYG{o}{=} \PYG{n}{j}\PYG{o}{/}\PYG{n}{width}
+            \PYG{n}{y} \PYG{o}{=} \PYG{n}{i}\PYG{o}{/}\PYG{n}{height}
+            \PYG{n}{pic\PYGZus{}mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{mandelbrot}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{y}\PYG{o}{*}\PYG{n+nb}{im}\PYG{p}{,} \PYG{l+m+mi}{99}\PYG{p}{,} \PYG{n}{my\PYGZus{}func}\PYG{p}{)}
+        \PYG{k}{end}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{n}{pic\PYGZus{}mat}
+\PYG{k}{end}
+
+
+\PYG{k}{using} \PYG{n}{FITSIO}
+\PYG{k}{function} \PYG{n}{save\PYGZus{}picture}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{matrix}\PYG{p}{)}
+    \PYG{n}{f} \PYG{o}{=} \PYG{n}{FITS}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}w\PYGZdq{}}\PYG{p}{);}
+    \PYG{c}{\PYGZsh{} data = reshape(1:100, 5, 20)}
+    \PYG{c}{\PYGZsh{} data = pic\PYGZus{}mat}
+    \PYG{n}{write}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{matrix}\PYG{p}{)}  \PYG{c}{\PYGZsh{} Write a new image extension with the data}
+
+    \PYG{n}{data} \PYG{o}{=} \PYG{k+kt}{Dict}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}col1\PYGZdq{}}\PYG{o}{=\PYGZgt{}}\PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,} \PYG{l+m+mf}{2.}\PYG{p}{,} \PYG{l+m+mf}{3.}\PYG{p}{],} \PYG{l+s}{\PYGZdq{}col2\PYGZdq{}}\PYG{o}{=\PYGZgt{}}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]);}
+    \PYG{n}{write}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{data}\PYG{p}{)}  \PYG{c}{\PYGZsh{} write a new binary table to a new extension}
+
+    \PYG{n}{close}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{} * Save Picture}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{my\PYGZus{}pic} \PYG{o}{=} \PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{l+m+mi}{20000}\PYG{p}{,} \PYG{l+m+mi}{20000}\PYG{p}{,} \PYG{n}{z} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{z}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{l+m+mi}{2000}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{n}{is} \PYG{l+m+mi}{4} \PYG{n}{GB}
+\PYG{n}{save\PYGZus{}picture}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/a.fits\PYGZdq{}}\PYG{p}{,} \PYG{n}{my\PYGZus{}pic}\PYG{p}{)}
+\end{Verbatim}

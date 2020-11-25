@@ -1,0 +1,996 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
+<HEAD>
+<TITLE>MyDocument</TITLE>
+<META NAME="description" CONTENT="MyDocument">
+<META NAME="keywords" CONTENT="notes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="notes.css">
+
+</HEAD>
+
+<BODY >
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000"></A><A NAME="limits"></A>
+<BR>
+(4) Limits
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00011000000000000000"></A><A NAME="limits-of-functions-4.1"></A>
+<BR>
+Limits of Functions
+[4.1]
+</H2>
+
+<P>
+Intuitively limits of functions are the expected value of a function at
+points that can't be solved because they are undefined, e.g.
+<BR> 
+<BR>$&#92;frac{(x-2)&#92;left( x+2
+&#92;right)}{&#92;left( x-2
+&#92;right)}$ would be undefined at x=2, however as x is
+made sufficiently close to 2, that value will become arbitrarily close
+to 4.
+
+<P>
+
+<H3><A NAME="SECTION00011100000000000000"></A><A NAME="the-limit-generally"></A>
+<BR>
+The Limit Generally
+</H3>
+
+<P>
+From early calculus the limit of <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>), as <SPAN  CLASS="textit">x</SPAN>
+approaches <SPAN  CLASS="textit">a</SPAN> was said to be some value L, denoted
+lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">a</SPAN></SUB>(<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)) = <SPAN  CLASS="textit">L</SPAN>
+<BR>$$&#92;begin{aligned}
+&#92;forall &#92;varepsilon &gt; 0,
+&#92;enspace, &#92;exists &#92;delta:
+&amp; &#92;notag &#92;&#92; &amp;
+&#92;qquad 0 &lt; &#92;lvert x-a
+&#92;rvert &lt; &#92;delta
+&#92;implies &#92;lvert f&#92;left( x
+&#92;right) - L &#92;rvert &lt;
+&#92;varepsilon
+&#92;label{stewartlimdef}&#92;end{aligned}$$
+<BR>
+<P>
+Remarks on this
+Definition<A NAME="remarks-on-this-definition"></A>
+<P>
+Observe that the following statements are equivalent:
+
+<P>
+
+<OL>
+<LI>$x&#92;neq c &#92;enspace
+  &#92;wedge &#92;enspace &#92;lvert
+  x-a &#92;rvert &lt; &#92;delta$
+</LI>
+<LI>0 &lt; |<SPAN  CLASS="textit">x</SPAN> − <SPAN  CLASS="textit">a</SPAN>|&lt;<SPAN  CLASS="textit">δ</SPAN>
+</LI>
+<LI>|<SPAN  CLASS="textit">x</SPAN> − <SPAN  CLASS="textit">a</SPAN>|∈(0,<SPAN  CLASS="textit">δ</SPAN>)
+</LI>
+</OL>
+
+<P>
+Notation<A NAME="notation"></A>
+<P>
+&nbsp;
+<BR> 
+<BR>
+If <SPAN  CLASS="textit">L</SPAN> is a limit of <SPAN  CLASS="textit">f</SPAN> at <SPAN  CLASS="textit">c</SPAN>, then it is said
+that:
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textit">f</SPAN> converges to <SPAN  CLASS="textit">L</SPAN> at <SPAN  CLASS="textit">c</SPAN>
+</LI>
+<LI><SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) approaches <SPAN  CLASS="textit">L</SPAN> as <SPAN  CLASS="textit">x</SPAN> approaches
+  <SPAN  CLASS="textit">c</SPAN> This is sometimes expressed with the symbolism
+  <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) → <SPAN  CLASS="textit">L</SPAN> as <SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN>
+</LI>
+</OL>
+
+<P>
+&nbsp;
+<BR>
+And the following notation is used
+
+<P>
+
+<OL>
+<LI>lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN></SUB>(<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)) = <SPAN  CLASS="textit">L</SPAN>
+</LI>
+<LI>lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN></SUB><SPAN  CLASS="textit">f</SPAN>
+</LI>
+</OL>
+
+<P>
+
+<H3><A NAME="SECTION00011200000000000000"></A><A NAME="the-limit-using-cluster-points"></A>
+<BR>
+The Limit Using Cluster
+Points
+</H3>
+
+<P>
+In analysis we more or less use the same definition but we introduce the
+concept of cluster points to make it more rigorous.
+
+<P>
+Neighborhoods [2.2.7]<A NAME="neighborhoods-2.2.7"></A>
+<P>
+A neighborhood is an interval about a value, e.g. the
+<SPAN  CLASS="textit">ε</SPAN>-neighborhood of <SPAN  CLASS="textit">a</SPAN> is some set
+<SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">ε</SPAN></SUB>(<SPAN  CLASS="textit">a</SPAN>):
+<BR>$$&#92;begin{aligned}
+V_{&#92;varepsilon}(a) = &#92;left(
+&#92;varepsilon-a, &#92;varepsilon+a
+&#92;right) &amp;= &#92;left&#92;{ x :
+&#92;varepsilon - a &lt; x &lt;
+&#92;varepsilon + a &#92;right&#92;}
+&#92;&#92; &amp;=
+&#92;left&#92;{ x : -&#92;varepsilon
+&lt; x - a &lt; &#92;varepsilon
+&#92;right&#92;} &#92;&#92;
+&amp;= &#92;left&#92;{ x: &#92;lvert x-a
+&#92;rvert &lt; &#92;varepsilon
+&#92;right&#92;}
+&#92;label{nebhdef}&#92;end{aligned}$$
+<BR>
+<P>
+Cluster Points<A NAME="cluster-points"></A>
+<P>
+Let <SPAN  CLASS="textit">c</SPAN> be a real number and let <SPAN  CLASS="textit">A</SPAN> be a subset of the
+real numbers, <SPAN  CLASS="textit">c</SPAN> may or may not be contained by <SPAN  CLASS="textit">A</SPAN> it
+doesn't matter.
+<BR>
+Take some interval around <SPAN  CLASS="textit">c</SPAN>, or rather consider the
+<SPAN  CLASS="textit">ε</SPAN>-neighborhood of <SPAN  CLASS="textit">c</SPAN>,
+<BR>
+if, some value (other than <SPAN  CLASS="textit">c</SPAN>) can be found inside that
+interval/neighborhood that is also inside <SPAN  CLASS="textit">A</SPAN>, regardless of how
+small that interval is made, Then <SPAN  CLASS="textit">c</SPAN> is said to be a cluster
+point of <SPAN  CLASS="textit">A</SPAN>.
+<BR> 
+<BR>
+i.e., if the following is true
+<BR>$&#92;forall &#92;varepsilon &gt; 0,
+&#92;enspace &#92;exists x&#92;neq c
+&#92;in A&#92;cap
+V_{&#92;varepsilon}(c)$
+<BR>
+then <SPAN  CLASS="textit">c</SPAN> is said to be a cluster point of <SPAN  CLASS="textit">A</SPAN>.
+<BR> 
+<BR>
+It basically means that there are infinitely infinitesimal points
+between any point in <SPAN  CLASS="textit">A</SPAN> and the value <SPAN  CLASS="textit">c</SPAN>.
+
+<P>
+Example
+
+<P>
+
+<UL>
+<LI>The point 4 of the set {3,4,5} is not a cluster point of that
+  set because a 0.1-neighbourhood of 4 would be the set
+  <SPAN  CLASS="textit">V</SPAN><SUB>0.1</SUB>(4)={4}, this set does not contain a
+  value <SPAN  CLASS="textit">x</SPAN> ≠ 4 that is also inside the original set.
+<BR></LI>
+<LI>The point 6 of (1,6) = {<SPAN  CLASS="textit">x</SPAN>:1&lt;<SPAN  CLASS="textit">x</SPAN>&lt;6}
+  is a cluster point of (1,6) because no matter how small a
+  neighborhood is made around 6, there will always be values
+  <SPAN  CLASS="textit">x</SPAN> ≠ 6 inside that interval that are also inside (1,6) also
+  observe that in this case 6 ∉ (1,6)
+</LI>
+</UL>
+
+<P>
+Definition of the Limit
+[4.1.4]<A NAME="definition-of-the-limit-4.1.4"></A>
+<P>
+So this is the definition that we moreso use in this unit and the one to
+memorise (or the Neighborhoods one seems simpler to memorise).
+<BR> 
+<BR>
+Let <SPAN  CLASS="textit">A</SPAN> ⊆ ℝ and let <SPAN  CLASS="textit">c</SPAN> be a cluster point of
+<SPAN  CLASS="textit">A</SPAN>.
+<BR> 
+<BR>
+Now take some function:
+<BR>$$&#92;begin{aligned} f: A &#92;rightarrow
+&#92;mathbb{R} &#92;label{clustlimdeffunc}
+&#92;end{aligned}$$
+<BR>
+It is said that <SPAN  CLASS="textit">L</SPAN> is a limit of <SPAN  CLASS="textit">f</SPAN> at <SPAN  CLASS="textit">c</SPAN> if:
+<BR>$$&#92;begin{aligned} &#92;forall
+&#92;varepsilon &gt; 0, &amp;&#92;enspace
+&#92;exists &#92;delta &gt; 0:
+&#92;notag &#92;&#92;
+&#92;qquad &amp; &#92;left( x &#92;in A
+&#92;enspace &#92;wedge &#92;enspace
+0&lt;&#92;lvert x-c &#92;rvert &lt;
+&#92;delta &#92;right) &#92;implies
+&#92;lvert f&#92;left( x &#92;right) -
+L &#92;rvert &lt; &#92;varepsilon
+&#92;tag{4.1.4} &#92;label{414}
+&#92;end{aligned}$$
+<BR>
+<P>
+What's the Distinction
+
+<P>
+This is more or less the same as the typical definition given in early
+calculus ([stewartlimdef]), the distinction here is that we have
+specified that <SPAN  CLASS="textit">c</SPAN> must be a cluster point of <SPAN  CLASS="textit">A</SPAN>, this is
+more rigorous because c is always such that there are infinitely many
+values in any infinitesimal distance between intself and any
+<SPAN  CLASS="textit">x</SPAN> ∈ <SPAN  CLASS="textit">A</SPAN>,
+<BR>
+So the limit will always mean a continuous approach as we expect, this
+is just a more thorough definition.
+
+<P>
+Definition using Neigborhoods
+[4.1.6]<A NAME="definition-using-neigborhoods-4.1.6"></A>
+<P>
+A value <SPAN  CLASS="textit">L</SPAN> is said to be the limit of <SPAN  CLASS="textit">f</SPAN> as
+<SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN>, denoted
+lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN></SUB>(<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)) if and only
+if:
+<BR>
+<P>
+2em0pt <SPAN  CLASS="textit">For any</SPAN> given <SPAN  CLASS="textit">ε</SPAN>-neighbourhood of <SPAN  CLASS="textit">L</SPAN>,
+$&#92;enspace V_{&#92;varepsilon}(L)$
+<BR><SPAN  CLASS="textit">There exists</SPAN> a <SPAN  CLASS="textit">δ</SPAN>-neighbourhood of <SPAN  CLASS="textit">c</SPAN>,
+$&#92;enspace
+V_{&#92;delta}&#92;left( L
+&#92;right)$
+<BR>
+<P>
+such that:&nbsp;
+<BR>
+<P>
+4em0pt =0.7cm <SPAN  CLASS="textit">If</SPAN> <SPAN  CLASS="textit">x</SPAN> ≠ <SPAN  CLASS="textit">c</SPAN> is in both <SPAN  CLASS="textit">A</SPAN>
+and <SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">δ</SPAN></SUB>(<SPAN  CLASS="textit">c</SPAN>)
+<BR>=0.5cm <SPAN  CLASS="textit">Then</SPAN> <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) must be within the neighbourhood
+<SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">ε</SPAN></SUB>(<SPAN  CLASS="textit">L</SPAN>)
+
+<P>
+Formally
+
+<P>
+$$&#92;begin{aligned} &#92;forall
+&#92;varepsilon &gt; 0, &amp; &#92;enspace
+&#92;exists &#92;delta &gt; 0:
+&#92;notag &#92;&#92; &amp;
+&#92;qquad x &#92;neq c, &#92;enspace x
+&#92;in A&#92;cap
+V_{&#92;varepsilon}&#92;left( L
+&#92;right) &#92;implies f&#92;left( x
+&#92;right) &#92;in
+V_{&#92;delta}&#92;left( c
+&#92;right) &#92;tag{4.1.6}
+&#92;label{416}&#92;end{aligned}$$
+<BR>
+<P>
+Defintions ([416]) and ([414]) are equivalent, and are both
+consistent with the initial less rigorous definition
+([stewartlimdef]).
+
+<P>
+Only one Limit Value
+[4.1.5]<A NAME="only-one-limit-value-4.1.5"></A>
+<P>
+If <SPAN  CLASS="textit">f</SPAN> : <SPAN  CLASS="textit">A</SPAN> → ℝ and <SPAN  CLASS="textit">c</SPAN> is a cluster point of
+<SPAN  CLASS="textit">A</SPAN>, then there is only one value L:
+lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN></SUB>(<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)) = <SPAN  CLASS="textit">L</SPAN>
+
+<P>
+
+<H3><A NAME="SECTION00011300000000000000"></A><A NAME="using-sequences-to-define-limits-4.1.8"></A>
+<BR>
+Using Sequences to Define Limits [ 4.1.8
+]
+</H3>
+
+<P>
+Now that limits are defined we can use sequences to define them as well,
+this will give us more tools to use later and allows a connection to be
+made between material of Chapter 3 and 4.
+
+<P>
+Definition<A NAME="definition"></A>
+<P>
+A value <SPAN  CLASS="textit">L</SPAN> is said to be the limit of <SPAN  CLASS="textit">f</SPAN> as
+<SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN>, denoted
+lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN></SUB>(<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)) if and only
+if:
+<BR>
+<P>
+2em0pt <SPAN  CLASS="textit">For every</SPAN> sequence
+(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) in <SPAN  CLASS="textit">A</SPAN>,
+<BR>
+<P>
+4em0pt <SPAN  CLASS="textit">if</SPAN> (<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) converges to
+<SPAN  CLASS="textit">c</SPAN> such that <SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB> ≠ <SPAN  CLASS="textit">c</SPAN>,
+<BR>
+<P>
+4em0pt <SPAN  CLASS="textit">Then</SPAN> (<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>))
+converges to <SPAN  CLASS="textit">L</SPAN>
+
+<P>
+&nbsp;
+<BR>
+So basically, again, if <SPAN  CLASS="textit">x</SPAN> gets close to <SPAN  CLASS="textit">c</SPAN>,
+<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) gets close to L, but we took <SPAN  CLASS="textit">x</SPAN> from a
+sequence.
+
+<P>
+
+<H3><A NAME="SECTION00011400000000000000"></A><A NAME="divergence-criteria-4.1.9"></A>
+<BR>
+Divergence Criteria [ 4.1.9
+]
+</H3>
+
+<P>
+Now we can use the <SPAN  CLASS="textit">Divergence Criteria</SPAN> from [3.4.5] to
+determine whether or not a limit exists generally or at a point.
+
+<P>
+(a) Limit is not a Specific
+Value<A NAME="a-limit-is-not-a-specific-value"></A>
+<P>
+If <SPAN  CLASS="textit">L</SPAN> ∈ ℝ, then <SPAN  CLASS="textit">f</SPAN> does not have a limit at <SPAN  CLASS="textit">c</SPAN>,
+if and only if:
+<BR> 
+<BR>
+There is a sequence (<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) in <SPAN  CLASS="textit">A</SPAN>
+with <SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB> ≠ <SPAN  CLASS="textit">c</SPAN>, such that:
+<BR>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) converges to <SPAN  CLASS="textit">c</SPAN> but the
+sequence <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) does not converge
+to <SPAN  CLASS="textit">L</SPAN>
+
+<P>
+(b) No Limit whatsover<A NAME="b-no-limit-whatsover"></A>
+<P>
+If <SPAN  CLASS="textit">L</SPAN> ∈ ℝ, then <SPAN  CLASS="textit">f</SPAN> does not have a limit at <SPAN  CLASS="textit">c</SPAN>,
+if and only if:
+<BR> 
+<BR>
+There is a sequence (<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) in <SPAN  CLASS="textit">A</SPAN>
+with <SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB> ≠ <SPAN  CLASS="textit">c</SPAN>, such that:
+<BR>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) converges to <SPAN  CLASS="textit">c</SPAN> but the
+sequence <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) does not converge
+in ℝ
+
+<P>
+The Signum Function<A NAME="the-signum-function"></A>
+<P>
+The Signum function returns the sign of the input value:
+
+<P>
+$$&#92;begin{aligned} sgn&#92;left( x
+&#92;right) &amp;:= &#92;begin{cases} +&amp;1
+&#92;qquad &#92;text{for}
+&#92;enspace $x &#92;textgreater
+&#92;enspace 0$ &#92;&#92; &amp;0
+&#92;qquad &#92;text{for}
+&#92;enspace $x= 0$ &#92;&#92; -&amp;1
+&#92;qquad &#92;text{for}
+&#92;enspace $x &#92;textless
+&#92;enspace 0$ &#92;end{cases}
+&#92;tag{4.1.10} &#92;label{4110}
+&#92;&#92; &amp;=
+&#92;frac{x}{&#92;lvert x
+&#92;rvert}
+&#92;notag&#92;end{aligned}$$
+<BR>
+<P>
+
+<H2><A NAME="SECTION00012000000000000000"></A><A NAME="limit-theorems-4.2"></A>
+<BR>
+Limit Theorems [4.2]
+</H2>
+
+<P>
+These are useful for calculating limits of functions, they are mostly
+extensions of [3.2].
+
+<P>
+
+<H3><A NAME="SECTION00012100000000000000"></A><A NAME="bounded-functions"></A>
+<BR>
+Bounded Functions
+</H3>
+
+<P>
+Definition<A NAME="definition-1"></A>
+<P>
+Let <SPAN  CLASS="textit">A</SPAN> ⊆ ℝ, <SPAN  CLASS="textit">f</SPAN> : <SPAN  CLASS="textit">A</SPAN> → ℝ and let <SPAN  CLASS="textit">c</SPAN> ∈ ℝ be
+a cluster point of <SPAN  CLASS="textit">A</SPAN>.
+<BR>
+It is said that <SPAN  CLASS="textit">f is bounded on a neighbourhood of</SPAN> <SPAN  CLASS="textit">c</SPAN>
+if:
+<BR>
+<P>
+2em0pt there exists a <SPAN  CLASS="textit">δ</SPAN>-neighborhood
+<SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">δ</SPAN></SUB>(<SPAN  CLASS="textit">c</SPAN>) and some constant value
+<SPAN  CLASS="textit">M</SPAN> &gt; 0 such that:
+<BR>
+<P>
+4em0pt |<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)|≤<SPAN  CLASS="textit">M</SPAN> for every
+<SPAN  CLASS="textit">x</SPAN> ∈ <SPAN  CLASS="textit">A</SPAN> ∩ <SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">δ</SPAN></SUB>(<SPAN  CLASS="textit">c</SPAN>)
+
+<P>
+&nbsp;
+<BR>
+So basically a function is said to be <SPAN  CLASS="textit">bounded on a neighbourhood
+of <SPAN  CLASS="textit">c</SPAN></SPAN> if:
+
+<P>
+4em0pt for some interval (It doesn't matter how small) around
+<SPAN  CLASS="textit">c</SPAN>,
+
+<P>
+6em0pt <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) can be contained in some interval
+
+<P>
+&nbsp;
+<BR>
+<P>
+4em0pt $&#92;exists
+&#92;delta&gt;0, &#92;enspace
+&#92;exists M&gt;0:$
+
+<P>
+6em0pt
+<SPAN  CLASS="textit">x</SPAN> ∈ <SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">δ</SPAN></SUB>(<SPAN  CLASS="textit">c</SPAN>) ⟹ |<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)|&lt;<SPAN  CLASS="textit">M</SPAN>
+
+<P>
+&nbsp;
+<BR>
+So for example:
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) = <SPAN  CLASS="textit">x</SPAN><SUP>3</SUP> is <SPAN  CLASS="textit">bounded on
+  every neighborhood of every <SPAN  CLASS="textit">x</SPAN> ∈ ℝ</SPAN> whereas,
+</LI>
+<LI>$g&#92;left( x &#92;right) =
+  &#92;sfrac{1}{x}$ is <SPAN  CLASS="textit"><SPAN  CLASS="textbf">not</SPAN> bounded on a
+  neighborhood of 0</SPAN> because <SPAN  CLASS="textit">g</SPAN>(<SPAN  CLASS="textit">x</SPAN>) tends to infinity as
+  <SPAN  CLASS="textit">x</SPAN> → 0,
+
+<P>
+
+<UL>
+<LI>furthermore <SPAN  CLASS="textit">g</SPAN>(<SPAN  CLASS="textit">x</SPAN>) is <SPAN  CLASS="textit">bounded on <SPAN  CLASS="textbf">some
+    but notall</SPAN> neighborhoods of 1</SPAN>, because an interval around 1 must
+    not be drawn large enough to encapsulate 0.
+  
+</LI>
+</UL>
+</LI>
+</UL>
+
+<P>
+Limits imply Bounded Neighbourhoods [4.2.2
+]<A NAME="limits-imply-bounded-neighbourhoods-4.2.2"></A>
+<P>
+A function is bounded on a neighborhood of a point that is a limit of
+that function.
+<BR>
+If a function has a limit at <SPAN  CLASS="textit">c</SPAN>, then <SPAN  CLASS="textit">f</SPAN> must be
+<SPAN  CLASS="textit">bounded on some neighborhood of <SPAN  CLASS="textit">c</SPAN></SPAN>,
+<BR>
+this flows from the initial definitions because we know that <SPAN  CLASS="textit">c</SPAN>
+is a cluster point and that (<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)) moves closer to
+<SPAN  CLASS="textit">L</SPAN>,
+<BR>
+hence it must be possible to draw a small enough interval (e.g.
+horizontal lines on the <SPAN  CLASS="textit">y</SPAN>-axis) to contain all
+<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) defined by
+
+<P>
+
+<H3><A NAME="SECTION00012200000000000000"></A><A NAME="functions-and-arithmetic-4.2.3"></A>
+<BR>
+Functions and Arithmetic
+[4.2.3]
+</H3>
+
+<P>
+Just like with sequences we can define arithmetic operations that relate
+to addition and multiplication with functions in order to manipulate
+them:
+<BR> 
+<BR>
+Let <SPAN  CLASS="textit">A</SPAN> ⊆ ℝ ,
+<BR>$$&#92;begin{aligned} f: A &#92;rightarrow
+&#92;mathbb{R} &#92;qquad g: A
+&#92;rightarrow &#92;mathbb{R}
+&#92;qquad h: A &#92;rightarrow
+&#92;mathbb{R}, &#92;enspace h(x)
+&#92;neq 0, &#92;enspace &#92;forall x
+&#92;in A
+&#92;label{seqdefgen}&#92;end{aligned}$$
+<BR>
+<P>
+We define the following Operations [4.2, p. 111]:
+
+<P>
+$$&#92;begin{aligned} {1} &#92;left( f+g
+&#92;right) &#92;left( x &#92;right)
+&amp;:= f&#92;left( x &#92;right) +
+g&#92;left( x &#92;right)
+&#92;label{addfundef} &#92;&#92;
+&#92;left( f-g &#92;right) &#92;left( x
+&#92;right) &amp;:= f&#92;left( x
+&#92;right) + g&#92;left( x &#92;right)
+&#92;label{subfundef} &#92;&#92;
+&#92;left( fg &#92;right) &#92;left( x
+&#92;right) &amp;:= f&#92;left( x
+&#92;right) &#92;times g&#92;left( x
+&#92;right) &#92;label{multfundef}
+&#92;&#92; &#92;left( bf
+&#92;right) &#92;left( x &#92;right)
+&amp;:= b &#92;times f&#92;left( x
+&#92;right) &#92;label{confundef}
+&#92;&#92; &#92;left(
+&#92;frac{f}{h}
+&#92;right)&#92;left( x &#92;right)
+&amp;:= &#92;frac{f&#92;left( x
+&#92;right)}{h&#92;left( x
+&#92;right)} &#92;end{aligned}$$
+<BR>
+<P>
+Limits of Function Operations [4.2.4]
+
+<P>
+Because the limit of a function is essentially the expected value of the
+function around that value, it stands to reason that the limit will
+distribute over the basic operations:
+<BR>
+Let the functions be defined as they were in ([seqdefgen]) and let
+<SPAN  CLASS="textit">c</SPAN> ∈ ℝ be a custer point of <SPAN  CLASS="textit">A</SPAN>.
+
+<P>
+$$&#92;begin{aligned} &#92;lim_{x
+&#92;rightarrow c}&#92;left( f
+&#92;right) = L &#92;qquad
+&#92;lim_{x &#92;rightarrow
+c}&#92;left( g &#92;right) = M
+&#92;quad &#92;lim_{x&#92;rightarrow
+c}&#92;left( h &#92;right) = H
+&#92;neq 0
+&#92;label{fundeflim}&#92;end{aligned}$$
+<BR>
+<P>
+Then the limits are:
+
+<P>
+$$&#92;begin{aligned} {2}
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f+g &#92;right) &amp;=
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( f &#92;right) +
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( g &#92;right) &amp;= L + M
+&#92;label{addlimdef}
+&#92;&#92;[1em]
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f-g &#92;right) &amp;=
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f &#92;right) -
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( g &#92;right) &amp;= x - y
+&#92;label{minlimdef}
+&#92;&#92;[1em]
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( c &#92;cdot f &#92;right)
+&amp;= c &#92;cdot
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f &#92;right) &amp;= c
+&#92;cdot x &#92;label{conmultlimdef}
+&#92;&#92;[1em]
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f&#92;times g &#92;right)
+&amp;= &#92;lim_{x&#92;rightarrow c}
+&#92;left( f &#92;right) &#92;times
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( g &#92;right) &amp;= x
+&#92;times y &#92;label{multlimdef}
+&#92;&#92;[1em]
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f/h &#92;right) &amp;=
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( f &#92;right) &#92;div
+&#92;lim_{x&#92;rightarrow c}
+&#92;left( h &#92;right) &amp;=
+&#92;sfrac{x}{y}
+&#92;label{divlimdef}&#92;end{aligned}$$
+<BR>
+<P>
+
+<H3><A NAME="SECTION00012300000000000000"></A><A NAME="limit-theorems"></A>
+<BR>
+Limit Theorems
+</H3>
+
+<P>
+The rest of the chapter just provides values of varios limits.
+<BR>
+Let the functions be defined as they were in ([seqdefgen]) and let
+<SPAN  CLASS="textit">c</SPAN> ∈ ℝ be a custer point of <SPAN  CLASS="textit">A</SPAN>.
+
+<P>
+Limits Captured in Intervals
+[4.2.6]<A NAME="limits-captured-in-intervals-4.2.6"></A>
+<P>
+&nbsp;
+<BR> 
+<BR><SPAN  CLASS="textit">if</SPAN> <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) ∈ [<SPAN  CLASS="textit">a</SPAN>,<SPAN  CLASS="textit">b</SPAN>] for all $x
+&#92;in A, &#92;enspace x &#92;neq
+c$, and lim<SUB><SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN></SUB>(<SPAN  CLASS="textit">f</SPAN>) exists,
+<BR>
+<P>
+2em0pt <SPAN  CLASS="textit">then</SPAN> <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) ∈ [<SPAN  CLASS="textit">a</SPAN>,<SPAN  CLASS="textit">b</SPAN>]
+
+<P>
+Squeeze Theorem [4.2.7]<A NAME="squeeze-theorem-4.2.7"></A>
+<P>
+if [4.2.6] is extended to functions, then we have the squeeze
+theorem:
+<BR><SPAN  CLASS="textit">if</SPAN> <SPAN  CLASS="textit">g</SPAN> is within an interval defined by the functions
+<SPAN  CLASS="textit">f</SPAN> and <SPAN  CLASS="textit">h</SPAN>:
+
+<P>
+$$&#92;begin{aligned} f&#92;left( x
+&#92;right) &#92;leq g&#92;left( x
+&#92;right) &#92;leq h&#92;left( x
+&#92;right), &#92;quad &#92;forall
+x&#92;in A, &#92;enspace x&#92;neq c
+&#92;label{squeezelimdist}&#92;end{aligned}$$
+<BR>
+<P>
+2em0pt <SPAN  CLASS="textit">then</SPAN> the limit of g must also be 0
+
+<P>
+$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( g &#92;right)=L
+&#92;label{limisL}&#92;end{aligned}$$
+<BR>
+<P>
+A Positive Limit implies a neighbourhood with Positive
+Values<A NAME="a-positive-limit-implies-a-neighbourhood-with-positive-values"></A>
+<P>
+Let <SPAN  CLASS="textit">A</SPAN> ⊆ ℝ and let <SPAN  CLASS="textit">c</SPAN> ∈ ℝ be a cluster point of
+<SPAN  CLASS="textit">A</SPAN> as in (3.4.6) above.
+<BR><SPAN  CLASS="textit">If</SPAN>:
+<BR>$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( f &#92;right) &gt; 0
+&#92;label{limneighbourpor}&#92;end{aligned}$$
+<BR>
+<P>
+<SPAN  CLASS="textit">Then:</SPAN>
+
+<P>
+4em0pt there is a neighborhood
+<SPAN  CLASS="textit">V</SPAN><SUB><SPAN  CLASS="textit">δ</SPAN></SUB>(<SPAN  CLASS="textit">c</SPAN>) such that
+$f&#92;left( x &#92;right) &gt;0,
+&#92;enspace &#92;forall x &#92;in A
+&#92;cap V_{&#92;delta}&#92;left( c
+&#92;right)$
+
+<P>
+&nbsp;
+<BR>
+This also holds for negative values and basically all it says, in more
+rigorous language, is that if the limit point is above the
+<SPAN  CLASS="textit">x</SPAN>-axis then there's gotta be points to the left and right that
+are above the <SPAN  CLASS="textit">x</SPAN>-axis as well (because the whole cluster point
+thing means everything can be arbitrarily small).
+<BR> 
+<BR>
+Although this may start to seem a little pointless, the idea of making
+the definitions this rigorous is like writing code in a scripting
+language, by using this very precise language, the logical consequences
+give us exactly the concept that we want, even though we need to take a
+longer or alternate path to get to that concept than we would otherwise
+would generally take in order to describe the concept.
+
+<P>
+
+<H2><A NAME="SECTION00013000000000000000"></A><A NAME="extensions-of-the-limit-concept-4.3"></A>
+<BR>
+Extensions of the Limit Concept
+[4.3]
+</H2>
+
+<P>
+These are written in a particularly convoluted fashion, however if the
+preceeding material is understood the textbook can be used more or less
+as a reference, hence these notes will be brief.
+
+<P>
+
+<H3><A NAME="SECTION00013100000000000000"></A><A NAME="one-sided-limits-4.3.1"></A>
+<BR>
+One-Sided Limits
+[4.3.1]
+</H3>
+
+<P>
+Definition [4.3.1]<A NAME="definition-4.3.1"></A>
+<P>
+Let <SPAN  CLASS="textit">c</SPAN> ∈ ℝ be a cluster point of $A&#92;cap
+&#92;left( c, &#92;infty &#92;right) =
+&#92;left&#92;{ x &#92;in A
+&#92;enspace : &#92;enspace x &gt; c
+&#92;right&#92;}$
+<BR>
+It is said that <SPAN  CLASS="textit">L</SPAN> is a <SPAN  CLASS="textit">Right-hand limit of <SPAN  CLASS="textit">f</SPAN> at
+<SPAN  CLASS="textit">c</SPAN></SPAN> and it is written:
+<BR>$$&#92;begin{aligned} &#92;lim_{x
+&#92;rightarrow c&#710;+} &#92;left( f
+&#92;right) = L &#92;tag{4.3.1}
+&#92;label{431}&#92;end{aligned}$$
+<BR>
+<P>
+This can be extended to left-hand limits as well.
+
+<P>
+Definition in Term of Sequences [4.3.2]
+
+<P>
+As above it is said that <SPAN  CLASS="textit">L</SPAN> is a <SPAN  CLASS="textit">Right-hand limit of
+<SPAN  CLASS="textit">f</SPAN> at <SPAN  CLASS="textit">c</SPAN></SPAN> if:
+
+<P>
+2em0pt Every sequence (<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) in
+<SPAN  CLASS="textit">A</SPAN> that converges to <SPAN  CLASS="textit">c</SPAN> is such that
+<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) converges to <SPAN  CLASS="textit">L</SPAN>,
+given that $x_n&gt;c, &#92;enspace
+&#92;forall n &#92;in
+&#92;mathbb{N}$
+
+<P>
+Limit must be equal on both
+sides<A NAME="limit-must-be-equal-on-both-sides"></A>
+<P>
+A limit is defined only if the limit is equal from both directions
+<BR>$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( f &#92;right) = L
+&#92;iff &#92;lim_{x&#92;rightarrow
+c&#710;+}&#92;left( f &#92;right) = L =
+&#92;lim_{x&#92;rightarrow c
+}&#92;left( f &#92;right)
+&#92;tag{3.4.3}
+&#92;label{343}&#92;end{aligned}$$
+<BR>
+<P>
+
+<H3><A NAME="SECTION00013200000000000000"></A><A NAME="infinite-limits-4.3.5"></A>
+<BR>
+Infinite Limits [4.3.5]
+</H3>
+
+<P>
+Let <SPAN  CLASS="textit">c</SPAN> ∈ ℝ be a cluster point of <SPAN  CLASS="textit">A</SPAN>,
+<BR>
+It is aid that <SPAN  CLASS="textit">f</SPAN> tends to ∞ as <SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN>, and it
+is written:
+
+<P>
+$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( f &#92;right) =
+&#92;infty &#92;tag{4.3.5}
+&#92;label{435}&#92;end{aligned}$$
+<BR>
+<P>
+If ∀<SPAN  CLASS="textit">α</SPAN> ∈ ℝ, $&#92;enspace &#92;exists
+&#92;delta &gt; 0$:
+
+<P>
+6em0pt
+0 &lt; |<SPAN  CLASS="textit">x</SPAN> − <SPAN  CLASS="textit">c</SPAN>|&lt;<SPAN  CLASS="textit">δ</SPAN> ⟹ <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)&gt;<SPAN  CLASS="textit">α</SPAN>,  ∀<SPAN  CLASS="textit">x</SPAN> ∈ <SPAN  CLASS="textit">A</SPAN>
+
+<P>
+One-Sided Limits to Infinity
+[4.3.8]<A NAME="one-sided-limits-to-infinity-4.3.8"></A>
+<P>
+Let <SPAN  CLASS="textit">c</SPAN> ∈ ℝ be a cluster point of $A&#92;cap
+&#92;left( c, &#92;infty &#92;right) =
+&#92;left&#92;{ x &#92;in A
+&#92;enspace : &#92;enspace x &gt; c
+&#92;right&#92;}$,
+<BR>
+It is aid that <SPAN  CLASS="textit">f</SPAN> tends to ∞ as
+<SPAN  CLASS="textit">x</SPAN> → <SPAN  CLASS="textit">c</SPAN><SUP>+</SUP>, and it is written:
+
+<P>
+$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( f &#92;right) =
+&#92;infty &#92;tag{4.3.8}
+&#92;label{438}&#92;end{aligned}$$
+<BR>
+<P>
+If ∀<SPAN  CLASS="textit">α</SPAN> ∈ ℝ, $&#92;enspace &#92;exists
+&#92;delta &gt; 0$:
+
+<P>
+6em0pt
+0 &lt; <SPAN  CLASS="textit">x</SPAN> − <SPAN  CLASS="textit">c</SPAN> &lt; <SPAN  CLASS="textit">δ</SPAN> ⟹ <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>)&gt;<SPAN  CLASS="textit">α</SPAN>,  ∀<SPAN  CLASS="textit">x</SPAN> ∈ <SPAN  CLASS="textit">A</SPAN>
+
+<P>
+Ordered Functions<A NAME="ordered-functions"></A>
+<P>
+If <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) &lt; <SPAN  CLASS="textit">g</SPAN>(<SPAN  CLASS="textit">x</SPAN>), then:
+<BR>$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( f &#92;right) =
+&#92;infty &amp;&#92;implies &#92;lim_{x
+&#92;rightarrow c}&#92;left( g
+&#92;right) = &#92;infty
+&#92;tag{4.3.7 (a)}
+&#92;label{437a}&#92;&#92;
+&#92;lim_{x&#92;rightarrow
+c}&#92;left( g &#92;right) =
+-&#92;infty &amp;&#92;implies
+&#92;lim_{x &#92;rightarrow
+c}&#92;left( f &#92;right) =
+-&#92;infty &#92;tag{4.3.7 (b)}
+&#92;label{437b}&#92;end{aligned}$$
+<BR>
+<P>
+
+<H3><A NAME="SECTION00013300000000000000"></A><A NAME="limits-at-infinity-4.3.10"></A>
+<BR>
+Limits at Infinity
+[4.3.10]
+</H3>
+
+<P>
+It is also useful to talk about limits as <SPAN  CLASS="textit">x</SPAN> tends to ∞
+
+<P>
+Let (<SPAN  CLASS="textit">a</SPAN>,∞) ⊆ <SPAN  CLASS="textit">A</SPAN> ⊆ ℝ for some <SPAN  CLASS="textit">ain</SPAN>ℝ
+<BR>
+It is aid that the limit of <SPAN  CLASS="textit">f</SPAN> as <SPAN  CLASS="textit">x</SPAN> → ∞ is <SPAN  CLASS="textit">L</SPAN>,
+and it is written:
+<BR>$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+&#92;infty}&#92;left( f &#92;right) =
+L &#92;tag{4.3.10}
+&#92;label{4310}&#92;end{aligned}$$
+<BR>
+<P>
+If $ &#92;forall &#92;varepsilon
+&gt;0, &#92;enspace &#92;exists K
+&gt; 0$:
+
+<P>
+6em0pt
+<SPAN  CLASS="textit">x</SPAN> &gt; <SPAN  CLASS="textit">K</SPAN> ⟹ |<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) − <SPAN  CLASS="textit">L</SPAN>|&lt;<SPAN  CLASS="textit">ε</SPAN>
+
+<P>
+Limits at Infinity in Terms of Sequences [4.3.11]
+
+<P>
+equivalently to ([4310]), the definition can be expressed in terms
+of sequences:
+<BR>
+<P>
+2em0pt Every sequence (<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) in
+<SPAN  CLASS="textit">A</SPAN> ∩ (<SPAN  CLASS="textit">a</SPAN>,∞) that has
+lim(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>)=∞ is such that the sequence
+(<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>)) converges to <SPAN  CLASS="textit">L</SPAN>
+
+<P>
+Infinite Limits at
+Infinity<A NAME="infinite-limits-at-infinity"></A>
+<P>
+So this basically combines [4.3.10] with [4.3.5]
+
+<P>
+Let (<SPAN  CLASS="textit">a</SPAN>,∞) ⊆ <SPAN  CLASS="textit">A</SPAN> ⊆ ℝ for some <SPAN  CLASS="textit">a</SPAN> ∈ ℝ
+<BR> 
+<BR>
+It is aid that <SPAN  CLASS="textit">f</SPAN> tends to ∞ as <SPAN  CLASS="textit">x</SPAN> → ∞, and it is
+written:
+<BR>$$&#92;begin{aligned}
+&#92;lim_{x&#92;rightarrow
+&#92;infty}&#92;left( f &#92;right) =
+&#92;infty &#92;tag{4.3.13}
+&#92;label{4313}&#92;end{aligned}$$
+<BR>
+<P>
+If $ &#92;forall &#92;varepsilon
+&gt;0, &#92;enspace &#92;exists K
+&gt; &#92;alpha$:
+
+<P>
+6em0pt
+<SPAN  CLASS="textit">x</SPAN> &gt; <SPAN  CLASS="textit">K</SPAN> ⟹ <SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN>) &gt; <SPAN  CLASS="textit">α</SPAN>
+
+<P>
+Infinite Limits at Infinity in Terms of Sequences [4.3.14]
+
+<P>
+equivalently to ([4313]), the definition can be expressed in terms
+of sequences:
+<BR>
+<P>
+2em0pt Every sequence (<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>) in
+<SPAN  CLASS="textit">A</SPAN> ∩ (<SPAN  CLASS="textit">a</SPAN>,∞) that has
+lim(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>)=∞ is such that the limit of the
+sequence of function values
+lim (<SPAN  CLASS="textit">f</SPAN>(<SPAN  CLASS="textit">x</SPAN><SUB><SPAN  CLASS="textit">n</SPAN></SUB>)) = ∞
+
+<P>
+Ratios of Functions
+
+<P>
+This result uses (4.3.14) to restate (3.6.5) in terms of functions:
+<BR>
+If $g&#92;left( x &#92;right) &gt; 0
+&#92;enspace &#92;forall x &gt; a$ and
+<SPAN  CLASS="textit">L</SPAN> ≠ 0 is defined:
+
+<P>
+$$&#92;begin{aligned} lim_{x&#92;rightarrow
+&#92;infty}&#92;left(
+&#92;frac{f&#92;left( x
+&#92;right)}{g&#92;left( x
+&#92;right)} &#92;right)
+&#92;tag{4.3.15}
+&#92;label{4315}&#92;end{aligned}$$
+<BR>
+<P>
+then,
+
+<P>
+$$&#92;begin{aligned} L &gt; 0
+&#92;implies
+&#92;lim_{x&#92;rightarrow
+&#92;infty}&#92;left( f &#92;right) =
+&#92;infty &#92;iff &#92;lim_{x
+&#92;rightarrow &#92;infty &#92;left( g
+&#92;right) = &#92;infty}
+&#92;tag{4.3.15 (i)} &#92;label{4315i}
+&#92;&#92; L &lt; 0 &#92;implies
+&#92;lim_{x&#92;rightarrow
+&#92;infty}&#92;left( f &#92;right) =
+- &#92;infty &#92;iff &#92;lim_{x
+&#92;rightarrow &#92;infty &#92;left( g
+&#92;right) = &#92;infty}
+&#92;tag{4.3.15 (ii)}
+&#92;label{4315ii}&#92;end{aligned}$$
+<BR>
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

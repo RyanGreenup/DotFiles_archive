@@ -1,0 +1,246 @@
+#+TITLE: The Emergence of Order [[file:../media/tikz/Snowflake.png]]
+#+OPTIONS: tex:t
+#+AUTHOR: Ryan & James
+#+OPTIONS: toc:nil
+:HTML:
+# #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="./resources/style.css">
+# #+INFOJS_OPT: view:info toc:3
+:END:
+:CLOCK:
+#+PROPERTY: Effort_ALL 0 0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 7:00
+#+COLUMNS: %40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM
+:END:
+:REVEAL:
+#+REVEAL_THEME: simple
+#+REVEAL: :frag (appear)
+:END:
+
+* Introduction
+:PROPERTIES:
+:EFFORT:   2
+:END:
+- Looked at the emergence of patterns from natural and iterative processes.
+- This lead to an investigation of fractals mostly
+* What are Fractals?
+:PROPERTIES:
+:Effort:   0:02
+:END:
+- Shapes with a complex structure
+- Tend to exhibit self-similarity
+  + Although they may not!
+
+** Examples of Fractals
+:PROPERTIES:
+:Effort:   0:02
+:END:
+To motivate the concept, here are some fractals we generated in our investigation:
+
+#+REVEAL: split
+
+- Self-Similar Fractals
+
+#+REVEAL: split
+
+\begin{align*}
+\mathbf{B} \leftarrow
+   \begin{bmatrix}
+       \mathbf{B} & \mathbf{Z} & \mathbf{B} \\
+       \mathbf{Z} & \mathbf{B} & \mathbf{Z} \\
+       \mathbf{B} & \mathbf{Z} & \mathbf{B} \\
+   \end{bmatrix}
+\end{align*}
+
+where:
+
+- \(\mathbf{B}= \left[ 1 \right]\)
+- \(\mathbf{Z}= \left[ 0 \right]  \)
+
+#+REVEAL: split
+
+Vicsek's Fractal
+# (/Fractal Growth Phenomena/, 1992)
+
+[[file:media/vicsek_fractal.gif]]
+
+#+REVEAL: split
+
+
+
+\begin{align*}
+\mathbf{B} \leftarrow
+   \begin{bmatrix}
+       \mathbf{B} & \mathbf{B} & \mathbf{B} \\
+       \mathbf{B} & \mathbf{Z} & \mathbf{B} \\
+       \mathbf{B} & \mathbf{B} & \mathbf{B} \\
+   \end{bmatrix}
+\end{align*}
+
+#+REVEAL: split
+
+Sierpinski's Carpet
+
+[[file:media/sierpinski_carpet.gif]]
+
+
+#+REVEAL: split
+
+- Can also use the Chaos Game
+
+#+REVEAL: split
+[[file:media/chaos_game/1.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/2.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/3.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/4.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/5.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/6.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/7.svg]]
+#+REVEAL: split
+[[file:media/chaos_game/8.svg]]
+#+REVEAL: split
+Sierpinski's Triangle
+
+[[file:media/sierpinsky_triangle_chaos.gif]]
+
+
+#+REVEAL: split
+
+- Can occur from natural phenomena like iteratively folding something:
+
+#+REVEAL: split
+
+Dragon Curve
+
+[[file:media/dragon_curve.gif]]
+
+#+REVEAL: split
+
+- and sometimes thay just fall out of otherwise simple math:
+
+\[
+z \leftarrow z^{2} + c
+\]
+
+#+attr_html: :width 600px
+[[file:media/elegant_julia.png]]
+
+#+REVEAL: split
+
+- What follows is an illustration of all the points that converge to zero for values on the circle:
+
+\[
+z \leftarrow z^{2} + e^{i \frac{9k}{2}}
+\]
+
+#+attr_html: :width 600px
+[[file:media/julia_sets.gif]]
+
+
+
+
+
+#+REVEAL: split
+- How do we define what a fractal really is?
+
+
+#+REVEAL: split
+
+* Defining Fractals
+
+#+begin_export html
+
+<div style="width: 100%; overflow: hidden;">
+     <div style="width: 300px; float: right;">
+    <img src="_media/mandelbrot_fractal_geometry_of_Nature.png" />
+    </div>
+     <div style="margin-left: 62px;">
+            <p><em>A fractal is by definition a set for which the Hausdorff Besicovitch dimension strictly exceeds the topological dimension.</em></p>
+            <p><em>Every set with a non-integer <span class="math inline"><em>D</em></span> is a fractal.</em></p>
+    </div>
+</div>
+#+end_export
+
+# Show the Dragon Curve
+
+
+#+REVEAL:split
+
+
+- This has since been rejected and is somewhat unresolved! See e.g.
+  + Falconer, K. J., /Fractal geometry: mathematical foundations and applications/
+
+
+** The Fractal Dimension
+# I might want to merge this with James' Box counting method.
+
+For ordinary shapes:
+
+\begin{align*}
+\left(\frac{s_{2}}{s_{1}}\right)^{D} &= \left(\frac{m_{2}}{m_{1}}\right) \\
+\ \\
+\implies D &= \log{\frac{s_{2}}{s_{1}}} \div  \log{\frac{m_{2}}{m_{1}}}
+\end{align*}
+
+- This can be used with fractals
+
+
+#+REVEAL: split
+
+Fractals that are not self similar still have a constant dimension, it is the coefficient of the linear regression:
+
+\begin{align*}
+\mathtt{coef}\left(\log \frac{s_{2}}{s_{1}} \sim \log \frac{m_{2}}{m_{1}}\right)\mathtt{[1]}
+\end{align*}
+
+#+REVEAL: split
+\[z \leftarrow z^2 + -0.123+0.745*i\]
+
+#+attr_html: :width 700px
+[[file:../media/outline-rabbit.png]]
+
+#+REVEAL: split
+By Scaling this fractal and comparing the measure and scale:
+
+[[file:media/douady_rabbit_pyplot.gif]]
+
+
+
+#+REVEAL: split
+
+| */Scale/* | */Measure/* |
+|-----------+-------------|
+|       500 |      4834.0 |
+|       563 |      5754.0 |
+|       625 |      6640.0 |
+|       688 |      7584.0 |
+|       750 |      8418.0 |
+|       813 |      9550.0 |
+|       875 |     10554.0 |
+|       938 |     11710.0 |
+|      1000 |     12744.0 |
+
+
+#+REVEAL: split
+
+Dimension of 1.37 (should be 1.39).
+
+[[file:../media/r-ggplot-linear-reg-julia.png]]
+
+* Defining Dimension
+:PROPERTIES:
+:Effort:   0:03
+:END:
+** Hausdorff Measure
+*** TODO Add an animation here
+** Hausdorff Dimension
+
+* My fractal if I have time
+* Measuring the Dimension of a non-self-similar Fractal
+:PROPERTIES:
+:Effort:   0:03
+:END:

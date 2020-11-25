@@ -12,6 +12,8 @@
 (package! texfrag)
 (package! org-pdfview)
 (package! helm-org-rifle)
+(package! org-ql)
+(package! helm-org)
 (package! texfrag)
 (package! ob-mongo)
 (package! leuven-theme)
@@ -31,6 +33,9 @@
 (package! citeproc) ; I don't think I need this anymore, just export -> latex -> HTML (pandoc) to keep refs
 (package! elmacro)
 (package! figlet) ; Makes nice headings
+
+;; Slides
+;(package! ox-reveal)
 
 ;; Temporary
 (package! lsp-julia)  ;; This will eventually be in doom

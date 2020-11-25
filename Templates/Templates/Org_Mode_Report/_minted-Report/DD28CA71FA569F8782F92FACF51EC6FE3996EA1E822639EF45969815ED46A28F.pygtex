@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{my\PYGZus{}it\PYGZus{}fib}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{0}
+        \PYG{k}{return} \PYG{n}{k}
+    \PYG{k}{elseif} \PYG{n}{typeof}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)} \PYG{o}{!=} \PYG{k+kt}{Int}
+        \PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ERROR: Integer Required\PYGZdq{}}\PYG{p}{)}
+        \PYG{k}{return} \PYG{l+m+mi}{0}
+    \PYG{k}{end}
+    \PYG{c}{\PYGZsh{} Hence k must be a positive integer}
+
+    \PYG{n}{i}  \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{n}{n1} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{n}{n2} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+    \PYG{c}{\PYGZsh{} if k \PYGZlt{}=2:}
+    \PYG{c}{\PYGZsh{}     return 1}
+    \PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{k}
+       \PYG{n}{no} \PYG{o}{=} \PYG{n}{n1}
+       \PYG{n}{n1} \PYG{o}{=} \PYG{n}{n2}
+       \PYG{n}{n2} \PYG{o}{=} \PYG{n}{no} \PYG{o}{+} \PYG{n}{n2}
+       \PYG{n}{i} \PYG{o}{=} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{k}{end}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{n1}\PYG{p}{)}
+\PYG{k}{end}
+
+\PYG{n+nd}{@time} \PYG{n}{my\PYGZus{}it\PYGZus{}fib}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{6}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}  my\PYGZus{}it\PYGZus{}fib (generic function with 1 method)}
+\PYG{c}{\PYGZsh{}\PYGZsh{}    0.000450 seconds}
+\end{Verbatim}

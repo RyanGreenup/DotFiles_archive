@@ -1,32 +1,8 @@
-cd 
-cd /home/ryan/Dropbox/Studies/2020Spring/DiscProj
-rename referencing.sty
-rename references.bib
-rename Kepler_747218_Periodogram.png
-rename Kepler_747218_TimeSeries.png
-bulkrename
-
-filter (
-filter \(
-rename Wk_2_Human_Visual_Perception
-rename Wk_3_Relational_Data_Visualisation_(Part_I)
-rename Introduction_to_Data_Visualisation_(Wk_1)
-rename Introduction_to_Data_Visualisation_Wk_1
-rename Wk_3_Relational_Data_Visualisation_Part_I
-rename .orgids (vidar's conflicted copy 2020-07-06)
-q
-rename research_topics_in_graph_theory_and_its_applications_vadim_zverovich_2019.pdf
-bulkrename 
-shell mkdir GraphT
-shell mkdir GraphTheory
-rename handbook_of_markov_chain_monte_carlo_steve_brooks_2019.pdf
 rename discrete_mathematics_graph_algorithms_algebraic_structures_sridharan.pdf
 rename algebraic_graph_theory_ulrich_knauer_2019.pdf
 shell mkdir
 unmark 
 cd /home/ryan/Sync/Books/2020Spring/
-unmark
-search 
 shell cp ~/Downloads/
 rename barabasi_linked__the_new_science_of_networks-perseus_books_group_2002.pdf_
 rename barabasi_linked__the_new_science_of_networks-perseus_books_group_2002.pdf
@@ -42,9 +18,33 @@ filter Out
 rename Quizzes
 rename Material
 shell mkdir Books
-filter 
 flat 4
 filter .jar
 filter stre
+filter ~
+filter 
+filter in
+filter html
+find 
+
+search no
+search stu
+search tud
 open_with 
+search Temp
+q
+search ync
+search ook
+rW. M. Haynes, David R. Lide, Thomas J. Bruno - CRC handbook of chemistry and physics_ a ready-reference book of chemical and physical data-CRC Press (2016).pdf
+rename CRC_97.pdf
+cd /home/ryan/Downloads/
+rename W. M. Haynes, David R. Lide, Thomas J. Bruno - CRC handbook of chemistry and physics_ a ready-reference book of chemical and physical data-CRC Press (2016).pdf
+rename Roth_Astronomy_Handbook_2009_Springer.pdf
+search astro
+rename Sample_pdf
+rename Final
+unmark
+rename Sample
+bulkrename
+search 
 delete

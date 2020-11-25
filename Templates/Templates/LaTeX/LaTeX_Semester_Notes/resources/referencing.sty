@@ -1,0 +1,19 @@
+\ProvidesPackage{referencing}
+
+% Load BibLaTeX
+\RequirePackage[citestyle=numeric,
+                bibstyle=numeric,
+                hyperref=true,
+                backref=true,
+                maxcitenames=3,
+                url=true,
+                backend=biber,
+                natbib=true]{biblatex}
+
+\addbibresource{./resources/references.bib} % This is relative to the .tex file
+
+% Print the Bibliography
+\AtEndDocument{\newpage}
+\AtEndDocument{\onecolumn}
+\AtEndDocument{\printbibliography}
+%% \addbibresource MUST go in the org-file for it to be captured by org-ref

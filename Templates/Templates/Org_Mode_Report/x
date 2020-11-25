@@ -1,0 +1,1755 @@
+commit 2bb3df4092b156bd260c757ad576156c0cca0a21
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 21 15:02:20 2020 +1100
+
+    Fixed Broken Minted Spacing. see desc   Floating Code blocks Must not immediate
+
+commit 2f5c857da04ab0475ad7ed0566a9451d9086d9e7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 21 14:44:27 2020 +1100
+
+    Moved Koch Diagram
+
+commit 96c480111d57db994113f0521d5d406ced6c7ad3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 21 14:18:39 2020 +1100
+
+    Fixed LaTeX Errors by cleaning org file
+
+commit 6f5e16a0603c3e0e54579723670c1595a24d297c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 21 13:25:23 2020 +1100
+
+    Fixed Typos in Draft Report
+
+commit a963d86f6366712fb528fadc5cfe3c1ec7b5b54b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 21 12:16:02 2020 +1100
+
+    Fixed Header for tags
+    
+    Header now alternates even/odd between Section and SubSection
+    the rightside header has been dropped so the tag has space,
+    the tag is sperated by hfill by org mode so this is
+    something to be aware of
+
+commit 42b43fcdcf15b45857ce5672819eadc16f6ca254
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 21 01:53:20 2020 +1100
+
+    Started Cleaning up Linear Regression
+
+commit 3bd1ebe2b67b14a44fbe1a41ca9cd8133fc87c0f
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 23:49:51 2020 +1100
+
+    Changed the width of tcb to match page
+
+commit 11daf0e2d3b421bf928efee54ec10ff86c6f18be
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 23:48:15 2020 +1100
+
+    Finished Cleaning up Code in Turtles Section
+
+commit 7d4fa7257dcbb603ed4e3bffefd1fc6f1f97a487
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 18:34:40 2020 +1100
+
+    Wrapped Figures in Hausdorff
+
+commit 4e121f17fc8e95522833668e054a34421debb9eb
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 17:57:00 2020 +1100
+
+    Finished Reviewing Hausdorff Dimension
+
+commit 413316e8c1defd9a8d844d1bcce9ab68bb13d221
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 13:16:27 2020 +1100
+
+    Clarified Hausdorff Measure
+
+commit a160dffc4b9f456d4d486edcf2145f46bed77cc0
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 11:19:14 2020 +1100
+
+    Added further Reading Material on Haussdorf
+
+commit dd2dbcc3a0edaaa4d6bcb4b7a6e9f4b5fd9e37e0
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Oct 20 00:15:11 2020 +1100
+
+    Re arranged Headings, just need to tie together with text
+
+commit 3174b8b7915719af972c759ffc407081af444bb7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 23:37:55 2020 +1100
+
+    Added References and material to Fractal Definition
+
+commit 83c9cedb16986cbdaf3d9c0b00c460488c5b5dbd
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 18:56:50 2020 +1100
+
+    Falconer and Mandelbrtot definition of fractal
+
+commit e1486d909c15a84d76085186923588d9a4cf18c7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 17:59:47 2020 +1100
+
+    Exported PDF File
+
+commit a2f45bb3963be246a3fb93fd8f36edc8260e5cf1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 17:58:02 2020 +1100
+
+    Removed Old Backup File
+
+commit 30bf44df2f94403b7ab2671b1943e4c4dfee73f8
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Mon Oct 19 17:51:31 2020 +1100
+
+    Added box-counting and fixed generating functions section
+
+commit 946f310c5f6b14f1354bee86b47223ad749bd7e7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 17:03:11 2020 +1100
+
+    Fixed PDF Turtle not available as font, chess piece with dejavu  and xelatex works
+
+commit 57c26dfa06ca2d324f86d00c0be74b34aaa767b1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 16:50:08 2020 +1100
+
+    Rebuilt the PDF
+
+commit abd4f7684b07b91725bb02ce1f50c36b8636bc3c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 16:44:42 2020 +1100
+
+    Reset Report, undid James Bad Commit, Backed up changes
+
+commit bedbe1455958d19b7537e2fa66262a8e0009dc93
+Merge: 82954b3 97c4ae8
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Mon Oct 19 16:28:09 2020 +1100
+
+    Merge branch 'master' of https://github.com/RyanGreenup/Python-Quant
+
+commit 82954b399adc3ed37147a82237060cde624ff944
+Merge: e955cb0 e842be5
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Mon Oct 19 16:05:14 2020 +1100
+
+    Merge branch 'master' of https://github.com/RyanGreenup/Python-Quant
+
+commit 97c4ae8fba57b9206fa2061893e6681778188619
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 16:04:48 2020 +1100
+
+    Configured Fonts
+
+commit d45ff45aba1b7e1a4a1a6ac5e186510b29b373de
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 16:04:19 2020 +1100
+
+    Wrap Image, remove code block float
+
+commit e955cb043b786cf6fbf94f4b08130b451fbe9547
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Mon Oct 19 16:02:14 2020 +1100
+
+    Finalised box-counting and cleaned up generating functions
+
+commit 51255b7d775fe33ccbc205502512f5a25a0c3383
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 14:18:17 2020 +1100
+
+    Style tcolorbox code
+
+commit d322b66a9a0cf2f7dfd5659c45d3404cac5621f6
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 12:47:31 2020 +1100
+
+    Created Header and Page num Footer
+
+commit e56efbf57c155b4e3e42aa5966989caa0c4f10da
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 12:34:29 2020 +1100
+
+    Added section attribution
+
+commit c0658bc0a75765ab728e444e85512ada136844a9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 12:23:33 2020 +1100
+
+    Cleaned up fixes to Section Styles
+
+commit 2e858aa7225342712861649b194c46952e44c21e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 12:20:37 2020 +1100
+
+    Changed Section Styles with sectsty
+
+commit f2fa340534ba40a1b51e94739aab449e1e29def8
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 10:15:11 2020 +1100
+
+    Fixed Org File not Exporting to LaTeX bad base64
+
+commit a2c12bef9d18296a1da5a8d72803dfb950ea955b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Oct 19 10:04:13 2020 +1100
+
+    Removed Broken Symlink
+
+commit e842be5ec67c3c1935f5f23a65ae497f4a99bf34
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 14 10:01:28 2020 +1100
+
+    Built Report
+
+commit 8f5adc0ad12b90c6efbb75c238627588392317e2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Oct 14 09:47:57 2020 +1100
+
+    Removed incorrect Proof by induction
+
+commit 5d15804053dc58950eb6de76095c9779bcf36f0f
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Wed Oct 7 01:01:03 2020 +1100
+
+    Added some more to the report
+
+commit bd5f0f6c12da7f6527ba496058cc72e075af4ca8
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Fri Oct 2 23:25:59 2020 +1000
+
+    Added more about sierpinski to report
+
+commit 7f60a015c44845126a8ce966f1f2a0a78dffe819
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Thu Oct 1 15:08:57 2020 +1000
+
+    Added a some paragraphs to report
+
+commit cafdcdb6ff3649b573d2598bc48e0ad5312a0019
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Sun Sep 27 11:27:15 2020 +1000
+
+    serparated dragon-curve.jl from snowflake file
+
+commit 08aec36f40fe0c6b09de59045c15606b9bf93d85
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 25 18:38:47 2020 +1000
+
+    Started Setting up HTML export
+
+commit 670bc9f19639b27ac66f7ea46dd79c9ca8d5c32a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 25 14:28:23 2020 +1000
+
+    Start Folded
+
+commit 36244b5ce8ca0b30991b865d5dcd3c566b8bca62
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 25 13:02:17 2020 +1000
+
+    Notes on My Fractal
+
+commit 19e822819b931a88b0e8a7cdcb3d568188ef362e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 25 01:34:32 2020 +1000
+
+    Added in some of the code that I wrote up
+
+commit af02bc863adff9b325df56277abd5510febc4dcc
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 25 01:13:18 2020 +1000
+
+    Added Image Exports
+
+commit 64dc932cfcba37cd7a8c3f22335ab49ef10f46e8
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 25 00:48:31 2020 +1000
+
+    Vicsek Fractal Save in Report Dir
+
+commit c1fb1378cf4e2b11f8fc92cc10e19cca3aadbd94
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 24 23:23:46 2020 +1000
+
+    Added Tikz Diagram of Hausdorff Measure
+
+commit d074e0bc2f2d597001694ab8ba767c00dd3bec85
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 24 20:11:32 2020 +1000
+
+    Added a diagram
+
+commit 82afe83947bd32738e962bca7e94f33ebbd414ab
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 24 20:10:29 2020 +1000
+
+    More work on Hausdorff Dimension
+
+commit c084345692e2dbd432b7475c9b2690a7c9f7f902
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 24 16:26:37 2020 +1000
+
+    Notes on Hausendorff measure
+
+commit 08f13a5da615fb73d9bbc942e9394335536db495
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 24 13:55:24 2020 +1000
+
+    Restored Vicsek Fracta
+
+commit 4fe02121da36d3ac5920c238bd9ff3d713806051
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 24 10:52:38 2020 +1000
+
+    Add function option to scaleandMeasure
+
+commit 7903e7203233519ca4c01b95e9b3792b75afaacf
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 23:31:04 2020 +1000
+
+    Exported PDF and HTML
+
+commit f8bbd9a0cf366d309f19f6093c2f82ea883bd02d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 23:29:39 2020 +1000
+
+    Notes on Creating Julia Set
+
+commit dc0118e052ddff8cf9ea2601280075e093a4e813
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 23:10:10 2020 +1000
+
+    Renamed Vicsek Fractal
+
+commit 9a7278cb8554d7f60a6d3dee6ba0354c60bab847
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 23:09:38 2020 +1000
+
+    CSV of Scales and Box Count of Julia Set
+
+commit aeaf6d180a93478a4a45725ce85006b5f6bab543
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 23:08:33 2020 +1000
+
+    Reverted back to pmap because the issue was with multi-core generally not pmap/for
+
+commit 61e59de6a1880b506bfcdd6549fa903b46c43c20
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 22:16:47 2020 +1000
+
+    Pmap not working properly, switch to for loop julia set dim
+
+commit 83da849ffb2fe14231272dcb780aa3e6507a46b8
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 22:03:01 2020 +1000
+
+    Clean up comments in scale measure function julia set dims
+
+commit 9ba03d5fd0386666cb2d61f478d500137b951738
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 21:59:47 2020 +1000
+
+    Switched to Pmap, it should be slightly faster
+
+commit b269251fe69e643b7806201ae3bc553175be3a7b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 21:55:52 2020 +1000
+
+    Fixed Multi Core 0 value bug from missing (+)
+
+commit 4a6fc1799f533174bcb50afbc2b1abe597362fed
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 21:18:02 2020 +1000
+
+    Moved Function to return many values to function script
+
+commit 341857b16d9694176e09021fd0fc1acca3e0a9d9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 21:12:22 2020 +1000
+
+    Seperated Julia Function into two seperate files, functions and interaction
+
+commit 80d09aa11d3a38322622b01c0ebb3281fb088aa3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 20:52:58 2020 +1000
+
+    Added Docstrings to Julia Dimensions
+
+commit 01d1a6f6a8b36086b4b58cdcb0b1c5df0246e184
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 20:28:25 2020 +1000
+
+    [Fix] Forgot to add an end statement
+
+commit f6a12cc102ce69cf4d3cb8e98fbc2182b33199b3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 20:09:36 2020 +1000
+
+    Julia Set has option for boolean results, outline now only removes touching values, linear regression is now multi core, correct results seem to be coming through.
+
+commit 87ffcebd72f11008762b3564a3a305330e6c3896
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 14:50:51 2020 +1000
+
+    Added Diagram of Koch
+
+commit c835a632eec248cf07e3f6de02b6529e0725e2d3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 11:52:53 2020 +1000
+
+    Embedded Koch SnowFlake
+
+commit 25f855601ffeaa1ff38e7731405c85e3a6daad96
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 23 10:18:47 2020 +1000
+
+    Moved Footnote that broke Building
+
+commit 1ce39c9ceb3916daba5e6ac2c2cdc40535e73038
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 22 23:27:52 2020 +1000
+
+    Removed Links to oversized PNG's that broke building
+
+commit df0a223ec93ab558194253e99a6ed1956e9c39ce
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 22 23:08:48 2020 +1000
+
+    Diagram of Generating Fibonacci Fractal
+
+commit 0ecb50b7a7b0f4d6bccd4d9017f090e34423cd45
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 22 00:03:03 2020 +1000
+
+    Removed Transformations
+
+commit 1cd19fd01c52bcc0390a1b600a73fdc3962c64b6
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 22 00:01:13 2020 +1000
+
+    Added Transformations
+
+commit d6850db652afe2cfca5765af1f6ef0a7925f1418
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 22 00:00:52 2020 +1000
+
+    Added Transformations
+
+commit 74e7eb1a26ce17d07e4b95d422e680f5667dad08
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Sep 21 22:48:45 2020 +1000
+
+    Matrix Fractals
+
+commit fc7568290bfd9d978192d1122c94c68a023b165c
+Author: Ryan Greenup <17805315@student.westernsydney.edu.au>
+Date:   Mon Sep 21 20:41:36 2020 +1000
+
+    remove deptest from make file
+
+commit 842a7f36ef376d8abfa7677ee8800c9623c0d3cd
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Sep 21 00:08:24 2020 +1000
+
+    Added Diagram and Fixed MakeFile
+
+commit 999990be0abc03fce4e9bf9a5bd4f2f2d62142fa
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Sep 21 00:04:19 2020 +1000
+
+    Added new Report Directory
+
+commit 362a6a62bf5aa9bdf790485c2ff2b82960260f1b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 22:03:51 2020 +1000
+
+    Diagram of Golden Circle
+
+commit 350038cc80d2695c3c09a7b39a6530f080cd3c5e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 21:54:34 2020 +1000
+
+    Added Scale of my Fractal
+
+commit 3950b3205f03d1bf464ee562c57a4da47984ebb5
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 21:38:58 2020 +1000
+
+    Created Empty file for inkscape
+
+commit 695dfc88d37f9c041d0261a6a96955bef09e7a62
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 21:38:26 2020 +1000
+
+    Created copy of Diagram of Plot
+
+commit e681c05ef022182fe4d11d6c3fee899de37ef115
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 21:37:54 2020 +1000
+
+    Finished Diagram
+
+commit 4975574900d3f219468a6be76d78ae43aeeb73ef
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 21:02:08 2020 +1000
+
+    Further Diagram
+
+commit aaf7632ec485eba4337da7bc5e73004f96895718
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 20:19:57 2020 +1000
+
+    More Changes to Graphic
+
+commit cbb5af26cf15a86b46559eaf53adcc23e863712d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 17:34:37 2020 +1000
+
+    Started Making Diagram
+
+commit 121483a0e2e23aa2c0e31a62f21937e6b7847dc8
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 17:00:43 2020 +1000
+
+    Organised Codebase of my fractal
+
+commit f62d37f0b5f011815e92a78ed678faf3a6fca6dc
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Sep 20 12:15:43 2020 +1000
+
+    Better Plot of My Fractal
+
+commit fb6dbf5920aad61c6fcfca142d977155dc3ebf62
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 22:49:04 2020 +1000
+
+    Removed Luxor SVGs
+
+commit 7eef79ceefcdf3e5d6b375bfe99053889d979505
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 22:44:41 2020 +1000
+
+    Hand Drawn Self Gen Fractal
+
+commit 7e1db476623349aee2c68fcca5033debb27516cd
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 22:43:43 2020 +1000
+
+    Finished Dragon Curve
+
+commit 62540a973f5f64396d1a0e2dc5fc1e40918a77e3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 20:35:20 2020 +1000
+
+    Build the Dragon
+
+commit 0e8cffba3b95993c32299e142dc05192030e49d1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 17:42:31 2020 +1000
+
+    Ratio of dim change is golden psi
+
+commit 776a0c2f2baa53efe9777580adb2e65df27adb72
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 17:25:41 2020 +1000
+
+    Made My own Fractal
+
+commit 08ef195f52f9a61d841e3dd8737612ed937cda78
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 14:28:52 2020 +1000
+
+    Don't find Abs Val, 2*faster
+
+commit c8dfd7dca57eb313928983e01a66262db41d628e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 12:57:08 2020 +1000
+
+    Changed Domain to get more accurate answer
+
+commit c11231dca0bf7e22f23fcbc9f1dd4a5320273dbd
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Sep 19 12:33:32 2020 +1000
+
+    Calculated Slope of Linear Regression of log trans Scale vs mass
+
+commit b7f37e45a21b4d36afbb0fde109dcdac10c6978b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 18 17:17:37 2020 +1000
+
+    Added Calculation of Dimension
+
+commit 3dc06602e835d66da1c140ba2d56ddb8d8c08cb2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 18 17:08:36 2020 +1000
+
+    Reimported image as Matrix
+
+commit 848c881fb1df1dad865d024b632e83fc15b0ce10
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 18 13:10:55 2020 +1000
+
+    Fixed Turtle() scope, snowflake is now working
+
+commit 678276cb93a73e91ca9af4e3e9216938e49b404c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 18 13:06:36 2020 +1000
+
+    Finished Koch SnowFlake
+
+commit 028f7947328fc47615897b996a39e54aa0295b44
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Sep 18 10:00:52 2020 +1000
+
+    Some Working Fractals
+
+commit 8931fbe4d5d8e386dd365ad69c261a503be65844
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 23:58:14 2020 +1000
+
+    Calculate the dimension of the SierPinsky Triangle
+
+commit 74b5b3f8db14e639f310ce40eb6bf6ad0b23bb59
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 22:53:11 2020 +1000
+
+    More Fractals
+
+commit 4f4781a70e83cd73caa7a2d87178c600e6e49600
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 22:52:57 2020 +1000
+
+    Played with FITS possibly not needed, See Wiki
+
+commit 97fd612fe4b50869a272ce9748274b95f0feb36a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 22:52:34 2020 +1000
+
+    Created Sierpinsky Triangle in R
+
+commit 9687f658e7aab67863005347a03d808e24db11e3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 20:00:46 2020 +1000
+
+    Added DocString
+
+commit 8e0ca41fbd1db7bdd48c9d1024a897f738f66de9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 19:59:25 2020 +1000
+
+    Created Function for Outlining Julia Set
+
+commit 0eba1083297cfa58b6a8b2c9b4ac9cc3f89ca345
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 19:28:16 2020 +1000
+
+    Explained Solving the Dimension
+
+commit b2b97a714a00c2236de6b391e4f5fad063eebd68
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Sep 17 19:11:02 2020 +1000
+
+    Correctly Calculated Dimension using Box Count According to Wikipedia
+
+commit a06e64f3dd1d18ea0846798e843a752ba8f6b90a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 21:19:36 2020 +1000
+
+    Added References
+
+commit 0dfa202f6da9cdb1f9659e70b39fbbf32b387d88
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 21:19:29 2020 +1000
+
+    Imported Aus as a Fits Image
+
+commit 392049f1178bbb0b9f12769ef532863b27d03c6b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 20:27:02 2020 +1000
+
+    Add Link to Fractal Dimensions
+
+commit f9a4da6c9db72cf3542135da6aa0be2bcc3f2955
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 20:25:54 2020 +1000
+
+    Added Results output to header
+
+commit 229bb30b36164b805f59ba389402fee534258269
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 14:57:11 2020 +1000
+
+    Added Fractal Dimension Info
+
+commit 4419e4754e2ef2aa6fd9cf2129cfd8bbff6d875c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 14:04:30 2020 +1000
+
+    Removed Tikz
+
+commit 24d08db7d4d805c9831f066e97124f7b745e15bf
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 16 14:04:11 2020 +1000
+
+    Attempt at TiKz
+
+commit c82931f99e1b2e121f9dd5ebae40b5c1b659199c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 15 23:08:47 2020 +1000
+
+    Calculate Perimiter of Julia Set
+
+commit 2b232b555b654b656c2f44bc31c91f0181106b86
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Sep 15 21:42:42 2020 +1000
+
+    Notes on 3B1B
+
+commit cef5f44d5c96be7c65f378af64365171339e7a05
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 2 16:25:30 2020 +1000
+
+    How to Use Turtles
+
+commit 37a32cfc1382d96516d224734f044e503ae4f1c9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 2 14:38:59 2020 +1000
+
+    added Turtles
+
+commit 12968199efddc5c6b8b34740254dba9c9de79786
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Sep 2 14:31:38 2020 +1000
+
+    Julia Libraries
+
+commit 8769e35f4fc217138c7c2b2d2d865d8cdb66a51e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 29 11:19:09 2020 +1000
+
+    Sync Build Files without latexmk -c
+
+commit ff6e6b5cdb8bd9cb820c0aa54ac76d4889b2a461
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 29 11:15:52 2020 +1000
+
+    Fixed Broken Proof Section
+
+commit d0740a5c3735df32ae444524dc7810e44d12f1d1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 29 10:57:58 2020 +1000
+
+    Ignored Animations
+
+commit 5e0a11a1af09654aa8e435e3d2f485f2b6f7f5a2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:55:08 2020 +1000
+
+    Fixed Footnote
+
+commit b0d68d325840b396474fad91b56a220fbe08294c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:52:37 2020 +1000
+
+    Add Tags
+
+commit 83bc1ca95f43e6c6ca1a1ae1139ea25b6e3b1043
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:49:16 2020 +1000
+
+    Fixed Typo
+
+commit e68e5475ab95d754e9ced63a7c71d1149a76935c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:48:53 2020 +1000
+
+    Fixed bad Tag
+
+commit fcde7116178e79ab2a6f742b33798ceb45f53dc3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:48:35 2020 +1000
+
+    Removed Marking Guide
+
+commit def87388d0dbc0a0794440a15c526f5faec6d2f3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:44:17 2020 +1000
+
+    Removed Notes on outline
+
+commit 0cd25a1ae58e9f8d0281446cb08939a19266a171
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:42:20 2020 +1000
+
+    Removed GNU Plot because I didn't rewrite the code
+
+commit 0894985cf58d7f77f1487ee7a83c69f7e0e7f340
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:39:54 2020 +1000
+
+    Added Mandelbrot Screenshot
+
+commit 912ce85342815201d4abbc14e03ee7ace8925a20
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:31:33 2020 +1000
+
+    Fixed Broken Link
+
+commit 939474cf163eb19de9d60f9617af8c0b02eaa293
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 23:29:24 2020 +1000
+
+    Added Tags and Fixed Image
+
+commit 600f12e145cadcc08a0cf38e1e38fa51c1c94027
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 22:24:11 2020 +1000
+
+    Restructured Introduction
+
+commit a6aa143110bf85028f4692bead05fe02c43999af
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 19:24:34 2020 +1000
+
+    Updated Outline PDF
+
+commit caa4ebd0643c4f1c137a4cdc8d74b55d2ecaf48a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 19:24:23 2020 +1000
+
+    Added Flower Fibonacci Julia Script
+
+commit 2de0a1d34dc248b3ca9bf18bfc9acdd66e2120b7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 18:01:04 2020 +1000
+
+    Add Geometry to montage
+
+commit 08ed585ae438fda962d3c4c15c258981fd809c29
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 13:35:17 2020 +1000
+
+    Added References
+
+commit 9a2b863a2fae24ba5c78be9518953a8733761582
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 01:09:53 2020 +1000
+
+    Mention Books
+
+commit 8b387160eb2f522322af6624477bcf97f01686ab
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 01:07:09 2020 +1000
+
+    Discussion on Fibonacci Sequence
+
+commit 417189cdd65d72b2549a84f8ce7356e9cbccb316
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 01:00:05 2020 +1000
+
+    Undeleted work that I mistakenly deleted
+
+commit 16f07bd71ab4210b7302d14b5547ad7d5f37646b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 00:58:04 2020 +1000
+
+    Deleted Determinant Stuff
+
+commit 3283edeb92b06807cf42401e4dbcf6317326b79b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 00:53:39 2020 +1000
+
+    Tried to fix the Differential ODEs
+
+commit d4d1d50e4b1a5fb8a4d02beb579e1b3b15e8b577
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 28 00:29:29 2020 +1000
+
+    Add Inductive Proof of Derivative
+
+commit d2567c6b2212ce77c8783ecb698c6e02616f479c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 22:40:07 2020 +1000
+
+    Started cleaning up brokded equations.
+
+commit bea488ed8fe43a919f59274ee1671ffd80c1ff72
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 18:30:47 2020 +1000
+
+    Extra Line
+
+commit ac031b5cbc6440e3e7e84da6c0ceb484373ec496
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 14:55:41 2020 +1000
+
+    Moved Diagram as Symlink
+
+commit 3e5d86f6bfd4a0b15b8fab780b708cce0b4649d0
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 08:16:03 2020 +1000
+
+    Fixed Broken Link
+
+commit eb2f8656ccd98acfba9819e3ab69826c1fe37018
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 08:12:16 2020 +1000
+
+    Add Diagram for persian recursion
+
+commit 0e8e75df11eec954f5ddc45e442a4c67ae21bd17
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 07:42:31 2020 +1000
+
+    Fixed missing exponent
+
+commit e78a72af629d49682ce0858fb1e5b60fd09751b2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:14:05 2020 +1000
+
+    Fixed the Montage Link
+
+commit f5667c6054d718a92924e82d39cd274366bf697c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:09:15 2020 +1000
+
+    Fixed Image Directory Pic
+
+commit 426ead2ae51734287f48fd7c307e396cc4a4067e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:06:53 2020 +1000
+
+    Remove LOCAL BACKUP Fluff
+
+commit 567551895a4616c4f37c3c869ef72c3c9a340122
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:06:22 2020 +1000
+
+    Replace Attachments with Relative LInks
+
+commit 4692e519bd8c11fa2f2d2e32b47cbf7a3e19af9b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:04:36 2020 +1000
+
+    Fix Image Link of morph paper and export
+
+commit 040f1f99e33b8db053ca974f1ac6965993b91f50
+Merge: be8bde2 ed236e1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:03:28 2020 +1000
+
+    Merge branch 'master' into gh-pages
+
+commit ed236e10a8c6503bd72282c91f151c5248022d5a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 02:03:12 2020 +1000
+
+    Rename Link to Image
+
+commit be8bde248bff7ba6fd01f824a6fdd12ea3a3d390
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:53:00 2020 +1000
+
+    Re added Org File after Fixing Links
+
+commit 79957814c154012a0ee572330003393c0e56ba49
+Merge: 8817f76 e3acb15
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:51:45 2020 +1000
+
+    Merge branch 'master' into gh-pages
+
+commit e3acb15f6b922c3a7e621a6db2512c6334f74dff
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:49:08 2020 +1000
+
+    Fixed Broken Links
+
+commit d5180eedb9137514211359acd3d32d4855ea3420
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:39:50 2020 +1000
+
+    Manually Merged James' fibonacci fix and regenerated slides
+
+commit 8817f768a3fd85d4c11781cb408bcc6cf1f0d1df
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:38:53 2020 +1000
+
+    Generated New Slides with james' Fibonacci Fixes
+
+commit 16a89db647fe7a13ce7b5938d6b7693f7b1c6b8d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:38:15 2020 +1000
+
+    Manually Merged in James' Fibonacci Fixes
+
+commit 9618d2fb72413e55369c1503ea4f0507883dfa6a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:27:46 2020 +1000
+
+    Add NoJekyll
+
+commit c41bc31b4ad9c9eb08ec18e0f515d29ac040aa2d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 01:11:14 2020 +1000
+
+    Cleaned up issues with slides
+
+commit bf5270d9f912722b76305a41db7d94dd527632f0
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Aug 27 00:33:29 2020 +1000
+
+    Finished Chaos Slides for Presentation
+
+commit 04176636de4757a1ccd84b9c5eda8a59c8e8b45d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 17:05:13 2020 +1000
+
+    Fixed Broken GNU Plot
+
+commit 928f1ce044e84d8f5c0b758820ca7c5dcf9da6e6
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 15:05:30 2020 +1000
+
+    More Work on the Slides
+
+commit cbb7218f022debd7235e62532cf811f5e12ebf03
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 13:38:19 2020 +1000
+
+    Changed URL
+
+commit f18b9e8f14f639bef82ae5577afffda11dba9a11
+Merge: 916b6e7 e689a27
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 13:36:39 2020 +1000
+
+    Merge branch 'master' into gh-pages
+
+commit e689a27879ebeecf1eccc3b8619f27e4860b8c25
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 13:34:48 2020 +1000
+
+    Explain QR Code
+
+commit e8cf50ffd6c38dc60b1f017d0a0fe1fcd14312bb
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 13:33:55 2020 +1000
+
+    Added QRCode
+
+commit e726737448375d00e06c062f62c2f58c46e4f5ee
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 13:24:08 2020 +1000
+
+    Exported Intro Slides to HTML
+
+commit 016c9a0b8fb41f5ced3f83ba2ae46c3efcf66f0a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 13:23:41 2020 +1000
+
+    Added Intro Slides
+
+commit b1aaccaf35a33048eff9071dd8b046fbe59c85e7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 11:51:04 2020 +1000
+
+    Add Fibonacci disucssion
+
+commit edcc4a2e1e3c911a3e606ffbdebe4fba67054aae
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 26 02:22:17 2020 +1000
+
+    Sketched outline Report
+
+commit bade53d80a5d5840cb97d30caf5b93899c80d635
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 25 00:09:31 2020 +1000
+
+    Started on Paper
+
+commit df545904cc906d525d35d1d31dcf59385b799b11
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 16:39:06 2020 +1000
+
+    Wrote Outline of Topics
+
+commit 916b6e79b93cfb735480a93a1351142aa42262bf
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 16:05:01 2020 +1000
+
+    Ignore Files
+
+commit cd738eb6e8e61fcc4472e1179f585643c246356f
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 16:04:40 2020 +1000
+
+    More Work on Outline Skeleton
+
+commit 1674df4d984751c077d7103ed77a6727b04d4d60
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 16:03:01 2020 +1000
+
+    Removed Header
+
+commit b41a12ef3dc3143dcc2093d2adbccb43700bfeb2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:42:33 2020 +1000
+
+    Slides
+
+commit 6d2a51416d43b1b20f900b53e15ded26442489fb
+Merge: d07363b 758c51a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:39:14 2020 +1000
+
+    Merge branch 'master' into gh-pages
+
+commit 758c51ad8bf2ad8e381f850b3f593da800742e60
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:36:15 2020 +1000
+
+    Ignored DS_Store
+
+commit 98105027656bd6ca160613ab859d6da905a41e52
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:35:10 2020 +1000
+
+    Created Reveal JS with Gif
+
+commit 0ae1ab2aa4a73301b252a7502f9b4b079de8833d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:29:27 2020 +1000
+
+    Ignore Fluff
+
+commit 6b62dba912d358d821303e8643cff6f0cfee9e1e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:28:33 2020 +1000
+
+    Added Gif
+
+commit 047bf30dabdd45b1b7ab6e19b28c0054030c9cd1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 15:25:10 2020 +1000
+
+    Add Org-Reveal
+
+commit 44712c81ecd37f329bdfecdf455f76af8fcceb6a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 12:37:23 2020 +1000
+
+    gnuplot; Export as SVG
+
+commit dc170211e51131c38abab2024ab51d04abaf2664
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 12:35:43 2020 +1000
+
+    GNU Plot of Fractal
+
+commit de848b23c49e4c542196638ddddb07824d72a801
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 11:58:40 2020 +1000
+
+    Ignore very large Fits Image
+
+commit 44204b9f25d8073f88c51953225ab2bd1835e2c1
+Merge: 6dd6935 d922a3b
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 11:57:10 2020 +1000
+
+    Merge branches 'master' and 'master' of https://github.com/RyanGreenup/Python-Quant into master
+
+commit 6dd6935fdfc095f45121f9ea4f88b0f49d27f318
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Mon Aug 24 11:56:37 2020 +1000
+
+    Added more persian Rugs
+
+commit d922a3b1b609f077f069b2fc9aab2fdcec2fea86
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Mon Aug 24 10:38:06 2020 +1000
+
+    Outline PDF
+
+commit 7848c19d2ea9e7e35897801448e79d487040292c
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Mon Aug 24 10:30:24 2020 +1000
+
+    Added new outline
+
+commit a84fd43e00c8446e6c2884ccc711c297df61f608
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Sun Aug 23 23:39:18 2020 +1000
+
+    Remove unnecessary comments
+
+commit 0ccd15523c0423f9c5363dd98959dd79d123274a
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Sun Aug 23 23:38:39 2020 +1000
+
+    Test Various Fractals
+
+commit 756a381594d224db1180c64cca94ed8f6a4995b1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Aug 23 22:11:05 2020 +1000
+
+    Ignore Large Video Files
+
+commit e7c92baa95adc458f6efe7530d763163c61b62d7
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Aug 23 16:27:31 2020 +1000
+
+    Mandelbrot now accepts function
+
+commit 5d45de74c82b1210b167761a5189972dd643886c
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Sun Aug 23 15:39:13 2020 +1000
+
+    added plotly and pyplot functoins
+
+commit 9eb252bd399c92c2390807f50e0f1511c142d987
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Sun Aug 23 15:18:05 2020 +1000
+
+    MandelBrot with Julia
+
+commit 5cb6bbade4ac6b0480f20b1094e83dba26b4e4fb
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 22 14:01:41 2020 +1000
+
+    Sketched out Mandelbrot Plot
+
+commit d07363bb950d6509f18938ac294297c474e67e7e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 22 13:58:24 2020 +1000
+
+    Sketched out a Mandelbrot Plot
+
+commit f99bc7a230500e35e6151b1731ef18cdcf49223b
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Wed Aug 19 08:02:26 2020 +1000
+
+    Removed duplicated preamble item
+
+commit 5b80bce3704160e201cb8f755c275791a2ebc3a5
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 15 09:42:45 2020 +1000
+
+    Renamed PDF
+
+commit 1ed41be14f5ce470223d42aecab5447e72a90757
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 16:55:07 2020 +1000
+
+    Created Beamer Slides for Comparison
+
+commit a028bc507feed6354d08ed65af6c3e453322d468
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 16:53:30 2020 +1000
+
+    Added Beamer Export
+
+commit 296e246b1863032d117648bfc873019e4a27d2a6
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 16:49:22 2020 +1000
+
+    Created Reveal JS layout
+
+commit 2771c1cf94e3462e9320468926f19cff4563b4ca
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 16:22:51 2020 +1000
+
+    Started on Research Outline
+
+commit 16f0fca147a550207cb2bec5d7ace92bb7f6b5f1
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 13:49:10 2020 +1000
+
+    gitIgnore Emacs Latex Preview png files
+
+commit 579e2f2d09ce9e79b5c3ca36bf81a8ae1482bf28
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 13:48:12 2020 +1000
+
+    Finished Problem 4.18
+
+commit 4bc88144717e48aae1faf93badd4ba996d01fbd5
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 11:21:07 2020 +1000
+
+    Added Cross Reference
+
+commit 06f7bb474919e0bb40d5e98f8f907f0eef5f1573
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 11:20:10 2020 +1000
+
+    Fixed Reference
+
+commit e8342954c45f7ce69fb6d126182ea4643c8a9e59
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 11:15:54 2020 +1000
+
+    Created PDF with Repeated Roots Section
+
+commit 59cb40a31635d73e2ec42b22e3851d12a67ed02e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 11:14:39 2020 +1000
+
+    Added Proof of Repeated Roots Char Equation
+
+commit e56bdd5f100d265e60c5054c631a44cfc2d1b9e6
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 08:42:30 2020 +1000
+
+    Heading for Necessary Proof
+
+commit d5283d6b395ae68f9d90835f0990f78594fbdd47
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Aug 12 08:41:40 2020 +1000
+
+    Added Example of Repeated Roots
+
+commit 055dea5fdc2479eb10a6b41d5c75a5c72b19d344
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 22:48:23 2020 +1000
+
+    Fixed PDF Double References
+
+commit 214890ca7151c97429976dacb9a744a8f663ec75
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 22:48:06 2020 +1000
+
+    Moved Style Header to remind about References
+
+commit e7b90fa81ff6fe5a655f2b6ec3a250f563dc88e5
+Merge: 9da3285 027083d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 22:43:58 2020 +1000
+
+    Merge branch 'master' of github.com:RyanGreenup/Python-Quant into master
+
+commit 9da3285d636fda2fad6d05b15cdc2c7fb3a79158
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 22:43:46 2020 +1000
+
+    Added Section on homogenous recurrence relation with unique roots to characteristic equation
+
+commit b2876deceb4bc780118f14803e07a703e2146973
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 22:42:44 2020 +1000
+
+    Added References
+
+commit 9ecc71a4bb6beebb02d84b1d68eace43090c5ad3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 19:06:56 2020 +1000
+
+    Referenced the Manual
+
+commit 97bf6940aae2231f1cf39a8c25033efc07d46e9b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 19:06:04 2020 +1000
+
+    Added Org Manual
+
+commit 4b1140226a4567483a2e71bc418b7918b2e78390
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Aug 11 15:13:28 2020 +1000
+
+    First Derivative of exponential generating function
+
+commit 027083d3a7ff3c45eef9a4e3162b262d7a9ca1a3
+Merge: 26f634a 8745ba8
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Tue Aug 11 00:11:23 2020 +1000
+
+    Merge https://github.com/RyanGreenup/Python-Quant
+
+commit 26f634a82e1337cbc2c2b0656a287587af70b834
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Tue Aug 11 00:10:03 2020 +1000
+
+    Added problems 4.16 and 4.17
+
+commit 8745ba8cd1eef963b26963a53f9f09d8711d97e3
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 10 23:56:06 2020 +1000
+
+    Comments on org-mode Reminders
+
+commit 347163c57fd702f18c2f817741e091bcd043ec0d
+Merge: db7b687 6cc07da
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 10 23:11:19 2020 +1000
+
+    Merge branch 'master' of github.com:RyanGreenup/Python-Quant into master
+
+commit db7b687293e31aebad6106dadd8a77f989a8e965
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 10 23:10:58 2020 +1000
+
+    Merge Branches; Type up Recursive Relations
+
+commit 80fad33324e62e3f54f17361746bda19ec866b71
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Aug 10 22:54:45 2020 +1000
+
+    Fixed Referencing Header argument Fluff
+    
+    (warning this is already in style sheet and will need to be removed when
+    implementing the style)
+
+commit 6cc07da4924949aa30906fb0f0a62ac01ff78c65
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Sun Aug 9 16:24:25 2020 +1000
+
+    Added problem 4.15
+
+commit e6ec68778e6dd188a9f4d9fbedf3008c7189d7bc
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Sun Aug 9 16:06:09 2020 +1000
+
+    Added 4.11 to 4.14
+
+commit 67249c115b4aa6c1e86042292f79af92dc709275
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Sun Aug 9 01:28:12 2020 +1000
+
+    Added problems 4.5 to 4.10
+
+commit f185db2aca7cf608d620cb9e46bad6465ded5681
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 21:59:26 2020 +1000
+
+    Added Notes on relating Recursive Relation to ODE
+
+commit 71b9ad3acfd2dc90fb03fffc75aa0befe4143931
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 12:30:20 2020 +1000
+
+    Finished Problem 4.3
+
+commit 1b522a7e4bc8fabb2979dfbbc1f4a77e9af9dd1d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 11:18:04 2020 +1000
+
+    Defined Fibonacci Function
+
+commit 4ece1760e91b5df1c5b55ebc03f298f8fa7337e6
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 10:54:19 2020 +1000
+
+    Renamed File
+
+commit 51b45818f9f1601b74da44782d3a6d927a3f8711
+Merge: f4cdecf d2bc851
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 10:53:27 2020 +1000
+
+    Merge branch 'master' of github.com:RyanGreenup/Python-Quant into master
+
+commit f4cdecfadda2bf36c7620d3d03c8fec20bf904f4
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 10:53:19 2020 +1000
+
+    Finished Problem 4.2
+
+commit c89e8e817ad59d536bec7b221475f7869c6edf26
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sat Aug 8 10:07:11 2020 +1000
+
+    Preliminary Levels Function
+
+commit d2bc851e11b96703bdfe02560fd59ab1f0932f9e
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Sat Aug 8 09:30:05 2020 +1000
+
+    Added problem 4.1
+
+commit abf39caebe52cfc6b1e942a8f63c983cbfa5c2c9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 22:14:30 2020 +1000
+
+    Removed WhiteSpace from FileNames
+
+commit 53f0d4c0342a584aef59431f0656e28006b9f35e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 22:06:39 2020 +1000
+
+    Removed RESULTS Tags
+
+commit 41dadde81715cd5916e82159967e8c272e6ca1cb
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 22:02:36 2020 +1000
+
+    Added Files Back to reorganised folder structure
+
+commit 1f6032ba4e16f680a8c46ca96e20c41171efe1a5
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 22:01:56 2020 +1000
+
+    Re-organised Directory Structure
+
+commit 34d8d7253bcdaf458e00ce6fe918440b529cc122
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 22:01:43 2020 +1000
+
+    Updated README to match new Folder Structure
+
+commit 5232c4b983910663856fa28faa3ed0d2c7861d32
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 21:10:03 2020 +1000
+
+    Added Shields to look fancy
+
+commit 2a25058553c3e7b60940f31341c5de8f56cc95eb
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Fri Aug 7 20:40:04 2020 +1000
+
+    Added Live Update Plot
+
+commit 822e1118749ae3b336dd452073622b076da6a98e
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Aug 2 20:17:06 2020 +1000
+
+    Fixed Equation
+
+commit 7862683f8779db05eedacf769ffbb92456ad2e66
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Aug 2 20:00:23 2020 +1000
+
+    Wrote up TeX Notes on Matrix Problem
+
+commit b734f1cdd67c92471c5581e4e8be96b83d0b92df
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Aug 2 19:26:11 2020 +1000
+
+    Fixed McLaurin Series
+
+commit 125a0afbac7a6e9eb43f3da626e0b2ef1900d891
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Aug 2 12:55:52 2020 +1000
+
+    Matrix Exponentials
+
+commit a9b88820d65320de444782ebcdbca785dae465c4
+Merge: 3f4c8fe 2ef3881
+Author: RyanGreenup <47832594+RyanGreenup@users.noreply.github.com>
+Date:   Sat Aug 1 17:54:41 2020 +1000
+
+    Merge pull request #1 from James-Guerra/master
+    
+    Added Problems 3.2 and 3.6
+
+commit 2ef388132cbc9d6d161e22e46273b17966a7ed29
+Author: James-Guerra <64623892+James-Guerra@users.noreply.github.com>
+Date:   Sat Aug 1 17:38:35 2020 +1000
+
+    Added Problems 3.2 and 3.6
+
+commit 3f4c8fe1b491dae1886171833ee59ac6ad8d0d73
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Thu Jul 30 11:36:14 2020 +1000
+
+    Added PDFs for Recursion
+
+commit 4c63a57edb022c4a1f2bb53c759d04aa0fc083c3
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Wed Jul 29 22:20:46 2020 +1000
+
+    FoldList; symata in julia
+
+commit 45a49cd7b7e9d1532401cf22d58635116bd4ce01
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Wed Jul 29 17:01:03 2020 +1000
+
+    Finished Recursion
+
+commit 9e945a9b65bc2cb32ca5fec83ea8a1d9cab5930b
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Jul 29 15:35:59 2020 +1000
+
+    Added Link to Lists
+
+commit 2bd5f912f199812d4da3e986271c78de7990e64c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Jul 29 15:19:01 2020 +1000
+
+    SurdSeries Recursion
+
+commit 3ebfab4faee2bdf4c6312d2f0a823df714ad1bf2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Wed Jul 29 14:34:12 2020 +1000
+
+    A-44; Finished Product Surd Sequence
+
+commit 5c2d364fd4b2808449eb8a4e030ccb66986438f6
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 23:54:36 2020 +1000
+
+    Added Links to problems
+
+commit 8ca8d1c351c8ae10e845c7e5392f73763051dfa3
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 23:47:28 2020 +1000
+
+    Finished Problem 3-1
+
+commit 3726dab6af1a3cd735597dfb0f58acfe67d78c62
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 23:47:19 2020 +1000
+
+    Finished Persian Recursion Problem
+
+commit c1d64683e32efb1f53bc6b8570cac0903c7badf1
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 22:28:33 2020 +1000
+
+    Finished prob 3.1
+
+commit e4aeb1df576104cc1aa3fa743d5380db17386def
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 20:38:02 2020 +1000
+
+    Added more notes to persian recursion
+
+commit bb9d78ce705347e114b9632afa8d110d4f96fba9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 12:35:02 2020 +1000
+
+    Off by One Bugs
+
+commit cfbf1d954aeee79c59fc5b021f0e9e1d70f882d9
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 11:40:40 2020 +1000
+
+    Using Numpy not Sympy is significantly faster.
+
+commit 856c2d9ac4391b329ed3a776bbd020835ff4f190
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 11:10:58 2020 +1000
+
+    created notebook for python persian rug
+
+commit 2eb28af0dcff817c77add3c55174085fbe04caeb
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 10:21:17 2020 +1000
+
+    Numpy Array
+
+commit b1264950d5275e73c4531c7698c19d2194a59bd8
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 10:17:29 2020 +1000
+
+    List Comprehensions
+
+commit f3590975f0022b26e1710da588ba884c56c22f02
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 10:08:23 2020 +1000
+
+    Lists in Python
+
+commit 89900013ad317511d7d188c29747a2bc06911a8b
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Tue Jul 28 00:40:15 2020 +1000
+
+    Completed Percentage Error
+
+commit 73572f2943d348d605a9dc12e2b2f2f9c6e36f83
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 23:21:54 2020 +1000
+
+    Fixed Colour Selection
+
+commit 989f090ad9972e62f8ea2e90c2c02949400d4e9b
+Author: ryangreenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 21:46:49 2020 +1000
+
+    Fixed Persian Recursion, now works in R
+
+commit 66932207d775528a60f3269d9f346085a8e9c4f2
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 15:41:43 2020 +1000
+
+    Made a wall
+
+commit 12f17a3246cf6c66e67a851692c3a40db12bb797
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 15:34:13 2020 +1000
+
+    Generate Colours
+
+commit 9bf36ea7e9c9da11a3836115016a27b1b5f0e056
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 15:30:18 2020 +1000
+
+    Preliminary plot of Matrix
+
+commit 55799260eda7401a4920d22741e7426dfecf850d
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 13:08:26 2020 +1000
+
+    Fixed the Plot
+
+commit 6b092dc0b8ec9ae65399e30bbaf042615d79c58a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 12:45:11 2020 +1000
+
+    played with julia
+
+commit a73ec1eff3070dbfe8e496a31219847a39493627
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 12:44:58 2020 +1000
+
+    Implemented matplotlib instead of plotnine
+
+commit 31896df230e06c4c2510754e817e16a0f84e5c8c
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Mon Jul 27 11:32:19 2020 +1000
+
+    ProjA Q12
+
+commit 13acdf52b75eaff38e54202648c7c82a5a99d1f0
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Jul 26 22:04:53 2020 +1000
+
+    Generated Matrix
+
+commit 20996e74b3fd43810a96906fb1c662e7825a2c08
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Jul 26 20:18:55 2020 +1000
+
+    Put Part B Problem Description
+
+commit ad61902beed5b82187f72a66d5605e4c0db7a693
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Jul 26 20:02:29 2020 +1000
+
+    Remove incorrect claim regarding prime list
+
+commit bcfe4dfbb0f095b0d4e2dbb3b3b73e4970850acf
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Jul 26 19:57:22 2020 +1000
+
+    Add Links
+
+commit 0d9b12f3e7d04edb54ef795b55dfa2db39af4b9a
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Jul 26 19:55:14 2020 +1000
+
+    Added Learning Sympy Stuff
+
+commit f5ed98eaa1678620733a67bc24f16abf33916d81
+Author: Ryan Greenup <exogenesis@protonmail.com>
+Date:   Sun Jul 26 19:53:54 2020 +1000
+
+    Initial Commit README

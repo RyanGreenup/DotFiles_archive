@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  n/bash
+
+  \PYG{c+c1}{\PYGZsh{} Print Help}
+  \PYG{k}{if} \PYG{o}{[} \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}h\PYGZdq{}} \PYG{o}{]}\PYG{p}{;} \PYG{k}{then}
+      \PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}Usage: `basename }\PYG{n+nv}{\PYGZdl{}0}\PYG{l+s+s2}{` \PYGZlt{}Format\PYGZgt{} \PYGZlt{}CSS\PYGZgt{}\PYGZdq{}}
+      \PYG{n+nv}{style}\PYG{o}{=}\PYGZti{}/Dropbox/profiles/Emacs/org\PYGZhy{}css/github\PYGZhy{}org.css
+      \PYG{n+nb}{exit} \PYG{l+m}{0}
+  \PYG{k}{fi}
+
+  \PYG{c+c1}{\PYGZsh{} Make a working File from clipboard}
+  \PYG{n+nv}{filename}\PYG{o}{=}lkjdskjjalkjkj392jlkj
+  xclip \PYGZhy{}o \PYGZhy{}selection clipboard \PYGZgt{}\PYGZgt{} \PYG{n+nv}{\PYGZdl{}filename}
+  \PYG{n+nv}{LocalFile}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}filename}.org
+
+  pandoc \PYGZhy{}s  \PYGZhy{}f org \PYGZhy{}t gfm \PYG{n+nv}{\PYGZdl{}filename} \PYGZhy{}o \PYG{n+nv}{\PYGZdl{}filename}
+
+  \PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{  This was converted from `org` to `md` using `pandoc \PYGZhy{}t gfm` at time:}
+\PYG{l+s+s2}{  }\PYG{k}{\PYGZdl{}(}date \PYGZhy{}\PYGZhy{}utc +\PYGZpc{}FT\PYGZpc{}H\PYGZhy{}\PYGZpc{}M\PYGZhy{}\PYGZpc{}S\PYG{k}{)}
+\PYG{l+s+s2}{  \PYGZdq{}} \PYGZgt{}\PYGZgt{} \PYG{n+nv}{\PYGZdl{}filename}
+
+  cat \PYG{n+nv}{\PYGZdl{}filename} \PYG{p}{|} xclip \PYGZhy{}selection clipboard
+  rm \PYG{n+nv}{\PYGZdl{}filename}
+
+  nv \PYG{p}{\PYGZam{}} \PYG{n+nb}{disown}
+  \PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}Conversion from Org Successful, MD is in Clipboard\PYGZdq{}}
+
+  \PYG{n+nb}{exit} \PYG{l+m}{0}
+\end{Verbatim}

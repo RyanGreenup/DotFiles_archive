@@ -1,0 +1,516 @@
+---
+---
+
+(4) Limits
+==========
+
+Limits of Functions [\[]{}4.1[\]]{}
+-----------------------------------
+
+Intuitively limits of functions are the expected value of a function at
+points that can’t be solved because they are undefined, e.g.\
+\
+[\$\\frac{(x-2)\\left( x+2 \\right)}{\\left( x-2 \\right)}\$]{} would be
+undefined at x=2, however as x is made sufficiently close to 2, that
+value will become arbitrarily close to 4.
+
+### The Limit Generally
+
+From early calculus the limit of [*f*(*x*)]{}, as [*x*]{} approaches
+[*a*]{} was said to be some value L, denoted
+[lim~*x* → *a*~(*f*(*x*)) = *L*]{}\
+[\$\$\\begin{aligned} \\forall \\varepsilon &gt; 0, \\enspace, \\exists
+\\delta: & \\notag \\\\ & \\qquad 0 &lt; \\lvert x-a \\rvert &lt;
+\\delta \\implies \\lvert f\\left( x \\right) - L \\rvert &lt;
+\\varepsilon \\label{stewartlimdef}\\end{aligned}\$\$]{}\
+
+##### Remarks on this Definition
+
+Observe that the following statements are equivalent:
+
+1.  [\$x\\neq c \\enspace \\wedge \\enspace \\lvert x-a \\rvert &lt;
+    \\delta\$]{}
+
+2.  [0 &lt; *x* − *a*&lt;*δ*]{}
+
+3.  [*x* − *a*∈(0,*δ*)]{}
+
+##### Notation
+
+ \
+\
+If [*L*]{} is a limit of [*f*]{} at [*c*]{}, then it is said that:
+
+1.  [*f*]{} converges to [*L*]{} at [*c*]{}
+
+2.  [*f*(*x*)]{} approaches [*L*]{} as [*x*]{} approaches [*c*]{} This
+    is sometimes expressed with the symbolism [*f*(*x*) → *L*]{} as
+    [*x* → *c*]{}
+
+ \
+And the following notation is used
+
+1.  [lim~*x* → *c*~(*f*(*x*)) = *L*]{}
+
+2.  [lim~*x* → *c*~*f*]{}
+
+### The Limit Using Cluster Points
+
+In analysis we more or less use the same definition but we introduce the
+concept of cluster points to make it more rigorous.
+
+##### Neighborhoods [\[]{}2.2.7[\]]{}
+
+A neighborhood is an interval about a value, e.g. the
+[*ε*]{}-neighborhood of [*a*]{} is some set [*V*~*ε*~(*a*)]{}:\
+[\$\$\\begin{aligned} V\_{\\varepsilon}(a) = \\left( \\varepsilon-a,
+\\varepsilon+a \\right) &= \\left\\{ x : \\varepsilon - a &lt; x &lt;
+\\varepsilon + a \\right\\} \\\\ &= \\left\\{ x : -\\varepsilon &lt; x -
+a &lt; \\varepsilon \\right\\} \\\\ &= \\left\\{ x: \\lvert x-a \\rvert
+&lt; \\varepsilon \\right\\} \\label{nebhdef}\\end{aligned}\$\$]{}\
+
+##### Cluster Points
+
+Let [*c*]{} be a real number and let [*A*]{} be a subset of the real
+numbers, [*c*]{} may or may not be contained by [*A*]{} it doesn’t
+matter.\
+Take some interval around [*c*]{}, or rather consider the
+[*ε*]{}-neighborhood of [*c*]{},\
+if, some value (other than [*c*]{}) can be found inside that
+interval/neighborhood that is also inside [*A*]{}, regardless of how
+small that interval is made, Then [*c*]{} is said to be a cluster point
+of [*A*]{}.\
+\
+i.e., if the following is true\
+[\$\\forall \\varepsilon &gt; 0, \\enspace \\exists x\\neq c \\in A\\cap
+V\_{\\varepsilon}(c)\$]{}\
+then [*c*]{} is said to be a cluster point of [*A*]{}.\
+\
+It basically means that there are infinitely infinitesimal points
+between any point in [*A*]{} and the value [*c*]{}.
+
+Example
+
+-   The point [4]{} of the set [{3,4,5}]{} is not a cluster point of
+    that set because a 0.1-neighbourhood of 4 would be the set
+    [*V*~0.1~(4)={4}]{}, this set does not contain a value [*x* ≠ 4]{}
+    that is also inside the original set.\
+
+-   The point 6 of [(1,6) = {*x*:1&lt;*x*&lt;6}]{} is a cluster point of
+    [(1,6)]{} because no matter how small a neighborhood is made around
+    6, there will always be values [*x* ≠ 6]{} inside that interval that
+    are also inside [(1,6)]{} also observe that in this case
+    [6 ∉ (1,6)]{}
+
+##### Definition of the Limit [\[]{}4.1.4[\]]{}
+
+So this is the definition that we moreso use in this unit and the one to
+memorise (or the Neighborhoods one seems simpler to memorise).\
+\
+Let [*A* ⊆ ℝ]{} and let [*c*]{} be a cluster point of [*A*]{}.\
+\
+Now take some function:\
+[\$\$\\begin{aligned} f: A \\rightarrow \\mathbb{R}
+\\label{clustlimdeffunc} \\end{aligned}\$\$]{}\
+It is said that [*L*]{} is a limit of [*f*]{} at [*c*]{} if:\
+[\$\$\\begin{aligned} \\forall \\varepsilon &gt; 0, &\\enspace \\exists
+\\delta &gt; 0: \\notag \\\\ \\qquad & \\left( x \\in A \\enspace
+\\wedge \\enspace 0&lt;\\lvert x-c \\rvert &lt; \\delta \\right)
+\\implies \\lvert f\\left( x \\right) - L \\rvert &lt; \\varepsilon
+\\tag{4.1.4} \\label{414} \\end{aligned}\$\$]{}\
+What’s the Distinction
+
+This is more or less the same as the typical definition given in early
+calculus ([\[]{}stewartlimdef[\]]{}), the distinction here is that we
+have specified that [*c*]{} must be a cluster point of [*A*]{}, this is
+more rigorous because c is always such that there are infinitely many
+values in any infinitesimal distance between intself and any
+[*x* ∈ *A*]{},\
+So the limit will always mean a continuous approach as we expect, this
+is just a more thorough definition.
+
+##### Definition using Neigborhoods [\[]{}4.1.6[\]]{}
+
+A value [*L*]{} is said to be the limit of [*f*]{} as [*x* → *c*]{},
+denoted [lim~*x* → *c*~(*f*(*x*))]{} if and only if:\
+[2em]{}[0pt]{} *For any* given [*ε*]{}-neighbourhood of [*L*]{},
+[\$\\enspace V\_{\\varepsilon}(L)\$]{}\
+*There exists* a [*δ*]{}-neighbourhood of [*c*]{}, [\$\\enspace
+V\_{\\delta}\\left( L \\right)\$]{}\
+such that:  \
+[4em]{}[0pt]{} =0.7cm *If* [*x* ≠ *c*]{} is in both [*A*]{} and
+[*V*~*δ*~(*c*)]{}\
+=0.5cm *Then* [*f*(*x*)]{} must be within the neighbourhood
+[*V*~*ε*~(*L*)]{}
+
+Formally
+
+[\$\$\\begin{aligned} \\forall \\varepsilon &gt; 0, & \\enspace \\exists
+\\delta &gt; 0: \\notag \\\\ & \\qquad x \\neq c, \\enspace x \\in
+A\\cap V\_{\\varepsilon}\\left( L \\right) \\implies f\\left( x \\right)
+\\in V\_{\\delta}\\left( c \\right) \\tag{4.1.6}
+\\label{416}\\end{aligned}\$\$]{}\
+Defintions ([\[]{}416[\]]{}) and ([\[]{}414[\]]{}) are equivalent, and
+are both consistent with the initial less rigorous definition
+([\[]{}stewartlimdef[\]]{}).
+
+##### Only one Limit Value [\[]{}4.1.5[\]]{}
+
+If [*f* : *A* → ℝ]{} and [*c*]{} is a cluster point of [*A*]{}, then
+there is only one value L: [lim~*x* → *c*~(*f*(*x*)) = *L*]{}
+
+### Using Sequences to Define Limits [\[]{} 4.1.8 [\]]{}
+
+Now that limits are defined we can use sequences to define them as well,
+this will give us more tools to use later and allows a connection to be
+made between material of Chapter 3 and 4.
+
+##### Definition
+
+A value [*L*]{} is said to be the limit of [*f*]{} as [*x* → *c*]{},
+denoted [lim~*x* → *c*~(*f*(*x*))]{} if and only if:\
+[2em]{}[0pt]{} *For every* sequence [(*x*~*n*~)]{} in [*A*]{},\
+[4em]{}[0pt]{} *if* [(*x*~*n*~)]{} converges to [*c*]{} such that
+[*x*~*n*~ ≠ *c*]{},\
+[4em]{}[0pt]{} *Then* [(*f*(*x*~*n*~))]{} converges to [*L*]{}
+
+ \
+So basically, again, if [*x*]{} gets close to [*c*]{}, [*f*(*x*)]{} gets
+close to L, but we took [*x*]{} from a sequence.
+
+### Divergence Criteria [\[]{} 4.1.9 [\]]{}
+
+Now we can use the *Divergence Criteria* from [\[]{}3.4.5[\]]{} to
+determine whether or not a limit exists generally or at a point.
+
+##### (a) Limit is not a Specific Value
+
+If [*L* ∈ ℝ]{}, then [*f*]{} does not have a limit at [*c*]{}, if and
+only if:\
+\
+There is a sequence [(*x*~*n*~)]{} in [*A*]{} with [*x*~*n*~ ≠ *c*]{},
+such that:\
+[(*x*~*n*~)]{} converges to [*c*]{} but the sequence [*f*(*x*~*n*~)]{}
+does not converge to [*L*]{}
+
+##### (b) No Limit whatsover
+
+If [*L* ∈ ℝ]{}, then [*f*]{} does not have a limit at [*c*]{}, if and
+only if:\
+\
+There is a sequence [(*x*~*n*~)]{} in [*A*]{} with [*x*~*n*~ ≠ *c*]{},
+such that:\
+[(*x*~*n*~)]{} converges to [*c*]{} but the sequence [*f*(*x*~*n*~)]{}
+does not converge in [ℝ]{}
+
+##### The Signum Function
+
+The Signum function returns the sign of the input value:
+
+[\$\$\\begin{aligned} sgn\\left( x \\right) &:= \\begin{cases} +&1
+\\qquad \\text{for} \\enspace \$x \\textgreater \\enspace 0\$ \\\\ &0
+\\qquad \\text{for} \\enspace \$x= 0\$ \\\\ -&1 \\qquad \\text{for}
+\\enspace \$x \\textless \\enspace 0\$ \\end{cases} \\tag{4.1.10}
+\\label{4110} \\\\ &= \\frac{x}{\\lvert x \\rvert}
+\\notag\\end{aligned}\$\$]{}\
+
+Limit Theorems [\[]{}4.2[\]]{}
+------------------------------
+
+These are useful for calculating limits of functions, they are mostly
+extensions of [\[]{}3.2[\]]{}.
+
+### Bounded Functions
+
+##### Definition
+
+Let [*A* ⊆ ℝ]{}, [*f* : *A* → ℝ]{} and let [*c* ∈ ℝ]{} be a cluster
+point of [*A*]{}.\
+It is said that *f is bounded on a neighbourhood of* [*c*]{} if:\
+[2em]{}[0pt]{} there exists a [*δ*]{}-neighborhood [*V*~*δ*~(*c*)]{} and
+some constant value [*M* &gt; 0]{} such that:\
+[4em]{}[0pt]{} [*f*(*x*)≤*M*]{} for every [*x* ∈ *A* ∩ *V*~*δ*~(*c*)]{}
+
+ \
+So basically a function is said to be *bounded on a neighbourhood of
+[*c*]{}* if:
+
+[4em]{}[0pt]{} for some interval (It doesn’t matter how small) around
+[*c*]{},
+
+[6em]{}[0pt]{} [*f*(*x*)]{} can be contained in some interval
+
+ \
+[4em]{}[0pt]{} [\$\\exists \\delta&gt;0, \\enspace \\exists M&gt;0:\$]{}
+
+[6em]{}[0pt]{} [*x* ∈ *V*~*δ*~(*c*) ⟹ *f*(*x*)&lt;*M*]{}
+
+ \
+So for example:
+
+-   [*f*(*x*) = *x*^3^]{} is *bounded on every neighborhood of every
+    [*x* ∈ ℝ]{}* whereas,
+
+-   [\$g\\left( x \\right) = \\sfrac{1}{x}\$]{} is ***not** bounded on a
+    neighborhood of 0* because [*g*(*x*)]{} tends to infinity as
+    [*x* → 0]{},
+
+    -   [furthermore [*g*(*x*)]{} is *bounded on **some but notall**
+        neighborhoods of 1*, because an interval around 1 must not be
+        drawn large enough to encapsulate 0.]{}
+
+##### Limits imply Bounded Neighbourhoods [\[]{}4.2.2 [\]]{}
+
+A function is bounded on a neighborhood of a point that is a limit of
+that function.\
+If a function has a limit at [*c*]{}, then [*f*]{} must be *bounded on
+some neighborhood of [*c*]{}*,\
+this flows from the initial definitions because we know that [*c*]{} is
+a cluster point and that [(*f*(*x*))]{} moves closer to [*L*]{},\
+hence it must be possible to draw a small enough interval (e.g.
+horizontal lines on the [*y*]{}-axis) to contain all [*f*(*x*)]{}
+defined by
+
+### Functions and Arithmetic [\[]{}4.2.3[\]]{}
+
+Just like with sequences we can define arithmetic operations that relate
+to addition and multiplication with functions in order to manipulate
+them:\
+\
+Let [*A* ⊆ ℝ]{} ,\
+[\$\$\\begin{aligned} f: A \\rightarrow \\mathbb{R} \\qquad g: A
+\\rightarrow \\mathbb{R} \\qquad h: A \\rightarrow \\mathbb{R},
+\\enspace h(x) \\neq 0, \\enspace \\forall x \\in A
+\\label{seqdefgen}\\end{aligned}\$\$]{}\
+We define the following Operations [\[]{}4.2, p. 111[\]]{}:
+
+[\$\$\\begin{aligned} {1} \\left( f+g \\right) \\left( x \\right) &:=
+f\\left( x \\right) + g\\left( x \\right) \\label{addfundef} \\\\
+\\left( f-g \\right) \\left( x \\right) &:= f\\left( x \\right) +
+g\\left( x \\right) \\label{subfundef} \\\\ \\left( fg \\right) \\left(
+x \\right) &:= f\\left( x \\right) \\times g\\left( x \\right)
+\\label{multfundef} \\\\ \\left( bf \\right) \\left( x \\right) &:= b
+\\times f\\left( x \\right) \\label{confundef} \\\\ \\left( \\frac{f}{h}
+\\right)\\left( x \\right) &:= \\frac{f\\left( x \\right)}{h\\left( x
+\\right)} \\end{aligned}\$\$]{}\
+Limits of Function Operations [\[]{}4.2.4[\]]{}
+
+Because the limit of a function is essentially the expected value of the
+function around that value, it stands to reason that the limit will
+distribute over the basic operations:\
+[Let the functions be defined as they were in ([\[]{}seqdefgen[\]]{})
+and let [*c* ∈ ℝ]{} be a custer point of [*A*]{}.]{}
+
+[\$\$\\begin{aligned} \\lim\_{x \\rightarrow c}\\left( f \\right) = L
+\\qquad \\lim\_{x \\rightarrow c}\\left( g \\right) = M \\quad
+\\lim\_{x\\rightarrow c}\\left( h \\right) = H \\neq 0
+\\label{fundeflim}\\end{aligned}\$\$]{}\
+Then the limits are:
+
+[\$\$\\begin{aligned} {2} \\lim\_{x\\rightarrow c} \\left( f+g \\right)
+&= \\lim\_{x\\rightarrow c}\\left( f \\right) + \\lim\_{x\\rightarrow
+c}\\left( g \\right) &= L + M \\label{addlimdef} \\\\[\[]{}1em[\]]{}
+\\lim\_{x\\rightarrow c} \\left( f-g \\right) &= \\lim\_{x\\rightarrow
+c} \\left( f \\right) - \\lim\_{x\\rightarrow c} \\left( g \\right) &= x
+- y \\label{minlimdef} \\\\[\[]{}1em[\]]{} \\lim\_{x\\rightarrow c}
+\\left( c \\cdot f \\right) &= c \\cdot \\lim\_{x\\rightarrow c} \\left(
+f \\right) &= c \\cdot x \\label{conmultlimdef} \\\\[\[]{}1em[\]]{}
+\\lim\_{x\\rightarrow c} \\left( f\\times g \\right) &=
+\\lim\_{x\\rightarrow c} \\left( f \\right) \\times
+\\lim\_{x\\rightarrow c} \\left( g \\right) &= x \\times y
+\\label{multlimdef} \\\\[\[]{}1em[\]]{} \\lim\_{x\\rightarrow c} \\left(
+f/h \\right) &= \\lim\_{x\\rightarrow c} \\left( f \\right) \\div
+\\lim\_{x\\rightarrow c} \\left( h \\right) &= \\sfrac{x}{y}
+\\label{divlimdef}\\end{aligned}\$\$]{}\
+
+### Limit Theorems
+
+The rest of the chapter just provides values of varios limits.\
+[Let the functions be defined as they were in ([\[]{}seqdefgen[\]]{})
+and let [*c* ∈ ℝ]{} be a custer point of [*A*]{}.]{}
+
+##### Limits Captured in Intervals [\[]{}4.2.6[\]]{}
+
+ \
+\
+*if* [*f*(*x*) ∈ [\[]{}*a*,*b*[\]]{}]{} for all [\$x \\in A, \\enspace x
+\\neq c\$]{}, and [lim~*x* → *c*~(*f*)]{} exists,\
+[2em]{}[0pt]{} *then* [*f*(*x*) ∈ [\[]{}*a*,*b*[\]]{}]{}
+
+##### Squeeze Theorem [\[]{}4.2.7[\]]{}
+
+if [\[]{}4.2.6[\]]{} is extended to functions, then we have the squeeze
+theorem:\
+*if* [*g*]{} is within an interval defined by the functions [*f*]{} and
+[*h*]{}:
+
+[\$\$\\begin{aligned} f\\left( x \\right) \\leq g\\left( x \\right)
+\\leq h\\left( x \\right), \\quad \\forall x\\in A, \\enspace x\\neq c
+\\label{squeezelimdist}\\end{aligned}\$\$]{}\
+[2em]{}[0pt]{} *then* the limit of g must also be 0
+
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow c}\\left( g \\right)=L
+\\label{limisL}\\end{aligned}\$\$]{}\
+
+##### A Positive Limit implies a neighbourhood with Positive Values
+
+Let [*A* ⊆ ℝ]{} and let [*c* ∈ ℝ]{} be a cluster point of [*A*]{} as in
+(3.4.6) above.\
+*If*:\
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow c}\\left( f \\right) &gt; 0
+\\label{limneighbourpor}\\end{aligned}\$\$]{}\
+*Then:*
+
+[4em]{}[0pt]{} there is a neighborhood [*V*~*δ*~(*c*)]{} such that
+[\$f\\left( x \\right) &gt;0, \\enspace \\forall x \\in A \\cap
+V\_{\\delta}\\left( c \\right)\$]{}
+
+ \
+This also holds for negative values and basically all it says, in more
+rigorous language, is that if the limit point is above the [*x*]{}-axis
+then there’s gotta be points to the left and right that are above the
+[*x*]{}-axis as well (because the whole cluster point thing means
+everything can be arbitrarily small).\
+\
+Although this may start to seem a little pointless, the idea of making
+the definitions this rigorous is like writing code in a scripting
+language, by using this very precise language, the logical consequences
+give us exactly the concept that we want, even though we need to take a
+longer or alternate path to get to that concept than we would otherwise
+would generally take in order to describe the concept.
+
+Extensions of the Limit Concept [\[]{}4.3[\]]{}
+-----------------------------------------------
+
+These are written in a particularly convoluted fashion, however if the
+preceeding material is understood the textbook can be used more or less
+as a reference, hence these notes will be brief.
+
+### One-Sided Limits [\[]{}4.3.1[\]]{}
+
+##### Definition [\[]{}4.3.1[\]]{}
+
+Let [*c* ∈ ℝ]{} be a cluster point of [\$A\\cap \\left( c, \\infty
+\\right) = \\left\\{ x \\in A \\enspace : \\enspace x &gt; c
+\\right\\}\$]{}\
+It is said that [*L*]{} is a *Right-hand limit of [*f*]{} at [*c*]{}*
+and it is written:\
+[\$\$\\begin{aligned} \\lim\_{x \\rightarrow c\^+} \\left( f \\right) =
+L \\tag{4.3.1} \\label{431}\\end{aligned}\$\$]{}\
+This can be extended to left-hand limits as well.
+
+Definition in Term of Sequences [\[]{}4.3.2[\]]{}
+
+As above it is said that [*L*]{} is a *Right-hand limit of [*f*]{} at
+[*c*]{}* if:
+
+[2em]{}[0pt]{} Every sequence [(*x*~*n*~)]{} in [*A*]{} that converges
+to [*c*]{} is such that [*f*(*x*~*n*~)]{} converges to [*L*]{}, given
+that [\$x\_n&gt;c, \\enspace \\forall n \\in \\mathbb{N}\$]{}
+
+##### Limit must be equal on both sides
+
+A limit is defined only if the limit is equal from both directions\
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow c}\\left( f \\right) = L
+\\iff \\lim\_{x\\rightarrow c\^+}\\left( f \\right) = L =
+\\lim\_{x\\rightarrow c }\\left( f \\right) \\tag{3.4.3}
+\\label{343}\\end{aligned}\$\$]{}\
+
+### Infinite Limits [\[]{}4.3.5[\]]{}
+
+Let [*c* ∈ ℝ]{} be a cluster point of [*A*]{},\
+It is aid that [*f*]{} tends to [∞]{} as [*x* → *c*]{}, and it is
+written:
+
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow c}\\left( f \\right) =
+\\infty \\tag{4.3.5} \\label{435}\\end{aligned}\$\$]{}\
+If [∀*α* ∈ ℝ]{}, [\$\\enspace \\exists \\delta &gt; 0\$]{}:
+
+[6em]{}[0pt]{}
+[0 &lt; *x* − *c*&lt;*δ* ⟹ *f*(*x*)&gt;*α*,  ∀*x* ∈ *A*]{}
+
+##### One-Sided Limits to Infinity [\[]{}4.3.8[\]]{}
+
+Let [*c* ∈ ℝ]{} be a cluster point of [\$A\\cap \\left( c, \\infty
+\\right) = \\left\\{ x \\in A \\enspace : \\enspace x &gt; c
+\\right\\}\$]{},\
+It is aid that [*f*]{} tends to [∞]{} as [*x* → *c*^+^]{}, and it is
+written:
+
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow c}\\left( f \\right) =
+\\infty \\tag{4.3.8} \\label{438}\\end{aligned}\$\$]{}\
+If [∀*α* ∈ ℝ]{}, [\$\\enspace \\exists \\delta &gt; 0\$]{}:
+
+[6em]{}[0pt]{}
+[0 &lt; *x* − *c* &lt; *δ* ⟹ *f*(*x*)&gt;*α*,  ∀*x* ∈ *A*]{}
+
+##### Ordered Functions
+
+If [*f*(*x*) &lt; *g*(*x*)]{}, then:\
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow c}\\left( f \\right) =
+\\infty &\\implies \\lim\_{x \\rightarrow c}\\left( g \\right) = \\infty
+\\tag{4.3.7 (a)} \\label{437a}\\\\ \\lim\_{x\\rightarrow c}\\left( g
+\\right) = -\\infty &\\implies \\lim\_{x \\rightarrow c}\\left( f
+\\right) = -\\infty \\tag{4.3.7 (b)} \\label{437b}\\end{aligned}\$\$]{}\
+
+### Limits at Infinity [\[]{}4.3.10[\]]{}
+
+It is also useful to talk about limits as [*x*]{} tends to [∞]{}
+
+Let [(*a*,∞) ⊆ *A* ⊆ ℝ]{} for some [*ain*ℝ]{}\
+It is aid that the limit of [*f*]{} as [*x* → ∞]{} is [*L*]{}, and it is
+written:\
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow \\infty}\\left( f \\right) =
+L \\tag{4.3.10} \\label{4310}\\end{aligned}\$\$]{}\
+If [\$ \\forall \\varepsilon &gt;0, \\enspace \\exists K &gt; 0\$]{}:
+
+[6em]{}[0pt]{} [*x* &gt; *K* ⟹ *f*(*x*) − *L*&lt;*ε*]{}
+
+Limits at Infinity in Terms of Sequences [\[]{}4.3.11[\]]{}
+
+equivalently to ([\[]{}4310[\]]{}), the definition can be expressed in
+terms of sequences:\
+[2em]{}[0pt]{} Every sequence [(*x*~*n*~)]{} in [*A* ∩ (*a*,∞)]{} that
+has [lim(*x*~*n*~)=∞]{} is such that the sequence [(*f*(*x*~*n*~))]{}
+converges to [*L*]{}
+
+##### Infinite Limits at Infinity
+
+So this basically combines [\[]{}4.3.10[\]]{} with [\[]{}4.3.5[\]]{}
+
+Let [(*a*,∞) ⊆ *A* ⊆ ℝ]{} for some [*a* ∈ ℝ]{}\
+\
+It is aid that [*f*]{} tends to [∞]{} as [*x* → ∞]{}, and it is
+written:\
+[\$\$\\begin{aligned} \\lim\_{x\\rightarrow \\infty}\\left( f \\right) =
+\\infty \\tag{4.3.13} \\label{4313}\\end{aligned}\$\$]{}\
+If [\$ \\forall \\varepsilon &gt;0, \\enspace \\exists K &gt;
+\\alpha\$]{}:
+
+[6em]{}[0pt]{} [*x* &gt; *K* ⟹ *f*(*x*) &gt; *α*]{}
+
+Infinite Limits at Infinity in Terms of Sequences [\[]{}4.3.14[\]]{}
+
+equivalently to ([\[]{}4313[\]]{}), the definition can be expressed in
+terms of sequences:\
+[2em]{}[0pt]{} Every sequence [(*x*~*n*~)]{} in [*A* ∩ (*a*,∞)]{} that
+has [lim(*x*~*n*~)=∞]{} is such that the limit of the sequence of
+function values [lim (*f*(*x*~*n*~)) = ∞]{}
+
+Ratios of Functions
+
+This result uses (4.3.14) to restate (3.6.5) in terms of functions:\
+If [\$g\\left( x \\right) &gt; 0 \\enspace \\forall x &gt; a\$]{} and
+[*L* ≠ 0]{} is defined:
+
+[\$\$\\begin{aligned} lim\_{x\\rightarrow \\infty}\\left(
+\\frac{f\\left( x \\right)}{g\\left( x \\right)} \\right) \\tag{4.3.15}
+\\label{4315}\\end{aligned}\$\$]{}\
+then,
+
+[\$\$\\begin{aligned} L &gt; 0 \\implies \\lim\_{x\\rightarrow
+\\infty}\\left( f \\right) = \\infty \\iff \\lim\_{x \\rightarrow
+\\infty \\left( g \\right) = \\infty} \\tag{4.3.15 (i)} \\label{4315i}
+\\\\ L &lt; 0 \\implies \\lim\_{x\\rightarrow \\infty}\\left( f \\right)
+= - \\infty \\iff \\lim\_{x \\rightarrow \\infty \\left( g \\right) =
+\\infty} \\tag{4.3.15 (ii)} \\label{4315ii}\\end{aligned}\$\$]{}\

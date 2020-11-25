@@ -1,0 +1,40 @@
+#+TITLE: Readme
+
+** TODO Titles
+*** TODO Replace Section 1 with a title
+So that there isn't both a title and a main section
+** TODO Rename Files
+** TODO Add References
+As an example but also a reference piece
+** TODO Add Tikz
+As an example
+*** Add Snowflake as a decoration or title page?
+
+** TODO tableofcontents
+    ** TODO Mini toc per section
+    ** TODO Not having multiple
+** TODO MiniTOC
+** TODO Rename Files
+** TODO MakeFile or Build.sh
+*** Makefile doesn't make much sense with latexmk
+*** Build.sh is like a readme
+** TODO Compile Seperate Documents
+** TODO Images
+    ** TODO Rename them all and add captions
+** TODO Tikz
+** TODO Index
+** TODO README
+*** TODO How to to TOC and Title
+This needs to be done in a way that allows the toc to be attached to individual articles but the entire report only once.
+
+see [[file:~/Dropbox/Notes/Org/todo.org::*How to Create Reports][How to Create Reports in todo.org]]
+****  How to export individual files to:
+***** PDF
+***** HTML (then that into markdown)
+***** Org
+**** How to do Media
+***** How to do Tikz
+****** Seperate files like Project
+***** Media Directory with sub directories so files can be seperated
+****** Mention that pandoc is also an option, I just wanted to avoid relying on it
+** DONE Folding

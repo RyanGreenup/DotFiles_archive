@@ -1,0 +1,325 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{pascal}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+    \PYG{n}{mat} \PYG{o}{=} \PYG{p}{[}\PYG{n}{isodd}\PYG{p}{(}\PYG{n}{binomial}\PYG{p}{(}\PYG{k+kt}{BigInt}\PYG{p}{(}\PYG{n}{j}\PYG{o}{+}\PYG{n}{i}\PYG{p}{),}\PYG{k+kt}{BigInt}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)))} \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{0}\PYG{o}{:}\PYG{n}{n}\PYG{p}{,} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{0}\PYG{o}{:}\PYG{n}{n}\PYG{p}{]}
+    \PYG{k}{return} \PYG{n}{mat}
+\PYG{k}{end}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{pascal}\PYG{p}{(}\PYG{l+m+mi}{999}\PYG{p}{))}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}../../Report/media/pascal\PYGZhy{}sierpinsky\PYGZhy{}triangle.png\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Calculate Dimension \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{n}{mat2} \PYG{o}{=} \PYG{n}{pascal}\PYG{p}{(}\PYG{l+m+mi}{3000}\PYG{p}{)}
+\PYG{n}{l2}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)}
+\PYG{n}{size2} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{mat1} \PYG{o}{=} \PYG{n}{pascal}\PYG{p}{(}\PYG{l+m+mi}{2000}\PYG{p}{)}
+\PYG{n}{l1}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)}
+\PYG{n}{size1} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} https://en.wikipedia.org/wiki/Sierpi\PYGZpc{}C5\PYGZpc{}8png\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{caption}\PYG{p}{\PYGZob{}}\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{sierpinsky}\PYG{p}{\PYGZcb{}}\PYG{n}{TODO}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{enumerate}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{item} \PYG{n}{Motivation}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{o}{:}\PYG{n}{org9516f68}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Over} \PYG{n}{many} \PYG{n}{centuries}\PYG{p}{,} \PYG{n}{mathematicians} \PYG{n}{have} \PYG{n}{been} \PYG{n}{able} \PYG{n}{to} \PYG{n}{produce} \PYG{n}{a} \PYG{n}{range} \PYG{n}{of} \PYG{n}{patterns} \PYG{n}{from} \PYG{n}{Pascal}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{o}{.} \PYG{n}{One} \PYG{n}{of} \PYG{n}{which} \PYG{n}{is} \PYG{n}{relevant} \PYG{n}{to} \PYG{n}{the} \PYG{n}{emergence} \PYG{n}{of} \PYG{n}{Sierpinski}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{o}{.} \PYG{n}{To} \PYG{n}{construct} \PYG{n}{Pascal}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle} \PYG{n}{it} \PYG{n}{begins} \PYG{n}{with} \PYG{n}{a} \PYG{l+m+mi}{1} \PYG{k+kp}{in} \PYG{n}{the} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{th}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{p}{(}\PYG{n}{top}\PYG{p}{)} \PYG{n}{row}\PYG{p}{,} \PYG{n}{then} \PYG{n}{each} \PYG{n}{row} \PYG{n}{underneath} \PYG{n}{is} \PYG{n}{made} \PYG{n}{up} \PYG{n}{of} \PYG{n}{the} \PYG{n}{sum} \PYG{n}{of} \PYG{n}{the} \PYG{n}{numbers} \PYG{n}{directly} \PYG{n}{above} \PYG{n}{it}\PYG{p}{,} \PYG{n}{see} \PYG{n}{figure} \PYG{o}{\PYGZbs{}}\PYG{n}{ref}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{triangle}\PYG{p}{\PYGZcb{}}\PYG{o}{.} \PYG{n}{Alternatively}\PYG{p}{,} \PYG{n}{the} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{th}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{row} \PYG{n}{and} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{k}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{th}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{column} \PYG{n}{can} \PYG{n}{be} \PYG{n}{written} \PYG{k+kp}{in} \PYG{n}{combinatorics} \PYG{n}{form}\PYG{p}{,} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{k}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{k}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}} \PYG{o}{+} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{k}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)}\PYG{o}{.}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}[}\PYG{n}{htbp}\PYG{p}{]}
+\PYG{o}{\PYGZbs{}}\PYG{n}{centering}
+\PYG{o}{\PYGZbs{}}\PYG{n}{includegraphics}\PYG{p}{[}\PYG{n}{width}\PYG{o}{=.}\PYG{l+m+mi}{9}\PYG{o}{\PYGZbs{}}\PYG{n}{linewidth}\PYG{p}{]\PYGZob{}}\PYG{n}{media}\PYG{o}{/}\PYG{n}{tikz}\PYG{o}{/}\PYG{n}{pascals}\PYG{o}{\PYGZhy{}}\PYG{n}{triangle}\PYG{o}{.}\PYG{n}{png}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{caption}\PYG{p}{\PYGZob{}}\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{triangle}\PYG{p}{\PYGZcb{}}\PYG{n}{Pascal}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{n}{item} \PYG{n}{The} \PYG{n}{connection}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{o}{:}\PYG{n}{org6fd44b3}\PYG{p}{\PYGZcb{}}
+\PYG{n}{As} \PYG{n}{mentioned} \PYG{n}{before} \PYG{n}{there} \PYG{n}{is} \PYG{n}{one} \PYG{n}{pattern} \PYG{n}{that} \PYG{n}{produces} \PYG{n}{the} \PYG{n}{Sierpinski} \PYG{n}{triangle}\PYG{p}{,} \PYG{n}{namely} \PYG{n}{highlighting} \PYG{n}{all} \PYG{n}{odd} \PYG{n}{numbers} \PYG{k+kp}{in} \PYG{n}{Pascal}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{o}{.} \PYG{n}{This} \PYG{n}{is} \PYG{n}{equivalent} \PYG{n}{to} \PYG{n}{considering} \PYG{n}{all} \PYG{n}{the} \PYG{n}{numbers} \PYG{k+kp}{in} \PYG{n}{the} \PYG{n}{triangle} \PYG{n}{modulo} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{shown} \PYG{k+kp}{in} \PYG{n}{figure} \PYG{o}{\PYGZbs{}}\PYG{n}{ref}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{sierpinski}\PYG{o}{\PYGZhy{}}\PYG{n}{tri}\PYG{p}{\PYGZcb{}}\PYG{o}{.}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}[}\PYG{n}{htbp}\PYG{p}{]}
+\PYG{o}{\PYGZbs{}}\PYG{n}{centering}
+\PYG{o}{\PYGZbs{}}\PYG{n}{includegraphics}\PYG{p}{[}\PYG{n}{width}\PYG{o}{=}\PYG{l+m+mi}{9}\PYG{n}{cm}\PYG{p}{]\PYGZob{}}\PYG{n}{media}\PYG{o}{/}\PYG{n}{tikz}\PYG{o}{/}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{sierpinski}\PYG{o}{\PYGZhy{}}\PYG{n}{tri}\PYG{o}{.}\PYG{n}{png}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{sierpinski}\PYG{o}{\PYGZhy{}}\PYG{n}{tri}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}[}\PYG{n}{htbp}\PYG{p}{]}
+\PYG{o}{\PYGZbs{}}\PYG{n}{centering}
+\PYG{o}{\PYGZbs{}}\PYG{n}{includegraphics}\PYG{p}{[}\PYG{n}{width}\PYG{o}{=}\PYG{l+m+mi}{9}\PYG{n}{cm}\PYG{p}{]\PYGZob{}}\PYG{n}{media}\PYG{o}{/}\PYG{n}{tikz}\PYG{o}{/}\PYG{n}{row}\PYG{o}{\PYGZhy{}}\PYG{n}{column}\PYG{o}{\PYGZhy{}}\PYG{n}{pascal}\PYG{o}{.}\PYG{n}{png}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{caption}\PYG{p}{\PYGZob{}}\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{row}\PYG{o}{\PYGZhy{}}\PYG{n}{column}\PYG{o}{\PYGZhy{}}\PYG{n}{pascal}\PYG{p}{\PYGZcb{}}\PYG{n}{The} \PYG{n}{black} \PYG{n}{squares} \PYG{n}{represent} \PYG{n}{one} \PYG{n}{example} \PYG{n}{of} \PYG{n}{a} \PYG{n}{position} \PYG{n}{on} \PYG{n}{Pascal}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle} \PYG{n}{that} \PYG{n}{are} \PYG{n}{equivalent} \PYG{n}{modulo} \PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{figure}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{In} \PYG{n}{figure} \PYG{o}{\PYGZbs{}}\PYG{n}{ref}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{sierpinski}\PYG{o}{\PYGZhy{}}\PYG{n}{tri}\PYG{p}{\PYGZcb{},} \PYG{n}{we} \PYG{n}{can} \PYG{n}{observe} \PYG{n}{that} \PYG{n}{all} \PYG{n}{the} \PYG{n}{highlighted} \PYG{n}{odd} \PYG{n}{numbers} \PYG{k}{begin} \PYG{n}{to} \PYG{n}{form} \PYG{n}{the} \PYG{n}{Sierpinski} \PYG{n}{triangle}\PYG{o}{.} \PYG{n}{Note} \PYG{n}{that} \PYG{n}{this} \PYG{n}{is} \PYG{n}{not} \PYG{n}{the} \PYG{n}{complete} \PYG{n}{Sierpinski}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{p}{,} \PYG{n}{that} \PYG{n}{would} \PYG{n}{require} \PYG{n}{an} \PYG{n}{infinite} \PYG{n}{number} \PYG{n}{of} \PYG{n}{iterations}\PYG{o}{.} \PYG{n}{Now}\PYG{p}{,} \PYG{n}{we} \PYG{n}{also} \PYG{n}{notice} \PYG{n}{that} \PYG{n}{there} \PYG{n}{are} \PYG{n}{three} \PYG{n}{identical} \PYG{n}{Sierpinski} \PYG{n}{triangles} \PYG{n}{within} \PYG{n}{the} \PYG{n}{larger} \PYG{n}{triangle}\PYG{p}{,} \PYG{n}{each} \PYG{n}{containing} \PYG{n}{the} \PYG{n}{same} \PYG{n}{value} \PYG{n}{modulo} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{at} \PYG{n}{each} \PYG{n}{corresponding} \PYG{n}{row} \PYG{n}{and} \PYG{n}{column}\PYG{o}{.}
+
+\PYG{n}{To} \PYG{n}{prove} \PYG{n}{this}\PYG{p}{,} \PYG{n}{we} \PYG{n}{need} \PYG{n}{to} \PYG{n}{split} \PYG{n}{the} \PYG{n}{triangle} \PYG{n}{into} \PYG{n}{two} \PYG{n}{parts}\PYG{p}{,} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{denoting} \PYG{n}{the} \PYG{n}{first} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{rows}\PYG{p}{,} \PYG{n}{i}\PYG{o}{.}\PYG{n+nb}{e}\PYG{o}{.} \PYG{n}{the} \PYG{n}{top} \PYG{l+s+sb}{``}\PYG{n}{Sierpinski} \PYG{n}{triangle}\PYG{o}{\PYGZsq{}\PYGZsq{}} \PYG{k+kp}{in} \PYG{n}{figure} \PYG{o}{\PYGZbs{}}\PYG{n}{ref}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{pascal}\PYG{o}{\PYGZhy{}}\PYG{n}{sierpinski}\PYG{o}{\PYGZhy{}}\PYG{n}{tri}\PYG{p}{\PYGZcb{}} \PYG{n}{and} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{representing} \PYG{n}{the} \PYG{n}{entire} \PYG{n}{triangle}\PYG{o}{.} \PYG{n}{We} \PYG{n}{must} \PYG{n}{show} \PYG{n}{that} \PYG{n}{any} \PYG{n}{chosen} \PYG{n}{square} \PYG{k+kp}{in} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{is} \PYG{n}{equal} \PYG{n}{to} \PYG{n}{the} \PYG{n}{corresponding} \PYG{n}{row} \PYG{n}{and} \PYG{n}{column} \PYG{k+kp}{in} \PYG{n}{the} \PYG{n}{lower} \PYG{n}{two} \PYG{n}{triangles} \PYG{n}{of} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{shown} \PYG{k+kp}{in} \PYG{n}{figure} \PYG{o}{\PYGZbs{}}\PYG{n}{ref}\PYG{p}{\PYGZob{}}\PYG{n}{fig}\PYG{o}{:}\PYG{n}{row}\PYG{o}{\PYGZhy{}}\PYG{n}{column}\PYG{o}{\PYGZhy{}}\PYG{n}{pascal}\PYG{p}{\PYGZcb{}}\PYG{o}{.} \PYG{n}{This} \PYG{n}{requires} \PYG{n}{an} \PYG{n}{identity} \PYG{n}{that} \PYG{n}{allows} \PYG{n}{us} \PYG{n}{to} \PYG{n}{work} \PYG{n}{with} \PYG{n}{combinations} \PYG{k+kp}{in} \PYG{n}{modulo} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{namely} \PYG{n}{Lucas}\PYG{o}{\PYGZsq{}} \PYG{n}{Theorem}\PYG{o}{.}
+
+\PYG{o}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Lucas}\PYG{o}{\PYGZsq{}} \PYG{n}{Theorem}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Let} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,}\PYG{n}{k} \PYG{o}{\PYGZbs{}}\PYG{n}{ge} \PYG{l+m+mi}{0}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{and} \PYG{k}{for} \PYG{n}{some} \PYG{n}{prime} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{we} \PYG{n}{get}\PYG{o}{:}
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{equation}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{k}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{o}{\PYGZbs{}}\PYG{n}{prod\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{n\PYGZus{}i}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{k\PYGZus{}i}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZti{}}\PYG{n}{p}\PYG{p}{)}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{equation}\PYG{p}{\PYGZcb{}}
+\PYG{n}{where}\PYG{p}{,}
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+\PYG{n}{n} \PYG{o}{\PYGZam{}=} \PYG{n}{n\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{p}{\PYGZcb{}}\PYG{n}{p}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{p}{\PYGZcb{}}\PYG{o}{+}\PYG{n}{n\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{p}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{+\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{+} \PYG{n}{n\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{p}\PYG{o}{+}\PYG{n}{n\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{},}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{n}{k} \PYG{o}{\PYGZam{}=} \PYG{n}{k\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{p}{\PYGZcb{}}\PYG{n}{p}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{p}{\PYGZcb{}}\PYG{o}{+}\PYG{n}{k\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{p}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{+\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{+} \PYG{n}{k\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{p}\PYG{o}{+}\PYG{n}{k\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+\PYG{n}{are} \PYG{n}{the} \PYG{n}{expansions} \PYG{k+kp}{in} \PYG{n}{radix} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{o}{\PYGZbs{}}\PYG{n}{footnote}\PYG{p}{\PYGZob{}}\PYG{n}{Radix} \PYG{n}{refers} \PYG{n}{to} \PYG{n}{a} \PYG{n}{numerical} \PYG{n}{system} \PYG{n}{which} \PYG{n}{uses} \PYG{n}{some} \PYG{n}{number} \PYG{n}{of} \PYG{n}{digits}\PYG{o}{.} \PYG{n}{Since} \PYG{n}{we} \PYG{n}{are} \PYG{n}{working} \PYG{k+kp}{in} \PYG{n}{modulo} \PYG{l+m+mi}{2} \PYG{k}{for} \PYG{n}{Pascal}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{p}{,} \PYG{n}{we} \PYG{n}{are} \PYG{n}{only} \PYG{n}{concerned} \PYG{n}{with} \PYG{n}{the} \PYG{n}{numbers} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{or} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{i}\PYG{o}{.}\PYG{n+nb}{e}\PYG{o}{.} \PYG{n}{a} \PYG{n}{radix} \PYG{l+m+mi}{2} \PYG{n}{or} \PYG{n}{a} \PYG{n}{binary} \PYG{n}{numeric} \PYG{n}{system}\PYG{o}{.}\PYG{p}{\PYGZcb{}}\PYG{o}{.} \PYG{n}{This} \PYG{n}{uses} \PYG{n}{the} \PYG{n}{convention} \PYG{n}{that} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{k}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{k}{if} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{o}{\PYGZbs{}}\PYG{p}{)}
+
+\PYG{n}{Take} \PYG{n}{some} \PYG{n}{arbitrary} \PYG{n}{row} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{r}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{and} \PYG{n}{column} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{c}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{k+kp}{in} \PYG{n}{the} \PYG{n}{triangle} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)}\PYG{o}{.} \PYG{n}{If} \PYG{n}{we} \PYG{n}{add} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{rows} \PYG{n}{to} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{r}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{we} \PYG{n}{will} \PYG{n}{reach} \PYG{n}{the} \PYG{n}{equivalent} \PYG{n}{row} \PYG{n}{and} \PYG{n}{column} \PYG{k+kp}{in} \PYG{n}{the} \PYG{n}{lower} \PYG{n}{left} \PYG{n}{triangle} \PYG{n}{of} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{since} \PYG{n}{there} \PYG{n}{are} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{rows} \PYG{k+kp}{in} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)}\PYG{o}{.} \PYG{n}{In} \PYG{n}{the} \PYG{n}{same} \PYG{n}{way}\PYG{p}{,} \PYG{k}{if} \PYG{n}{we} \PYG{n}{add} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{columns} \PYG{n}{to} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{c}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{we} \PYG{n}{reach} \PYG{n}{the} \PYG{n}{equivalent} \PYG{n}{row} \PYG{n}{and} \PYG{n}{column} \PYG{k+kp}{in} \PYG{n}{the} \PYG{n}{lower} \PYG{n}{right} \PYG{n}{triangle} \PYG{n}{of} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{P\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{leaving} \PYG{n}{us} \PYG{n}{with}\PYG{o}{:}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{Top} \PYG{n}{Triangle}\PYG{o}{:}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{o}{\PYGZam{}\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{eq}\PYG{o}{:}\PYG{n}{top}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{Bottom}\PYG{o}{\PYGZhy{}}\PYG{n}{left} \PYG{n}{Triangle}\PYG{o}{:}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{o}{\PYGZam{}\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{eq}\PYG{o}{:}\PYG{n}{bottom}\PYG{o}{\PYGZhy{}}\PYG{n}{left}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{Bottom}\PYG{o}{\PYGZhy{}}\PYG{n}{right} \PYG{n}{Triangle} \PYG{o}{:}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{o}{\PYGZam{}\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{eq}\PYG{o}{:}\PYG{n}{bottom}\PYG{o}{\PYGZhy{}}\PYG{n}{right}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Using} \PYG{n}{Lucas}\PYG{o}{\PYGZsq{}} \PYG{n}{theorem}\PYG{p}{,} \PYG{n}{we} \PYG{n}{can} \PYG{n}{prove} \PYG{n}{that} \PYG{n}{the} \PYG{n}{above} \PYG{n}{statments} \PYG{n}{are} \PYG{n}{equivalent}\PYG{o}{.}
+
+\PYG{n}{We} \PYG{n}{can} \PYG{n}{rewrite} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{r}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{n}{and} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{n}{c}\PYG{o}{\PYGZbs{}}\PYG{p}{)} \PYG{k+kp}{in} \PYG{n}{base} \PYG{l+m+mi}{2} \PYG{n}{notation} \PYG{n}{as} \PYG{n}{follows}\PYG{o}{:}
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+\PYG{n}{r}\PYG{o}{=}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{p}{\PYGZcb{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{p}{\PYGZcb{}}\PYG{o}{+}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{+\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{+} \PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{=} \PYG{o}{\PYGZbs{}}\PYG{n}{left}\PYG{p}{[}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{p}{\PYGZcb{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{right}\PYG{p}{]}\PYG{n}{\PYGZus{}2}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{n}{c}\PYG{o}{=}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{p}{\PYGZcb{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{p}{\PYGZcb{}}\PYG{o}{+}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{+\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{+}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{=\PYGZbs{}}\PYG{n}{left}\PYG{p}{[}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{p}{\PYGZcb{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{right}\PYG{p}{]}\PYG{n}{\PYGZus{}2}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n} \PYG{o}{+} \PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZti{}}\PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZti{}}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{0}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}0}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}0}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZam{}=\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}0}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}0}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n} \PYG{o}{+} \PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n} \PYG{o}{+} \PYG{n}{c}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZti{}}\PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZti{}}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{1}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}0}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}0}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZam{}=\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}\PYGZcb{}}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}}\PYG{p}{\PYGZob{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{}\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{cdots} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r\PYGZus{}0}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c\PYGZus{}0}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}\PYGZbs{}}
+\PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{align}\PYG{o}{*}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Thus}\PYG{p}{,} \PYG{o}{\PYGZbs{}}\PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n} \PYG{o}{+} \PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{o}{\PYGZbs{}}\PYG{n}{binom}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n} \PYG{o}{+} \PYG{n}{r}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{2}\PYG{o}{\PYGZca{}}\PYG{n}{n} \PYG{o}{+} \PYG{n}{c}\PYG{p}{\PYGZcb{}} \PYG{o}{\PYGZbs{}}\PYG{n}{quad} \PYG{p}{(}\PYG{o}{\PYGZbs{}}\PYG{n}{text}\PYG{p}{\PYGZob{}}\PYG{n}{mod}\PYG{p}{\PYGZcb{}} \PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{\PYGZbs{}}\PYG{p}{),} \PYG{n}{which} \PYG{n}{concludes} \PYG{n}{the} \PYG{n}{proof}
+
+\PYG{o}{\PYGZbs{}}\PYG{n}{item} \PYG{n}{Comment} \PYG{n}{on} \PYG{n}{the} \PYG{n}{dimension} \PYG{n}{lining} \PYG{n}{up}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{o}{:}\PYG{n}{org5f99445}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Using} \PYG{n}{the} \PYG{n}{box}\PYG{o}{\PYGZhy{}}\PYG{n}{counting} \PYG{n}{method}\PYG{p}{,} \PYG{n}{we} \PYG{n}{can} \PYG{n}{evaluate} \PYG{n}{the} \PYG{n}{dimension} \PYG{n}{of} \PYG{n}{Sierpinski}\PYG{o}{\PYGZsq{}}\PYG{n}{s} \PYG{n}{triangle}\PYG{o}{.}
+\PYG{o}{\PYGZbs{}}\PYG{n}{item} \PYG{n}{FIx} \PYG{n}{the} \PYG{n}{value}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{o}{:}\PYG{n}{orgebcb1f4}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{verbatim}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{julia}\PYG{o}{\PYGZgt{}} \PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)}
+\PYG{l+m+mf}{2.082583161459976}
+
+\PYG{n}{julia}\PYG{o}{\PYGZgt{}} \PYG{c}{\PYGZsh{} https://en.wikipedia.org/wiki/Sierpi\PYGZpc{}C5\PYGZpc{}84ski\PYGZus{}triangle}
+       \PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{l+m+mf}{1.5849625007211563}
+
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{verbatim}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{k}{end}\PYG{p}{\PYGZob{}}\PYG{n}{enumerate}\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZbs{}}\PYG{n}{subsubsection}\PYG{p}{\PYGZob{}}\PYG{n}{Turtle}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{o}{:}\PYG{n}{org2149cf1}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Matrices} \PYG{n}{can}\PYG{o}{\PYGZsq{}}\PYG{n}{t} \PYG{n}{explain} \PYG{n}{all} \PYG{n}{patterns}\PYG{p}{,} \PYG{n}{Turtles} \PYG{n}{are} \PYG{n}{useful}
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{listing}\PYG{p}{\PYGZcb{}[}\PYG{n}{htbp}\PYG{p}{]}
+\PYG{o}{\PYGZbs{}}\PYG{k}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{minted}\PYG{p}{\PYGZcb{}[]\PYGZob{}}\PYG{n}{julia}\PYG{p}{\PYGZcb{}}
+\PYG{k}{using} \PYG{n}{Shapefile}
+\PYG{k}{using} \PYG{n}{Luxor}
+\PYG{k}{using} \PYG{n}{Pkg}
+
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Dragon Curve \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+
+\PYG{k}{function} \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
+    \PYG{n}{scale}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{level} \PYG{o}{==} \PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{90}\PYG{p}{)}
+        \PYG{n}{Rotate}\PYG{p}{(}\PYG{l+m+mi}{90}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}        Rectangle(♘, length, length)}
+        \PYG{k}{return}
+    \PYG{k}{end}
+    \PYG{n}{length} \PYG{o}{=} \PYG{n}{length}\PYG{o}{/}\PYG{l+m+mi}{9}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{180}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{n}{Pencolor}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{l+m+mf}{0.4}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{levels} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{levels}\PYG{p}{),} \PYG{n}{levels}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{800} \PYG{l+m+mi}{800} \PYG{l+s}{\PYGZdq{}./snowFlat600.png\PYGZdq{}}
+
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{} Flat Snowflake \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+
+\PYG{k}{function} \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
+    \PYG{n}{scale}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{level} \PYG{o}{==} \PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}        Rectangle(♘, length, length)}
+        \PYG{k}{return}
+    \PYG{k}{end}
+    \PYG{n}{length} \PYG{o}{=} \PYG{n}{length}\PYG{o}{/}\PYG{l+m+mi}{9}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{60}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{180}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{n}{Pencolor}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{l+m+mf}{0.4}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,}\PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{levels} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{levels}\PYG{p}{),} \PYG{n}{levels}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{800} \PYG{l+m+mi}{800} \PYG{l+s}{\PYGZdq{}/tmp/snowFlat600.png\PYGZdq{}}
+
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Round Snowflake Working \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{k}{function} \PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{if} \PYG{n}{level} \PYG{o}{==} \PYG{l+m+mi}{0}
+\PYG{c}{\PYGZsh{}    Forward(♘, length)}
+    \PYG{n}{Circle}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return}
+\PYG{k}{end}
+\PYG{n}{length} \PYG{o}{=} \PYG{n}{length}\PYG{o}{/}\PYG{l+m+mi}{9}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{60}\PYG{p}{)}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{60}\PYG{p}{)}
+\PYG{n}{snowflake}\PYG{p}{(}\PYG{n}{length}\PYG{p}{,} \PYG{n}{level}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+\PYG{n+nd}{@svg} \PYG{k}{begin}
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{3}
+    \PYG{n}{levels} \PYG{o}{=} \PYG{l+m+mi}{9}
+    \PYG{n}{snowflake}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{levels}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{),} \PYG{n}{levels}\PYG{p}{,} \PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{120}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{k}{end} \PYG{l+m+mi}{2000} \PYG{l+m+mi}{2000} \PYG{l+s}{\PYGZdq{}/tmp/snowCurve.svg\PYGZdq{}}
+
+
+
+\PYG{l+m+mi}{0} \PYG{l+s}{\PYGZdq{}/tmp/snowCurve.png\PYGZdq{}}
+
+\PYG{c}{\PYGZsh{} The starting length must be such that the final length = 1 pixel}
+\PYG{c}{\PYGZsh{} this depends on the levels}
+\PYG{c}{\PYGZsh{} The levels must hence be fit to the resolution such that}
+\PYG{c}{\PYGZsh{} the only variable is the resolution.}
+\PYG{c}{\PYGZsh{} There is only two variables levels and resolution}
+\PYG{c}{\PYGZsh{} length depends on the levels and for a perfect snowflake}
+\PYG{c}{\PYGZsh{} the levels depends on the resolution.}
+
+
+\PYG{k}{using} \PYG{n}{Images}\PYG{p}{,} \PYG{n}{TestImages}\PYG{p}{,} \PYG{n}{Colors}\PYG{p}{,} \PYG{n}{ImageMagick}
+\PYG{c}{\PYGZsh{} Load Image Back in}
+\PYG{n}{img} \PYG{o}{=} \PYG{n}{load}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/snowCurve.png\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} Convert to Grayscale so only 2D}
+\PYG{n}{imgg} \PYG{o}{=} \PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} convert to Matrix}
+\PYG{n}{mat} \PYG{o}{=} \PYG{n}{convert}\PYG{p}{(}\PYG{k+kt}{Array}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{},} \PYG{n}{imgg}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} 1 is white}
+    \PYG{c}{\PYGZsh{} so make all 1s 0 and everything else 1}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}
+        \PYG{k}{else}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}
+        \PYG{k}{end}
+    \PYG{k}{end}
+\PYG{k}{end}
+
+
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)}
+
+\PYG{k}{using} \PYG{n}{GR}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)}
+\PYG{n}{mat}
+
+\PYG{n}{mat2} \PYG{o}{=} \PYG{n}{selfRep}\PYG{p}{(}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{n}{l2}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)}
+\PYG{n}{size2} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{mat1} \PYG{o}{=} \PYG{n}{selfRep}\PYG{p}{(}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{l+m+mi}{500}\PYG{p}{)}
+\PYG{n}{l1}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)}
+\PYG{n}{size1} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} https://en.wikipedia.org/wiki/Vicsek\PYGZus{}fractal\PYGZsh{}Construction}
+\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Dragon \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{k}{function} \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+    \PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)} \PYG{c}{\PYGZsh{} Don\PYGZsq{}t remove this or code breaks, I don\PYGZsq{}t know why?}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{o}{*}\PYG{l+m+mi}{45}\PYG{p}{)}
+    \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{k}{function} \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{n}{sign}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{order}\PYG{o}{==}\PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+    \PYG{k}{else}
+        \PYG{n}{rootHalf} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{p}{)}
+        \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{rootHalf}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{sign} \PYG{o}{*} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{90}\PYG{p}{)}
+        \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{rootHalf}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{end}
+\PYG{k}{end}
+\PYG{p}{;}\PYG{n}{mkdir} \PYG{o}{/}\PYG{n}{tmp}\PYG{o}{/}\PYG{n}{dragon}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{400}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{1000} \PYG{l+m+mi}{1000}
+
+\PYG{k}{using} \PYG{n}{Images}\PYG{p}{,} \PYG{n}{TestImages}\PYG{p}{,} \PYG{n}{Colors}\PYG{p}{,} \PYG{n}{ImageMagick}
+\PYG{c}{\PYGZsh{} Load Image Back in}
+\PYG{n}{img} \PYG{o}{=} \PYG{n}{load}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/dragon.png\PYGZdq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} Convert to Grayscale so only 2D}
+\PYG{n}{imgg} \PYG{o}{=} \PYG{n}{Gray}\PYG{o}{.}\PYG{p}{(}\PYG{n}{img}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} convert to Matrix}
+\PYG{n}{mat} \PYG{o}{=} \PYG{n}{convert}\PYG{p}{(}\PYG{k+kt}{Array}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{},} \PYG{n}{imgg}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} 1 is white}
+    \PYG{c}{\PYGZsh{} so make all 1s 0 and everything else 1}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{j} \PYG{k+kp}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{size}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}
+        \PYG{k}{else}
+            \PYG{n}{mat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}
+        \PYG{k}{end}
+    \PYG{k}{end}
+\PYG{k}{end}
+\end{Verbatim}

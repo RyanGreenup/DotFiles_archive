@@ -1,0 +1,57 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@time} \PYG{n}{include}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}./Julia\PYGZhy{}Set\PYGZhy{}Dimensions\PYGZhy{}functions.jl\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Investigate Plot \PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{n}{test\PYGZus{}mat} \PYG{o}{=} \PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{l+m+mi}{800}\PYG{p}{,}\PYG{l+m+mi}{800}\PYG{p}{,} \PYG{n}{z} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n}{z}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.123}\PYG{o}{+}\PYG{l+m+mf}{0.745}\PYG{o}{*}\PYG{n+nb}{im}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}Inspect}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{test\PYGZus{}mat}\PYG{p}{)} \PYG{c}{\PYGZsh{} PyPlot uses interpolation = \PYGZdq{}None\PYGZdq{}}
+\PYG{c}{\PYGZsh{} Outline}
+\PYG{n}{test\PYGZus{}mat} \PYG{o}{=} \PYG{n}{outline}\PYG{p}{(}\PYG{n}{test\PYGZus{}mat}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}Inspect}
+\PYG{n}{GR}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{test\PYGZus{}mat}\PYG{p}{)} \PYG{c}{\PYGZsh{} PyPlot uses interpolation = \PYGZdq{}None\PYGZdq{}}
+\PYG{c}{\PYGZsh{}\PYGZsh{} Return the perimeter}
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{test\PYGZus{}mat}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} Take a measurement at a point}
+\PYG{n}{mat2} \PYG{o}{=} \PYG{n}{outline}\PYG{p}{(}\PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{l+m+mi}{9000}\PYG{p}{,}\PYG{l+m+mi}{9000}\PYG{p}{,} \PYG{n}{f}\PYG{p}{))}
+\PYG{n}{l2}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)}
+\PYG{n}{size2} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{mat1} \PYG{o}{=} \PYG{n}{outline}\PYG{p}{(}\PYG{n}{make\PYGZus{}picture}\PYG{p}{(}\PYG{l+m+mi}{10000}\PYG{p}{,}\PYG{l+m+mi}{10000}\PYG{p}{,} \PYG{n}{f}\PYG{p}{))}
+\PYG{n}{l1}   \PYG{o}{=} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)}
+\PYG{n}{size1} \PYG{o}{=} \PYG{n}{size}\PYG{p}{(}\PYG{n}{mat1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n}{log}\PYG{p}{(}\PYG{n}{l2}\PYG{o}{/}\PYG{n}{l1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{log}\PYG{p}{(}\PYG{n}{size2}\PYG{o}{/}\PYG{n}{size1}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} 1.3934 Douady Rabbit}
+
+\PYG{c}{\PYGZsh{} Take a measurement using LInear Regression}
+\PYG{k}{using} \PYG{n}{CSV}
+\PYG{n+nd}{@time} \PYG{n}{data}\PYG{o}{=}\PYG{n}{scaleAndMeasure}\PYG{p}{(}\PYG{l+m+mi}{900}\PYG{p}{,} \PYG{l+m+mi}{1000} \PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{f}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} CSV.read(\PYGZdq{}./julia\PYGZhy{}set\PYGZhy{}dimensions.csv\PYGZdq{}, data)}
+\PYG{c}{\PYGZsh{} data = CSV.read(\PYGZdq{}./julia\PYGZhy{}set\PYGZhy{}dimensions.csv\PYGZdq{})}
+\PYG{n}{data}\PYG{o}{.}\PYG{n}{scale} \PYG{o}{=} \PYG{p}{[}\PYG{n}{log}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{n}{data}\PYG{o}{.}\PYG{n}{scale}\PYG{p}{]}
+\PYG{n}{data}\PYG{o}{.}\PYG{n}{mass}  \PYG{o}{=} \PYG{p}{[}\PYG{n}{log}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{n}{data}\PYG{o}{.}\PYG{n}{mass}\PYG{p}{]}
+\PYG{n}{mod}   \PYG{o}{=} \PYG{n}{lm}\PYG{p}{(}\PYG{n+nd}{@formula}\PYG{p}{(}\PYG{n}{mass} \PYG{o}{\PYGZti{}} \PYG{n}{scale}\PYG{p}{),} \PYG{n}{data}\PYG{p}{)}
+\PYG{n}{p} \PYG{o}{=} \PYG{n}{Gadfly}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=:}\PYG{n}{scale}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=:}\PYG{n}{mass}\PYG{p}{,} \PYG{n}{Geom}\PYG{o}{.}\PYG{n}{point}\PYG{p}{)}
+
+\PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}the slope is }\PYG{l+s+si}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{round}\PYG{p}{(}\PYG{n}{coef}\PYG{p}{(}\PYG{n}{mod}\PYG{p}{)[}\PYG{l+m+mi}{2}\PYG{p}{],} \PYG{n}{sigdigits}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{))}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{print}\PYG{p}{(}\PYG{n}{mod}\PYG{p}{)}
+\PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{return} \PYG{n}{mod}
+
+\PYG{n}{a} \PYG{o}{=} \PYG{k+kt}{SharedArray}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{}(}\PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n+nd}{@distributed} \PYG{k}{for} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{10}
+    \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{i}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{} julia\PYGZgt{} return mod}
+\PYG{c}{\PYGZsh{}}
+\PYG{c}{\PYGZsh{} mass \PYGZti{} 0 + scale}
+\PYG{c}{\PYGZsh{}}
+\PYG{c}{\PYGZsh{} Coefficients:}
+\PYG{c}{\PYGZsh{} ────────────────────────────────────────────────────────────────────}
+\PYG{c}{\PYGZsh{}          Coef.   Std. Error        t  Pr(\PYGZgt{}|t|)  Lower 95\PYGZpc{}  Upper 95\PYGZpc{}}
+\PYG{c}{\PYGZsh{} ────────────────────────────────────────────────────────────────────}
+\PYG{c}{\PYGZsh{} scale  1.28358  0.000497296  2581.11     \PYGZlt{}1e\PYGZhy{}9    1.28199    1.28516}
+\PYG{c}{\PYGZsh{} ────────────────────────────────────────────────────────────────────}
+\end{Verbatim}

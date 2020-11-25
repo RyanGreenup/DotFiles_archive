@@ -1,0 +1,963 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  10 NOV 2020 17:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**&pdflatex prv_Slides_5FRyan.org.ini \nonstopmode\nofiles\PassOptionsToPackage{active,tightpage,auctex}{preview}\AtBeginDocument{\ifx\ifPreview\undefined\RequirePackage[displaymath,floats,graphics,textmath,sections,footnotes]{preview}[2004/11/05]\PreviewEnvironment{tikzpicture}\fi} \input \detokenize{ Slides_5FRyan.org.tex }
+(./prv_Slides_5FRyan.org.ini
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-03> (/usr/share/texmf-dist/tex/latex/carlisle/mylatex.ltx)) (/usr/share/texmf-dist/tex/latex/tools/.tex File ignored)
+No auxiliary output files.
+
+(./Slides_5FRyan.org.tex (/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)) (/usr/share/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/share/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count175
+) (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count176
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.357   \gdef\FV@BeginScanning#1^^M
+                                   {%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.360 \endgroup
+               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.366 ...be discarded. Hit <return> to continue.}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.373 \gdef\FancyVerbGetLine#1^^M
+                                 {%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.384 \endgroup
+               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.384 \endgroup
+               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.396 ...n#1{\@ifnextchar\@nil{\@gobble}{\FV@EOF}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.397 ...@nil#1\@empty\else\expandafter\FV@EOF\fi}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.397 ...@nil#1\@empty\else\expandafter\FV@EOF\fi}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.416   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.416   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.416   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.436 \gdef\FV@@ReadLine#1^^M
+                             #2^^M#3\@nil{%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   2
+l.436 \gdef\FV@@ReadLine#1^^M#2^^M
+                                  #3\@nil{%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   3
+l.440 \endgroup
+               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.440 \endgroup
+               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   2
+l.440 \endgroup
+               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.474   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.474   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.482   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.482   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.487     {\csname FV@fontfamily@#1\endcsname}}
+                                               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.487     {\csname FV@fontfamily@#1\endcsname}}
+                                               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.487     {\csname FV@fontfamily@#1\endcsname}}
+                                               
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.494   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.494   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.501   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.501   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.506 ...x\expandafter\next\expandafter~\endgroup}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.506 ...x\expandafter\next\expandafter~\endgroup}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.506 ...x\expandafter\next\expandafter~\endgroup}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.525 ...}[]{\def\FancyVerbDefineActive{#1\relax}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.528     \FancyVerbDefineActive#1\relax}}
+                                          
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.554   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.574 ...setbox\FV@TabBox=\hbox{#1}\box\FV@TabBox}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.574 ...setbox\FV@TabBox=\hbox{#1}\box\FV@TabBox}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.590 ...com}[]{\def\FancyVerbFormatCom{#1\relax}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.593     \FancyVerbFormatCom#1\relax}}
+                                       
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.595 \def\FancyVerbFormatLine#1{\FV@ObeyTabs{#1}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.595 \def\FancyVerbFormatLine#1{\FV@ObeyTabs{#1}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.596 ...FV}{xleftmargin}{\def\FV@XLeftMargin{#1}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.598 ...}{xrightmargin}{\def\FV@XRightMargin{#1}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.604 ...arameters}{\def\FV@ListParameterHook{#1}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.608 ...def\FancyVerbHFuzz{\number\@tempdima sp}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.628   \FV@BeginListFrame}
+                           
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.628   \FV@BeginListFrame}
+                           
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.651   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.651   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.695     \hss}}
+                
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.695     \hss}}
+                
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.702   \let\FV@ProcessLine\FV@ListProcessLine@ii}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.702   \let\FV@ProcessLine\FV@ListProcessLine@ii}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.705 ...et\FV@ProcessLine\FV@ListProcessLine@iii}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.705 ...et\FV@ProcessLine\FV@ListProcessLine@iii}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.710   \let\FV@ProcessLine\FV@ListProcessLine@iv}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.710   \let\FV@ProcessLine\FV@ListProcessLine@iv}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.720   \@endpetrue}
+                    
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.720   \@endpetrue}
+                    
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.745 ...doendpe\global\@ignorefalse\ignorespaces}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.745 ...doendpe\global\@ignorefalse\ignorespaces}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.747 ...imInput#1{\FV@UseVerbatim{\FV@Input{#1}}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.747 ...imInput#1{\FV@UseVerbatim{\FV@Input{#1}}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.755 ...doendpe\global\@ignorefalse\ignorespaces}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.755 ...doendpe\global\@ignorefalse\ignorespaces}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.757 ...mInput#1{\FV@LUseVerbatim{\FV@Input{#1}}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.757 ...mInput#1{\FV@LUseVerbatim{\FV@Input{#1}}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.826   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.826   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.836   \def\FV@LabelEnd{#2}}
+                             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   2
+l.836   \def\FV@LabelEnd{#2}}
+                             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.836   \def\FV@LabelEnd{#2}}
+                             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   2
+l.836   \def\FV@LabelEnd{#2}}
+                             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.836   \def\FV@LabelEnd{#2}}
+                             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   2
+l.836   \def\FV@LabelEnd{#2}}
+                             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.841     {\@nameuse{FV@LabelPosition@#1}}}
+                                           
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.841     {\@nameuse{FV@LabelPosition@#1}}}
+                                           
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.841     {\@nameuse{FV@LabelPosition@#1}}}
+                                           
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.898     \hss}}
+                
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.898     \hss}}
+                
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.898     \hss}}
+                
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.898     \hss}}
+                
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.970 ...FV@FrameRule{\number\@tempdima sp\relax}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.974 ...\FV@FrameSep{\number\@tempdima sp\relax}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.983   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.990   \fi}
+            
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.999     {\@nameuse{FV@Frame@#1}}}
+                                   
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.999     {\@nameuse{FV@Frame@#1}}}
+                                   
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.999     {\@nameuse{FV@Frame@#1}}}
+                                   
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1017   \fi}
+             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1017   \fi}
+             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1025 }
+        
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1025 }
+        
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1025 }
+        
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1042     {\@nameuse{FV@Numbers@#1}}}
+                                      
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1042     {\@nameuse{FV@Numbers@#1}}}
+                                      
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1042     {\@nameuse{FV@Numbers@#1}}}
+                                      
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1047 ...ne@key{FV}{stepnumber}{\FV@StepNumber#1}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1090 ...V@NumberSep{\number\@tempdima sp\relax}}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1112   \fi}
+             
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \MYLATEXline.
+<to be read again> 
+                   1
+l.1112   \fi}
+             
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 1399 strings out of 480478
+ 19231 string characters out of 5905958
+ 257877 words of memory out of 5000000
+ 17462 multiletter control sequences out of 15000+600000
+ 532338 words of font info for 24 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,0n,29p,1163b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

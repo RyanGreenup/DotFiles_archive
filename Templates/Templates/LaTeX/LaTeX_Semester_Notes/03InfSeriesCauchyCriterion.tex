@@ -1,0 +1,99 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage{./resources/style}
+\title{Cauchy Criterion Problem (Textbook; Problem 2, (a))}
+\begin{document}
+\section{3.5 - Cauchy Criterion Problems (Textbook); Problem 2, (a)}
+\subsection{Problem}
+Show that the follwoing sequence is a Cauchy Sequence
+
+\begin{align}
+X = \frac{n_+1}{n}
+  \label{inprob}
+\end{align}
+
+
+\section{Solution}
+\paragraph{Layout the Proof}
+In order to show that  the sequence $X$ is a cauchy sequence it must be shown that:
+
+\begin{align}
+  \forall \varepsilon > 0, \enspace \exists H\in \mathbb{N} :& \notag \\
+  &m,n > H \implies \mid x_{n} - x_{m} \mid < \varepsilon
+  \label{cauchdef}
+\end{align}
+
+so first we will consider the restriction required by $\varepsilon$ and work backwards to find a sufficient value for $H$.
+
+\paragraph{Consider the $\varepsilon$ Restriction}
+\begin{align}
+  \mid \frac{n+1}{n} - \frac{m+1}{m} \mid &= \mid \frac{mn+m-mn+n}{mn} \notag \\
+  &= \mid \frac{m+n}{mn} \mid \notag \\
+  & = \frac{m+n}{mn} && \text{Because $m,n \in \mathbb{N}$} \notag \\
+  &= \left( m+n \right) \cdot \frac{1}{mn}
+  \label{finalform}
+\end{align}
+Hence we have:
+\begin{align}
+  \mid \frac{n+1}{n} - \frac{m+1}{m} \mid < \varepsilon \notag \\
+  \implies  \left( m+n \right) \cdot \frac{1}{mn} < \varepsilon
+  \label{epsrestfin}
+\end{align}
+
+\paragraph{Assume a Value for $H$}
+
+Now assume an arbitrary value for for $H$, we will use $H \geq 3$, this implies from (\ref{cauchdef}):
+\begin{align}
+  m, n &\geq H \notag \\
+  m, n &\geq 3 && \text{sub $H\geq3$} \notag \\
+  m \cdot n &\geq 9  \notag \\
+  \frac{1}{mn} &\leq \frac{1}{9} \notag \\
+  \frac{1}{mn} &\leq \frac{1}{9} \notag \\
+  \left( m+n \right)\cdot \frac{1}{mn} &\leq \frac{1}{9} \cdot mn \notag \\
+  \intertext{and from (\ref{epsrestfin}) we have:} \notag
+  \left( m+n \right)\cdot \frac{1}{mn} &\leq \varepsilon
+\end{align}
+
+\paragraph{Apply the restriction to H}
+So we will choose H:
+\begin{align}
+  \frac{1}{9} (m+n) > \varepsilon
+  \label{Hrest2}
+\end{align}
+So re arranging this to solve some value for $m,n, H$
+
+\begin{align}
+  \frac{1}{9} (m+n) &> \varepsilon \notag \\
+  (m+n) &> 9\cdot \varepsilon \notag \\
+\end{align}
+
+So if we choose a $H$ value such that $H > \frac{9\varepsilon}{2}$ then we will have $m> \frac{9\varepsilon}{2}$ and $n > \frac{9\varepsilon}{2}$ and so $\left( m+n \right) > \varepsilon$
+
+\paragraph{Choose the Specific H Value}
+Now there are two values for H, we need a value of $H\geq3$ and $H > \frac{9\varepsilon}{2}$, this is satisfied by taking $H  = \sup \left\{ 9 \cap \left( \frac{2\varepsilon}{2}, \infty \right) \right\}$
+
+\paragraph{The actual proof}
+\begin{align}
+  \forall \varepsilon, \enspace \exists H = \sup \left\{ 9 \cap \left( \frac{9\varepsilon}{2}, \infty \right) \right\} \notag \\
+  \  \notag \\
+  \intertext{Now assume that $m,n > H$, and consider $\mid x_{n} - x_m \mid$:} \notag \\
+  \mid  x_{n} - x_{m}\mid &= \mid \frac{n+1}{n} - \frac{m+1}{m} \mid \\
+  &= \left( m+n \right) \cdot \frac{1}{mn} \\
+  \intertext{Now because $H \geq 9$ and $m,n \geq H$} \notag \\
+  &< \frac{1}{9}\left( m+n \right) \notag \\
+  \intertext{because $H>\frac{9\varepsilon}{2}$} \notag \\
+  &< \frac{1}{9} \cdot \left( \frac{9\varepsilon}{2} + \frac{9\varepsilon}{2} \right) \notag \\
+  &< \varepsilon
+\end{align}
+
+Now because we have shown that $
+\forall \varepsilon, \enspace \exists H = \sup \left\{ 9 \cap \left( \frac{9\varepsilon}{2}, \infty \right) \right\} \notag $ such that: \\
+\ \\
+$m,n \geq H \implies \mid x_{n} - x_{m} < \varepsilon$
+\ \\
+It is established that $X$ must be a Cauchy Sequence.
+
+
+
+
+
+\end{document}

@@ -1,0 +1,23 @@
+% \documentclass[tikz, convert={density=300,size=1080x800,outext=out_pic.png}]{standalone}
+\documentclass[tikz]{standalone}
+%\documentclass{article}
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+
+\begin{document}
+\begin{tikzpicture}[decoration=Koch snowflake]
+  \draw   (-3,0) -- (-2.1,0) (-2,0) -- (-1.1,0) (-1,0) -- (-0.1,0) node[below=1cm](){$n=0$};
+  \draw   decorate{ (0,0) -- (3,0) node[](a){} };
+  \draw   decorate{ decorate{ (a) -- (6,0) node[](b){} }};
+  \draw  decorate{ decorate{ decorate{ (b) -- (9,0) node[](c){} }}};
+  \draw decorate{ decorate{ decorate{ decorate{ (c) -- (12,0) node[](d){} }}}};
+  \draw (a) node[below=1cm]{$n=1$};
+  \draw (b) node[below=1cm]{$n=2$};
+  \draw (c) node[below=1cm]{$n=3$};
+  \draw (d) node[below=1cm]{$n=4$};
+\end{tikzpicture}
+% Use the following for live preview
+% latexmk -pdf -pvc -shell-escape --interaction=nonstopmode
+% convert -resize 1200x1200 -density 7200 -quality 75 file.tex file.png
+% convert -resize 1200x1200 -density 7200 file.tex file.svg
+\end{document}

@@ -1,0 +1,6769 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  23 OCT 2020 18:46
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**\nonstopmode\nofiles\PassOptionsToPackage{active,tightpage,auctex}{preview}\AtBeginDocument{\ifx\ifPreview\undefined\RequirePackage[displaymath,floats,graphics,textmath,sections,footnotes]{preview}[2004/11/05]\PreviewEnvironment{tikzpicture}\fi} \input \detokenize{ Report.org.tex }
+(./Report.org.tex (/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)) (/usr/share/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/share/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count175
+) (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count176
+\FV@InFile=\read2
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count177
+\FV@StepNumber=\count178
+\FV@OutFile=\write3
+) (/usr/share/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/usr/share/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count179
+\output=\toks16
+\linenoprevgraf=\count180
+\linenumbersep=\dimen135
+\linenumberwidth=\dimen136
+\c@linenumber=\count181
+\c@pagewiselinenumber=\count182
+\c@LN@truepage=\count183
+\c@internallinenumber=\count184
+\c@internallinenumbers=\count185
+\quotelinenumbersep=\dimen137
+\bframerule=\dimen138
+\bframesep=\dimen139
+\bframebox=\box46
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count186
+\c@FV@TrueTabCounter=\count187
+\FV@TabBox@Group=\box47
+\FV@TmpLength=\skip49
+\c@FV@HighlightLinesStart=\count188
+\c@FV@HighlightLinesStop=\count189
+\FV@LoopCount=\count190
+\FV@NCharsBox=\box48
+\FV@BreakIndent=\dimen140
+\FV@BreakIndentNChars=\count191
+\FV@BreakSymbolSepLeft=\dimen141
+\FV@BreakSymbolSepLeftNChars=\count192
+\FV@BreakSymbolSepRight=\dimen142
+\FV@BreakSymbolSepRightNChars=\count193
+\FV@BreakSymbolIndentLeft=\dimen143
+\FV@BreakSymbolIndentLeftNChars=\count194
+\FV@BreakSymbolIndentRight=\dimen144
+\FV@BreakSymbolIndentRightNChars=\count195
+\c@FancyVerbLineBreakLast=\count196
+\FV@LineBox=\box49
+\FV@LineIndentBox=\box50
+\FV@LineWidth=\dimen145
+) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count197
+\calc@Bcount=\count198
+\calc@Adimen=\dimen146
+\calc@Bdimen=\dimen147
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count199
+\calc@Cskip=\skip52
+) (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+) (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-04 v0.32 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count266
+\decimalpart=\count267
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+) (/usr/share/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip53
+\fb@frw=\dimen148
+\fb@frh=\dimen149
+\FrameRule=\dimen150
+\FrameSep=\dimen151
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count268
+\float@exts=\toks17
+\float@box=\box51
+\@float@everytoks=\toks18
+\@floatcapt=\box52
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box53
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count269
+\c@minted@pygmentizecounter=\count270
+\@float@every@listing=\toks19
+\c@listing=\count271
+)
+runsystem(mkdir -p _minted-Report.org)...disabled (restricted).
+
+
+
+./Report.org.tex:4: Package minted Error: You must invoke LaTeX with the -shell-escape flag.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \usepackage
+               [utf8]{inputenc}
+Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for more information.
+
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+) (/usr/share/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legacy)
+Package grffile Info: This package is an empty stub for compatibility on input line 40.
+) (/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box54
+\UL@hyphenbox=\box55
+\UL@skip=\skip54
+\UL@hook=\toks22
+\UL@height=\dimen154
+\UL@pe=\count272
+\UL@pixel=\dimen155
+\ULC@box=\box56
+Package: ulem 2019/11/18
+\ULdepth=\dimen156
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen157
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen158
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count273
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count274
+\leftroot@=\count275
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count276
+\DOTSCASE@=\count277
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box57
+\strutbox@=\box58
+\big@size=\dimen159
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count278
+\c@MaxMatrixCols=\count279
+\dotsspace@=\muskip16
+\c@parentequation=\count280
+\dspbrk@lvl=\count281
+\tag@help=\toks24
+\row@=\count282
+\column@=\count283
+\maxfields@=\count284
+\andhelp@=\toks25
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
+\@envbody=\toks26
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+./Report.org.tex:34: Undefined control sequence.
+l.34 \addbibresource
+                    {../Resources/references.bib}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./Report.org.tex:34: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \addbibresource{.
+                      ./Resources/references.bib}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(/usr/share/texmf-dist/tex/latex/standalone/standalone.sty
+Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with preambles
+ (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
+)
+\XKV@depth=\count285
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texmf-dist/tex/latex/currfile/currfile.sty
+Package: currfile 2015/04/23 v0.7c Provides the file path elements of the current input file
+
+Overfull \hbox (198.87085pt too wide) in paragraph at lines 34--8
+[]\T1/cmr/m/n/10 ../Resources/references.bib                                                                                                                                                                                          
+ []
+
+(/usr/share/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2020/02/03 v0.7 Hooks for input files
+)
+\c@currfiledepth=\count286
+) (/usr/share/texmf-dist/tex/latex/gincltex/gincltex.sty (/usr/share/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
+ (/usr/share/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+ (/usr/share/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (/usr/share/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+ (/usr/share/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box59
+)
+\tc@llx=\dimen166
+\tc@lly=\dimen167
+\tc@urx=\dimen168
+\tc@ury=\dimen169
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (/usr/share/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen170
+\adjbox@Height=\dimen171
+\adjbox@Depth=\dimen172
+\adjbox@Totalheight=\dimen173
+\adjbox@pwidth=\dimen174
+\adjbox@pheight=\dimen175
+\adjbox@pdepth=\dimen176
+\adjbox@ptotalheight=\dimen177
+ (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count287
+) (/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box60
+\sift@deathcycles=\count288
+\@vwid@loff=\dimen178
+\@vwid@roff=\dimen179
+))
+\gincltex@box=\box61
+) (/usr/share/texmf-dist/tex/latex/filemod/filemod-expmin.sty
+Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times (expandable; minimal)
+)) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen180
+\pgfutil@tempdimb=\dimen181
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box62
+ (/usr/share/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks33
+))
+\pgf@x=\dimen182
+\pgf@y=\dimen183
+\pgf@xa=\dimen184
+\pgf@ya=\dimen185
+\pgf@xb=\dimen186
+\pgf@yb=\dimen187
+\pgf@xc=\dimen188
+\pgf@yc=\dimen189
+\pgf@xd=\dimen190
+\pgf@yd=\dimen191
+\w@pgf@writea=\write5
+\r@pgf@reada=\read4
+\c@pgf@counta=\count289
+\c@pgf@countb=\count290
+\c@pgf@countc=\count291
+\c@pgf@countd=\count292
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+\pgf@sys@id@count=\count293
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count294
+\pgfsyssoftpath@bigbuffer@items=\count295
+) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen192
+\pgfmath@count=\count296
+\pgfmath@box=\box63
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
+) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count297
+)) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen193
+\pgf@picmaxx=\dimen194
+\pgf@picminy=\dimen195
+\pgf@picmaxy=\dimen196
+\pgf@pathminx=\dimen197
+\pgf@pathmaxx=\dimen198
+\pgf@pathminy=\dimen199
+\pgf@pathmaxy=\dimen256
+\pgf@xx=\dimen257
+\pgf@xy=\dimen258
+\pgf@yx=\dimen259
+\pgf@yy=\dimen260
+\pgf@zx=\dimen261
+\pgf@zy=\dimen262
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen263
+\pgf@path@lasty=\dimen264
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen265
+\pgf@shorten@start@additional=\dimen266
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count298
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen267
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen268
+\pgf@pt@y=\dimen269
+\pgf@pt@temp=\dimen270
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen271
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen272
+\pgf@sys@shading@range@num=\count299
+\pgf@shadingcount=\count300
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box67
+)) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box68
+) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen273
+\pgf@nodesepend=\dimen274
+) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen275
+\pgffor@skip=\dimen276
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count301
+\pgfplotmarksize=\dimen277
+)
+\tikz@lastx=\dimen278
+\tikz@lasty=\dimen279
+\tikz@lastxsaved=\dimen280
+\tikz@lastysaved=\dimen281
+\tikz@lastmovetox=\dimen282
+\tikz@lastmovetoy=\dimen283
+\tikzleveldistance=\dimen284
+\tikzsiblingdistance=\dimen285
+\tikz@figbox=\box69
+\tikz@figbox@bg=\box70
+\tikz@tempbox=\box71
+\tikz@tempbox@bg=\box72
+\tikztreelevel=\count302
+\tikznumberofchildren=\count303
+\tikznumberofcurrentchild=\count304
+\tikz@fig@count=\count305
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count306
+\pgfmatrixcurrentcolumn=\count307
+\pgf@matrix@numberofcolumns=\count308
+)
+\tikz@expandcount=\count309
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.fractals.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen286
+\pgfdecoratedremainingdistance=\dimen287
+\pgfdecoratedinputsegmentcompleteddistance=\dimen288
+\pgfdecoratedinputsegmentremainingdistance=\dimen289
+\pgf@decorate@distancetomove=\dimen290
+\pgf@decorate@repeatstate=\count310
+\pgfdecorationsegmentamplitude=\dimen291
+\pgfdecorationsegmentlength=\dimen292
+)
+\tikz@lib@dec@box=\box73
+)
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.fractals.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarylindenmayersystems.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarylindenmayersystems.code.tex
+\pgflsystemstep=\dimen293
+\c@pgf@lsystem@iteration=\count311
+))
+runsystem(which pygmentize && touch Report.org.aex)...disabled (restricted).
+
+
+
+./Report.org.tex:40: Package minted Error: You must have `pygmentize' installed to use this package.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 \begin{document}
+                     
+Refer to the installation instructions in the minted documentation for more information.
+
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count312
+\l__pdf_internal_box=\box74
+)
+No file Report.org.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+(/home/ryan/.emacs.d/.local/straight/build/auctex/latex/preview.sty
+Package: preview 2017/04/24 12.2 (AUCTeX/preview-latex)
+ (/usr/share/texmf-dist/tex/generic/luatex85/luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
+) (/home/ryan/.emacs.d/.local/straight/build/auctex/latex/prtightpage.def
+\PreviewBorder=\dimen294
+) (/home/ryan/.emacs.d/.local/straight/build/auctex/latex/prauctex.def
+No auxiliary output files.
+
+
+\hbadness=\count313
+\hfuzz=\dimen295
+(/home/ryan/.emacs.d/.local/straight/build/auctex/latex/prauctex.cfg)) (/home/ryan/.emacs.d/.local/straight/build/auctex/latex/prfootnotes.def)
+\pr@snippet=\count314
+\pr@box=\box75
+\pr@output=\toks42
+
+Preview: Fontsize 10pt
+Preview: PDFoutput 1
+) (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count315
+\scratchdimen=\dimen296
+\scratchbox=\box76
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen297
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks44
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)) ABD: EveryShipout initializing macros
+./Report.org.tex:41: Preview: Snippet 1 started.
+<-><->
+      
+l.41 $
+      D$
+Not a real error.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Preview: Tightpage -32891 -32891 32891 32891
+./Report.org.tex:41: Preview: Snippet 1 ended.(447828+0x560788).
+<-><->
+      
+l.41 $D$
+        
+Not a real error.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+./Report.org.tex:42: Preview: Snippet 2 started.
+<-><->
+      
+l.42 $
+      \frac{\ln\left( 4 \right)}{\ln\left( 3
+Not a real error.
+
+./Report.org.tex:43: Preview: Snippet 2 ended.(661912+340683x1265942).
+<-><->
+      
+l.43 \right)}$
+              
+Not a real error.
+
+[2]
+./Report.org.tex:44: Preview: Snippet 3 started.
+<-><->
+      
+l.44 $
+      \mathbb{R}^{n}$
+Not a real error.
+
+./Report.org.tex:44: Preview: Snippet 3 ended.(451470+0x830050).
+<-><->
+      
+l.44 $\mathbb{R}^{n}$
+                     
+Not a real error.
+
+[3]
+./Report.org.tex:45: Preview: Snippet 4 started.
+<-><->
+      
+l.45 $
+      0$
+Not a real error.
+
+./Report.org.tex:45: Preview: Snippet 4 ended.(422343+0x327681).
+<-><->
+      
+l.45 $0$
+        
+Not a real error.
+
+[4]
+./Report.org.tex:46: Preview: Snippet 5 started.
+<-><->
+      
+l.46 $
+      \infty$
+Not a real error.
+
+./Report.org.tex:46: Preview: Snippet 5 ended.(282168+0x655361).
+<-><->
+      
+l.46 $\infty$
+             
+Not a real error.
+
+[5]
+./Report.org.tex:47: Preview: Snippet 6 started.
+<-><->
+      
+l.47 $
+      \infty$
+Not a real error.
+
+./Report.org.tex:47: Preview: Snippet 6 ended.(282168+0x655361).
+<-><->
+      
+l.47 $\infty$
+             
+Not a real error.
+
+[6]
+./Report.org.tex:48: Preview: Snippet 7 started.
+<-><->
+      
+l.48 $
+      20^{\mathrm{th}}$
+Not a real error.
+
+./Report.org.tex:48: Preview: Snippet 7 ended.(556402+0x1182383).
+<-><->
+      
+l.48 $20^{\mathrm{th}}$
+                       
+Not a real error.
+
+[7]
+./Report.org.tex:49: Preview: Snippet 8 started.
+<-><->
+      
+l.49 $
+      n$
+Not a real error.
+
+./Report.org.tex:49: Preview: Snippet 8 ended.(282168+0x393370).
+<-><->
+      
+l.49 $n$
+        
+Not a real error.
+
+[8]
+./Report.org.tex:50: Preview: Snippet 9 started.
+<-><->
+      
+l.50 $
+      p_{n}= \left(\frac{4}{3}
+Not a real error.
+
+./Report.org.tex:51: Preview: Snippet 9 ended.(557059+229380x4046061).
+<-><->
+      
+l.51 \right)p_{n-1}$
+                    
+Not a real error.
+
+[9]
+./Report.org.tex:52: Preview: Snippet 10 started.
+<-><->
+      
+l.52 $
+      N_{n}$
+Not a real error.
+
+./Report.org.tex:52: Preview: Snippet 10 ended.(447828+98303x883297).
+<-><->
+      
+l.52 $N_{n}$
+            
+Not a real error.
+
+[10]
+./Report.org.tex:53: Preview: Snippet 11 started.
+<-><->
+      
+l.53 \begin{align}
+                  
+Not a real error.
+
+./Report.org.tex:56: Preview: Snippet 11 ended.(1769472+0x34664398).
+<-><->
+      
+l.56 \end{align}
+                
+Not a real error.
+
+[11]
+./Report.org.tex:57: Preview: Snippet 12 started.
+<-><->
+      
+l.57 $
+      l$
+Not a real error.
+
+./Report.org.tex:57: Preview: Snippet 12 ended.(455111+0x208442).
+<-><->
+      
+l.57 $l$
+        
+Not a real error.
+
+[12]
+./Report.org.tex:58: Preview: Snippet 13 started.
+<-><->
+      
+l.58 $
+      s$
+Not a real error.
+
+./Report.org.tex:58: Preview: Snippet 13 ended.(282168+0x307200).
+<-><->
+      
+l.58 $s$
+        
+Not a real error.
+
+[13]
+./Report.org.tex:59: Preview: Snippet 14 started.
+<-><->
+      
+l.59 \begin{align}
+                  
+Not a real error.
+
+./Report.org.tex:61: Preview: Snippet 14 ended.(1348012+0x34664398).
+<-><->
+      
+l.61 \end{align}
+                
+Not a real error.
+
+[14]
+./Report.org.tex:62: Preview: Snippet 15 started.
+<-><->
+      
+l.62 \begin{align}
+                  
+Not a real error.
+
+./Report.org.tex:68: Preview: Snippet 15 ended.(7948039+0x34664398).
+<-><->
+      
+l.68 \end{align}
+                
+Not a real error.
+
+[15
+
+]
+./Report.org.tex:69: Preview: Snippet 16 started.
+<-><->
+      
+l.69 $
+      s^{1.26}$
+Not a real error.
+
+./Report.org.tex:69: Preview: Snippet 16 ended.(533465+0x1279321).
+<-><->
+      
+l.69 $s^{1.26}$
+               
+Not a real error.
+
+[16]
+./Report.org.tex:70: Preview: Snippet 17 started.
+<-><->
+      
+l.70 $
+      < \delta $
+Not a real error.
+
+./Report.org.tex:70: Preview: Snippet 17 ended.(455111+25623x1007840).
+<-><->
+      
+l.70 $< \delta $
+                
+Not a real error.
+
+[17]
+./Report.org.tex:71: Preview: Snippet 18 started.
+<-><->
+      
+l.71 $
+      F$
+Not a real error.
+
+./Report.org.tex:71: Preview: Snippet 18 ended.(447828+0x512456).
+<-><->
+      
+l.71 $F$
+        
+Not a real error.
+
+[18]
+./Report.org.tex:72: Preview: Snippet 19 started.
+<-><->
+      
+l.72 $
+      \mathbb{R}^n$
+Not a real error.
+
+./Report.org.tex:72: Preview: Snippet 19 ended.(451470+0x830050).
+<-><->
+      
+l.72 $\mathbb{R}^n$
+                   
+Not a real error.
+
+[19]
+./Report.org.tex:73: Preview: Snippet 20 started.
+<-><->
+      
+l.73 $
+      U$
+Not a real error.
+
+./Report.org.tex:73: Preview: Snippet 20 ended.(447828+0x518916).
+<-><->
+      
+l.73 $U$
+        
+Not a real error.
+
+[20]
+./Report.org.tex:74: Preview: Snippet 21 started.
+<-><->
+      
+l.74 $
+      \mathbb{R}^{n}$
+Not a real error.
+
+./Report.org.tex:74: Preview: Snippet 21 ended.(451470+0x830050).
+<-><->
+      
+l.74 $\mathbb{R}^{n}$
+                     
+Not a real error.
+
+[21]
+./Report.org.tex:75: Preview: Snippet 22 started.
+<-><->
+      
+l.75 \[
+       
+Not a real error.
+
+./Report.org.tex:77: Preview: Snippet 22 ended.(655360+0x22049272).
+<-><->
+      
+l.77 \]
+       
+Not a real error.
+
+[22]
+./Report.org.tex:78: Preview: Snippet 23 started.
+<-><->
+      
+l.78 \[
+       
+Not a real error.
+
+./Report.org.tex:80: Preview: Snippet 23 ended.(786439+0x19964306).
+<-><->
+      
+l.80 \]
+       
+Not a real error.
+
+[23]
+./Report.org.tex:81: Preview: Snippet 24 started.
+<-><->
+      
+l.81 $
+      \delta$
+Not a real error.
+
+./Report.org.tex:81: Preview: Snippet 24 ended.(455111+0x316074).
+<-><->
+      
+l.81 $\delta$
+             
+Not a real error.
+
+[24]
+./Report.org.tex:82: Preview: Snippet 25 started.
+<-><->
+      
+l.82 $
+      G$
+Not a real error.
+
+./Report.org.tex:82: Preview: Snippet 25 ended.(447828+0x515276).
+<-><->
+      
+l.82 $G$
+        
+Not a real error.
+
+[25]
+./Report.org.tex:83: Preview: Snippet 26 started.
+<-><->
+      
+l.83 $
+      F$
+Not a real error.
+
+./Report.org.tex:83: Preview: Snippet 26 ended.(447828+0x512456).
+<-><->
+      
+l.83 $F$
+        
+Not a real error.
+
+[26]
+./Report.org.tex:84: Preview: Snippet 27 started.
+<-><->
+      
+l.84 $
+      G$
+Not a real error.
+
+./Report.org.tex:84: Preview: Snippet 27 ended.(447828+0x515276).
+<-><->
+      
+l.84 $G$
+        
+Not a real error.
+
+[27]
+./Report.org.tex:85: Preview: Snippet 28 started.
+<-><->
+      
+l.85 $
+      \delta$
+Not a real error.
+
+./Report.org.tex:85: Preview: Snippet 28 ended.(455111+0x316074).
+<-><->
+      
+l.85 $\delta$
+             
+Not a real error.
+
+[28]
+./Report.org.tex:86: Preview: Snippet 29 started.
+<-><->
+      
+l.86 $
+      F$
+Not a real error.
+
+./Report.org.tex:86: Preview: Snippet 29 ended.(447828+0x512456).
+<-><->
+      
+l.86 $F$
+        
+Not a real error.
+
+[29]
+./Report.org.tex:87: Preview: Snippet 30 started.
+<-><->
+      
+l.87 $
+      G$
+Not a real error.
+
+./Report.org.tex:87: Preview: Snippet 30 ended.(447828+0x515276).
+<-><->
+      
+l.87 $G$
+        
+Not a real error.
+
+[30]
+./Report.org.tex:88: Preview: Snippet 31 started.
+<-><->
+      
+l.88 $
+      \delta$
+Not a real error.
+
+./Report.org.tex:88: Preview: Snippet 31 ended.(455111+0x316074).
+<-><->
+      
+l.88 $\delta$
+             
+Not a real error.
+
+[31]
+./Report.org.tex:89: Preview: Snippet 32 started.
+<-><->
+      
+l.89 $
+      F$
+Not a real error.
+
+./Report.org.tex:89: Preview: Snippet 32 ended.(447828+0x512456).
+<-><->
+      
+l.89 $F$
+        
+Not a real error.
+
+[32]
+./Report.org.tex:90: Preview: Snippet 33 started.
+<-><->
+      
+l.90 $
+      \bigcup_{i=1}^{\infty}$
+Not a real error.
+
+./Report.org.tex:90: Preview: Snippet 33 ended.(527024+196611x1427878).
+<-><->
+      
+l.90 $\bigcup_{i=1}^{\infty}$
+                             
+Not a real error.
+
+[33]
+./Report.org.tex:91: Preview: Snippet 34 started.
+<-><->
+      
+l.91 $
+      \emptyset$
+Not a real error.
+
+./Report.org.tex:91: Preview: Snippet 34 ended.(491520+36408x327681).
+<-><->
+      
+l.91 $\emptyset$
+                
+Not a real error.
+
+[34]
+./Report.org.tex:92: Preview: Snippet 35 started.
+<-><->
+      
+l.92 $
+      \bigcup^{\#G}_{i=0}$
+Not a real error.
+
+./Report.org.tex:92: Preview: Snippet 35 ended.(648083+196611x1427878).
+<-><->
+      
+l.92 $\bigcup^{\#G}_{i=0}$
+                          
+Not a real error.
+
+[35]
+./Report.org.tex:93: Preview: Snippet 36 started.
+<-><->
+      
+l.93 $
+      \#G$
+Not a real error.
+
+./Report.org.tex:93: Preview: Snippet 36 ended.(455111+127430x1061411).
+<-><->
+      
+l.93 $\#G$
+          
+Not a real error.
+
+[36]
+./Report.org.tex:94: Preview: Snippet 37 started.
+<-><->
+      
+l.94 $
+      G$
+Not a real error.
+
+./Report.org.tex:94: Preview: Snippet 37 ended.(447828+0x515276).
+<-><->
+      
+l.94 $G$
+        
+Not a real error.
+
+[37]
+./Report.org.tex:95: Preview: Snippet 38 started.
+<-><->
+      
+l.95 $
+      \infty$
+Not a real error.
+
+./Report.org.tex:95: Preview: Snippet 38 ended.(282168+0x655361).
+<-><->
+      
+l.95 $\infty$
+             
+Not a real error.
+
+[38]
+./Report.org.tex:96: Preview: Snippet 39 started.
+<-><->
+      
+l.96 $
+      \#\square$
+Not a real error.
+
+./Report.org.tex:96: Preview: Snippet 39 ended.(455111+127430x1055861).
+<-><->
+      
+l.96 $\#\square$
+                
+Not a real error.
+
+[39]
+./Report.org.tex:97: Preview: Snippet 40 started.
+<-><->
+      
+l.97 $
+      \left\lvert \square \right\rvert $
+Not a real error.
+
+./Report.org.tex:97: Preview: Snippet 40 ended.(491520+163840x873816).
+<-><->
+      
+l.97 $\left\lvert \square \right\rvert $
+                                        
+Not a real error.
+
+[40]
+./Report.org.tex:98: Preview: Snippet 41 started.
+<-><->
+      
+l.98 \begin{align}
+                  
+Not a real error.
+
+./Report.org.tex:100: Preview: Snippet 41 ended.(1571543+0x34664398).
+<-><->
+      
+l.100 \end{align}
+                 
+Not a real error.
+
+[41
+
+]
+./Report.org.tex:101: Preview: Snippet 42 started.
+<-><->
+      
+l.101 $
+       \{U_{i}\}$
+Not a real error.
+
+./Report.org.tex:101: Preview: Snippet 42 ended.(491520+163840x1321015).
+<-><->
+      
+l.101 $\{U_{i}\}$
+                 
+Not a real error.
+
+[42]
+./Report.org.tex:102: Preview: Snippet 43 started.
+<-><->
+      
+l.102 $
+       U$
+Not a real error.
+
+./Report.org.tex:102: Preview: Snippet 43 ended.(447828+0x518916).
+<-><->
+      
+l.102 $U$
+         
+Not a real error.
+
+[43]
+./Report.org.tex:103: Preview: Snippet 44 started.
+<-><->
+      
+l.103 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:103: Preview: Snippet 44 ended.(455111+0x316074).
+<-><->
+      
+l.103 $\delta$
+              
+Not a real error.
+
+[44]
+./Report.org.tex:104: Preview: Snippet 45 started.
+<-><->
+      
+l.104 $
+       F$
+Not a real error.
+
+./Report.org.tex:104: Preview: Snippet 45 ended.(447828+0x512456).
+<-><->
+      
+l.104 $F$
+         
+Not a real error.
+
+[45]
+./Report.org.tex:105: Preview: Snippet 46 started.
+<-><->
+      
+l.105 $
+       U_{i}$
+Not a real error.
+
+./Report.org.tex:105: Preview: Snippet 46 ended.(447828+98303x665653).
+<-><->
+      
+l.105 $U_{i}$
+             
+Not a real error.
+
+[46]
+./Report.org.tex:106: Preview: Snippet 47 started.
+<-><->
+      
+l.106 $
+       F$
+Not a real error.
+
+./Report.org.tex:106: Preview: Snippet 47 ended.(447828+0x512456).
+<-><->
+      
+l.106 $F$
+         
+Not a real error.
+
+[47]
+./Report.org.tex:107: Preview: Snippet 48 started.
+<-><->
+      
+l.107 $
+       U_{i}$
+Not a real error.
+
+./Report.org.tex:107: Preview: Snippet 48 ended.(447828+98303x665653).
+<-><->
+      
+l.107 $U_{i}$
+             
+Not a real error.
+
+[48]
+./Report.org.tex:108: Preview: Snippet 49 started.
+<-><->
+      
+l.108 $
+       F$
+Not a real error.
+
+./Report.org.tex:108: Preview: Snippet 49 ended.(447828+0x512456).
+<-><->
+      
+l.108 $F$
+         
+Not a real error.
+
+[49]
+./Report.org.tex:109: Preview: Snippet 50 started.
+<-><->
+      
+l.109 $
+       U_{i}$
+Not a real error.
+
+./Report.org.tex:109: Preview: Snippet 50 ended.(447828+98303x665653).
+<-><->
+      
+l.109 $U_{i}$
+             
+Not a real error.
+
+[50]
+./Report.org.tex:110: Preview: Snippet 51 started.
+<-><->
+      
+l.110 $
+       r$
+Not a real error.
+
+./Report.org.tex:110: Preview: Snippet 51 ended.(282168+0x313876).
+<-><->
+      
+l.110 $r$
+         
+Not a real error.
+
+[51]
+./Report.org.tex:111: Preview: Snippet 52 started.
+<-><->
+      
+l.111 $
+       \frac{r}{2}$
+Not a real error.
+
+./Report.org.tex:111: Preview: Snippet 52 ended.(455554+225995x418521).
+<-><->
+      
+l.111 $\frac{r}{2}$
+                   
+Not a real error.
+
+[52]
+./Report.org.tex:112: Preview: Snippet 53 started.
+<-><->
+      
+l.112 $
+       F$
+Not a real error.
+
+./Report.org.tex:112: Preview: Snippet 53 ended.(447828+0x512456).
+<-><->
+      
+l.112 $F$
+         
+Not a real error.
+
+[53]
+./Report.org.tex:113: Preview: Snippet 54 started.
+<-><->
+      
+l.113 $
+       \{U_{i}\}$
+Not a real error.
+
+./Report.org.tex:113: Preview: Snippet 54 ended.(491520+163840x1321015).
+<-><->
+      
+l.113 $\{U_{i}\}$
+                 
+Not a real error.
+
+[54]
+./Report.org.tex:114: Preview: Snippet 55 started.
+<-><->
+      
+l.114 $
+       \{U_{i}\}$
+Not a real error.
+
+./Report.org.tex:114: Preview: Snippet 55 ended.(491520+163840x1321015).
+<-><->
+      
+l.114 $\{U_{i}\}$
+                 
+Not a real error.
+
+[55]
+./Report.org.tex:115: Preview: Snippet 56 started.
+<-><->
+      
+l.115 $
+       \sum_{U \in G} \left[\left\lvert U\right\rvert^{s}\right]$
+Not a real error.
+
+./Report.org.tex:115: Preview: Snippet 56 ended.(527020+231327x3528379).
+<-><->
+      
+l.115 ...eft[\left\lvert U\right\rvert^{s}\right]$
+                                                  
+Not a real error.
+
+[56]
+./Report.org.tex:116: Preview: Snippet 57 started.
+<-><->
+      
+l.116 $
+       U\in G$
+Not a real error.
+
+./Report.org.tex:116: Preview: Snippet 57 ended.(447828+25623x1835180).
+<-><->
+      
+l.116 $U\in G$
+              
+Not a real error.
+
+[57]
+./Report.org.tex:117: Preview: Snippet 58 started.
+<-><->
+      
+l.117 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:117: Preview: Snippet 58 ended.(455111+0x316074).
+<-><->
+      
+l.117 $\delta$
+              
+Not a real error.
+
+[58]
+./Report.org.tex:118: Preview: Snippet 59 started.
+<-><->
+      
+l.118 $
+       s$
+Not a real error.
+
+./Report.org.tex:118: Preview: Snippet 59 ended.(282168+0x307200).
+<-><->
+      
+l.118 $s$
+         
+Not a real error.
+
+[59]
+./Report.org.tex:119: Preview: Snippet 60 started.
+<-><->
+      
+l.119 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:121: Preview: Snippet 60 ended.(2030300+0x34664398).
+<-><->
+      
+l.121 \end{align}
+                 
+Not a real error.
+
+[60
+
+]
+./Report.org.tex:122: Preview: Snippet 61 started.
+<-><->
+      
+l.122 $
+       s$
+Not a real error.
+
+./Report.org.tex:122: Preview: Snippet 61 ended.(282168+0x307200).
+<-><->
+      
+l.122 $s$
+         
+Not a real error.
+
+[61]
+./Report.org.tex:123: Preview: Snippet 62 started.
+<-><->
+      
+l.123 $
+       F$
+Not a real error.
+
+./Report.org.tex:123: Preview: Snippet 62 ended.(447828+0x512456).
+<-><->
+      
+l.123 $F$
+         
+Not a real error.
+
+[62]
+./Report.org.tex:124: Preview: Snippet 63 started.
+<-><->
+      
+l.124 $
+       F$
+Not a real error.
+
+./Report.org.tex:124: Preview: Snippet 63 ended.(447828+0x512456).
+<-><->
+      
+l.124 $F$
+         
+Not a real error.
+
+[63]
+./Report.org.tex:125: Preview: Snippet 64 started.
+<-><->
+      
+l.125 $
+       \mathcal{H}_{\delta}^{2}\left(F\right)$
+Not a real error.
+
+./Report.org.tex:125: Preview: Snippet 64 ended.(533465+185604x1985198).
+<-><->
+      
+l.125 $\mathcal{H}_{\delta}^{2}\left(F\right)$
+                                              
+Not a real error.
+
+[64]
+./Report.org.tex:126: Preview: Snippet 65 started.
+<-><->
+      
+l.126 $
+       U\in G$
+Not a real error.
+
+./Report.org.tex:126: Preview: Snippet 65 ended.(447828+25623x1835180).
+<-><->
+      
+l.126 $U\in G$
+              
+Not a real error.
+
+[65]
+./Report.org.tex:127: Preview: Snippet 66 started.
+<-><->
+      
+l.127 $
+       \leq \delta$
+Not a real error.
+
+./Report.org.tex:127: Preview: Snippet 66 ended.(455111+89110x1007840).
+<-><->
+      
+l.127 $\leq \delta$
+                   
+Not a real error.
+
+[66]
+./Report.org.tex:128: Preview: Snippet 67 started.
+<-><->
+      
+l.128 $
+       \mathcal{H}^{2}_{\delta} \left(F\right)$
+Not a real error.
+
+./Report.org.tex:128: Preview: Snippet 67 ended.(533465+185604x1985198).
+<-><->
+      
+l.128 $\mathcal{H}^{2}_{\delta} \left(F\right)$
+                                               
+Not a real error.
+
+[67]
+./Report.org.tex:129: Preview: Snippet 68 started.
+<-><->
+      
+l.129 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:129: Preview: Snippet 68 ended.(455111+0x316074).
+<-><->
+      
+l.129 $\delta$
+              
+Not a real error.
+
+[68]
+./Report.org.tex:130: Preview: Snippet 69 started.
+<-><->
+      
+l.130 $
+       \mathcal{H}_{\delta}^{s}$
+Not a real error.
+
+./Report.org.tex:130: Preview: Snippet 69 ended.(447828+185604x841071).
+<-><->
+      
+l.130 $\mathcal{H}_{\delta}^{s}$
+                                
+Not a real error.
+
+[69]
+./Report.org.tex:131: Preview: Snippet 70 started.
+<-><->
+      
+l.131 $
+       \mathcal{H}^{2}_{\delta}$
+Not a real error.
+
+./Report.org.tex:131: Preview: Snippet 70 ended.(533465+185604x853792).
+<-><->
+      
+l.131 $\mathcal{H}^{2}_{\delta}$
+                                
+Not a real error.
+
+[70]
+./Report.org.tex:132: Preview: Snippet 71 started.
+<-><->
+      
+l.132 $
+       \delta \rightarrow 0$
+Not a real error.
+
+./Report.org.tex:132: Preview: Snippet 71 ended.(455111+0x1663196).
+<-><->
+      
+l.132 $\delta \rightarrow 0$
+                            
+Not a real error.
+
+[71]
+./Report.org.tex:133: Preview: Snippet 72 started.
+<-><->
+      
+l.133 $
+       s^{th}$
+Not a real error.
+
+./Report.org.tex:133: Preview: Snippet 72 ended.(556402+0x844765).
+<-><->
+      
+l.133 $s^{th}$
+              
+Not a real error.
+
+[72]
+./Report.org.tex:134: Preview: Snippet 73 started.
+<-><->
+      
+l.134 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:136: Preview: Snippet 73 ended.(1043839+0x34664398).
+<-><->
+      
+l.136 \end{align}
+                 
+Not a real error.
+
+[73
+
+]
+./Report.org.tex:137: Preview: Snippet 74 started.
+<-><->
+      
+l.137 $
+       \mathbb{R}^n$
+Not a real error.
+
+./Report.org.tex:137: Preview: Snippet 74 ended.(451470+0x830050).
+<-><->
+      
+l.137 $\mathbb{R}^n$
+                    
+Not a real error.
+
+[74]
+./Report.org.tex:138: Preview: Snippet 75 started.
+<-><->
+      
+l.138 $
+       \mathcal{H}^{2}$
+Not a real error.
+
+./Report.org.tex:138: Preview: Snippet 75 ended.(533465+0x853792).
+<-><->
+      
+l.138 $\mathcal{H}^{2}$
+                       
+Not a real error.
+
+[75]
+./Report.org.tex:139: Preview: Snippet 76 started.
+<-><->
+      
+l.139 $
+       4\times 1^2 + 4\times \pi\times \frac{1}{2^2} + \frac{1}{2}\times 1 \...
+Not a real error.
+
+./Report.org.tex:139: Preview: Snippet 76 ended.(553676+225995x10095636).
+<-><->
+      
+l.139 ...1}{2}\times 1 \times \sin{\frac{\pi}{3}}$
+                                                  
+Not a real error.
+
+[76]
+./Report.org.tex:140: Preview: Snippet 77 started.
+<-><->
+      
+l.140 $
+       F \subset \mathbb{R}^{2}$
+Not a real error.
+
+./Report.org.tex:140: Preview: Snippet 77 ended.(533465+25623x2153581).
+<-><->
+      
+l.140 $F \subset \mathbb{R}^{2}$
+                                
+Not a real error.
+
+[77]
+./Report.org.tex:141: Preview: Snippet 78 started.
+<-><->
+      
+l.141 $
+       U_{i}$
+Not a real error.
+
+./Report.org.tex:141: Preview: Snippet 78 ended.(447828+98303x665653).
+<-><->
+      
+l.141 $U_{i}$
+             
+Not a real error.
+
+[78]
+./Report.org.tex:142: Preview: Snippet 79 started.
+<-><->
+      
+l.142 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:142: Preview: Snippet 79 ended.(455111+0x316074).
+<-><->
+      
+l.142 $\delta$
+              
+Not a real error.
+
+[79]
+./Report.org.tex:143: Preview: Snippet 80 started.
+<-><->
+      
+l.143 $
+       \bigcup \left[U_{i}\right]$
+Not a real error.
+
+./Report.org.tex:143: Preview: Snippet 80 ended.(491524+163844x1685102).
+<-><->
+      
+l.143 $\bigcup \left[U_{i}\right]$
+                                  
+Not a real error.
+
+[80]
+./Report.org.tex:144: Preview: Snippet 81 started.
+<-><->
+      
+l.144 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:144: Preview: Snippet 81 ended.(455111+0x316074).
+<-><->
+      
+l.144 $\delta$
+              
+Not a real error.
+
+[81]
+./Report.org.tex:145: Preview: Snippet 82 started.
+<-><->
+      
+l.145 $
+       F$
+Not a real error.
+
+./Report.org.tex:145: Preview: Snippet 82 ended.(447828+0x512456).
+<-><->
+      
+l.145 $F$
+         
+Not a real error.
+
+[82]
+./Report.org.tex:146: Preview: Snippet 83 started.
+<-><->
+      
+l.146 $
+       \mathcal{H}^{1}$
+Not a real error.
+
+./Report.org.tex:146: Preview: Snippet 83 ended.(533465+0x853792).
+<-><->
+      
+l.146 $\mathcal{H}^{1}$
+                       
+Not a real error.
+
+[83]
+./Report.org.tex:147: Preview: Snippet 84 started.
+<-><->
+      
+l.147 $
+       \mathcal{H}^{2}$
+Not a real error.
+
+./Report.org.tex:147: Preview: Snippet 84 ended.(533465+0x853792).
+<-><->
+      
+l.147 $\mathcal{H}^{2}$
+                       
+Not a real error.
+
+[84]
+./Report.org.tex:148: Preview: Snippet 85 started.
+<-><->
+      
+l.148 $
+       \left\lvert U_i \right\rvert^1$
+Not a real error.
+
+./Report.org.tex:148: Preview: Snippet 85 ended.(625142+163840x1323746).
+<-><->
+      
+l.148 $\left\lvert U_i \right\rvert^1$
+                                      
+Not a real error.
+
+[85]
+./Report.org.tex:149: Preview: Snippet 86 started.
+<-><->
+      
+l.149 $
+       \left\lvert U_i \right\rvert^2$
+Not a real error.
+
+./Report.org.tex:149: Preview: Snippet 86 ended.(625142+163840x1323746).
+<-><->
+      
+l.149 $\left\lvert U_i \right\rvert^2$
+                                      
+Not a real error.
+
+[86]
+./Report.org.tex:150: Preview: Snippet 87 started.
+<-><->
+      
+l.150 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:150: Preview: Snippet 87 ended.(455111+0x316074).
+<-><->
+      
+l.150 $\delta$
+              
+Not a real error.
+
+[87]
+./Report.org.tex:151: Preview: Snippet 88 started.
+<-><->
+      
+l.151 $
+       U$
+Not a real error.
+
+./Report.org.tex:151: Preview: Snippet 88 ended.(447828+0x518916).
+<-><->
+      
+l.151 $U$
+         
+Not a real error.
+
+[88]
+./Report.org.tex:152: Preview: Snippet 89 started.
+<-><->
+      
+l.152 $
+       U$
+Not a real error.
+
+./Report.org.tex:152: Preview: Snippet 89 ended.(447828+0x518916).
+<-><->
+      
+l.152 $U$
+         
+Not a real error.
+
+[89]
+./Report.org.tex:153: Preview: Snippet 90 started.
+<-><->
+      
+l.153 $
+       F$
+Not a real error.
+
+./Report.org.tex:153: Preview: Snippet 90 ended.(447828+0x512456).
+<-><->
+      
+l.153 $F$
+         
+Not a real error.
+
+[90]
+./Report.org.tex:154: Preview: Snippet 91 started.
+<-><->
+      
+l.154 $
+       F$
+Not a real error.
+
+./Report.org.tex:154: Preview: Snippet 91 ended.(447828+0x512456).
+<-><->
+      
+l.154 $F$
+         
+Not a real error.
+
+[91]
+./Report.org.tex:155: Preview: Snippet 92 started.
+<-><->
+      
+l.155 $
+       s$
+Not a real error.
+
+./Report.org.tex:155: Preview: Snippet 92 ended.(282168+0x307200).
+<-><->
+      
+l.155 $s$
+         
+Not a real error.
+
+[92]
+./Report.org.tex:156: Preview: Snippet 93 started.
+<-><->
+      
+l.156 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:158: Preview: Snippet 93 ended.(786432+0x34664398).
+<-><->
+      
+l.158 \end{align}
+                 
+Not a real error.
+
+[93]
+./Report.org.tex:159: Preview: Snippet 94 started.
+<-><->
+      
+l.159 $
+       s$
+Not a real error.
+
+./Report.org.tex:159: Preview: Snippet 94 ended.(282168+0x307200).
+<-><->
+      
+l.159 $s$
+         
+Not a real error.
+
+[94]
+./Report.org.tex:160: Preview: Snippet 95 started.
+<-><->
+      
+l.160 $
+       F$
+Not a real error.
+
+./Report.org.tex:160: Preview: Snippet 95 ended.(447828+0x512456).
+<-><->
+      
+l.160 $F$
+         
+Not a real error.
+
+[95]
+./Report.org.tex:161: Preview: Snippet 96 started.
+<-><->
+      
+l.161 $
+       \mathcal{H}^s$
+Not a real error.
+
+./Report.org.tex:161: Preview: Snippet 96 ended.(447828+0x839911).
+<-><->
+      
+l.161 $\mathcal{H}^s$
+                     
+Not a real error.
+
+[96]
+./Report.org.tex:162: Preview: Snippet 97 started.
+<-><->
+      
+l.162 $
+       \infty$
+Not a real error.
+
+./Report.org.tex:162: Preview: Snippet 97 ended.(282168+0x655361).
+<-><->
+      
+l.162 $\infty$
+              
+Not a real error.
+
+[97]
+./Report.org.tex:163: Preview: Snippet 98 started.
+<-><->
+      
+l.163 $
+       s$
+Not a real error.
+
+./Report.org.tex:163: Preview: Snippet 98 ended.(282168+0x307200).
+<-><->
+      
+l.163 $s$
+         
+Not a real error.
+
+[98]
+./Report.org.tex:164: Preview: Snippet 99 started.
+<-><->
+      
+l.164 $
+       s$
+Not a real error.
+
+./Report.org.tex:164: Preview: Snippet 99 ended.(282168+0x307200).
+<-><->
+      
+l.164 $s$
+         
+Not a real error.
+
+[99]
+./Report.org.tex:165: Preview: Snippet 100 started.
+<-><->
+      
+l.165 \[
+        
+Not a real error.
+
+./Report.org.tex:167: Preview: Snippet 100 ended.(493734+0x19049215).
+<-><->
+      
+l.167 \]
+        
+Not a real error.
+
+[100]
+./Report.org.tex:168: Preview: Snippet 101 started.
+<-><->
+      
+l.168 $
+       t$
+Not a real error.
+
+./Report.org.tex:168: Preview: Snippet 101 ended.(403098+0x236658).
+<-><->
+      
+l.168 $t$
+         
+Not a real error.
+
+[101]
+./Report.org.tex:169: Preview: Snippet 102 started.
+<-><->
+      
+l.169 $
+       s$
+Not a real error.
+
+./Report.org.tex:169: Preview: Snippet 102 ended.(282168+0x307200).
+<-><->
+      
+l.169 $s$
+         
+Not a real error.
+
+[102]
+./Report.org.tex:170: Preview: Snippet 103 started.
+<-><->
+      
+l.170 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:174: Preview: Snippet 103 ended.(6219113+0x24126047).
+<-><->
+      
+l.174 \end{align*}
+                  
+Not a real error.
+
+[103]
+./Report.org.tex:175: Preview: Snippet 104 started.
+<-><->
+      
+l.175 $
+       \lim_{\delta \rightarrow 0}\left[ \sum_{i}   \left\lvert U_i \right\r...
+Not a real error.
+
+./Report.org.tex:175: Preview: Snippet 104 ended.(527020+196611x4783899).
+<-><->
+      
+l.175 ...  \left\lvert U_i \right\rvert^s \right]$
+                                                  
+Not a real error.
+
+[104]
+./Report.org.tex:176: Preview: Snippet 105 started.
+<-><->
+      
+l.176 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:180: Preview: Snippet 105 ended.(5282042+0x34664398).
+<-><->
+      
+l.180 \end{align}
+                 
+Not a real error.
+
+[105]
+./Report.org.tex:181: Preview: Snippet 106 started.
+<-><->
+      
+l.181 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:183: Preview: Snippet 106 ended.(790515+0x34664398).
+<-><->
+      
+l.183 \end{align}
+                 
+Not a real error.
+
+[106
+
+]
+./Report.org.tex:184: Preview: Snippet 107 started.
+<-><->
+      
+l.184 $
+       s$
+Not a real error.
+
+./Report.org.tex:184: Preview: Snippet 107 ended.(282168+0x307200).
+<-><->
+      
+l.184 $s$
+         
+Not a real error.
+
+[107]
+./Report.org.tex:185: Preview: Snippet 108 started.
+<-><->
+      
+l.185 $
+       s = \mathrm{dim}_{H}\left( F \right)$
+Not a real error.
+
+./Report.org.tex:185: Preview: Snippet 108 ended.(491520+163840x3901755).
+<-><->
+      
+l.185 $s = \mathrm{dim}_{H}\left( F \right)$
+                                            
+Not a real error.
+
+[108]
+./Report.org.tex:186: Preview: Snippet 109 started.
+<-><->
+      
+l.186 $
+       F\in \mathbb{R}^{n}$
+Not a real error.
+
+./Report.org.tex:186: Preview: Snippet 109 ended.(451470+25623x2143494).
+<-><->
+      
+l.186 $F\in \mathbb{R}^{n}$
+                           
+Not a real error.
+
+[109]
+./Report.org.tex:187: Preview: Snippet 110 started.
+<-><->
+      
+l.187 $
+       \infty$
+Not a real error.
+
+./Report.org.tex:187: Preview: Snippet 110 ended.(282168+0x655361).
+<-><->
+      
+l.187 $\infty$
+              
+Not a real error.
+
+[110]
+./Report.org.tex:188: Preview: Snippet 111 started.
+<-><->
+      
+l.188 $
+       F$
+Not a real error.
+
+./Report.org.tex:188: Preview: Snippet 111 ended.(447828+0x512456).
+<-><->
+      
+l.188 $F$
+         
+Not a real error.
+
+[111]
+./Report.org.tex:189: Preview: Snippet 112 started.
+<-><->
+      
+l.189 $
+       s$
+Not a real error.
+
+./Report.org.tex:189: Preview: Snippet 112 ended.(282168+0x307200).
+<-><->
+      
+l.189 $s$
+         
+Not a real error.
+
+[112]
+./Report.org.tex:190: Preview: Snippet 113 started.
+<-><->
+      
+l.190 $
+       \mathbb{R}^{2}$
+Not a real error.
+
+./Report.org.tex:190: Preview: Snippet 113 ended.(533465+0x767319).
+<-><->
+      
+l.190 $\mathbb{R}^{2}$
+                      
+Not a real error.
+
+[113]
+./Report.org.tex:191: Preview: Snippet 114 started.
+<-><->
+      
+l.191 $
+       \sqrt{2}$
+Not a real error.
+
+./Report.org.tex:191: Preview: Snippet 114 ended.(594554+87018x873816).
+<-><->
+      
+l.191 $\sqrt{2}$
+                
+Not a real error.
+
+[114]
+./Report.org.tex:192: Preview: Snippet 115 started.
+<-><->
+      
+l.192 $
+       s$
+Not a real error.
+
+./Report.org.tex:192: Preview: Snippet 115 ended.(282168+0x307200).
+<-><->
+      
+l.192 $s$
+         
+Not a real error.
+
+[115]
+./Report.org.tex:193: Preview: Snippet 116 started.
+<-><->
+      
+l.193 $
+       \mathcal{H}^{s}$
+Not a real error.
+
+./Report.org.tex:193: Preview: Snippet 116 ended.(447828+0x839911).
+<-><->
+      
+l.193 $\mathcal{H}^{s}$
+                       
+Not a real error.
+
+[116]
+./Report.org.tex:194: Preview: Snippet 117 started.
+<-><->
+      
+l.194 $
+       \infty$
+Not a real error.
+
+./Report.org.tex:194: Preview: Snippet 117 ended.(282168+0x655361).
+<-><->
+      
+l.194 $\infty$
+              
+Not a real error.
+
+[117]
+./Report.org.tex:195: Preview: Snippet 118 started.
+<-><->
+      
+l.195 $
+       F$
+Not a real error.
+
+./Report.org.tex:195: Preview: Snippet 118 ended.(447828+0x512456).
+<-><->
+      
+l.195 $F$
+         
+Not a real error.
+
+[118]
+./Report.org.tex:196: Preview: Snippet 119 started.
+<-><->
+      
+l.196 $
+       \mathbb{R}^n$
+Not a real error.
+
+./Report.org.tex:196: Preview: Snippet 119 ended.(451470+0x830050).
+<-><->
+      
+l.196 $\mathbb{R}^n$
+                    
+Not a real error.
+
+[119]
+./Report.org.tex:197: Preview: Snippet 120 started.
+<-><->
+      
+l.197 $
+       N_\delta(F)$
+Not a real error.
+
+./Report.org.tex:197: Preview: Snippet 120 ended.(491520+163840x1836353).
+<-><->
+      
+l.197 $N_\delta(F)$
+                   
+Not a real error.
+
+[120]
+./Report.org.tex:198: Preview: Snippet 121 started.
+<-><->
+      
+l.198 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:198: Preview: Snippet 121 ended.(455111+0x316074).
+<-><->
+      
+l.198 $\delta$
+              
+Not a real error.
+
+[121]
+./Report.org.tex:199: Preview: Snippet 122 started.
+<-><->
+      
+l.199 $
+       F$
+Not a real error.
+
+./Report.org.tex:199: Preview: Snippet 122 ended.(447828+0x512456).
+<-><->
+      
+l.199 $F$
+         
+Not a real error.
+
+[122]
+./Report.org.tex:200: Preview: Snippet 123 started.
+<-><->
+      
+l.200 $
+       F$
+Not a real error.
+
+./Report.org.tex:200: Preview: Snippet 123 ended.(447828+0x512456).
+<-><->
+      
+l.200 $F$
+         
+Not a real error.
+
+[123]
+./Report.org.tex:201: Preview: Snippet 124 started.
+<-><->
+      
+l.201 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:203: Preview: Snippet 124 ended.(1439034+0x21112140).
+<-><->
+      
+l.203 \end{equation*}
+                     
+Not a real error.
+
+[124]
+./Report.org.tex:204: Preview: Snippet 125 started.
+<-><->
+      
+l.204 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:206: Preview: Snippet 125 ended.(1439034+0x21112140).
+<-><->
+      
+l.206 \end{equation*}
+                     
+Not a real error.
+
+[125]
+./Report.org.tex:207: Preview: Snippet 126 started.
+<-><->
+      
+l.207 $
+       F$
+Not a real error.
+
+./Report.org.tex:207: Preview: Snippet 126 ended.(447828+0x512456).
+<-><->
+      
+l.207 $F$
+         
+Not a real error.
+
+[126]
+./Report.org.tex:208: Preview: Snippet 127 started.
+<-><->
+      
+l.208 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:210: Preview: Snippet 127 ended.(1439034+0x20695255).
+<-><->
+      
+l.210 \end{equation*}
+                     
+Not a real error.
+
+[127]
+./Report.org.tex:211: Preview: Snippet 128 started.
+<-><->
+      
+l.211 $
+       \frac{1}{\delta}$
+Not a real error.
+
+./Report.org.tex:211: Preview: Snippet 128 ended.(553676+225995x418521).
+<-><->
+      
+l.211 $\frac{1}{\delta}$
+                        
+Not a real error.
+
+[128]
+./Report.org.tex:212: Preview: Snippet 129 started.
+<-><->
+      
+l.212 $
+       \delta$
+Not a real error.
+
+./Report.org.tex:212: Preview: Snippet 129 ended.(455111+0x316074).
+<-><->
+      
+l.212 $\delta$
+              
+Not a real error.
+
+[129]
+./Report.org.tex:213: Preview: Snippet 130 started.
+<-><->
+      
+l.213 $
+       \frac{1}{\delta}$
+Not a real error.
+
+./Report.org.tex:213: Preview: Snippet 130 ended.(553676+225995x418521).
+<-><->
+      
+l.213 $\frac{1}{\delta}$
+                        
+Not a real error.
+
+[130]
+./Report.org.tex:214: Preview: Snippet 131 started.
+<-><->
+      
+l.214 $
+       n^2$
+Not a real error.
+
+./Report.org.tex:214: Preview: Snippet 131 ended.(533465+0x687373).
+<-><->
+      
+l.214 $n^2$
+           
+Not a real error.
+
+[131]
+./Report.org.tex:215: Preview: Snippet 132 started.
+<-><->
+      
+l.215 $
+       N_{\frac{1}{n}}(F) = n^2$
+Not a real error.
+
+./Report.org.tex:215: Preview: Snippet 132 ended.(533465+319462x3588598).
+<-><->
+      
+l.215 $N_{\frac{1}{n}}(F) = n^2$
+                                
+Not a real error.
+
+[132]
+./Report.org.tex:216: Preview: Snippet 133 started.
+<-><->
+      
+l.216 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:221: Preview: Snippet 133 ended.(6621256+0x20559757).
+<-><->
+      
+l.221 \end{align*}
+                  
+Not a real error.
+
+[133]
+./Report.org.tex:222: Preview: Snippet 134 started.
+<-><->
+      
+l.222 $
+       \frac{1}{3}$
+Not a real error.
+
+./Report.org.tex:222: Preview: Snippet 134 ended.(553676+225995x418521).
+<-><->
+      
+l.222 $\frac{1}{3}$
+                   
+Not a real error.
+
+[134]
+./Report.org.tex:223: Preview: Snippet 135 started.
+<-><->
+      
+l.223 $
+       \frac{1}{3^{\delta}}$
+Not a real error.
+
+./Report.org.tex:223: Preview: Snippet 135 ended.(553676+234106x676228).
+<-><->
+      
+l.223 $\frac{1}{3^{\delta}}$
+                            
+Not a real error.
+
+[135]
+./Report.org.tex:224: Preview: Snippet 136 started.
+<-><->
+      
+l.224 $
+       \delta^{th}$
+Not a real error.
+
+./Report.org.tex:224: Preview: Snippet 136 ended.(556402+0x853639).
+<-><->
+      
+l.224 $\delta^{th}$
+                   
+Not a real error.
+
+[136]
+./Report.org.tex:225: Preview: Snippet 137 started.
+<-><->
+      
+l.225 $
+       4^{\delta}$
+Not a real error.
+
+./Report.org.tex:225: Preview: Snippet 137 ended.(556402+0x615289).
+<-><->
+      
+l.225 $4^{\delta}$
+                  
+Not a real error.
+
+[137]
+./Report.org.tex:226: Preview: Snippet 138 started.
+<-><->
+      
+l.226 $
+       F$
+Not a real error.
+
+./Report.org.tex:226: Preview: Snippet 138 ended.(447828+0x512456).
+<-><->
+      
+l.226 $F$
+         
+Not a real error.
+
+[138]
+./Report.org.tex:227: Preview: Snippet 139 started.
+<-><->
+      
+l.227 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:232: Preview: Snippet 139 ended.(7683551+0x20816499).
+<-><->
+      
+l.232 \end{align*}
+                  
+Not a real error.
+
+[139]
+./Report.org.tex:233: Preview: Snippet 140 started.
+<-><->
+      
+l.233 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:240: Preview: Snippet 140 ended.(2359318+0x34664398).
+<-><->
+      
+l.240 \end{align}
+                 
+Not a real error.
+
+[140
+
+]
+./Report.org.tex:241: Preview: Snippet 141 started.
+<-><->
+      
+l.241 $
+       \mathbf{B}= \left[ 1 \right]$
+Not a real error.
+
+./Report.org.tex:241: Preview: Snippet 141 ended.(491520+163840x2101695).
+<-><->
+      
+l.241 $\mathbf{B}= \left[ 1 \right]$
+                                    
+Not a real error.
+
+[141]
+./Report.org.tex:242: Preview: Snippet 142 started.
+<-><->
+      
+l.242 $
+       \mathbf{Z}= \left[ 0 \right]  $
+Not a real error.
+
+./Report.org.tex:242: Preview: Snippet 142 ended.(491520+163840x2026147).
+<-><->
+      
+l.242 $\mathbf{Z}= \left[ 0 \right]  $
+                                      
+Not a real error.
+
+[142]
+./Report.org.tex:243: Preview: Snippet 143 started.
+<-><->
+      
+l.243 \[
+        
+Not a real error.
+
+./Report.org.tex:245: Preview: Snippet 143 ended.(1338909+0x19142876).
+<-><->
+      
+l.245 \]
+        
+Not a real error.
+
+[143]
+./Report.org.tex:246: Preview: Snippet 144 started.
+<-><->
+      
+l.246 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:249: Preview: Snippet 144 ended.(2430162+0x34664398).
+<-><->
+      
+l.249 \end{align}
+                 
+Not a real error.
+
+[144
+
+]
+./Report.org.tex:250: Preview: Snippet 145 started.
+<-><->
+      
+l.250 $
+       3 \times 3$
+Not a real error.
+
+./Report.org.tex:250: Preview: Snippet 145 ended.(422343+54613x1456352).
+<-><->
+      
+l.250 $3 \times 3$
+                  
+Not a real error.
+
+[145]
+./Report.org.tex:251: Preview: Snippet 146 started.
+<-><->
+      
+l.251 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:258: Preview: Snippet 146 ended.(2359318+0x34664398).
+<-><->
+      
+l.258 \end{align}
+                 
+Not a real error.
+
+[146]
+./Report.org.tex:259: Preview: Snippet 147 started.
+<-><->
+      
+l.259 $
+       A$
+Not a real error.
+
+./Report.org.tex:259: Preview: Snippet 147 ended.(447828+0x491521).
+<-><->
+      
+l.259 $A$
+         
+Not a real error.
+
+[147]
+./Report.org.tex:260: Preview: Snippet 148 started.
+<-><->
+      
+l.260 $
+       \left(0, 0\right)$
+Not a real error.
+
+./Report.org.tex:260: Preview: Snippet 148 ended.(491520+163840x1456357).
+<-><->
+      
+l.260 $\left(0, 0\right)$
+                         
+Not a real error.
+
+[148]
+./Report.org.tex:261: Preview: Snippet 149 started.
+<-><->
+      
+l.261 $
+       B$
+Not a real error.
+
+./Report.org.tex:261: Preview: Snippet 149 ended.(447828+0x529977).
+<-><->
+      
+l.261 $B$
+         
+Not a real error.
+
+[149]
+./Report.org.tex:262: Preview: Snippet 150 started.
+<-><->
+      
+l.262 $
+       \left(0, 1\right)$
+Not a real error.
+
+./Report.org.tex:262: Preview: Snippet 150 ended.(491520+163840x1456357).
+<-><->
+      
+l.262 $\left(0, 1\right)$
+                         
+Not a real error.
+
+[150]
+./Report.org.tex:263: Preview: Snippet 151 started.
+<-><->
+      
+l.263 $
+       C$
+Not a real error.
+
+./Report.org.tex:263: Preview: Snippet 151 ended.(447828+0x515276).
+<-><->
+      
+l.263 $C$
+         
+Not a real error.
+
+[151]
+./Report.org.tex:264: Preview: Snippet 152 started.
+<-><->
+      
+l.264 $
+       \left(0.5, \sin\left(\frac{\pi}{3}\right)\right)$
+Not a real error.
+
+./Report.org.tex:264: Preview: Snippet 152 ended.(557059+229380x3724251).
+<-><->
+      
+l.264 ...5, \sin\left(\frac{\pi}{3}\right)\right)$
+                                                  
+Not a real error.
+
+[152]
+./Report.org.tex:265: Preview: Snippet 153 started.
+<-><->
+      
+l.265 $
+       x$
+Not a real error.
+
+./Report.org.tex:265: Preview: Snippet 153 ended.(282168+0x374556).
+<-><->
+      
+l.265 $x$
+         
+Not a real error.
+
+[153]
+./Report.org.tex:266: Preview: Snippet 154 started.
+<-><->
+      
+l.266 $
+       y$
+Not a real error.
+
+./Report.org.tex:266: Preview: Snippet 154 ended.(282168+127431x344824).
+<-><->
+      
+l.266 $y$
+         
+Not a real error.
+
+[154]
+./Report.org.tex:267: Preview: Snippet 155 started.
+<-><->
+      
+l.267 $
+       3000^{2}$
+Not a real error.
+
+./Report.org.tex:267: Preview: Snippet 155 ended.(533465+0x1604727).
+<-><->
+      
+l.267 $3000^{2}$
+                
+Not a real error.
+
+[155]
+./Report.org.tex:268: Preview: Snippet 156 started.
+<-><->
+      
+l.268 $
+       2000^{2}$
+Not a real error.
+
+./Report.org.tex:268: Preview: Snippet 156 ended.(533465+0x1604727).
+<-><->
+      
+l.268 $2000^{2}$
+                
+Not a real error.
+
+[156]
+./Report.org.tex:269: Preview: Snippet 157 started.
+<-><->
+      
+l.269 $
+       300^{2}$
+Not a real error.
+
+./Report.org.tex:269: Preview: Snippet 157 ended.(533465+0x1277046).
+<-><->
+      
+l.269 $300^{2}$
+               
+Not a real error.
+
+[157]
+./Report.org.tex:270: Preview: Snippet 158 started.
+<-><->
+      
+l.270 $
+       200^{2}$
+Not a real error.
+
+./Report.org.tex:270: Preview: Snippet 158 ended.(533465+0x1277046).
+<-><->
+      
+l.270 $200^{2}$
+               
+Not a real error.
+
+[158]
+./Report.org.tex:271: Preview: Snippet 159 started.
+<-><->
+      
+l.271 $
+       0^{th}$
+Not a real error.
+
+./Report.org.tex:271: Preview: Snippet 159 ended.(556402+0x865246).
+<-><->
+      
+l.271 $0^{th}$
+              
+Not a real error.
+
+[159]
+./Report.org.tex:272: Preview: Snippet 160 started.
+<-><->
+      
+l.272 $
+       n^{th}$
+Not a real error.
+
+./Report.org.tex:272: Preview: Snippet 160 ended.(556402+0x930935).
+<-><->
+      
+l.272 $n^{th}$
+              
+Not a real error.
+
+[160]
+./Report.org.tex:273: Preview: Snippet 161 started.
+<-><->
+      
+l.273 $
+       k^{th}$
+Not a real error.
+
+./Report.org.tex:273: Preview: Snippet 161 ended.(556402+0x899379).
+<-><->
+      
+l.273 $k^{th}$
+              
+Not a real error.
+
+[161]
+./Report.org.tex:274: Preview: Snippet 162 started.
+<-><->
+      
+l.274 $
+       \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$
+Not a real error.
+
+./Report.org.tex:274: Preview: Snippet 162 ended.(586443+280609x5790616).
+<-><->
+      
+l.274 ...}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$
+                                                  
+Not a real error.
+
+[162]
+./Report.org.tex:275: Preview: Snippet 163 started.
+<-><->
+      
+l.275 $
+       P_{n}$
+Not a real error.
+
+./Report.org.tex:275: Preview: Snippet 163 ended.(447828+98303x777484).
+<-><->
+      
+l.275 $P_{n}$
+             
+Not a real error.
+
+[163]
+./Report.org.tex:276: Preview: Snippet 164 started.
+<-><->
+      
+l.276 $
+       2^{n}$
+Not a real error.
+
+./Report.org.tex:276: Preview: Snippet 164 ended.(435343+0x684415).
+<-><->
+      
+l.276 $2^{n}$
+             
+Not a real error.
+
+[164]
+./Report.org.tex:277: Preview: Snippet 165 started.
+<-><->
+      
+l.277 $
+       P_{n+1}$
+Not a real error.
+
+./Report.org.tex:277: Preview: Snippet 165 ended.(447828+152917x1441039).
+<-><->
+      
+l.277 $P_{n+1}$
+               
+Not a real error.
+
+[165]
+./Report.org.tex:278: Preview: Snippet 166 started.
+<-><->
+      
+l.278 $
+       P_{n}$
+Not a real error.
+
+./Report.org.tex:278: Preview: Snippet 166 ended.(447828+98303x777484).
+<-><->
+      
+l.278 $P_{n}$
+             
+Not a real error.
+
+[166]
+./Report.org.tex:279: Preview: Snippet 167 started.
+<-><->
+      
+l.279 $
+       P_{n+1}$
+Not a real error.
+
+./Report.org.tex:279: Preview: Snippet 167 ended.(447828+152917x1441039).
+<-><->
+      
+l.279 $P_{n+1}$
+               
+Not a real error.
+
+[167]
+./Report.org.tex:280: Preview: Snippet 168 started.
+<-><->
+      
+l.280 $
+       n,k \ge 0$
+Not a real error.
+
+./Report.org.tex:280: Preview: Snippet 168 ended.(455111+127431x2247940).
+<-><->
+      
+l.280 $n,k \ge 0$
+                 
+Not a real error.
+
+[168]
+./Report.org.tex:281: Preview: Snippet 169 started.
+<-><->
+      
+l.281 $
+       p$
+Not a real error.
+
+./Report.org.tex:281: Preview: Snippet 169 ended.(282168+127431x329728).
+<-><->
+      
+l.281 $p$
+         
+Not a real error.
+
+[169]
+./Report.org.tex:282: Preview: Snippet 170 started.
+<-><->
+      
+l.282 \begin{equation}
+                      
+Not a real error.
+
+./Report.org.tex:284: Preview: Snippet 170 ended.(1921029+0x34664398).
+<-><->
+      
+l.284 \end{equation}
+                    
+Not a real error.
+
+[170]
+./Report.org.tex:285: Preview: Snippet 171 started.
+<-><->
+      
+l.285 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:288: Preview: Snippet 171 ended.(2849514+0x23282890).
+<-><->
+      
+l.288 \end{align*}
+                  
+Not a real error.
+
+[171]
+./Report.org.tex:289: Preview: Snippet 172 started.
+<-><->
+      
+l.289 $
+       p$
+Not a real error.
+
+./Report.org.tex:289: Preview: Snippet 172 ended.(282168+127431x329728).
+<-><->
+      
+l.289 $p$
+         
+Not a real error.
+
+[172]
+./Report.org.tex:290: Preview: Snippet 173 started.
+<-><->
+      
+l.290 $
+       0$
+Not a real error.
+
+./Report.org.tex:290: Preview: Snippet 173 ended.(422343+0x327681).
+<-><->
+      
+l.290 $0$
+         
+Not a real error.
+
+[173]
+./Report.org.tex:291: Preview: Snippet 174 started.
+<-><->
+      
+l.291 $
+       1$
+Not a real error.
+
+./Report.org.tex:291: Preview: Snippet 174 ended.(422343+0x327681).
+<-><->
+      
+l.291 $1$
+         
+Not a real error.
+
+[174]
+./Report.org.tex:292: Preview: Snippet 175 started.
+<-><->
+      
+l.292 $
+       \binom{n}{k} = 0$
+Not a real error.
+
+./Report.org.tex:292: Preview: Snippet 175 ended.(557059+229380x2126203).
+<-><->
+      
+l.292 $\binom{n}{k} = 0$
+                        
+Not a real error.
+
+[175]
+./Report.org.tex:293: Preview: Snippet 176 started.
+<-><->
+      
+l.293 $
+       k < n$
+Not a real error.
+
+./Report.org.tex:293: Preview: Snippet 176 ended.(455111+25623x1628990).
+<-><->
+      
+l.293 $k < n$
+             
+Not a real error.
+
+[176]
+./Report.org.tex:294: Preview: Snippet 177 started.
+<-><->
+      
+l.294 $
+       r$
+Not a real error.
+
+./Report.org.tex:294: Preview: Snippet 177 ended.(282168+0x313876).
+<-><->
+      
+l.294 $r$
+         
+Not a real error.
+
+[177]
+./Report.org.tex:295: Preview: Snippet 178 started.
+<-><->
+      
+l.295 $
+       c$
+Not a real error.
+
+./Report.org.tex:295: Preview: Snippet 178 ended.(282168+0x283611).
+<-><->
+      
+l.295 $c$
+         
+Not a real error.
+
+[178]
+./Report.org.tex:296: Preview: Snippet 179 started.
+<-><->
+      
+l.296 $
+       P_{n}$
+Not a real error.
+
+./Report.org.tex:296: Preview: Snippet 179 ended.(447828+98303x777484).
+<-><->
+      
+l.296 $P_{n}$
+             
+Not a real error.
+
+[179]
+./Report.org.tex:297: Preview: Snippet 180 started.
+<-><->
+      
+l.297 $
+       2^{n}$
+Not a real error.
+
+./Report.org.tex:297: Preview: Snippet 180 ended.(435343+0x684415).
+<-><->
+      
+l.297 $2^{n}$
+             
+Not a real error.
+
+[180]
+./Report.org.tex:298: Preview: Snippet 181 started.
+<-><->
+      
+l.298 $
+       r$
+Not a real error.
+
+./Report.org.tex:298: Preview: Snippet 181 ended.(282168+0x313876).
+<-><->
+      
+l.298 $r$
+         
+Not a real error.
+
+[181]
+./Report.org.tex:299: Preview: Snippet 182 started.
+<-><->
+      
+l.299 $
+       P_{n+1}$
+Not a real error.
+
+./Report.org.tex:299: Preview: Snippet 182 ended.(447828+152917x1441039).
+<-><->
+      
+l.299 $P_{n+1}$
+               
+Not a real error.
+
+[182]
+./Report.org.tex:300: Preview: Snippet 183 started.
+<-><->
+      
+l.300 $
+       2^{n}$
+Not a real error.
+
+./Report.org.tex:300: Preview: Snippet 183 ended.(435343+0x684415).
+<-><->
+      
+l.300 $2^{n}$
+             
+Not a real error.
+
+[183]
+./Report.org.tex:301: Preview: Snippet 184 started.
+<-><->
+      
+l.301 $
+       P_{n}$
+Not a real error.
+
+./Report.org.tex:301: Preview: Snippet 184 ended.(447828+98303x777484).
+<-><->
+      
+l.301 $P_{n}$
+             
+Not a real error.
+
+[184]
+./Report.org.tex:302: Preview: Snippet 185 started.
+<-><->
+      
+l.302 $
+       2^{n}$
+Not a real error.
+
+./Report.org.tex:302: Preview: Snippet 185 ended.(435343+0x684415).
+<-><->
+      
+l.302 $2^{n}$
+             
+Not a real error.
+
+[185]
+./Report.org.tex:303: Preview: Snippet 186 started.
+<-><->
+      
+l.303 $
+       c$
+Not a real error.
+
+./Report.org.tex:303: Preview: Snippet 186 ended.(282168+0x283611).
+<-><->
+      
+l.303 $c$
+         
+Not a real error.
+
+[186]
+./Report.org.tex:304: Preview: Snippet 187 started.
+<-><->
+      
+l.304 $
+       P_{n+1}$
+Not a real error.
+
+./Report.org.tex:304: Preview: Snippet 187 ended.(447828+152917x1441039).
+<-><->
+      
+l.304 $P_{n+1}$
+               
+Not a real error.
+
+[187]
+./Report.org.tex:305: Preview: Snippet 188 started.
+<-><->
+      
+l.305 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:309: Preview: Snippet 188 ended.(5242925+0x22406129).
+<-><->
+      
+l.309 \end{align*}
+                  
+Not a real error.
+
+[188]
+./Report.org.tex:310: Preview: Snippet 189 started.
+<-><->
+      
+l.310 $
+       r$
+Not a real error.
+
+./Report.org.tex:310: Preview: Snippet 189 ended.(282168+0x313876).
+<-><->
+      
+l.310 $r$
+         
+Not a real error.
+
+[189]
+./Report.org.tex:311: Preview: Snippet 190 started.
+<-><->
+      
+l.311 $
+       c$
+Not a real error.
+
+./Report.org.tex:311: Preview: Snippet 190 ended.(282168+0x283611).
+<-><->
+      
+l.311 $c$
+         
+Not a real error.
+
+[190]
+./Report.org.tex:312: Preview: Snippet 191 started.
+<-><->
+      
+l.312 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:315: Preview: Snippet 191 ended.(2865350+0x25090806).
+<-><->
+      
+l.315 \end{align*}
+                  
+Not a real error.
+
+[191]
+./Report.org.tex:316: Preview: Snippet 192 started.
+<-><->
+      
+l.316 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:321: Preview: Snippet 192 ended.(7077948+0x27948088).
+<-><->
+      
+l.321 \end{align*}
+                  
+Not a real error.
+
+[192]
+./Report.org.tex:322: Preview: Snippet 193 started.
+<-><->
+      
+l.322 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:327: Preview: Snippet 193 ended.(7077948+0x27948088).
+<-><->
+      
+l.327 \end{align*}
+                  
+Not a real error.
+
+[193]
+./Report.org.tex:328: Preview: Snippet 194 started.
+<-><->
+      
+l.328 $
+       \binom{r}{c} = \binom{2^n + r}{c} = \binom{2^n + r}{2^n + c} \quad (\...
+Not a real error.
+
+./Report.org.tex:328: Preview: Snippet 194 ended.(629661+280609x9040481).
+<-><->
+      
+l.328 ...m{2^n + r}{2^n + c} \quad (\text{mod} 2)$
+                                                  
+Not a real error.
+
+[194]
+./Report.org.tex:329: Preview: Snippet 195 started.
+<-><->
+      
+l.329 $
+       \lim
+Not a real error.
+
+./Report.org.tex:330: Preview: Snippet 195 ended.(753669+425990x4493805).
+<-><->
+      
+l.330 ...t(\frac{F_{n}}{F_{n-1}}\right) = \varphi$
+                                                  
+Not a real error.
+
+[195]
+./Report.org.tex:331: Preview: Snippet 196 started.
+<-><->
+      
+l.331 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:339: Preview: Snippet 196 ended.(12991932+0x34664398).
+<-><->
+      
+l.339 \end{align}
+                 
+Not a real error.
+
+[196
+
+]
+./Report.org.tex:340: Preview: Snippet 197 started.
+<-><->
+      
+l.340 $
+         2 \pi\left( \frac{\psi}{\varphi+1}\right) \equiv 2 \pi \psi \equiv ...
+Not a real error.
+
+./Report.org.tex:340: Preview: Snippet 197 ended.(753669+425990x8758754).
+<-><->
+      
+l.340 ...) \equiv 2 \pi \psi \equiv 0 \pmod \psi $
+                                                  
+Not a real error.
+
+[197]
+./Report.org.tex:341: Preview: Snippet 198 started.
+<-><->
+      
+l.341 $
+       \phi$
+Not a real error.
+
+./Report.org.tex:341: Preview: Snippet 198 ended.(455111+127431x390486).
+<-><->
+      
+l.341 $\phi$
+            
+Not a real error.
+
+[198]
+./Report.org.tex:342: Preview: Snippet 199 started.
+<-><->
+      
+l.342 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:345: Preview: Snippet 199 ended.(2596837+0x34664398).
+<-><->
+      
+l.345 \end{align}
+                 
+Not a real error.
+
+[199]
+./Report.org.tex:346: Preview: Snippet 200 started.
+<-><->
+      
+l.346 $
+       \varphi$
+Not a real error.
+
+./Report.org.tex:346: Preview: Snippet 200 ended.(282168+127431x428715).
+<-><->
+      
+l.346 $\varphi$
+               
+Not a real error.
+
+[200]
+./Report.org.tex:347: Preview: Snippet 201 started.
+<-><->
+      
+l.347 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:352: Preview: Snippet 201 ended.(5866739+0x34664398).
+<-><->
+      
+l.352 \end{align}
+                 
+Not a real error.
+
+[201
+
+
+]
+./Report.org.tex:353: Preview: Snippet 202 started.
+<-><->
+      
+l.353 $
+       $\begin{aligned}
+Not a real error.
+
+./Report.org.tex:355: Preview: Snippet 202 ended.(1559182+0x34664398).
+<-><->
+      
+l.355 \end{aligned}$$
+                     
+Not a real error.
+
+[202]
+./Report.org.tex:356: Preview: Snippet 203 started.
+<-><->
+      
+l.356 $
+       F_{n}$
+Not a real error.
+
+./Report.org.tex:356: Preview: Snippet 203 ended.(447828+98303x778167).
+<-><->
+      
+l.356 $F_{n}$
+             
+Not a real error.
+
+[203]
+./Report.org.tex:357: Preview: Snippet 204 started.
+<-><->
+      
+l.357 $
+       n^{\mathrm{th}}$
+Not a real error.
+
+./Report.org.tex:357: Preview: Snippet 204 ended.(556402+0x920391).
+<-><->
+      
+l.357 $n^{\mathrm{th}}$
+                       
+Not a real error.
+
+[204]
+./Report.org.tex:358: Preview: Snippet 205 started.
+<-><->
+      
+l.358 $
+       $\begin{aligned}
+Not a real error.
+
+./Report.org.tex:360: Preview: Snippet 205 ended.(1015808+0x34664398).
+<-><->
+      
+l.360 \end{aligned}$$
+                     
+Not a real error.
+
+[205]
+./Report.org.tex:361: Preview: Snippet 206 started.
+<-><->
+      
+l.361 $
+       G$
+Not a real error.
+
+./Report.org.tex:361: Preview: Snippet 206 ended.(447828+0x515276).
+<-><->
+      
+l.361 $G$
+         
+Not a real error.
+
+[206]
+./Report.org.tex:362: Preview: Snippet 207 started.
+<-><->
+      
+l.362 $
+       G_n$
+Not a real error.
+
+./Report.org.tex:362: Preview: Snippet 207 ended.(447828+98303x872010).
+<-><->
+      
+l.362 $G_n$
+           
+Not a real error.
+
+[207]
+./Report.org.tex:363: Preview: Snippet 208 started.
+<-><->
+      
+l.363 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:365: Preview: Snippet 208 ended.(1641146+0x22232594).
+<-><->
+      
+l.365 \end{equation*}
+                     
+Not a real error.
+
+[208]
+./Report.org.tex:366: Preview: Snippet 209 started.
+<-><->
+      
+l.366 $
+       G_n$
+Not a real error.
+
+./Report.org.tex:366: Preview: Snippet 209 ended.(447828+98303x872010).
+<-><->
+      
+l.366 $G_n$
+           
+Not a real error.
+
+[209]
+./Report.org.tex:367: Preview: Snippet 210 started.
+<-><->
+      
+l.367 $
+       \{G_{2n}\}_{n=1}^\infty$
+Not a real error.
+
+./Report.org.tex:367: Preview: Snippet 210 ended.(491520+163840x2808896).
+<-><->
+      
+l.367 $\{G_{2n}\}_{n=1}^\infty$
+                               
+Not a real error.
+
+[210]
+./Report.org.tex:368: Preview: Snippet 211 started.
+<-><->
+      
+l.368 $
+       \{G_{2n-1}\}_{n=1}^\infty$
+Not a real error.
+
+./Report.org.tex:368: Preview: Snippet 211 ended.(491520+163840x3479732).
+<-><->
+      
+l.368 $\{G_{2n-1}\}_{n=1}^\infty$
+                                 
+Not a real error.
+
+[211]
+./Report.org.tex:369: Preview: Snippet 212 started.
+<-><->
+      
+l.369 $
+       \{G_{2n}\}_{n=1}^\infty$
+Not a real error.
+
+./Report.org.tex:369: Preview: Snippet 212 ended.(491520+163840x2808896).
+<-><->
+      
+l.369 $\{G_{2n}\}_{n=1}^\infty$
+                               
+Not a real error.
+
+[212]
+./Report.org.tex:370: Preview: Snippet 213 started.
+<-><->
+      
+l.370 $
+       G_{2n} - G_{2(n+1)} > 0$
+Not a real error.
+
+./Report.org.tex:370: Preview: Snippet 213 ended.(447828+233018x5342124).
+<-><->
+      
+l.370 $G_{2n} - G_{2(n+1)} > 0$
+                               
+Not a real error.
+
+[213]
+./Report.org.tex:371: Preview: Snippet 214 started.
+<-><->
+      
+l.371 $
+       n = 1$
+Not a real error.
+
+./Report.org.tex:371: Preview: Snippet 214 ended.(422343+0x1594857).
+<-><->
+      
+l.371 $n = 1$
+             
+Not a real error.
+
+[214]
+./Report.org.tex:372: Preview: Snippet 215 started.
+<-><->
+      
+l.372 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:376: Preview: Snippet 215 ended.(4064996+0x20252093).
+<-><->
+      
+l.376 \end{align*}
+                  
+Not a real error.
+
+[215]
+./Report.org.tex:377: Preview: Snippet 216 started.
+<-><->
+      
+l.377 $
+       n$
+Not a real error.
+
+./Report.org.tex:377: Preview: Snippet 216 ended.(282168+0x393370).
+<-><->
+      
+l.377 $n$
+         
+Not a real error.
+
+[216]
+./Report.org.tex:378: Preview: Snippet 217 started.
+<-><->
+      
+l.378 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:380: Preview: Snippet 217 ended.(1573747+0x22677860).
+<-><->
+      
+l.380 \end{equation*}
+                     
+Not a real error.
+
+[217]
+./Report.org.tex:381: Preview: Snippet 218 started.
+<-><->
+      
+l.381 $
+       n+1$
+Not a real error.
+
+./Report.org.tex:381: Preview: Snippet 218 ended.(422343+54613x1522041).
+<-><->
+      
+l.381 $n+1$
+           
+Not a real error.
+
+[218]
+./Report.org.tex:382: Preview: Snippet 219 started.
+<-><->
+      
+l.382 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:391: Preview: Snippet 219 ended.(14340504+0x27274724).
+<-><->
+      
+l.391 \end{align*}
+                  
+Not a real error.
+
+[219]
+./Report.org.tex:392: Preview: Snippet 220 started.
+<-><->
+      
+l.392 $
+       \frac{G_{2n}}{G_{2(n+1)}} > 1$
+Not a real error.
+
+./Report.org.tex:392: Preview: Snippet 220 ended.(582177+395661x3225981).
+<-><->
+      
+l.392 $\frac{G_{2n}}{G_{2(n+1)}} > 1$
+                                     
+Not a real error.
+
+[220]
+./Report.org.tex:393: Preview: Snippet 221 started.
+<-><->
+      
+l.393 $
+       n$
+Not a real error.
+
+./Report.org.tex:393: Preview: Snippet 221 ended.(282168+0x393370).
+<-><->
+      
+l.393 $n$
+         
+Not a real error.
+
+[221]
+./Report.org.tex:394: Preview: Snippet 222 started.
+<-><->
+      
+l.394 $
+       \frac{G_{2n+2}}{G_{2n+3}} > 1$
+Not a real error.
+
+./Report.org.tex:394: Preview: Snippet 222 ended.(636792+346146x2870991).
+<-><->
+      
+l.394 $\frac{G_{2n+2}}{G_{2n+3}} > 1$
+                                     
+Not a real error.
+
+[222]
+./Report.org.tex:395: Preview: Snippet 223 started.
+<-><->
+      
+l.395 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:399: Preview: Snippet 223 ended.(3525262+0x21917377).
+<-><->
+      
+l.399 \end{align*}
+                  
+Not a real error.
+
+[223]
+./Report.org.tex:400: Preview: Snippet 224 started.
+<-><->
+      
+l.400 $
+       G_{2n}$
+Not a real error.
+
+./Report.org.tex:400: Preview: Snippet 224 ended.(447828+98303x1133245).
+<-><->
+      
+l.400 $G_{2n}$
+              
+Not a real error.
+
+[224]
+./Report.org.tex:401: Preview: Snippet 225 started.
+<-><->
+      
+l.401 $
+       \{G_{2n}\}_{n=1}^\infty$
+Not a real error.
+
+./Report.org.tex:401: Preview: Snippet 225 ended.(491520+163840x2808896).
+<-><->
+      
+l.401 $\{G_{2n}\}_{n=1}^\infty$
+                               
+Not a real error.
+
+[225]
+./Report.org.tex:402: Preview: Snippet 226 started.
+<-><->
+      
+l.402 $
+       G_n$
+Not a real error.
+
+./Report.org.tex:402: Preview: Snippet 226 ended.(447828+98303x872010).
+<-><->
+      
+l.402 $G_n$
+           
+Not a real error.
+
+[226]
+./Report.org.tex:403: Preview: Snippet 227 started.
+<-><->
+      
+l.403 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:405: Preview: Snippet 227 ended.(1439032+0x22838620).
+<-><->
+      
+l.405 \end{equation*}
+                     
+Not a real error.
+
+[227]
+./Report.org.tex:406: Preview: Snippet 228 started.
+<-><->
+      
+l.406 $
+       \frac{F_{n-1}}{F_n} > 0$
+Not a real error.
+
+./Report.org.tex:406: Preview: Snippet 228 ended.(636792+291531x2590530).
+<-><->
+      
+l.406 $\frac{F_{n-1}}{F_n} > 0$
+                               
+Not a real error.
+
+[228]
+./Report.org.tex:407: Preview: Snippet 229 started.
+<-><->
+      
+l.407 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:409: Preview: Snippet 229 ended.(1439032+0x20173331).
+<-><->
+      
+l.409 \end{equation*}
+                     
+Not a real error.
+
+[229]
+./Report.org.tex:410: Preview: Snippet 230 started.
+<-><->
+      
+l.410 $
+       G_n$
+Not a real error.
+
+./Report.org.tex:410: Preview: Snippet 230 ended.(447828+98303x872010).
+<-><->
+      
+l.410 $G_n$
+           
+Not a real error.
+
+[230]
+./Report.org.tex:411: Preview: Snippet 231 started.
+<-><->
+      
+l.411 $
+       G_{2n}$
+Not a real error.
+
+./Report.org.tex:411: Preview: Snippet 231 ended.(447828+98303x1133245).
+<-><->
+      
+l.411 $G_{2n}$
+              
+Not a real error.
+
+[231]
+./Report.org.tex:412: Preview: Snippet 232 started.
+<-><->
+      
+l.412 $
+       \{G_{2n}\}_{n=1}^\infty$
+Not a real error.
+
+./Report.org.tex:412: Preview: Snippet 232 ended.(491520+163840x2808896).
+<-><->
+      
+l.412 $\{G_{2n}\}_{n=1}^\infty$
+                               
+Not a real error.
+
+[232]
+./Report.org.tex:413: Preview: Snippet 233 started.
+<-><->
+      
+l.413 $
+       G_{2n-1} - G_{2(n+1)-1} < 0$
+Not a real error.
+
+./Report.org.tex:413: Preview: Snippet 233 ended.(447828+233018x6683796).
+<-><->
+      
+l.413 $G_{2n-1} - G_{2(n+1)-1} < 0$
+                                   
+Not a real error.
+
+[233]
+./Report.org.tex:414: Preview: Snippet 234 started.
+<-><->
+      
+l.414 $
+       n = 1$
+Not a real error.
+
+./Report.org.tex:414: Preview: Snippet 234 ended.(422343+0x1594857).
+<-><->
+      
+l.414 $n = 1$
+             
+Not a real error.
+
+[234]
+./Report.org.tex:415: Preview: Snippet 235 started.
+<-><->
+      
+l.415 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:419: Preview: Snippet 235 ended.(4064996+0x20252093).
+<-><->
+      
+l.419 \end{align*}
+                  
+Not a real error.
+
+[235]
+./Report.org.tex:420: Preview: Snippet 236 started.
+<-><->
+      
+l.420 $
+       n$
+Not a real error.
+
+./Report.org.tex:420: Preview: Snippet 236 ended.(282168+0x393370).
+<-><->
+      
+l.420 $n$
+         
+Not a real error.
+
+[236]
+./Report.org.tex:421: Preview: Snippet 237 started.
+<-><->
+      
+l.421 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:423: Preview: Snippet 237 ended.(1493646+0x22607317).
+<-><->
+      
+l.423 \end{equation*}
+                     
+Not a real error.
+
+[237]
+./Report.org.tex:424: Preview: Snippet 238 started.
+<-><->
+      
+l.424 $
+       n+1$
+Not a real error.
+
+./Report.org.tex:424: Preview: Snippet 238 ended.(422343+54613x1522041).
+<-><->
+      
+l.424 $n+1$
+           
+Not a real error.
+
+[238]
+./Report.org.tex:425: Preview: Snippet 239 started.
+<-><->
+      
+l.425 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:434: Preview: Snippet 239 ended.(14340504+0x27941919).
+<-><->
+      
+l.434 \end{align*}
+                  
+Not a real error.
+
+[239]
+./Report.org.tex:435: Preview: Snippet 240 started.
+<-><->
+      
+l.435 $
+       \frac{G_{2n-1}}{G_{2n+1}} < 1$
+Not a real error.
+
+./Report.org.tex:435: Preview: Snippet 240 ended.(636792+346146x2889194).
+<-><->
+      
+l.435 $\frac{G_{2n-1}}{G_{2n+1}} < 1$
+                                     
+Not a real error.
+
+[240]
+./Report.org.tex:436: Preview: Snippet 241 started.
+<-><->
+      
+l.436 $
+       n$
+Not a real error.
+
+./Report.org.tex:436: Preview: Snippet 241 ended.(282168+0x393370).
+<-><->
+      
+l.436 $n$
+         
+Not a real error.
+
+[241]
+./Report.org.tex:437: Preview: Snippet 242 started.
+<-><->
+      
+l.437 $
+       \frac{G_{2n+1}}{G_{2n+2}} < 1$
+Not a real error.
+
+./Report.org.tex:437: Preview: Snippet 242 ended.(636792+346146x2870991).
+<-><->
+      
+l.437 $\frac{G_{2n+1}}{G_{2n+2}} < 1$
+                                     
+Not a real error.
+
+[242]
+./Report.org.tex:438: Preview: Snippet 243 started.
+<-><->
+      
+l.438 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:442: Preview: Snippet 243 ended.(3525262+0x22584573).
+<-><->
+      
+l.442 \end{align*}
+                  
+Not a real error.
+
+[243]
+./Report.org.tex:443: Preview: Snippet 244 started.
+<-><->
+      
+l.443 $
+       G_{2n-1}$
+Not a real error.
+
+./Report.org.tex:443: Preview: Snippet 244 ended.(447828+152917x1804081).
+<-><->
+      
+l.443 $G_{2n-1}$
+                
+Not a real error.
+
+[244]
+./Report.org.tex:444: Preview: Snippet 245 started.
+<-><->
+      
+l.444 $
+       \{G_{2n-1}\}_{n=1}^\infty$
+Not a real error.
+
+./Report.org.tex:444: Preview: Snippet 245 ended.(491520+163840x3479732).
+<-><->
+      
+l.444 $\{G_{2n-1}\}_{n=1}^\infty$
+                                 
+Not a real error.
+
+[245]
+./Report.org.tex:445: Preview: Snippet 246 started.
+<-><->
+      
+l.445 $
+       G_n$
+Not a real error.
+
+./Report.org.tex:445: Preview: Snippet 246 ended.(447828+98303x872010).
+<-><->
+      
+l.445 $G_n$
+           
+Not a real error.
+
+[246]
+./Report.org.tex:446: Preview: Snippet 247 started.
+<-><->
+      
+l.446 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:448: Preview: Snippet 247 ended.(1439032+0x22838620).
+<-><->
+      
+l.448 \end{equation*}
+                     
+Not a real error.
+
+[247]
+./Report.org.tex:449: Preview: Snippet 248 started.
+<-><->
+      
+l.449 $
+       \frac{F_{n-1}}{F_n} \le 1$
+Not a real error.
+
+./Report.org.tex:449: Preview: Snippet 248 ended.(636792+291531x2590530).
+<-><->
+      
+l.449 $\frac{F_{n-1}}{F_n} \le 1$
+                                 
+Not a real error.
+
+[248]
+./Report.org.tex:450: Preview: Snippet 249 started.
+<-><->
+      
+l.450 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:452: Preview: Snippet 249 ended.(1439032+0x20173331).
+<-><->
+      
+l.452 \end{equation*}
+                     
+Not a real error.
+
+[249]
+./Report.org.tex:453: Preview: Snippet 250 started.
+<-><->
+      
+l.453 $
+       G_n$
+Not a real error.
+
+./Report.org.tex:453: Preview: Snippet 250 ended.(447828+98303x872010).
+<-><->
+      
+l.453 $G_n$
+           
+Not a real error.
+
+[250]
+./Report.org.tex:454: Preview: Snippet 251 started.
+<-><->
+      
+l.454 $
+       G_{2n-1}$
+Not a real error.
+
+./Report.org.tex:454: Preview: Snippet 251 ended.(447828+152917x1804081).
+<-><->
+      
+l.454 $G_{2n-1}$
+                
+Not a real error.
+
+[251]
+./Report.org.tex:455: Preview: Snippet 252 started.
+<-><->
+      
+l.455 $
+       \lim_{n \to \infty} G_n$
+Not a real error.
+
+./Report.org.tex:455: Preview: Snippet 252 ended.(455111+98303x3293131).
+<-><->
+      
+l.455 $\lim_{n \to \infty} G_n$
+                               
+Not a real error.
+
+[252]
+./Report.org.tex:456: Preview: Snippet 253 started.
+<-><->
+      
+l.456 $
+       G_{2n}$
+Not a real error.
+
+./Report.org.tex:456: Preview: Snippet 253 ended.(447828+98303x1133245).
+<-><->
+      
+l.456 $G_{2n}$
+              
+Not a real error.
+
+[253]
+./Report.org.tex:457: Preview: Snippet 254 started.
+<-><->
+      
+l.457 $
+       G_{2n-1}$
+Not a real error.
+
+./Report.org.tex:457: Preview: Snippet 254 ended.(447828+152917x1804081).
+<-><->
+      
+l.457 $G_{2n-1}$
+                
+Not a real error.
+
+[254]
+./Report.org.tex:458: Preview: Snippet 255 started.
+<-><->
+      
+l.458 $
+       L~~\forall n \ge 1$
+Not a real error.
+
+./Report.org.tex:458: Preview: Snippet 255 ended.(455111+89110x2841757).
+<-><->
+      
+l.458 $L~~\forall n \ge 1$
+                          
+Not a real error.
+
+[255]
+./Report.org.tex:459: Preview: Snippet 256 started.
+<-><->
+      
+l.459 \begin{equation*}
+                       
+Not a real error.
+
+./Report.org.tex:461: Preview: Snippet 256 ended.(913863+0x21114566).
+<-><->
+      
+l.461 \end{equation*}
+                     
+Not a real error.
+
+[256]
+./Report.org.tex:462: Preview: Snippet 257 started.
+<-><->
+      
+l.462 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:470: Preview: Snippet 257 ended.(10380732+0x21272317).
+<-><->
+      
+l.470 \end{align*}
+                  
+Not a real error.
+
+[257]
+./Report.org.tex:471: Preview: Snippet 258 started.
+<-><->
+      
+l.471 $
+       \frac{\mathrm{d} }{\mathrm{d} t}\left( p \right)
+Not a real error.
+
+./Report.org.tex:472: Preview: Snippet 258 ended.(576613+225995x2796924).
+<-><->
+      
+l.472 \propto p$
+                
+Not a real error.
+
+[258]
+./Report.org.tex:473: Preview: Snippet 259 started.
+<-><->
+      
+l.473 $
+       x$
+Not a real error.
+
+./Report.org.tex:473: Preview: Snippet 259 ended.(282168+0x374556).
+<-><->
+      
+l.473 $x$
+         
+Not a real error.
+
+[259]
+./Report.org.tex:474: Preview: Snippet 260 started.
+<-><->
+      
+l.474 $
+       y$
+Not a real error.
+
+./Report.org.tex:474: Preview: Snippet 260 ended.(282168+127431x344824).
+<-><->
+      
+l.474 $y$
+         
+Not a real error.
+
+[260]
+./Report.org.tex:475: Preview: Snippet 261 started.
+<-><->
+      
+l.475 $
+       $\begin{aligned}
+Not a real error.
+
+./Report.org.tex:481: Preview: Snippet 261 ended.(7275143+0x34664398).
+<-><->
+      
+l.481 \end{aligned}$$
+                     
+Not a real error.
+
+[261]
+./Report.org.tex:482: Preview: Snippet 262 started.
+<-><->
+      
+l.482 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:485: Preview: Snippet 262 ended.(1769472+0x34664398).
+<-><->
+      
+l.485 \end{align}
+                 
+Not a real error.
+
+[262
+
+]
+./Report.org.tex:486: Preview: Snippet 263 started.
+<-><->
+      
+l.486 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:488: Preview: Snippet 263 ended.(786432+0x21070702).
+<-><->
+      
+l.488 \end{align*}
+                  
+Not a real error.
+
+[263]
+./Report.org.tex:489: Preview: Snippet 264 started.
+<-><->
+      
+l.489 $
+       y \propto e^{m_{i}x}, \enspace i = 1, 2$
+Not a real error.
+
+./Report.org.tex:489: Preview: Snippet 264 ended.(435343+127431x5191484).
+<-><->
+      
+l.489 $y \propto e^{m_{i}x}, \enspace i = 1, 2$
+                                               
+Not a real error.
+
+[264]
+./Report.org.tex:490: Preview: Snippet 265 started.
+<-><->
+      
+l.490 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:492: Preview: Snippet 265 ended.(1913111+0x21192931).
+<-><->
+      
+l.492 \end{align*}
+                  
+Not a real error.
+
+[265]
+./Report.org.tex:493: Preview: Snippet 266 started.
+<-><->
+      
+l.493 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:497: Preview: Snippet 266 ended.(6263621+0x34664398).
+<-><->
+      
+l.497 \end{align}
+                 
+Not a real error.
+
+[266
+
+
+
+]
+./Report.org.tex:498: Preview: Snippet 267 started.
+<-><->
+      
+l.498 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:502: Preview: Snippet 267 ended.(5600651+0x23903516).
+<-><->
+      
+l.502 \end{align*}
+                  
+Not a real error.
+
+[267]
+./Report.org.tex:503: Preview: Snippet 268 started.
+<-><->
+      
+l.503 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:505: Preview: Snippet 268 ended.(786432+0x34664398).
+<-><->
+      
+l.505 \end{align}
+                 
+Not a real error.
+
+[268]
+./Report.org.tex:506: Preview: Snippet 269 started.
+<-><->
+      
+l.506 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:508: Preview: Snippet 269 ended.(1966099+0x25469242).
+<-><->
+      
+l.508 \end{align*}
+                  
+Not a real error.
+
+[269]
+./Report.org.tex:509: Preview: Snippet 270 started.
+<-><->
+      
+l.509 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:511: Preview: Snippet 270 ended.(2013243+0x25233488).
+<-><->
+      
+l.511 \end{align*}
+                  
+Not a real error.
+
+[270]
+./Report.org.tex:512: Preview: Snippet 271 started.
+<-><->
+      
+l.512 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:514: Preview: Snippet 271 ended.(1913111+0x20151675).
+<-><->
+      
+l.514 \end{align*}
+                  
+Not a real error.
+
+[271]
+./Report.org.tex:515: Preview: Snippet 272 started.
+<-><->
+      
+l.515 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:517: Preview: Snippet 272 ended.(2001599+0x23126258).
+<-><->
+      
+l.517 \end{align*}
+                  
+Not a real error.
+
+[272]
+./Report.org.tex:518: Preview: Snippet 273 started.
+<-><->
+      
+l.518 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:523: Preview: Snippet 273 ended.(5800572+0x24507346).
+<-><->
+      
+l.523 \end{align*}
+                  
+Not a real error.
+
+[273]
+./Report.org.tex:524: Preview: Snippet 274 started.
+<-><->
+      
+l.524 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:528: Preview: Snippet 274 ended.(5509275+0x34664398).
+<-><->
+      
+l.528 \end{align}
+                 
+Not a real error.
+
+[274
+
+]
+./Report.org.tex:529: Preview: Snippet 275 started.
+<-><->
+      
+l.529 $
+       \varphi = \frac{1+ \sqrt{5} }{2} \approx 1.61\ldots$
+Not a real error.
+
+./Report.org.tex:529: Preview: Snippet 275 ended.(684192+225995x5727835).
+<-><->
+      
+l.529 ...frac{1+ \sqrt{5} }{2} \approx 1.61\ldots$
+                                                  
+Not a real error.
+
+[275]
+./Report.org.tex:530: Preview: Snippet 276 started.
+<-><->
+      
+l.530 $
+       \psi = 1-\varphi = \frac{1- \sqrt{5} }{2} \approx 0.61\ldots$
+Not a real error.
+
+./Report.org.tex:530: Preview: Snippet 276 ended.(684192+225995x8188002).
+<-><->
+      
+l.530 ...frac{1- \sqrt{5} }{2} \approx 0.61\ldots$
+                                                  
+Not a real error.
+
+[276]
+./Report.org.tex:531: Preview: Snippet 277 started.
+<-><->
+      
+l.531 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:539: Preview: Snippet 277 ended.(11016098+0x26706282).
+<-><->
+      
+l.539 \end{align*}
+                  
+Not a real error.
+
+[277]
+./Report.org.tex:540: Preview: Snippet 278 started.
+<-><->
+      
+l.540 $
+       \mathtt{\theta}$
+Not a real error.
+
+./Report.org.tex:540: Preview: Snippet 278 ended.(455111+0x325860).
+<-><->
+      
+l.540 $\mathtt{\theta}$
+                       
+Not a real error.
+
+[278]
+./Report.org.tex:541: Preview: Snippet 279 started.
+<-><->
+      
+l.541 $
+       \varphi$
+Not a real error.
+
+./Report.org.tex:541: Preview: Snippet 279 ended.(282168+127431x428715).
+<-><->
+      
+l.541 $\varphi$
+               
+Not a real error.
+
+[279]
+./Report.org.tex:542: Preview: Snippet 280 started.
+<-><->
+      
+l.542 $
+       \theta =2 \varphi  \pi$
+Not a real error.
+
+./Report.org.tex:542: Preview: Snippet 280 ended.(455111+127431x2353148).
+<-><->
+      
+l.542 $\theta =2 \varphi  \pi$
+                              
+Not a real error.
+
+[280]
+./Report.org.tex:543: Preview: Snippet 281 started.
+<-><->
+      
+l.543 $
+       \pi \mod 1 \approx \frac{1}{7}=0.71428571428 $
+Not a real error.
+
+./Report.org.tex:543: Preview: Snippet 281 ended.(553676+225995x8916572).
+<-><->
+      
+l.543 ...mod 1 \approx \frac{1}{7}=0.71428571428 $
+                                                  
+Not a real error.
+
+[281]
+./Report.org.tex:544: Preview: Snippet 282 started.
+<-><->
+      
+l.544 $
+       e \mod 1 \approx \frac{5}{7}= 0.142857142857 $
+Not a real error.
+
+./Report.org.tex:544: Preview: Snippet 282 ended.(553676+225995x9152320).
+<-><->
+      
+l.544 ...d 1 \approx \frac{5}{7}= 0.142857142857 $
+                                                  
+Not a real error.
+
+[282]
+./Report.org.tex:545: Preview: Snippet 283 started.
+<-><->
+      
+l.545 $
+       \phi$
+Not a real error.
+
+./Report.org.tex:545: Preview: Snippet 283 ended.(455111+127431x390486).
+<-><->
+      
+l.545 $\phi$
+            
+Not a real error.
+
+[283]
+./Report.org.tex:546: Preview: Snippet 284 started.
+<-><->
+      
+l.546 $
+       \psi$
+Not a real error.
+
+./Report.org.tex:546: Preview: Snippet 284 ended.(455111+127431x450409).
+<-><->
+      
+l.546 $\psi$
+            
+Not a real error.
+
+[284]
+./Report.org.tex:547: Preview: Snippet 285 started.
+<-><->
+      
+l.547 $
+       \phi \mod 1 =
+Not a real error.
+
+./Report.org.tex:548: Preview: Snippet 285 ended.(455111+127431x3953837).
+<-><->
+      
+l.548 \psi$
+           
+Not a real error.
+
+[285]
+./Report.org.tex:549: Preview: Snippet 286 started.
+<-><->
+      
+l.549 $
+       \frac{1}{\pi}$
+Not a real error.
+
+./Report.org.tex:549: Preview: Snippet 286 ended.(553676+225995x480213).
+<-><->
+      
+l.549 $\frac{1}{\pi}$
+                     
+Not a real error.
+
+[286]
+./Report.org.tex:550: Preview: Snippet 287 started.
+<-><->
+      
+l.550 $
+       x \rightarrow x^{2}, \enspace x \in \mathbb{R}$
+Not a real error.
+
+./Report.org.tex:550: Preview: Snippet 287 ended.(533465+127431x4330285).
+<-><->
+      
+l.550 ...htarrow x^{2}, \enspace x \in \mathbb{R}$
+                                                  
+Not a real error.
+
+[287]
+./Report.org.tex:551: Preview: Snippet 288 started.
+<-><->
+      
+l.551 $
+       x>1$
+Not a real error.
+
+./Report.org.tex:551: Preview: Snippet 288 ended.(422343+25623x1576043).
+<-><->
+      
+l.551 $x>1$
+           
+Not a real error.
+
+[288]
+./Report.org.tex:552: Preview: Snippet 289 started.
+<-><->
+      
+l.552 $
+       x<1$
+Not a real error.
+
+./Report.org.tex:552: Preview: Snippet 289 ended.(422343+25623x1576043).
+<-><->
+      
+l.552 $x<1$
+           
+Not a real error.
+
+[289]
+./Report.org.tex:553: Preview: Snippet 290 started.
+<-><->
+      
+l.553 $
+       z \rightarrow z^{2}, \enspace z \in \mathbb{C}$
+Not a real error.
+
+./Report.org.tex:553: Preview: Snippet 290 ended.(533465+127431x4207411).
+<-><->
+      
+l.553 ...htarrow z^{2}, \enspace z \in \mathbb{C}$
+                                                  
+Not a real error.
+
+[290]
+./Report.org.tex:554: Preview: Snippet 291 started.
+<-><->
+      
+l.554 $
+       \left\lvert z \right\rvert >1$
+Not a real error.
+
+./Report.org.tex:554: Preview: Snippet 291 ended.(491520+163840x1899175).
+<-><->
+      
+l.554 $\left\lvert z \right\rvert >1$
+                                     
+Not a real error.
+
+[291]
+./Report.org.tex:555: Preview: Snippet 292 started.
+<-><->
+      
+l.555 $
+       \left\lvert z \right\rvert <1$
+Not a real error.
+
+./Report.org.tex:555: Preview: Snippet 292 ended.(491520+163840x1899175).
+<-><->
+      
+l.555 $\left\lvert z \right\rvert <1$
+                                     
+Not a real error.
+
+[292]
+./Report.org.tex:556: Preview: Snippet 293 started.
+<-><->
+      
+l.556 $
+       \left\lvert z \right\rvert \leq 1$
+Not a real error.
+
+./Report.org.tex:556: Preview: Snippet 293 ended.(491520+163840x1899175).
+<-><->
+      
+l.556 $\left\lvert z \right\rvert \leq 1$
+                                         
+Not a real error.
+
+[293]
+./Report.org.tex:557: Preview: Snippet 294 started.
+<-><->
+      
+l.557 $
+       f_{c}(z) = z^{2} + c, \quad c \leq 1 \in \mathbb{C}$
+Not a real error.
+
+./Report.org.tex:557: Preview: Snippet 294 ended.(533465+163840x7723035).
+<-><->
+      
+l.557 ...z^{2} + c, \quad c \leq 1 \in \mathbb{C}$
+                                                  
+Not a real error.
+
+[294]
+./Report.org.tex:558: Preview: Snippet 295 started.
+<-><->
+      
+l.558 $
+       P_{c}$
+Not a real error.
+
+./Report.org.tex:558: Preview: Snippet 295 ended.(447828+98303x687727).
+<-><->
+      
+l.558 $P_{c}$
+             
+Not a real error.
+
+[295]
+./Report.org.tex:559: Preview: Snippet 296 started.
+<-><->
+      
+l.559 $
+       Q^{(k)}_{c}$
+Not a real error.
+
+./Report.org.tex:559: Preview: Snippet 296 ended.(684486+127431x1250148).
+<-><->
+      
+l.559 $Q^{(k)}_{c}$
+                   
+Not a real error.
+
+[296]
+./Report.org.tex:560: Preview: Snippet 297 started.
+<-><->
+      
+l.560 $
+       k$
+Not a real error.
+
+./Report.org.tex:560: Preview: Snippet 297 ended.(455111+0x361814).
+<-><->
+      
+l.560 $k$
+         
+Not a real error.
+
+[297]
+./Report.org.tex:561: Preview: Snippet 298 started.
+<-><->
+      
+l.561 $
+       f_{c}$
+Not a real error.
+
+./Report.org.tex:561: Preview: Snippet 298 ended.(455111+127431x587832).
+<-><->
+      
+l.561 $f_{c}$
+             
+Not a real error.
+
+[298]
+./Report.org.tex:562: Preview: Snippet 299 started.
+<-><->
+      
+l.562 $
+       \lim_{k \rightarrow \infty} \left[ Q^{(k)}_{c}  \right] = P_{c}$
+Not a real error.
+
+./Report.org.tex:562: Preview: Snippet 299 ended.(753669+425990x5817468).
+<-><->
+      
+l.562 ...fty} \left[ Q^{(k)}_{c}  \right] = P_{c}$
+                                                  
+Not a real error.
+
+[299]
+./Report.org.tex:563: Preview: Snippet 300 started.
+<-><->
+      
+l.563 $
+       E_{c}$
+Not a real error.
+
+./Report.org.tex:563: Preview: Snippet 300 ended.(447828+98303x750760).
+<-><->
+      
+l.563 $E_{c}$
+             
+Not a real error.
+
+[300]
+./Report.org.tex:564: Preview: Snippet 301 started.
+<-><->
+      
+l.564 $
+       \infty$
+Not a real error.
+
+./Report.org.tex:564: Preview: Snippet 301 ended.(282168+0x655361).
+<-><->
+      
+l.564 $\infty$
+              
+Not a real error.
+
+[301]
+./Report.org.tex:565: Preview: Snippet 302 started.
+<-><->
+      
+l.565 $
+       f_{0}(z) = z^{2}$
+Not a real error.
+
+./Report.org.tex:565: Preview: Snippet 302 ended.(533465+163840x2959589).
+<-><->
+      
+l.565 $f_{0}(z) = z^{2}$
+                        
+Not a real error.
+
+[302]
+./Report.org.tex:566: Preview: Snippet 303 started.
+<-><->
+      
+l.566 $
+       \left\lvert z  \right \rvert \leq 1$
+Not a real error.
+
+./Report.org.tex:566: Preview: Snippet 303 ended.(491520+163840x1899175).
+<-><->
+      
+l.566 $\left\lvert z  \right \rvert \leq 1$
+                                           
+Not a real error.
+
+[303]
+./Report.org.tex:567: Preview: Snippet 304 started.
+<-><->
+      
+l.567 $
+       \left\lvert z  \right \rvert = 1$
+Not a real error.
+
+./Report.org.tex:567: Preview: Snippet 304 ended.(491520+163840x1899175).
+<-><->
+      
+l.567 $\left\lvert z  \right \rvert = 1$
+                                        
+Not a real error.
+
+[304]
+./Report.org.tex:568: Preview: Snippet 305 started.
+<-><->
+      
+l.568 $
+       f_{1}(z) = z^{2} - 1$
+Not a real error.
+
+./Report.org.tex:568: Preview: Snippet 305 ended.(533465+163840x4088260).
+<-><->
+      
+l.568 $f_{1}(z) = z^{2} - 1$
+                            
+Not a real error.
+
+[305]
+./Report.org.tex:569: Preview: Snippet 306 started.
+<-><->
+      
+l.569 $
+       f_{0}: z \rightarrow z^{2}$
+Not a real error.
+
+./Report.org.tex:569: Preview: Snippet 306 ended.(533465+127431x3141623).
+<-><->
+      
+l.569 $f_{0}: z \rightarrow z^{2}$
+                                  
+Not a real error.
+
+[306]
+./Report.org.tex:570: Preview: Snippet 307 started.
+<-><->
+      
+l.570 $
+       f_{0}: z \rightarrow z^{2} - 1$
+Not a real error.
+
+./Report.org.tex:570: Preview: Snippet 307 ended.(533465+127431x4270294).
+<-><->
+      
+l.570 $f_{0}: z \rightarrow z^{2} - 1$
+                                      
+Not a real error.
+
+[307]
+./Report.org.tex:571: Preview: Snippet 308 started.
+<-><->
+      
+l.571 $
+       f_{c}$
+Not a real error.
+
+./Report.org.tex:571: Preview: Snippet 308 ended.(455111+127431x587832).
+<-><->
+      
+l.571 $f_{c}$
+             
+Not a real error.
+
+[308]
+./Report.org.tex:572: Preview: Snippet 309 started.
+<-><->
+      
+l.572 $
+       \left\lvert z \right\rvert >
+Not a real error.
+
+./Report.org.tex:573: Preview: Snippet 309 ended.(491520+163840x4968069).
+<-><->
+      
+l.573 ...hrm{max}\left(\left\{c, 2\right\}\right)$
+                                                  
+Not a real error.
+
+[309]
+./Report.org.tex:574: Preview: Snippet 310 started.
+<-><->
+      
+l.574 $
+       \left\lvert c \right\rvert \leq 1$
+Not a real error.
+
+./Report.org.tex:574: Preview: Snippet 310 ended.(491520+163840x1849188).
+<-><->
+      
+l.574 $\left\lvert c \right\rvert \leq 1$
+                                         
+Not a real error.
+
+[310]
+./Report.org.tex:575: Preview: Snippet 311 started.
+<-><->
+      
+l.575 $
+       (k)$
+Not a real error.
+
+./Report.org.tex:575: Preview: Snippet 311 ended.(491520+163840x871540).
+<-><->
+      
+l.575 $(k)$
+           
+Not a real error.
+
+[311]
+./Report.org.tex:576: Preview: Snippet 312 started.
+<-><->
+      
+l.576 $
+       z$
+Not a real error.
+
+./Report.org.tex:576: Preview: Snippet 312 ended.(282168+0x333598).
+<-><->
+      
+l.576 $z$
+         
+Not a real error.
+
+[312]
+./Report.org.tex:577: Preview: Snippet 313 started.
+<-><->
+      
+l.577 $
+       f_{0}: z \rightarrow z^{2}$
+Not a real error.
+
+./Report.org.tex:577: Preview: Snippet 313 ended.(533465+127431x3141623).
+<-><->
+      
+l.577 $f_{0}: z \rightarrow z^{2}$
+                                  
+Not a real error.
+
+[313]
+./Report.org.tex:578: Preview: Snippet 314 started.
+<-><->
+      
+l.578 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:583: Preview: Snippet 314 ended.(2389436+0x20894667).
+<-><->
+      
+l.583 \end{align*}
+                  
+Not a real error.
+
+[314]
+./Report.org.tex:584: Preview: Snippet 315 started.
+<-><->
+      
+l.584 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:587: Preview: Snippet 315 ended.(810083+0x34664398).
+<-><->
+      
+l.587 \end{align}
+                 
+Not a real error.
+
+[315]
+./Report.org.tex:588: Preview: Snippet 316 started.
+<-><->
+      
+l.588 $
+       \tau$
+Not a real error.
+
+./Report.org.tex:588: Preview: Snippet 316 ended.(282168+0x360676).
+<-><->
+      
+l.588 $\tau$
+            
+Not a real error.
+
+[316]
+./Report.org.tex:589: Preview: Snippet 317 started.
+<-><->
+      
+l.589 $
+       f_{\frac{1}{4} + \frac{i}{2}}: z \rightarrow z^{2} + \frac{1}{4} + \f...
+Not a real error.
+
+./Report.org.tex:589: Preview: Snippet 317 ended.(561594+326679x6482318).
+<-><->
+      
+l.589 ...tarrow z^{2} + \frac{1}{4} + \frac{i}{2}$
+                                                  
+Not a real error.
+
+[317]
+./Report.org.tex:590: Preview: Snippet 318 started.
+<-><->
+      
+l.590 $
+       f_{0.8 e^{\pi i \tau}}$
+Not a real error.
+
+./Report.org.tex:590: Preview: Snippet 318 ended.(455111+127431x2033456).
+<-><->
+      
+l.590 $f_{0.8 e^{\pi i \tau}}$
+                              
+Not a real error.
+
+[318]
+./Report.org.tex:591: Preview: Snippet 319 started.
+<-><->
+      
+l.591 $
+       z \leftarrow z^{2} -0.123+0.745i$
+Not a real error.
+
+./Report.org.tex:591: Preview: Snippet 319 ended.(533465+54613x6793938).
+<-><->
+      
+l.591 $z \leftarrow z^{2} -0.123+0.745i$
+                                        
+Not a real error.
+
+[319]
+./Report.org.tex:592: Preview: Snippet 320 started.
+<-><->
+      
+l.592 $
+       z \leftarrow z^{2} -0.123+0.745i$
+Not a real error.
+
+./Report.org.tex:592: Preview: Snippet 320 ended.(533465+54613x6793938).
+<-><->
+      
+l.592 $z \leftarrow z^{2} -0.123+0.745i$
+                                        
+Not a real error.
+
+[320]
+./Report.org.tex:593: Preview: Snippet 321 started.
+<-><->
+      
+l.593 $
+       c$
+Not a real error.
+
+./Report.org.tex:593: Preview: Snippet 321 ended.(282168+0x283611).
+<-><->
+      
+l.593 $c$
+         
+Not a real error.
+
+[321]
+./Report.org.tex:594: Preview: Snippet 322 started.
+<-><->
+      
+l.594 $
+       \left\lvert \gamma \right \rvert < 1$
+Not a real error.
+
+./Report.org.tex:594: Preview: Snippet 322 ended.(491520+163840x1941285).
+<-><->
+      
+l.594 $\left\lvert \gamma \right \rvert < 1$
+                                            
+Not a real error.
+
+[322]
+./Report.org.tex:595: Preview: Snippet 323 started.
+<-><->
+      
+l.595 $
+       f_{\gamma}$
+Not a real error.
+
+./Report.org.tex:595: Preview: Snippet 323 ended.(455111+187504x657125).
+<-><->
+      
+l.595 $f_{\gamma}$
+                  
+Not a real error.
+
+[323]
+./Report.org.tex:596: Preview: Snippet 324 started.
+<-><->
+      
+l.596 $
+       P$
+Not a real error.
+
+./Report.org.tex:596: Preview: Snippet 324 ended.(447828+0x511773).
+<-><->
+      
+l.596 $P$
+         
+Not a real error.
+
+[324]
+./Report.org.tex:597: Preview: Snippet 325 started.
+<-><->
+      
+l.597 $
+       z_{0}$
+Not a real error.
+
+./Report.org.tex:597: Preview: Snippet 325 ended.(282168+98303x598778).
+<-><->
+      
+l.597 $z_{0}$
+             
+Not a real error.
+
+[325]
+./Report.org.tex:598: Preview: Snippet 326 started.
+<-><->
+      
+l.598 $
+       f_{z_{0}}$
+Not a real error.
+
+./Report.org.tex:598: Preview: Snippet 326 ended.(455111+163839x859789).
+<-><->
+      
+l.598 $f_{z_{0}}$
+                 
+Not a real error.
+
+[326]
+./Report.org.tex:599: Preview: Snippet 327 started.
+<-><->
+      
+l.599 $
+       z \rightarrow z^{2} + z_{0}$
+Not a real error.
+
+./Report.org.tex:599: Preview: Snippet 327 ended.(533465+98303x3380408).
+<-><->
+      
+l.599 $z \rightarrow z^{2} + z_{0}$
+                                   
+Not a real error.
+
+[327]
+./Report.org.tex:600: Preview: Snippet 328 started.
+<-><->
+      
+l.600 $
+       z_{0}$
+Not a real error.
+
+./Report.org.tex:600: Preview: Snippet 328 ended.(282168+98303x598778).
+<-><->
+      
+l.600 $z_{0}$
+             
+Not a real error.
+
+[328]
+./Report.org.tex:601: Preview: Snippet 329 started.
+<-><->
+      
+l.601 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:604: Preview: Snippet 329 ended.(1785205+0x34664398).
+<-><->
+      
+l.604 \end{align}
+                 
+Not a real error.
+
+[329
+
+]
+./Report.org.tex:605: Preview: Snippet 330 started.
+<-><->
+      
+l.605 $
+       c$
+Not a real error.
+
+./Report.org.tex:605: Preview: Snippet 330 ended.(282168+0x283611).
+<-><->
+      
+l.605 $c$
+         
+Not a real error.
+
+[330]
+./Report.org.tex:606: Preview: Snippet 331 started.
+<-><->
+      
+l.606 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:613: Preview: Snippet 331 ended.(12563265+0x34664398).
+<-><->
+      
+l.613 \end{align}
+                 
+Not a real error.
+
+[331
+
+
+]
+./Report.org.tex:614: Preview: Snippet 332 started.
+<-><->
+      
+l.614 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:616: Preview: Snippet 332 ended.(1936048+0x34664398).
+<-><->
+      
+l.616 \end{align}
+                 
+Not a real error.
+
+[332]
+./Report.org.tex:617: Preview: Snippet 333 started.
+<-><->
+      
+l.617 $
+       f^{(k)}\left(x\right) = \sum_{n=k}^\infty\frac{a_{n+k}\cdot x^n}{n!}$
+Not a real error.
+
+./Report.org.tex:617: Preview: Snippet 333 ended.(666174+225995x6968174).
+<-><->
+      
+l.617 ..._{n=k}^\infty\frac{a_{n+k}\cdot x^n}{n!}$
+                                                  
+Not a real error.
+
+[333]
+./Report.org.tex:618: Preview: Snippet 334 started.
+<-><->
+      
+l.618 $
+       k+1$
+Not a real error.
+
+./Report.org.tex:618: Preview: Snippet 334 ended.(455111+54613x1490485).
+<-><->
+      
+l.618 $k+1$
+           
+Not a real error.
+
+[334]
+./Report.org.tex:619: Preview: Snippet 335 started.
+<-><->
+      
+l.619 $
+       f^{(k+1)}(x) = \sum_{n=k+1}^\infty\frac{a_{n+k+1}\cdot x^n}{n!}$
+Not a real error.
+
+./Report.org.tex:619: Preview: Snippet 335 ended.(666174+251225x8745856).
+<-><->
+      
+l.619 ...k+1}^\infty\frac{a_{n+k+1}\cdot x^n}{n!}$
+                                                  
+Not a real error.
+
+[335]
+./Report.org.tex:620: Preview: Snippet 336 started.
+<-><->
+      
+l.620 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:628: Preview: Snippet 336 ended.(12421335+0x23824722).
+<-><->
+      
+l.628 \end{align*}
+                  
+Not a real error.
+
+[336]
+./Report.org.tex:629: Preview: Snippet 337 started.
+<-><->
+      
+l.629 $
+       f^{(k)}\left(x\right) = \sum_{n=k}^\infty\frac{a_{n+k}\cdot x^n}{n!} ...
+Not a real error.
+
+./Report.org.tex:629: Preview: Snippet 337 ended.(666174+225995x10189495).
+<-><->
+      
+l.629 ...}\cdot x^n}{n!} \quad \text{for}~k \ge 0$
+                                                  
+Not a real error.
+
+[337]
+./Report.org.tex:630: Preview: Snippet 338 started.
+<-><->
+      
+l.630 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:632: Preview: Snippet 338 ended.(1921029+0x34664398).
+<-><->
+      
+l.632 \end{align}
+                 
+Not a real error.
+
+[338
+
+]
+./Report.org.tex:633: Preview: Snippet 339 started.
+<-><->
+      
+l.633 $
+       f(x)$
+Not a real error.
+
+./Report.org.tex:633: Preview: Snippet 339 ended.(491520+163840x1275680).
+<-><->
+      
+l.633 $f(x)$
+            
+Not a real error.
+
+[339]
+./Report.org.tex:634: Preview: Snippet 340 started.
+<-><->
+      
+l.634 $
+       \frac{\partial }{\partial x}{\left({ f{\left({ x }\right)} }\right)}$
+Not a real error.
+
+./Report.org.tex:634: Preview: Snippet 340 ended.(576613+225995x2547967).
+<-><->
+      
+l.634 ...{\left({ f{\left({ x }\right)} }\right)}$
+                                                  
+Not a real error.
+
+[340]
+./Report.org.tex:635: Preview: Snippet 341 started.
+<-><->
+      
+l.635 $
+       k$
+Not a real error.
+
+./Report.org.tex:635: Preview: Snippet 341 ended.(455111+0x361814).
+<-><->
+      
+l.635 $k$
+         
+Not a real error.
+
+[341]
+./Report.org.tex:636: Preview: Snippet 342 started.
+<-><->
+      
+l.636 $
+       k^{\mathrm{th}}$
+Not a real error.
+
+./Report.org.tex:636: Preview: Snippet 342 ended.(556402+0x888835).
+<-><->
+      
+l.636 $k^{\mathrm{th}}$
+                       
+Not a real error.
+
+[342]
+./Report.org.tex:637: Preview: Snippet 343 started.
+<-><->
+      
+l.637 $
+       k$
+Not a real error.
+
+./Report.org.tex:637: Preview: Snippet 343 ended.(455111+0x361814).
+<-><->
+      
+l.637 $k$
+         
+Not a real error.
+
+[343]
+./Report.org.tex:638: Preview: Snippet 344 started.
+<-><->
+      
+l.638 $
+       f(x)=c_{i} \cdot e^{m_{i}x}$
+Not a real error.
+
+./Report.org.tex:638: Preview: Snippet 344 ended.(491520+163840x4432362).
+<-><->
+      
+l.638 $f(x)=c_{i} \cdot e^{m_{i}x}$
+                                   
+Not a real error.
+
+[344]
+./Report.org.tex:639: Preview: Snippet 345 started.
+<-><->
+      
+l.639 $
+       f(x)=c_{i} \cdot x^{j}\cdot e^{m_{i}x}$
+Not a real error.
+
+./Report.org.tex:639: Preview: Snippet 345 ended.(541383+163840x5556367).
+<-><->
+      
+l.639 $f(x)=c_{i} \cdot x^{j}\cdot e^{m_{i}x}$
+                                              
+Not a real error.
+
+[345]
+./Report.org.tex:640: Preview: Snippet 346 started.
+<-><->
+      
+l.640 $
+       \sum^{k}_{i=0}\left[  c_{i}m^{k-i} \right] = 0$
+Not a real error.
+
+./Report.org.tex:640: Preview: Snippet 346 ended.(648083+229380x5425044).
+<-><->
+      
+l.640 ...k}_{i=0}\left[  c_{i}m^{k-i} \right] = 0$
+                                                  
+Not a real error.
+
+[346]
+./Report.org.tex:641: Preview: Snippet 347 started.
+<-><->
+      
+l.641 $
+       \exists i,j \in \mathbb{Z}^{+} \cap \left[0,k\right]$
+Not a real error.
+
+./Report.org.tex:641: Preview: Snippet 347 ended.(521815+163840x4934545).
+<-><->
+      
+l.641 ...\in \mathbb{Z}^{+} \cap \left[0,k\right]$
+                                                  
+Not a real error.
+
+[347]
+./Report.org.tex:642: Preview: Snippet 348 started.
+<-><->
+      
+l.642 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:645: Preview: Snippet 348 ended.(1921029+0x22905680).
+<-><->
+      
+l.645 \end{align}
+                 
+Not a real error.
+
+[348]
+./Report.org.tex:646: Preview: Snippet 349 started.
+<-><->
+      
+l.646 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:650: Preview: Snippet 349 ended.(6650552+0x34664398).
+<-><->
+      
+l.650 \end{align}
+                 
+Not a real error.
+
+[349
+
+]
+./Report.org.tex:651: Preview: Snippet 350 started.
+<-><->
+      
+l.651 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:653: Preview: Snippet 350 ended.(2042088+0x34664398).
+<-><->
+      
+l.653 \end{align}
+                 
+Not a real error.
+
+[350]
+./Report.org.tex:654: Preview: Snippet 351 started.
+<-><->
+      
+l.654 $
+       f{\left({ x }\right)} \propto e^{m_i x}: \quad m_i \neq m_j \forall i...
+Not a real error.
+
+./Report.org.tex:654: Preview: Snippet 351 ended.(491520+187504x8948615).
+<-><->
+      
+l.654 ...i x}: \quad m_i \neq m_j \forall i\neq j$
+                                                  
+Not a real error.
+
+[351]
+./Report.org.tex:655: Preview: Snippet 352 started.
+<-><->
+      
+l.655 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:657: Preview: Snippet 352 ended.(2042088+0x21957165).
+<-><->
+      
+l.657 \end{align}
+                 
+Not a real error.
+
+[352]
+./Report.org.tex:658: Preview: Snippet 353 started.
+<-><->
+      
+l.658 $
+       f{\left({ x }\right)}$
+Not a real error.
+
+./Report.org.tex:658: Preview: Snippet 353 ended.(491520+163840x1275680).
+<-><->
+      
+l.658 $f{\left({ x }\right)}$
+                             
+Not a real error.
+
+[353]
+./Report.org.tex:659: Preview: Snippet 354 started.
+<-><->
+      
+l.659 $
+       a_n$
+Not a real error.
+
+./Report.org.tex:659: Preview: Snippet 354 ended.(282168+98303x703150).
+<-><->
+      
+l.659 $a_n$
+           
+Not a real error.
+
+[354]
+./Report.org.tex:660: Preview: Snippet 355 started.
+<-><->
+      
+l.660 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:665: Preview: Snippet 355 ended.(8954784+0x34664398).
+<-><->
+      
+l.665 \end{align}
+                 
+Not a real error.
+
+[355
+
+]
+./Report.org.tex:666: Preview: Snippet 356 started.
+<-><->
+      
+l.666 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:671: Preview: Snippet 356 ended.(7562233+0x21806969).
+<-><->
+      
+l.671 \end{align}
+                 
+Not a real error.
+
+[356]
+./Report.org.tex:672: Preview: Snippet 357 started.
+<-><->
+      
+l.672 $
+       m_1 = \varphi, m_2 = {\left({ 1-\varphi }\right)}$
+Not a real error.
+
+./Report.org.tex:672: Preview: Snippet 357 ended.(491520+163840x6273544).
+<-><->
+      
+l.672 ...rphi, m_2 = {\left({ 1-\varphi }\right)}$
+                                                  
+Not a real error.
+
+[357]
+./Report.org.tex:673: Preview: Snippet 358 started.
+<-><->
+      
+l.673 \begin{alignat}{4}
+                        
+Not a real error.
+
+./Report.org.tex:676: Preview: Snippet 358 ended.(1914898+0x23948175).
+<-><->
+      
+l.676 \end{alignat}
+                   
+Not a real error.
+
+[358]
+./Report.org.tex:677: Preview: Snippet 359 started.
+<-><->
+      
+l.677 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:680: Preview: Snippet 359 ended.(2961687+0x34664398).
+<-><->
+      
+l.680 \end{align}
+                 
+Not a real error.
+
+[359
+
+]
+./Report.org.tex:681: Preview: Snippet 360 started.
+<-><->
+      
+l.681 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:683: Preview: Snippet 360 ended.(786432+0x34664398).
+<-><->
+      
+l.683 \end{align}
+                 
+Not a real error.
+
+[360
+
+]
+./Report.org.tex:684: Preview: Snippet 361 started.
+<-><->
+      
+l.684 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:688: Preview: Snippet 361 ended.(2908423+0x34664398).
+<-><->
+      
+l.688 \end{align}
+                 
+Not a real error.
+
+[361
+
+]
+./Report.org.tex:689: Preview: Snippet 362 started.
+<-><->
+      
+l.689 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:691: Preview: Snippet 362 ended.(802165+0x34664398).
+<-><->
+      
+l.691 \end{align}
+                 
+Not a real error.
+
+[362
+
+]
+./Report.org.tex:692: Preview: Snippet 363 started.
+<-><->
+      
+l.692 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:694: Preview: Snippet 363 ended.(1936048+0x34664398).
+<-><->
+      
+l.694 \end{align}
+                 
+Not a real error.
+
+[363
+
+]
+./Report.org.tex:695: Preview: Snippet 364 started.
+<-><->
+      
+l.695 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:698: Preview: Snippet 364 ended.(4088366+0x24416470).
+<-><->
+      
+l.698 \end{align}
+                 
+Not a real error.
+
+[364]
+./Report.org.tex:699: Preview: Snippet 365 started.
+<-><->
+      
+l.699 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:704: Preview: Snippet 365 ended.(4927767+0x20684607).
+<-><->
+      
+l.704 \end{align}
+                 
+Not a real error.
+
+[365]
+./Report.org.tex:705: Preview: Snippet 366 started.
+<-><->
+      
+l.705 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:709: Preview: Snippet 366 ended.(6642634+0x20856997).
+<-><->
+      
+l.709 \end{align}
+                 
+Not a real error.
+
+[366]
+./Report.org.tex:710: Preview: Snippet 367 started.
+<-><->
+      
+l.710 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:712: Preview: Snippet 367 ended.(2042088+0x34664398).
+<-><->
+      
+l.712 \end{align}
+                 
+Not a real error.
+
+[367
+
+]
+./Report.org.tex:713: Preview: Snippet 368 started.
+<-><->
+      
+l.713 $
+       k$
+Not a real error.
+
+./Report.org.tex:713: Preview: Snippet 368 ended.(455111+0x361814).
+<-><->
+      
+l.713 $k$
+         
+Not a real error.
+
+[368]
+./Report.org.tex:714: Preview: Snippet 369 started.
+<-><->
+      
+l.714 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:717: Preview: Snippet 369 ended.(4346320+0x34664398).
+<-><->
+      
+l.717 \end{align}
+                 
+Not a real error.
+
+[369
+
+]
+./Report.org.tex:718: Preview: Snippet 370 started.
+<-><->
+      
+l.718 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:720: Preview: Snippet 370 ended.(1936048+0x34664398).
+<-><->
+      
+l.720 \end{align}
+                 
+Not a real error.
+
+[370
+
+]
+./Report.org.tex:721: Preview: Snippet 371 started.
+<-><->
+      
+l.721 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:725: Preview: Snippet 371 ended.(6650552+0x22665851).
+<-><->
+      
+l.725 \end{align}
+                 
+Not a real error.
+
+[371]
+./Report.org.tex:726: Preview: Snippet 372 started.
+<-><->
+      
+l.726 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:734: Preview: Snippet 372 ended.(14104370+0x34664398).
+<-><->
+      
+l.734 \end{align}
+                 
+Not a real error.
+
+[372]
+./Report.org.tex:735: Preview: Snippet 373 started.
+<-><->
+      
+l.735 $
+       f(x) = xe^x$
+Not a real error.
+
+./Report.org.tex:735: Preview: Snippet 373 ended.(491520+163840x3159151).
+<-><->
+      
+l.735 $f(x) = xe^x$
+                   
+Not a real error.
+
+[373]
+./Report.org.tex:736: Preview: Snippet 374 started.
+<-><->
+      
+l.736 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:740: Preview: Snippet 374 ended.(5665754+0x24414962).
+<-><->
+      
+l.740 \end{align*}
+                  
+Not a real error.
+
+[374]
+./Report.org.tex:741: Preview: Snippet 375 started.
+<-><->
+      
+l.741 $
+       f(x) = x^2e^x$
+Not a real error.
+
+./Report.org.tex:741: Preview: Snippet 375 ended.(533465+163840x3453154).
+<-><->
+      
+l.741 $f(x) = x^2e^x$
+                     
+Not a real error.
+
+[375]
+./Report.org.tex:742: Preview: Snippet 376 started.
+<-><->
+      
+l.742 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:747: Preview: Snippet 376 ended.(7465386+0x24604198).
+<-><->
+      
+l.747 \end{align*}
+                  
+Not a real error.
+
+[376]
+./Report.org.tex:748: Preview: Snippet 377 started.
+<-><->
+      
+l.748 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:750: Preview: Snippet 377 ended.(1936048+0x22574704).
+<-><->
+      
+l.750 \end{align*}
+                  
+Not a real error.
+
+[377]
+./Report.org.tex:751: Preview: Snippet 378 started.
+<-><->
+      
+l.751 $
+       k=0$
+Not a real error.
+
+./Report.org.tex:751: Preview: Snippet 378 ended.(455111+0x1563301).
+<-><->
+      
+l.751 $k=0$
+           
+Not a real error.
+
+[378]
+./Report.org.tex:752: Preview: Snippet 379 started.
+<-><->
+      
+l.752 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:755: Preview: Snippet 379 ended.(4025996+0x20286380).
+<-><->
+      
+l.755 \end{align*}
+                  
+Not a real error.
+
+[379]
+./Report.org.tex:756: Preview: Snippet 380 started.
+<-><->
+      
+l.756 $
+       k=0$
+Not a real error.
+
+./Report.org.tex:756: Preview: Snippet 380 ended.(455111+0x1563301).
+<-><->
+      
+l.756 $k=0$
+           
+Not a real error.
+
+[380]
+./Report.org.tex:757: Preview: Snippet 381 started.
+<-><->
+      
+l.757 $
+       x^k e^x = \sum_{n=k}^\infty\frac{x^n}{(n-k)!}$
+Not a real error.
+
+./Report.org.tex:757: Preview: Snippet 381 ended.(596894+340683x5794150).
+<-><->
+      
+l.757 ...^x = \sum_{n=k}^\infty\frac{x^n}{(n-k)!}$
+                                                  
+Not a real error.
+
+[381]
+./Report.org.tex:758: Preview: Snippet 382 started.
+<-><->
+      
+l.758 $
+       x^{k+1}e^x = \sum_{n=k+1}^\infty\frac{x^n}{(n-(k+1))!}$
+Not a real error.
+
+./Report.org.tex:758: Preview: Snippet 382 ended.(596894+340683x8194417).
+<-><->
+      
+l.758 ...sum_{n=k+1}^\infty\frac{x^n}{(n-(k+1))!}$
+                                                  
+Not a real error.
+
+[382]
+./Report.org.tex:759: Preview: Snippet 383 started.
+<-><->
+      
+l.759 \begin{align*}
+                    
+Not a real error.
+
+./Report.org.tex:767: Preview: Snippet 383 ended.(11862920+0x23544570).
+<-><->
+      
+l.767 \end{align*}
+                  
+Not a real error.
+
+[383]
+./Report.org.tex:768: Preview: Snippet 384 started.
+<-><->
+      
+l.768 $
+       f(x) = x^ke^x = \sum_{n=k}^\infty\frac{x^n}{(n-k)!}$
+Not a real error.
+
+./Report.org.tex:768: Preview: Snippet 384 ended.(596894+340683x7943636).
+<-><->
+      
+l.768 ...^x = \sum_{n=k}^\infty\frac{x^n}{(n-k)!}$
+                                                  
+Not a real error.
+
+[384]
+./Report.org.tex:769: Preview: Snippet 385 started.
+<-><->
+      
+l.769 $
+       k \ge 0$
+Not a real error.
+
+./Report.org.tex:769: Preview: Snippet 385 ended.(455111+89110x1563301).
+<-><->
+      
+l.769 $k \ge 0$
+               
+Not a real error.
+
+[385]
+./Report.org.tex:770: Preview: Snippet 386 started.
+<-><->
+      
+l.770 $
+       \left( x \right)! = \Gamma\left( x \right) \forall x \in \mathbb{R}$
+Not a real error.
+
+./Report.org.tex:770: Preview: Snippet 386 ended.(491520+163840x5465414).
+<-><->
+      
+l.770 ...left( x \right) \forall x \in \mathbb{R}$
+                                                  
+Not a real error.
+
+[386]
+./Report.org.tex:771: Preview: Snippet 387 started.
+<-><->
+      
+l.771 $
+       \frac{1}{\Gamma\left( x \right)} = 0 \enspace \forall x \in \mathbb{R...
+Not a real error.
+
+./Report.org.tex:771: Preview: Snippet 387 ended.(553676+340683x5931640).
+<-><->
+      
+l.771 ... 0 \enspace \forall x \in \mathbb{R} < 0$
+                                                  
+Not a real error.
+
+[387]
+./Report.org.tex:772: Preview: Snippet 388 started.
+<-><->
+      
+l.772 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:777: Preview: Snippet 388 ended.(8662416+0x34664398).
+<-><->
+      
+l.777 \end{align}
+                 
+Not a real error.
+
+[388]
+./Report.org.tex:778: Preview: Snippet 389 started.
+<-><->
+      
+l.778 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:783: Preview: Snippet 389 ended.(8585741+0x34664398).
+<-><->
+      
+l.783 \end{align}
+                 
+Not a real error.
+
+[389]
+./Report.org.tex:784: Preview: Snippet 390 started.
+<-><->
+      
+l.784 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:787: Preview: Snippet 390 ended.(3409542+0x34664398).
+<-><->
+      
+l.787 \end{align}
+                 
+Not a real error.
+
+[390]
+./Report.org.tex:788: Preview: Snippet 391 started.
+<-><->
+      
+l.788 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:796: Preview: Snippet 391 ended.(12068753+0x34664398).
+<-><->
+      
+l.796 \end{align}
+                 
+Not a real error.
+
+[391]
+./Report.org.tex:797: Preview: Snippet 392 started.
+<-><->
+      
+l.797 $
+       I$
+Not a real error.
+
+./Report.org.tex:797: Preview: Snippet 392 ended.(447828+0x339512).
+<-><->
+      
+l.797 $I$
+         
+Not a real error.
+
+[392]
+./Report.org.tex:798: Preview: Snippet 393 started.
+<-><->
+      
+l.798 $
+       $\int_0^1 \frac{1}{t^{p+1}e^t} \mathrm{d}t$$
+Not a real error.
+
+./Report.org.tex:798: Preview: Snippet 393 ended.(1688296+0x34664398).
+<-><->
+      
+l.798 ...nt_0^1 \frac{1}{t^{p+1}e^t} \mathrm{d}t$$
+                                                  
+Not a real error.
+
+[393]
+./Report.org.tex:799: Preview: Snippet 394 started.
+<-><->
+      
+l.799 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:805: Preview: Snippet 394 ended.(7827892+0x34664398).
+<-><->
+      
+l.805 \end{align}
+                 
+Not a real error.
+
+[394]
+./Report.org.tex:806: Preview: Snippet 395 started.
+<-><->
+      
+l.806 $
+       J$
+Not a real error.
+
+./Report.org.tex:806: Preview: Snippet 395 ended.(447828+0x426439).
+<-><->
+      
+l.806 $J$
+         
+Not a real error.
+
+[395]
+./Report.org.tex:807: Preview: Snippet 396 started.
+<-><->
+      
+l.807 $
+       \int_1^\infty \frac{1}{t^{p+1}e^t}\mathrm{d}t$
+Not a real error.
+
+./Report.org.tex:807: Preview: Snippet 396 ended.(563432+233020x3358448).
+<-><->
+      
+l.807 ...1^\infty \frac{1}{t^{p+1}e^t}\mathrm{d}t$
+                                                  
+Not a real error.
+
+[396]
+./Report.org.tex:808: Preview: Snippet 397 started.
+<-><->
+      
+l.808 \begin{align}
+                   
+Not a real error.
+
+./Report.org.tex:811: Preview: Snippet 397 ended.(2671336+0x34664398).
+<-><->
+      
+l.811 \end{align}
+                 
+Not a real error.
+
+[397]
+./Report.org.tex:812: Preview: Snippet 398 started.
+<-><->
+      
+l.812 $
+       \Gamma(-p)$
+Not a real error.
+
+./Report.org.tex:812: Preview: Snippet 398 ended.(491520+163840x1758781).
+<-><->
+      
+l.812 $\Gamma(-p)$
+                  
+Not a real error.
+
+[398]
+./Report.org.tex:813: Preview: Snippet 399 started.
+<-><->
+      
+l.813 $
+       p \in \mathbb{Z}^+$
+Not a real error.
+
+./Report.org.tex:813: Preview: Snippet 399 ended.(521815+127431x2002712).
+<-><->
+      
+l.813 $p \in \mathbb{Z}^+$
+                          
+Not a real error.
+
+[399]
+./Report.org.tex:814: Preview: Snippet 400 started.
+<-><->
+      
+l.814 $
+       \frac{1}{\Gamma\left(-p\right)} = 0 \forall p > 0$
+Not a real error.
+
+./Report.org.tex:814: Preview: Snippet 400 ended.(553676+340683x4667483).
+<-><->
+      
+l.814 ...\Gamma\left(-p\right)} = 0 \forall p > 0$
+                                                  
+Not a real error.
+
+[400]
+./Report.org.tex:815: Preview: Snippet 401 started.
+<-><->
+      
+l.815 $
+       \theta = \varphi$
+Not a real error.
+
+./Report.org.tex:815: Preview: Snippet 401 ended.(455111+127431x1628381).
+<-><->
+      
+l.815 $\theta = \varphi$
+                        
+Not a real error.
+
+[401]
+./Report.org.tex:816: Preview: Snippet 402 started.
+<-><->
+      
+l.816 $
+       \mathbb{R}^{n}$
+Not a real error.
+
+./Report.org.tex:816: Preview: Snippet 402 ended.(451470+0x830050).
+<-><->
+      
+l.816 $\mathbb{R}^{n}$
+                      
+Not a real error.
+
+[402] ) 
+Here is how much of TeX's memory you used:
+ 18413 strings out of 480478
+ 361911 string characters out of 5905958
+ 624657 words of memory out of 5000000
+ 34009 multiletter control sequences out of 15000+600000
+ 537871 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 67i,19n,65p,1120b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Report.org.pdf (402 pages, 274691 bytes).
+PDF statistics:
+ 1361 PDF objects out of 1440 (max. 8388607)
+ 933 compressed objects within 10 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

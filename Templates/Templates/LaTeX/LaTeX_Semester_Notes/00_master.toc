@@ -1,0 +1,289 @@
+\babel@toc {english}{}
+\contentsline {part}{I\hspace {1em}Lecture Material}{2}{part.1}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}[2.3] Completeness Property of the Reals}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Upper and Lower Bounds [2.3.1]}{3}{subsection.1.1.1}%
+\contentsline {paragraph}{Upper Bound}{3}{subsection.1.1.1}%
+\contentsline {paragraph}{Lower Bound}{3}{equation.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Supremea and Infima [2.3.2]}{3}{subsection.1.1.2}%
+\contentsline {paragraph}{Supremum}{3}{subsection.1.1.2}%
+\contentsline {paragraph}{Infimum}{3}{equation.1.1.3}%
+\contentsline {chapter}{\numberline {2}Sequences and Functions}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Sequences and Their Limits}{4}{section.2.1}%
+\contentsline {paragraph}{Remarks on Sequences}{4}{equation.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.1}Notation}{4}{subsection.2.1.1}%
+\contentsline {paragraph}{Ordered Sequences}{5}{equation.2.1.4}%
+\contentsline {paragraph}{Unordered Sets}{5}{equation.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.2}Defining a Sequence}{5}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Limits of a sequence}{5}{subsection.2.1.3}%
+\contentsline {paragraph}{The Precise Definition of a Limit}{5}{subsection.2.1.3}%
+\contentsline {paragraph}{Limits are Unique}{5}{equation.2.1.8}%
+\contentsline {paragraph}{Equivalent Limit Definitions}{5}{equation.2.1.8}%
+\contentsline {paragraph}{The Tail of a Sequence [ 3.1.9]}{6}{Item.4}%
+\contentsline {section}{\numberline {2.2}[3.2] Limit Theorems}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Intervals [2.5]}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Bounded Sequences [3.2.1]}{6}{subsection.2.2.2}%
+\contentsline {paragraph}{Bounded Subsets [2.3.1]}{6}{subsection.2.2.2}%
+\contentsline {paragraph}{Bounded Subsets and Convergence [3.2.2]}{6}{equation.2.2.12}%
+\contentsline {paragraph}{Arithmetic with Sequences}{7}{equation.2.2.14}%
+\contentsline {subparagraph}{Limits of Sequences for Arithmetic with Sequences [3.2.3]}{7}{equation.2.2.20}%
+\contentsline {subsection}{\numberline {2.2.3}Limit Theorems}{7}{subsection.2.2.3}%
+\contentsline {paragraph}{Squeeze Theorem}{8}{subsection.2.2.3}%
+\contentsline {paragraph}{Limits Sequence Functions}{8}{subsection.2.2.3}%
+\contentsline {paragraph}{Ratios}{8}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}[3.3] Monotone Sequences}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Monotone Convergence Theorem [3.3.2]}{8}{subsection.2.3.1}%
+\contentsline {paragraph}{Why this is Important}{9}{equation.2.3.30}%
+\contentsline {paragraph}{Example Application}{9}{Item.8}%
+\contentsline {subparagraph}{Deductive Sequence}{9}{Item.8}%
+\contentsline {subparagraph}{Inductive Sequence}{9}{Item.8}%
+\contentsline {paragraph}{Solving Roots with the \textit {Monotone Convergence Theorem}[3.3.5]}{9}{equation.2.3.33}%
+\contentsline {paragraph}{Euler's Number}{9}{equation.2.3.33}%
+\contentsline {section}{\numberline {2.4}[3.4] Subsequences}{10}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Subsequences [3.4.1]}{10}{subsection.2.4.1}%
+\contentsline {paragraph}{Convergence of Subsequences}{10}{subsection.2.4.1}%
+\contentsline {paragraph}{Non-Converging Subsequences [3.4.4]}{10}{subsection.2.4.1}%
+\contentsline {paragraph}{Divergence Criteria [3.4.5]}{10}{Item.11}%
+\contentsline {subsection}{\numberline {2.4.2}Existence of Monotone Subsequences [3.4.7]}{10}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}[3.4.8] The Bolzana-Weierstrass Theorem [3.4.8]}{10}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Upper and Lower Bounds [2.3.1]}{11}{subsection.2.4.4}%
+\contentsline {paragraph}{Upper Bound}{11}{subsection.2.4.4}%
+\contentsline {paragraph}{Lower Bound}{11}{equation.2.4.34}%
+\contentsline {subsection}{\numberline {2.4.5}Supremum and Infima [2.3.2]}{11}{subsection.2.4.5}%
+\contentsline {paragraph}{Supremum}{11}{subsection.2.4.5}%
+\contentsline {paragraph}{Infimum}{11}{equation.2.4.37}%
+\contentsline {subsection}{\numberline {2.4.6}Limit Superior and Limit Inferior [3.4.10]}{11}{subsection.2.4.6}%
+\contentsline {paragraph}{Summary}{11}{subsection.2.4.6}%
+\contentsline {subparagraph}{Limit Inferior}{12}{subsection.2.4.6}%
+\contentsline {subparagraph}{Limit Superior}{12}{equation.2.4.40}%
+\contentsline {paragraph}{Definition}{12}{equation.2.4.41}%
+\contentsline {subparagraph}{Limit Superior}{12}{equation.2.4.41}%
+\contentsline {subparagraph}{Limit Inferior}{12}{equation.2.4.42}%
+\contentsline {subparagraph}{Example}{12}{equation.2.4.43}%
+\contentsline {paragraph}{Convergent Sequences and limit Superior/Inferior [3.4.12]}{13}{equation.2.4.52}%
+\contentsline {paragraph}{Equivalent Statements of Limit Inferior and Superior [3.4.11]}{13}{equation.2.4.52}%
+\contentsline {chapter}{\numberline {3}Infinite Series}{14}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}The Cauchy Criterion (3.5)}{15}{subsection.3.0.1}%
+\contentsline {subsubsection}{The Cauchy Convergence Criterion}{15}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.0.2}Properly Divergent}{15}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {3.0.3}Definition of a Series {[}3.7.1{]}}{16}{subsection.3.0.3}%
+\contentsline {subsection}{\numberline {3.0.4}Common Series Types}{16}{subsection.3.0.4}%
+\contentsline {subsubsection}{Geometric Series (3.7.6 (a))}{16}{subsection.3.0.4}%
+\contentsline {subsubsection}{Harmonic Series (3.7.6(b))}{17}{figure.3.2}%
+\contentsline {subsubsection}{\(P\)-Series}{17}{figure.3.3}%
+\contentsline {subsection}{\numberline {3.0.5}Properties of Series}{18}{subsection.3.0.5}%
+\contentsline {subsubsection}{The \(n^\text {th}\) term test}{18}{subsection.3.0.5}%
+\contentsline {subsubsection}{Cauchy Criterion for series}{18}{subsection.3.0.5}%
+\contentsline {subsubsection}{Definitions}{18}{subsection.3.0.5}%
+\contentsline {subsection}{\numberline {3.0.6}Convergence Tests}{19}{subsection.3.0.6}%
+\contentsline {subsubsection}{Types of Convergence}{19}{subsection.3.0.6}%
+\contentsline {subsubsection}{Choosing a Test}{19}{subsection.3.0.6}%
+\contentsline {subsubsection}{Manipulating Series}{19}{subsection.3.0.6}%
+\contentsline {paragraph}{Partial Fractions}{20}{subsection.3.0.6}%
+\contentsline {paragraph}{Grouping Series}{20}{figure.3.5}%
+\contentsline {paragraph}{Rearrangements (9.1.5)}{21}{figure.3.6}%
+\contentsline {subsubsection}{Identities to remember}{22}{figure.3.7}%
+\contentsline {paragraph}{Limit of \(e^\frac {1}{n}\)}{22}{figure.3.7}%
+\contentsline {paragraph}{Dealing with Inequalities}{22}{figure.3.8}%
+\contentsline {subsubsection}{Comparison Tests}{23}{figure.3.9}%
+\contentsline {paragraph}{Comparison Test (3.7.7)}{23}{figure.3.9}%
+\contentsline {paragraph}{Limit Comparison Test (3.7.8)}{23}{figure.3.10}%
+\contentsline {subsubsection}{Absolute Convergence Tests}{23}{figure.3.10}%
+\contentsline {paragraph}{Limit Comparison Test II (9.2.1) (For Absolute Convergence)}{23}{figure.3.10}%
+\contentsline {paragraph}{Ratio Test (9.2.4)}{24}{figure.3.11}%
+\contentsline {subparagraph}{Generalised D'Alambert}{24}{figure.3.11}%
+\contentsline {paragraph}{Root Test}{25}{figure.3.11}%
+\contentsline {subparagraph}{Generalised \emph {Cauchy} Test}{25}{figure.3.12}%
+\contentsline {paragraph}{Integral Test}{25}{figure.3.12}%
+\contentsline {subsubsection}{Non-Absolute Convergence Tests}{26}{figure.3.12}%
+\contentsline {paragraph}{Definition of an Alternating Sequence (9.3.1)}{26}{figure.3.12}%
+\contentsline {paragraph}{Alternating Series Test}{26}{figure.3.12}%
+\contentsline {paragraph}{Partial Summation Formula (Abel's Lemma)}{27}{figure.3.12}%
+\contentsline {paragraph}{Dirichlet's Test}{27}{figure.3.12}%
+\contentsline {paragraph}{Abel's Test}{27}{figure.3.13}%
+\contentsline {section}{\numberline {3.1}3.5 - Cauchy Criterion Problems (Textbook); Problem 2, (a)}{27}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Problem}{27}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Solution}{27}{section.3.2}%
+\contentsline {paragraph}{Layout the Proof}{27}{section.3.2}%
+\contentsline {paragraph}{Consider the $\varepsilon $ Restriction}{28}{equation.3.2.2}%
+\contentsline {paragraph}{Assume a Value for $H$}{28}{equation.3.2.4}%
+\contentsline {paragraph}{Apply the restriction to H}{28}{equation.3.2.4}%
+\contentsline {paragraph}{Choose the Specific H Value}{29}{equation.3.2.6}%
+\contentsline {paragraph}{The actual proof}{29}{equation.3.2.6}%
+\contentsline {chapter}{\numberline {4}Limits}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Proving Limits from First Principles}{30}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Precice Definition of a Limit}{30}{subsection.4.1.1}%
+\contentsline {paragraph}{Consider the Domain}{30}{equation.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.2}How to find a sufficient $\delta $}{30}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Manipulate the $\varepsilon $ Restriction}{31}{subsection.4.1.3}%
+\contentsline {subparagraph}{A Note on getting the factor on the LHS}{31}{equation.4.1.4}%
+\contentsline {paragraph}{Summarise}{32}{equation.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.4}The Actual Proof}{33}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Conclusion}{33}{subsection.4.1.5}%
+\contentsline {chapter}{\numberline {5}Continuity}{34}{chapter.5}%
+\contentsline {section}{\numberline {5.1}(05) Continuity}{34}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Continuous Functions 5.1 }{35}{subsection.5.1.1}%
+\contentsline {subsubsection}{Definition of Continuity}{35}{subsection.5.1.1}%
+\contentsline {paragraph}{Rigorous Definition}{35}{figure.5.1}%
+\contentsline {subparagraph}{In Terms of Neighborhoods}{35}{figure.5.1}%
+\contentsline {paragraph}{Conditions for Continuity}{36}{figure.5.2}%
+\contentsline {subsubsection}{Sequential Criterion for Continuity {[}5.1.3{]}}{36}{Item.20}%
+\contentsline {paragraph}{Discontinuity Criterion {[}5.1.4{]}}{36}{Item.20}%
+\contentsline {subparagraph}{Example}{36}{Item.20}%
+\contentsline {subsubsection}{Set Continuity}{36}{Item.20}%
+\contentsline {subsubsection}{Defining a function to overcome Discontinuity}{37}{Item.20}%
+\contentsline {subsection}{\numberline {5.1.2}Combinations of Continuous Functions {[}5.2{]}}{37}{subsection.5.1.2}%
+\contentsline {subsubsection}{Absolute Values Preserve Continuity (5.2.4)}{37}{subsection.5.1.2}%
+\contentsline {subsubsection}{Square Roots Preserve Continuity}{37}{subsection.5.1.2}%
+\contentsline {subsubsection}{Compositions Preserve Continuity}{37}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Continuous Functions on Intervals {[}5.3{]}}{38}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Uniform continuity {[}5.4{]}}{38}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}The Mean Value Theorem {[}6.2{]}}{38}{subsection.5.1.5}%
+\contentsline {subsubsection}{Maximum / Minimum {[}6.2.0{]}}{38}{subsection.5.1.5}%
+\contentsline {subsubsection}{Interior Extrema Theorem {[}6.2.1{]}}{38}{subsection.5.1.5}%
+\contentsline {subsubsection}{Rolle's Theorem {[}6.2.3{]}}{39}{subsection.5.1.5}%
+\contentsline {subsubsection}{Mean Value Theorem {[}6.2.4{]} }{39}{figure.5.4}%
+\contentsline {subsection}{\numberline {5.1.6}L'Hospital's Rules}{41}{subsection.5.1.6}%
+\contentsline {subsubsection}{Cauchy Mean Value Theorem}{41}{subsection.5.1.6}%
+\contentsline {paragraph}{Restrictions}{41}{subsection.5.1.6}%
+\contentsline {subparagraph}{Creating a stricter restriction}{41}{subsection.5.1.6}%
+\contentsline {chapter}{\numberline {6}Complex Values}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Integrals from a Real Domain}{42}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Differentiation}{42}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Integration}{42}{subsection.6.1.2}%
+\contentsline {paragraph}{Fundamental Theorem of Calculus}{43}{subsection.6.1.2}%
+\contentsline {subparagraph}{Justification}{43}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Contours}{43}{section.6.2}%
+\contentsline {paragraph}{Define Contours}{43}{section.6.2}%
+\contentsline {subparagraph}{Types of Arcs}{44}{section.6.2}%
+\contentsline {subparagraph}{Parametric Representation not unique}{44}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Contour Integral}{44}{section.6.3}%
+\contentsline {paragraph}{Negative Contours}{44}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Notation}{45}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Upper Bounds for Moduli}{45}{subsection.6.3.2}%
+\contentsline {paragraph}{Example}{45}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Antiderivatives}{46}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Basic Antiderivative Theorem}{46}{subsection.6.4.1}%
+\contentsline {paragraph}{Proof}{46}{subsection.6.4.1}%
+\contentsline {section}{\numberline {6.5}Cauchy Goursat Theorem}{47}{section.6.5}%
+\contentsline {subparagraph}{the \emph {Cauchy-Goursat Theorem}}{47}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Simply-Connected Domains}{47}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Multiply Connected Domains}{48}{subsection.6.5.2}%
+\contentsline {paragraph}{Principle of Deformation}{48}{subsection.6.5.2}%
+\contentsline {subparagraph}{Spacial Case of Deformation}{48}{subsection.6.5.2}%
+\contentsline {subparagraph}{Example}{48}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Cauchy Integral Formula}{48}{section.6.6}%
+\contentsline {subparagraph}{Cauchy Integral Formula}{49}{section.6.6}%
+\contentsline {paragraph}{Example}{49}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Extension of the Cauchy Integral Formula}{49}{section.6.7}%
+\contentsline {subparagraph}{Extension to Cauchy Integral}{49}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Complex Variables}{50}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Functions of a Complex Variable}{51}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Geometric Interpretation}{52}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Complex functions Components}{52}{section.7.3}%
+\contentsline {paragraph}{Example}{53}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Limits}{53}{subsection.7.3.1}%
+\contentsline {subparagraph}{Formal Definition of a Complex Limit}{54}{subsection.7.3.1}%
+\contentsline {paragraph}{Limits in Terms of Sequences}{55}{subsection.7.3.1}%
+\contentsline {subparagraph}{Formal Definintion of a Limit to a Complex Sequence}{55}{subsection.7.3.1}%
+\contentsline {paragraph}{Limits from multiple directions}{55}{subsection.7.3.1}%
+\contentsline {paragraph}{Theorems on Limits}{56}{subsection.7.3.1}%
+\contentsline {paragraph}{Limit Laws}{56}{subsection.7.3.1}%
+\contentsline {subparagraph}{Distribution over Addition}{56}{subsection.7.3.1}%
+\contentsline {subparagraph}{Distribution over Multiplication}{56}{subsection.7.3.1}%
+\contentsline {subparagraph}{Distribution over Division}{56}{subsection.7.3.1}%
+\contentsline {paragraph}{Riemann Sphere}{56}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Continuity}{57}{section.7.4}%
+\contentsline {subparagraph}{Conditions of Continuity}{57}{section.7.4}%
+\contentsline {paragraph}{Function Composition}{58}{Item.27}%
+\contentsline {subparagraph}{Continuity of Complex Functions}{58}{Item.27}%
+\contentsline {section}{\numberline {7.5}Derivatives}{59}{section.7.5}%
+\contentsline {paragraph}{Conditions of Continuity}{59}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Derivatives to Memorise}{59}{subsection.7.5.1}%
+\contentsline {paragraph}{How to Deal with Derivatives}{60}{subsection.7.5.1}%
+\contentsline {paragraph}{Example}{60}{subsection.7.5.1}%
+\contentsline {section}{\numberline {7.6}Functions of a Complex Variable}{60}{section.7.6}%
+\contentsline {chapter}{\numberline {8}Complex Functions}{61}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Polynomial Functions}{61}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Rational Function}{61}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Euler's Formula}{62}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Exponential Function}{62}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Modulus and Argument}{62}{subsection.8.4.1}%
+\contentsline {section}{\numberline {8.5}Properties of the exponential function}{62}{section.8.5}%
+\contentsline {paragraph}{Periodicity}{62}{section.8.5}%
+\contentsline {paragraph}{Principle Argument}{63}{section.8.5}%
+\contentsline {paragraph}{Differentiating $e^z$}{63}{section.8.5}%
+\contentsline {paragraph}{Polar Form}{63}{section.8.5}%
+\contentsline {paragraph}{Additional Properties}{63}{section.8.5}%
+\contentsline {section}{\numberline {8.6}The Log Function}{64}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Deriving the Log Function}{64}{subsection.8.6.1}%
+\contentsline {subparagraph}{Complex Logarithm}{64}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Notation}{65}{subsection.8.6.2}%
+\contentsline {paragraph}{Base}{65}{subsection.8.6.2}%
+\contentsline {subsection}{\numberline {8.6.3}Change of Base}{65}{subsection.8.6.3}%
+\contentsline {paragraph}{Arguments}{66}{subsection.8.6.3}%
+\contentsline {paragraph}{Logarithms}{66}{subsection.8.6.3}%
+\contentsline {paragraph}{Notation}{66}{subsection.8.6.3}%
+\contentsline {subsection}{\numberline {8.6.4}Branches}{67}{subsection.8.6.4}%
+\contentsline {subparagraph}{Logarithmic Branches}{67}{subsection.8.6.4}%
+\contentsline {paragraph}{Branch Cuts}{69}{equation.8.6.7}%
+\contentsline {subsection}{\numberline {8.6.5}Principal Branch as opposed to Principal Value}{70}{subsection.8.6.5}%
+\contentsline {subsection}{\numberline {8.6.6}Properties of Complex Logs}{71}{subsection.8.6.6}%
+\contentsline {subsection}{\numberline {8.6.7}Log Laws}{72}{subsection.8.6.7}%
+\contentsline {paragraph}{Addition/Multiplication}{72}{subsection.8.6.7}%
+\contentsline {subparagraph}{Relationships to Roots}{72}{equation.8.6.9}%
+\contentsline {paragraph}{Exponentiation}{72}{equation.8.6.9}%
+\contentsline {subsection}{\numberline {8.6.8}Differentiating $\qopname \relax o{log}_e{\left ( z \right ) }$}{73}{subsection.8.6.8}%
+\contentsline {paragraph}{Derivative of complex log}{73}{subsection.8.6.8}%
+\contentsline {chapter}{\numberline {9}Complex Integrals}{75}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Integrals from a Real Domain}{76}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Differentiation}{76}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Integration}{76}{subsection.9.1.2}%
+\contentsline {paragraph}{Fundamental Theorem of Calculus}{77}{subsection.9.1.2}%
+\contentsline {subparagraph}{Justification}{77}{equation.9.1.1}%
+\contentsline {section}{\numberline {9.2}Contours}{77}{section.9.2}%
+\contentsline {paragraph}{Define Contours}{78}{figure.9.1}%
+\contentsline {subparagraph}{Types of Arcs}{78}{equation.9.2.3}%
+\contentsline {subparagraph}{Parametric Representation not unique}{78}{equation.9.2.3}%
+\contentsline {section}{\numberline {9.3}Contour Integral}{79}{section.9.3}%
+\contentsline {paragraph}{Negative Contours}{79}{equation.9.3.4}%
+\contentsline {subsection}{\numberline {9.3.1}Notation}{79}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Upper Bounds for Moduli}{80}{subsection.9.3.2}%
+\contentsline {paragraph}{Example}{80}{subsection.9.3.2}%
+\contentsline {section}{\numberline {9.4}Antiderivatives}{81}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Basic Antiderivative Theorem}{81}{subsection.9.4.1}%
+\contentsline {paragraph}{Proof}{81}{subsection.9.4.1}%
+\contentsline {section}{\numberline {9.5}Cauchy Goursat Theorem}{82}{section.9.5}%
+\contentsline {subparagraph}{ the \textit {Cauchy-Goursat Theorem}}{82}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Simply-Connected Domains}{82}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.2}Multiply Connected Domains}{82}{subsection.9.5.2}%
+\contentsline {paragraph}{Principle of Deformation}{83}{figure.9.2}%
+\contentsline {subparagraph}{Spacial Case of Deformation}{83}{figure.9.3}%
+\contentsline {subparagraph}{Example}{83}{figure.9.3}%
+\contentsline {section}{\numberline {9.6}Cauchy Integral Formula}{84}{section.9.6}%
+\contentsline {subparagraph}{Cauchy Integral Formula}{84}{section.9.6}%
+\contentsline {paragraph}{Example}{84}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Extension of the Cauchy Integral Formula}{85}{section.9.7}%
+\contentsline {subparagraph}{Extension to Cauchy Integral}{85}{section.9.7}%
+\contentsline {chapter}{\numberline {10}Cauchy Integral Formula}{86}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Power Series and Uniform Continuity}{86}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Power Series}{86}{subsection.10.1.1}%
+\contentsline {subsubsection}{Convergence}{86}{subsection.10.1.1}%
+\contentsline {subsubsection}{Sequences of Functions}{87}{subsection.10.1.1}%
+\contentsline {paragraph}{Define a sequence of functions:}{87}{subsection.10.1.1}%
+\contentsline {paragraph}{Pointwise Convergence}{88}{subsection.10.1.1}%
+\contentsline {paragraph}{Definition}{88}{subsection.10.1.1}%
+\contentsline {paragraph}{Why power Series}{89}{Item.30}%
+\contentsline {subparagraph}{Example}{89}{equation.10.1.7}%
+\contentsline {subsubsection}{Convergence of Power Series}{90}{equation.10.1.17}%
+\contentsline {subsubsection}{Uniform Convergence of Power Series}{90}{equation.10.1.17}%
+\contentsline {subsubsection}{Circle of Convergence}{90}{equation.10.1.17}%
+\contentsline {subsubsection}{Taylor Series}{91}{equation.10.1.17}%
+\contentsline {subsubsection}{The Cauchy Hadamard Theorem If we have a power series:}{92}{equation.10.1.17}%
+\contentsline {subsection}{\numberline {10.1.2}Uniform Continuity}{92}{subsection.10.1.2}%
+\contentsline {subsubsection}{What is uniform continuity}{92}{subsection.10.1.2}%
+\contentsline {subsubsection}{Cantor's Theorem}{93}{figure.10.3}%
+\contentsline {subsubsection}{Why is uniform continuity important?}{93}{figure.10.3}%
+\contentsline {paragraph}{Problem Example}{93}{figure.10.3}%
+\contentsline {part}{II\hspace {1em}Tutorial Workings}{96}{part.2}%
+\contentsline {part}{III\hspace {1em}Assessment Material}{97}{part.3}%

@@ -1,0 +1,55 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using} \PYG{n}{Shapefile}
+\PYG{k}{using} \PYG{n}{Luxor}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Dragon \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c}{\PYGZsh{} Define the Parent Function}
+\PYG{k}{function} \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+    \PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)} \PYG{c}{\PYGZsh{} Don\PYGZsq{}t remove this or code breaks, I don\PYGZsq{}t know why?}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{o}{*}\PYG{l+m+mi}{45}\PYG{p}{)}
+    \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{c}{\PYGZsh{} Define the Helper Function}
+\PYG{k}{function} \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{n}{sign}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{order}\PYG{o}{==}\PYG{l+m+mi}{0}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{length}\PYG{p}{)}
+    \PYG{k}{else}
+        \PYG{n}{rootHalf} \PYG{o}{=} \PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{p}{)}
+        \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{rootHalf}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{sign} \PYG{o}{*} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{90}\PYG{p}{)}
+        \PYG{n}{dragon\PYGZus{}iterate}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{n}{order} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{length}\PYG{o}{*}\PYG{n}{rootHalf}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{end}
+\PYG{k}{end}
+\PYG{c}{\PYGZsh{} Draw the Image}
+\PYG{n+nd}{@png} \PYG{k}{begin}
+    \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+    \PYG{c}{\PYGZsh{} Start from left to centre result}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+    \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+    \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+    \PYG{c}{\PYGZsh{} Create the Output}
+    \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{400}\PYG{p}{)}
+\PYG{k}{end} \PYG{l+m+mi}{1000} \PYG{l+m+mi}{1000}
+
+\PYG{c}{\PYGZsh{} Create many images}
+\PYG{p}{;}\PYG{n}{mkdir} \PYG{o}{/}\PYG{n}{tmp}\PYG{o}{/}\PYG{n}{dragon}
+\PYG{k}{for} \PYG{n}{i} \PYG{k+kp}{in} \PYG{n}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{)}
+\PYG{n}{name} \PYG{o}{=} \PYG{n}{string}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/tmp/dragon/d\PYGZdq{}}\PYG{p}{,} \PYG{n}{lpad}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{),} \PYG{l+s}{\PYGZdq{}.png\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nd}{@png} \PYG{k}{begin}
+        \PYG{n}{♘} \PYG{o}{=} \PYG{n}{Turtle}\PYG{p}{()}
+        \PYG{c}{\PYGZsh{} Start from left to centre result}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+        \PYG{n}{Penup}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+        \PYG{n}{Forward}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+        \PYG{n}{Pendown}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{)}
+        \PYG{n}{Turn}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}
+        \PYG{c}{\PYGZsh{} Create the Output}
+        \PYG{n}{dragon}\PYG{p}{(}\PYG{n}{♘}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{400}\PYG{p}{)}
+    \PYG{k}{end} \PYG{l+m+mi}{1000} \PYG{l+m+mi}{1000} \PYG{n}{name}
+\PYG{k}{end}
+\PYG{n}{montage} \PYG{o}{\PYGZhy{}}\PYG{n}{geometry} \PYG{l+m+mi}{1000}\PYG{n}{x1000} \PYG{o}{*.}\PYG{n}{png} \PYG{n}{dragon}\PYG{o}{.}\PYG{n}{png}
+\end{Verbatim}

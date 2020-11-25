@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{ggplot2}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{n} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{50000}
+\PYG{n}{df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}xval\PYGZdq{}}\PYG{o}{=}\PYG{l+m}{1}\PYG{o}{:}\PYG{n}{n}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}yval\PYGZdq{}}\PYG{o}{=}\PYG{l+m}{1}\PYG{o}{:}\PYG{n}{n}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Constants}
+\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n+nf}{runif}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{),} \PYG{n+nf}{runif}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{))}
+\PYG{n}{A} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{)}
+\PYG{n}{B} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{)}
+\PYG{n}{C} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0.5}\PYG{p}{,} \PYG{n+nf}{sin}\PYG{p}{(}\PYG{k+kc}{pi}\PYG{o}{/}\PYG{l+m}{3}\PYG{p}{))}
+\PYG{c+c1}{\PYGZsh{} Loop}
+\PYG{n+nf}{for }\PYG{p}{(}\PYG{n}{i} \PYG{n}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{n}{n}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{dice} \PYG{o}{=} \PYG{n+nf}{sample}\PYG{p}{(}\PYG{l+m}{1}\PYG{o}{:}\PYG{l+m}{3}\PYG{p}{,} \PYG{l+m}{1}\PYG{p}{)}
+    \PYG{n+nf}{if }\PYG{p}{(}\PYG{n}{dice} \PYG{o}{==} \PYG{l+m}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{n}{A}\PYG{p}{)}\PYG{o}{/}\PYG{l+m}{2}
+        \PYG{n}{df}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}
+    \PYG{p}{\PYGZcb{}} \PYG{n}{else} \PYG{n+nf}{if }\PYG{p}{(}\PYG{n}{dice} \PYG{o}{==} \PYG{l+m}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{n}{B}\PYG{p}{)}\PYG{o}{/}\PYG{l+m}{2}
+        \PYG{n}{df}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}
+    \PYG{p}{\PYGZcb{}} \PYG{n}{else} \PYG{p}{\PYGZob{}}
+        \PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{n}{C}\PYG{p}{)}\PYG{o}{/}\PYG{l+m}{2}
+        \PYG{n}{df}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{\PYGZsh{} Plot}
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{xval}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{yval}\PYG{p}{))} \PYG{o}{+}
+    \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{size} \PYG{o}{=} \PYG{l+m}{1}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}cadet blue\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+    \PYG{n+nf}{theme\PYGZus{}classic}\PYG{p}{()}
+\end{Verbatim}
