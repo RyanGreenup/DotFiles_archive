@@ -3,7 +3,6 @@ rename algebraic_graph_theory_ulrich_knauer_2019.pdf
 shell mkdir
 unmark 
 cd /home/ryan/Sync/Books/2020Spring/
-search 
 shell cp ~/Downloads/
 rename barabasi_linked__the_new_science_of_networks-perseus_books_group_2002.pdf_
 rename barabasi_linked__the_new_science_of_networks-perseus_books_group_2002.pdf
@@ -46,5 +45,6 @@ rename Sample_pdf
 rename Final
 unmark
 rename Sample
-delete
 bulkrename
+search 
+delete
