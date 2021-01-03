@@ -142,7 +142,7 @@
 
     (add-to-list 'font-lock-extra-managed-props 'display)
     (font-lock-add-keywords nil
-     '((" \\(\\[\\[cite:[a-z0-9A-Z]\+\\]\\[\.\*\\]\\]\\)" 1 '(face nil display "🤔"))))
+     '((" \\(\\[\\[cite:[a-z0-9A-Z]\+\\]\\[\.\*\\]\\]\\)" 1 '(face nil display "¹"))))
 
   )
 )
