@@ -22,6 +22,12 @@
 (package! emoji-fontset)
 (package! emoji-display)
 (package! org-superstar)
+
+; These make dokuwiki easier to work with
+
+;(package! math-preview)  ; this isn't working for some reason
+(package! dokuwiki-mode)
+(package! ox-wk)
 ;; I think Doom comes with counsel recoll
 ;; (package! helm-recoll)
 

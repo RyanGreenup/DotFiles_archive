@@ -143,27 +143,9 @@
     (add-to-list 'font-lock-extra-managed-props 'display)
     (font-lock-add-keywords nil
      '((" \\(\\[\\[cite:[a-z0-9A-Z]\+\\]\\[\.\*\\]\\]\\)" 1 '(face nil display "🤔"))))
+
   )
 )
-;;;;; citeproc for references in HTMl
-(use-package! citeproc-org
-  :load-path "~/DotFiles/Spacemacs/Downloads/citeproc-org-0.2.2"
-  ;; :config
-    ;;  configure your package here
-  )
-
-(defun citeproc-org-setup ()
-  "Add citeproc-org rendering to the `org-export-before-parsing-hook' hook."
-  (interactive)
-  (add-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
-(defun citeproc-off ()
-  "remove citeproc-org rendering from the `org-export-before-parsing-hook' hook."
-  (interactive)
-  (remove-hook 'org-export-before-parsing-hook 'citeproc-org-render-references))
-
-(citeproc-org-setup)
-
-;;;;
 ;; File Links
  (setq org-link-abbrev-alist
        '(("bugzilla"  . "http://10.1.2.9/bugzilla/show_bug.cgi?id=")
@@ -399,6 +381,7 @@
          (?* . ?➤)
          (?- . ?–)))
 (setq org-superstar-remove-leading-stars nil) ; This removes the indent
+;;;; Org Attach Directory
 ;;;; Export
 ;;;;; LaTeX
 ;;;;;; Captions go Below Table
