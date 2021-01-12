@@ -1,0 +1,10 @@
+[Unit]
+Description=Kite Updater
+
+[Service]
+Type=oneshot
+StandardOutput=null
+ExecStart=/home/ryan/.local/share/kite/current/kite-update "update" "silent"
+
+[Install]
+WantedBy=multi-user.target
