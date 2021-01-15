@@ -79,6 +79,9 @@ fi
 sudo chown http:http -R data
 sudo cp -r data/ /srv/http/dokuwiki/
 
+## ** Reindex the pages
+sudo php /srv/http/dokuwiki/bin/indexer.php     && echo "Re-indexed Dokuwiki Pages"
+
 # Print Success
 echo -e "\nMake sure to run:\n"
 echo -e "sudo chown -R http:http /srv/http/dokuwiki \n"
