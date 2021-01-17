@@ -44,3 +44,6 @@ wicd-client -t &
 polybar example &
 
 bspc config focus_follows_pointer true
+
+# Start a bar at the top for no good reason.
+# $HOME/.config/polybar/launch.sh
