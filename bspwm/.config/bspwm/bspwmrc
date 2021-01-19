@@ -12,6 +12,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Mattermost desktop='^2'
+bspc rule -a Signal desktop='^2'
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
@@ -39,15 +41,17 @@ for p in {single,borderless}_monocle; do bspc config "$p" true; done
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
 #sleep 8
 #compton --config ~/.config/compton/compton.conf &
-compton &
-nitrogen --restore
-wicd-client -t &
-polybar example &
+compton & # Now called picom, see also the arch wiki page on picom and compton-conf
+# nitrogen --restore
 
 bspc config focus_follows_pointer true
 
 # Start a bar at the top for no good reason.
 # $HOME/.config/polybar/launch.sh
-plank -n dock1 & disown
+sleep 3 && plank -n dock1 & disown
 # plank -n dock2   & disown
 yakuake & disown
+
+# Start some Default Applications
+mattermost & disown
+signal-desktop & disown
