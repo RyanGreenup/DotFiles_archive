@@ -7,7 +7,7 @@ super + Return
 	  kitty
 
 # program launcher
-super + @space
+super + {@space, d}
 	  rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons
 
 super + slash
