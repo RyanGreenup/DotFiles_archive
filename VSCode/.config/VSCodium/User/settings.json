@@ -49,5 +49,7 @@
     ],
     "workbench.colorTheme": "Default Light+",
     "python.languageServer": "Microsoft",
-    "jupyter.alwaysTrustNotebooks": true
+    "jupyter.alwaysTrustNotebooks": true,
+    "window.zoomLevel": -2,
+    "markdown-preview-enhanced.mathRenderingOption": "MathJax"
 }
