@@ -1,4 +1,4 @@
-#
+# To reload this just run ~/.config/bspwm/bspwmrc
 # wm independent hotkeys
 #
 
@@ -66,7 +66,8 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+# super + {_,shift + }c
+alt + Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
@@ -86,7 +87,9 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-
+# Send to monitor
+super + shift + equal
+    bspc node -m last --follow
 #
 # preselect
 #
@@ -117,8 +120,43 @@ super + alt + {h,j,k,l}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
+	bspc node -z {right -80 0,top 0 80,bottom 0 -80,left 80 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-50 0,0 50,0 -50,50 0}
+	bspc node -v {-80 0,0 80,0 -80,80 0}
+# Rotate tree
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
+# Move current window to a pre-selected space
+super + shift + m
+    bspc node -n last.!automatic
+
+# Show help
+super + shift + slash
+	~/DotFiles/bspwm/.config/sxhkd/sxhkdrc-help.bash
+
+# Show clipmenu
+# requires
+# pacman -S clipmenu
+# systemctl --user start clipmenud
+alt + v
+    CM_LAUNCHER='rofi'	\
+    CM_DIR='/tmp/clipmenu.cache'			\
+    CM_HISTLENGTH='20'	\
+	clipmenu			\
+        -location 1		                        \
+        -m -3			                        \
+        -no-show-icons	                        \
+        -theme-str '* \{ font: 10px; \}'      k \
+        -theme-str 'listview \{ spacing: 0; \}' \
+        -theme-str 'window \{ width: 20em; \}'
+
+# Close screen
+super + shift + c
+    sleep 0.5; xset dpms force standby
+
+# Lock screen
+# super + shift + x
+#     betterlockscreen -l dim -t ''
+
