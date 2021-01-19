@@ -47,3 +47,6 @@ bspc config focus_follows_pointer true
 
 # Start a bar at the top for no good reason.
 # $HOME/.config/polybar/launch.sh
+plank -n dock1 & disown
+# plank -n dock2   & disown
+yakuake & disown
