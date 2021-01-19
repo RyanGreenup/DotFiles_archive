@@ -40,7 +40,9 @@ super + y
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
-
+# Send window to the biggest node
+super + z
+  bspc rule -a mpv follow=on node=biggest.local
 #
 # state/flags
 #
@@ -53,7 +55,10 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
+# Highlight marked windows
+# https://www.reddit.com/r/bspwm/comments/kgxwrd/change_or_set_color_of_marked_node/
+
+
 # focus/swap
 #
 
@@ -136,6 +141,15 @@ super + shift + m
 super + shift + slash
 	~/DotFiles/bspwm/.config/sxhkd/sxhkdrc-help.bash
 
+
+# Print Screen Region
+super + shift +  s
+    spectacle -r
+#    maim --select path/to/screenshot.png | xclip -sel clip
+super + F4
+    spectacle -r
+#    maim --select path/to/screenshot.png | xclip -sel clip
+
 # Show clipmenu
 # requires
 # pacman -S clipmenu
@@ -157,6 +171,7 @@ super + shift + c
     sleep 0.5; xset dpms force standby
 
 # Lock screen
-# super + shift + x
-#     betterlockscreen -l dim -t ''
+super + shift + x
+    betterlockscreen -l dimblur -t '' \
+#	betterlockscreen -u /home/ryan/Photos/2013/03/09/
 
