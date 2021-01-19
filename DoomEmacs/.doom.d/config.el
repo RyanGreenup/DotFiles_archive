@@ -574,6 +574,13 @@
 ;; (define-key outline-minor-mode-map [tab] (lambda () (interactive) (+fold/toggle)))
 ;; (define-key outline-minor-mode-map [tab] (lambda () (interactive) (outshine-cycle)))
 ;; (define-key outline-minor-mode-map [backtab] (lambda () (interactive) (#'outshine-cycle-buffer)))
+;;;;; Python specific nonsense
+;;;; Julia LSP
+;; This is needed for Julia LSP otherwise it crashes
+;; https://github.com/non-Jedi/lsp-julia/issues/35
+(setq lsp-enable-folding t)
+
+
 ;;; ESS Settings
 ;;;; Auto-Scroll Inferior Buffer
 ;; (setq comint-prompt-read-only t) ;; Avoid this, causes problems [[https://stackoverflow.com/a/2710510/10593632]]
