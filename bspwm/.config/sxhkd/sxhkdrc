@@ -8,10 +8,10 @@ super + Return
 
 # program launcher
 super + {@space, d}
-	  rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons
+	  rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons -window-thumbnail  -theme-str 'element-icon { size: 4ch;}'
 
 super + slash
-	  rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons
+	  rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons -window-thumbnail  -theme-str 'element-icon { size: 4ch;}'
 
 # make sxhkd reload its configuration files:
 super + Escape
