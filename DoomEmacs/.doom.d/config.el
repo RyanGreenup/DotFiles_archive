@@ -653,6 +653,19 @@
     )
 )
 
+
+;;; Keybindings
+;;;; ESS
+ (map!  :after ess
+        :map ess-mode-map
+        :localleader
+        "l" #'ess-eval-region-or-function-or-paragraph
+        "1" #'Insert-R-Heading-1
+        "2" #'Insert-R-Heading-2
+        "3" #'Insert-R-Heading-3
+        "d" #'ess-eval-region-or-function-or-paragraph-and-step
+ )
+
 (defun myR/tidyverse-pipe ()
   (interactive)
   (insert " %>% "))
@@ -670,17 +683,35 @@
     (outshine-mode)
   )
 )
+;;;; Python
 
-;;; Keybindings
- (map!  :after ess
-        :map ess-mode-map
-        :localleader
-        "l" #'ess-eval-region-or-function-or-paragraph
-        "1" #'Insert-R-Heading-1
-        "2" #'Insert-R-Heading-2
-        "3" #'Insert-R-Heading-3
-        "d" #'ess-eval-region-or-function-or-paragraph-and-step
- )
+(defun python-mode-send-line-and-move-down ()
+  (interactive)
+  (setq last-command-event 5)
+  (python-shell-send-statement nil t)
+  (setq last-command-event 14)
+  (next-line 1 1)
+  (setq last-command-event 'f4))
+
+(defun python-mode-send-line ()
+  (interactive)
+  (setq last-command-event 5)
+  (python-shell-send-statement nil t)
+  (setq last-command-event 'f4))
+
+
+(add-hook 'python-mode-hook
+  (lambda ()
+    (local-set-key (kbd "M-RET") 'python-mode-send-line)
+    (local-set-key (kbd "C-c C-n") 'python-mode-send-line-and-move-down)
+    (local-set-key (kbd "C-RET") 'python-mode-send-line-and-move-down)
+    (outshine-mode)
+    ;; (run-python)
+  )
+  )
+
+
+;;;; Other
 
 (map!  :after markdown-mode
         :map markdown-mode-map
