@@ -5,7 +5,7 @@
  (add-to-list 'package-archives
               '("melpa" . "https://melpa.org/packages/"))
  (package-initialize)
-; (package-refresh-contents)
+ (package-refresh-contents t)
 
 
 (unless (package-installed-p 'evil)

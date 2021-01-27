@@ -1,13 +1,14 @@
 ;; Set up package.el to work with MELPA
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+	     '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(package-refresh-contents)
+(package-refresh-contents t)
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
-  (package-install 'evil))
+  (package-install 'evil)
+  )
 
 ;; Enable Evil
 (setq evil-want-C-u-scroll t)
@@ -22,6 +23,13 @@
 (require 'texfrag)
 (texfrag-mode 1)
 
+;; Download texfrag
+(unless (package-installed-p 'company-mode)
+  (package-install 'company-mode))
+
+;; Enable texfrag
+(require 'company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; Elegant Emacs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
