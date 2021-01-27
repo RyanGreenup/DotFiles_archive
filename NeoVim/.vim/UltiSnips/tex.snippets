@@ -1,24 +1,16 @@
-############################################################
-#################### Castel Dev Stuff ######################
-############################################################
-############################################################
-
-
-
 global !p
-texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]]
-texIgnoreMathZones = ['texMathText']
-texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
-texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
-ignore = texIgnoreMathZoneIds[0]
 def math():
-	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
-	try:
-		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
-		return first != ignore
-	except StopIteration:
-		return False
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def comment(): 
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and x != '0'
+
 endglobal
+
 
 snippet template "Basic template" b
 \documentclass[a4paper]{article}
@@ -114,17 +106,8 @@ snippet iff "iff" Ai
 \iff
 endsnippet
 
-# snippet mk "Math" wA
-# $${1}$`!p
-# if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-# 	snip.rv = ' '
-# else:
-# 	snip.rv = ''
-# `$2
-# endsnippet
-
 snippet mk "Math" wA
-\(${1}\)`!p
+$${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
 else:
@@ -132,10 +115,16 @@ else:
 `$2
 endsnippet
 
+snippet dm "Math" wA
+\[
+${1:${VISUAL}}
+.\] $0
+endsnippet
+
 snippet ali "Align" bA
-\begin{align}
+\begin{align*}
 	${1:${VISUAL}}
-\end{align}
+.\end{align*}
 endsnippet
 
 
@@ -242,27 +231,27 @@ snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet lr "left( right)" i
+snippet lr "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet lr( "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
+snippet br "left( right)" iA
+\left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
-snippet lr| "left| right|" i
-\left| ${1:${VISUAL}} \right| $0
+snippet lr| "left| right|" wA
+\left\lvert ${1:${VISUAL}} \right\rvert $0
 endsnippet
 
-snippet lr{ "left\{ right\}" i
+snippet lr{ "left\{ right\}" wA
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
-snippet lrb "left\{ right\}" i
+snippet lrb "left\{ right\}" wA
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
-snippet lr[ "left[ right]" i
+snippet lr[ "left[ right]" wA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
@@ -445,10 +434,10 @@ snippet ** "cdot" iA
 \cdot 
 endsnippet
 
-# context "math()"
-# snippet norm "norm" iA
-# \|$1\|$0
-# endsnippet
+context "math()"
+snippet norm "norm" iA
+\|$1\|$0
+endsnippet
 
 priority 100
 context "math()"
@@ -462,11 +451,10 @@ snippet dint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} \mathrm{d}$4 $0
 endsnippet
 
-
 priority 300
 context "math()"
 snippet int "integral" wA
-\int ${1:${VISUAL}} \mathrm{d}$2 $0
+\int  ${1:${VISUAL}} \mathrm{d}${2:${VISUAL}} $0
 endsnippet
 
 priority 200
@@ -523,7 +511,7 @@ endsnippet
 
 context "math()"
 snippet set "set" wA
-\left\\{$1\right\\} $0
+\\{$1\\} $0
 endsnippet
 
 snippet || "mid" iA
@@ -596,12 +584,7 @@ _\text{$1} $0
 endsnippet
 
 context "math()"
-snippet tt "TeleType" iA
-\mathtt{$1}$0
-endsnippet
-
-context "math()"
-snippet tx "Text" iA
+snippet tt "text" iA
 \text{$1}$0
 endsnippet
 
@@ -664,100 +647,15 @@ snippet DD "D" iA
 \mathbb{D}
 endsnippet
 
+
+
+
+
 # vim:ft=snippets
 
-##################################################
-######### My Stuff ###############################
-##################################################
-
-
-context "math()"
-snippet ti "times" iA
-\times 
-endsnippet
-
-
-context "math()"
-snippet do "times" iA
-\cdot  $0
-endsnippet
-
-context "math()"
-snippet mi "add" iA
-- $0
-endsnippet
-
-context "math()"
-snippet imp "equal" iA
- \implies  $0
-endsnippet
 
 
 
-context "math()"
-snippet ee "equal" iA
-= $0
-endsnippet
-
-#snippet qed "underscore" wA
-#\begin{flushright}
-#{\rule{0.7em}{0.7em}}
-#\end{flushright}
-# $0
-#endsnippet
-
-
-context "math()"
-snippet pux "CR components" wA
-\frac{\partial u }{\partial x}
-endsnippet
-
-
-context "math()"
-snippet dv "Derivative Rto x Operator" wA
-\frac{\mathrm{d}$1 }{\mathrm{d} $2} $0
-endsnippet
-
-context "math()"
-snippet ddx "Derivative Rto x Operator" wA
-\frac{\mathrm{d}$1 }{\mathrm{d} x}
-endsnippet
-
-snippet dm "Math" wA
-\[
-\begin{aligned}
-${1:${VISUAL}}
-\end{aligned}
-\]
-endsnippet
-
-context "math()"
-snippet pl "Math" iA
-+ $0
-endsnippet
-
-
-context "math()"
-snippet pr "Math" iA
-\left( $1 \right)$0
-endsnippet
-
-
-
-context "math()"
-snippet br "Math" iA
-\left[ $1 \right] $0
-endsnippet
-
-
-snippet fd "Fold Markdown" iA
-<details><summary> ${2:Arrow Text}  </summary>
-<p>
-${3:${VISUAL}}
-</p>
-</details>
-$0
-endsnippet
 
 
 
@@ -765,7 +663,7 @@ endsnippet
 ############## My Old Stuff ######################
 ##################################################
 
-context "math()" 
+context "math()"
 snippet || "Modulus Operator" wA
 \left| $1 \right|$0
 endsnippet
@@ -826,6 +724,11 @@ snippet ae "equal" iA
 &= $0
 endsnippet
 
+context "math()"
+snippet ee "equal" iA
+= $0
+endsnippet
+
 
 
 context "math()"
@@ -859,7 +762,7 @@ endsnippet
 context "math()"
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
-endsnippet 
+endsnippet
 
 
 context "math()"
@@ -873,7 +776,7 @@ snippet rls "Reals" wA
 endsnippet
 
 context "math()"
-snippet sz "integer" 
+snippet sz "integer"
 \mathbb{Z}$0
 endsnippet
 
@@ -893,7 +796,7 @@ endsnippet
 snippet bxmk  "makeabox" wA
 \begin{tcolorbox}
 
-${1: Top Text} 
+${1: Top Text}
 \begin{align}
 ${2: 3&=x} & \text{${3:desc}}
 \end{align}
@@ -1012,7 +915,7 @@ snippet ln "complexRealLog" wA
 \ln{ $1 }$0
 endsnippet
 
-snippet iff "if only" 
+snippet iff "if only"
 if and only if
 endsnippet
 
@@ -1042,7 +945,7 @@ endsnippet
 
 context "math()
 snippet kk "NewLine" Ai
-\\\ 
+\\\
 $0
 endsnippet
 
@@ -1113,7 +1016,7 @@ context "math()"
 snippet intbysub "subtemp" wA
 \begin{matrix}
     u&= ${1:u-value} && \mathrm{d} v&= ${2: dv-value} \mathrm{d} x\\
-    \mathrm{d} u&= ${3:du-value} \mathrm{d} x &&v&= ${4: v-valuel} 
+    \mathrm{d} u&= ${3:du-value} \mathrm{d} x &&v&= ${4: v-valuel}
 \end{matrix}
 endsnippet
 
@@ -1133,14 +1036,14 @@ endsnippet
 snippet m``` "Mathematica Listings" wA
 \begin{lstlisting}[language = Mathematica]
 ${1: The Verbatim Code}
-\end{lstlisting}	
+\end{lstlisting}
 endsnippet
 
 
 snippet r``` "Mathematica Listings" wA
 \begin{lstlisting}[language = r]
 ${1: The Verbatim Code}
-\end{lstlisting}	
+\end{lstlisting}
 endsnippet
 
 snippet `` "inline Code" wA
@@ -1333,3 +1236,4 @@ context math()
 snippet D "Diagonal Scaling Matrix" wA
 \mathbf{D}_{$1}$0
 endsnippet
+
