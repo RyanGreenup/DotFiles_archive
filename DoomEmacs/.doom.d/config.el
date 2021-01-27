@@ -1,6 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 ;; (setq explicit-shell-file-name "/bin/bash")
 (setq explicit-shell-file-name "/bin/zsh")
+(defvar load_eafQ nil)
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
@@ -918,16 +919,18 @@
 (global-set-key (kbd "C-c s") 'company-yasnippet)
 ;;; EAF
 ;; Beware this takes about 2 seconds to load so it makes things feel slow.
-(after! org
-  ;; Load EAF
-(use-package eaf
-  :load-path "~/.emacs.d/site-lisp/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
-  :custom
-  (eaf-find-alternate-file-in-dired t)
-  :config
-  (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key take_photo "p" eaf-camera-keybinding))
+(if load_eafQ
+        (after! org
+        ;; Load EAF
+        (use-package eaf
+        :load-path "~/.emacs.d/site-lisp/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+        :custom
+        (eaf-find-alternate-file-in-dired t)
+        :config
+        (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
+        (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+        (eaf-bind-key take_photo "p" eaf-camera-keybinding))
+        )
 )
 
 (custom-set-variables
