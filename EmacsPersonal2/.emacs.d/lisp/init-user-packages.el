@@ -2,8 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+
 ;; Set up straight
 
+(straight-use-package 'magit)
 ;; Download Evil
 (straight-use-package 'evil)
 (straight-use-package 'fzf)
