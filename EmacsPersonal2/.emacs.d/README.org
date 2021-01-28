@@ -1,0 +1,27 @@
+#+TITLE: My Emacs Config
+
+* Design Decisions
+** Package Manager
+I was considering:
+
+- [[https://github.com/jwiegley/use-package#installing-use-package][use-package]]
+  - Very Modular
+- [[https://github.com/purcell/emacs.d/blob/master/lisp/init-elpa.el][The Standard Package.el with magic lisp]]
+  - No External Dependencies
+  - Doesn't load from GitHub though
+- [[https://github.com/raxod502/straight.el#install-packages][Straight]]
+- Bash Scripts / AUR / Pacman
+  - This would require more configuring though
+
+I went with straight because it can load from MELPA or GitHub and it
+integrates with use-package.
+
+** Listing Packages
+Should I:
+
+- Load the package in each =.el= file or
+0 all together in one file?
+
+I opted for all together in one file, that way it's easier to comment them
+out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-package][only loads]] what's mentioned so this seems really convenient
+
