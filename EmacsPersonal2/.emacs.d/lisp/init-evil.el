@@ -33,7 +33,6 @@
 (evil-define-key 'normal 'global (kbd "<leader>fr") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>fp") 'open-local-config)
 (setq vc-follow-symlinks t) ;; Must follow for version control to work
-(evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
 (evil-define-key 'normal 'global (kbd "<leader>SPC") 'projectile--find-file)
 (evil-define-key 'normal 'global (kbd "<leader>gs") 'magit-stage-file)
 (evil-define-key 'normal 'global (kbd "<leader>gS") 'magit-stage-modified)
@@ -63,7 +62,7 @@
 
 (defun open-local-config ()
   (interactive)
-  (find-file "~/.emacs.d/init-.el")
+  (find-file "~/.emacs.d/init.el")
   )
 
 (defun My-Copy-File-Path ()

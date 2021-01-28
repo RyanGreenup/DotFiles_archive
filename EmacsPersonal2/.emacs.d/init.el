@@ -37,3 +37,6 @@
 ;;(require 'init-ivy)
 
 
+
+;; Set Theme
+(load-theme 'dracula t)

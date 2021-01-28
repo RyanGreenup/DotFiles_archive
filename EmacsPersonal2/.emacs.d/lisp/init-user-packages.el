@@ -24,6 +24,8 @@
 (straight-use-package 'lab-themes)
 (straight-use-package 'flucui-themes)
 (straight-use-package 'material-theme)
+(straight-use-package 'leuven-theme)
+(setq custom-safe-themes t)
 ; (require 'elegance) ; Takes 1000 msSecond to apply
 
 
