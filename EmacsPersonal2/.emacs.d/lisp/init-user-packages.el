@@ -12,6 +12,7 @@
 ;; Helm
 (straight-use-package 'helm)
 (straight-use-package 'helm-swoop)
+(straight-use-package 'helm-org-rifle)
 
 ;; Ivy
 ;; (straight-use-package 'ivy)
@@ -20,13 +21,20 @@
 
 
 ;; Themes
-(straight-use-package 'dracula-theme)
+(straight-use-package 'dracula-theme
+  :defer t) ;; SLOW adds 0.343 s to startups
 (straight-use-package 'lab-themes)
 (straight-use-package 'flucui-themes)
 (straight-use-package 'material-theme)
 (straight-use-package 'leuven-theme)
 (setq custom-safe-themes t)
 ; (require 'elegance) ; Takes 1000 msSecond to apply
+
+;; Notes
+(straight-use-package 'markdown-mode)
+
+;; Git
+(straight-use-package 'magit)
 
 
 

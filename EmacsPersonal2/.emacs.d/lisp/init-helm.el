@@ -8,7 +8,6 @@
 (evil-define-key 'normal 'global (kbd "<leader>fr") 'helm-recentf) ;; use helm
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'helm-swoop)
 
-;; (helm-mode 1)
 
 (provide 'init-helm)
 ;;; init-helm.el ends here

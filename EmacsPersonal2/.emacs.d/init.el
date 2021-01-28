@@ -35,8 +35,8 @@
 ;; Configure Helm
 (require 'init-helm)
 ;;(require 'init-ivy)
-
+ 
 
 
 ;; Set Theme
-(load-theme 'dracula t)
+(load-theme 'leuven-dark t)
