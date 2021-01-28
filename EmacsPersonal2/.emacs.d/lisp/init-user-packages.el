@@ -12,7 +12,11 @@
 (straight-use-package 'texfrag)
 
 ;; Helm
-(straight-use-package 'helm)
+(straight-use-package 'helm) 
+;; Import when idle because it takes 0.2 seconds
+(run-with-idle-timer 3 t '(lambda () (helm-mode 1))) 
+;;  ;; SLOW This takues 0.2 sec, 
+
 (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
 
@@ -30,7 +34,7 @@
 (straight-use-package 'material-theme)
 (straight-use-package 'leuven-theme)
 (setq custom-safe-themes t)
-; (require 'elegance) ; Takes 1000 msSecond to apply
+;; (require 'elegance) ; Takes 1000 msSecond to apply
 
 ;; Notes
 (straight-use-package 'markdown-mode)
@@ -38,7 +42,12 @@
 ;; Git
 (straight-use-package 'magit)
 
-
+;; Programming
+(straight-use-package 'eglot)
+(straight-use-package 'ESS)
+(straight-use-package 'company)
+(global-set-key (kbd "C-SPC") 'company-complete)
+(add-hook 'after-init-hook 'global-company-mode)
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here
