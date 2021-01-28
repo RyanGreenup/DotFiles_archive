@@ -14,6 +14,7 @@
 (evil-set-leader 'visual (kbd "M-SPC"))
 (evil-set-leader 'replace (kbd "M-SPC"))
 (evil-define-key 'normal 'global (kbd "<leader>fs") 'save-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>fz") 'fzf) 
 (evil-define-key 'normal 'global (kbd "<leader>wv") 'evil-window-vsplit)
 (evil-define-key 'normal 'global (kbd "<leader>ws") 'evil-window-split)
 (evil-define-key 'normal 'global (kbd "<leader>wd") 'evil-quit)
@@ -31,6 +32,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>hrt") 'reset-theme)
 (evil-define-key 'normal 'global (kbd "<leader>fr") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>fp") 'open-local-config)
+(setq vc-follow-symlinks t) ;; Must follow for version control to work
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
 (evil-define-key 'normal 'global (kbd "<leader>SPC") 'projectile--find-file)
 (evil-define-key 'normal 'global (kbd "<leader>gs") 'magit-stage-file)
@@ -39,7 +41,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>bb") 'consult-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>nrf") 'org-roam-find-file)
 (evil-define-key 'normal 'global (kbd "<leader>nri") 'org-roam-insert)
-(evil-define-key 'normal 'global (kbd "<leader>'") 'ivy-resume)
+(evil-define-key 'normal 'global (kbd "<leader>'") 'helm-resume)
 
 ;; Move up and Down in Agenda
 ;; In the agenda evil doesn't work, because there are already other
@@ -61,7 +63,7 @@
 
 (defun open-local-config ()
   (interactive)
-  (find-file "~/.emacs.d/lisp/init-local.el")
+  (find-file "~/.emacs.d/init-.el")
   )
 
 (defun My-Copy-File-Path ()

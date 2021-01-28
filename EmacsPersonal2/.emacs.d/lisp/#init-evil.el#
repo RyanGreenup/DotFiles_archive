@@ -1,4 +1,4 @@
-;;; init-evil.el --- Load the Evil Layer and Leader  keys   ---
+;helm;; init-evil.el --- Load the Evil Layer and Leader  keys   ---
 ;;; Commentary:
 ;;; Code:
 
