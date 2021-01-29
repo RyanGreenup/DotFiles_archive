@@ -36,6 +36,9 @@
 ;; Configure Helm
 (require 'init-helm)
 ;; (require 'init-ivy)
+
+;; Configure Org Mode
+(require 'init-org)
  
 
 

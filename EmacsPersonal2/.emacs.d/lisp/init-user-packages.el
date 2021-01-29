@@ -42,6 +42,8 @@
 ;; Git
 (straight-use-package 'magit)
 
+;; Org
+
 ;; Programming
 (straight-use-package 'eglot)
 (straight-use-package 'ess)
