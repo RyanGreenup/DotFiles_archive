@@ -56,16 +56,6 @@
 (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
-;; Set default font
-(run-with-idle-timer 1 nil '(lambda ()
-				;; (set-frame-font "Roboto Mono-10" nil t)
-				(set-frame-font "Fira Code-10" nil t)
-				;; (set-frame-font "monofur-10" nil t)
-				;; (set-frame-font "Source Code Pro-10" nil t)
-				(message "Changed Font after Idle Time")
-			    )
-		     ) 
-
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here

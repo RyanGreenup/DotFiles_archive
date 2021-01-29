@@ -41,9 +41,23 @@
 (require 'init-org)
  
 
+;; Set default font
+(run-with-idle-timer 1 nil '(lambda ()
+				;; (set-frame-font "Roboto Mono-10" nil t)
+				(set-frame-font "Fira Code-10" nil t)
+				;; (set-frame-font "monofur-10" nil t)
+				;; (set-frame-font "Source Code Pro-10" nil t)
+				(message "Changed Font after Idle Time")
+				;; Toggle scroll bar and Toolbar 
+				(toggle-scroll-bar -1) 
+				(tool-bar-mode -1) 
+				;; (menu-bar-mode -1)  ;; I like the Menus actually
 
-;; Set Theme
-(load-theme 'adwaita t)
+				;; Set Theme
+				(load-theme 'adwaita t)
+			    )
+		     ) 
+
 
 ;; compile hook
 ;; (add-hook 'after-save-hook '(lambda () (byte-recompile-directory "~/.emacs.d/lisp")) t t)

@@ -19,10 +19,6 @@
 
 (global-set-key (kbd "C-c o f") 'my/helm-find-file-recursively)
 
-;; Toggle scroll bar and Toolbar 
-(toggle-scroll-bar -1) 
-(tool-bar-mode -1) 
-;; (menu-bar-mode -1)  ;; I like the Menus actually
 
 (provide 'init-helm)
 ;;; init-helm.el ends here
