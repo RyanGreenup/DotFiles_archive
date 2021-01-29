@@ -4,6 +4,7 @@
 
 (require 'hydra-org-agenda)
 (require 'hydra-clock)
+(require 'hydra-window)
 
 (provide 'init-hydra)
 ;;; init-hydra.el ends here
