@@ -8,6 +8,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>fF") 'my/helm-find-file-recursively) 
 (evil-define-key 'normal 'global (kbd "<leader>fr") 'helm-recentf) ;; use helm
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'helm-swoop)
+(setq helm-swoop-speed-or-color t) ;; SLOW ?
 (evil-define-key 'normal 'global (kbd "<leader><return>") 'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x r l") 'helm-filtered-bookmarks)
 
