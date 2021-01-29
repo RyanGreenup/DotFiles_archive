@@ -14,7 +14,7 @@
 ;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
-(run-with-idle-timer 3 nil '(lambda () (helm-mode 1)(message "Enabled Helm Mode"))) 
+(run-with-idle-timer 3 nil (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time"))) 
 ;;  ;; SLOW This takues 0.2 sec, 
 
 (straight-use-package 'helm-swoop)
@@ -43,6 +43,7 @@
 (straight-use-package 'magit)
 
 ;; Org
+(straight-use-package 'org-superstar)
 
 ;; Programming
 (straight-use-package 'eglot)
