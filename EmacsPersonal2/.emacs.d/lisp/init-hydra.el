@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'init-hydra-org-agenda)
+(require 'hydra-org-agenda)
 
 (provide 'init-hydra)
 ;;; init-hydra.el ends here
