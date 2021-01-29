@@ -25,9 +25,8 @@
 (setq file-name-handler-alist nil)
 
 ;; Reset GC after starting
-;; Use idle timer not hook so the user doesn't wait for it
-(run-with-idle-timer
- 3 nil
+;; Use idle timer not (add-hook 'after-init-hook  so the user doesn't wait for it
+(run-with-idle-timer 3 nil
  (lambda ()
    (setq gc-cons-threshold (* 800 1000 150))
    (setq file-name-handler-alist file-name-handler-alist-original)

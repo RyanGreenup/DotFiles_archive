@@ -49,7 +49,10 @@
 (setq texfrag-scale 2)
 
 ;; Set default font
-(run-with-idle-timer 1 nil (lambda ()
+(add-hook 'after-init-hook
+;; (run-with-idle-timer 1 nil
+	  ;; After Init Hook looks much smoother,
+		     (lambda ()
 				;; (set-frame-font "Roboto Mono-10" nil t)
 				(set-frame-font "Fira Code-10" nil t)
 				;; (set-frame-font "monofur-10" nil t)
