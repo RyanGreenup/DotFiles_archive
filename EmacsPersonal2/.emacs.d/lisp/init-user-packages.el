@@ -64,12 +64,26 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;; Doom Modeline
-(straight-use-package 'doom-modeline)
-(straight-use-package 'all-the-icons)
+;; (straight-use-package 'doom-modeline)
+;; (straight-use-package 'all-the-icons)
+;; (straight-use-package 'minions)
 
+;; Shell
+(straight-use-package 'vterm)
 
 ;; Profiling
 (straight-use-package 'esup)
+
+;; Keybindings
+;;; Which Key
+(straight-use-package 'which-key)
+(add-hook 'after-init-hook (lambda ()
+			     (which-key-mode 1)
+			     ))
+
+;;; Hydra
+(straight-use-package 'hydra)
+
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here
