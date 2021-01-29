@@ -52,6 +52,13 @@
 )
 ;; Typically when I first startup emacs, I end up garbage collecting 
 
+(let ((minver "24.5"))
+  (when (version< emacs-version minver)
+    (message "WARNING VERY OLD EMACS" minver)))
+(when (version< emacs-version "26")
+  (message "WARNING OLD EMACS"))
 
+
+;; (byte-recompile-directory user-emacs-directory)
 (provide 'init-startup-gc)
 ;;; init-startup-gc.el ends here
