@@ -42,7 +42,7 @@
  
 
 ;; Set default font
-(run-with-idle-timer 1 nil '(lambda ()
+(run-with-idle-timer 1 nil (lambda ()
 				;; (set-frame-font "Roboto Mono-10" nil t)
 				(set-frame-font "Fira Code-10" nil t)
 				;; (set-frame-font "monofur-10" nil t)
@@ -54,9 +54,10 @@
 				;; (menu-bar-mode -1)  ;; I like the Menus actually
 
 				;; Set Theme
-				(load-theme 'adwaita t)
 			    )
 		     ) 
+
+(load-theme 'misterioso t)
 
 
 ;; compile hook

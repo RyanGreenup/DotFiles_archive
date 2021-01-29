@@ -25,3 +25,14 @@ Should I:
 I opted for all together in one file, that way it's easier to comment them
 out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-package][only loads]] what's mentioned so this seems really convenient
 
+* TODO Org Mode
+  
+** Agenda
+
+* TODO Winner Mode
+
+* TODO Create a Deferred loading =.el=
+
+* Outshine Mode
+ 
+
