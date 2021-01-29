@@ -53,6 +53,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>znn") 'narrow-to-region)
 (evil-define-key 'normal 'global (kbd "<leader>znw") 'widen)
 (evil-define-key 'normal 'global (kbd "<leader>.a") 'hydra-org-agenda/body)
+(evil-define-key 'normal 'global (kbd "<leader>`") 'vterm)
 
 
 
