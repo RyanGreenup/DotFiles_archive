@@ -1,6 +1,11 @@
 ;;; init-doom-modeline --- Use a Doom Modeline  -*- lexical-binding: t -*-
 ;;; Commentary:
   ;; Https://github.com/domtronn/all-the-icons.el
+
+;; DO NOT USE THIS!, it causes excruciatingly slow scrolling in org-mode
+;; I don't know why, but this was the reason.
+
+
 ;;; Code:
 
 (add-hook 'after-init-hook #'doom-modeline-mode)
