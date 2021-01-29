@@ -44,10 +44,23 @@
 
 ;; Programming
 (straight-use-package 'eglot)
-(straight-use-package 'ESS)
+(straight-use-package 'ess)
+(straight-use-package 'chess)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'python-mode-hook 'eglot-ensure)
+;; (add-hook 'ess-r-mode-hook 'eglot-ensure)
+(add-hook 'prog-mode-hook 'eglot-ensure)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 110
+                    :weight 'normal
+                    :width 'normal)
+
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here

@@ -1,0 +1,10 @@
+# Python
+## Linting with FlyMake (not Flycheck) (flymake works with eglot is simpler)
+flake8
+python-pycodestyle
+python-pydocstyle
+python-testfixtures-
+python-flake8-docstrings
+python-flake8-isort
+python-flake8-typing-imports-
+python-pyflakes

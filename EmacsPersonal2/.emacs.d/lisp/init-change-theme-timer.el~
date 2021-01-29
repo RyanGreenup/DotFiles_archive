@@ -1,0 +1,13 @@
+
+;;; init-change-theme-timer.el.el --- All Packages for Emacs using straight.el -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
+(run-at-time "20:30" nil #'kill-emacs)
+
+(defun dark-theme ()
+  "Change to Dark Theme"
+  (
+
+(provide 'init-change-theme-timer.el)
+;;; init-change-theme-timer.el.el ends here
