@@ -52,12 +52,16 @@
 
 )
 
-
 ;; Hooks
 
 
 ;; keybindings
-(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c a") 'org-agenda-sans-evil)
+(defun org-agenda-sans-evil ()
+  (interactive)
+  (org-agenda)
+  (evil-emacs-state)
+  )
 
 ;; Move up and Down in Agenda
 ;; In the agenda evil doesn't work, because there are already other
