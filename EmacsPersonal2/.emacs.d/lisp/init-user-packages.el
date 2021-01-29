@@ -52,6 +52,15 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 
+(run-with-idle-timer 1 t '(lambda ()
+			    (set-face-attribute 'default nil
+					    :family "Source Code Pro"
+					    :height 110
+					    :weight 'normal
+					    :width 'normal)
+			    )
+		     ) 
+
 
 
 (provide 'init-user-packages)
