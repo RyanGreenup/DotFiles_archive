@@ -47,9 +47,11 @@
             ]
         }
     ],
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Dracula",
     "python.languageServer": "Microsoft",
     "jupyter.alwaysTrustNotebooks": true,
-    "window.zoomLevel": -2,
-    "markdown-preview-enhanced.mathRenderingOption": "MathJax"
+    "window.zoomLevel": 0,
+    "markdown-preview-enhanced.mathRenderingOption": "MathJax",
+    "workbench.iconTheme": "vscode-icons",
+    "markdown-preview-enhanced.previewTheme": "one-dark.css"
 }
