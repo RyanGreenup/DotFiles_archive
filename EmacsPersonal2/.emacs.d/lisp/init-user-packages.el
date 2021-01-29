@@ -55,11 +55,14 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;; Set default font
-(set-face-attribute 'default nil
-                    :family "Source Code Pro"
-                    :height 110
-                    :weight 'normal
-                    :width 'normal)
+(run-with-idle-timer 1 t '(lambda ()
+			    (set-face-attribute 'default nil
+					    :family "Source Code Pro"
+					    :height 110
+					    :weight 'normal
+					    :width 'normal)
+			    )
+		     ) 
 
 
 (provide 'init-user-packages)
