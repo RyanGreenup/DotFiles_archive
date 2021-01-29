@@ -37,7 +37,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>gs") 'magit-stage)
 (evil-define-key 'normal 'global (kbd "<leader>gS") 'magit-stage-file)
 (evil-define-key 'normal 'global (kbd "<leader>gc") 'magit-commit)
-(evil-define-key 'normal 'global (kbd "<leader>gc") 'git-timemachine)
+(evil-define-key 'normal 'global (kbd "<leader>gt") 'git-timemachine)
 (evil-define-key 'normal 'global (kbd "<leader>bb") 'helm-buffers-list)
 (evil-define-key 'normal 'global (kbd "<leader>nrf") 'org-roam-find-file)
 (evil-define-key 'normal 'global (kbd "<leader>nri") 'org-roam-insert)
