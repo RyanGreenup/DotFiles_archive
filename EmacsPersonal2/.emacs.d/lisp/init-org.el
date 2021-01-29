@@ -67,6 +67,7 @@
 				;; (define-key org-agenda-mode-map "k" 'org-agenda-previous-item)
 				(define-key org-agenda-mode-map "j" 'evil-next-line)
 				(define-key org-agenda-mode-map "k" 'evil-previous-line)
+				(define-key org-agenda-mode-map (kbd "M-SPC" ) 'hydra-org-agenda/body)
 				)
 	)
 

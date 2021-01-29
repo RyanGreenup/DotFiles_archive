@@ -47,7 +47,6 @@
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
 
-
 ;; Org
 (straight-use-package 'org-superstar)
 
