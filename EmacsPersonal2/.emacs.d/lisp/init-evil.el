@@ -52,14 +52,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>znn") 'narrow-to-region)
 (evil-define-key 'normal 'global (kbd "<leader>znw") 'widen)
 
-;; Move up and Down in Agenda
-;; In the agenda evil doesn't work, because there are already other
-;; keybindings like F for follow mode, map j/k as a compromise
 
-;; (with-eval-after-load 'org
-;;   (define-key org-agenda-mode-map "j" 'org-agenda-next-line)
-;;   (define-key org-agenda-mode-map "k" 'org-agenda-previous-line)
-;;   )
+
 
 (defun reset-theme ()
   "Unload the theme"
