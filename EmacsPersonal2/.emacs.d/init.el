@@ -27,7 +27,11 @@
 ;; (require 'init-elpa)
 
 (defun display-startup-echo-area-message ()
-  (message (emacs-init-time)))
+  (message (format "Starup Time: %s"(float-time
+		  (time-subtract after-init-time before-init-time))
+	   ) 
+  )
+)
 
 
 ;; Load all packages
