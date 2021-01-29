@@ -14,7 +14,7 @@
 ;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
-(run-with-idle-timer 3 t '(lambda () (helm-mode 1))) 
+(run-with-idle-timer 3 nil '(lambda () (helm-mode 1)(message "Enabled Helm Mode"))) 
 ;;  ;; SLOW This takues 0.2 sec, 
 
 (straight-use-package 'helm-swoop)
@@ -44,23 +44,25 @@
 
 ;; Programming
 (straight-use-package 'eglot)
-(straight-use-package 'ESS)
+(straight-use-package 'ess)
+(straight-use-package 'chess)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'python-mode-hook 'eglot-ensure)
+;; (add-hook 'ess-r-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
-
-(run-with-idle-timer 1 t '(lambda ()
-			    (set-face-attribute 'default nil
-					    :family "Source Code Pro"
-					    :height 110
-					    :weight 'normal
-					    :width 'normal)
+;; Set default font
+(run-with-idle-timer 1 nil '(lambda ()
+				;; (set-frame-font "Roboto Mono-10" nil t)
+				(set-frame-font "Fira Code-10" nil t)
+				;; (set-frame-font "monofur-10" nil t)
+				;; (set-frame-font "Source Code Pro-10" nil t)
+				(message "Changed Font after Idle Time")
 			    )
 		     ) 
-
 
 
 (provide 'init-user-packages)
