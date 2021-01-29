@@ -35,4 +35,8 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
 
 * Outshine Mode
  
+* Configure Garbage Collection
+  - [ ] Is it garbage collecting at startup?
+  - [ ] Is it garbage collecting during swoop or during loading org?
+  - [ ] Garbage colect at idle?
 
