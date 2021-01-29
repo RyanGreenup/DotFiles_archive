@@ -3,15 +3,15 @@
 ;;; Code:
 
 
-;; Set up straight
+;;;; Set up straight
 
 (straight-use-package 'magit)
-;; Download Evil
+;;;; Download Evil
 (straight-use-package 'evil)
 (straight-use-package 'fzf)
 (straight-use-package 'texfrag)
 
-;; Helm
+;;;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
 ;; (run-with-idle-timer 1 nil (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time"))) 
@@ -21,13 +21,13 @@
 (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
 
-;; Ivy
+;;;; Ivy
 ;; (straight-use-package 'ivy)
 ;; (straight-use-package 'counsel)
 ;; (straight-use-package 'swiper)
 
 
-;; Themes
+;;;; Themes
 (straight-use-package 'dracula-theme
   :defer t) ;; SLOW adds 0.343 s to startups
 (straight-use-package 'lab-themes)
@@ -40,19 +40,19 @@
   (require 'elegance)
 )
 
-;; Notes
+;;;; Notes
 (straight-use-package 'markdown-mode)
 
-;; Git
+;;;; Git
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
 (straight-use-package 'git-gutter)
 (add-hook 'after-init-hook (global-git-gutter-mode +1))
 
-;; Org
+;;;; Org
 (straight-use-package 'org-superstar)
 
-;; Programming
+;;;; Programming
 (straight-use-package 'eglot)
 (straight-use-package 'ess)
 (straight-use-package 'chess)
@@ -64,26 +64,30 @@
 (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
-;; Doom Modeline
+;;;; Doom Modeline
 ;; (straight-use-package 'doom-modeline)
 ;; (straight-use-package 'all-the-icons)
 ;; (straight-use-package 'minions)
 
-;; Shell
+;;;; Shell
 (straight-use-package 'vterm)
 
-;; Profiling
+;;;; Profiling
 (straight-use-package 'esup)
 
-;; Keybindings
+;;;; Keybindings
 ;;; Which Key
 (straight-use-package 'which-key)
 (add-hook 'after-init-hook (lambda ()
 			     (which-key-mode 1)
 			     ))
 
-;;; Hydra
+;;;;; Hydra
 (straight-use-package 'hydra)
+
+;;;; Outshine Mode
+(straight-use-package 'outshine)
+(add-hook 'prog-mode-hook 'outshine-mode)
 
 
 (provide 'init-user-packages)
