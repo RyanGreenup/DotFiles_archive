@@ -75,5 +75,14 @@
             (shell-quote-argument buffer-file-name))
 ))
 
+
+;; KBD
+(with-eval-after-load 'evil-maps
+  (define-key evil-motion-state-map (kbd "SPC") nil)
+  (define-key evil-motion-state-map (kbd "RET") nil)
+  (define-key evil-motion-state-map (kbd "TAB") nil))
+(set 'org-return-follows-link t)
+
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
