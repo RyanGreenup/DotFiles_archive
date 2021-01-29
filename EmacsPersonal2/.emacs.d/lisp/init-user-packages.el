@@ -14,7 +14,7 @@
 ;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
-(run-with-idle-timer 3 t '(lambda () (helm-mode 1))) 
+(run-with-idle-timer 3 nil '(lambda () (helm-mode 1)(message "Enabled Helm Mode"))) 
 ;;  ;; SLOW This takues 0.2 sec, 
 
 (straight-use-package 'helm-swoop)
@@ -55,12 +55,12 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;; Set default font
-(run-with-idle-timer 1 t '(lambda ()
-			    (set-face-attribute 'default nil
-					    :family "Source Code Pro"
-					    :height 110
-					    :weight 'normal
-					    :width 'normal)
+(run-with-idle-timer 1 nil '(lambda ()
+				;; (set-frame-font "Roboto Mono-10" nil t)
+				(set-frame-font "Fira Code-10" nil t)
+				;; (set-frame-font "monofur-10" nil t)
+				;; (set-frame-font "Source Code Pro-10" nil t)
+				(message "Changed Font after Idle Time")
 			    )
 		     ) 
 
