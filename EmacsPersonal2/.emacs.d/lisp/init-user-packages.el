@@ -68,6 +68,8 @@
 (straight-use-package 'all-the-icons)
 
 
+;; Profiling
+(straight-use-package 'esup)
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here
