@@ -34,7 +34,10 @@
 (straight-use-package 'material-theme)
 (straight-use-package 'leuven-theme)
 (setq custom-safe-themes t)
-;; (require 'elegance) ; Takes 1000 msSecond to apply
+(defun apply-elegance-style ()
+  (interactive)
+  (require 'elegance)
+)
 
 ;; Notes
 (straight-use-package 'markdown-mode)
@@ -59,6 +62,7 @@
 
 ;; Doom Modeline
 (straight-use-package 'doom-modeline)
+(straight-use-package 'all-the-icons)
 
 
 
