@@ -19,5 +19,7 @@
 NeoVim/.local/bin/mdv
 .gitignore
 NeoVim/.local/bin/tabulate
-**/*.elc
+VSCode/.config/Code - OSS/User/workspaceStorage
+VSCode/.config/Code - OSS/User/globalStorage
 EmacsPersonal/centaur
+**/.elc
