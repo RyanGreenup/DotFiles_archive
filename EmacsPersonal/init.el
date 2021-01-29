@@ -5,6 +5,9 @@
 (package-initialize)
 (package-refresh-contents t)
 
+ (require 'load-directory)
+ (load-directory "~/.emacs.d/my-lisp")
+
 ;; Download Evil
 (unless (package-installed-p 'evil)
   (package-install 'evil)
@@ -102,6 +105,14 @@
 
 ;; No Tooltips
 (tooltip-mode 0)
+
+;; Paren mode is part of the theme
+(show-paren-mode t)
+
+;; No fringe but nice glyphs for truncated and wrapped lines
+(fringe-mode '(0 . 0))
+(defface fallback '((t :family "Fira Code Light"
+                       :inherit 'face-faded)) "Fallback")
 
 ;; Paren mode is part of the theme
 (show-paren-mode t)
@@ -1213,14 +1224,6 @@ function is a convenience wrapper used by `describe-package-1'."
   (set-face 'mu4e-cited-1-face                            'face-faded)
   (set-face 'mu4e-cited-2-face                            'face-faded)
   (set-face 'mu4e-cited-3-face                            'face-faded)
-  (set-face 'mu4e-cited-4-face                            'face-faded)
-  (set-face 'mu4e-cited-5-face                            'face-faded)
-  (set-face 'mu4e-cited-6-face                            'face-faded)
-  (set-face 'mu4e-cited-7-face                            'face-faded)
-  (set-face 'mu4e-compose-header-face                     'face-faded)
-  (set-face 'mu4e-compose-separator-face                  'face-faded)
-  (set-face 'mu4e-contact-face                          'face-salient)
-  (set-face 'mu4e-context-face                            'face-faded)
   (set-face 'mu4e-draft-face                              'face-faded)
   (set-face 'mu4e-flagged-face                            'face-faded)
   (set-face 'mu4e-footer-face                             'face-faded)
