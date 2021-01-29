@@ -62,7 +62,7 @@
 ;; Move up and Down in Agenda
 ;; In the agenda evil doesn't work, because there are already other
 ;; keybindings like F for follow mode, map j/k as a compromise
-(add-hook 'org-mode-hook (lambda ()
+(add-hook 'org-agenda-mode-hook (lambda ()
 				;; (define-key org-agenda-mode-map "k" 'org-agenda-next-item)
 				;; (define-key org-agenda-mode-map "k" 'org-agenda-previous-item)
 				(define-key org-agenda-mode-map "j" 'evil-next-line)
