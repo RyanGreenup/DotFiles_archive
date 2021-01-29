@@ -48,6 +48,11 @@
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'prog-mode-hook 'eglot-ensure)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+
+
+
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here
