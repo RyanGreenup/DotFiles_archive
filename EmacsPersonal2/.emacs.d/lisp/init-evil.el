@@ -34,7 +34,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>fp") 'open-local-config)
 (setq vc-follow-symlinks t) ;; Must follow for version control to work
 (evil-define-key 'normal 'global (kbd "<leader>SPC") 'projectile--find-file)
-(evil-define-key 'normal 'global (kbd "<leader>gs") 'magit-stage)
+(evil-define-key 'normal 'global (kbd "<leader>gs") 'git-gutter:stage-hunk)
 (evil-define-key 'normal 'global (kbd "<leader>gS") 'magit-stage-file)
 (evil-define-key 'normal 'global (kbd "<leader>gc") 'magit-commit)
 (evil-define-key 'normal 'global (kbd "<leader>gt") 'git-timemachine)

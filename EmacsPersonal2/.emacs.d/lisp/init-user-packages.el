@@ -46,6 +46,8 @@
 ;; Git
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
+(straight-use-package 'git-gutter)
+(add-hook 'after-init-hook (global-git-gutter-mode +1))
 
 ;; Org
 (straight-use-package 'org-superstar)
