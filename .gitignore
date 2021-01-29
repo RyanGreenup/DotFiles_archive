@@ -19,3 +19,5 @@
 NeoVim/.local/bin/mdv
 .gitignore
 NeoVim/.local/bin/tabulate
+VSCode/.config/Code - OSS/User/workspaceStorage
+VSCode/.config/Code - OSS/User/globalStorage
