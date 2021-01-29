@@ -17,8 +17,9 @@
 
 
 NeoVim/.local/bin/mdv
-.gitignore
 NeoVim/.local/bin/tabulate
 VSCode/.config/Code - OSS/User/workspaceStorage
 VSCode/.config/Code - OSS/User/globalStorage
 EmacsPersonal/centaur
+EmacsPersonal2/.emacs.d/lisp/init-user-packages.elc
+**/.elc
