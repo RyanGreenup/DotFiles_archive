@@ -49,6 +49,8 @@
 (require 'init-org)
 
  
+(setq texfrag-subdir "/tmp/texfrag/")
+(setq texfrag-scale 2)
 
 ;; Set default font
 (run-with-idle-timer 1 nil (lambda ()
@@ -62,6 +64,8 @@
 				(tool-bar-mode -1) 
 				;; (menu-bar-mode -1)  ;; I like the Menus actually
 
+
+				(texfrag-global-mode 1) ;; TODO Move this in with helm
 				;; Set Theme
 			    )
 		     ) 
