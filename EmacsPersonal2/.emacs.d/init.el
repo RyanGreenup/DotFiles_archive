@@ -18,6 +18,10 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
+
+;; Garbage Collect and startup hacks at Idle
+(require 'init-startup-gc)
+
 ;; Load Package Manager
 (require 'init-straight)
 ;; (require 'init-elpa)
@@ -39,6 +43,7 @@
 
 ;; Configure Org Mode
 (require 'init-org)
+
  
 
 ;; Set default font
