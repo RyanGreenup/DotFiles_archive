@@ -87,7 +87,8 @@
 
 ;;;; Outshine Mode
 (straight-use-package 'outshine)
-(add-hook 'prog-mode-hook 'outshine-mode)
+(add-hook 'prog-mode-hook '(lambda () (outshine-mode 1)))
+
 
 
 (provide 'init-user-packages)
