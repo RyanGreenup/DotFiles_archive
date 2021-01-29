@@ -55,7 +55,9 @@
 (evil-define-key 'normal 'global (kbd "<leader>.a") 'hydra-org-agenda/body)
 (evil-define-key 'normal 'global (kbd "<leader>.c") 'hydra-clock-menu/body)
 (evil-define-key 'normal 'global (kbd "<leader>.w") 'hydra-window-menu/body)
+(evil-define-key 'normal 'global (kbd "<leader>wo") 'doom/window-enlargen)
 (evil-define-key 'normal 'global (kbd "<leader>`") 'vterm)
+(evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 
 
 
@@ -92,6 +94,99 @@
   (define-key evil-motion-state-map (kbd "TAB") nil))
 (set 'org-return-follows-link t)
 
+;;; Doom Functions
+
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+(defun doom-resize-window (window new-size &optional horizontal force-p)
+  "Resize a window to NEW-SIZE. If HORIZONTAL, do it width-wise.
+If FORCE-P is omitted when `window-size-fixed' is non-nil, resizing will fail."
+  (with-selected-window (or window (selected-window))
+    (let ((window-size-fixed (unless force-p window-size-fixed)))
+      (enlarge-window (- new-size (if horizontal (window-width) (window-height)))
+                      horizontal))))
+
+
+
+(defun doom/toggle-line-numbers ()
+  "Toggle line numbers.
+Cycles through regular, relative and no line numbers. The order depends on what
+`display-line-numbers-type' is set to. If you're using Emacs 26+, and
+visual-line-mode is on, this skips relative and uses visual instead.
+See `display-line-numbers' for what these values mean."
+  (interactive)
+  (defvar doom--line-number-style display-line-numbers-type)
+  (let* ((styles `(t ,(if visual-line-mode 'visual 'relative) nil))
+         (order (cons display-line-numbers-type (remq display-line-numbers-type styles)))
+         (queue (memq doom--line-number-style order))
+         (next (if (= (length queue) 1)
+                   (car order)
+                 (car (cdr queue)))))
+    (setq doom--line-number-style next)
+    (setq display-line-numbers next)
+    (message "Switched to %s line numbers"
+             (pcase next
+               (`t "normal")
+               (`nil "disabled")
+               (_ (symbol-name next))))))
+
+
+
+(defun doom/window-enlargen (&optional arg)
+  "Enlargen the current window to focus on this one. Does not close other
+windows (unlike `doom/window-maximize-buffer'). Activate again to undo."
+  (interactive "P")
+  (let* ((window (selected-window))
+         (dedicated-p (window-dedicated-p window))
+         (preserved-p (window-parameter window 'window-preserved-size))
+         (ignore-window-parameters t)
+         (window-resize-pixelwise nil)
+         (frame-resize-pixelwise nil))
+    (unwind-protect
+        (progn
+          (when dedicated-p
+            (set-window-dedicated-p window nil))
+          (when preserved-p
+            (set-window-parameter window 'window-preserved-size nil))
+          (maximize-window window))
+      (set-window-dedicated-p window dedicated-p)
+      (when preserved-p
+        (set-window-parameter window 'window-preserved-size preserved-p)))))
+
+
+;;;###autoload
+(defun doom/window-maximize-horizontally ()
+  "Delete all windows to the left and right of the current window."
+  (interactive)
+  (require 'windmove)
+  (save-excursion
+    (while (ignore-errors (windmove-left)) (delete-window))
+    (while (ignore-errors (windmove-right)) (delete-window))))
+
+;;;###autoload
+(defun doom/window-maximize-vertically ()
+  "Delete all windows above and below the current window."
+  (interactive)
+  (require 'windmove)
+  (save-excursion
+    (while (ignore-errors (windmove-up)) (delete-window))
+    (while (ignore-errors (windmove-down)) (delete-window))))
+
+
+
+
+(defun doom/toggle-narrow-buffer (beg end)
+  "Narrow the buffer to BEG END. If narrowed, widen it."
+  (interactive
+   (list (or (bound-and-true-p evil-visual-beginning) (region-beginning))
+         (or (bound-and-true-p evil-visual-end)       (region-end))))
+  (if (buffer-narrowed-p)
+      (widen)
+    (unless (region-active-p)
+      (setq beg (line-beginning-position)
+            end (line-end-position)))
+    (narrow-to-region beg end)))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
