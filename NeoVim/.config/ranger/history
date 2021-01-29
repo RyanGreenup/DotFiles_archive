@@ -1,22 +1,3 @@
-rename algebraic_graph_theory_ulrich_knauer_2019.pdf
-shell mkdir
-unmark 
-cd /home/ryan/Sync/Books/2020Spring/
-shell cp ~/Downloads/
-rename barabasi_linked__the_new_science_of_networks-perseus_books_group_2002.pdf_
-rename barabasi_linked__the_new_science_of_networks-perseus_books_group_2002.pdf
-shell zathura "%" & disown
-filter png
-rename many_julia_fractals_around_circle.png
-rename .latexmkrc
-cd .config/
-rg
-shell rg glow
-filter out
-filter Out
-rename Quizzes
-rename Material
-shell mkdir Books
 flat 4
 filter .jar
 filter stre
@@ -42,9 +23,28 @@ rename Roth_Astronomy_Handbook_2009_Springer.pdf
 search astro
 rename Sample_pdf
 rename Final
-unmark
 rename Sample
 bulkrename
 search 
 search otes
+search emacs
+rename .emacs.d_doom
+rename .emacs.d_purcell_custom
+rename .emacs.d
+find s:
+shell mkdir init-evil.el
+search emac
+filter ema
+shell mkdir myconfig
+shell mkdir personal_config
+shell mkdir lisp
+shell touch init.el
+Q
+rename .emacs.d.bak
+filter .ema
+shell m
+rename EmacsPersonal2
+unmark
 delete
+cd .emacs.d/
+shell mkdir site-lisp
