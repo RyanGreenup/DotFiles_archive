@@ -22,6 +22,7 @@ NeoVim/.local/bin/tabulate
 VSCode/.config/Code - OSS/User/workspaceStorage
 VSCode/.config/Code - OSS/User/globalStorage
 EmacsPersonal/centaur
-**/.elc
+**/*.elc
 **/*~$
 EmacsPersonal2/.emacs.d/lisp/init-doom-modeline.elc
+EmacsPersonal2/.emacs.d/lisp/init-keybindings.elc
