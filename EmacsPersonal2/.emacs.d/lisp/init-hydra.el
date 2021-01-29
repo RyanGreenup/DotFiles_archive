@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'hydra-org-agenda)
+(require 'hydra-clock)
 
 (provide 'init-hydra)
 ;;; init-hydra.el ends here

@@ -78,6 +78,9 @@
 ;; Doom Modeline
 ;; (require 'init-doom-modeline)
 
+;; Hydra
+(require 'init-hydra)
+
 ;; Auto Save
 ;; Save when actually idle, this may get annoying though
 ;; (run-with-idle-timer 5 t 
@@ -89,15 +92,3 @@
 ;; compile hook
 ;; (add-hook 'after-save-hook '(lambda () (byte-recompile-directory "~/.emacs.d/lisp")) t t)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-source-names-using-follow '("Buffers" "switch-to-buffer")))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
