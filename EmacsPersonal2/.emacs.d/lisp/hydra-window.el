@@ -42,10 +42,10 @@
          (ace-swap-window)
          (add-hook 'ace-window-end-once-hook
                    'hydra-window/body)))
-  ("<left>" hydra-move-splitter-left)
-  ("<down>" hydra-move-splitter-down)
-  ("<up>" hydra-move-splitter-up)
-  ("<right>" hydra-move-splitter-right)
+  ("<left>" (shrink-window-horizontally 15))
+  ("<down>" (shrink-window 10))
+  ("<up>" (enlarge-window 15))
+  ("<right>" (enlarge-window-horizontally 15))
   ("M" delete-other-windows)
   ("d" delete-window)
 
