@@ -64,6 +64,7 @@
 
 
 				(texfrag-global-mode 1) ;; TODO Move this in with helm
+				(winner-mode 1) ;; TODO Move this in with helm
 				;; Set Theme
 			    )
 		     ) 
