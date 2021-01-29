@@ -57,6 +57,10 @@
 (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
+;; Doom Modeline
+(straight-use-package 'doom-modeline)
+
+
 
 (provide 'init-user-packages)
 ;;; init-user-packages.el ends here

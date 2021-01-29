@@ -16,12 +16,10 @@
 (setq debug-on-error t)
 
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
-
 
 ;; Load Package Manager
 (require 'init-straight)
+
 ;; (require 'init-elpa)
 
 (defun display-startup-echo-area-message ()
@@ -71,6 +69,10 @@
 
 (load-theme 'misterioso t)
 
+
+
+;; Doom Modeline
+(require 'init-doom-modeline)
 
 ;; compile hook
 ;; (add-hook 'after-save-hook '(lambda () (byte-recompile-directory "~/.emacs.d/lisp")) t t)
