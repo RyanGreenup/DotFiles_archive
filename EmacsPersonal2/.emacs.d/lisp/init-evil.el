@@ -41,6 +41,14 @@
 (evil-define-key 'normal 'global (kbd "<leader>nrf") 'org-roam-find-file)
 (evil-define-key 'normal 'global (kbd "<leader>nri") 'org-roam-insert)
 (evil-define-key 'normal 'global (kbd "<leader>'") 'helm-resume)
+(evil-define-key 'normal 'global (kbd "<leader>'") 'helm-resume)
+(evil-define-key 'normal 'global (kbd "<leader>zns") 'org-narrow-to-subtree)
+(evil-define-key 'normal 'global (kbd "<leader>znb") 'org-narrow-to-block)
+(evil-define-key 'normal 'global (kbd "<leader>zne") 'org-narrow-to-element)
+(evil-define-key 'normal 'global (kbd "<leader>znp") 'narrow-to-page)
+(evil-define-key 'normal 'global (kbd "<leader>znd") 'narrow-to-defun)
+(evil-define-key 'normal 'global (kbd "<leader>znn") 'narrow-to-region)
+(evil-define-key 'normal 'global (kbd "<leader>znw") 'widen)
 
 ;; Move up and Down in Agenda
 ;; In the agenda evil doesn't work, because there are already other
