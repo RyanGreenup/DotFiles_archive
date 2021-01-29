@@ -1,0 +1,252 @@
+\ProvidesPackage{ScreenStyle}
+
+% I should split this up into a style sheet and a preamble.
+% Inside a style sheet, the correct behaviour is to use RequirePackage rather
+% than RequirePackage
+
+% * Packages
+% ** General
+%\RequirePackage{~/Dropbox/profiles/Templates/LaTeX/texnotePreamble.sty}
+% \RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{comment}
+\RequirePackage{import} %This is allows relative directories
+\RequirePackage{tikz}
+\RequirePackage{svg} % Needed for sVG Images
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+\RequirePackage[T1]{fontenc}
+%\RequirePackage{extsizes} % More Font Sizes
+\RequirePackage[utf8]{inputenc}
+% \RequirePackage{sectsty} %Need it for underlining Sections, must be loaded after any modifications to sections
+\RequirePackage[normalem]{ulem}  % Needed with sectsty to underline
+\RequirePackage{lmodern}
+\RequirePackage{enumitem}
+\RequirePackage{ifxetex,ifluatex} % This doesn't work with org-mode
+\RequirePackage{lipsum}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[margin=1.5in]{geometry}
+\addtolength{\skip\footins}{2pc plus 5pt} %Add whitespace before footnotes`
+%\RequirePackage{tgadventor}
+% Titlesec is incompatible with org-mode
+% *** Multi Column
+\setlength{\tabcolsep}{6pt}
+% \twocolumn
+% \RequirePackage{cuted} % https://tex.stackexchange.com/a/255115 This let's us
+                       % use \begin{strip}\end{strip} which forces an equation
+                       % over all columns
+
+% ** Styles
+%\RequirePackage{titlesec} % Section Colours
+% *** Colours
+%\RequirePackage[svgnames, x11names, dvipsnames]{xcolor} %This is included with mdframed
+% ** Graphics
+
+\RequirePackage{graphicx}
+% ** AmsMath
+\RequirePackage{amsmath, amssymb, amsthm}
+
+%Use this to put it in TOC
+%\printbibliography[heading=bibintoc, title={Whole bibliography}]
+%\printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+% ** Bibliography (refer to ./referencing.sty )
+% % \RequirePackage[citestyle=numeric, bibstyle=numeric,hyperref=true,backref=true, maxcitenames=3,url=true,backend=biber,natbib=true]{biblatex}
+% % \addbibresource{references.bib}
+% % \AtEndDocument{\printbibliography}
+
+%Use this to put it in TOC
+%\printbibliography[heading=bibintoc, title={Whole bibliography}]
+%\printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+% ** Hyperref (Last)
+
+%Hyperlinks----------------must load last ---------------
+\RequirePackage{bibentry}
+\RequirePackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=blue,
+	 colorlinks=true, %set true if you want colored links
+	 linktoc=all, %set to all if you want both sections and subsections linked
+   backref=page %hyperlink references
+}
+% * Styling/Aesthetics
+% ** Section Names
+% Rename Chapters because a reports not a book
+% \renewcommand{\chaptername}{Division}
+
+
+% ** Font Style
+% ** Penalise Page Breaks
+% Formatting----------------------------------------
+% \widowpenalty=1000
+% \clubpenalty=1000
+% ** Problem Boxes
+
+% Problem boxes --------------------------------------
+
+%\newtheorem*{prob}{Problem}
+%\theoremstyle{working}{\cmss}
+%\newtheorem*{working}{Worked Solution}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newenvironment{sol}[1][Problem]{%
+	\proof[\nopunct]  %
+}{\endproof}
+
+%\renewenvironment{proof}{{\bfseries \fontfamily{ccr} \selectfont Proof}}{*something*}
+% ** Heading Style
+% *** Define Heading Colours
+% These probably need some work to be honest
+%\definecolor{part}{RGB}{136, 73, 143}
+%\definecolor{chap}{RGB}{34, 174, 209}
+\definecolor{sec}{RGB}{38, 70, 83}
+\definecolor{subsec}{RGB}{42, 157, 143}
+\definecolor{subsubsec}{RGB}{233, 196, 106}
+\definecolor{paragraph}{RGB}{244, 162, 97}
+\definecolor{subparagrap}{RGB}{47, 83, 115}
+
+% sectsty is by far the easiest way to style sections, use that (but only on it's own)
+
+\RequirePackage[]{sectsty}
+
+% *** Change Colours
+% **** Section
+\sectionfont{\color{sec}}
+% **** SubSection
+\subsectionfont{\color{subsec}}
+% **** SubSubSection
+\subsubsectionfont{\color{subsubsec}}
+% **** Paragraph
+\paragraphfont{\color{paragraph}}
+% **** SubParagraph
+\paragraphfont{\color{subparagraph}}
+
+% *** Actually Just use One style Instead
+\definecolor{midnightblue}{rgb}{0.1, 0.1, 0.44}
+%\allsectionsfont{  \mdseries\itshape\underline }
+\allsectionsfont{ \color{midnightblue} \sffamily}
+
+
+	
+%
+% ** Header
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\pagestyle{fancy}
+\cfoot[]{}
+\rfoot{\thepage\ of \pageref{LastPage}}
+\lhead[\leftmark]{\rightmark} % Leftmark is sec right is subsec, [even](odd)
+\rhead[]{}                    % clears right side for tag corresponding to Author
+%\renewcommand{\headrulewidth{0.1mm}}
+% \renewcommand{\footrulewidth{0.1mm}} % looks weird with footnotes
+%
+
+% * Code Blocks
+% ** Listings Package
+
+% Careful, this supports few languages
+\RequirePackage{listings}
+
+
+%Listings----------------------------------------
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+%  frame=tb,
+  frame=leftline,
+  framesep=15pt,
+  language=Java,
+  aboveskip=15pt,
+  belowskip=20pt,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+%  backgroundcolor=\color{Snow2},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  xleftmargin=1in,
+}
+
+% ** tcolorbox
+\RequirePackage{tcolorbox}
+\tcbuselibrary{breakable, most, minted}
+% *** General Format
+% Remember that minted inside a listing is a float and will not break.
+% May be worth investigating \thetcbcounter actually
+\tcbset{
+    breakable, enhanced jigsaw, %Don't break by default because it doesn't work well with listing and tcb
+    colback=blue!1!white,colframe=blue!75!black,colbacktitle=red!20!blue!8,
+    coltitle=blue, enhanced jigsaw,
+%		title=\textbf{\textit{R}}\ ,fonttitle=\it,
+     %Indent for the line numbers, % use line numbers because line-breaks
+      /tcb/left skip=0.5 cm, %Indent the whole box
+      width=\textwidth % make width about 80ish tt char
+      %width=41em % make width about 80ish tt char
+}
+% *** Add Strip for Line Numbers
+\tcbuselibrary{skins}
+\tcbset{
+   left=7mm, % Indent text to make room for line Numbers
+   overlay={
+     \begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west) rectangle ([xshift=6mm]frame.north west); \end{tcbclipinterior}
+   }
+ }
+% ** Minted Package
+\RequirePackage{minted}
+\setminted{linenos,tabsize=2,breaklines, breakanywhere, fontsize=\scriptsize}
+% *** With Box
+% Use tcolorbox, even though it breaks html conversion, it makes it way easier,
+  %if you need to fix the html conversion just remove the box by commenting this out.
+  % Automatically wrap minted in tcolorbox
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}[]}%
+ %  \AfterEndEnvironment{verbatim}{\end{tcolorbox}}%
+\AfterEndEnvironment{minted}{\end{tcolorbox}}%
+
+
+% ** Verbatim
+% Make verbatim smaller to fit inside tcolorbox
+\patchcmd{\@verbatim}
+  {\verbatim@font}
+  {\verbatim@font\footnotesize}
+   {}{}                          %
+% * Fonts
+% ** General
+%Change the Font------------------------------
+%\RequirePackage{PoiretOne}
+% \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\RequirePackage[mono=false]{libertine}
+% ** Monospace Size
+%
+% ** XeLaTeX Specific
+% \RequireXeTeX
+% \RequirePackage[utf8]{inputenc}
+% \RequirePackage{fontspec} %More support for fonts in XeTeX
+% \RequirePackage[Latin,Greek,Emoticons]{ucharclasses}
+
+\usepackage{xltxtra}
+\usepackage{fontspec} %Font package
+\usepackage{xunicode}
+
+%Select fonts
+% \setmainfont[Mapping=tex-text]{Minion Pro}
+% \setsansfont[Mapping=tex-text]{Myriad Pro}
+%
+% \setmonofont{GNU Unifont}
+% \setmonofont{Free Mono}
+% \setmonofont{Iosevka}
+\setmonofont[Scale=MatchLowercase]{DejaVu Sans Mono} % Very big make minted \scriptsize
+% \setmonofont[Scale=MatchLowercase]{Fira Mono}
+% \setmonofont[Scale=MatchLowercase]{monofur}
+% \setmonofont{Symbola}
