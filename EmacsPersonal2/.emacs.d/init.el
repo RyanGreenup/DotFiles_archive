@@ -77,6 +77,14 @@
 ;; Doom Modeline
 (require 'init-doom-modeline)
 
+;; Auto Save
+;; Save when actually idle, this may get annoying though
+(run-with-idle-timer 5 t 
+		     (lambda ()
+		       (save-buffer)
+		       (message "Saved")
+		       )
+		     )
 ;; compile hook
 ;; (add-hook 'after-save-hook '(lambda () (byte-recompile-directory "~/.emacs.d/lisp")) t t)
 
