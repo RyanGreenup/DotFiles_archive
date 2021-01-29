@@ -40,3 +40,6 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
   - [ ] Is it garbage collecting during swoop or during loading org?
   - [ ] Garbage colect at idle?
 
+
+* Installation Time
+    < 2 minutes for a fresh install on fast internet
