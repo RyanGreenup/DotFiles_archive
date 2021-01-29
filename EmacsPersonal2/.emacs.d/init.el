@@ -7,6 +7,9 @@
 
 ;;; Code:
 
+;; Garbage Collect and startup hacks at Idle
+(require 'init-startup-gc)
+
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 (setq debug-on-error t)
 
@@ -19,8 +22,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 
-;; Garbage Collect and startup hacks at Idle
-(require 'init-startup-gc)
 
 ;; Load Package Manager
 (require 'init-straight)
