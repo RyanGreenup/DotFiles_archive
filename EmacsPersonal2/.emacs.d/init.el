@@ -28,15 +28,20 @@
 
 ;; Load all packages
 (require 'init-user-packages)
+;; (require 'init-change-theme-timer)
 
 ;; Configure Evil
 (require 'init-evil)
 
 ;; Configure Helm
 (require 'init-helm)
-;;(require 'init-ivy)
+;; (require 'init-ivy)
  
 
 
 ;; Set Theme
-(load-theme 'leuven-dark t)
+(load-theme 'adwaita t)
+
+;; compile hook
+;; (add-hook 'after-save-hook '(lambda () (byte-recompile-directory "~/.emacs.d/lisp")) t t)
+
