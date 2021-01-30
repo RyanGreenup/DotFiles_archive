@@ -9,12 +9,8 @@
 ;;; Code:
 
 (add-hook 'after-init-hook #'doom-modeline-mode)
-(provide 'init-doom-modeline)
-;;; init-doom-modeline.el ends here
 
-
-
-
+(straight-use-package doom-modeline
 
 ;;; Default Config from GitHub
 ;; https://github.com/domtronn/all-the-icons.el
@@ -53,3 +49,6 @@
 
 ;; If non-nil, a word count will be added to the selection-info modeline segment.
 (setq doom-modeline-enable-word-count t)
+
+(provide 'init-doom-modeline)
+;;; init-doom-modeline.el ends here
