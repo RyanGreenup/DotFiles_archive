@@ -25,6 +25,9 @@
 
   (lambda ()
 
+    (texfrag-global-mode 1)  ;; Load globally here, it throws an error at init
+			     ;; and I mostly use it in org-mode anyway
+
     ;;;;; Appearance
   (setq org-display-inline-images t)
   (setq org-redisplay-inline-images t)
