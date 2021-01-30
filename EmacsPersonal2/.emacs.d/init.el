@@ -26,8 +26,8 @@
 
     (defun display-startup-echo-area-message ()
       (message (format "Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
-		     (float-time (time-subtract (current-time) before-init-time))
 		     (float-time (time-subtract after-init-time before-init-time))
+		     (float-time (time-subtract (current-time) before-init-time))
 		) 
     )
     )
