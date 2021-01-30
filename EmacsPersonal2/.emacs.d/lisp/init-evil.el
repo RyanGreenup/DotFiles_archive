@@ -10,7 +10,7 @@
 
 ;; Leader Keys
 (evil-set-leader 'normal (kbd "SPC"))
-(evil-set-leader 'insert (kbd "M-SPC"))
+(evil-set-leader 'insert (kbd "M-["))
 (evil-set-leader 'visual (kbd "M-SPC"))
 (evil-set-leader 'replace (kbd "M-SPC"))
 (evil-define-key 'normal 'global (kbd "<leader>fs") 'save-buffer)
@@ -60,7 +60,9 @@
 (evil-define-key 'normal 'global (kbd "<leader>w=") 'balance-windows)
 (evil-define-key 'normal 'global (kbd "<leader>`") 'pop-vterm)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'pop-scratch)
+(evil-define-key 'normal 'global (kbd "<leader>q") 'popwin:close-popup-window)
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
+(setq-default evil-escape-key-sequence "jk")
 
 
 
