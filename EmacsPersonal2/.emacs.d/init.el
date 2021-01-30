@@ -51,6 +51,7 @@
 ;;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
     (require 'init-org)
+    (require 'init-org-super-agenda) 
     (require 'init-texfrag)
 
 

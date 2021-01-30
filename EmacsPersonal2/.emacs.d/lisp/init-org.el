@@ -22,8 +22,10 @@
 ;;; After loading org
 
 (with-eval-after-load 'org
+
   (lambda ()
 
+    ;;;;; Appearance
   (setq org-display-inline-images t)
   (setq org-redisplay-inline-images t)
   (setq org-startup-with-inline-images "inlineimages")
@@ -32,7 +34,6 @@
   (setq org-link-frame-setup '((file . find-file)))
 
   ;;;; Super Agenda
-    (require 'init-org-super-agenda)
     ;;;; Orb Babel Languages
     ;;;;; Active Babel languagevs
     (org-babel-do-load-languages
