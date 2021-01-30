@@ -4,12 +4,12 @@
 
 (defhydra hydra-window-menu ()
   "
-    Movement^   ^Split^         ^Switch^       ^^^Resize^         ^Window Purpose^
-    ------------------------------------------------------------------------------------------------------
-    _h_ ←        _|_ vertical    ^_b_uffer       _<left>_  X←     choose window _P_urpose
-    _j_ ↓        _-_ horizontal  ^_f_ind files   _<down>_  X↓     switch to _B_uffer w/ same purpose
-    _k_ ↑        _u_ undo        ^_a_ce window   _<up>_    X↑     Purpose-dedication(_!_)
-    _l_ →        _r_ reset       ^_s_wap         _<right>_ X→     Buffer-dedication(_#_)
+    Travel^  Movement^   ^Split^         ^Switch^       ^^^Resize^         ^Window Purpose^
+    ---------- ------------------------------------------------------------------------------------------------------
+    _h_ ←      _H_ ←        _|_ vertical    ^_b_uffer       _M-h_  X←     choose window _P_urpose
+    _j_ ↓      _J_ ↓        _-_ horizontal  ^_f_ind files   _M-j_  X↓     switch to _B_uffer w/ same purpose
+    _k_ ↑      _K_ ↑        _u_ undo        ^_a_ce window   _M-k_    X↑     Purpose-dedication(_!_)
+    _l_ →      _L_ →        _r_ reset       ^_s_wap         _M-l_ X→     Buffer-dedication(_#_)
     ^^^^^^^                                      _M_aximize
     ^^^^^^^                                      _d_elete
     _x_ M-x      _q_ quit
@@ -18,6 +18,10 @@
   ("j" windmove-down)
   ("k" windmove-up)
   ("l" windmove-right)
+  ("H" evil-window-move-far-left)
+  ("J" evil-window-move-far-down)
+  ("K" evil-window-move-far-up)
+  ("L" evil-window-move-far-right)
   ("|" (lambda ()
          (interactive)
          (split-window-right)
@@ -42,10 +46,10 @@
          (ace-swap-window)
          (add-hook 'ace-window-end-once-hook
                    'hydra-window/body)))
-  ("<left>" (shrink-window-horizontally 15))
-  ("<down>" (shrink-window 10))
-  ("<up>" (enlarge-window 15))
-  ("<right>" (enlarge-window-horizontally 15))
+  ("M-h" (shrink-window-horizontally 15))
+  ("M-j" (shrink-window 10))
+  ("M-k" (enlarge-window 15))
+  ("M-l" (enlarge-window-horizontally 15))
   ("M" delete-other-windows)
   ("d" delete-window)
 
