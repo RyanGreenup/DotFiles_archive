@@ -91,8 +91,8 @@
 
 ;;; Golden Ratio Mode
 (straight-use-package 'golden-ratio)
-(add-hook 'prog-mode-hook '(lambda ()
-			     (golden-ratio-mode 1)
+(add-hook 'after-init-hook (lambda ()
+			     (golden-ratio-mode 1)			;; Enable to set commands
 			     (setq golden-ratio-extra-commands
 				    (append golden-ratio-extra-commands
 					    '(evil-window-left
@@ -103,7 +103,8 @@
 						select-window-2
 						select-window-3
 						select-window-4
-						select-window-5)))
+						select-window-5)))	;; Set to work with Evil
+			     (setq golden-ratio-mode nil)		;; Disable because it's annoying
 			     ))
 
 
