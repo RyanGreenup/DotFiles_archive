@@ -60,6 +60,10 @@
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 
 
+;;; Toggles
+(evil-define-key 'normal 'global (kbd "<leader>tg") 'golden-ratio-mode)
+;; (evil-define-key 'normal 'global (kbd "<leader>tl") 'global-display-line-numbers-mode)
+(evil-define-key 'normal 'global (kbd "<leader>tl") 'doom/toggle-line-numbers)
 
 
 (defun reset-theme ()
@@ -116,6 +120,10 @@ Cycles through regular, relative and no line numbers. The order depends on what
 visual-line-mode is on, this skips relative and uses visual instead.
 See `display-line-numbers' for what these values mean."
   (interactive)
+  ;; First Enable Line Numbers if not enabled already ;; Ryan G. 2020-01-30
+(if global-display-line-numbers-mode nil
+    (global-display-line-numbers-mode)
+  )
   (defvar doom--line-number-style display-line-numbers-type)
   (let* ((styles `(t ,(if visual-line-mode 'visual 'relative) nil))
          (order (cons display-line-numbers-type (remq display-line-numbers-type styles)))

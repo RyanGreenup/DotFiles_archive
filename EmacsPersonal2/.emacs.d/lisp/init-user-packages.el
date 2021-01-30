@@ -89,6 +89,22 @@
 (straight-use-package 'outshine)
 (add-hook 'prog-mode-hook '(lambda () (outshine-mode 1)))
 
+;;; Golden Ratio Mode
+(straight-use-package 'golden-ratio)
+(add-hook 'prog-mode-hook '(lambda ()
+			     (golden-ratio-mode 1)
+			     (setq golden-ratio-extra-commands
+				    (append golden-ratio-extra-commands
+					    '(evil-window-left
+						evil-window-right
+						evil-window-up
+						evil-window-down
+						select-window-1
+						select-window-2
+						select-window-3
+						select-window-4
+						select-window-5)))
+			     ))
 
 
 (provide 'init-user-packages)
