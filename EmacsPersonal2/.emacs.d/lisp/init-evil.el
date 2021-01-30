@@ -58,7 +58,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>.w") 'hydra-window-menu/body)
 (evil-define-key 'normal 'global (kbd "<leader>wo") 'doom/window-enlargen)
 (evil-define-key 'normal 'global (kbd "<leader>w=") 'balance-windows)
-(evil-define-key 'normal 'global (kbd "<leader>`") 'vterm)
+(evil-define-key 'normal 'global (kbd "<leader>`") 'pop-vterm)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'pop-scratch)
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 

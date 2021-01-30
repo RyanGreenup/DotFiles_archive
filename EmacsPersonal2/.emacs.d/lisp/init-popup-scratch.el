@@ -3,11 +3,14 @@
 ;;; Code:
 
 
+;; TODO Only create the popup buffer for vterm/eshell if it is needed
+
 (defvar init-is-pop-scratch-up)
 (setq init-is-pop-scratch-up nil)
 (defvar init-my-scratch-file "~/Sync/Scratch")
 
 
+;;; Scratch buffer
 (defun pop-scratch ()
   "Pop up a scratch Buffer"
     (interactive)
@@ -26,6 +29,70 @@
 
 (defun close-popup-scratch ()
   (setq init-is-pop-scratch-up nil)
+  (popwin:close-popup-window)
+  )
+
+
+(provide 'init-popup-scratch)
+;;; Vterm buffer
+(defvar init-is-pop-vterm-up)
+(setq init-is-pop-vterm-up nil)
+(defvar init-my-scratch-file "~/Sync/Scratch")
+
+(defvar vterm-buffer-name "Pop-Vterm")
+(save-window-excursion (vterm vterm-buffer-name))
+
+
+(defun pop-vterm ()
+  "Pop up a vterm Buffer"
+    (interactive)
+    (if init-is-pop-vterm-up
+        (close-popup-vterm)
+        (open-popup-vterm)
+    )
+)
+
+
+
+(defun open-popup-vterm ()
+  (setq init-is-pop-vterm-up t)
+  (popwin:popup-buffer vterm-buffer-name)
+  ;; (popwin:popup-buffer init-my-vterm-file)
+)
+
+(defun close-popup-vterm ()
+  (setq init-is-pop-vterm-up nil)
+  (popwin:close-popup-window)
+  )
+
+
+(provide 'init-popup-scratch)
+;;; Vterm buffer
+(defvar init-is-pop-eshell-up)
+(setq init-is-pop-eshell-up nil)
+(defvar init-my-scratch-file "~/Sync/Scratch")
+
+
+(defvar eshell-buffer-name "Pop-eshell")
+(save-window-excursion (eshell eshell-buffer-name))
+
+(defun pop-eshell ()
+  "Pop up a eshell Buffer"
+    (interactive)
+    (if init-is-pop-eshell-up
+        (close-popup-eshell)
+        (open-popup-eshell)
+    )
+)
+
+(defun open-popup-eshell ()
+  (setq init-is-pop-eshell-up t)
+  (popwin:popup-buffer eshell-buffer-name)
+  ;; (popwin:popup-buffer init-my-eshell-file)
+)
+
+(defun close-popup-eshell ()
+  (setq init-is-pop-eshell-up nil)
   (popwin:close-popup-window)
   )
 
