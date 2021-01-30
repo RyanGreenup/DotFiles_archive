@@ -13,7 +13,7 @@
 (require 'init-startup-gc)
 
 ;;;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
-(setq debug-on-error t)
+(setq debug-on-error nil)
 
 
 ;;;; Run After Initialisation
@@ -25,9 +25,10 @@
     ;; (require 'init-elpa)
 
     (defun display-startup-echo-area-message ()
-    (message (format "Starup Time: %s"(float-time
-		    (time-subtract after-init-time before-init-time))
-	    ) 
+      (message (format "Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
+		     (float-time (time-subtract (current-time) before-init-time))
+		     (float-time (time-subtract after-init-time before-init-time))
+		) 
     )
     )
 
@@ -49,14 +50,17 @@
 
 ;;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
-    ;; do it after initializing
-    (add-hook 'after-init-hook
-		    (lambda ()
-		    (require 'init-org)
-		)
-	    ) ;; "HACK" This should be restructured inside init-org
-
+    (require 'init-org)
     (require 'init-texfrag)
+
+
+    ;; Print Init after post-init-hooks
+    ;; I should use hooks/idle-times to drive this number down as well
+    (message (format "Init Time:\n--- %s\n Final Startup Time (post after-init-hook):\n--- %s\n"
+		     (float-time (time-subtract (current-time) before-init-time))
+		     (float-time (time-subtract after-init-time before-init-time))
+		) 
+	)
 
 ;;;;; Set default font and apply theme
     ;; BEGIN_SLOW These should definitely be wrapped in eval-after-init atleast
