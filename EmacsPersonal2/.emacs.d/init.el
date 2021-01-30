@@ -37,14 +37,20 @@
     (require 'init-keybindings)
     (require 'init-change-theme-timer)
 
-;;;;; Configure Evil
-    (require 'init-evil)
+;;;;; Interface
+;;;;;; Scrolling
+    ;; scroll one line at a time (less "jumpy" than defaults)
+(require 'init-smooth-scrolling)
 
-;;;;; Configure Helm
+;;;;;; Configure Evil
+    (require 'init-evil)
+    (winner-mode 1) 
+
+;;;;;; Configure Helm
     (require 'init-helm)
     ;; (require 'init-ivy)
 
-;;;;; Popup Scratch Buffer
+;;;;;; Popup Scratch Buffer
     (require 'init-popup-scratch)
 
 ;;;;; Configure Org Mode
@@ -55,20 +61,8 @@
 
 
 ;;;;; Set default font and apply theme
-	(texfrag-global-mode 1) ;; TODO Move this in with helm
-	(winner-mode 1) ;; TODO Move this in with helm
 	;; Set Theme
 	(set-theme-for-time-of-day)
-
-
-
-
-
-;;;;; Doom Modeline
-    ;; This causes major scrolling and performance issues in org-mode
-    ;; (require 'init-doom-modeline)
-    ;; (require 'init-spacemacs-modeline) ;; TODO Does this slow down org buffers like doom?
-
 ;;;;; Hydra
 (require 'init-hydra)
 
@@ -122,7 +116,20 @@
 ;;;;; 3 Second
 
 
-;;;; Smooth Scrolling
-    ;; scroll one line at a time (less "jumpy" than defaults)
-(require 'init-smooth-scrolling)
+;;;;; Modeline 
+
+(run-with-idle-timer 3 nil (lambda ()
+    ;; These take about a second to load, I'll only have them pop in if I've been idle for a few seconds.
+    ;; Doom Modeline major scrolling and performance issues in org-mode
+    ;; (require 'init-doom-modeline)
+    ;; (require 'init-spacemacs-modeline) ;; TODO Does this slow down org buffers like doom?
+                                          ;; TODO Is there a way to refresh this?
+
+)
+)
+
+
+;; This gets annoying so turn it off after launch
+(setq debug-on-error nil)
+
 
