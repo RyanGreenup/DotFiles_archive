@@ -20,8 +20,9 @@
 ;;;; Org Stuff
 (straight-use-package 'texfrag)
 (straight-use-package 'org-super-agenda)
-
-;;;; Helm
+(straight-use-package 'org-superstar)
+;;;; Interface
+;;;;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
 ;; (run-with-idle-timer 1 nil (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time"))) 
@@ -31,15 +32,18 @@
 (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
 
-;;;; Ivy
+;;;;; Ivy
 ;; (straight-use-package 'ivy)
 ;; (straight-use-package 'counsel)
 ;; (straight-use-package 'swiper)
 
 
 ;;;; Themes
-(straight-use-package 'dracula-theme
-  :defer t) ;; SLOW adds 0.343 s to startups
+(add-hook 'after-init-hook
+    (lambda ()
+    (straight-use-package 'dracula-theme) ;; SLOW adds 0.343 s to startups
+    ) 
+)
 (straight-use-package 'lab-themes)
 (straight-use-package 'flucui-themes)
 (straight-use-package 'material-theme)
@@ -50,6 +54,13 @@
   (require 'elegance)
 )
 
+;;;; Beacon
+(straight-use-package 'beacon)
+(setq beacon-blink-when-window-scrolls nil)
+(setq beacon-blink-when-window-changes t)
+(setq beacon-blink-when-point-moves t)
+(beacon-mode 1)
+
 ;;;; Notes
 (straight-use-package 'markdown-mode)
 
@@ -57,10 +68,12 @@
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
 (straight-use-package 'git-gutter)
-(add-hook 'after-init-hook (global-git-gutter-mode +1))
+(add-hook 'after-init-hook
+	  (lambda ()
+		(global-git-gutter-mode +1)
+	    )
+	  )
 
-;;;; Org
-(straight-use-package 'org-superstar)
 
 ;;;; Programming
 (straight-use-package 'eglot)

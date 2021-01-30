@@ -1,17 +1,19 @@
 
-;;; init-change-theme-timer.el.el --- All Packages for Emacs using straight.el -*- lexical-binding: t -*-
+;;; init-change-theme-timer.el --- All Packages for Emacs using straight.el -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
-(run-at-time "10:58" nil #'dark-theme)
+(defun set-theme-for-time-of-day ()
+  "Set the theme depending on the time of day, ideal for startup."  
+    ;; TODO Make this only change the theme if it needs to be and then have it run every 30 minutes
+    (defvar init-current-time (string-to-number (format-time-string "%H")))
+    (defvar is-daytime (and (>  init-current-time 5) (< init-current-time 17)) )
+    (defvar is-evening (and (<  init-current-time 5) (> init-current-time 17)) )
+    (if is-daytime
+	(load-theme 'light-blue)
+	(load-theme 'flucui-dark)
+    )
+)
 
-(defun dark-theme ()
-  "Change to Dark Theme"
-  (
-   (load-theme 'leuven-dark t)
-   )
-  )
-
-
-(provide 'init-change-theme-timer.el)
-;;; init-change-theme-timer.el.el ends here
+(provide 'init-change-theme-timer)
+;;; init-change-theme-timer.el ends here
