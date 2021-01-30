@@ -101,11 +101,14 @@
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
-;;;; Doom Modeline
+;;;; Modeline
+;;;;; Doom
 ;; (straight-use-package 'doom-modeline)
 ;; (straight-use-package 'all-the-icons)
 ;; (straight-use-package 'minions)
-
+;;;;; Spacemacs
+;; See ./init-spacemacs-modeline.el
+;; If I decide not to use it I may as well not load these
 ;;;; Shell
 (straight-use-package 'vterm)
 
@@ -113,7 +116,7 @@
 (straight-use-package 'esup)
 
 ;;;; Keybindings
-;;; Which Key
+;;;; Which Key
 (straight-use-package 'which-key)
 (add-hook 'after-init-hook (lambda ()
 			     (which-key-mode 1)
