@@ -49,16 +49,16 @@
 (setq texfrag-subdir "/tmp/texfrag/")
 (setq texfrag-scale 2)
 
-;; Set default font
+;; Set default font and apply theme
 (add-hook 'after-init-hook
 ;; (run-with-idle-timer 1 nil
 	  ;; After Init Hook looks much smoother,
 		     (lambda ()
+				(message "Begining Post Initialisation Modifications")
 				;; (set-frame-font "Roboto Mono-10" nil t)
 				(set-frame-font "Fira Code-10" nil t)
 				;; (set-frame-font "monofur-10" nil t)
 				;; (set-frame-font "Source Code Pro-10" nil t)
-				(message "Changed Font after Idle Time")
 				;; Toggle scroll bar and Toolbar 
 				(toggle-scroll-bar -1) 
 				(tool-bar-mode -1) 
