@@ -84,6 +84,7 @@
 (straight-use-package 'eglot)
 (straight-use-package 'ess)
 (straight-use-package 'hl-todo)
+(straight-use-package 'highlight-indent-guides)
 (hl-todo-mode 1)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)

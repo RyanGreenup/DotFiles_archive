@@ -81,6 +81,9 @@
 ;; (evil-define-key 'normal 'global (kbd "<leader>tl") 'global-display-line-numbers-mode)
 (evil-define-key 'normal 'global (kbd "<leader>tl") 'doom/toggle-line-numbers)
 (evil-define-key 'normal 'global (kbd "<leader>th") 'helm-mode)
+(evil-define-key 'normal 'global (kbd "<leader>tb") 'org-supertar-mode)
+(evil-define-key 'normal 'global (kbd "<leader>ti") 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'character)
 
 
 (defun reset-theme ()
