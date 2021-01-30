@@ -68,10 +68,19 @@
 				(texfrag-global-mode 1) ;; TODO Move this in with helm
 				(winner-mode 1) ;; TODO Move this in with helm
 				;; Set Theme
+				(set-theme-for-time-of-day)
 			    )
 		     ) 
 
-(load-theme 'misterioso t)
+(defun set-theme-for-time-of-day ()
+    (defvar init-current-time (string-to-number (format-time-string "%H")))
+    (defvar is-daytime (and (>  init-current-time 5) (< init-current-time 17)) )
+    (defvar is-evening (and (<  init-current-time 5) (> init-current-time 17)) )
+    (if is-daytime
+	(load-theme 'light-blue)
+	(load-theme 'flucui-dark)
+    )
+)
 
 
 
