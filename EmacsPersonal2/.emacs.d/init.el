@@ -13,11 +13,10 @@
 (require 'init-startup-gc)
 
 ;;;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
-(setq debug-on-error nil)
+(setq debug-on-error t)
 
 
 ;;;; Run After Initialisation
-(add-hook 'after-init-hook (lambda ()
 
 ;;;;; Load Package Manager
     (require 'init-straight)
@@ -87,7 +86,6 @@
 
 
 
-))
 
 
 ;;;; Run When Idle (Trivial Things Only)
