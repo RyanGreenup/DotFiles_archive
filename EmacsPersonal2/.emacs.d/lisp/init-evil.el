@@ -22,6 +22,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>wh") 'evil-window-left)
 (evil-define-key 'normal 'global (kbd "<leader>wj") 'evil-window-down)
 (evil-define-key 'normal 'global (kbd "<leader>wk") 'evil-window-up)
+(evil-define-key 'normal 'global (kbd "<leader>wk") 'doom/window-enlargen)
 (evil-define-key 'normal 'global (kbd "<leader>bp") 'previous-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>bn") 'next-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>bd") 'kill-buffer)
@@ -56,6 +57,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>.c") 'hydra-clock-menu/body)
 (evil-define-key 'normal 'global (kbd "<leader>.w") 'hydra-window-menu/body)
 (evil-define-key 'normal 'global (kbd "<leader>wo") 'doom/window-enlargen)
+(evil-define-key 'normal 'global (kbd "<leader>w=") 'balance-windows)
 (evil-define-key 'normal 'global (kbd "<leader>`") 'vterm)
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 
