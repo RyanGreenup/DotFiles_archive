@@ -44,10 +44,7 @@
 
 ;; Configure Org Mode
 (require 'init-org)
-
- 
-(setq texfrag-subdir "/tmp/texfrag/")
-(setq texfrag-scale 2)
+(require 'init-texfrag)
 
 ;; Set default font and apply theme
 (add-hook 'after-init-hook
@@ -73,6 +70,8 @@
 		     ) 
 
 (defun set-theme-for-time-of-day ()
+  "Set the theme depending on the time of day, ideal for startup."  
+    ;; TODO Make this only change the theme if it needs to be and then have it run every 30 minutes
     (defvar init-current-time (string-to-number (format-time-string "%H")))
     (defvar is-daytime (and (>  init-current-time 5) (< init-current-time 17)) )
     (defvar is-evening (and (<  init-current-time 5) (> init-current-time 17)) )
@@ -101,3 +100,15 @@
 ;; compile hook
 ;; (add-hook 'after-save-hook '(lambda () (byte-recompile-directory "~/.emacs.d/lisp")) t t)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-source-names-using-follow '("Buffers")))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
