@@ -41,7 +41,6 @@
 (defvar init-my-scratch-file "~/Sync/Scratch")
 
 (defvar vterm-buffer-name "Pop-Vterm")
-(save-window-excursion (vterm vterm-buffer-name))
 
 
 (defun pop-vterm ()
@@ -56,6 +55,9 @@
 
 
 (defun open-popup-vterm ()
+    (if (get-buffer vterm-buffer-name) nil
+	(save-window-excursion (vterm vterm-buffer-name))
+    )
   (setq init-is-pop-vterm-up t)
   (popwin:popup-buffer vterm-buffer-name)
   ;; (popwin:popup-buffer init-my-vterm-file)
@@ -77,7 +79,6 @@
 
 
 (defvar eshell-buffer-name "Pop-eshell")
-(save-window-excursion (eshell eshell-buffer-name))
 
 (defun pop-eshell ()
   "Pop up a eshell Buffer"
@@ -89,9 +90,11 @@
 )
 
 (defun open-popup-eshell ()
-  (setq init-is-pop-eshell-up t)
+    (if (get-buffer eshell-buffer-name) nil
+	(save-window-excursion (eshell eshell-buffer-name))
+    )
   (popwin:popup-buffer eshell-buffer-name)
-  ;; (popwin:popup-buffer init-my-eshell-file)
+  (setq init-is-pop-eshell-up t)
   (evil-insert 1)
 )
 
@@ -102,5 +105,9 @@
   )
 
 
+
 (provide 'init-popup-scratch)
 ;;; init-popup-scratch.el ends here
+
+
+
