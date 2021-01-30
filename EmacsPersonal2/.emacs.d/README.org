@@ -25,6 +25,11 @@ Should I:
 I opted for all together in one file, that way it's easier to comment them
 out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-package][only loads]] what's mentioned so this seems really convenient
 
+** Org Extensions
+   Using =elp= it seems that =superstar-mode= adds about 0.04 seconds of
+   work in loading the org-agenda, this isn't insignificant, but it's
+   sufficiently low to justify the trade off.
+
 * TODO Org Mode
   
 ** Agenda
