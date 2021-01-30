@@ -83,6 +83,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>th") 'helm-mode)
 (evil-define-key 'normal 'global (kbd "<leader>tb") 'org-supertar-mode)
 (evil-define-key 'normal 'global (kbd "<leader>ti") 'highlight-indent-guides-mode)
+(evil-define-key 'normal 'global (kbd "<leader>tr") 'display-fill-column-indicator-mode)
 (setq highlight-indent-guides-method 'character)
 
 
