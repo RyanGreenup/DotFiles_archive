@@ -24,6 +24,8 @@
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
 ;;;; Interface
+;;;;; Scrolling
+(straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
 ;;;;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
