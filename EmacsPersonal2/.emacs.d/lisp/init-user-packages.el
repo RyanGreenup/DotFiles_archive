@@ -8,6 +8,12 @@
 (straight-use-package 'magit)
 ;;;; Download Evil
 (straight-use-package 'evil)
+    (when (version< emacs-version "28")
+    (message "undo-redo implemented in in Emacs 28, Emacs < 28 require undo-tree")
+	(straight-use-package 'undo-tree)
+	(global-undo-tree-mode 1)
+	(setq evil-undo-system 'undo-tree)
+    )
 (straight-use-package 'fzf)
 (straight-use-package 'texfrag)
 
