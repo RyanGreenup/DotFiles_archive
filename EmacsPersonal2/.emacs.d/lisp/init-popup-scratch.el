@@ -25,6 +25,7 @@
   (find-file-noselect init-my-scratch-file)
   (popwin:popup-buffer "*scratch*")
   ;; (popwin:popup-buffer init-my-scratch-file)
+  (evil-insert 1)
 )
 
 (defun close-popup-scratch ()
@@ -58,16 +59,18 @@
   (setq init-is-pop-vterm-up t)
   (popwin:popup-buffer vterm-buffer-name)
   ;; (popwin:popup-buffer init-my-vterm-file)
+  (evil-insert 1)
 )
 
 (defun close-popup-vterm ()
   (setq init-is-pop-vterm-up nil)
   (popwin:close-popup-window)
+  (evil-insert 1)
   )
 
 
 (provide 'init-popup-scratch)
-;;; Vterm buffer
+;;; Eshell buffer
 (defvar init-is-pop-eshell-up)
 (setq init-is-pop-eshell-up nil)
 (defvar init-my-scratch-file "~/Sync/Scratch")
@@ -89,11 +92,13 @@
   (setq init-is-pop-eshell-up t)
   (popwin:popup-buffer eshell-buffer-name)
   ;; (popwin:popup-buffer init-my-eshell-file)
+  (evil-insert 1)
 )
 
 (defun close-popup-eshell ()
   (setq init-is-pop-eshell-up nil)
   (popwin:close-popup-window)
+  (evil-insert 1)
   )
 
 
