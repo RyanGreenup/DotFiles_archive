@@ -16,7 +16,6 @@
 	(setq evil-undo-system 'undo-tree)
     )
 (straight-use-package 'evil-escape)
-(evil-escape-mode 1)
 (straight-use-package 'fzf)
 
 ;;;; Org Stuff
