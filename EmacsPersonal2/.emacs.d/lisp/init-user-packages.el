@@ -20,8 +20,9 @@
 ;;;; Org Stuff
 (straight-use-package 'texfrag)
 (straight-use-package 'org-super-agenda)
-
-;;;; Helm
+(straight-use-package 'org-superstar)
+;;;; Interface
+;;;;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
 ;; (run-with-idle-timer 1 nil (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time"))) 
@@ -57,10 +58,12 @@
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
 (straight-use-package 'git-gutter)
-(add-hook 'after-init-hook (global-git-gutter-mode +1))
+(add-hook 'after-init-hook
+	  (lambda ()
+		(global-git-gutter-mode +1)
+	    )
+	  )
 
-;;;; Org
-(straight-use-package 'org-superstar)
 
 ;;;; Programming
 (straight-use-package 'eglot)
