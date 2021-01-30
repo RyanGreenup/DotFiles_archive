@@ -9,15 +9,15 @@
 ;; Set the load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; Garbage Collect and startup hacks at Idle
+;;; Garbage Collect and startup hacks at Idle
 (require 'init-startup-gc)
 
-;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+;;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 (setq debug-on-error t)
 
 
 
-;; Load Package Manager
+;;; Load Package Manager
 (require 'init-straight)
 
 ;; (require 'init-elpa)
@@ -30,22 +30,26 @@
 )
 
 
-;; Load all packages
+;;; Load all packages
 (require 'init-user-packages)
 (require 'init-keybindings)
 ;; (require 'init-change-theme-timer)
 
-;; Configure Evil
+;;; Configure Evil
 (require 'init-evil)
 
-;; Configure Helm
+;;; Configure Helm
 (require 'init-helm)
 ;; (require 'init-ivy)
 
-;; Configure Org Mode
-(require 'init-org)
-(with-eval-after-load 'org
-  (require 'init-org-super-agenda))
+;;; Configure Org Mode
+;; This contributes to a significant amount of startup time
+;; do it after initializing
+(add-hook 'after-init-hook
+	  (lambda ()
+		(require 'init-org)
+	    )
+	  ) ;; "HACK" This should be restructured inside init-org
 
 (require 'init-texfrag)
 

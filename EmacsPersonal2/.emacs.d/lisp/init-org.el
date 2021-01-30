@@ -36,7 +36,7 @@
 ;;; Preiodically When Idle
 			
  
-;;; After loading org
+;;;; After loading org
 
 (with-eval-after-load 'org
 
@@ -47,8 +47,10 @@
   (setq org-confirm-elisp-link-function nil)
   (setq org-link-frame-setup '((file . find-file)))
 
-    ;;; Orb Babel Languages
-    ;;;; Active Babel languagevs
+  ;;;; Super Agenda
+    (require 'init-org-super-agenda)
+    ;;;; Orb Babel Languages
+    ;;;;; Active Babel languagevs
     (org-babel-do-load-languages
     'org-babel-load-languages
     '((R           . t)
@@ -71,7 +73,7 @@
     (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 
 
-;;;; Styling
+;;;;  Styling
 (setq org-hidden-keywords '(title))
 ;; set basic title font
 (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
