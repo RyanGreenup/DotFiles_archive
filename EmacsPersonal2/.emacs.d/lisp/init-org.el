@@ -39,6 +39,7 @@
 ;;;; After loading org
 
 (with-eval-after-load 'org
+  (lambda ()
 
   (setq org-display-inline-images t)
   (setq org-redisplay-inline-images t)
@@ -78,7 +79,7 @@
 ;; set basic title font
 (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
 
-)
+))
 
 ;; Hooks
 
