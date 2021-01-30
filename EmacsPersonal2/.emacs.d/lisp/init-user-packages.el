@@ -10,11 +10,12 @@
 (straight-use-package 'evil)
     (when (version< emacs-version "28")
     (message "undo-redo implemented in in Emacs 28, Emacs < 28 require undo-tree")
-    (message "Currently using undo tree")
-	(straight-use-package 'undo-tree)
-	(global-undo-tree-mode 1)
-	(setq evil-undo-system 'undo-tree)
+    (message "Currently using undo tree on all (for the very convenient tree)")
     )
+    (straight-use-package 'undo-tree)
+    (global-undo-tree-mode 1)
+    (setq evil-undo-system 'undo-tree)
+
 (straight-use-package 'evil-escape)
 (straight-use-package 'fzf)
 
