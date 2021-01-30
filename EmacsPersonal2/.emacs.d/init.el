@@ -55,23 +55,10 @@
 
 
 ;;;;; Set default font and apply theme
-    ;; BEGIN_SLOW These should definitely be wrapped in eval-after-init atleast
-	(message "Begining Post Initialisation Modifications")
-	;; (set-frame-font "Roboto Mono-10" nil t)
-	(set-frame-font "Fira Code-10" nil t)
-	;; (set-frame-font "monofur-10" nil t)
-	;; (set-frame-font "Source Code Pro-10" nil t)
-	;; Toggle scroll bar and Toolbar 
-	(toggle-scroll-bar -1) 
-	(tool-bar-mode -1) 
-	;; (menu-bar-mode -1)  ;; I like the Menus actually
-
-
 	(texfrag-global-mode 1) ;; TODO Move this in with helm
 	(winner-mode 1) ;; TODO Move this in with helm
 	;; Set Theme
 	(set-theme-for-time-of-day)
-    ;; END_SLOW 
 
 
 
@@ -82,6 +69,7 @@
     ;; (require 'init-doom-modeline)
 
 ;;;;; Hydra
+(require 'init-hydra)
 
     ;; Auto Save
     ;; Save when actually idle, this may get annoying though
@@ -99,3 +87,36 @@
 
 ))
 
+
+;;;; Run When Idle (Trivial Things Only)
+;;;;; 1 Second
+(run-with-idle-timer 1 nil
+    (lambda ()
+	(evil-escape-mode 1)			;; ~0.1 s
+	(message "Idle Timer 1 Second: Begining Post Initialisation Modifications")
+						;; (set-frame-font "Roboto Mono-10" nil t)
+	(set-frame-font "Fira Code-10" nil t)	;; ~ 0.1 s
+						;; (set-frame-font "monofur-10" nil t)
+						;; (set-frame-font "Source Code Pro-10" nil t)
+						;; Toggle scroll bar and Toolbar 
+	(toggle-scroll-bar -1)			;; ! 0.1 s
+	(tool-bar-mode -1)			;; ! 0.1 s
+						;; (menu-bar-mode -1)  ;; I like the Menus actually
+    )
+    )
+;;;;; 2 Second
+;; Load Org mode so it's ready after some delay
+
+(defvar init-org-idle-load 2)
+(run-with-idle-timer init-org-idle-load nil
+		     (lambda ()
+		       (message "\n---\nIdle Timer of %s seconds:\n\t Loading Org\n---\n" init-org-idle-load)
+		       ;; Load Index and Todo
+		       (find-file-noselect "~/Notes/Org/index.org")
+		       (find-file-noselect "~/Notes/Org/agenda/todo.org")
+		       ;; Build Agenda
+			 (org-agenda-list)
+			 (delete-window)
+		       )
+		     )
+;;;;; 3 Second

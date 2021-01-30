@@ -16,27 +16,10 @@
 (setq org-tags-column 80)
 (setq org-agenda-files '("~/Notes/Org/agenda/"))
 
-;;; Load Org after some delay
-
-(defvar init-org-idle-load 2)
-(run-with-idle-timer init-org-idle-load nil
-		     (lambda ()
-		       (message "\n---\nIdle Timer of %s seconds:\n\t Loading Org\n---\n" init-org-idle-load)
-		       ;; Load Index and Todo
-		       (find-file-noselect "~/Notes/Org/index.org")
-		       (find-file-noselect "~/Notes/Org/agenda/todo.org")
-		       ;; Build Agenda
-		       (lambda ()
-			 (org-agenda-list)
-			 (delete-window)
-			 )
-		       )
-		     )
 
 ;;; Preiodically When Idle
-			
- 
-;;;; After loading org
+;; Maybe Rebuild Org-Agenda?
+;;; After loading org
 
 (with-eval-after-load 'org
   (lambda ()
