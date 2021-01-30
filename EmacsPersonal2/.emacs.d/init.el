@@ -94,7 +94,11 @@
 ;; (require 'init-doom-modeline)
 
 ;; Hydra
-(require 'init-hydra)
+(add-hook 'after-init-hook
+	  (lambda ()
+	    (require 'init-hydra)
+	    )
+	  )
 
 ;; Auto Save
 ;; Save when actually idle, this may get annoying though
