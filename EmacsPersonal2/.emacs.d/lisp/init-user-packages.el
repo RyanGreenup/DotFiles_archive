@@ -32,15 +32,18 @@
 (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
 
-;;;; Ivy
+;;;;; Ivy
 ;; (straight-use-package 'ivy)
 ;; (straight-use-package 'counsel)
 ;; (straight-use-package 'swiper)
 
 
 ;;;; Themes
-(straight-use-package 'dracula-theme
-  :defer t) ;; SLOW adds 0.343 s to startups
+(add-hook 'after-init-hook
+    (lambda ()
+    (straight-use-package 'dracula-theme) ;; SLOW adds 0.343 s to startups
+    ) 
+)
 (straight-use-package 'lab-themes)
 (straight-use-package 'flucui-themes)
 (straight-use-package 'material-theme)
@@ -50,6 +53,8 @@
   (interactive)
   (require 'elegance)
 )
+
+
 
 ;;;; Notes
 (straight-use-package 'markdown-mode)
