@@ -16,10 +16,36 @@
 (setq org-tags-column 80)
 (setq org-agenda-files '("~/Notes/Org/agenda/"))
 
-;; After loading org
+;;; Load Org after some delay
+
+(defvar init-org-idle-load 2)
+(run-with-idle-timer init-org-idle-load nil
+		     (lambda ()
+		       (message "\n---\nIdle Timer of %s seconds:\n\t Loading Org\n---\n" init-org-idle-load)
+		       ;; Load Index and Todo
+		       (find-file-noselect "~/Notes/Org/index.org")
+		       (find-file-noselect "~/Notes/Org/agenda/todo.org")
+		       ;; Build Agenda
+		       (lambda ()
+			 (org-agenda-list)
+			 (delete-window)
+			 )
+		       )
+		     )
+
+;;; Preiodically When Idle
+			
+ 
+;;; After loading org
 
 (with-eval-after-load 'org
 
+  (setq org-display-inline-images t)
+  (setq org-redisplay-inline-images t)
+  (setq org-startup-with-inline-images "inlineimages")
+  (setq org-hide-emphasis-markers t)
+  (setq org-confirm-elisp-link-function nil)
+  (setq org-link-frame-setup '((file . find-file)))
 
     ;;; Orb Babel Languages
     ;;;; Active Babel languagevs
