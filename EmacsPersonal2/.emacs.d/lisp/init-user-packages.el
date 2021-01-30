@@ -54,7 +54,12 @@
   (require 'elegance)
 )
 
-
+;;;; Beacon
+(straight-use-package 'beacon)
+(setq beacon-blink-when-window-scrolls nil)
+(setq beacon-blink-when-window-changes t)
+(setq beacon-blink-when-point-moves t)
+(beacon-mode 1)
 
 ;;;; Notes
 (straight-use-package 'markdown-mode)
