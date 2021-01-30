@@ -83,6 +83,7 @@
 
 ;; keybindings
 (global-set-key (kbd "C-c a") 'org-agenda-sans-evil)
+(global-set-key (kbd "C-c A") 'my/org-super-agenda)
 (defun org-agenda-sans-evil ()
   (interactive)
   (org-agenda)

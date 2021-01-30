@@ -10,12 +10,16 @@
 (straight-use-package 'evil)
     (when (version< emacs-version "28")
     (message "undo-redo implemented in in Emacs 28, Emacs < 28 require undo-tree")
+    (message "Currently using undo tree")
 	(straight-use-package 'undo-tree)
 	(global-undo-tree-mode 1)
 	(setq evil-undo-system 'undo-tree)
     )
 (straight-use-package 'fzf)
+
+;;;; Org Stuff
 (straight-use-package 'texfrag)
+(straight-use-package 'org-super-agenda)
 
 ;;;; Helm
 (straight-use-package 'helm) 

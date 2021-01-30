@@ -44,6 +44,9 @@
 
 ;; Configure Org Mode
 (require 'init-org)
+(with-eval-after-load 'org
+  (require 'init-org-super-agenda))
+
 (require 'init-texfrag)
 
 ;; Set default font and apply theme
