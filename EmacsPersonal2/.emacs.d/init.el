@@ -68,6 +68,7 @@
 ;;;;; Doom Modeline
     ;; This causes major scrolling and performance issues in org-mode
     ;; (require 'init-doom-modeline)
+    ;; (require 'init-spacemacs-modeline) ;; TODO Does this slow down org buffers like doom?
 
 ;;;;; Hydra
 (require 'init-hydra)
