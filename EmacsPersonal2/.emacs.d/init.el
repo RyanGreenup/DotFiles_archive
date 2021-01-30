@@ -121,3 +121,9 @@
 		       )
 		     )
 ;;;;; 3 Second
+
+
+;;;; Smooth Scrolling
+    ;; scroll one line at a time (less "jumpy" than defaults)
+(require 'init-smooth-scrolling)
+
