@@ -19,7 +19,7 @@
 ;;;; Run After Initialisation
 (add-hook 'after-init-hook (lambda ()
 
-    ;;;;; Load Package Manager
+;;;;; Load Package Manager
     (require 'init-straight)
 
     ;; (require 'init-elpa)
@@ -32,30 +32,33 @@
     )
 
 
-    ;;;;; Load all packages
+;;;;; Load all packages
     (require 'init-user-packages)
     (require 'init-keybindings)
     (require 'init-change-theme-timer)
 
-    ;;;;; Configure Evil
+;;;;; Configure Evil
     (require 'init-evil)
 
-    ;;;;; Configure Helm
+;;;;; Configure Helm
     (require 'init-helm)
     ;; (require 'init-ivy)
 
-    ;;;;; Configure Org Mode
+;;;;; Popup Scratch Buffer
+    (require 'init-popup-scratch)
+
+;;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
     ;; do it after initializing
     (add-hook 'after-init-hook
-	    (lambda ()
+		    (lambda ()
 		    (require 'init-org)
 		)
 	    ) ;; "HACK" This should be restructured inside init-org
 
     (require 'init-texfrag)
 
-    ;;;;; Set default font and apply theme
+;;;;; Set default font and apply theme
     ;; BEGIN_SLOW These should definitely be wrapped in eval-after-init atleast
 	(message "Begining Post Initialisation Modifications")
 	;; (set-frame-font "Roboto Mono-10" nil t)
@@ -78,11 +81,11 @@
 
 
 
-    ;;;;; Doom Modeline
+;;;;; Doom Modeline
     ;; This causes major scrolling and performance issues in org-mode
     ;; (require 'init-doom-modeline)
 
-    ;;;;; Hydra
+;;;;; Hydra
 
     ;; Auto Save
     ;; Save when actually idle, this may get annoying though

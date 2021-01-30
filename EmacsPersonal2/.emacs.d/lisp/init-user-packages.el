@@ -37,6 +37,9 @@
 ;; (straight-use-package 'counsel)
 ;; (straight-use-package 'swiper)
 
+;;;;; Pop Win
+(straight-use-package 'popwin)
+(popwin-mode 1)
 
 ;;;; Themes
 (add-hook 'after-init-hook
