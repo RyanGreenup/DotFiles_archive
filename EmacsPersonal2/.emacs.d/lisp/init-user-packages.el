@@ -85,6 +85,7 @@
 (straight-use-package 'eglot)
 (straight-use-package 'ess)
 (straight-use-package 'hl-todo)
+(hl-todo-mode 1)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
