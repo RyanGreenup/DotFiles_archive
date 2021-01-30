@@ -54,14 +54,6 @@
     (require 'init-texfrag)
 
 
-    ;; Print Init after post-init-hooks
-    ;; I should use hooks/idle-times to drive this number down as well
-    (message (format "Init Time:\n--- %s\n Final Startup Time (post after-init-hook):\n--- %s\n"
-		     (float-time (time-subtract (current-time) before-init-time))
-		     (float-time (time-subtract after-init-time before-init-time))
-		) 
-	)
-
 ;;;;; Set default font and apply theme
     ;; BEGIN_SLOW These should definitely be wrapped in eval-after-init atleast
 	(message "Begining Post Initialisation Modifications")
