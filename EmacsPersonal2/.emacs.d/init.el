@@ -9,15 +9,16 @@
 ;; Set the load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;;; Garbage Collect and startup hacks at Idle
+;;;; Garbage Collect and startup hacks at Idle
 (require 'init-startup-gc)
 
-;;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+;;;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 (setq debug-on-error t)
 
 
+(add-hook 'after-init-hook (lambda ()
 
-;;; Load Package Manager
+;;;; Load Package Manager
 (require 'init-straight)
 
 ;; (require 'init-elpa)
@@ -30,19 +31,19 @@
 )
 
 
-;;; Load all packages
+;;;; Load all packages
 (require 'init-user-packages)
 (require 'init-keybindings)
-;; (require 'init-change-theme-timer)
+(require 'init-change-theme-timer)
 
-;;; Configure Evil
+;;;; Configure Evil
 (require 'init-evil)
 
-;;; Configure Helm
+;;;; Configure Helm
 (require 'init-helm)
 ;; (require 'init-ivy)
 
-;;; Configure Org Mode
+;;;; Configure Org Mode
 ;; This contributes to a significant amount of startup time
 ;; do it after initializing
 (add-hook 'after-init-hook
@@ -54,39 +55,26 @@
 (require 'init-texfrag)
 
 ;; Set default font and apply theme
-(add-hook 'after-init-hook
-;; (run-with-idle-timer 1 nil
-	  ;; After Init Hook looks much smoother,
-		     (lambda ()
-				(message "Begining Post Initialisation Modifications")
-				;; (set-frame-font "Roboto Mono-10" nil t)
-				(set-frame-font "Fira Code-10" nil t)
-				;; (set-frame-font "monofur-10" nil t)
-				;; (set-frame-font "Source Code Pro-10" nil t)
-				;; Toggle scroll bar and Toolbar 
-				(toggle-scroll-bar -1) 
-				(tool-bar-mode -1) 
-				;; (menu-bar-mode -1)  ;; I like the Menus actually
 
 
-				(texfrag-global-mode 1) ;; TODO Move this in with helm
-				(winner-mode 1) ;; TODO Move this in with helm
-				;; Set Theme
-				(set-theme-for-time-of-day)
-			    )
-		     ) 
 
-(defun set-theme-for-time-of-day ()
-  "Set the theme depending on the time of day, ideal for startup."  
-    ;; TODO Make this only change the theme if it needs to be and then have it run every 30 minutes
-    (defvar init-current-time (string-to-number (format-time-string "%H")))
-    (defvar is-daytime (and (>  init-current-time 5) (< init-current-time 17)) )
-    (defvar is-evening (and (<  init-current-time 5) (> init-current-time 17)) )
-    (if is-daytime
-	(load-theme 'light-blue)
-	(load-theme 'flucui-dark)
-    )
-)
+    (message "Begining Post Initialisation Modifications")
+    ;; (set-frame-font "Roboto Mono-10" nil t)
+    (set-frame-font "Fira Code-10" nil t)
+    ;; (set-frame-font "monofur-10" nil t)
+    ;; (set-frame-font "Source Code Pro-10" nil t)
+    ;; Toggle scroll bar and Toolbar 
+    (toggle-scroll-bar -1) 
+    (tool-bar-mode -1) 
+    ;; (menu-bar-mode -1)  ;; I like the Menus actually
+
+
+    (texfrag-global-mode 1) ;; TODO Move this in with helm
+    (winner-mode 1) ;; TODO Move this in with helm
+    ;; Set Theme
+    (set-theme-for-time-of-day)
+
+
 
 
 
@@ -123,3 +111,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+))
+
