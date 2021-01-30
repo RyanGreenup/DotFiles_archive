@@ -15,6 +15,7 @@
 	(global-undo-tree-mode 1)
 	(setq evil-undo-system 'undo-tree)
     )
+(straight-use-package 'evil-escape)
 (straight-use-package 'fzf)
 
 ;;;; Org Stuff
@@ -31,12 +32,16 @@
 
 (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
+(straight-use-package 'helm-rg)
 
 ;;;;; Ivy
 ;; (straight-use-package 'ivy)
 ;; (straight-use-package 'counsel)
 ;; (straight-use-package 'swiper)
 
+;;;;; Pop Win
+(straight-use-package 'popwin)
+(popwin-mode 1)
 
 ;;;; Themes
 (add-hook 'after-init-hook
@@ -79,6 +84,8 @@
 (straight-use-package 'eglot)
 (straight-use-package 'ess)
 (straight-use-package 'hl-todo)
+(straight-use-package 'highlight-indent-guides)
+(hl-todo-mode 1)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)

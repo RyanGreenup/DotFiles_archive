@@ -11,3 +11,8 @@ python-pyflakes
 
 # R
 R-lintr # https://aur.archlinux.org/packages/r-lintr/
+
+
+
+# org export html
+monolith
