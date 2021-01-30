@@ -65,9 +65,15 @@
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
-;; (add-hook 'python-mode-hook 'eglot-ensure)
-;; (add-hook 'ess-r-mode-hook 'eglot-ensure)
-(add-hook 'prog-mode-hook 'eglot-ensure)
+(add-hook 'python-mode-hook 'eglot-ensure)
+(add-hook 'ess-r-mode-hook (lambda ()
+			     (eglot-ensure)  
+			     (when (require 'helm nil 'noerror)
+			       (helm-mode -1)
+			       )
+			     )
+	  )
+;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;;;; Doom Modeline

@@ -64,6 +64,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>tg") 'golden-ratio-mode)
 ;; (evil-define-key 'normal 'global (kbd "<leader>tl") 'global-display-line-numbers-mode)
 (evil-define-key 'normal 'global (kbd "<leader>tl") 'doom/toggle-line-numbers)
+(evil-define-key 'normal 'global (kbd "<leader>th") 'helm-mode)
 
 
 (defun reset-theme ()
