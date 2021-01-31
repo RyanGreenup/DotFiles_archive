@@ -3,7 +3,7 @@
 ;;; Code:
 
 (setq texfrag-subdir "/tmp/texfrag/")
-(setq texfrag-scale 2)
+(setq texfrag-scale 1)
 
 (defun texfrag-force-preview-at-point ()
   (interactive)
