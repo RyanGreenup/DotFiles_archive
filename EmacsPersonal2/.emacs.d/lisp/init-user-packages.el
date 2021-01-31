@@ -42,6 +42,7 @@
 
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
+(straight-use-package 'writeroom-mode)
 ;;;;; Org Roam
 (use-package org-roam
       :straight t
