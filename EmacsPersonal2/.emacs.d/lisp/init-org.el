@@ -3,11 +3,15 @@
 ;;; Code:
 
 
+(setq org-startup-folded "overview")
 (setq org-cycle-include-plain-lists 'integrate)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
 (setq org-tags-column 80)
 (setq org-agenda-files '("~/Notes/Org/agenda/"))
+;;;;; Hide Finished Agenda Items
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-skip-deadline-if-done t)
 
 
 ;;; Periodically When Idle
@@ -52,6 +56,14 @@
    (kmacro-lambda-form [?\C-c ?\C-e ?\C-a ?l ?p] 0 "%d"))
 (global-set-key [f5] 'Async\ Export\ Latex)
 
+;;;; Preview Tikz inside Org-Mode
+;; You'll need to use this with texfrag-mode
+;; It doesn't seem to work with org-latex-preview-fragment
+;; but texfrag mode is better anyway.
+(add-to-list 'org-latex-packages-alist
+             '("" "tikz" t))
+(eval-after-load "preview"
+  '(add-to-list 'preview-default-preamble "\\PreviewEnvironment{tikzpicture}" t))
 ;;;; ODT Export uses MathML
 (setq org-latex-to-mathml-convert-command
       "latexmlmath \"%i\" --presentationmathml=%o")
@@ -72,6 +84,72 @@
   )
  )
 )
+
+;;;; Inline Style Sheet
+;; Add CSS (Be mindful that you may want to implement this in a more sensible way, similar to how beorg does it
+;; Put your css files there
+(defvar org-theme-css-dir "~/Templates/CSS/Org-CSS/")
+
+(defun toggle-org-custom-inline-style ()
+ (interactive)
+ (let ((hook 'org-export-before-parsing-hook)
+       (fun 'set-org-html-style))
+   (if (memq fun (eval hook))
+       (progn
+         (remove-hook hook fun 'buffer-local)
+         (message "Removed %s from %s" (symbol-name fun) (symbol-name hook)))
+     (add-hook hook fun nil 'buffer-local)
+     (message "Added %s to %s" (symbol-name fun) (symbol-name hook)))))
+
+; Enable Css hook by default
+;; I think this is better as opt in
+;; Also I still need to set up the image embedding part, which I have been
+;working on in visual analytics I just haven't made a nice function.
+;; (add-hook 'org-mode-hook 'toggle-org-custom-inline-style)
+
+(defun org-theme ()
+  (interactive)
+  (let* ((cssdir org-theme-css-dir)
+         (css-choices (directory-files cssdir nil ".css$"))
+         (css (completing-read "theme: " css-choices nil t)))
+    (concat cssdir css)))
+(defun set-org-html-style (&optional backend)
+ (interactive)
+ (when (or (null backend) (eq backend 'html))
+(let ((f (or (and (boundp 'org-theme-css) org-theme-css) (org-theme))))
+     (if (file-exists-p f)
+         (progn
+           (set (make-local-variable 'org-theme-css) f)
+           (set (make-local-variable 'org-html-head)
+                (with-temp-buffer
+                  (insert "<style type=\"text/css\">\n<!-- [CDATA] -->\n")
+                  (insert-file-contents f)
+                  (goto-char (point-max))
+                  (insert "\n/;]]>;/-->\n</style>\n")
+                  (buffer-string)))
+           (set (make-local-variable 'org-html-head-include-default-style)
+                nil)
+           (message "Set custom style from %s" f))
+       (message "Custom header file %s doesnt exist")))))
+
+;;;; Email
+(defun export-email ()
+  (interactive)
+  (message "Beginning Email Export")
+  (yank-visible-org-buffer)
+  (call-eml)
+)
+  (defun yank-visible-org-buffer ()
+    (interactive)
+    (goto-char (point-min))
+    (mark-page)
+    ;; (evil-yank (point-min) (point-max))
+    (org-copy-visible (point-min) (point-max))
+  )
+
+  (defun call-eml ()
+    (async-shell-command (format "~/bin/eml -o"))
+  )
 
 ;;; org-ref
 ;; (require 'org-ref) ;; Must be required, see README
@@ -142,7 +220,46 @@
 (setq org-hidden-keywords '(title))
 ;; set basic title font
 (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
-
+;;;;; Prettify Buffer
+(add-hook 'org-mode-hook (lambda ()
+   "Beautify Org Checkbox Symbol"
+   ;; (push '("[ ]" .  "☐") prettify-symbols-alist)
+   ;; (push '("[X]" . "☑" ) prettify-symbols-alist)
+   ;; (push '("[-]" . "❍" ) prettify-symbols-alist)
+   (push '("#+begin_src" . "✨" ) prettify-symbols-alist)
+   (push '("#+BEGIN_SRC" . "✨" ) prettify-symbols-alist)
+   (push '("#+end_src" .   "✨" ) prettify-symbols-alist)
+   (push '("#+END_SRC" .   "✨" ) prettify-symbols-alist)
+   (push '("#+begin_quote" . "" ) prettify-symbols-alist)
+   (push '("#+BEGIN_QUOTE" . "➲ " ) prettify-symbols-alist)
+   (push '("#+end_quote" .   "➲" ) prettify-symbols-alist)
+   (push '("#+END_QUOTE" .   "➲" ) prettify-symbols-alist)
+   (push '("#+begin_comment" . "✀ " ) prettify-symbols-alist)
+   (push '("#+BEGIN_COMMENT" . "✀" ) prettify-symbols-alist)
+   (push '("#+end_comment" .   "✀") prettify-symbols-alist)
+   (push '("#+END_COMMENT" .   "✀") prettify-symbols-alist)
+   (push '("#+attr_html: :width" .   "?⇔🌍") prettify-symbols-alist)
+   (push '("#+attr_html: :width" .   "?⇔🌍") prettify-symbols-alist)
+   (push '("#+attr_latex: :width" .   "🖺") prettify-symbols-alist)
+   (push '("#+ATTR_LATEX: :width" .   "🖺") prettify-symbols-alist)
+   (push '("#+caption:" .   "✎") prettify-symbols-alist)
+   (push '("#+CAPTION:" .   "✎") prettify-symbols-alist)
+   (push '("#+caption:" .   "✎") prettify-symbols-alist)
+   (push '("#+NAME:" .   "㋿") prettify-symbols-alist)
+   (push '("#+name:" .   "㋿") prettify-symbols-alist)
+   ;; (push '("DONE" .   "✅") prettify-symbols-alist)
+   ;; (push '("TODO" .   "❢") prettify-symbols-alist)
+   ;; (push '("STRT" .   "☯") prettify-symbols-alist)
+   (push '("#+begin_src python" .   "🐍") prettify-symbols-alist)
+   (push '("#+begin_src julia"  .   "🝆") prettify-symbols-alist)
+   (push '("#+begin_src R"      .   "𝓡") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC python" .   "🐍") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC julia"  .   "🝆") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC R"      .   "𝓡") prettify-symbols-alist)
+   (push '("#+BEGIN_SRC bash"      .   "💻") prettify-symbols-alist)
+   (push '("#+begin_src bash"      .   "💻") prettify-symbols-alist)
+   (push '("eqref:"      .   "⅀") prettify-symbols-alist)
+   (prettify-symbols-mode)))
 
 ;;;; Keybindings
 ;;;;; Agenda
@@ -161,6 +278,9 @@
 
 ;;;; End After Loading Org
 
+;;; Misc Tools
+;;;; Open all org-agenda files
+(defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
 ;;; Hooks
 ;; Use Superstar Mode for Leading Stars
 ;; SLOW ; Superstar mode is slightly slower
