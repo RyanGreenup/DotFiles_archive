@@ -5,7 +5,13 @@
 
 ;;;; Set up straight
 
-(straight-use-package 'magit)
+;;;; Set up Use Package
+;; This is convenient for implementing other peoples configs and
+;; having bindings and everything all together.  This also integrates
+;; with straight
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+
 ;;;; Download Evil
 (straight-use-package 'evil)
     (when (version< emacs-version "28")
@@ -47,11 +53,10 @@
 (popwin-mode 1)
 
 ;;;; Themes
-(add-hook 'after-init-hook
-    (lambda ()
-    (straight-use-package 'dracula-theme) ;; SLOW adds 0.343 s to startups
-    ) 
-)
+(straight-use-package 'dracula-theme)
+(straight-use-package 'zenburn-theme)
+(straight-use-package 'color-theme-sanityinc-tomorrow)
+(straight-use-package 'faff-theme)
 (straight-use-package 'lab-themes)
 (straight-use-package 'flucui-themes)
 (straight-use-package 'material-theme)

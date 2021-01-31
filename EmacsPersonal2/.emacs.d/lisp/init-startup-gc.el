@@ -14,12 +14,15 @@
 ;; Making this change the total time (gc-elapsed) spent doing GC went down from ~1 sec to 0.02 sec (with 4 GC's)
 
 ;;; Code:
-(defvar startup-DEBUG nil
+(defvar startup-DEBUG t
   "Whether or not Garbage Collection should be printed."
   )
 
 ;; Set startup GC
-(setq gc-cons-threshold (* 500 1024 1024 ))
+(setq gc-cons-threshold (* 1025 1024 1024 )) ;; I did actually need to
+					     ;; go up this high, I
+					     ;; tried 500 MB and it
+					     ;; still GC'd
 
 (setq file-name-handler-alist-original file-name-handler-alist)
 (setq file-name-handler-alist nil)
