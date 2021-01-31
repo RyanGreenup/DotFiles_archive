@@ -139,6 +139,8 @@
 
 
 ;; This gets annoying so turn it off after launch
-(setq debug-on-error nil)
+(setq debug-on-error t)
+
+
 
 
