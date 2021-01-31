@@ -24,12 +24,18 @@
     ;; (require 'init-elpa)
 
     (defun display-startup-echo-area-message ()
-      (message (format "Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
+      (print-time-delta)
+      )
+
+
+(defun print-time-delta ()
+  (interactive)
+(message (format "Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
 		     (float-time (time-subtract after-init-time before-init-time))
 		     (float-time (time-subtract (current-time) before-init-time))
 		) 
     )
-    )
+  )
 
 
 ;;;;; Load all packages
@@ -117,14 +123,17 @@
 
 
 ;;;;; Modeline 
+(require 'init-telephone-line)
+;; (require 'init-spacemacs-modeline) ;; takes 1.2 seconds at startup
+;; (require 'init-doom-modeline)      ;; FIXME The doom modeline cripples
+				      ;; the performance of org-mode
+				      ;; files, this can be seen by a
+				      ;; side by side comparison of two
+				      ;; org files using follow mode, one
+				      ;; without the modeline.
 
 (run-with-idle-timer 3 nil (lambda ()
-    ;; These take about a second to load, I'll only have them pop in if I've been idle for a few seconds.
-    ;; Doom Modeline major scrolling and performance issues in org-mode
-    ;; (require 'init-doom-modeline)
-    ;; (require 'init-spacemacs-modeline) ;; TODO Does this slow down org buffers like doom?
-                                          ;; TODO Is there a way to refresh this?
-
+;; EMPTY
 )
 )
 

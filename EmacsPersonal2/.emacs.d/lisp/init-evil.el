@@ -217,5 +217,15 @@ windows (unlike `doom/window-maximize-buffer'). Activate again to undo."
             end (line-end-position)))
     (narrow-to-region beg end)))
 
+(evil-define-key 'normal 'global
+  (kbd "<leader>p")
+  (lambda
+    ()
+    (interactive)
+    (message "user printed ")
+    (print-time-delta)
+    ))
+
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
