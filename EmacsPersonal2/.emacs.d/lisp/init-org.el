@@ -11,6 +11,88 @@
 
 ;;; Periodically When Idle
 ;; Maybe Rebuild Org-Agenda?
+
+;;; Exports
+;;;; LaTeX
+;;;;; Captions go Below Table
+(setq org-latex-caption-above nil)
+
+;;;;; LaTeX Call
+;(setq org-latex-listings 'listings
+;      org-latex-packages-alist '(("" "listings"))
+;      org-latex-pdf-process
+;      '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+;        "biber %b.bcf"
+;        "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+
+; (setq org-latex-listings 'minted
+;       org-latex-packages-alist '(("" "minted"))
+;       org-latex-pdf-process
+;       '("xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+;         "biber %b.bcf"
+;         "xelatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+
+; LaTeXMk is more efficient
+;; Execute either depending on which one you want, and or swap order
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("latexmk -f -shell-escape -xelatex -interaction=nonstopmode %F")
+        )
+
+;; (setq org-latex-listings 'listings
+;;       org-latex-packages-alist '(("" "listings"))
+;;       org-latex-pdf-process
+;;       '("latexmk -f -shell-escape -xelatex -interaction=nonstopmode %F")
+;;         )
+
+; Press f5 to Export Macro (NOTE: Use el:macro)
+(fset 'Async\ Export\ Latex
+   (kmacro-lambda-form [?\C-c ?\C-e ?\C-a ?l ?p] 0 "%d"))
+(global-set-key [f5] 'Async\ Export\ Latex)
+
+;;;; ODT Export uses MathML
+(setq org-latex-to-mathml-convert-command
+      "latexmlmath \"%i\" --presentationmathml=%o")
+;;;; Pandoc Org-Mode HTML Export
+;; TODO offer CSS Choices
+;; TODO Have the file type read automatically?
+;; TODO MathJax could be put in more elegantly, maybe use a variable
+;; TODO Shouldn't check for the file name four times in a row.
+
+(defun export-org-as-self-contained-html-pandoc ()
+ (interactive)
+  (save-window-excursion
+   (async-shell-command
+    (format "pandoc %s.org --self-contained -s -B ~/.doom.d/mathjax.js -o %s.html"
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+     (shell-quote-argument (file-name-sans-extension buffer-file-name))
+   )
+  )
+ )
+)
+
+;;; org-ref
+(require 'org-ref) ;; Must be required, see README
+(setq reftex-default-bibliography '("~/Sync/Studies/Papers/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/Sync/Studies/Papers/notes.org"
+      org-ref-default-bibliography '("~/Sync/Studies/Papers/references.bib")
+      org-ref-pdf-directory "~/Sync/Studies/Papers/PDFS")
+;;;;; Hide Citation Syntax
+(add-hook 'org-mode-hook
+  (lambda ()
+    (add-to-list 'font-lock-extra-managed-props 'display)
+    (font-lock-add-keywords nil
+     '((" \\(cite:[a-z0-9A-Z]\+\\)" 1 '(face nil display "🤔"))))
+
+    (add-to-list 'font-lock-extra-managed-props 'display)
+    (font-lock-add-keywords nil
+     '((" \\(\\[\\[cite:[a-z0-9A-Z]\+\\]\\[\.\*\\]\\]\\)" 1 '(face nil display "¹"))))
+
+  )
+)
 ;;; After loading org
 (with-eval-after-load 'org (lambda ()
 
@@ -70,6 +152,7 @@
 (define-key org-agenda-mode-map "j" 'evil-next-line)
 (define-key org-agenda-mode-map "k" 'evil-previous-line)
 (define-key org-agenda-mode-map (kbd "M-SPC" ) 'hydra-org-agenda/body)
+
 
 
 

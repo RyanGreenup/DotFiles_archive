@@ -175,3 +175,7 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
 						    (texfrag-mode 1)
 			   ))
   #+end_src
+
+* Org Ref
+  Org-Ref must be =(require 'org-ref)= manually, it doesn't declare
+  autoloads properly, [[https://github.com/raxod502/straight.el#install-packages][See the Manual]]

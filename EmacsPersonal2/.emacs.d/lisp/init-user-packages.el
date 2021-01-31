@@ -29,6 +29,9 @@
 (straight-use-package 'texfrag)
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
+(straight-use-package 'org-ref) ;; does not declare autoloads! MUST
+				;; use (require 'org-ref) somewhere
+				;; (called in init-org)
 ;;;; Interface
 ;;;;; Scrolling
 (straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
