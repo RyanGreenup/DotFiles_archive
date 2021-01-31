@@ -44,6 +44,14 @@
     (local-set-key (kbd "C-c h 3") 'Insert-R-Heading-3)
   )
 )
+;;;;;; Elisp
+(add-hook 'elisp-mode
+  (lambda ()
+    (local-set-key (kbd "M-RET") 'eval-last-sexp)
+    (local-set-key (kbd "C-M-x") 'eval-region)
+  )
+)
+
 ;;;;;; Python
 
 (defun python-mode-send-line-and-move-down ()
