@@ -24,6 +24,8 @@
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
 ;;;; Interface
+;;;;; Scrolling
+(straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
 ;;;;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
@@ -86,7 +88,7 @@
 (straight-use-package 'ess)
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)
-(hl-todo-mode 1)
+(global-hl-todo-mode 1)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -101,11 +103,14 @@
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
-;;;; Doom Modeline
+;;;; Modeline
+;;;;; Doom
 ;; (straight-use-package 'doom-modeline)
 ;; (straight-use-package 'all-the-icons)
 ;; (straight-use-package 'minions)
-
+;;;;; Spacemacs
+;; See ./init-spacemacs-modeline.el
+;; If I decide not to use it I may as well not load these
 ;;;; Shell
 (straight-use-package 'vterm)
 
@@ -113,7 +118,7 @@
 (straight-use-package 'esup)
 
 ;;;; Keybindings
-;;; Which Key
+;;;; Which Key
 (straight-use-package 'which-key)
 (add-hook 'after-init-hook (lambda ()
 			     (which-key-mode 1)

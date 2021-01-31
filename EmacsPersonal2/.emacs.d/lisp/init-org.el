@@ -22,8 +22,13 @@
 ;;; After loading org
 
 (with-eval-after-load 'org
+
   (lambda ()
 
+    (texfrag-global-mode 1)  ;; Load globally here, it throws an error at init
+			     ;; and I mostly use it in org-mode anyway
+
+    ;;;;; Appearance
   (setq org-display-inline-images t)
   (setq org-redisplay-inline-images t)
   (setq org-startup-with-inline-images "inlineimages")
@@ -32,7 +37,6 @@
   (setq org-link-frame-setup '((file . find-file)))
 
   ;;;; Super Agenda
-    (require 'init-org-super-agenda)
     ;;;; Orb Babel Languages
     ;;;;; Active Babel languagevs
     (org-babel-do-load-languages
@@ -68,8 +72,8 @@
 
 
 ;; keybindings
-(global-set-key (kbd "C-c a") 'org-agenda-sans-evil)
-(global-set-key (kbd "C-c A") 'my/org-super-agenda)
+(global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))
+(global-set-key (kbd "C-c A") '(lambda () (interactive) (my/org-super-agenda) (evil-emacs-state)))
 (defun org-agenda-sans-evil ()
   (interactive)
   (org-agenda)

@@ -30,6 +30,38 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
    work in loading the org-agenda, this isn't insignificant, but it's
    sufficiently low to justify the trade off.
 
+** Startup Time
+   Wrapping things in =(add-hook 'after-init-hook (lambda () ...))=
+   isn't helpful because the user is still stuck waiting, this can be
+   seen by the following example:
+
+   1. define the following in your =init.el=
+
+      #+begin_src elisp
+	(evil-mode)
+	(evil-define-key 'normal 'global (kbd "p") 'print-time-delta)
+
+	    (defun print-time-delta ()
+	    (interactive)
+		(message
+		    (format "Responding to User input!; Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
+			(float-time
+			    (time-subtract after-init-time before-init-time))
+			(float-time
+			    (time-subtract (current-time) before-init-time))
+		    )
+		)
+	    )
+      #+end_src
+
+   2. startup emacs and immediately press p, this will report when user input is interpreted.
+
+
+   It shows that wrapping things in an =after-init= hook isn't useful.
+     
+
+    
+
 * TODO Org Mode
   
 ** Agenda

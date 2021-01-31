@@ -60,4 +60,67 @@
 
 ;; (byte-recompile-directory user-emacs-directory)
 (provide 'init-startup-gc)
+;;;; Benchmarking
+(defun benchmark ()
+  "A benchmark so I can compare configs"
+  (interactive)
+
+(if (profiler-cpu-running-p)
+    (message "Profiler Already running, ")
+)
+(profiler-cpu-start 1)
+;; Define Variables
+(defvar i "counter")
+(setq i 1)
+
+(defvar j "counter")
+(setq j 1)
+
+(defvar k "counter")
+(setq k 1)
+
+(defvar N "Limit")
+(setq N 15)
+
+
+;; Start the Loop
+(defvar start-time)
+(setq start-time (current-time))
+
+(while (< i N ) 
+    (message "i:%s" i)
+    (setq i (1+ i))
+    (while (< j N ) 
+	(message "|\tj:%s" j)
+	 (insert (apply 'concat (make-list 200 "!+")))
+	(ignore-error (scroll-down-command))
+	(setq j (1+ j))
+	    (while (< k N ) 
+	    (message "|\t|\tk:%s" k)
+	    (insert "bar ")
+	    (insert (apply 'concat (make-list 200 "#*")))
+	    (ignore-error (scroll-up-command))
+	    (setq k (1+ k))
+	    )
+	    (setq k 0)
+	)
+    (setq j 0)
+)
+(defvar stop-time)
+(setq stop-time (current-time))
+
+(message (format "Time: %s"
+		     (float-time (time-subtract stop-time start-time))
+
+		) 
+    )
+
+
+(undo)
+(profiler-report)
+(profiler-cpu-stop)
+)
+
+
+
 ;;; init-startup-gc.el ends here

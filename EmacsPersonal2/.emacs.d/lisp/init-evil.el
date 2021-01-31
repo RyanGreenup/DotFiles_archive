@@ -81,6 +81,7 @@
 ;; (evil-define-key 'normal 'global (kbd "<leader>tl") 'global-display-line-numbers-mode)
 (evil-define-key 'normal 'global (kbd "<leader>tl") 'doom/toggle-line-numbers)
 (evil-define-key 'normal 'global (kbd "<leader>th") 'helm-mode)
+(evil-define-key 'normal 'global (kbd "<leader>t SPC") 'menu-bar-mode)
 (evil-define-key 'normal 'global (kbd "<leader>tb") 'org-supertar-mode)
 (evil-define-key 'normal 'global (kbd "<leader>ti") 'highlight-indent-guides-mode)
 (evil-define-key 'normal 'global (kbd "<leader>tr") 'display-fill-column-indicator-mode)
@@ -216,6 +217,16 @@ windows (unlike `doom/window-maximize-buffer'). Activate again to undo."
       (setq beg (line-beginning-position)
             end (line-end-position)))
     (narrow-to-region beg end)))
+
+(evil-define-key 'normal 'global
+  (kbd "<leader>p")
+  (lambda
+    ()
+    (interactive)
+    (message "user printed ")
+    (print-time-delta)
+    ))
+
 
 (provide 'init-evil)
 ;;; init-evil.el ends here

@@ -13,11 +13,10 @@
 (require 'init-startup-gc)
 
 ;;;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
-(setq debug-on-error nil)
+(setq debug-on-error t)
 
 
 ;;;; Run After Initialisation
-(add-hook 'after-init-hook (lambda ()
 
 ;;;;; Load Package Manager
     (require 'init-straight)
@@ -25,12 +24,18 @@
     ;; (require 'init-elpa)
 
     (defun display-startup-echo-area-message ()
-      (message (format "Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
+      (print-time-delta)
+      )
+
+
+(defun print-time-delta ()
+  (interactive)
+(message (format "Init Time:\n---> %s\n Final Startup Time (post after-init-hook):\n---> %s\n"
 		     (float-time (time-subtract after-init-time before-init-time))
 		     (float-time (time-subtract (current-time) before-init-time))
 		) 
     )
-    )
+  )
 
 
 ;;;;; Load all packages
@@ -38,36 +43,32 @@
     (require 'init-keybindings)
     (require 'init-change-theme-timer)
 
-;;;;; Configure Evil
-    (require 'init-evil)
+;;;;; Interface
+;;;;;; Scrolling
+    ;; scroll one line at a time (less "jumpy" than defaults)
+(require 'init-smooth-scrolling)
 
-;;;;; Configure Helm
+;;;;;; Configure Evil
+    (require 'init-evil)
+    (winner-mode 1) 
+
+;;;;;; Configure Helm
     (require 'init-helm)
     ;; (require 'init-ivy)
 
-;;;;; Popup Scratch Buffer
+;;;;;; Popup Scratch Buffer
     (require 'init-popup-scratch)
 
 ;;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
     (require 'init-org)
+    (require 'init-org-super-agenda) 
     (require 'init-texfrag)
 
 
 ;;;;; Set default font and apply theme
-	(texfrag-global-mode 1) ;; TODO Move this in with helm
-	(winner-mode 1) ;; TODO Move this in with helm
 	;; Set Theme
 	(set-theme-for-time-of-day)
-
-
-
-
-
-;;;;; Doom Modeline
-    ;; This causes major scrolling and performance issues in org-mode
-    ;; (require 'init-doom-modeline)
-
 ;;;;; Hydra
 (require 'init-hydra)
 
@@ -85,7 +86,6 @@
 
 
 
-))
 
 
 ;;;; Run When Idle (Trivial Things Only)
@@ -101,7 +101,7 @@
 						;; Toggle scroll bar and Toolbar 
 	(toggle-scroll-bar -1)			;; ! 0.1 s
 	(tool-bar-mode -1)			;; ! 0.1 s
-						;; (menu-bar-mode -1)  ;; I like the Menus actually
+        (menu-bar-mode -1)                      ;; I like the Menus actually so toggle with <SPC t SPC>
     )
     )
 ;;;;; 2 Second
@@ -120,3 +120,25 @@
 		       )
 		     )
 ;;;;; 3 Second
+
+
+;;;;; Modeline 
+(require 'init-telephone-line)        ;; Loads Quick and feels fine
+;; (require 'init-spacemacs-modeline) ;; takes 1.2 seconds at startup
+;; (require 'init-doom-modeline)      ;; FIXME The doom modeline cripples
+				      ;; the performance of org-mode
+				      ;; files, this can be seen by a
+				      ;; side by side comparison of two
+				      ;; org files using follow mode, one
+				      ;; without the modeline.
+
+(run-with-idle-timer 3 nil (lambda ()
+;; EMPTY
+)
+)
+
+
+;; This gets annoying so turn it off after launch
+(setq debug-on-error nil)
+
+
