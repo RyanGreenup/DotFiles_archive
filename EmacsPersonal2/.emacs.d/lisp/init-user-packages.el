@@ -37,7 +37,7 @@
 
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
-
+;;;;; Org Roam
 (use-package org-roam
       :straight t
       :ensure t
@@ -55,6 +55,22 @@
 (straight-use-package 'org-ref) ;; does not declare autoloads! MUST
 				;; use (require 'org-ref) somewhere
 				;; (called in init-org)
+;;;;; Org Roam Server
+(use-package org-roam-server
+  :straight t
+  :ensure t
+  :config
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8080
+        org-roam-server-authenticate nil
+        org-roam-server-export-inline-images t
+        org-roam-server-serve-files nil
+        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+        org-roam-server-network-poll t
+        org-roam-server-network-arrows nil
+        org-roam-server-network-label-truncate t
+        org-roam-server-network-label-truncate-length 60
+        org-roam-server-network-label-wrap-length 20))
 ;;;; Interface
 ;;;;; Scrolling
 (straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
