@@ -77,9 +77,16 @@
 (setq-default evil-escape-key-sequence (kbd "jk"))
 (setq-default evil-escape-delay 0.3)
 
-
+;;; Org Ref
+(evil-define-key 'normal 'global (kbd "<leader>lrl") 'org-ref-insert-ref-link)
+(evil-define-key 'normal 'global (kbd "<leader>lrc") 'org-ref-helm-insert-cite-link)
  
-
+;;; helm-org-rifle
+(evil-define-key 'normal 'global (kbd "<leader>hh") 'helm-org-in-buffer-headings)
+(evil-define-key 'normal 'global (kbd "<leader>ha") 'helm-org-agenda-files-headings)
+(evil-define-key 'normal 'global (kbd "<leader>rb") 'helm-org-rifle-current-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ro") 'helm-org-rifle-org-directory)
+(evil-define-key 'normal 'global (kbd "<leader>rd") 'helm-org-rifle-directories)
 
 
 
