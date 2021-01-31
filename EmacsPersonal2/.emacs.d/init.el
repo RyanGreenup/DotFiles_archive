@@ -16,10 +16,8 @@
 (setq debug-on-error t)
 
 
-;;;; Run After Initialisation
-
-;;;;; Load Package Manager
-    (require 'init-straight)
+;;;; Load Package Manager
+(require 'init-straight)
 
     ;; (require 'init-elpa)
 
@@ -38,12 +36,12 @@
   )
 
 
-;;;;; Load all packages
+;;;; Load all packages
     (require 'init-user-packages)
     (require 'init-keybindings)
     (require 'init-change-theme-timer)
 
-;;;;; Interface
+;;;; Interface
 ;;;;;; Which key
 (require 'init-which-key)
 ;;;;;; Scrolling
@@ -63,9 +61,9 @@
 
 ;;;;;; Open in External program
 (require 'init-open-in-external-program)
-;;;;; Configure LaTeX Mode
+;;;; Configure LaTeX Mode
 (require 'init-latex)
-;;;;; Configure Org Mode
+;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
     (require 'init-org)
     (require 'init-org-publish)
@@ -73,10 +71,12 @@
     (require 'init-texfrag)
 
 
-;;;;; Set default font and apply theme
+;;;; Programming
+(require 'init-ess)
+;;;; Set default font and apply theme
 	;; Set Theme
 	(set-theme-for-time-of-day)
-;;;;; Hydra
+;;;; Hydra
 (require 'init-hydra)
 
     ;; Auto Save
