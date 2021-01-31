@@ -116,3 +116,62 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
   1. Emacs should report `helm-internal: Wrong type argument: window-live-p, nil`
 6. Disable helm-mode with `M-x helm-mode`
 8. Attempt to start an inferior process with `C-c C-z` and it should work
+* Styling
+
+  I considered something like:
+
+  #+begin_src elisp
+(custom-set-faces
+  '(org-level-1 ((t (:inherit outline-1 :height 1.7))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.4))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.2))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
+)
+  #+end_src
+
+  Or:
+
+  #+begin_src elisp
+(org-mode)
+;; Styling must be evaluated before
+(setq org-hidden-keywords '(title))
+;; set basic title font
+(set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+;; Low levels are unimportant => no scaling
+(set-face-attribute 'org-level-7 nil  :inherit 'org-level-8)
+(set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
+(set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
+(set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
+;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
+(set-face-attribute 'org-level-3 nil :family 'unspecified :inherit 'org-level-8 :height 1.2) ;\large
+(set-face-attribute 'org-level-2 nil :family 'unspecified :inherit 'org-level-8 :height 1.44) ;\Large
+(set-face-attribute 'org-level-1 nil :family 'unspecified :inherit 'org-level-8 :height 1.728) ;\LARGE
+;; Only use the first 4 styles and do not cycle.
+(setq org-cycle-level-faces nil)
+(setq org-n-level-faces 4)
+;; Document Title, (\huge)
+(set-face-attribute 'org-document-title nil
+                    :height 2.074
+                    :foreground "Liberation Serif"
+                    :inherit 'org-level-8)
+
+  #+end_src
+
+  But in the end I was happier with just the defaults
+
+
+  The superstar-mode ones can also be changed:
+
+  #+begin_src elisp
+(add-hook 'org-mode-hook (lambda ()
+			   (org-superstar-mode 1)
+			    (setq org-superstar-headline-bullets-list '(" ")) ;; '("🞛" "◉" "○" "▷")
+			     (setq org-superstar-item-bullet-alist
+			            '((?+ . ?•)
+			              (?* . ?➤)
+			              (?- . ?–)))
+			     (setq org-superstar-remove-leading-stars nil) ; This removes the indent
+						    (texfrag-mode 1)
+			   ))
+  #+end_src
