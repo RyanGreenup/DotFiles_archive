@@ -44,6 +44,8 @@
     (require 'init-change-theme-timer)
 
 ;;;;; Interface
+;;;;;; Which key
+(require 'init-which-key)
 ;;;;;; Scrolling
     ;; scroll one line at a time (less "jumpy" than defaults)
 (require 'init-smooth-scrolling)

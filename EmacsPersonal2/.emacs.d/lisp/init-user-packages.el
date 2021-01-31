@@ -143,12 +143,6 @@
 ;;;; Keybindings
 ;;;; Which Key
 (straight-use-package 'which-key)
-(setq which-key-idle-delay 0.2)
-(setq eldoc-idle-delay 0.2)
-(add-hook 'after-init-hook (lambda ()
-			     (which-key-mode 1)
-			     ))
-
 ;;;;; Hydra
 (straight-use-package 'hydra)
 
