@@ -136,11 +136,13 @@
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)
 (global-hl-todo-mode 1)
+;;;;; Company Mode
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (global-set-key (kbd "C-S-SPC") 'company-yasnippet)
+(setq company-tooltip-idle-delay 0)              ;; This can cause slow downs
+(setq company-idle-delay 0)                      ;; on a lean emacs it's really nice though
 (add-hook 'after-init-hook 'global-company-mode)
-(straight-use-package 'eglot-jl)
 ;;;;; eglot
 (straight-use-package 'eglot)
 (add-hook 'python-mode-hook 'eglot-ensure)
@@ -155,6 +157,7 @@
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 ;;;;; Julia Stuff
+(straight-use-package 'eglot-jl)
 (straight-use-package 'ob-ess-julia)
 (straight-use-package 'shell)
 (straight-use-package 'julia-mode)
