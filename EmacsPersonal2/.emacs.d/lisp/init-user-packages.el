@@ -140,9 +140,15 @@
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (global-set-key (kbd "C-S-SPC") 'company-yasnippet)
+(global-set-key (kbd "C-c s") 'company-yasnippet) 
 (setq company-tooltip-idle-delay 0)              ;; This can cause slow downs
 (setq company-idle-delay 0)                      ;; on a lean emacs it's really nice though
 (add-hook 'after-init-hook 'global-company-mode)
+;;;;;; Fuzzy
+(straight-use-package 'company-fuzzy)
+(setq company-fuzzy-sorting-backend 'flx)
+(setq company-require-match nil) ;; this needs to be disabled for fuzzy to make sense
+(global-company-fuzzy-mode 1)
 ;;;;; eglot
 (straight-use-package 'eglot)
 (add-hook 'python-mode-hook 'eglot-ensure)
