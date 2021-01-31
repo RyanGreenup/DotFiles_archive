@@ -143,6 +143,7 @@
 ;;;; Keybindings
 ;;;; Which Key
 (straight-use-package 'which-key)
+(setq which-key-idle-delay 1)
 (add-hook 'after-init-hook (lambda ()
 			     (which-key-mode 1)
 			     ))
