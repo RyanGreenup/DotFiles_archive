@@ -21,7 +21,7 @@
 (package! mediawiki)
 (package! emoji-fontset)
 (package! emoji-display)
-(package! org-superstar)
+;; (package! org-superstar)
 
 ; These make dokuwiki easier to work with
 
