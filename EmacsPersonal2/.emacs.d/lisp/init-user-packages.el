@@ -73,6 +73,7 @@
         org-roam-server-network-label-truncate t
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20))
+;;;; Emacs Application Framework
 ;;;; Interface
 ;;;;; Scrolling
 (straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
@@ -148,6 +149,7 @@
 (add-hook 'after-init-hook 'global-company-mode)
 ;;;;;; Fuzzy
 (straight-use-package 'company-fuzzy)
+(straight-use-package 'flx)
 (setq company-fuzzy-sorting-backend 'flx)
 (setq company-require-match nil) ;; this needs to be disabled for fuzzy to make sense
 (global-company-fuzzy-mode 1)
@@ -165,6 +167,14 @@
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'prog-mode-hook 'outshine-mode)
+;;;;; YaSnippet
+(straight-use-package 'yasnippet)
+(straight-use-package 'yasnippet-snippets)
+
+(yas-global-mode 1)
+;;;;; Dumb Jump
+(straight-use-package 'dumb-jump)
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 ;;;;; Julia Stuff
 (straight-use-package 'eglot-jl)
 (straight-use-package 'ob-ess-julia)
@@ -173,11 +183,6 @@
 (add-to-list 'auto-mode-alist '("\\.jl\\'" . ess-julia-mode))
 
 
-;;;;; YaSnippet
-(straight-use-package 'yasnippet)
-(straight-use-package 'yasnippet-snippets)
-
-(yas-global-mode 1)
 ;;;; Modeline
 ;;;;; Doom
 ;; (straight-use-package 'doom-modeline)
