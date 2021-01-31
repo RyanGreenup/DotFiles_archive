@@ -123,7 +123,7 @@
 
 
 ;;;;; Modeline 
-(require 'init-telephone-line)
+(require 'init-telephone-line)        ;; Loads Quick and feels fine
 ;; (require 'init-spacemacs-modeline) ;; takes 1.2 seconds at startup
 ;; (require 'init-doom-modeline)      ;; FIXME The doom modeline cripples
 				      ;; the performance of org-mode
