@@ -38,6 +38,15 @@
             ))
    ))
 
+(defun my-open-current-file-in-vim ()
+  (interactive)
+  (save-window-excursion
+   (async-shell-command
+                                        ;  (format "gvim +%d %s"
+    (format "/usr/bin/kitty -e nvim +%d %s"
+            (+ (if (bolp) 1 0) (count-lines 1 (point)))
+            (shell-quote-argument buffer-file-name)))
+   ))
 
 
 (provide 'init-open-in-external-program)
