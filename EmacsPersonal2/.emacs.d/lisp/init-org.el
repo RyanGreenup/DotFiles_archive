@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-
+(setq user-full-name "Ryan Greenup"
+      user-mail-address "17805315@student.westernsydney.edu.au")
 (setq org-startup-folded "overview")
 (setq org-cycle-include-plain-lists 'integrate)
 (setq org-agenda-skip-scheduled-if-done t)
