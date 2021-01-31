@@ -1,8 +1,6 @@
 ;;; init-user-packages.el --- All Packages for Emacs using straight.el -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-
-
 ;;;; Set up straight
 
 ;;;; Set up Use Package
@@ -27,10 +25,8 @@
 
 (straight-use-package 'avy)
 (define-key global-map (kbd "C-c SPC") 'avy-goto-char-2)
-(evil-define-key 'normal 'global (kbd "gss") 'avy-goto-char-2)
-(evil-define-key 'normal 'global (kbd "gsS") 'avy-goto-word-1)
 
-;;; Dokuwiki
+;;;; Dokuwiki
 (straight-use-package 'dokuwiki-mode)
 (straight-use-package 'ox-wk) ;; MUST (load-library) and choose ox-wk
 ;;;; Org Stuff

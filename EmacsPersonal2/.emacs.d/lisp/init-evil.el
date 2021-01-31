@@ -69,6 +69,10 @@
 (evil-define-key 'normal 'global (kbd "<leader>/") 'helm-rg)
 (evil-define-key 'normal 'global (kbd "<leader>iu") 'helm-unicode)
 
+;; Evil Jump
+(evil-define-key 'normal 'global (kbd "gss") 'avy-goto-char-2)
+(evil-define-key 'normal 'global (kbd "gsS") 'avy-goto-word-1)
+
 ;;; Evil Escape
 (setq-default evil-escape-key-sequence (kbd "jk"))
 (setq-default evil-escape-delay 0.3)
