@@ -17,6 +17,8 @@ eslint
 # R
 R-lintr # https://aur.archlinux.org/packages/r-lintr/
 
+# Julia
+julia -e 'import Pkg; Pkg.add("EmacsTools")'
 
 
 # org export html

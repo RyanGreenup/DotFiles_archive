@@ -34,7 +34,6 @@
 
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
-(straight-use-package 'ob-ess-julia)
 
 (use-package org-roam
       :straight t
@@ -114,7 +113,6 @@
 
 
 ;;;; Programming
-(straight-use-package 'eglot)
 (straight-use-package 'ess)
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)
@@ -122,7 +120,11 @@
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
+(straight-use-package 'eglot-jl)
+;;;;; eglot
+(straight-use-package 'eglot)
 (add-hook 'python-mode-hook 'eglot-ensure)
+(add-hook 'julia-mode-hook '(lambda () (eglot-jl-init) (eglot-ensure)))
 (add-hook 'ess-r-mode-hook (lambda ()
 			     (eglot-ensure)  
 			     (when (require 'helm nil 'noerror)
@@ -132,6 +134,12 @@
 	  )
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
+;;;;; Julia Stuff
+(straight-use-package 'ob-ess-julia)
+(straight-use-package 'shell)
+(straight-use-package 'julia-mode)
+(add-to-list 'auto-mode-alist '("\\.jl\\'" . ess-julia-mode))
+
 
 ;;;; Modeline
 ;;;;; Doom
