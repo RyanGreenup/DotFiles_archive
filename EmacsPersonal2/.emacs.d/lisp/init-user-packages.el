@@ -25,7 +25,12 @@
 (straight-use-package 'evil-escape)
 (straight-use-package 'fzf)
 
-;;;; Dokuwiki
+(straight-use-package 'avy)
+(define-key global-map (kbd "C-c SPC") 'avy-goto-char-2)
+(evil-define-key 'normal 'global (kbd "gss") 'avy-goto-char-2)
+(evil-define-key 'normal 'global (kbd "gsS") 'avy-goto-word-1)
+
+;;; Dokuwiki
 (straight-use-package 'dokuwiki-mode)
 (straight-use-package 'ox-wk) ;; MUST (load-library) and choose ox-wk
 ;;;; Org Stuff
