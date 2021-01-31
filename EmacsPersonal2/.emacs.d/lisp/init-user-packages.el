@@ -156,6 +156,7 @@
 	  )
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
+(add-hook 'prog-mode-hook 'outshine-mode)
 ;;;;; Julia Stuff
 (straight-use-package 'eglot-jl)
 (straight-use-package 'ob-ess-julia)
