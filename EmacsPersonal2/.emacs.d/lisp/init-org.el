@@ -12,8 +12,7 @@
 ;;; Periodically When Idle
 ;; Maybe Rebuild Org-Agenda?
 ;;; Styling
-;; (require 'init-org-heading-latex-style)
-
+;; see [[.emacs.d/README.org]]
 ;; (custom-set-faces
 ;;   '(org-level-1 ((t (:inherit outline-1 :height 1.7))))
 ;;   '(org-level-2 ((t (:inherit outline-2 :height 1.4))))
@@ -23,28 +22,28 @@
 ;; )
 
 
-;; (org-mode)
-;; ;; Styling must be evaluated before
-;; (setq org-hidden-keywords '(title))
-;; ;; set basic title font
-;; (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
-;; ;; Low levels are unimportant => no scaling
-;; (set-face-attribute 'org-level-7 nil  :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
-;; ;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
-;; (set-face-attribute 'org-level-3 nil :family 'unspecified :inherit 'org-level-8 :height 1.2) ;\large
-;; (set-face-attribute 'org-level-2 nil :family 'unspecified :inherit 'org-level-8 :height 1.44) ;\Large
-;; (set-face-attribute 'org-level-1 nil :family 'unspecified :inherit 'org-level-8 :height 1.728) ;\LARGE
-;; ;; Only use the first 4 styles and do not cycle.
-;; (setq org-cycle-level-faces nil)
-;; (setq org-n-level-faces 4)
-;; ;; Document Title, (\huge)
-;; (set-face-attribute 'org-document-title nil
-;;                     :height 2.074
-;;                     :foreground "Liberation Serif"
-;;                     :inherit 'org-level-8)
+(org-mode)
+;; Styling must be evaluated before
+(setq org-hidden-keywords '(title))
+;; set basic title font
+(set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+;; Low levels are unimportant => no scaling
+(set-face-attribute 'org-level-7 nil  :inherit 'org-level-8)
+(set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
+(set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
+(set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
+;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
+(set-face-attribute 'org-level-3 nil :family 'unspecified :inherit 'org-level-8 :height 1.2) ;\large
+(set-face-attribute 'org-level-2 nil :family 'unspecified :inherit 'org-level-8 :height 1.44) ;\Large
+(set-face-attribute 'org-level-1 nil :family 'unspecified :inherit 'org-level-8 :height 1.728) ;\LARGE
+;; Only use the first 4 styles and do not cycle.
+(setq org-cycle-level-faces nil)
+(setq org-n-level-faces 4)
+;; Document Title, (\huge)
+(set-face-attribute 'org-document-title nil
+                    :height 2.074
+                    :foreground "Liberation Serif"
+                    :inherit 'org-level-8)
 
 
 ;;; After loading org
