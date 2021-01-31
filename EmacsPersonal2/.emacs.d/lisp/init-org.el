@@ -73,7 +73,7 @@
 )
 
 ;;; org-ref
-(require 'org-ref) ;; Must be required, see README
+;; (require 'org-ref) ;; Must be required, see README
 (setq reftex-default-bibliography '("~/Sync/Studies/Papers/references.bib"))
 
 ;; see org-ref for use of these variables

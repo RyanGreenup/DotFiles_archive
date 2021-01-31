@@ -114,7 +114,8 @@
 		       ;; Load Index and Todo
 		       (find-file-noselect "~/Notes/Org/index.org")
 		       (find-file-noselect "~/Notes/Org/agenda/todo.org")
-		       (org-ref)
+		       (require 'org-ref)
+		       (org-reload)
 		       ;; Build Agenda
 			 (org-agenda-list)
 			 (delete-window)
