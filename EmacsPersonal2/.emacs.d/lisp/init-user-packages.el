@@ -29,6 +29,8 @@
 (straight-use-package 'texfrag)
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
+(straight-use-package 'ob-ess-julia)
+
 (use-package org-roam
       :straight t
       :ensure t

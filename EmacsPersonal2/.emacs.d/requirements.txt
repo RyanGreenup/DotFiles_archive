@@ -8,6 +8,11 @@ python-flake8-docstrings
 python-flake8-isort
 python-flake8-typing-imports-
 python-pyflakes
+## Linting with flycheck
+python-pylint
+
+# JavaScript
+eslint
 
 # R
 R-lintr # https://aur.archlinux.org/packages/r-lintr/
