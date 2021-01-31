@@ -101,7 +101,7 @@
 						;; Toggle scroll bar and Toolbar 
 	(toggle-scroll-bar -1)			;; ! 0.1 s
 	(tool-bar-mode -1)			;; ! 0.1 s
-						;; (menu-bar-mode -1)  ;; I like the Menus actually
+        (menu-bar-mode -1)                      ;; I like the Menus actually so toggle with <SPC t SPC>
     )
     )
 ;;;;; 2 Second
