@@ -10,7 +10,7 @@
 
 (add-hook 'after-init-hook #'doom-modeline-mode)
 
-(straight-use-package doom-modeline
+(straight-use-package 'doom-modeline)
 
 ;;; Default Config from GitHub
 ;; https://github.com/domtronn/all-the-icons.el
