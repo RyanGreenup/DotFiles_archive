@@ -3,6 +3,7 @@
 ;;; Code:
 
 
+(setq org-cycle-include-plain-lists 'integrate)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
 (setq org-tags-column 80)
@@ -103,7 +104,7 @@
 '(  (R           . t)
     (latex       . t)
     (python      . t)
-    ;; (ess-julia   . t)
+    ;; (julia       . t)
     ;; (mongo       . t) ;; TODO Should I set this up?
     (sqlite      . t)
     (plantuml    . t)
@@ -118,7 +119,7 @@
     (emacs-lisp  . t)))
 ;;;;;; Don't Ask
 (setq org-confirm-babel-evaluate nil)
-;; (load "./straight/repos/org/contrib/lisp/ob-julia.el")
+;; (load "~/.emacs.d/straight/repos/org/contrib/lisp/ob-julia.el") ;; HACK symlinked to straight/org/build
 ;;;;;; Set up Plant UML
 (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
 (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))

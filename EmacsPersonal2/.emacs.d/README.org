@@ -63,7 +63,27 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
     
 
 * TODO Org Mode
-  
+** TODO Get Julia Working with babel  
+
+   The only way to get the following julia babel to evaluate, is to first evalauate:
+
+   #+begin_src elisp
+    (load "~/.emacs.d/straight/repos/org/contrib/lisp/ob-julia.el")
+   #+end_src
+
+   #+RESULTS:
+   : t
+
+   I need to find a better way to install that with straight.
+
+   #+begin_src julia :results output
+    print(3)
+   #+end_src
+
+   #+RESULTS:
+   : 3
+
+   Getting Julia to work reliably will be tiring.
 ** Agenda
 
 * TODO Winner Mode
