@@ -18,5 +18,8 @@
   (message "Back to %s" major-mode)
   )
 
+(setq texfrag-preview-buffer-at-start t) ;; This is convenient but could be annoying
+
+
 (provide 'init-texfrag)
 ;;; init-texfrag.el ends here

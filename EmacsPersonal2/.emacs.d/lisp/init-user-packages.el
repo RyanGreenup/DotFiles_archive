@@ -26,7 +26,12 @@
 (straight-use-package 'fzf)
 
 ;;;; Org Stuff
-(straight-use-package 'texfrag)
+(use-package texfrag
+      :straight t
+      :hook
+      (after-init . texfrag-global-mode)
+		      )
+
 (straight-use-package 'org-super-agenda)
 (straight-use-package 'org-superstar)
 (straight-use-package 'ob-ess-julia)

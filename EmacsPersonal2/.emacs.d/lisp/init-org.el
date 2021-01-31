@@ -94,6 +94,8 @@
   )
 )
 ;;; After loading org
+;; Seemingly this can only be done when using Doom with (after!...)
+;; I should look at how that was done and review my doom config
 
 ;;;;; Active Babel languagevs
 (org-babel-do-load-languages
@@ -101,7 +103,7 @@
 '(  (R           . t)
     (latex       . t)
     (python      . t)
-    (ess-julia   . t)
+    ;; (ess-julia   . t)
     ;; (mongo       . t) ;; TODO Should I set this up?
     (sqlite      . t)
     (plantuml    . t)
@@ -122,9 +124,6 @@
 (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 
 
-
-(texfrag-global-mode 1)  ;; Load globally here, it throws an error at init
-			    ;; and I mostly use it in org-mode anyway
 
 ;;;; Org Download
 (setq org-download-method 'directory)
@@ -149,11 +148,11 @@
 ;; Move up and Down in Agenda
 ;; In the agenda evil doesn't work, because there are already other
 ;; keybindings like F for follow mode, map j/k as a compromise
-(org-agenda)
+(add-hook 'org-agenda-mode-hook (lambda ()
 (define-key org-agenda-mode-map "j" 'evil-next-line)
 (define-key org-agenda-mode-map "k" 'evil-previous-line)
 (define-key org-agenda-mode-map (kbd "M-SPC" ) 'hydra-org-agenda/body)
-
+))
 
 
 
