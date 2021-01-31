@@ -14,7 +14,8 @@
 ;; Org Agenda
 (global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))
 (global-set-key (kbd "C-c A") '(lambda () (interactive) (my/org-super-agenda) (evil-emacs-state)))
-
+(global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
+;; (global-set-key (kbd "C-c s") 'company-yasnippet) ;; TODO
 
 
 

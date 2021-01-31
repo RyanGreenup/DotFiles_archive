@@ -59,6 +59,8 @@
 ;;;;;; Popup Scratch Buffer
     (require 'init-popup-scratch)
 
+;;;;;; Open in External program
+(require 'init-open-in-external-program)
 ;;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
     (require 'init-org)
