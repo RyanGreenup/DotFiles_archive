@@ -179,3 +179,17 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
 * Org Ref
   Org-Ref must be =(require 'org-ref)= manually, it doesn't declare
   autoloads properly, [[https://github.com/raxod502/straight.el#install-packages][See the Manual]]
+
+  It will load after 2 seconds of idle time, if you're already in an
+  org buffer that buffer must be reloaded with =M-x org-mode= in order
+  for org-ref to start working.
+
+  The alternative is loading it init and it adds a 0.4 second penalty,
+  so this way you get better startup and if =org-ref= is needed just
+  wait 2 seconds and it will come in as well.
+
+  The compromise being that I need to quickly open emacs more often
+  than I need to use org-ref and I don't always want to use the daemon
+  if I've been mucking around with some elisp.
+
+  
