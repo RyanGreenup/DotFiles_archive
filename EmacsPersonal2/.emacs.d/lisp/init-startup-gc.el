@@ -14,7 +14,7 @@
 ;; Making this change the total time (gc-elapsed) spent doing GC went down from ~1 sec to 0.02 sec (with 4 GC's)
 
 ;;; Code:
-(defvar startup-DEBUG t
+(defvar startup-DEBUG nil
   "Whether or not Garbage Collection should be printed."
   )
 
