@@ -5,11 +5,15 @@
 
 ;; (global-set-key (kbd "C-RET") (lambda () (message "Yeah It's working"))
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x w") 'count-words)
 (global-set-key (kbd "C-c C-p C-p") 'texfrag-force-preview-at-point)
 
 (global-set-key (kbd "M-p")  'move-line-up)
 (global-set-key (kbd "M-n")  'move-line-down)
 
+;; Org Agenda
+(global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))
+(global-set-key (kbd "C-c A") '(lambda () (interactive) (my/org-super-agenda) (evil-emacs-state)))
 
 
 
