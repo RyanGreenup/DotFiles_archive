@@ -88,7 +88,7 @@
 
 
 
-;;;; Run When Idle (Trivial Things Only)
+;;;; Run once When Idle (Trivial Things Only)
 ;;;;; 1 Second
 (run-with-idle-timer 1 nil
     (lambda ()
