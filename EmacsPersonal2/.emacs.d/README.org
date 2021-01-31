@@ -84,6 +84,21 @@ out, straight [[https://github.com/raxod502/straight.el#how-do-i-uninstall-a-pac
    : 3
 
    Getting Julia to work reliably will be tiring.
+
+
+   Worth noting that I also had this ominuous snippet in my old config:
+
+   #+begin_src 
+
+;;;; Julia LSP
+;; This is needed for Julia LSP otherwise it crashes
+;; https://github.com/non-Jedi/lsp-julia/issues/35
+(setq lsp-enable-folding t)
+
+
+
+
+   #+end_src
 ** Agenda
 
 * TODO Winner Mode
