@@ -63,6 +63,8 @@
 
 ;;;;;; Open in External program
 (require 'init-open-in-external-program)
+;;;;; Configure LaTeX Mode
+(require 'init-latex)
 ;;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
     (require 'init-org)
