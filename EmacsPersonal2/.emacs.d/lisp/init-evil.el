@@ -63,6 +63,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>q") 'popwin:close-popup-window)
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>/") 'helm-rg)
+(evil-define-key 'normal 'global (kbd "<leader>iu") 'helm-unicode)
 
 ;;; Evil Escape
 (setq-default evil-escape-key-sequence (kbd "jk"))
