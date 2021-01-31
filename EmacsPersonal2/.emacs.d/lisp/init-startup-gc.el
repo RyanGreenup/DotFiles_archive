@@ -33,7 +33,7 @@
    (message "gc-cons-threshold and file-name-handler-alist restored, see init-startup-gc.el")))
 
 ;; Garbage Collect when idle
-(run-with-idle-timer 2 t (lambda () (garbage-collect)))
+(run-with-idle-timer 2 t (lambda () (if startup-DEBUG (message "---\nGarbage Collected while idle")) (garbage-collect) ))
 
 
 ;; Track when garbage collects
@@ -45,7 +45,7 @@
 	  (message "Garbage Collected")
 	  (message "%s Seconds Spent on GC So far" gc-elapsed)
 	  (message "%s GC's completed So far" gcs-done)
-	  (message "Threshold: %s MB" (/ gc-cons-threshold 1000000))
+	  (message "Threshold: %s MB\n---" (/ gc-cons-threshold 1000000))
 	  )
 	  )
 )
