@@ -25,6 +25,9 @@
 (straight-use-package 'evil-escape)
 (straight-use-package 'fzf)
 
+;;;; Dokuwiki
+(straight-use-package 'dokuwiki-mode)
+(straight-use-package 'ox-wk) ;; MUST (load-library) and choose ox-wk
 ;;;; Org Stuff
 (use-package texfrag
       :straight t
@@ -119,6 +122,7 @@
 (global-hl-todo-mode 1)
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
+(global-set-key (kbd "C-S-SPC") 'company-yasnippet)
 (add-hook 'after-init-hook 'global-company-mode)
 (straight-use-package 'eglot-jl)
 ;;;;; eglot
@@ -141,6 +145,11 @@
 (add-to-list 'auto-mode-alist '("\\.jl\\'" . ess-julia-mode))
 
 
+;;;;; YaSnippet
+(straight-use-package 'yasnippet)
+(straight-use-package 'yasnippet-snippets)
+
+(yas-global-mode 1)
 ;;;; Modeline
 ;;;;; Doom
 ;; (straight-use-package 'doom-modeline)
