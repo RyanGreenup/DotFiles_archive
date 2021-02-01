@@ -69,6 +69,7 @@
 
 ;;;; Programming
 (require 'init-ess)
+(require 'init-programming-mode)
 ;;;; Set default font and apply theme
 	;; Set Theme
 	(set-theme-for-time-of-day)
@@ -120,6 +121,8 @@
 		       ;; Build Agenda
 			 (org-agenda-list)
 			 (delete-window)
+		       ;; Load Yasnippet
+			 (yas-global-mode 1)
 		       )
 		     )
 
@@ -149,7 +152,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-source-names-using-follow '("Buffers")))
+ '(helm-source-names-using-follow
+   '(#("argv: /usr/bin/rg --smart-case --color=ansi --colors=match:fg:red --colors=match:style:bold bound" 6 17
+       (face helm-rg-base-rg-cmd-face)
+       18 30
+       (face helm-rg-active-arg-face)
+       31 43
+       (face helm-rg-inactive-arg-face)
+       44 65
+       (face helm-rg-inactive-arg-face)
+       66 91
+       (face helm-rg-inactive-arg-face)
+       92 97
+       (face font-lock-string-face))
+     "Buffers")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

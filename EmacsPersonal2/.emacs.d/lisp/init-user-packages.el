@@ -130,15 +130,12 @@
 (straight-use-package 'yasnippet-snippets)
 ;; TODO look at auto expansion of snippets
 ;; https://github.com/joaotavora/yasnippet/issues/998
-(yas-global-mode 1)
 ;;;;; Company Mode
 (straight-use-package 'company)
-(global-set-key (kbd "C-SPC") 'company-complete)
-(global-set-key (kbd "C-S-SPC") 'ivy-yasnippet)
+
+
 ;;;;; Company Mode
 (straight-use-package 'company)
-(global-set-key (kbd "C-SPC") 'company-complete)
-(global-set-key (kbd "C-c s") 'company-yasnippet) 
 (setq company-tooltip-idle-delay 1)              ;; This can cause slow downs
 (setq company-idle-delay 1)                      ;; on a lean emacs it's really nice though
 (add-hook 'after-init-hook 'global-company-mode)
@@ -166,7 +163,7 @@
 (straight-use-package 'yasnippet)
 (straight-use-package 'yasnippet-snippets)
 
-(yas-global-mode 1)
+
 ;;;;; Dumb Jump
 (straight-use-package 'dumb-jump)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
