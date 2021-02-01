@@ -5,6 +5,7 @@
 ;; a number of other files.
 ;; See https://github.com/purcell/emacs.d/blob/bf65ab24cb31a32add371a7bad5d391d02b5391d/init.el
 
+
 ;;; Code:
 ;; Set the load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -40,6 +41,55 @@
     (require 'init-user-packages)
     (require 'init-keybindings)
     (require 'init-change-theme-timer)
+    (message "All Packages Loaded")
+(require 'org)
+(add-hook 'after-org-mode (message "org loaded"))
+;;;; Load Org Lazy
+
+(defvar org-startedQ nil)
+(setq org-startedQ nil)
+
+
+(defun init-org-fun ()
+  (interactive)
+  (when (not org-startedQ) 
+      (setq org-started t)
+      (message "Org mode has been triggered, running all the after-org stuff")
+      (require 'init-org)
+      (require 'org-ref)
+      (require 'init-org-publish)
+      (require 'init-org-super-agenda) 
+      (use-package org-roam-server
+      :straight t
+      :ensure t
+      :config
+      (setq org-roam-server-host "127.0.0.1"
+            org-roam-server-port 8080
+            org-roam-server-authenticate nil
+            org-roam-server-export-inline-images t
+            org-roam-server-serve-files nil
+            org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+            org-roam-server-network-poll t
+            org-roam-server-network-arrows nil
+            org-roam-server-network-label-truncate t
+            org-roam-server-network-label-truncate-length 60
+            org-roam-server-network-label-wrap-length 20))
+      (yas-global-mode 1)             ;; TODO company and yasnippet should
+      (global-company-fuzzy-mode 1)	  ;; be in an after-prog-mode not
+    				  ;; after-org
+    
+      (require 'init-hydra)
+      (message "loaded all the crap")
+	)
+  )
+
+(add-hook 'org-mode-hook (lambda ()
+			   (display-line-numbers-mode)
+			   (init-org-fun)
+			   (message "hey")
+
+			   ))
+			      
 
 ;;;; Interface
 ;;;;;; Which key
@@ -65,9 +115,6 @@
 (require 'init-latex)
 ;;;; Configure Org Mode
     ;; This contributes to a significant amount of startup time
-    (require 'init-org)
-    (require 'init-org-publish)
-    (require 'init-org-super-agenda) 
     (require 'init-texfrag)
 
 
@@ -77,7 +124,6 @@
 	;; Set Theme
 	(set-theme-for-time-of-day)
 ;;;; Hydra
-(require 'init-hydra)
 
     ;; Auto Save
     ;; Save when actually idle, this may get annoying though
@@ -111,10 +157,10 @@
         (menu-bar-mode -1)                      ;; I like the Menus actually so toggle with <SPC t SPC>
     )
     )
-;;;;; 2 Second
+;;;;; 3 Second
 ;; Load Org mode so it's ready after some delay
 
-(defvar init-org-idle-load 2)
+(defvar init-org-idle-load 3)
 (run-with-idle-timer init-org-idle-load nil
 		     (lambda ()
 		       (message "\n---\nIdle Timer of %s seconds:\n\t Loading Org\n---\n" init-org-idle-load)
@@ -128,7 +174,7 @@
 			 (delete-window)
 		       )
 		     )
-;;;;; 3 Second
+;;;;; 4 Second
 
 
 ;;;;; Modeline 
