@@ -18,6 +18,7 @@
 ;;;; General and Global
 (global-set-key (kbd "M-p")  'move-line-up)
 (global-set-key (kbd "M-n")  'move-line-down)
+(global-set-key (kbd "C-c <tab>")  'gk-next-theme)
 
 ;;;;; Org Agenda
 (global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))
@@ -99,7 +100,23 @@
 
 
 ;;; Helper Functions
-
+(defun gk-next-theme ()
+  "Switch to the next theme in ‘custom-known-themes’.
+If exhausted, disable themes.  If run again thereafter, wrap to
+the beginning of the list."
+  (interactive)
+  (let* ((ct (or (car custom-enabled-themes)
+                 (car custom-known-themes)))
+         (next (cadr (memq ct custom-known-themes))))
+    (when (memq next '(user changed))
+      (setq next nil))
+    (dolist (theme custom-enabled-themes)
+      (disable-theme theme))
+    (if next
+        (progn
+          (load-theme next t)
+          (message "Loaded theme ‘%S’" next))
+      (message "All themes disabled"))))
 
 (defun move-line-up ()
   "Move up the current line."
