@@ -74,8 +74,6 @@
             org-roam-server-network-label-truncate t
             org-roam-server-network-label-truncate-length 60
             org-roam-server-network-label-wrap-length 20))
-      (yas-global-mode 1)             ;; TODO company and yasnippet should
-      (global-company-fuzzy-mode 1)	  ;; be in an after-prog-mode not
     				  ;; after-org
     
       (require 'init-hydra)
@@ -90,6 +88,10 @@
 
 			   ))
 			      
+
+(yas-global-mode 1)             ;; TODO company and yasnippet should
+(global-company-fuzzy-mode 1)	;; be in an after-prog-mode not after org
+				;; Tis is needed for good M-e in terminal
 
 ;;;; Interface
 ;;;;;; Which key
