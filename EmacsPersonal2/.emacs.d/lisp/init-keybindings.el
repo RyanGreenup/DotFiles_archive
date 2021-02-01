@@ -24,6 +24,13 @@
 (global-set-key (kbd "C-c A") '(lambda () (interactive) (my/org-super-agenda) (evil-emacs-state)))
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
 ;;;;; Programming
+(with-eval-after-load 'flymake
+  (define-key flymake-mode-map (kbd "M-n") 'flymake-goto-next-error)
+  (define-key flymake-mode-map (kbd "M-p") 'flymake-goto-prev-error)
+  (define-key flymake-mode-map (kbd "M-[") 'flymake-show-diagnostics-buffer)
+  (define-key flymake-mode-map (kbd "M-]") 'flymake-goto-diagnostic)
+)
+
 (defun myR/tidyverse-pipe ()
   (interactive)
   (insert " %>% "))
