@@ -45,7 +45,7 @@
   )
 )
 ;;;;;; Elisp
-(add-hook 'elisp-mode
+(add-hook 'emacs-lisp-mode-hook
   (lambda ()
     (local-set-key (kbd "M-RET") 'eval-last-sexp)
     (local-set-key (kbd "C-M-x") 'eval-region)
