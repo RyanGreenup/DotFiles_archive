@@ -5,6 +5,7 @@
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (evil-define-key 'normal 'global (kbd "<leader>ff") 'helm-find-files) ; Use helm
+(setq helm-swoop-pre-input-function (lambda () ""))
 (setq helm-follow-mode-persistent t)
 (evil-define-key 'normal 'global (kbd "<leader>fF") 'my/helm-find-file-recursively) 
 (evil-define-key 'normal 'global (kbd "<leader>fr") 'helm-recentf) ;; use helm
