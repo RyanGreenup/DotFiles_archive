@@ -124,13 +124,23 @@
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)
 (global-hl-todo-mode 1)
+;;;;; YaSnippet
+(straight-use-package 'yasnippet)
+(straight-use-package 'ivy-yasnippet)
+(straight-use-package 'yasnippet-snippets)
+;; TODO look at auto expansion of snippets
+;; https://github.com/joaotavora/yasnippet/issues/998
+(yas-global-mode 1)
 ;;;;; Company Mode
 (straight-use-package 'company)
 (global-set-key (kbd "C-SPC") 'company-complete)
-(global-set-key (kbd "C-S-SPC") 'company-yasnippet)
+(global-set-key (kbd "C-S-SPC") 'ivy-yasnippet)
+;;;;; Company Mode
+(straight-use-package 'company)
+(global-set-key (kbd "C-SPC") 'company-complete)
 (global-set-key (kbd "C-c s") 'company-yasnippet) 
-(setq company-tooltip-idle-delay 0)              ;; This can cause slow downs
-(setq company-idle-delay 0)                      ;; on a lean emacs it's really nice though
+(setq company-tooltip-idle-delay 1)              ;; This can cause slow downs
+(setq company-idle-delay 1)                      ;; on a lean emacs it's really nice though
 (add-hook 'after-init-hook 'global-company-mode)
 ;;;;;; Fuzzy
 (straight-use-package 'company-fuzzy)
