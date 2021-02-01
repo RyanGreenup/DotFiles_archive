@@ -173,6 +173,18 @@
 
   )
 )
+;;; Org Roam Server
+(setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8080
+        org-roam-server-authenticate nil
+        org-roam-server-export-inline-images t
+        org-roam-server-serve-files nil
+        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+        org-roam-server-network-poll t
+        org-roam-server-network-arrows nil
+        org-roam-server-network-label-truncate t
+        org-roam-server-network-label-truncate-length 60
+        org-roam-server-network-label-wrap-length 20)
 ;;; After loading org
 ;; Seemingly this can only be done when using Doom with (after!...)
 ;; I should look at how that was done and review my doom config
@@ -282,13 +294,5 @@
 ;;; Misc Tools
 ;;;; Open all org-agenda files
 (defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
-;;; Hooks
-;; Use Superstar Mode for Leading Stars
-;; SLOW ; Superstar mode is slightly slower
-(add-hook 'org-mode-hook (lambda ()
-			   (org-superstar-mode 1)
-             		   (texfrag-mode 1)
-			   ))
-
 ;;; init-org.el ends here
 (provide 'init-org)

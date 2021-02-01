@@ -65,11 +65,24 @@
 ;;;; Configure LaTeX Mode
 (require 'init-latex)
 ;;;; Configure Org Mode
-    ;; This contributes to a significant amount of startup time
-    (require 'init-org)
-    (require 'init-org-publish)
-    (require 'init-org-super-agenda) 
-    (require 'init-texfrag)
+;; This contributes to a significant amount of startup time
+(require 'eval-after-load-org)
+
+(push '(require 'init-org)               after-org-functions)
+(push '(require 'init-org-super-agenda)  after-org-functions)
+(push '(require 'init-org-publish)       after-org-functions)
+(push '(require 'init-texfrag)           after-org-functions)
+(push '(org-roam-mode 1)                 after-org-functions)
+;; Org ref must be (require)d see README
+(push '(require 'org-ref)                after-org-functions)
+;; Helm mode is very convenient with org-roam
+;; (push (lambda () (helm-mode 1))                     after-org-functions)
+
+;; TODO Where do I put these then
+(add-hook 'org-mode-hook (lambda ()
+			   (org-superstar-mode 1)
+             		   (texfrag-mode 1)
+			   ))
 
 
 ;;;; Programming

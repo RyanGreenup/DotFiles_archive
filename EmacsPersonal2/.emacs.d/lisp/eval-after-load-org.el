@@ -21,7 +21,11 @@ This list is aced upon by the after-org-function")
 
 
 ;;;; Function to evaluate each function in list
-(push (lambda () (message "started evaluating after-org-functions")) after-org-functions)
+(push #'initial-message after-org-functions)
+(defun initial-message ()
+  (message "started evaluating after-org-functions")
+  )
+  
 (defun after-org (list-of-functions)
 "A function that will run once after org mode is started.
 This function utilises an after 'org-mode' hook accepts a

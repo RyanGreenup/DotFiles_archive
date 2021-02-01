@@ -43,8 +43,6 @@
 (use-package org-roam
       :straight t
       :ensure t
-      :hook
-      (after-init . org-roam-mode)
       :custom
       (org-roam-directory "~/Notes/Org/roam/")
       :bind (:map org-roam-mode-map
@@ -58,21 +56,8 @@
 				;; use (require 'org-ref) somewhere
 				;; (called in init-org)
 ;;;;; Org Roam Server
-(use-package org-roam-server
-  :straight t
-  :ensure t
-  :config
-  (setq org-roam-server-host "127.0.0.1"
-        org-roam-server-port 8080
-        org-roam-server-authenticate nil
-        org-roam-server-export-inline-images t
-        org-roam-server-serve-files nil
-        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
-        org-roam-server-network-poll t
-        org-roam-server-network-arrows nil
-        org-roam-server-network-label-truncate t
-        org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20))
+(straight-use-package 'org-roam-server)
+
 ;;;; Emacs Application Framework
 ;;;; Interface
 ;;;;; Scrolling
@@ -80,7 +65,7 @@
 ;;;;; Helm
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
-;; (run-with-idle-timer 1 nil (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time"))) 
+;; (run-with-idle-timer 1 nil (lambda () (message "Enabled Helm Mode after Idle Time"))) 
 ;; (add-hook 'after-init-hook (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time")))
 ;;  ;; SLOW This takues 0.2 sec, 
 
@@ -163,7 +148,7 @@
 			       (helm-mode -1)
 			       )
 			     )
-	  )
+	  )      ;; helm-mode breaks ess-r so disable it
 ;; (add-hook 'prog-mode-hook 'eglot-ensure)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'prog-mode-hook 'outshine-mode)
