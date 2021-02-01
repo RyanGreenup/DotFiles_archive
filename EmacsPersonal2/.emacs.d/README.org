@@ -1,5 +1,9 @@
 #+TITLE: My Emacs Config
 
+What should I do with hooks like super star mode?
+Evaluating the babel languages is easiest inside the init-org though.
+
+
 * Design Decisions
 ** Package Manager
 I was considering:
