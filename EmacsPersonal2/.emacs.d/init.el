@@ -65,12 +65,7 @@
 ;;;; Configure LaTeX Mode
 (require 'init-latex)
 ;;;; Configure Org Mode
-    ;; This contributes to a significant amount of startup time
-    (require 'init-org)
-    (require 'init-org-publish)
-    (require 'init-org-super-agenda) 
-    (require 'init-texfrag)
-
+(require 'init-org)
 
 ;;;; Programming
 (require 'init-ess)
@@ -112,28 +107,25 @@
         (menu-bar-mode -1)                      ;; I like the Menus actually so toggle with <SPC t SPC>
     )
     )
-;;;;; 2 Second
+;;;;; 3 Second
 ;; Load Org mode so it's ready after some delay
 
-(defvar init-org-idle-load 2)
+(defvar init-org-idle-load 3)
 (run-with-idle-timer init-org-idle-load nil
 		     (lambda ()
 		       (message "\n---\nIdle Timer of %s seconds:\n\t Loading Org\n---\n" init-org-idle-load)
-		       ;; Load Index and Todo
+		       ;; Load Org-Mode + Index and Todo
 		       (find-file-noselect "~/Notes/Org/index.org")
 		       (find-file-noselect "~/Notes/Org/agenda/todo.org")
-		       (require 'org-ref)
-		       (org-reload)
 		       ;; Build Agenda
 			 (org-agenda-list)
 			 (delete-window)
 		       )
 		     )
-;;;;; 3 Second
-
 
 ;;;;; Modeline 
 (require 'init-telephone-line)        ;; Loads Quick and feels fine
+
 ;; (require 'init-spacemacs-modeline) ;; takes 1.2 seconds at startup
 ;; (require 'init-doom-modeline)      ;; FIXME The doom modeline cripples
 				      ;; the performance of org-mode

@@ -1,5 +1,13 @@
 #+TITLE: My Emacs Config
 
+What should I do with hooks like super star mode?
+Evaluating the babel languages is easiest inside the init-org though.
+
+Implement a similar thing with hydra and programming modes (for company / ya snippet)
+
+(profile with esup)
+
+
 * Design Decisions
 ** Package Manager
 I was considering:
