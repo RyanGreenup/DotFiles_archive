@@ -53,7 +53,7 @@
 (defun init-org-fun ()
   (interactive)
   (when (not org-startedQ) 
-      (setq org-started t)
+      (setq org-startedQ t)
       (message "Org mode has been triggered, running all the after-org stuff")
       (require 'init-org)
       (require 'org-ref)
