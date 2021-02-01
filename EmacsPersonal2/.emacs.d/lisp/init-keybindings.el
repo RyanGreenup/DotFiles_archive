@@ -18,6 +18,7 @@
 ;;;; General and Global
 (global-set-key (kbd "M-p")  'move-line-up)
 (global-set-key (kbd "M-n")  'move-line-down)
+(global-set-key (kbd "<f9>")  'hydra-window-menu/body)
 
 ;;;;; Org Agenda
 (global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))
