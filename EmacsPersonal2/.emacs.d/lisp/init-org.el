@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+;;;; General
+;;;;; User Info
 (setq user-full-name "Ryan Greenup"
       user-mail-address "17805315@student.westernsydney.edu.au")
 (setq org-startup-folded "overview")
@@ -10,10 +12,41 @@
 (setq org-agenda-skip-deadline-if-done t)
 (setq org-tags-column 80)
 (setq org-agenda-files '("~/Notes/Org/agenda/"))
-;;;;; Hide Finished Agenda Items
+;; Hide Finished Agenda Items
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
 
+
+;;;;; Appearance
+(setq org-display-inline-images t)
+(setq org-redisplay-inline-images t)
+(setq org-startup-with-inline-images "inlineimages")
+(setq org-hide-emphasis-markers t)
+(setq org-confirm-elisp-link-function nil)
+(setq org-link-frame-setup '((file . find-file)))
+
+;;;;; Org Download
+(setq org-download-method 'directory)
+(setq-default org-download-image-dir "./media/")
+;;; Keybindings
+;;;; Agenda
+;; Move up and Down in Agenda
+;; In the agenda evil doesn't work, because there are already other
+;; keybindings like F for follow mode, map j/k as a compromise
+(add-hook 'org-agenda-mode-hook (lambda ()
+(define-key org-agenda-mode-map "j" 'evil-next-line)
+(define-key org-agenda-mode-map "k" 'evil-previous-line)
+(define-key org-agenda-mode-map (kbd "M-SPC" ) 'hydra-org-agenda/body)
+))
+
+
+
+;;;  Styling
+    (with-eval-after-load 'org
+    (setq org-hidden-keywords '(title))
+;; set basic title font
+    (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+    )
 
 ;;; Periodically When Idle
 ;; Maybe Rebuild Org-Agenda?
@@ -185,54 +218,14 @@
         org-roam-server-network-label-truncate t
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20)
-;;; After loading org
-;; Seemingly this can only be done when using Doom with (after!...)
-;; I should look at how that was done and review my doom config
-
-;;;;; Active Babel languagevs
-(org-babel-do-load-languages
-'org-babel-load-languages
-'(  (R           . t)
-    (latex       . t)
-    (python      . t)
-    ;; (julia       . t)
-    ;; (mongo       . t) ;; TODO Should I set this up?
-    (sqlite      . t)
-    (plantuml    . t)
-    (dot         . t)
-    (gnuplot     . t)
-    (asymptote   . t)
-    (java        . t)
-    ;; (javascript  . t) ;; TODO
-    (sed         . t)
-    (shell       . t)
-    ;; (mathematica . t)
-    (emacs-lisp  . t)))
-;;;;;; Don't Ask
-(setq org-confirm-babel-evaluate nil)
-;; (load "~/.emacs.d/straight/repos/org/contrib/lisp/ob-julia.el") ;; HACK symlinked to straight/org/build
-;;;;;; Set up Plant UML
-(setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
-(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
-
-
-
-;;;; Org Download
-(setq org-download-method 'directory)
-(setq-default org-download-image-dir "./media/")
-;;;; Appearance
-(setq org-display-inline-images t)
-(setq org-redisplay-inline-images t)
-(setq org-startup-with-inline-images "inlineimages")
-(setq org-hide-emphasis-markers t)
-(setq org-confirm-elisp-link-function nil)
-(setq org-link-frame-setup '((file . find-file)))
-
-;;;; Orb Babel Languages
-;;;;  Styling
-(setq org-hidden-keywords '(title))
-;; set basic title font
-(set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+;;; Misc Tools
+;;;; Open all org-agenda files
+(defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
+;;; Hooks 
+(add-hook 'org-mode-hook (lambda ()
+			   (org-superstar-mode 1)
+             		   (texfrag-mode 1)
+			   ))
 ;;;;; Prettify Buffer
 (add-hook 'org-mode-hook (lambda ()
    "Beautify Org Checkbox Symbol"
@@ -274,25 +267,77 @@
    (push '("eqref:"      .   "⅀") prettify-symbols-alist)
    (prettify-symbols-mode)))
 
-;;;; Keybindings
-;;;;; Agenda
-;; Move up and Down in Agenda
-;; In the agenda evil doesn't work, because there are already other
-;; keybindings like F for follow mode, map j/k as a compromise
-(add-hook 'org-agenda-mode-hook (lambda ()
-(define-key org-agenda-mode-map "j" 'evil-next-line)
-(define-key org-agenda-mode-map "k" 'evil-previous-line)
-(define-key org-agenda-mode-map (kbd "M-SPC" ) 'hydra-org-agenda/body)
-))
+;;; After loading org
+;; Seemingly this can only be done when using Doom with (after!...)
+;; I should look at how that was done and review my doom config
+;;;; Beginning
+(add-hook 'org-mode-hook  #'after-org)
+(defun after-org ()
+"A function that will run once after org mode is started.
+This function is called by an after 'org-mode' hook and
+removes that hook after running. 
+
+The idea is to delay an action until after 'org-mode' has been
+started, in order to reduce startup times.
+
+Ideally this function should also be run after an idle timer as well."
+    (message "started evaluating after-org-functions")
+    (remove-hook 'org-mode-hook  #'after-org)  ;; Remove hook so it only runs once
+    ;; Things to evaluate after org go here↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+
+
+
+;;;;; Load Misc Packages
+    (require 'init-org-super-agenda)
+    (require 'init-org-publish)
+    (require 'init-texfrag)
+    (require 'org-ref)  ;; Org-Ref MUST be required, see README
+    (org-roam-mode 1)
+    (helm-mode 1) ;; Helm Mode is very convenient with org-roam, otherwise
+		;; it is not needed though. it also breakes ess.
+
+
+;;;;; Active Babel languagevs
+    (org-babel-do-load-languages
+	    'org-babel-load-languages
+	    '(  (R           . t)
+		(latex       . t)
+		(python      . t)
+		;; (julia       . t)
+		;; (mongo       . t) ;; TODO Should I set this up?
+		(sqlite      . t)
+		(plantuml    . t)
+		(dot         . t)
+		(gnuplot     . t)
+		(asymptote   . t)
+		(java        . t)
+		;; (javascript  . t) ;; TODO
+		(sed         . t)
+		(shell       . t)
+		;; (mathematica . t)
+		(emacs-lisp  . t)))
+;;;;;; Don't Ask
+    (setq org-confirm-babel-evaluate nil)
+    ;; (load "~/.emacs.d/straight/repos/org/contrib/lisp/ob-julia.el") ;; HACK symlinked to straight/org/build
+;;;;;; Set up Plant UML
+    (setq org-plantuml-jar-path (expand-file-name "/bin/plantuml.jar"))
+    (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 
 
 
 
 
-;;;; End After Loading Org
 
-;;; Misc Tools
-;;;; Open all org-agenda files
-(defun open-all-org-agenda-files () (interactive) (let ((files (org-agenda-files))) (mapcar (lambda (x) (find-file x)) files)))
+
+
+
+
+
+      (message "Finished Loading after-org functions")
+ )
+;;;; Ended
+
+
 ;;; init-org.el ends here
 (provide 'init-org)

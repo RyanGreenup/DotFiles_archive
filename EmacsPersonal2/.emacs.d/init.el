@@ -65,25 +65,7 @@
 ;;;; Configure LaTeX Mode
 (require 'init-latex)
 ;;;; Configure Org Mode
-;; This contributes to a significant amount of startup time
-(require 'eval-after-load-org)
-
-(push '(require 'init-org)               after-org-functions)
-(push '(require 'init-org-super-agenda)  after-org-functions)
-(push '(require 'init-org-publish)       after-org-functions)
-(push '(require 'init-texfrag)           after-org-functions)
-(push '(org-roam-mode 1)                 after-org-functions)
-;; Org ref must be (require)d see README
-(push '(require 'org-ref)                after-org-functions)
-;; Helm mode is very convenient with org-roam
-;; (push (lambda () (helm-mode 1))                     after-org-functions)
-
-;; TODO Where do I put these then
-(add-hook 'org-mode-hook (lambda ()
-			   (org-superstar-mode 1)
-             		   (texfrag-mode 1)
-			   ))
-
+(require 'init-org)
 
 ;;;; Programming
 (require 'init-ess)
@@ -125,28 +107,25 @@
         (menu-bar-mode -1)                      ;; I like the Menus actually so toggle with <SPC t SPC>
     )
     )
-;;;;; 2 Second
+;;;;; 3 Second
 ;; Load Org mode so it's ready after some delay
 
-(defvar init-org-idle-load 2)
+(defvar init-org-idle-load 3)
 (run-with-idle-timer init-org-idle-load nil
 		     (lambda ()
 		       (message "\n---\nIdle Timer of %s seconds:\n\t Loading Org\n---\n" init-org-idle-load)
-		       ;; Load Index and Todo
+		       ;; Load Org-Mode + Index and Todo
 		       (find-file-noselect "~/Notes/Org/index.org")
 		       (find-file-noselect "~/Notes/Org/agenda/todo.org")
-		       (require 'org-ref)
-		       (org-reload)
 		       ;; Build Agenda
 			 (org-agenda-list)
 			 (delete-window)
 		       )
 		     )
-;;;;; 3 Second
-
 
 ;;;;; Modeline 
 (require 'init-telephone-line)        ;; Loads Quick and feels fine
+
 ;; (require 'init-spacemacs-modeline) ;; takes 1.2 seconds at startup
 ;; (require 'init-doom-modeline)      ;; FIXME The doom modeline cripples
 				      ;; the performance of org-mode
