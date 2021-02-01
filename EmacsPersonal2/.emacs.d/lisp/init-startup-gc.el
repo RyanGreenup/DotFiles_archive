@@ -126,4 +126,5 @@
 
 
 
+(provide 'init-startup-gc)
 ;;; init-startup-gc.el ends here
