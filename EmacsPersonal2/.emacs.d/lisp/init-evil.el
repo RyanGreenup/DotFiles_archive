@@ -68,6 +68,9 @@
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>/") 'helm-rg)
 (evil-define-key 'normal 'global (kbd "<leader>iu") 'helm-unicode)
+(evil-define-key 'normal 'global (kbd "<leader>rhh") 'helm-org-in-buffer-headings)
+(evil-define-key 'normal 'global (kbd "<leader>rha") 'helm-org-agenda-files-headings)
+
 
 ;; Evil Jump
 (evil-define-key 'normal 'global (kbd "gss") 'avy-goto-char-2)
