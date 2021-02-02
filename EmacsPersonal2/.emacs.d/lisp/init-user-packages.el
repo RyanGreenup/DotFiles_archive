@@ -78,9 +78,9 @@
 (straight-use-package 'helm-unicode)
 
 ;;;;; Ivy
-;; (straight-use-package 'ivy)
-;; (straight-use-package 'counsel)
-;; (straight-use-package 'swiper)
+(straight-use-package 'ivy)
+(straight-use-package 'counsel)
+(straight-use-package 'swiper)
 
 ;;;;; Pop Win
 (straight-use-package 'popwin)

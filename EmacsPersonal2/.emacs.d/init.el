@@ -54,8 +54,8 @@
     (winner-mode 1) 
 
 ;;;;;; Configure Helm
-    (require 'init-helm)
-    ;; (require 'init-ivy)
+    ;; (require 'init-helm)
+    (require 'init-ivy)
 
 ;;;;;; Popup Scratch Buffer
     (require 'init-popup-scratch)
