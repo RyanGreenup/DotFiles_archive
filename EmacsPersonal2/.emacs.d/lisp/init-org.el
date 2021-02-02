@@ -15,7 +15,12 @@
 ;; Hide Finished Agenda Items
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
-
+;;;;; Org Capture
+(setq org-capture-templates
+      '(("t" "Task" entry (file+headline "~/Notes/Org/agenda/todo.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/Notes/Org/agenda/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;;;;; Appearance
 (setq org-display-inline-images t)
