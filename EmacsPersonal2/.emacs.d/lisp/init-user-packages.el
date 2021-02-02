@@ -112,12 +112,7 @@
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
 (straight-use-package 'git-gutter)
-(add-hook 'after-init-hook
-	  (lambda ()
-		(global-git-gutter-mode +1)
-	    )
-	  )
-
+(global-git-gutter-mode +1)
 
 ;;;; Programming
 (straight-use-package 'ess)
@@ -138,7 +133,7 @@
 (straight-use-package 'company)
 (setq company-tooltip-idle-delay 1)              ;; This can cause slow downs
 (setq company-idle-delay 1)                      ;; on a lean emacs it's really nice though
-(add-hook 'after-init-hook 'global-company-mode)
+(global-company-mode)
 ;;;;;; Fuzzy
 (straight-use-package 'company-fuzzy)
 (straight-use-package 'flx)
@@ -201,7 +196,6 @@
 
 ;;; Golden Ratio Mode
 (straight-use-package 'golden-ratio)
-(add-hook 'after-init-hook (lambda ()
 			     (golden-ratio-mode 1)			;; Enable to set commands
 			     (setq golden-ratio-extra-commands
 				    (append golden-ratio-extra-commands
@@ -215,7 +209,6 @@
 						select-window-4
 						select-window-5)))	;; Set to work with Evil
 			     (setq golden-ratio-mode nil)		;; Disable because it's annoying
-			     ))
 
 
 (provide 'init-user-packages)
