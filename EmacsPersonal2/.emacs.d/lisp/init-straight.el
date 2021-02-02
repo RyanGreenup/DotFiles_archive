@@ -2,7 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Set up straight
+;;; Configure the modification check
+;; See https://github.com/raxod502/straight.el/issues/373
+;;     https://github.com/raxod502/straight.el/issues/41
+;; By default straight uses find to go through for changes
+;; 'live is a before-save-hook that is faster at init, if it fucks up
+;; run 'straight-rebuild-package'.
+(setq straight-check-for-modifications 'live)  ;; this is a before-save-hook
+;;; Set up straight
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
