@@ -64,6 +64,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>w=") 'balance-windows)
 (evil-define-key 'normal 'global (kbd "<leader>`") 'pop-vterm)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'pop-scratch)
+(evil-define-key 'normal 'global (kbd "<leader>X") 'org-capture)
 (evil-define-key 'normal 'global (kbd "<leader>q") 'popwin:close-popup-window)
 (evil-define-key 'normal 'global (kbd "zn") 'doom/toggle-narrow-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>/") 'helm-rg)
