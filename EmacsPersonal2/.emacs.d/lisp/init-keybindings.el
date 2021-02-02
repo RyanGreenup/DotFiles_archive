@@ -18,6 +18,11 @@
 ;;;; General and Global
 (global-set-key (kbd "M-p")  'move-line-up)
 (global-set-key (kbd "M-n")  'move-line-down)
+;;;;; Adjust Fonts
+(global-set-key (kbd "C-M-=") 'doom/increase-font-size)
+(global-set-key (kbd "C-M-<mouse-4>") 'doom/increase-font-size)
+(global-set-key (kbd "C-M-<mouse-5>") 'doom/decrease-font-size)
+(global-set-key (kbd "C-M--") 'doom/decrease-font-size)
 
 ;;;;; Org Agenda
 (global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))

@@ -62,6 +62,8 @@
 
 ;;;;;; Open in External program
 (require 'init-open-in-external-program)
+;;;;;; Adjust font
+(require 'init-fonts)
 ;;;; Configure LaTeX Mode
 (require 'init-latex)
 ;;;; Configure Org Mode
