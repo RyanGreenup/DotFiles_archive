@@ -114,6 +114,13 @@
 ;;;; Git
 (straight-use-package 'magit)
 (straight-use-package 'git-timemachine)
+;; @see https://bitbucket.org/lyro/evil/issue/511/let-certain-minor-modes-key-bindings
+;; https://emacs.stackexchange.com/a/10588
+(eval-after-load 'git-timemachine
+  '(progn
+     (evil-make-overriding-map git-timemachine-mode-map 'normal)
+     ;; force update evil keymaps after git-timemachine-mode loaded
+     (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))
 (straight-use-package 'git-gutter)
 (global-git-gutter-mode +1)
 
