@@ -71,6 +71,9 @@
 
 (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
+(straight-use-package 'helm-org)
+(straight-use-package 'helm-org-ql)
+(straight-use-package 'helm-org-rifle)
 (straight-use-package 'helm-rg)
 (straight-use-package 'helm-unicode)
 
