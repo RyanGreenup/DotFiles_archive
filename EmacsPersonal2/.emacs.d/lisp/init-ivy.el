@@ -10,7 +10,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>/") 'counsel-rg) ;; use ivy
 (evil-define-key 'normal 'global (kbd "<leader>fd") 'counsel-fd) ;; use ivy
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper) ;; use ivy
-(global-set-key (kbd "M-x") 'counsel)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 
 
 (setq helm-swoop-pre-input-function (lambda () ""))
