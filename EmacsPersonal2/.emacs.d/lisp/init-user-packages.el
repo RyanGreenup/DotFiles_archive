@@ -60,6 +60,9 @@
 
 ;;;; Emacs Application Framework
 ;;;; Interface
+;;;; Macros
+(straight-use-package 'elmacro)
+(elmacro-mode 1)
 ;;;;; Scrolling
 (straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
 ;;;;; Helm
