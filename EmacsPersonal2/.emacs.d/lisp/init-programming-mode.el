@@ -16,13 +16,13 @@
     (setq company-idle-delay 0)                      ;; on a lean emacs it's really nice though
     (global-company-mode 1)
 
-    (global-company-fuzzy-mode 1)
+    ;; (global-company-fuzzy-mode 1)
 ;;;;; Fuzzy
 ;; NOTE This breaks commpany-yasnippet, remove all company-fuzzy to
 ;;      restore that behaviour
-    (setq company-fuzzy-sorting-backend 'flx)
-    (setq company-require-match nil) ;; this needs to be disabled for fuzzy to make sense
-    (global-company-fuzzy-mode 1)
+    ;; (setq company-fuzzy-sorting-backend 'flx)
+    ;; (setq company-require-match nil) ;; this needs to be disabled for fuzzy to make sense
+    ;; (global-company-fuzzy-mode 1)
 ;;;; YaSnippet
     (defun ivy-yasnippet-and-load ()
     (interactive)

@@ -145,13 +145,15 @@
 (setq company-idle-delay 1)                      ;; on a lean emacs it's really nice though
 (global-company-mode)
 ;;;;;; Fuzzy
-(straight-use-package 'company-fuzzy)
-(straight-use-package 'flx)
-(setq company-fuzzy-sorting-backend 'flx)
-(setq company-require-match nil) ;; this needs to be disabled for fuzzy to make sense
-(global-company-fuzzy-mode 1)
+;; (straight-use-package 'company-fuzzy)
+;; (straight-use-package 'flx)
+;; (setq company-fuzzy-sorting-backend 'flx)
+;; (setq company-require-match nil) ;; this needs to be disabled for fuzzy to make sense
+;; (global-company-fuzzy-mode 1)
 ;;;;; eglot
 (straight-use-package 'eglot)
+(straight-use-package 'c-eldoc)
+
 (add-hook 'python-mode-hook 'eglot-ensure)
 (add-hook 'julia-mode-hook '(lambda () (eglot-jl-init) (eglot-ensure)))
 (add-hook 'ess-r-mode-hook (lambda ()
