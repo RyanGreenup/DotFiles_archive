@@ -308,6 +308,7 @@ Ideally this function should also be run after an idle timer as well."
 	    'org-babel-load-languages
 	    '(  (R           . t)
 		(latex       . t)
+		(C           . t)
 		(python      . t)
 		;; (julia       . t)
 		;; (mongo       . t) ;; TODO Should I set this up?
