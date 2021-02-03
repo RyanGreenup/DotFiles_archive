@@ -121,6 +121,7 @@
 (global-git-gutter-mode +1)
 
 ;;;; Programming
+(straight-use-package 'elmacro)
 (straight-use-package 'ess)
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)

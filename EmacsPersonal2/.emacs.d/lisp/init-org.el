@@ -28,7 +28,8 @@
 (setq org-startup-with-inline-images "inlineimages")
 (setq org-hide-emphasis-markers t)
 (setq org-confirm-elisp-link-function nil)
-(setq org-link-frame-setup '((file . find-file)))
+;; Open in new frame
+(setq org-link-frame-setup '((file . find-file-other-window))) ;; I like having extra frames, just cill them with C-w o.
 
 ;;;;; Org Download
 (setq org-download-method 'directory)

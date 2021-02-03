@@ -50,6 +50,11 @@
 
 
 (provide 'init-programming-mode)
+;;; Tabs and spaces
+;; I think tabs make sense but whatever PEP 8 wins
+(add-hook 'python-mode-hook (lambda ()
+			      (setq indent-tabs-mode nil)
+			      ))
 ;;; init-programming-mode.el ends here
 
 

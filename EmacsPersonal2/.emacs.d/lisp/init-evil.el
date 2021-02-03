@@ -13,6 +13,8 @@
 (evil-set-leader 'insert (kbd "M-["))
 (evil-set-leader 'visual (kbd "M-SPC"))
 (evil-set-leader 'replace (kbd "M-SPC"))
+(evil-define-key 'normal 'global (kbd "<leader>oF") 'make-frame)
+(evil-define-key 'normal 'global (kbd "<leader>ot") '(find-file "~/Notes/Org/agenda/todo.org"))
 (evil-define-key 'normal 'global (kbd "<leader>fs") 'save-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>fz") 'fzf) 
 (evil-define-key 'normal 'global (kbd "<leader>wv") 'evil-window-vsplit)
