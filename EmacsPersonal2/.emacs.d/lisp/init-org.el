@@ -230,6 +230,8 @@
 (add-hook 'org-mode-hook (lambda ()
 			   (org-superstar-mode 1)
              		   (texfrag-mode 1)
+			   (auto-fill-mode 1)
+			   (flyspell-mode 1)
 			   ))
 ;;;;; Prettify Buffer
 (add-hook 'org-mode-hook (lambda ()
