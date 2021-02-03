@@ -125,6 +125,10 @@
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)
 (global-hl-todo-mode 1)
+;;;;; Neotree
+(straight-use-package 'neotree)
+(straight-use-package 'ranger)
+(straight-use-package 'all-the-icons)
 ;;;;; YaSnippet
 (straight-use-package 'yasnippet)
 (straight-use-package 'ivy-yasnippet)
