@@ -24,11 +24,24 @@
 (global-set-key (kbd "C-M-<mouse-5>") 'doom/decrease-font-size)
 (global-set-key (kbd "C-M--") 'doom/decrease-font-size)
 
+(add-hook 'org-mode-hook
+  (lambda ()
+    (local-set-key (kbd "C-M-<return>") 'org-copy-src-block)
+  )
+)
+
 ;;;;; Org Agenda
 (global-set-key (kbd "C-c a") (lambda () (interactive) (org-agenda) (evil-emacs-state)))
 (global-set-key (kbd "C-c A") '(lambda () (interactive) (my/org-super-agenda) (evil-emacs-state)))
 (global-set-key (kbd "C-c v") 'my-open-current-file-in-vim)
-;;;;; Programming
+;;;; Programming
+;;;; C
+(add-hook 'c-mode-hook
+  (lambda ()
+    (local-set-key (kbd "C-S-<return>") (lambda () (interactive) (compile "make -k run" nil)))
+  )
+)
+;;;; R
 (with-eval-after-load 'flymake
   (define-key flymake-mode-map (kbd "M-n") 'flymake-goto-next-error)
   (define-key flymake-mode-map (kbd "M-p") 'flymake-goto-prev-error)
@@ -92,7 +105,7 @@
   )
 
 
-;;;;; Markdown Mode
+;;;; Markdown Mode
 (add-hook 'markdown-mode-hook
   (lambda ()
 ;;;;;; Change Key Bindings for links
@@ -109,6 +122,8 @@
 
 
 
+
+;;;; Programming
 
 ;;; Helper Functions
 
