@@ -20,6 +20,10 @@ R-lintr # https://aur.archlinux.org/packages/r-lintr/
 # Julia
 julia -e 'import Pkg; Pkg.add("EmacsTools")'
 
+# C
+ccls
+clangd # optional if ccls available
+jsonrpc-glib # for formatting the buffer
 
 # org export html
 monolith

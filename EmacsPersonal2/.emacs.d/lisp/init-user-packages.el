@@ -155,6 +155,15 @@
 (straight-use-package 'eglot)
 (straight-use-package 'c-eldoc)
 
+
+(add-hook 'c-mode-hook (lambda ()
+	    (defun project-root (project)
+	      (car (project-roots project))) ;; HACK see [[https://github.com/hlissner/doom-emacs/issues/3269]]
+	      (eglot-ensure) (when (require 'helm nil 'noerror)
+	      (helm-mode -1)
+	      )
+	    )
+	  )
 (add-hook 'python-mode-hook 'eglot-ensure)
 (add-hook 'julia-mode-hook '(lambda () (eglot-jl-init) (eglot-ensure)))
 (add-hook 'ess-r-mode-hook (lambda ()
