@@ -157,8 +157,6 @@
 
 
 (add-hook 'c-mode-hook (lambda ()
-	    (defun project-root (project)
-	      (car (project-roots project))) ;; HACK see [[https://github.com/hlissner/doom-emacs/issues/3269]]
 	      (eglot-ensure) (when (require 'helm nil 'noerror)
 	      (helm-mode -1)
 	      )
