@@ -78,6 +78,8 @@
 ;; Evil Jump
 (evil-define-key 'normal 'global (kbd "gss") 'avy-goto-char-2)
 (evil-define-key 'normal 'global (kbd "gsS") 'avy-goto-word-1)
+(evil-define-key 'normal 'global (kbd "C-o") 'evil-jump-backward)
+(evil-define-key 'normal 'global (kbd "C-i") 'evil-jump-forward)
 
 ;;; Evil Escape
 (setq-default evil-escape-key-sequence (kbd "jk"))
