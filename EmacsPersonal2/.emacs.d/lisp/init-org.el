@@ -12,6 +12,8 @@
 (setq org-agenda-skip-deadline-if-done t)
 (setq org-tags-column 80)
 (setq org-agenda-files '("~/Notes/Org/agenda/"))
+(setq org-image-actual-width nil)
+
 ;; Hide Finished Agenda Items
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
