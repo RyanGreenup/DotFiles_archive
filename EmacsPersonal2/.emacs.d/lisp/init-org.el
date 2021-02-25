@@ -81,10 +81,11 @@
 
 ; LaTeXMk is more efficient
 ;; Execute either depending on which one you want, and or swap order
+;; 8bit needed for minted
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
       org-latex-pdf-process
-      '("latexmk -f -shell-escape -xelatex -interaction=nonstopmode %F")
+      '("latexmk -f -shell-escape -xelatex -8bit -interaction=nonstopmode %F")
         )
 
 ;; (setq org-latex-listings 'listings
