@@ -137,16 +137,26 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1:Terminal/Emacs"
+set $ws2 "2:Internet"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
+set $ws7 "7:Notes"
+set $ws8 "8:Messaging"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -159,6 +169,18 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+# workspaces from 11-20
+bindsym $mod+Control+1 workspace 11
+bindsym $mod+Control+2 workspace 12
+bindsym $mod+Control+3 workspace 13
+bindsym $mod+Control+4 workspace 14
+bindsym $mod+Control+5 workspace 15
+bindsym $mod+Control+6 workspace 16
+bindsym $mod+Control+7 workspace 17
+bindsym $mod+Control+8 workspace 18
+bindsym $mod+Control+9 workspace 19
+bindsym $mod+Control+0 workspace 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -456,8 +478,8 @@ bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
 ## bindsym XF86AudioPrev exec playerctl previous
 
 
-bindsym $mod+Tab workspace back_and_forth
-bindsym $mod1+Tab workspace back_and_forth
+# bindsym $mod+Tab workspace back_and_forth
+# bindsym $mod1+Tab workspace back_and_forth
 
 # move focused workspace between monitors
   #you can define a binding in your i3 config. Note: windows are called
@@ -466,16 +488,12 @@ bindsym $mod1+Tab workspace back_and_forth
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
-## vim:fdm=expr:fdl=0
-## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
-#
-#
-#
-#
+
+
+
+
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod1+Tab workspace back_and_forth
-
-bindsym $mod+Ctrl+less move workspace to output left
 
 # Adjust brightness
 # echo -e "enter brightness:\n"; read val; xrandr  --output DP-2 --brightness $val --output HDMI-0 --brightness $val --output HDMI-1  --brightness $val
@@ -511,3 +529,6 @@ no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Desktop - Plasma"] kill, floating enable, border none
 exec --no-startup-id feh --bg-scale /usr/share/wallpapers/Next/contents/images/3840x2160.jpg
 # exec_always --no-startup-id picom -bc
+
+## vim:fdm=expr:fdl=0
+## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
