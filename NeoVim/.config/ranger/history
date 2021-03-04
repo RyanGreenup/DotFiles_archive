@@ -1,5 +1,3 @@
-flat 4
-filter .jar
 filter stre
 filter ~
 filter 
@@ -45,6 +43,8 @@ filter .ema
 shell m
 rename EmacsPersonal2
 unmark
-delete
 cd .emacs.d/
 shell mkdir site-lisp
+search om
+delete
+shell zathura (x -o) & disown
