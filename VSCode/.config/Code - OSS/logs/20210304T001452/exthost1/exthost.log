@@ -1,0 +1,42 @@
+[2021-03-04 00:14:54.524] [exthost] [info] extension host started
+[2021-03-04 00:14:54.599] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:markdown"}
+[2021-03-04 00:14:54.599] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/extension-editing/dist/extensionEditingMain
+[2021-03-04 00:14:54.605] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"onLanguage:markdown"}
+[2021-03-04 00:14:54.605] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/markdown-language-features/dist/extension
+[2021-03-04 00:14:54.627] [exthost] [info] ExtensionService#_doActivateExtension shd101wyy.markdown-preview-enhanced {"startup":false,"extensionId":{"value":"shd101wyy.markdown-preview-enhanced","_lower":"shd101wyy.markdown-preview-enhanced"},"activationEvent":"onLanguage:markdown"}
+[2021-03-04 00:14:54.627] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/shd101wyy.markdown-preview-enhanced-0.5.16/out/src/extension
+[2021-03-04 00:14:55.226] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-03-04 00:14:55.226] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/debug-auto-launch/dist/extension
+[2021-03-04 00:14:55.227] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-03-04 00:14:55.227] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/git/dist/main
+[2021-03-04 00:14:55.249] [exthost] [info] ExtensionService#_doActivateExtension kortina.vscode-markdown-notes {"startup":true,"extensionId":{"value":"kortina.vscode-markdown-notes","_lower":"kortina.vscode-markdown-notes"},"activationEvent":"*"}
+[2021-03-04 00:14:55.249] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/kortina.vscode-markdown-notes-0.0.22/out/extension.js
+[2021-03-04 00:14:55.273] [exthost] [info] ExtensionService#_doActivateExtension mhutchie.git-graph {"startup":true,"extensionId":{"value":"mhutchie.git-graph","_lower":"mhutchie.git-graph"},"activationEvent":"*"}
+[2021-03-04 00:14:55.273] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/mhutchie.git-graph-1.28.0/out/extension.js
+[2021-03-04 00:14:55.293] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"extensionId":{"value":"vscodevim.vim","_lower":"vscodevim.vim"},"activationEvent":"*"}
+[2021-03-04 00:14:55.293] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vscodevim.vim-1.18.9/out/extension
+[2021-03-04 00:14:55.407] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-03-04 00:14:55.407] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/github/dist/extension.js
+[2021-03-04 00:14:55.424] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-03-04 00:14:55.425] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/ms-vscode.js-debug/src/extension.js
+[2021-03-04 00:14:55.507] [exthost] [info] eager extensions activated
+[2021-03-04 00:14:55.521] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-03-04 00:14:55.521] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/emmet/dist/node/emmetNodeMain
+[2021-03-04 00:14:55.530] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-03-04 00:14:55.530] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/merge-conflict/dist/mergeConflictMain
+[2021-03-04 00:14:55.533] [exthost] [info] ExtensionService#_doActivateExtension vscode.testing-editor-contributions {"startup":false,"extensionId":{"value":"vscode.testing-editor-contributions","_lower":"vscode.testing-editor-contributions"},"activationEvent":"onStartupFinished"}
+[2021-03-04 00:14:55.533] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/testing-editor-contributions/dist/extension.js
+[2021-03-04 00:14:55.536] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":false,"extensionId":{"value":"eamodio.gitlens","_lower":"eamodio.gitlens"},"activationEvent":"onStartupFinished"}
+[2021-03-04 00:14:55.536] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/eamodio.gitlens-11.2.1/dist/gitlens
+[2021-03-04 00:14:55.573] [exthost] [info] ExtensionService#_doActivateExtension VSpaceCode.whichkey {"startup":false,"extensionId":{"value":"VSpaceCode.vspacecode","_lower":"vspacecode.vspacecode"},"activationEvent":"onStartupFinished"}
+[2021-03-04 00:14:55.573] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vspacecode.whichkey-0.8.4/dist/extension.js
+[2021-03-04 00:14:55.640] [exthost] [info] ExtensionService#_doActivateExtension VSpaceCode.vspacecode {"startup":false,"extensionId":{"value":"VSpaceCode.vspacecode","_lower":"vspacecode.vspacecode"},"activationEvent":"onStartupFinished"}
+[2021-03-04 00:14:55.640] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/ryan/.vscode-oss/extensions/vspacecode.vspacecode-0.9.0/dist/extension.js
+[2021-03-04 00:14:58.911] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:jsonc"}
+[2021-03-04 00:14:58.911] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/configuration-editing/dist/configurationEditingMain
+[2021-03-04 00:14:58.941] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2021-03-04 00:14:58.941] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/json-language-features/client/dist/node/jsonClientMain
+[2021-03-04 00:14:58.969] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2021-03-04 00:14:58.969] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/lib/code/extensions/typescript-language-features/dist/extension
+[2021-03-04 00:16:03.530] [exthost] [info] extension host terminating: parent process 21534 does not exist anymore: kill ESRCH (code: ESRCH) (errno: ESRCH)
+[2021-03-04 00:16:04.557] [exthost] [info] exiting with code 0

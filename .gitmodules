@@ -4,3 +4,12 @@
 [submodule "cadmus"]
 	path = cadmus
 	url = https://github.com/RyanGreenup/cadmus
+[submodule "pw4ever-awesome/awesome-wm-config"]
+	path = pw4ever-awesome/awesome-wm-config
+	url = https://github.com/pw4ever/awesome-wm-config
+[submodule "i3/rofi"]
+	path = i3/rofi
+	url = https://github.com/adi1090x/rofi
+[submodule "i3/.config/i3/rofi"]
+	path = i3/.config/i3/rofi
+	url = https://github.com/adi1090x/rofi

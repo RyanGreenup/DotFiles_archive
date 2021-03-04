@@ -1,0 +1,22 @@
+[2021-03-02 20:30:50.046] [renderer1] [error] ENOENT: no such file or directory, open '/home/ryan/.config/Code - OSS/User/globalStorage/vscodevim.vim/.registers': Error: ENOENT: no such file or directory, open '/home/ryan/.config/Code - OSS/User/globalStorage/vscodevim.vim/.registers'
+[2021-03-02 20:31:08.433] [renderer1] [error] Unknown webview handle:4e4a8a9f-bb96-4cb3-85f5-de0928333fa4: Error: Unknown webview handle:4e4a8a9f-bb96-4cb3-85f5-de0928333fa4
+    at Ys.getWebview (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1559:74866)
+    at Ys.$postMessage (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1559:74119)
+    at h._doInvokeHandler (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1566:9678)
+    at h._invokeHandler (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1566:9370)
+    at h._receiveRequest (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1566:8040)
+    at h._receiveOneMessage (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1566:6842)
+    at file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1566:4970
+    at u.fire (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:55:1836)
+    at a.fire (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:76:16129)
+    at i._receiveMessage (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:76:21379)
+    at file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:76:18273
+    at u.fire (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:55:1836)
+    at c.acceptChunk (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:76:13494)
+    at file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:76:12842
+    at Socket.I (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2653:112473)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at Pipe.onStreamRead (internal/stream_base_commons.js:186:23)

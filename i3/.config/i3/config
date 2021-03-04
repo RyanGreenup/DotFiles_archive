@@ -70,9 +70,14 @@ bindsym Control+mod1+t exec i3-sensible-terminal
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
 # bindsym $mod+d exec --no-startup-id rofi -show drun -lines 10 -eh 2 -width 30 -padding 800 -font "Cantarell 36" -mathing fuzzy -show-icons 
- bindsym $mod+d exec rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons
+ bindsym $mod+d exec rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons -theme Pop-Dark -padding 1600
+ bindsym $mod+space exec rofi -show drun lines 10 -eh 2 -mathing fuzzy -show-icons -theme Pop-Dark -padding 1600
  # bindsym $mod+slash exec rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons -theme-str 'element-icon \{ size: 4ch;\}'
- bindsym $mod+slash exec rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons 
+ bindsym $mod+slash exec rofi -show window lines 10 -eh 2 -mathing fuzzy -show-icons  -theme Pop-Dark
+
+ bindsym $mod+c  exec rofi -show calc -modi calc -no-show-match -no-sort -theme Pop-Dark
+
+
 
 
 
@@ -114,6 +119,8 @@ bindsym $mod+z split horiZontal
 # split in vertical orientation
 bindsym $mod+v split v
 
+bindsym $mod+t split toggle 
+
 # enter fullscreen mode for the focused container
 # bindsym $mod+f fullscreen toggle
 bindsym $mod+m fullscreen toggle
@@ -127,7 +134,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+alt+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -252,7 +259,7 @@ bindsym $mod+r mode "resize"
 
 
 # Remove Window Borders
-for_window [class=".*"] border pixel 0 # generally alright, less ok for emacs
+# for_window [class=".*"] border pixel 1 # generally alright, less ok for emacs
 
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
@@ -408,17 +415,17 @@ mode "$mode_gaps_left" {
 # https://github.com/Airblader/i3/tree/gaps-next
 # delete or uncomment the following lines if you do not have it or do not
 # want it
-gaps inner 2
-gaps outer 2
+gaps inner 20
+gaps outer 20
 for_window [class="^.*"] border pixel 5
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
- bar {
-         status_command i3status
-         height 30    # Disabled in favour or lxqt
- }
-
+ # bar {
+ #         status_command i3status
+ #         height 30    # Disabled in favour or lxqt
+ # }
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # The bar doesn't look nice with a Desktop Environment
 #  The reason for using lxde/lxqt or mate is, essentially, to have xdg-open in a sane way, nice notifications, vol/brightness control
@@ -499,11 +506,12 @@ bindsym $mod1+Tab workspace back_and_forth
 # echo -e "enter brightness:\n"; read val; xrandr  --output DP-2 --brightness $val --output HDMI-0 --brightness $val --output HDMI-1  --brightness $val
 
 # Flip Screen
- bindsym $mod+Next exec xrandr  -o normal
- bindsym $mod+Prior exec xrandr -o inverted
+ bindsym $mod+Next exec xrandr  -o normal # Page up
+ bindsym $mod+Prior exec xrandr -o inverted # Page Down
  bindsym $mod+minus exec xrandr -o left
  bindsym $mod+equal exec xrandr -o right
-
+ # Balance workspace
+bindsym $mod+Shift+equal exec i3_balance_workspace
 
 # Take Screenshot
 bindsym $mod+Print maim --select | xclip -selection clipboard -target image/png
@@ -527,8 +535,9 @@ for_window [class="plasmashell" window_type="notification"] border none, move ri
 no_focus [class="plasmashell" window_type="notification"]
 
 for_window [title="Desktop - Plasma"] kill, floating enable, border none
-exec --no-startup-id feh --bg-scale /usr/share/wallpapers/Next/contents/images/3840x2160.jpg
-# exec_always --no-startup-id picom -bc
+exec --no-startup-id feh --bg-scale ~/.config/i3/kk-Frax-MiniMandel-Blue-4K.jpg
+
+
 
 ## vim:fdm=expr:fdl=0
 ## vim:fde=getline(v\:lnum)=~'^##'?'>'.(matchend(getline(v\:lnum),'##*')-2)\:'='
