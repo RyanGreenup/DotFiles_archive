@@ -123,6 +123,7 @@
 ;;;; Programming
 (straight-use-package 'elmacro)
 (straight-use-package 'ess)
+(straight-use-package 'poly-R)
 (straight-use-package 'hl-todo)
 (straight-use-package 'highlight-indent-guides)
 (global-hl-todo-mode 1)
