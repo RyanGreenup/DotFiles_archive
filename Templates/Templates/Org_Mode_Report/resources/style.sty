@@ -16,7 +16,6 @@
 \usetikzlibrary{lindenmayersystems}
 \RequirePackage[T1]{fontenc}
 %\RequirePackage{extsizes} % More Font Sizes
-\RequirePackage[utf8]{inputenc}
 % \RequirePackage{sectsty} %Need it for underlining Sections, must be loaded after any modifications to sections
 \RequirePackage[normalem]{ulem}  % Needed with sectsty to underline
 \RequirePackage{lmodern}
@@ -235,9 +234,15 @@
 % \RequirePackage{fontspec} %More support for fonts in XeTeX
 % \RequirePackage[Latin,Greek,Emoticons]{ucharclasses}
 
-\usepackage{xltxtra}
-\usepackage{fontspec} %Font package
-\usepackage{xunicode}
+\usepackage{ifxetex}
+\ifxetex
+    \usepackage{xltxtra}
+    \usepackage{fontspec} %Font package
+    \usepackage{xunicode}
+\else
+    \usepackage{tgtermes}
+\fi
+    
 
 %Select fonts
 % \setmainfont[Mapping=tex-text]{Minion Pro}
