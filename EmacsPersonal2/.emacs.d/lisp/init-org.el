@@ -53,6 +53,8 @@
 ;; set basic title font
     (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
     )
+;; Resize Images
+(setq org-image-actual-width nil)
 
 ;;; Periodically When Idle
 ;; Maybe Rebuild Org-Agenda?
