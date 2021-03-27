@@ -82,7 +82,7 @@
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
       org-latex-pdf-process
-      '("latexmk -f -shell-escape -xelatex -interaction=nonstopmode %F")
+      '("latexmk -8bit -f -shell-escape -xelatex -interaction=nonstopmode %F")
         )
 
 ;; (setq org-latex-listings 'listings
@@ -193,7 +193,7 @@
 
 ;;; org-ref
 ;; (require 'org-ref) ;; Must be required, see README
-(setq reftex-default-bibliography '("~/Sync/Studies/Papers/references.bib"))
+(setq reftex-default-bibliography '("~/Sync/Documents/ref.bib"))
 
 ;; see org-ref for use of these variables
 (setq org-ref-bibliography-notes "~/Sync/Studies/Papers/notes.org"
@@ -244,7 +244,7 @@
    (push '("#+BEGIN_SRC" . "✨" ) prettify-symbols-alist)
    (push '("#+end_src" .   "✨" ) prettify-symbols-alist)
    (push '("#+END_SRC" .   "✨" ) prettify-symbols-alist)
-   (push '("#+begin_quote" . "" ) prettify-symbols-alist)
+   (push '("#+begin_quote" . "➲" ) prettify-symbols-alist)
    (push '("#+BEGIN_QUOTE" . "➲ " ) prettify-symbols-alist)
    (push '("#+end_quote" .   "➲" ) prettify-symbols-alist)
    (push '("#+END_QUOTE" .   "➲" ) prettify-symbols-alist)
@@ -306,6 +306,8 @@ Ideally this function should also be run after an idle timer as well."
 		;; it is not needed though. it also breakes ess.
 
 
+;;;;; Use Zathura for Preview
+(add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
 ;;;;; Active Babel languagevs
     (org-babel-do-load-languages
 	    'org-babel-load-languages
