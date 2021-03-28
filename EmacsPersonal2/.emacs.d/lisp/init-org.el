@@ -195,11 +195,11 @@
 
 ;;; org-ref
 ;; (require 'org-ref) ;; Must be required, see README
-(setq reftex-default-bibliography '("~/Sync/Documents/ref.bib"))
+(setq reftex-default-bibliography '("~/Notes/ref.bib"))
 
 ;; see org-ref for use of these variables
 (setq org-ref-bibliography-notes "~/Sync/Studies/Papers/notes.org"
-      org-ref-default-bibliography '("~/Sync/Studies/Papers/references.bib")
+      org-ref-default-bibliography '("~/Notes/ref.bib")
       org-ref-pdf-directory "~/Sync/Studies/Papers/PDFS")
 ;;;;; Hide Citation Syntax
 (add-hook 'org-mode-hook
