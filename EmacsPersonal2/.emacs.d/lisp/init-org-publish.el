@@ -95,6 +95,47 @@
 
         ("Server" :components ("Server_Org" "Server_Images" "Server_Other"))
 
+;;;;; Roam Files
+
+        ("Roam_Org"
+         :base-directory "~/Notes/Org/roam/"
+         :base-extension "org"
+         :index-filename "index.org"
+         :auto-index t
+         :auto-sitemap nil                ; Generate sitemap.org automagically...
+         :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
+         :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
+         :publishing-directory "/srv/http/Org"
+         :publishing-function org-html-publish-to-html
+         :exclude "*jour.*" ;; Regexp
+;;         :include ("./VisualAnalytics.org" "ThinkingAboutData.org"
+ ;;                  "analytic_programming.org" "Social_Web_Analytics.org") ;; regexp ;; everything included otherwise
+         :headline-levels 6
+         :recursive t
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\"
+         href=\"./style.css\" type=\"text/css\"/>"
+         :html-preamble t)
+
+
+        ("Roam_Images"
+         :base-directory "~/Notes/Org/roam"
+         :base-extension "jpg\\|gif\\|png"
+         :exclude ".*ltximg.*" ;; regexp
+         :recursive t
+         :publishing-directory "/srv/http/Org"
+         :publishing-function org-publish-attachment)
+
+        ("Roam_Other"
+         :base-directory "~/Notes/Org/roam"
+         :base-extension "css\\|el\\|pdf\\|rmd\\|r\\|R\\|sh"
+         :exclude "journal.*" ;; Regexp
+         :recursive t
+         :publishing-directory "/srv/http/Org"
+         :publishing-function org-publish-attachment)
+
+        ("Roam" :components ("Roam_Org" "Roam_Images" "Roam_Other"))
 
 ;;;;; Local HTML Files
 
