@@ -66,13 +66,15 @@
 ;;;;; Scrolling
 (straight-use-package 'smooth-scrolling)    ;; Keep Point centred when using up/down on KB
 ;;;;; Helm
+;; I still need a lot of the helm stuff for helm-org-rifle
+;; however helm-mode breaks ess, so use ivy for that
 (straight-use-package 'helm) 
 ;; Import when idle because it takes 0.2 seconds
 ;; (run-with-idle-timer 1 nil (lambda () (message "Enabled Helm Mode after Idle Time"))) 
 ;; (add-hook 'after-init-hook (lambda () (helm-mode 1)(message "Enabled Helm Mode after Idle Time")))
 ;;  ;; SLOW This takues 0.2 sec, 
 
-(straight-use-package 'helm-swoop)
+;; (straight-use-package 'helm-swoop)
 (straight-use-package 'helm-org-rifle)
 (straight-use-package 'helm-org)
 (straight-use-package 'helm-org-ql)
@@ -81,9 +83,8 @@
 (straight-use-package 'helm-unicode)
 
 ;;;;; Ivy
-;; (straight-use-package 'ivy)
-;; (straight-use-package 'counsel)
-;; (straight-use-package 'swiper)
+;; These are handled inside init-ivy.el just to
+;; make my life easier
 
 ;;;;; Pop Win
 (straight-use-package 'popwin)
