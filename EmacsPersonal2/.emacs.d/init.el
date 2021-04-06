@@ -71,6 +71,7 @@
 
 ;;;; Programming
 (require 'init-ess)
+(require 'init-singular)
 (require 'init-programming-mode)
 ;;;; Set default font and apply theme
 	;; Set Theme
