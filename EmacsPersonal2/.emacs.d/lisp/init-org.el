@@ -4,6 +4,7 @@
 
 ;;;; General
 ;;;;; User Info
+
 (setq user-full-name "Ryan Greenup"
       user-mail-address "17805315@student.westernsydney.edu.au")
 (setq org-startup-folded "overview")
@@ -21,7 +22,8 @@
          "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/Notes/Org/agenda/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
-
+;;;;; Spell Check
+(add-to-list 'ispell-skip-region-alist '("#\\+begin_src". "#\\+end_src"))
 ;;;;; Appearance
 (setq org-display-inline-images t)
 (setq org-redisplay-inline-images t)
