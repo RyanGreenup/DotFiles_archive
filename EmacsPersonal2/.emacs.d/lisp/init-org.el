@@ -308,9 +308,6 @@ Ideally this function should also be run after an idle timer as well."
     (require 'init-texfrag)
     (require 'org-ref)  ;; Org-Ref MUST be required, see README
     (org-roam-mode 1)
-    (helm-mode 1) ;; Helm Mode is very convenient with org-roam, otherwise
-		;; it is not needed though. it also breakes ess.
-
 
 ;;;;; Use Zathura for Preview
 (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
