@@ -1,0 +1,41 @@
+#+TITLE: Org Mode Note Template
+:PREAMBLE:
+#+OPTIONS: todo:nil H:9 tags:t tex:t toc:nil
+#+STARTUP: overview
+#+AUTHOR: Ryan Greenup
+#+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
+#+TODO: TODO IN-PROGRESS WAITING DONE
+#+CATEGORY: Note
+:END:
+:HTML:
+#+INFOJS_OPT: view:info toc:3
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="~/Templates/CSS/Org-CSS/bigblow.css">
+# #+CSL_STYLE: /home/ryan/Templates/CSL/nature.csl
+:END:
+:R:
+#+PROPERTY: header-args:R :session TADMain :dir ./ :cache yes :eval never-export :exports both
+#+PROPERTY: :eval never 
+# exports: both (or code or whatever)
+# results: table (or output or whatever)
+:END:
+:LATEX:
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt,twoside]
+#+LATEX_HEADER: \IfFileExists{/home/ryan/Templates/Org_Mode_Report/resources/style.sty}{\usepackage{$HOME/Templates/Org_Mode_Report/resources/style}}{}
+#+LATEX_HEADER: \IfFileExists{$HOME/Templates/Org_Mode_Report/resources/referencing.sty}{\usepackage{$HOME/Templates/Org_Mode_Report/resources/referencing}}{}
+# AddBibResource without if test using =~= char because org-ref is finicky
+#+LATEX_HEADER: \addbibresource{~/Sync/Documents/ref.bib}
+#+LATEX_HEADER: \usepackage[mode=buildnew]{standalone}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{decorations.fractals}
+#+LATEX_HEADER: \usetikzlibrary{lindenmayersystems}
+:END:
+
+* Top Level Heading
+
+Here's a reference to a differential equations TB I like
+cite:zillMatrixExponential2009 and another one to Ahren's book on
+notetaking cite:ahrensHowTakeSmart2017, another book I should read is
+/Statistics done wrong/ cite:reinhartStatisticsDoneWrong2015a.
+
+
