@@ -1,0 +1,158 @@
+% LaTeX2e style file for theorem and proof environments, by Glenn Tesler
+% usage: add thmp2e as an option to whatever documentstyle you're using
+%               \usepackage{mathp2e, thmp2e}
+
+% This style file adds the following commands.
+%       * New theorem environments.
+%           \begin{theorem} ... \end{theorem}
+%           \begin{theorem}[Theorem Name] ... \end{theorem}
+%         These produce a theorem heading and number, and italicize the
+%         enclosed text.  The word "theorem" may be replaced by any of
+%               axiom conjecture corollary lemma
+%               property proposition question theorem
+%         and these will all be numbered in the same numbering sequence.
+%         The components of the numbers are separated by dashes instead
+%         of periods.
+%         The heading and number are boldfaced, but the remark is not.
+%
+%       * New definition/remark environments.
+%           \begin{definition} ... \end{definition}
+%           \begin{definition}[Comment] ... \end{definition}
+%         These are similar to the theorem environments.  The word
+%         ``Definition'' is set in italics, and the definition nubmer,
+%         optional comment, and text are in roman.  The word ``definition''
+%         may be replaced by ``example'' or``remark'' and similar
+%         environments may be defined via
+%                               \newdef{bar}{Bar}
+%         When activated via
+%           \begin{bar} ... \end{bar}
+%           \begin{bar}[Comment] ... \end{bar}
+%         the heading will be ``Bar'' instead of ``Definition''.
+%
+%       * New proof environments.
+%         \begin{proof} ... \end{proof}
+%         This produces a proof heading, and vertical space around the proof.
+%         By default, every proof ends with a Halmos box at the right margin, 
+%         If there isn't room for the box on the last line of text, it
+%         will appear at the right margin of the next line.
+%         The $\box$ may be replaced with another symbol; for example,
+%         to use a $\triangleleft$, issue the following command
+%                       \useHalmos{$\triangleleft$}
+%         If the proof ends in a display, then issue the command
+%         \qedhere to move the box to the end of the display.
+%         The word ``proof'' may be replaced by ``solution'' and similar
+%	  environments may be defined via
+%	                      \newproof{foop}{Foop}
+%         When activated via
+%          \begin{foop} ... \end{foop}
+%         the heading will be ``Foop'' instead of ``Proof''.
+%       * New citation macro
+%         To facilitate puting citations in theorem/definition remarks,
+%               \citep{pages}{source}
+%         is similar to
+%               \cite[pages]{source}
+%         but lacks the square brackets, so that nested square brackets don't
+%         confuse LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Patch to latex.tex to make headings for theorems end in         %
+%       periods, and use normal paragraph indentation.                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% Headings for theorems should end in periods, and should have ordinary
+% paragraph indentation.
+
+\def\@thmlist{\parsep\parskip \labelwidth\z@ \leftmargin\z@
+ \def\makelabel##1{##1} \itemindent=\parindent
+ \topsep=\smallskipamount \@trivlist}
+\def\@begintheorem#1#2{\@thmlist \item[\hskip \labelsep\textbf{#1\ #2.}]\it}
+\def\@opargbegintheorem#1#2#3{\@thmlist \item[\hskip \labelsep
+  \textbf{#1\ #2\ \rm(#3).}]\it}
+\def\@endtheorem{\endtrivlist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Environments for theorems, definitions, proofs, etc.           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\qed=\relax
+\def\useHalmos#1{\def\qed
+ {{\unskip\nobreak\hfil\penalty50
+   \quad\hbox{}\nobreak\hfil #1
+   \parfillskip=0pt \finalhyphendemerits=0 \par}}}
+\useHalmos{$\square$}
+\newif\ifqed 
+\def\qedhere{\tag*{$\square$}\global\qedfalse}
+
+\def\newproof#1#2{%
+\newenvironment{#1}{\topsep=\smallskipamount \partopsep=0pt
+ \begin{trivlist} \itemindent=\parindent \qedtrue
+ \item[\hskip \labelsep\emph{#2:}]}{\ifqed\qed\fi\end{trivlist}}%
+}
+\newproof{proof}{Proof}
+\newproof{solution}{Solution}
+
+\def\@thmcountersep{-}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{property}[theorem]{property}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{question}[theorem]{Question}
+
+% modeled on \@othm in latex.tex (for \newtheorem#1[theorem]#2)
+\def\newdef#1#2{%
+  {\expandafter\@ifdefinable\csname #1\endcsname
+  {\global\@namedef{the#1}{\@nameuse{thetheorem}}%
+\global\@namedef{#1}{\@def{theorem}{#2}}%
+\global\@namedef{end#1}{\@enddef}}}}
+
+% modeled on \@thm in latex.tex
+\def\@def#1#2{\refstepcounter
+    {#1}\@ifnextchar[{\@ydef{#1}{#2}}{\@xdef{#1}{#2}}}
+ 
+% modeled on \@xthm and \@ythm in latex.tex
+\def\@xdef#1#2{\@begindef{#2}{\csname the#1\endcsname}\ignorespaces}
+\def\@ydef#1#2[#3]{\@opargbegindef{#2}{\csname
+       the#1\endcsname}{#3}\ignorespaces}
+
+% modeled on \@begintheorem, \@opargbegintheorem, and \@endtheorem in
+% latex.tex
+\let\@deflist\@thmlist
+\def\@begindef#1#2{\@deflist \item[\hskip \labelsep{\it#1}\ {\rm#2.}]}
+\def\@opargbegindef#1#2#3{\@thmlist \item[\hskip \labelsep{\it 
+ #1\ \rm#2\ (#3).}]}
+\def\@enddef{\endtrivlist}
+
+\newdef{definition}{Definition}
+\newdef{remark}{Remark}
+\newdef{example}{Example}
+
+% To facilitate putting citations in theorem/definition remarks,
+%       \citep{pages}{source}
+% is similar to
+%       \cite[pages]{source}
+% but lacks the square brackets, so that nested square brackets don't
+% confuse LaTeX.
+
+\def\citep#1#2{\cite[{#1}]{#2}}
+
+% Change Log:
+%
+%       gptesler 1/26/94: topsep changed in proof and theorem environments
+%       tmack    6/99:    package renamed to thmp2e.sty
+%                         added in \usepackage{latexsym} before \Box command
+%                         replaced \em with the latex2e \emph command; other
+%                               font declarations unchanged
+%                         command \citep{pages}{source} added to avoid 
+%                               nested square brackets
+%                         commented-out code removed
+%       slkleiman 9/99:   added command \useHalmos#1
+%       slkleiman 2/05:   made \useHalmos{$\Box$} the default
+%       slkleiman 10/05:  defined \qedhere
+%                         redefined the proof environment to accept \qedhere
+%       slkleiman 12/05:  added code to undefine in \newdef
+%       slkleiman 2/06:   added \newproof#1#2 and \newproof{solution}{Solution}

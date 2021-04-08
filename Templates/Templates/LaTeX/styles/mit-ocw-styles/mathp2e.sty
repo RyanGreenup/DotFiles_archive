@@ -1,0 +1,801 @@
+% LaTeX2e style file for Math Phase Two and UJM papers, by Glenn Tesler
+%   modified by Thomas Mack 1999 and Steven Kleiman 1999, 2004--5, 2007
+% usage:        \usepackage{mathp2e}
+
+% This style file changes the following:
+%       * Page dimensions are set to a 5.25'' x 8'' text area.
+%       * Offsets are adjusted to center the text.
+%       * Section headings have periods inserted.
+%       * Appendix sections have centered headings.
+%	* \acknowledgements starts a section with a centered heading.
+%       * The fonts and spacing in the abstract and paper title are altered.
+%       * Citation keys are boldfaced, and p.123 is set with a \thinspace
+%         after the period.
+%       * Section, table, figure, and equation numbers are separated by
+%         dashes instead of periods.
+%       * Floats are placed at the point where the command was issued,
+%         if possible, but less often earlier.
+%       * Floats are seperated from the text by \bigskipamount and
+%         related parameters are changed.
+%       * New caption styles are defined.
+%         Normal LaTeX caption style
+%                       Figure 1: Description.
+%         Figure captions with period instead of colon
+%                       Figure 1. Description.
+%         Table captions as two line boldfaced caption
+%                               Table 1
+%                             Description
+%       * Table of contents entries with out fill dots get periods, and
+%         section numbers are terminated with periods.
+%       * The structure of the paper is analyzed to determine if it
+%         violates certain structural rules discussed in ``Writing a Math
+%         Phase Two Paper.''  The tests it performs are not comprehensive,
+%         and do not obviate the need to read that document or
+%         proofread the paper.
+%       * The enumerate environment puts a \smallskip above and below
+%         the list, aligns the labels with indented lines, and sets the
+%	  labels in unslanted arabic between parentheses.
+%	* \piistrut is a strut of assignable height and depth for tables.
+%	* \emdash surrounds with thin space and won't start a new line.
+%	* \eqvdots centers \vdots under an `=' in an aligned list.
+%       * \: is a synonym for \colon
+%       * \risom defined as a replacement for \xrightarrow{\sim}
+%       * A listing environment is defined for use with the verbatum
+%         environment; the caption goes at the top flush left.
+%       * \lips gives a three-dot ellipsis in text.
+%       * An algorithm environment is defined for use with the algorithmetic
+%         package; the caption goes at the top flush left.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Patch to latex.tex to make numbered section headings be         %
+%       "#. title." instead of "# title" when placed on the first line  %
+%       of a paragraph, and "#. title" instead of "# title" for         %
+%       centered titles.                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@sect#1#2#3#4#5#6[#7]#8{\ifnum #2>\c@secnumdepth
+     \let\@svsec\@empty\else
+     \refstepcounter{#1}\edef\@svsec{{\hbox to \parindent
+         {\csname the#1\endcsname.\hfil}}}\fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@
+        \begingroup #6\relax
+          \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M #8\par}%
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\relax  %% \relax added 2 May 90
+                   \@svsec #8.\csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       patches to article.sty and latex.tex to add periods in          %
+%       table of contents,... just for consistency with adding          %
+%       periods in section headings, even though table of contents,...  %
+%       shouldn't be used in short papers.                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% patches to article.sty to add periods after headings in those
+% components of the table of contents which do not have a line of dots
+% between the heading and page number
+
+\def\l@part#1#2{\addpenalty{\@secpenalty}
+ \addvspace{2.25em plus 1pt} \begingroup
+ \@tempdima 3.5em \parindent \z@ \rightskip \@pnumwidth \parfillskip
+-\@pnumwidth 
+ {\large \bf \leavevmode #1.\hfil \hbox to\@pnumwidth{\hss #2}}\par
+ \nobreak \endgroup}
+\def\l@section#1#2{\addpenalty{\@secpenalty} \addvspace{1.0em plus 1pt}
+\@tempdima 2.0em \begingroup
+ \parindent \z@ \rightskip \@pnumwidth 
+ \parfillskip -\@pnumwidth 
+ \bf \leavevmode \advance\leftskip\@tempdima
+   \hskip -\leftskip #1.\nobreak\hfil
+\nobreak\hbox to\@pnumwidth{\hss #2}\par
+ \endgroup}
+
+% patch to latex.tex to add a period after the part/section/... number
+\def\numberline#1{\hbox to\@tempdima{#1.\hfil}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       patch to latex.tex & article.sty to boldface citation keys and  %
+%       frenchspace citation notes as they often have abbreviations,    %
+%       like "p.", which shouldn't take end of sentence spacing.        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% patch to latex.tex
+\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \let\@citea\@empty
+  \@cite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{,\penalty\@m\ }%
+     \def\@tempa##1##2\@nil{\edef\@citeb{\if##1\space##2\else##1##2\fi}}%
+     \expandafter\@tempa\@citeb\@nil
+     \@ifundefined{b@\@citeb}{{\reset@font\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+     \hbox{\bf\csname b@\@citeb\endcsname}}}{{\frenchspacing#1}}}
+
+% \reset@font wasn't always in LaTeX, so if it's undefined, define it.
+\ifx\reset@font\undefined\let\reset@font\relax\fi
+
+% put citation in roman
+\def\@cite#1#2{{\rm[{#1\if@tempswa , #2\fi}]}}
+
+% boldface keys in bibliography, and change spacing between bibliography
+% items
+
+\def\@biblabel#1{{\rm[{\bf#1}]}}
+
+% patch to article.sty
+
+\def\thebibliography#1{\@asection*{References\@mkboth
+ {REFERENCES}{REFERENCES}}\list
+ {[{\bf\arabic{enumi}}]}{\settowidth\labelwidth{[{\bf#1}]}\parsep 0pt
+   \itemsep\smallskipamount\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy\clubpenalty4000\widowpenalty4000
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        patches to article.sty                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title shouldn't be so gaudy
+
+\def\@maketitle{\newpage
+ \null
+ \vskip 3.8\bigskipamount \begin{center}
+ {\large \bf \@title \par} \vskip 1em {\normalsize \lineskip .5em
+\begin{tabular}[t]{c}\@author 
+ \end{tabular}\par} 
+ \@date \end{center}
+ \par
+ \medskip} 
+
+% abstract should have heading on first line of paragraph instead of
+% as a centered title above
+
+\def\abstract{\if@twocolumn
+\section*{Abstract}
+\else
+% modified quotation macro from latex.tex
+\list{}{\listparindent 1.5em \topsep 1pt \parskip 0pt \partopsep 0pt
+ \itemindent\listparindent
+        \def\rightmargin{1.5em}
+        \def\leftmargin{1.5em}
+ \parsep 0pt plus 1pt}\item[]
+% end of modified quotation macro
+\noindent \footnotesize{\bf Abstract.}
+ \ignorespaces %  -SLK-00Mar12> 
+\fi}
+\def\endabstract{\if@twocolumn\else\endlist\fi\bigskip\smallskip}
+
+
+% Because section styles changed, the headings for the table of contents,
+% etc., are no longer appropriate.
+% Also, table of contents, etc., are not normally present in short papers.
+\def\tableofcontents{\@csection*{Contents\@mkboth{CONTENTS}{CONTENTS}}
+ \@starttoc{toc}}
+\def\listoffigures{\@csection*{List of Figures\@mkboth
+ {LIST OF FIGURES}{LIST OF FIGURES}}\@starttoc{lof}}
+\def\listoftables{\@csection*{List of Tables\@mkboth
+ {LIST OF TABLES}{LIST OF TABLES}}\@starttoc{lot}}
+
+% modified art10.sty's subsection macro for table of contents,...
+% sec headings
+\def\@csection{\@startsection{section}{1}{\z@}%
+  {-3.25ex plus -1ex minus -.2ex}{1.5ex plus .2ex}{\large\bf}}
+
+% separator to use in hierarchical numbering schemes
+\def\@separator{\hbox{-}}
+ % in an hbox so it prints as a dash even in math mode
+
+% Floats should always come at or after when they're formed,
+% so change the default placement of tbp to htbp (giving
+% highest priority to right here).  Also change numbering scheme.
+
+\def\thefigure{\thesection\@separator\@arabic\c@figure}%
+  \@addtoreset{figure}{section}
+\def\fps@figure{htbp}
+
+\newcounter{listing}
+\newenvironment{listing}
+               {\@float{listing}\medskip}
+               {\vskip-1.1\bigskipamount\hrulefill
+               \end@float}
+\def\thelisting{\thesection\@separator\arabic{listing}}%
+  \@addtoreset{listing}{section}
+\def\fps@listing{htbp}
+\def\ftype@listing{1}
+\def\ext@listing{lof}
+\def\fnum@listing{Listing\nobreakspace\thelisting}
+
+\newcounter{algorithm}
+\newenvironment{algorithm}
+               {\@float{algorithm}\medskip}
+               {\vskip-0.5\bigskipamount\hrulefill
+               \end@float}
+\def\thealgorithm{\thesection\@separator\arabic{algorithm}}%
+  \@addtoreset{algorithm}{section}
+\def\fps@algorithm{htbp}
+\def\ftype@algorithm{1}
+\def\ext@algorithm{lof}
+\def\fnum@algorithm{Algorithm\nobreakspace\thealgorithm}
+
+\def\thetable{\thesection\@separator\@arabic\c@table}%
+  \@addtoreset{table}{section}
+\def\fps@table{htbp}
+
+% Floats are seperated  by \bigskipamount
+\floatsep=\bigskipamount
+\textfloatsep=\bigskipamount
+\intextsep=\bigskipamount
+
+% Flots can occupy most all the page
+\def\topfraction{0.9} \def\bottomfraction{0.9}
+ \def\textfraction{0.1} 
+
+% Change equation numbering scheme
+\def\theequation{\thesection\@separator\arabic{equation}}%
+ \@addtoreset{equation}{section}
+
+% Put in new separator between components
+
+\def\thesubsection {\thesection\@separator\arabic{subsection}}
+\def\thesubsubsection {\thesubsection\@separator\arabic{subsubsection}}
+\def\theparagraph {\thesubsubsection\@separator\arabic{paragraph}}
+\def\thesubparagraph {\theparagraph\@separator\arabic{subparagraph}}
+
+
+% Two-line caption \@captiont{text}:
+%                       Table n
+%                        title
+% One-line caption with period \@captionp{text}:
+%                       Figure n. title
+
+% modified and renamed \caption and \@caption from latex.tex
+
+\def\@dmycaption#1{\let\@mymakecaption#1\@@mycaption}
+\def\@@mycaption{\refstepcounter\@captype \@dblarg{\@mycaption\@captype}}
+ 
+ 
+\long\def\@mycaption#1[#2]#3{\par\addcontentsline{\csname
+  ext@#1\endcsname}{#1}{\protect\numberline{\csname
+  the#1\endcsname}{\ignorespaces #2}}\begingroup
+    \@parboxrestore
+    \normalsize
+    \@mymakecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
+  \endgroup}
+
+\long\def\@makecaptiont#1#2{\centerline{\bf #1}\centerline{\bf #2}}
+\long\def\@makecaptionp#1#2{
+ \vskip 10pt 
+ \setbox\@tempboxa\hbox{{\bf #1.} #2}
+%%  \ifdim \wd\@tempboxa > \hsize \unhbox\@tempboxa \par
+%% \else \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+%%   -SLK-04Feb 7> Changed
+ \ifdim \wd\@tempboxa >\hsize {\bf #1.} #2\par \else \hbox
+to\hsize{\hfil\box\@tempboxa\hfil}
+ \fi}
+\def\@makecaptionl#1#2{\hbox{{\bf #1.} #2}
+ \vskip-\medskipamount\hrulefill\par%\vskip\medskipamount
+}
+
+
+\def\@captiont{\@dmycaption\@makecaptiont}
+\def\@captionp{\@dmycaption\@makecaptionp}
+\def\@captionl{\@dmycaption\@makecaptionl}
+
+
+% modify \begin{figure} and \begin{table} from article.sty to use new
+% captions and add code for \begin{listing} and \begin{algorithm}
+
+\def\figure{\let\caption\@captionp\@float{figure}}
+\def\listing{\let\caption\@captionl\@float{listing}}
+\def\algorithm{\let\caption\@captionl\@float{algorithm}}
+\def\table{\let\caption\@captiont\@float{table}}
+
+%% Define a strut with parameters for use in tables
+\def\piistrut#1 #2 {\hbox{\vrule height #1pt depth#2pt width0pt}}
+
+% Define \emdash, which introduces a thin space, and disallows line
+% breaks before it
+\def\emdash{\unskip\penalty10000\thinspace---\thinspace}
+
+%% To center \vdots under an `=' in an aligned list
+\def\eqvdots{\setbox0=\hbox{${}={}$} \hbox to\wd0{\hfil\vdots\hfil}}
+
+%% For ease in typesetting maps
+\let\:=\colon
+
+%%  A replacement for \xrightarrow{\sim}
+\def\risom{\buildrel\sim\over{\smashedlongrightarrow}}
+ \def\smashedlongrightarrow{\setbox0=\hbox{$\longrightarrow$}\ht0=1.25pt\box0}
+
+%% A three-dot elipsis for use in text.
+\def\lips{~.~.~.\ \ignorespaces}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       patches to art10.sty to change page, section,... dimensions     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\@fullpage{
+\oddsidemargin 0in \evensidemargin 0in
+\topmargin -43pt
+\textheight = 8in
+\textwidth 5.25in
+\hoffset0.625in
+\voffset0.5in
+\footskip 20pt
+}
+
+\def\@patchten{
+        \newdimen\headpad
+        \setbox\@tempboxa\hbox{\bf1.}
+        \headpad=\parindent\advance\headpad-\wd\@tempboxa
+
+        \def\section{\@startsection{section}{1}{\z@}{\baselineskip}%
+          {-\headpad}{\normalsize\bf}}
+        \def\subsection{\@startsection{subsection}{2}{\z@}{\baselineskip}%
+          {-\headpad}{\normalsize\bf}}
+        \def\subsubsection{\@startsection{subsubsection}{3}{\z@}5
+          {\baselineskip}{-\headpad}{\normalsize\bf}}
+        \def\@asection{\@startsection{section}{1}{\z@}{3\medskipamount}%
+          {\medskipamount}{\centering\normalsize\sc}}
+        % dimensions
+        \@fullpage
+}
+
+%%
+%%   -SLK-05Feb20> 
+%% Modified from Example 2-2-11 on page 33 of The LaTeX Companion, 2ed
+%% 
+\renewcommand\appendix{%
+   \renewcommand\section{%                Redefinition of \section
+    \addvspace{3\medskipamount}
+    \secdef\Appendix\sAppendix}%
+   \setcounter{section}{0}%
+   \renewcommand\thesection{\Alph{section}}%
+}
+\newcommand\Appendix[2][?]{%   Complex form
+    \refstepcounter{section}%
+    \addcontentsline{toc}{appendix}%
+        {\protect\numberline{\appendixname~\thesection} #1}%
+    {\centering\normalsize\sc\appendixname\ \thesection.\enspace#2\par}%
+    \sectionmark{#1}\addvspace{0.5\baselineskip}}
+\newcommand\sAppendix[1]{%           Simplified (starred) form
+    \refstepcounter{section}%
+    \addcontentsline{toc}{appendix}%
+        {\protect\numberline{\appendixname~\thesection} #1}%
+    {\centering\normalsize\sc\appendixname.\enspace#1\par}%
+    \sectionmark{#1}\addvspace{0.5\baselineskip}}
+
+\newcommand\acknowledgements{%
+    \addvspace{3\medskipamount}%
+    {\centering\normalsize\sc Acknowledgements\par}%
+    \addvspace{0.5\normalbaselineskip}%
+}
+
+\def\@xsect#1{\@tempskipa #1\relax
+      \ifdim \@tempskipa>\z@
+       \par \nobreak
+       \vskip \@tempskipa
+       \@afterheading
+    \else \global\@nobreakfalse \global\@noskipsectrue
+       \everypar{\if@noskipsec \global\@noskipsecfalse
+                   \clubpenalty\@M \hskip -\parindent%
+                   \begingroup \@svsechd \endgroup \unskip
+                   \hskip -#1\relax  % relax added 14 Jan 91
+                  \else \clubpenalty \@clubpenalty
+                    \everypar{}\fi}\fi\ignorespaces}
+
+
+\@patchten
+\let\@patchten\relax\let\@fullpage\relax
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       The file could be broken in two here.                           %
+%       The two parts could be run separately, but if they              %
+%       are both used, they must be in the order they're                %
+%       in now.  Most of the commands redefined in the formatting       %
+%       code above needed changes somewhere in the middle, while        %
+%       most of the commands redefined by the error analysis code       %
+%       below only need new code appended or prepended to them.         %
+%       When only appending or prepending is needed, the error code     %
+%       takes the command as it finds it and tacks on the new code.     %
+%       Thus, the error code must go second as it modifies              %
+%       some routines the formatting code redefined.                    %
+%       Fortunately, there are no routines that both the error          %
+%       analysis code and the formatting code both need to alter        %
+%       in the middle.                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               Perform a crude analysis of the content of the          %
+%               paper to determine if it has all the components         %
+%               it should have and omits things that are normally       %
+%               inappropriate.                                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Error messages                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@piitypeout#1{\typeout{#1}}
+%\def\@piitypeout#1{} % enable to eliminate all warnings
+\def\@piiin{\space\space\space}
+
+% Define \@bs to print a '\' in messages and \@pct to print a '%'.
+\begingroup\catcode`\&=0
+        &catcode`&\=11&global&def&@bs{\}
+        &catcode`&%=11&global&def&@pct{%}
+&endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               Macros for editing the definition of existing           %
+%                               commands                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% token register needed as storage space when redefining existing cmds
+\newtoks\@piitoks
+
+% \@deparam{command}
+% Form a deparameterized version of \command
+% It sets \@s@command to the same token list as \command (parameters and all),
+% and changes \command to have no parameters via \def\command{\@s@command}
+
+\def\@deparam#1{
+        % set \@s@temp to \let\@s@command
+        \edef\@s@temp{\expandafter\let\csname @s@#1\endcsname}
+        % do \let\@s@command\command
+        \expandafter\@s@temp\csname#1\endcsname
+        % do \def\command{\@s@command}
+        \@piitoks=\expandafter{\csname @s@#1\endcsname}
+        \expandafter\edef\csname#1\endcsname{\the\@piitoks}
+}
+
+% \@prepend{command}{extension}
+%       sets new def of \command = extension * old def of \command
+% \@append{command}{extension}
+%       sets new def of \command = old def of \command * extension
+% (where * denotes concatenaton)
+% Each of these tries to expand the extension by ultimately redefining
+% \command with \edef, so be sure to protect things that shouldn't expand.
+\def\@prepend#1#2{
+        % first store old definition of command
+        \@piitoks=\expandafter\expandafter\expandafter{\csname#1\endcsname}
+        % then redefine the command with new instructions prepended
+        \expandafter\edef\csname#1\endcsname{#2\the\@piitoks}
+}
+\def\@append#1#2{
+        % first store old definition of command
+        \@piitoks=\expandafter\expandafter\expandafter{\csname#1\endcsname}
+        % then redefine the command with new instructions appended
+        \expandafter\edef\csname#1\endcsname{\the\@piitoks#2}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       string manipulation                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \@ifstrstr{STR}{SUBSTR}{YES}{NO} -- if SUBSTR is a substring of STR
+% then do YES, else do NO
+\def\@ifstrstr#1#2#3#4{%
+        % First define a macro that specifically checks to see if #2 is in #1
+        % by splitting the text following it into two parts around the first
+        % occurrence of #2, which we then call by tacking on a bogus occurrence
+        % of #2 to the end of #1 so that the right half of the split text
+        % is known.
+        \def\@strstra##1#2##2\@endcheck{%
+                \def\@strstrp{##2}\ifx\@strstrp\@empty#4\else#3\fi}%
+        % and then execute it
+        \@strstra#1\relax#2\@endcheck%
+        % and then delete it
+        \let\@strstra\relax\let\@strstrp\relax%
+}
+
+% \@ifstrlist{STR}{SUBSTR1,SUBSTR2,...}{YES}{NO} -- if any SUBSTRi is
+% a substring of STR then do YES, else do NO.  If the list of substrings
+% is empty, it does NO.
+\def\@ifstrlist#1#2#3#4{\@ifstrlistb{#1}#2,\@endcheck{#3}{#4}}
+
+\def\@ifstrlistb#1#2,#3\@endcheck#4#5{
+      \def\@strstrp{#2}\ifx\@strstrp\@empty#5%
+        \else\@ifstrstr{#1}{#2}{#4}{\@ifstrlistb{#1}#3,\@endcheck{#4}{#5}}\fi}
+
+% \@ifstrlistuc{STR}{SUBSTR1,SUBSTR2,...}{YES}{NO} -- like \@ifstrlist, but
+% first it converts STR to uppercase letters.  Each SUBSTRi should already
+% be all uppercase.
+\def\@ifstrlistuc#1#2#3#4{
+        \uppercase\expandafter{\def\@firststr{#1}}%
+        \expandafter\@ifstrlist\expandafter{\@firststr}{#2}{#3}{#4}%
+        \let\@firststr\relax%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          patch to latex.tex                           %
+%               to trap errors at the end of the file                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% add hook \@piiend to \enddocument
+% this code is from LaTeX 2.09, which has \@@warning, while earlier
+% versions did not, so if \@@warning isn't already defined, it is
+% set to \@warning, which does exist.  That way this code reaches the
+% full potential of whatever it can do.
+%
+\def\enddocument{\@checkend{document}\clearpage\begingroup
+\if@filesw \immediate\closeout\@mainaux
+\def\global\@namedef##1##2{}\def\newlabel{\@testdef r}%
+\def\bibcite{\@testdef b}\@tempswafalse \makeatletter\input \jobname.aux
+\if@tempswa \ifx\@@warning\undefined\let\@@warning\@warning\fi
+\@@warning{Label(s) may have changed.  Rerun to get
+cross-references right}\fi\fi\@piiend\endgroup\deadcycles\z@\@@end}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Hooks for commands to execute later than this init file         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@piiend{}          % commands to delay executing until \end{document}
+\def\@piiintro{}        % commands to delay executing until first section
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Macros for avoiding commands                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@location{ on page \thepage\ifx\inputlineno\undefined
+ \else\ifnum\inputlineno=\m@ne
+ \else\space on input line \the\inputlineno\fi\fi}
+
+\def\@piiwarningc#1#2{\@piitypeout{UJM Warning in 
+    \@bs #1\@location:^^J#2}}
+
+% \@newavoid{command}{message} prepends to the definition of command
+% instructions to print a warning banner and the message.
+% \command must have no parameters.
+
+\def\@newavoid#1#2{\@prepend{#1}{\noexpand\@piiwarningc{#1}{#2}}}
+
+% \@newavoidp{command}{warning} is similar to \@newavoid, but for commands
+% that have parameters.  It deparameterizes \command with \@deparam and then
+% does \@newavoid.
+\def\@newavoidp#1#2{\@deparam{#1}\@newavoid{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Macros for flagging commands to ensure they are present         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@piiwarningh#1{\@piitypeout{UJM Warning: #1}}
+
+% \@newhas{command}{when}{warning} prepends to \command instructions to
+% set \@has@command to \@hasit, and then adds a routine to \when to
+% print out a warning if \@has@command has not been defined.
+% \command must have no parameters.
+
+\let\@hasit\@empty
+\def\@newhas#1#2#3{
+        \@prepend{#1}{\global\expandafter\let\csname @has@#1\endcsname
+          \noexpand\@hasit}
+        \@append{#2}{\noexpand\@checkhas{#1}{#3}}}
+
+% \@newhasp{command}{when}{warning} is similar to \@newhas, but for commands
+% that have parameters.  It deparameterizes \command with \@deparam and then
+% does \@newhas.
+\def\@newhasp#1#2#3{\@deparam{#1}\@newhas{#1}{#2}{#3}}
+
+% \@checkhas{command}{message}
+% prints message if \@has@command hasn't been set to \@hasit.
+\def\@checkhas#1#2{\expandafter\ifx\csname @has@#1\endcsname\@hasit\else
+                        \@piiwarningh{#2}\fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Commands and messages to check for with simple checks           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% commands that should be avoided
+
+\def\@newavoidt#1{\@newavoid{#1}{\@piiin Short papers normally have no
+    formal table of contents or list^^J\@piiin of tables and
+    figures.\space\space Instead they contain a ``road map'' in
+    the^^J\@piiin introduction.\space\space Please read ``Writing a Math
+    Phase Two Paper'' for more^^J\@piiin details.}}
+
+\@newavoidt{tableofcontents}
+\@newavoidt{listoffigures}
+\@newavoidt{listoftables}
+
+\def\@newavoids#1{\@newavoid{#1}{\@piiin Avoid subsectioning short
+    papers; it makes the flow too choppy.}}
+
+\@newavoids{subsection}
+\@newavoids{subsubsection}
+\@newavoids{paragraph}
+\@newavoids{subparagraph}
+
+% There may be legitimate uses of footnotes in the title section, so
+% footnote avoidance is delayed until the first \section not a \section*
+
+\@append{@piiintro}{\noexpand\@newavoid{footnote}{\@piiin Footnotes are
+    usually not used in contemporary mathematical writing.^^J\@piiin
+    Referencing should be done with \@bs cite, and comments
+    should^^J\@piiin be woven into the main text.}}
+
+% commands which ought to appear in the document, and which produce a warning
+% if they do not
+
+\@newhas{maketitle}{@piiintro}{Don't forget to put in a title!}
+\@newhas{abstract}{@piiintro}{Don't forget to write an abstract for your
+  paper!}
+\@newhasp{thebibliography}{@piiend}{Don't forget to put a
+  bibliography in your paper!}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Analyze section titles                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Change the usual way to start a new section...
+\let\@s@section\section
+\def\section{\@ifnextchar *{\@s@section}{\@dblarg{\@checksection}}}
+
+% Catch the first \section other than a \section*, make sure the heading
+% contains ``Introduction'' (case indep.), and do all commands in \@piiintro
+
+\def\@checkfirstsection[#1]#2{%
+        \@piiintro\global\let\@piiintro\relax%
+        \let\@checksection\@checkothersecs%
+        \@ifstrlistuc{#2}{INTRODUCTION}{}{\@piiwarningc{section}{\@piiin
+ The first section is labeled `#2',^^J\@piiin not `Introduction';
+ is it an introduction?}}%
+\@checkothersecs[{#1}]{#2}} \let\@checksection\@checkfirstsection
+
+% check all section titles for certain words
+
+\newcounter{@numsecs} % normal section counter is reset for appendices
+\def\@checkothersecs[#1]#2{%
+        \stepcounter{@numsecs}%
+        \@ifstrlistuc{#2}{CONCLUSION}{\@piiwarningc{section}{\@piiin
+ A formal section of conclusions is rare in mathematical
+ papers.^^J\@piiin
+ Please read the beginning of Section 2 of ``Writing a Math
+ Phase^^J\@piiin
+ Two Paper.''}}{}%
+        \@ifstrlistuc{#2}{ROADMAP,ROAD
+          MAP}{\@piiwarningc{section}{\@piiin
+ There shouldn't be a section explicitly called a ``road map'';
+ the road map^^J\@piiin should be woven into the introduction.}{}}{}%
+        \@s@section[{#1}]{#2}}
+
+\def\@piisecwarn{\ifnum\value{@numsecs}>6
+        \expandafter\@piiwarningh{^^J\@piiin You have
+          \arabic{@numsecs}\space
+ sections in your paper, which is a lot of sections for^^J\@piiin
+ a short paper.\space\space Avoid oversectioning papers, as it disrupts
+ the flow.}\fi
+        \ifnum\value{@numsecs}<2\@piiintro\@piiwarningh{^^J\@piiin
+ You didn't divide your paper into sections.\space\space
+ Usually, you should.}\fi}
+\@append{@piiend}{\noexpand\@piisecwarn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                               Analyze citations                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% count number of citations and number with no page number or other note
+\newcounter{@numcites}\newcounter{@numcitesnp}
+
+% Alter latex.tex's \cite macro to count number of citations, and
+% detect if no note is given.
+\def\cite{\stepcounter{@numcites}\@ifnextchar
+ [{\@tempswatrue\@piicitex}{\@piicitewarn}}
+
+\def\@piicitewarn#1{\@piicitemsg{#1}\stepcounter{@numcitesnp}%
+ \@tempswafalse\@piicitex[]{#1}}
+
+% Enable the second line to give warnings for all bad citations
+\def\@piicitemsg#1{}
+
+% record all the citations that actually occur
+\def\@piicitex[#1]#2{\@for\@citeb:=#2\do{\global
+  \@namedef{@u@b\@citeb}{\@hasit}}\@citex[{\@fixspacing{#1}}]{#2}}
+
+% sets the spacing after a period to \thinspace
+\def\@fixspacing#1{{\xspaceskip=.166667em {\sfcode`.=20000 #1}}}
+
+% finally, at end of document, comment on number of citations.  If there
+% were none, complain; if ``too many'' lacked page number or other notations,
+% complain.  ``Too many'' is somewhat arbitrarily defined as 25%, and is
+% only a crude indicator that something's amiss.
+
+\def\@piiendcheckcite{
+\ifnum\value{@numcites}=0
+        \@piiwarningh{^^J\@piiin You have no citations at all.\space\space
+ If you used material from other sources,^^J\@piiin
+ please cite them (with \@bs cite).}
+   \else
+        \@tempcnta=\value{@numcitesnp}\multiply\@tempcnta100
+                                        \divide\@tempcnta\value{@numcites}
+        \ifnum\@tempcnta>25\@piiwarningh{^^J\@piiin
+  Many of the citations had no page numbers or other notes.\space\space
+  If it is^^J\@piiin possible to be more specific as to where the
+  information you used^^J\@piiin can be found in your references, please
+  add notes to your citations.}\fi \fi}
+\@append{@piiend}{\noexpand\@piiendcheckcite}
+
+% Alter latex.tex's \@lbibitem and \@bibitem macros to check that the entry
+% was referenced
+\let\@s@bibitem\@bibitem
+\def\@pii@bibitem#1{\@piibibitem{#1}\@s@bibitem{#1}}
+\let\@s@lbibitem\@lbibitem
+\def\@pii@lbibitem[#1]#2{\@piibibitem{#2}\@s@lbibitem[{#1}]{#2}}
+
+\def\@piibibitem#1{\@ifundefined{@u@b#1}{\@piiwarningb{#1}}{}}
+\@append{@piiintro}{\noexpand\let\noexpand\@bibitem\noexpand\@pii@bibitem
+  \noexpand\let\noexpand\@lbibitem\noexpand\@pii@lbibitem}
+
+\def\@piiwarningbf#1{\@piiwarningc{bibitem}{\@piiin Your bibliography
+    entry `#1' wasn't cited (with \@bs cite) anywhere.^^J\@piiin
+ If you used specific facts or quoted material from it, put in^^J\@piiin
+ citations to show where you used it.\space\space If you only intend
+ to^^J\@piiin identify this reference as background material, you should
+ briefly^^J\@piiin describe it in the introduction, or within the
+ section to which^^J\@piiin it pertains.}
+\let\@piiwarningb\@piiwarningbs}
+\def\@piiwarningbs#1{\@piiwarningc{bibitem}{\@piiin Your bibliography
+    entry `#1' also wasn't cited anywhere.}}
+\let\@piiwarningb\@piiwarningbf % long warning 1st time,
+                                % short subsequent times
+
+% Renew enumeration environment to align margins properly and
+% to be \arabic
+\def\piilistparam
+ {\setbox0=\hbox{\rm(1)\kern0.5em}
+  \setlength{\topsep}{\smallskipamount}%
+  \setlength{\labelwidth}{\wd0}
+  \setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}%
+  \setlength{\itemindent}{0pt}%
+  \setlength{\leftmargin}{\parindent}%
+%  \setlength{\leftmargin}{0pt}%
+  \addtolength{\leftmargin}{\wd0}%
+ }%
+ \newcounter{p2mathcntr}
+\renewenvironment{enumerate}%
+ {\begin{list}{\rm(\arabic{p2mathcntr})}%
+  {\usecounter{p2mathcntr}\piilistparam}%
+ }%
+ {\end{list}}
+
+% CHANGE LOG
+%   April 1, 1993: Glenn & Steve change \@sect to align section headings with
+%                  paragraph indent, and to balance padding after section
+%                  headings with padding between the number and the heading
+%   June 1999:     Package renamed to mathp2e.sty
+%                  Commented-out sections of code removed
+%                  Cite code changed to force \thinspace after periods in
+%                  citations
+%   Sept 1999:     Enumerate redefined to separate list at top and
+%                  bottom by a \smallskip, and to make the item labels in
+%                  the enumeration environment align with the beginnings
+%                  of indented lines and to be roman \arabic in parentheses
+%                  Text size and offsets set for journal compatibility
+%   May 2003:      Float parameters adjusted
+%                  \emdash and \piistrut defined
+%   Sep 2004:      Replaced ``Phase Two Warning'' by ``UJM Warning''
+%   Feb 2005:      Fixed \appendix and {enumerate}
+%                  Added \acknowledgements, \eqvdots
+%   Jun 2007;      Added listing and algorithm environments
+%                  Added the text ellipsis \lips
