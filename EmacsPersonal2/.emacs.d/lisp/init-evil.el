@@ -35,7 +35,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>bD") 'kill-buffer-and-window)
 (evil-define-key 'normal 'global (kbd "<leader>fy") 'My-Copy-File-Path)
 ;; (evil-define-key 'normal 'global (kbd "<leader>ff") 'find-file) ; Use helm
-(evil-define-key 'normal 'global (kbd "<leader>ht") 'load-theme)
+(evil-define-key 'normal 'global (kbd "<leader>ht") 'load-theme) ;; see also counsel-load-theme in init-ivy
 (evil-define-key 'normal 'global (kbd "<leader>hrt") 'reset-theme)
 (evil-define-key 'normal 'global (kbd "<leader>fr") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>fp") 'open-local-config)
