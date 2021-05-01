@@ -5,19 +5,47 @@
 # TODO Next theme
 # TODO toggle stacking, fib and monocle
 
+
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
+# tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+tags = ["Browser ♖", "Term ♗", "Shell ♔", "Code ♕", "Messaging", "Notes 📝", "7", "8", "9", "10"]
+# layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 disable_current_tag_swap = false
 
 [[keybind]]
+command = "FloatingToTile"
+modifier = ["modkey", "Shift"]
+key = "t"
+
+[[keybind]]
 command = "Execute"
-value = "rofi -location 1 -show drun"
+value = "rofi -location 2 -show drun lines 10 -eh 1 -mathing fuzzy -show-icons -window-thumbnail  -theme-str 'element-icon { size: 3ch;}' -theme arthur" # DarkBlue is also nice
 modifier = ["modkey"]
 key = "d"
-# value = "rofi -location 1 -show drun lines 10 -eh 2 -mathing fuzzy -show-icons -window-thumbnail  -theme-str 'element-icon \{ size: 4ch;\}' # -theme sidebar
+
+[[keybind]]
+command = "Execute"
+value = "rofi -location 2 -show drun lines 10 -eh 1 -mathing fuzzy -show-icons -window-thumbnail  -theme-str 'element-icon { size: 3ch;}' -theme arthur" # DarkBlue is also nice
+modifier = ["modkey"]
+key = "space"
+
+
+[[keybind]]
+command = "Execute"
+value = "rofi -show calc -modi calc -no-show-match -no-sort -theme arthur"
+modifier = ["modkey"]
+key = "c"
+
+
+
+
+[[keybind]]
+command = "Execute"
+value = "rofi -location 2 -show window lines 10 -eh 2 -mathing fuzzy -show-icons -window-thumbnail  -theme-str 'element-icon { size: 6ch; }' -theme arthur"
+modifier = ["modkey"]
+key = "slash"
 
 [[keybind]]
 command = "Execute"
@@ -91,6 +119,28 @@ key = "Up"
 command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
 key = "Down"
+
+[[keybind]]
+command = "MoveWindowUp"
+modifier = ["modkey", "Shift"]
+key = "k"
+
+[[keybind]]
+command = "MoveWindowDown"
+modifier = ["modkey", "Shift"]
+key = "j"
+
+[[keybind]]
+command = "RotateTag"
+modifier = ["modkey"]
+key = "z"
+
+[[keybind]]
+command = "IncreaseMainWidth"
+value = "5"
+modifier = ["modkey"]
+key = "r"
+
 
 [[keybind]]
 command = "MoveWindowTop"
@@ -261,8 +311,41 @@ key = "9"
 
 
 
-## Requires more recent version of leftWM
+## Requires more recent version of leftWM??
 ## [[keybind]]
 ## command = "ToggleFullScreen"
 ## modifier = ["modkey"]
 ## key = "f"
+
+# *  Margin Multiplier
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "2.5"
+modifier = ["modkey", "Control"]
+key = "equal"
+
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "1"
+modifier = ["modkey", "Control"]
+key = "minus"
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "0"
+modifier = ["modkey", "Control"]
+key = "0"
+
+# * Move Tags
+# Tags are like desktops, workspaces are like monitors (good for ultrawides)
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["Control", "Alt"]
+key = "Right"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["Control", "Alt"]
+key = "Left"
