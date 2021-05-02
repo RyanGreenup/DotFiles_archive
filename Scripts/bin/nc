@@ -1,5 +1,5 @@
 #!/bin/bash
-BIBFILE="/home/ryan/Sync/Documents/ref.bib"
+BIBFILE="/home/ryan/Sync/Notes/ref.bib"
 
 # ............................................................
 #  Define Main Function  .....................................

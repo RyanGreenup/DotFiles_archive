@@ -74,6 +74,11 @@ modifier = ["modkey", "Shift"]
 key = "q"
 
 [[keybind]]
+command = "CloseWindow"
+modifier = ["Alt"]
+key = "F4"
+
+[[keybind]]
 command = "SoftReload"
 modifier = ["modkey", "Shift"]
 key = "r"
@@ -395,3 +400,10 @@ value = "GridHorizontal"
 modifier = ["modkey"]
 key = "F7"
 
+# * Start work
+
+[[keybind]]
+command = "Execute"
+value = "alacritty -e work" # DarkBlue is also nice
+modifier = ["modkey"]
+key = "Home"

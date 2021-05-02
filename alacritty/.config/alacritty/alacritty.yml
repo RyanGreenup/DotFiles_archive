@@ -1,7 +1,10 @@
 background_opacity: 0.9
 font:
   normal:
+    # Last font is used
+    family: JetBrains Mono
+    family: Fantasque Sans Mono
+    family: Source Code Pro
+    family: Source Code Variable
     family: Fira Code
-    #  italic:
-    #    family: monofur
-
+live_config_reload: true
