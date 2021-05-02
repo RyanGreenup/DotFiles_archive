@@ -10,7 +10,7 @@ modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
 # tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-tags = ["Browser ♖", "Term ♗", "Shell ♔", "Code ♕", "Messaging", "Notes 📝", "7", "8", "9", "10"]
+tags = ["1.Browser ♖", "2.Term ♗", "3.Shell ♔", "4.Code ♕", "5", "6.Notes 📝", "7", "5.Messaging", "9", "10"]
 # layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 disable_current_tag_swap = false
 
@@ -58,14 +58,9 @@ key = "p"
 [[keybind]]
 command = "SetLayout"
 value = "Monocle"
-modifier = ["modkey"]
+modifier = ["modkey", "Shift"]
 key = "m"
 
-[[keybind]]
-command = "SetLayout"
-value = "Fibonacci"
-modifier = ["modkey"]
-key = "o"
 
 [[keybind]]
 command = "Execute"
@@ -130,10 +125,6 @@ command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
 key = "j"
 
-[[keybind]]
-command = "RotateTag"
-modifier = ["modkey"]
-key = "z"
 
 [[keybind]]
 command = "IncreaseMainWidth"
@@ -311,14 +302,18 @@ key = "9"
 
 
 
-## Requires more recent version of leftWM??
-## [[keybind]]
-## command = "ToggleFullScreen"
-## modifier = ["modkey"]
-## key = "f"
+# Requires more recent version of leftWM?? VVVVVVVVVVVVVVVVVVVVVVVVVVVV
+[[keybind]]
+command = "ToggleFullScreen"
+modifier = ["modkey"]
+key = "m"
 
+[[keybind]]
+command = "RotateTag"
+modifier = ["modkey"]
+key = "z"
+ 
 # *  Margin Multiplier
-
 [[keybind]]
 command = "SetMarginMultiplier"
 value = "2.5"
@@ -349,3 +344,54 @@ key = "Right"
 command = "FocusPreviousTag"
 modifier = ["Control", "Alt"]
 key = "Left"
+
+## * Layouts
+[[keybind]]
+command = "SetLayout"
+value = "Fibonacci"
+modifier = ["modkey"]
+key = "f"
+
+[[keybind]]
+command = "SetLayout"
+value = "Fibonacci"
+modifier = ["modkey"]
+key = "F1"
+
+[[keybind]]
+command = "SetLayout"
+value = "MainAndDeck"
+modifier = ["modkey"]
+key = "F2"
+
+[[keybind]]
+command = "SetLayout"
+value = "MainAndVertStack"
+modifier = ["modkey"]
+key = "F3"
+
+
+[[keybind]]
+command = "SetLayout"
+value = "MainAndHorizontalStack"
+modifier = ["modkey"]
+key = "F4"
+
+[[keybind]]
+command = "SetLayout"
+value = "CenterMain"
+modifier = ["modkey"]
+key = "F5"
+
+[[keybind]]
+command = "SetLayout"
+value = "CenterMainBalanced"
+modifier = ["modkey"]
+key = "F6"
+
+[[keybind]]
+command = "SetLayout"
+value = "GridHorizontal"
+modifier = ["modkey"]
+key = "F7"
+
