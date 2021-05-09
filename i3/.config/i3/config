@@ -2,6 +2,7 @@
 #"""""" i3 Config """""""""""""
 #""""""""""""""""""""""""""""""
 
+
 ## Default Stuff
   # Title Bar Menus
   	# Way more realestate without this but turn on when you need it
@@ -310,96 +311,96 @@ mode "$mode_gaps" {
 }
 
 mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
+        bindsym plus  gaps outer current plus 11
+        bindsym minus gaps outer current minus 11
         bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+plus  gaps outer all plus 11
+        bindsym Shift+minus gaps outer all minus 11
         bindsym Shift+0     gaps outer all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
+        bindsym plus  gaps inner current plus 11
+        bindsym minus gaps inner current minus 11
         bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+plus  gaps inner all plus 11
+        bindsym Shift+minus gaps inner all minus 11
         bindsym Shift+0     gaps inner all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_horiz" {
-        bindsym plus  gaps horizontal current plus 5
-        bindsym minus gaps horizontal current minus 5
+        bindsym plus  gaps horizontal current plus 11
+        bindsym minus gaps horizontal current minus 11
         bindsym 0     gaps horizontal current set 0
 
-        bindsym Shift+plus  gaps horizontal all plus 5
-        bindsym Shift+minus gaps horizontal all minus 5
+        bindsym Shift+plus  gaps horizontal all plus 11
+        bindsym Shift+minus gaps horizontal all minus 11
         bindsym Shift+0     gaps horizontal all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_verti" {
-        bindsym plus  gaps vertical current plus 5
-        bindsym minus gaps vertical current minus 5
+        bindsym plus  gaps vertical current plus 11
+        bindsym minus gaps vertical current minus 11
         bindsym 0     gaps vertical current set 0
 
-        bindsym Shift+plus  gaps vertical all plus 5
-        bindsym Shift+minus gaps vertical all minus 5
+        bindsym Shift+plus  gaps vertical all plus 11
+        bindsym Shift+minus gaps vertical all minus 11
         bindsym Shift+0     gaps vertical all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_top" {
-        bindsym plus  gaps top current plus 5
-        bindsym minus gaps top current minus 5
+        bindsym plus  gaps top current plus 11
+        bindsym minus gaps top current minus 11
         bindsym 0     gaps top current set 0
 
-        bindsym Shift+plus  gaps top all plus 5
-        bindsym Shift+minus gaps top all minus 5
+        bindsym Shift+plus  gaps top all plus 11
+        bindsym Shift+minus gaps top all minus 11
         bindsym Shift+0     gaps top all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_right" {
-        bindsym plus  gaps right current plus 5
-        bindsym minus gaps right current minus 5
+        bindsym plus  gaps right current plus 11
+        bindsym minus gaps right current minus 11
         bindsym 0     gaps right current set 0
 
-        bindsym Shift+plus  gaps right all plus 5
-        bindsym Shift+minus gaps right all minus 5
+        bindsym Shift+plus  gaps right all plus 11
+        bindsym Shift+minus gaps right all minus 11
         bindsym Shift+0     gaps right all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_bottom" {
-        bindsym plus  gaps bottom current plus 5
-        bindsym minus gaps bottom current minus 5
+        bindsym plus  gaps bottom current plus 11
+        bindsym minus gaps bottom current minus 11
         bindsym 0     gaps bottom current set 0
 
-        bindsym Shift+plus  gaps bottom all plus 5
-        bindsym Shift+minus gaps bottom all minus 5
+        bindsym Shift+plus  gaps bottom all plus 11
+        bindsym Shift+minus gaps bottom all minus 11
         bindsym Shift+0     gaps bottom all set 0
 
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_left" {
-        bindsym plus  gaps left current plus 5
-        bindsym minus gaps left current minus 5
+        bindsym plus  gaps left current plus 11
+        bindsym minus gaps left current minus 11
         bindsym 0     gaps left current set 0
 
-        bindsym Shift+plus  gaps left all plus 5
-        bindsym Shift+minus gaps left all minus 5
+        bindsym Shift+plus  gaps left all plus 11
+        bindsym Shift+minus gaps left all minus 11
         bindsym Shift+0     gaps left all set 0
 
         bindsym Return mode "$mode_gaps"
@@ -415,8 +416,8 @@ mode "$mode_gaps_left" {
 # https://github.com/Airblader/i3/tree/gaps-next
 # delete or uncomment the following lines if you do not have it or do not
 # want it
-gaps inner 20
-gaps outer 20
+gaps inner 10
+gaps outer 10
 for_window [class="^.*"] border pixel 5
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -541,6 +542,11 @@ no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Desktop - Plasma"] kill, floating enable, border none
 exec --no-startup-id feh --bg-scale ~/.config/i3/kk-Frax-MiniMandel-Blue-4K.jpg
 
+
+## Auto layout
+# exec_always --no-startup-id i3-auto-layout
+bindsym $mod+Escape exec "i3-instant-layout --list | rofi -dmenu -i | i3-instant-layout -"
+bindsym $mod+Shift+Escape exec "bash ~/.config/i3/rofi_layout.sh"
 
 
 ## vim:fdm=expr:fdl=0
