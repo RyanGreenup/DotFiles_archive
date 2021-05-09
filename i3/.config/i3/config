@@ -544,6 +544,7 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/kk-Frax-MiniMandel-Blue-4K.jpg
 
 
 ## Auto layout
+## Requires xdotool and i3-auto-layout (pip)
 # exec_always --no-startup-id i3-auto-layout
 bindsym $mod+Escape exec "i3-instant-layout --list | rofi -dmenu -i | i3-instant-layout -"
 bindsym $mod+Shift+Escape exec "bash ~/.config/i3/rofi_layout.sh"
