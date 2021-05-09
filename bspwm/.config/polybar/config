@@ -243,7 +243,7 @@ format-volume-foreground = #FFFFFF
 ;   %percentage% (default)
 ;   %decibels% (unreleased)
 label-muted = 
-label-muted-foreground = #FFFFFF
+label-muted-foreground = #FFFFF
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
@@ -252,9 +252,9 @@ ramp-volume-2 = 
 
 [module/bluetooth]
 type = custom/script
-exec = ~/.bin/rofi-bluetooth/rofi-bluetooth --status
+exec = rofi-bluetooth --status
 interval = 1
-click-left = ~/.bin/rofi-bluetooth/rofi-bluetooth &
+click-left = rofi-bluetooth &
 
 ;[module/spotify]
 ;type = custom/script
@@ -279,7 +279,7 @@ screenchange-reload = true
 ;apseudo-transparency = true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 20
+margin-bottom = 20
 
 ; vim:ft=dosini
