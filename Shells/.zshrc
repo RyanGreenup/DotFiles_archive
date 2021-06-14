@@ -168,3 +168,6 @@ eval "$(zoxide init zsh)"
 
 ## Better ls
 alias ls='lsd'
+
+## Alias to Quickly change directories
+alias c='target="$(fd | fzf)" && cd "${target}" || cd "$(dirname $target)"'
