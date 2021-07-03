@@ -44,6 +44,7 @@ nmap <leader>fd :! rm "%"
 nmap <leader>ss :BLines<CR>
 nmap <leader>bb :Buffers<CR>
 
+
 """" Plugins
 "############################## 
 "###### Plugins ############### 
@@ -140,6 +141,8 @@ Plug 'vimwiki/vimwiki'
 "Plug 'junegunn/vim-emoji'
 "Plug 'junegunn/vim-github-dashboard'
 Plug 'kyuhi/vim-emoji-complete'
+
+Plug 'yazgoo/unicodemoji'
 
 """"" Smooth Scroll
 Plug 'yuttie/comfortable-motion.vim'
@@ -414,6 +417,8 @@ call plug#end()
 "##### Editing ################
 "##############################
 
+"""" Convert markdown to Mediawiki
+nmap <leader>ew :w !pandoc -f markdown -t mediawiki \| xclip -sel clip
 
 """""" UltiSnips
 
@@ -827,6 +832,7 @@ nmap <Leader>b :silent ! vivaldi "0.0.0.0:8351/%:t" & disown <CR>
 "for e in emoji#list()
 "  call append(line('$'), printf('%s (%s)', emoji#for(e), e))
 "endfor
+
 
 """"" Export Mapping
 

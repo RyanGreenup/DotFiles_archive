@@ -42,9 +42,9 @@ rename .emacs.d.bak
 filter .ema
 shell m
 rename EmacsPersonal2
-unmark
 cd .emacs.d/
 shell mkdir site-lisp
 search om
-delete
 shell zathura (x -o) & disown
+unmark
+delete
