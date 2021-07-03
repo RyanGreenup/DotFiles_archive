@@ -46,5 +46,9 @@
         }
     ],
     "window.zoomLevel": 2,
-    "markdown.preview.breaks": true
+    "markdown.preview.breaks": true,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "files.associations": {
+        "*.rmd": "markdown"
+    }
 }
