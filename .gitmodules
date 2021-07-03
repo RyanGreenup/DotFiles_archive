@@ -13,3 +13,6 @@
 [submodule "i3/.config/i3/rofi"]
 	path = i3/.config/i3/rofi
 	url = https://github.com/adi1090x/rofi
+[submodule "NeoVim/.vim/plugged/unicodemoji"]
+	path = NeoVim/.vim/plugged/unicodemoji
+	url = /home/ryan/DotFiles/NeoVim/.vim/plugged/unicodemoji
