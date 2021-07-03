@@ -26,3 +26,34 @@ EmacsPersonal/centaur
 **/*~$
 EmacsPersonal2/.emacs.d/lisp/init-doom-modeline.elc
 EmacsPersonal2/.emacs.d/lisp/init-keybindings.elc
+Atom/.atom/blob-store
+Atom/.atom/compile-cache
+Atom/.atom/.apm/.apmrc
+Atom/.atom/.apm
+Atom/.atom/nohup.out
+Atom/.atom/storage/application.json
+VSCode/.config/Code - OSS/Cache
+VSCode/.config/Code - OSS/CachedData
+VSCode/.config/Code - OSS/Cache
+VSCode/.config/Code - OSS/CachedExtensionVSIXs
+VSCode/.config/Code - OSS/CachedExtensions
+VSCode/.config/Code - OSS/Cache
+VSCode/.config/Code - OSS/CachedExtensions
+VSCode/.config/Code - OSS/.org.chromium.Chromium.WwjXPE
+VSCode/.config/Code - OSS/.org.chromium.Chromium.cROb92
+VSCode/.config/Code - OSS/Backups
+VSCode/.config/Code - OSS/Backups
+VSCode/.config/Code - OSS/Cache
+VSCode/.config/Code - OSS/CachedExtensions
+VSCode/.config/Code - OSS/Code Cache
+VSCode/.config/Code - OSS/Cookies
+VSCode/.config/Code - OSS/GPUCache
+VSCode/.config/Code - OSS/Local Storage
+VSCode/.config/Code - OSS/Network Persistent State
+VSCode/.config/Code - OSS/Preferences
+VSCode/.config/Code - OSS/QuotaManager
+VSCode/.config/Code - OSS/Service Worker
+VSCode/.config/Code - OSS/User
+VSCode/.config/Code - OSS/databases
+VSCode/.config/Code - OSS/logs
+VSCode/.config/Code - OSS/storage.json

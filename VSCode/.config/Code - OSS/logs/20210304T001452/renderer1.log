@@ -1,4 +1,0 @@
-[2021-03-04 00:15:00.653] [renderer1] [error] Unable to write into user settings because the file is dirty. Please save the user settings file first and then try again.: Error: Unable to write into user settings because the file is dirty. Please save the user settings file first and then try again.
-    at w.reject (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1890:16717)
-    at file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1890:20877
-    at async w.doWriteConfiguration (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1890:13896)
