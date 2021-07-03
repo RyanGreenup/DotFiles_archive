@@ -1,0 +1,47 @@
+% Created 2021-03-06 Sat 08:25
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{minted}
+\IfFileExists{/home/ryan/Templates/Org_Mode_Report/resources/style.sty}{\usepackage{$HOME/Templates/Org_Mode_Report/resources/style}}{}
+\IfFileExists{$HOME/Templates/Org_Mode_Report/resources/referencing.sty}{\usepackage{$HOME/Templates/Org_Mode_Report/resources/referencing}}{}
+\addbibresource{~/Sync/Documents/ref.bib}
+\usepackage[mode=buildnew]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+\author{Ryan Greenup}
+\date{\today}
+\title{Org Mode Note Template}
+\hypersetup{
+ pdfauthor={Ryan Greenup},
+ pdftitle={Org Mode Note Template},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.0.50 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Top Level Heading}
+\label{sec:org5625a67}
+
+Here's a reference to a differential equations TB I like
+\cite{zillMatrixExponential2009} and another one to Ahren's book on
+notetaking \cite{ahrensHowTakeSmart2017}, another book I should read is
+\emph{Statistics done wrong} \cite{reinhartStatisticsDoneWrong2015a}.
+\end{document}

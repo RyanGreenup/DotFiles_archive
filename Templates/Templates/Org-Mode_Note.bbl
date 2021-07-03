@@ -1,0 +1,133 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\ifdefined\DeclarePrefChars\DeclarePrefChars{'’-}\else\fi%
+}
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{ahrensHowTakeSmart2017}{book}{}
+      \name{author}{1}{}{%
+        {{hash=7d76f6cf38717cf16feee9f3e61237d0}{%
+           family={Ahrens},
+           familyi={A\bibinitperiod},
+           given={Sönke},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {North Charleston, SC}%
+      }
+      \list{publisher}{1}{%
+        {CreateSpace}%
+      }
+      \strng{namehash}{7d76f6cf38717cf16feee9f3e61237d0}
+      \strng{fullhash}{7d76f6cf38717cf16feee9f3e61237d0}
+      \strng{bibnamehash}{7d76f6cf38717cf16feee9f3e61237d0}
+      \strng{authorbibnamehash}{7d76f6cf38717cf16feee9f3e61237d0}
+      \strng{authornamehash}{7d76f6cf38717cf16feee9f3e61237d0}
+      \strng{authorfullhash}{7d76f6cf38717cf16feee9f3e61237d0}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-1-5428-6650-7}
+      \field{langid}{english}
+      \field{pagetotal}{170}
+      \field{shorttitle}{How to Take Smart Notes}
+      \field{title}{How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking: For Students, Academics and Nonfiction Book Writers}
+      \field{year}{2017}
+      \field{dateera}{ce}
+    \endentry
+    \entry{reinhartStatisticsDoneWrong2015a}{book}{}
+      \name{author}{1}{}{%
+        {{hash=73d1098324209d9c01a49edf9c17b3ae}{%
+           family={Reinhart},
+           familyi={R\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {No Starch Press}%
+      }
+      \strng{namehash}{73d1098324209d9c01a49edf9c17b3ae}
+      \strng{fullhash}{73d1098324209d9c01a49edf9c17b3ae}
+      \strng{bibnamehash}{73d1098324209d9c01a49edf9c17b3ae}
+      \strng{authorbibnamehash}{73d1098324209d9c01a49edf9c17b3ae}
+      \strng{authornamehash}{73d1098324209d9c01a49edf9c17b3ae}
+      \strng{authorfullhash}{73d1098324209d9c01a49edf9c17b3ae}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Scientific progress depends on good research, and good research needs good statistics. But statistical analysis is tricky to get right, even for the best and brightest of us. You\&\#39;d be surprised how many scientists are doing it wrong.Statistics Done Wrong is a pithy, essential guide to statistical blunders in modern science that will show you how to keep your research blunder-free. You\&\#39;ll examine embarrassing errors and omissions in recent research, learn about the misconceptions and scientific politics that allow these mistakes to happen, and begin your quest to reform the way you and your peers do statistics.You\&\#39;ll find advice on:Asking the right question, designing the right experiment, choosing the right statistical analysis, and sticking to the planHow to think about p values, significance, insignificance, confidence intervals, and regressionChoosing the right sample size and avoiding false positivesReporting your analysis and publishing your data and source codeProcedures to follow, precautions to take, and analytical software that can helpScientists: Read this concise, powerful guide to help you produce statistically sound research.Statisticians: Give this book to everyone you know.The first step toward statistics done right is Statistics Done Wrong.}
+      \field{eprinttype}{googlebooks}
+      \field{isbn}{978-1-59327-620-1}
+      \field{langid}{english}
+      \field{pagetotal}{177}
+      \field{shorttitle}{Statistics {{Done Wrong}}}
+      \field{title}{Statistics {{Done Wrong}}: {{The Woefully Complete Guide}}}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \verb{eprint}
+      \verb FFCIBwAAQBAJ
+      \endverb
+      \keyw{Business & Economics / Statistics,Mathematics / Probability & Statistics / General,Science / Research & Methodology}
+    \endentry
+    \entry{zillMatrixExponential2009}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=ce0689f2d52c5a0939d5509701e4f498}{%
+           family={Zill},
+           familyi={Z\bibinitperiod},
+           given={Dennis\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=724ffae515880969319e4b88c9995872}{%
+           family={Cullen},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Belmont, CA}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole, Cengage Learning}%
+      }
+      \strng{namehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{fullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{bibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorbibnamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authornamehash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \strng{authorfullhash}{e3f0d8f56b31e2cddc7c5b3d08e252a8}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Differential Equations with Boundary-Value Problems}
+      \field{edition}{7th ed}
+      \field{isbn}{978-0-495-10836-8}
+      \field{title}{8.4 {{Matrix Exponential}}}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \keyw{Boundary value problems,Differential equations,Textbooks}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
