@@ -97,12 +97,13 @@
 
 ;;;; Run once When Idle (Trivial Things Only)
 ;;;;; 1 Second
+(set 'default-font "Fira Code-10")
 (run-with-idle-timer 1 nil
     (lambda ()
 	(evil-escape-mode 1)			;; ~0.1 s
 	(message "Idle Timer 1 Second: Begining Post Initialisation Modifications")
 						;; (set-frame-font "Roboto Mono-10" nil t)
-	(set-frame-font "Fira Code-10" nil t)	;; ~ 0.1 s
+	(set-frame-font default-font nil t)	;; ~ 0.1 s
 						;; (set-frame-font "monofur-10" nil t)
 						;; (set-frame-font "Source Code Pro-10" nil t)
 						;; Toggle scroll bar and Toolbar 
@@ -111,6 +112,10 @@
         (menu-bar-mode -1)                      ;; I like the Menus actually so toggle with <SPC t SPC>
     )
     )
+
+
+(add-to-list 'default-frame-alist `(font . ,default-font)) ;; Use backquote and comma https://stackoverflow.com/questions/1664202/emacs-lisp-evaluate-variable-in-alist
+
 ;;;;; 3 Second
 ;; Load Org mode so it's ready after some delay
 
