@@ -83,7 +83,9 @@ Usable with `ivy-resume', `ivy-next-line-and-call' and
 ;; (evil-define-key 'normal 'global (kbd "<leader>ht") 'counsel-load-theme) ;; see init-ivy
 
 ;;;; Counsel org-tags
-(define-key org-mode-map (kbd "C-c C-q") 'counsel-org-tag)
+(add-hook 'org-mode-hook
+	  (lambda () (define-key org-mode-map (kbd "C-c C-q") 'counsel-org-tag)))
+
 ;;; end
 (ivy-mode 1)
 (provide 'init-ivy)
