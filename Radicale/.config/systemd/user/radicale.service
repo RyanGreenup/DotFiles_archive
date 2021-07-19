@@ -1,0 +1,9 @@
+[Unit]
+Description=Radicale with SSL Certificate for Calendar
+
+[Service]
+ExecStart=/usr/bin/bash %h/Documents/Calendar/run_Radicale.bash
+
+
+[Install]
+WantedBy=default.target
