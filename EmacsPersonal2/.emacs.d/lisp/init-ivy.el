@@ -7,7 +7,6 @@
 (straight-use-package 'ivy-posframe)
 
 ;;; Code:
-
 ;;;; M-x
 (global-set-key (kbd "M-x") 'counsel-M-x)
 
@@ -83,6 +82,8 @@ Usable with `ivy-resume', `ivy-next-line-and-call' and
 ;; this is buggy
 ;; (evil-define-key 'normal 'global (kbd "<leader>ht") 'counsel-load-theme) ;; see init-ivy
 
+;;;; Counsel org-tags
+(define-key org-mode-map (kbd "C-c C-q") 'counsel-org-tag)
 ;;; end
 (ivy-mode 1)
 (provide 'init-ivy)
