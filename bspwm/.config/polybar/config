@@ -37,13 +37,13 @@ ashade8 = #2C2C2C
 
 [bar/topbar]
 
-locale = de_DE.UTF-8
+locale = en_US.UTF-8
 
 enable-ipc = true
 
 width = 100%
 height = 32
-radius = 1.0
+radius = 5.0
 fixed-center = true
 
 background = ${colors.background}
@@ -68,7 +68,7 @@ font-3 = FontAwesome5Free:style=Regular:size=11;2
 font-4 = FontAwesome5Brands:style=Regular:size=11;2
 
 modules-left = i3 memory cpu temperature pulseaudio spotify removable-disks
-modules-center = xwindow
+modules-center = xwindow clock
 modules-right = wlan bluetooth battery date
 
 tray-position = right
@@ -83,6 +83,12 @@ type = internal/xwindow
 label = %title:0:75:...%
 format-background = #0a0a0a
 format-padding = 5
+
+[module/clock]
+type = internal/date
+interval = 2
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+
 
 [module/i3]
 type = internal/i3
@@ -228,6 +234,9 @@ interval = 5
 format-volume = <ramp-volume> <label-volume>
 format-volume-foreground = #FFFFFF
 
+
+
+
 ; Available tags:
 ;   <label-muted> (default)
 ;   <ramp-volume>
@@ -243,7 +252,7 @@ format-volume-foreground = #FFFFFF
 ;   %percentage% (default)
 ;   %decibels% (unreleased)
 label-muted = 
-label-muted-foreground = #FFFFF
+label-muted-foreground = #FFFFFF
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
