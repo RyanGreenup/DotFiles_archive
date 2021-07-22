@@ -1,0 +1,4 @@
+tex="$(xclip -sel clip)"
+name="$(echo ${tex} | xxhsum -H0)"
+
+tex2svg "$(xclip -sel clip)" > 
