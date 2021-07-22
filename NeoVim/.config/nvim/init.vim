@@ -73,11 +73,45 @@ call plug#begin('~/.config/nvim/plugged')
 """"" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+""""" LaTeX
+Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
+Plug 'plasticboy/vim-markdown'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
 
 
 """"" End Plugins
 " Initialize plugin system
 call plug#end()
+
+"""" LaTeX
+""""" PlasticBoy
+" This enables syntax highlighting  for Math environments
+let g:vim_markdown_math = 1
+    "Highlighting is necessary for UltiSnips
+    "set syntax=latex sucks because headings don't get highlighted
+" Autosave before BuffJump
+let g:vim_markdown_autowrite = 1
+" Conceal Bold etc.
+
+""""" VimTeX
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_levelmarker = "*"
+let g:vimtex_compiler_latexmk = {
+      \ 'options' : [
+      \   '-shell-escape',
+      \   '-silent',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \ ],
+      \ 'build_dir' : 'livepreview',
+      \}
+"disable errors but for good cause
+" to view quickfix warning buffer use `<leader>le` 
+" they disappear with =fks= mode
+"let g:vimtex_quickfix_enabled=0
+
 
 """" Programming
 """"" Completion-Nvim (Completion Framework for LSP)
