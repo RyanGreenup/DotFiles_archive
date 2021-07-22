@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/ryan/Dropbox/profiles/.vim'
-let g:netrw_dirhist_2='/home/ryan'
-let g:netrw_dirhist_3='/home/ryan/.config'
-let g:netrw_dirhist_4='/home/ryan/.config/fish'
-let g:netrw_dirhist_5='/home/ryan'
-let g:netrw_dirhist_6='/home/ryan/etc/apt/sources.list.d'

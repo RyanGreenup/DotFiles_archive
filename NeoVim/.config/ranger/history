@@ -1,4 +1,3 @@
-filter stre
 filter ~
 filter 
 filter in
@@ -47,4 +46,5 @@ shell mkdir site-lisp
 search om
 shell zathura (x -o) & disown
 unmark
+rename VSCodium
 delete

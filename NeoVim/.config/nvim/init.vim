@@ -65,7 +65,7 @@ endif
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Make sure you use single quotes
 
@@ -105,6 +105,7 @@ lua require'lspconfig'.gopls.setup{}
 lua require'lspconfig'.gopls.setup{}
 lua require'lspconfig'.html.setup{}
 lua require'lspconfig'.java_language_server.setup{}
+lua require'lspconfig'.texlab.setup{}
 lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.julials.setup{}
 lua require'lspconfig'.r_language_server.setup{}
