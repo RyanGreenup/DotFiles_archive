@@ -66,6 +66,10 @@ vmap <Leader>p "+p
 vmap <Leader>P "+P
 
 
+""""" Switch to Markdown and LaTeX Quickly
+nnoremap <Leader>t :setlocal filetype=tex<CR>
+nnoremap <Leader>m :set syntax=markdown<CR> 
+
 
 
 """" Plugins
@@ -97,9 +101,12 @@ Plug 'nvim-lua/completion-nvim'
 """"" LaTeX
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
-Plug 'plasticboy/vim-markdown'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
+""""" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+imap lv :MakrdownPreview<CR>
+Plug 'plasticboy/vim-markdown'
+ 
 """"" Easy Motion
 
 Plug 'easymotion/vim-easymotion'
