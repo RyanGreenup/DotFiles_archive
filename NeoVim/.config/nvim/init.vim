@@ -37,6 +37,11 @@ set autoread  "Automatically re-read files
 set encoding=utf-8
 
 """"" Keyboard Remaps
+"""""" Leader Key
+"This is probably for the best because matches spacemacs/Doom
+"let mapleader="\<Space>"
+map <Space> <Leader>
+"""""" Remaps
 nmap <Leader><Space> :Commands<CR>
 nmap <C-x><C-k> :bd<CR>
 nmap <Leader>rr "
@@ -45,6 +50,22 @@ nmap <leader>w <C-w>
 nmap <leader>fd :! rm "%"
 nmap <leader>ss :BLines<CR>
 nmap <leader>bb :Buffers<CR>
+map <leader>bp :bprev<CR>
+nnoremap <silent><Leader>ff :Files<CR>
+
+""""""" Clipboard
+" Write file leader-clip-reymap
+"
+"
+nnoremap <Leader>fs h:w<CR> 
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+
 
 
 """" Plugins
@@ -78,6 +99,25 @@ Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+""""" Easy Motion
+
+Plug 'easymotion/vim-easymotion'
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 
 
