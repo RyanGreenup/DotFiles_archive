@@ -99,6 +99,7 @@ call plug#begin('~/.config/nvim/plugged')
 """"" Vim Themes
 Plug 'morhetz/gruvbox' 
 Plug 'dracula/vim'
+
 """"" Programming
 " Corresct spacing
 au BufNewFile,BufRead *.py,*.js,*.jl,*.rs,*.go,*.css
@@ -111,6 +112,9 @@ au BufNewFile,BufRead *.py,*.js,*.jl,*.rs,*.go,*.css
     \ fileformat=unix
 
 au BufNewFile,BufRead *.py setlocal foldmethod=indent
+autocmd FileType python nnoremap <buffer> <F9> :update<bar>!python %<CR>
+
+
 
 """"" LSP
 Plug 'neovim/nvim-lspconfig'
@@ -124,6 +128,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 imap lv :MakrdownPreview<CR>
 Plug 'plasticboy/vim-markdown'
 """"" General
+Plug 'metakirby5/codi.vim'
 """"" Powerline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
