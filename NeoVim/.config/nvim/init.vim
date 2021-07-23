@@ -52,6 +52,8 @@ nmap <leader>ss :BLines<CR>
 nmap <leader>bb :Buffers<CR>
 map <leader>bp :bprev<CR>
 nnoremap <silent><Leader>ff :Files<CR>
+" Change Directory to file location
+nnoremap <silent><Leader>fcd :cd %:p:h<CR>
 
 """"""" Clipboard
 " Write file leader-clip-reymap
@@ -94,6 +96,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Make sure you use single quotes
 
+""""" Vim Themes
+Plug 'morhetz/gruvbox' 
+Plug 'dracula/vim'
 """"" Programming
 " Corresct spacing
 au BufNewFile,BufRead *.py,*.js,*.jl,*.rs,*.go,*.css
@@ -104,6 +109,8 @@ au BufNewFile,BufRead *.py,*.js,*.jl,*.rs,*.go,*.css
     \ expandtab
     \ autoindent
     \ fileformat=unix
+
+au BufNewFile,BufRead *.py setlocal foldmethod=indent
 
 """"" LSP
 Plug 'neovim/nvim-lspconfig'
