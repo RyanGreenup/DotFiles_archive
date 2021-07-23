@@ -1,6 +1,3 @@
-filter ~
-filter 
-filter in
 filter html
 find 
 
@@ -10,7 +7,6 @@ search tud
 open_with 
 search Temp
 q
-search ync
 search ook
 rW. M. Haynes, David R. Lide, Thomas J. Bruno - CRC handbook of chemistry and physics_ a ready-reference book of chemical and physical data-CRC Press (2016).pdf
 rename CRC_97.pdf
@@ -22,7 +18,6 @@ rename Sample_pdf
 rename Final
 rename Sample
 bulkrename
-search 
 search otes
 search emacs
 rename .emacs.d_doom
@@ -48,3 +43,8 @@ shell zathura (x -o) & disown
 unmark
 rename VSCodium
 delete
+rename Scripts
+q!
+search ync
+search 
+search dv

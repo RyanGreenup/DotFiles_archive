@@ -95,6 +95,16 @@ call plug#begin('~/.config/nvim/plugged')
 " Make sure you use single quotes
 
 """"" Programming
+" Corresct spacing
+au BufNewFile,BufRead *.py,*.js,*.jl,*.rs,*.go,*.css
+    \ setlocal tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+
 """"" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
@@ -106,6 +116,17 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 imap lv :MakrdownPreview<CR>
 Plug 'plasticboy/vim-markdown'
+""""" General
+""""" Powerline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+" Make sure to install the fonts with
+"      pip install --user git+git://github.com/powerline/powerline
+"      pip3 install --user git+git://github.com/powerline/powerline
+let g:airline_theme='violet'
+"let g:airline_statusline_ontop=1
+let g:airline#extensions#tabline#enabled = 1
  
 """"" Easy Motion
 
