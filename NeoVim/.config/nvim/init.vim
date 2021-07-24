@@ -117,8 +117,15 @@ autocmd FileType python nnoremap <buffer> <F9> :update<bar>!python %<CR>
 
 
 """"" LSP
+" The LSP Magic
 Plug 'neovim/nvim-lspconfig'
+" Tie it in with Autocomplete
 Plug 'nvim-lua/completion-nvim'
+
+" Make it work in Gnvim (only needed for gnvim)
+Plug 'vhakulinen/gnvim-lsp'
+Plug 'prabirshrestha/vim-lsp'
+
 """"" LaTeX
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
