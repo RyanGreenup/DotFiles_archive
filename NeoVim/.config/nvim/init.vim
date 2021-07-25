@@ -223,7 +223,6 @@ lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.cssls.setup{}
 lua require'lspconfig'.dockerls.setup{}
 lua require'lspconfig'.gopls.setup{}
-lua require'lspconfig'.gopls.setup{}
 lua require'lspconfig'.html.setup{}
 lua require'lspconfig'.java_language_server.setup{}
 lua require'lspconfig'.texlab.setup{}
