@@ -513,6 +513,9 @@ bindsym $mod+Up workspace prev_on_output
 # echo -e "enter brightness:\n"; read val; xrandr  --output DP-2 --brightness $val --output HDMI-0 --brightness $val --output HDMI-1  --brightness $val
 
 # Flip Screen
+# https://www.reddit.com/r/i3wm/comments/opdo2x/rotate_screen_content_to_show_it_to_a_person/
+ # bindsym Mod5+Up exec "xrandr -o inverted; xinput set-prop 'Synaptics TM2939-001' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1"
+ # bindsym Mod5+Down exec "xrandr -o normal; xinput set-prop 'Synaptics TM2939-001' 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1"
  bindsym $mod+Next exec xrandr  -o normal # Page up
  bindsym $mod+Prior exec xrandr -o inverted # Page Down
  bindsym $mod+minus exec xrandr -o left
@@ -550,7 +553,8 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/kk-Frax-MiniMandel-Blue-4K.jpg
 exec_always --no-startup-id i3-auto-layout
 
 ## Requires xdotool and i3-auto-layout (pip)
-bindsym $mod+Escape exec "i3-instant-layout --list | rofi -dmenu -i | i3-instant-layout -"
+# Reroute STDERR so you can see if it fails
+bindsym $mod+Escape exec "~/.local/bin/i3-instant-layout --list 2>&1 | rofi -dmenu -matching fuzzy | ~/.local/bin/i3-instant-layout -"  
 bindsym $mod+Shift+Escape exec "bash ~/.config/i3/rofi_layout.sh"
 
 
