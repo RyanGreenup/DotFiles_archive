@@ -161,3 +161,13 @@ set modelineexpr  "This does all the magic folding
 
 
 ```
+
+### Testing
+
+```bash
+cd "$(mktemp -d)"
+cargo init my_lsp_test # should be snake
+nvim "$(find ./ -name main.rs)"
+```
+
+Auto complete should be offered, if not inspect `:LspInfo`
