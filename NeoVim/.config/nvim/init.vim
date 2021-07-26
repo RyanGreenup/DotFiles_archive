@@ -223,16 +223,24 @@ lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.cssls.setup{}
 lua require'lspconfig'.dockerls.setup{}
 lua require'lspconfig'.gopls.setup{}
+lua require'lspconfig'.bashls.setup{}
+" yay -S vscode-html-languageserver; ln -s /usr/bin/vscode-html-languageserver /usr/bin/vscode-html-language-server
 lua require'lspconfig'.html.setup{}
-lua require'lspconfig'.java_language_server.setup{}
+" lua require'lspconfig'.java_language_server.setup{}
 lua require'lspconfig'.texlab.setup{}
 lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.julials.setup{}
 lua require'lspconfig'.r_language_server.setup{}
-lua require'lspconfig'.sqlls.setup{}
+" yay -S sql-language-server
+" TODO This seems to not work, investigate :checkhealth
+" lua require'lspconfig'.sqlls.setup{}
+" pacman -S stylelint
 lua require'lspconfig'.stylelint_lsp.setup{}
+" Yay -S vala-language server
 lua require'lspconfig'.vala_ls.setup{}
+" yay -S vim-language-server
 lua require'lspconfig'.vimls.setup{}
+" yay -S zls
 lua require'lspconfig'.zls.setup{}
 lua require'lspconfig'.texlab.setup{}
 
