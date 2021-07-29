@@ -1,7 +1,3 @@
-filter html
-find 
-
-search no
 search stu
 search tud
 open_with 
@@ -42,9 +38,13 @@ search om
 shell zathura (x -o) & disown
 unmark
 rename VSCodium
-delete
 rename Scripts
 q!
 search ync
 search 
 search dv
+rename custom.css
+search genda
+open_with vim
+delete
+search agen

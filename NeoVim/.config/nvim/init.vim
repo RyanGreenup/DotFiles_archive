@@ -82,7 +82,7 @@ nnoremap <Leader>m :set syntax=markdown<CR>
 """"" Vim-Plug
 
 " Set up if not already installed
-if empty(glob('~/.vim/autoload/plug.vim'))
+if empty(glob('~/.config/nvim/plugged'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
