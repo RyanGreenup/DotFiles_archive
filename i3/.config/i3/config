@@ -32,7 +32,7 @@ set $mod Mod4
 
 # This does the window tops
 font pango:Source Code Pro Semibold 25px
-exec xrandr --dpi 184
+## exec xrandr --dpi 184 ## Yeah but that that happens on laptop, probably just do ~/.xresrouces?
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
