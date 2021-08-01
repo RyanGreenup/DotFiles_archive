@@ -22,6 +22,9 @@ set number "Absolute Number
 "                vim in ranger in the desired working directory
 nnoremap <silent><Leader>fcd :cd %:p:h<CR>
 nnoremap <silent><Leader>fcd :lcd %:p:h<CR>
+nmap <Leader>fp :e ~/.vimrc <CR>
+"noremap <silent> <leader>fy :let @+=expand("%:p")<CR>
+noremap <silent> <leader>fy :! echo "%" \| xargs realpath \| xclip -selection clipboard <CR><CR><CR>
 
 set relativenumber
 imap jj <Esc> " What I'm Used to
@@ -113,6 +116,8 @@ au BufNewFile,BufRead *.py,*.js,*.jl,*.rs,*.go,*.css
 
 au BufNewFile,BufRead *.py setlocal foldmethod=indent
 autocmd FileType python nnoremap <buffer> <F9> :update<bar>!python %<CR>
+autocmd FileType R nnoremap <buffer> <F9> :update<bar>!Rscript %<CR>
+autocmd FileType r nnoremap <buffer> <F9> :update<bar>!Rscript %<CR>
 
 
 
@@ -121,6 +126,8 @@ autocmd FileType python nnoremap <buffer> <F9> :update<bar>!python %<CR>
 Plug 'neovim/nvim-lspconfig'
 " Tie it in with Autocomplete
 Plug 'nvim-lua/completion-nvim'
+" fzf is better
+Plug 'ojroques/nvim-lspfuzzy'
 
 " Make it work in Gnvim (only needed for gnvim)
 Plug 'vhakulinen/gnvim-lsp'
@@ -218,6 +225,7 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 """"" LSP
+lua require('lspfuzzy').setup{}
 lua require'lspconfig'.rust_analyzer.setup{}
 lua require'lspconfig'.clangd.setup{}
 lua require'lspconfig'.cssls.setup{}
