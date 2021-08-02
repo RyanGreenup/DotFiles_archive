@@ -23,5 +23,5 @@ page_name="$(
            )"
 
 
-firefox "http://${IP}:${PORT}/mediawiki/index.php/${page_name}"
+firefox "http://${IP}:${PORT}/mediawiki/index.php/${page_name}" & disown
 
