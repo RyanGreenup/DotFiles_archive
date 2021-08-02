@@ -10,8 +10,8 @@ btrfs_maintenance() {
 	while :; do sudo btrfs balance status -v /; sleep 60; done
 
 	# Deduplicate
-	for dir in "/" "/home" "/.snapshots: do
-	    sudo duperemove -r -d "${dir}" --hashfile="${dir}/duperemove.hash;
+	for dir in "/" "/home" "/.snapshots; do
+	    sudo duperemove -r -d "${dir}" --hashfile="${dir}/duperemove.hash";
 	done
 }
 
