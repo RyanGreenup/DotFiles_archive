@@ -1,3 +1,9 @@
+# VSCode is extremely unreliable with extension, 
+# Inparticular VSpaececode which is probably more
+# effort that int's worth, delete all extensions before running this:
+rm -rf ~/.vscode-oss/
+
+
 code --install-extension bodil.file-browser
 code --install-extension eamodio.gitlens
 code --install-extension ecmel.vscode-html-css
