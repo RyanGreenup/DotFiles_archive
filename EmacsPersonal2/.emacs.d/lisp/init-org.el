@@ -313,6 +313,7 @@ Ideally this function should also be run after an idle timer as well."
     (require 'init-org-publish)
     (require 'init-texfrag)
     (require 'org-ref)  ;; Org-Ref MUST be required, see README
+    (setq org-roam-v2-ack t)
     (org-roam-mode 1)
 
 ;;;;; Use Zathura for Preview
