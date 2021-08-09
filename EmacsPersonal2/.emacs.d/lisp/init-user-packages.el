@@ -44,7 +44,7 @@
       :straight t
       :ensure t
       :custom
-      (org-roam-directory "~/Notes/Org/roam/")
+      (org-roam-directory "~/Notes/org-roam/pages/")
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-node-find)
