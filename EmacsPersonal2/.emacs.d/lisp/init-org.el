@@ -1,4 +1,4 @@
-;;; init-org.el --- All Packages for Emacs using straight.el -*- lexical-binding: t -*-
+;; init-org.el --- All Packages for Emacs using straight.el -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -314,6 +314,7 @@ Ideally this function should also be run after an idle timer as well."
     (require 'init-texfrag)
     (require 'org-ref)  ;; Org-Ref MUST be required, see README
     (setq org-roam-v2-ack t)
+    (setq org-id-link-to-org-use-id t) ;; Use ids for links everywhere
     (org-roam-mode 1)
 
 ;;;;; Use Zathura for Preview
