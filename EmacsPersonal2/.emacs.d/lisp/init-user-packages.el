@@ -47,10 +47,10 @@
       (org-roam-directory "~/Notes/Org/roam/")
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
+               ("C-c n f" . org-roam-node-find)
                ("C-c n g" . org-roam-graph))
               :map org-mode-map
-              (("C-c n i" . org-roam-insert))
+              (("C-c n i" . org-roam-node-insert))
               (("C-c n I" . org-roam-insert-immediate))))
 (straight-use-package 'org-ref) ;; does not declare autoloads! MUST
 				;; use (require 'org-ref) somewhere
