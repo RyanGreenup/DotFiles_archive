@@ -123,6 +123,17 @@
 
 
 
+;;;; Org Mode
+(add-hook 'org-mode-hook
+  (lambda ()
+;;;;;; Create Key Bindings for Link Store
+    ;; See also (setq org-id-link-to-org-use-id t) enabled in init-org
+    (local-set-key (kbd "C-c l") 'org-store-link)
+    (local-set-key (kbd "C-c I") 'org-id-get-create)
+  )
+)
+
+
 ;;;; Programming
 
 ;;; Helper Functions
