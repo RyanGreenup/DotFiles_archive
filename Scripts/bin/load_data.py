@@ -1,1 +1,0 @@
-/home/ryan/Sync/Studies/2020Spring/BigData/Assessment/bin/load_data.py

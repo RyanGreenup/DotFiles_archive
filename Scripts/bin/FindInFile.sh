@@ -1,1 +1,0 @@
-/home/ryan/DotFiles/cadmus/bin/NoteFind.sh

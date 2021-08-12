@@ -1,1 +1,0 @@
-/home/ryan/Sync/Studies/2020Spring/BigData/Assessment/bin/poor_lazy_mans_hadoop.sh
