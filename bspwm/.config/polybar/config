@@ -48,6 +48,7 @@ fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+monitor = ${env:MONITOR:}
 
 line-size = 3
 line-color = #f00
