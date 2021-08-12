@@ -42,7 +42,7 @@ locale = en_US.UTF-8
 enable-ipc = true
 
 width = 100%
-height = 32
+height = 38
 radius = 5.0
 fixed-center = true
 
@@ -62,15 +62,15 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Hack:style=bold:pixelsize=11;1
-font-1 = FontAwesome5Free:style=Solid:size=11;2
-font-2 = FontAwesome:style=Regular:size=11;2
-font-3 = FontAwesome5Free:style=Regular:size=11;2
-font-4 = FontAwesome5Brands:style=Regular:size=11;2
+font-0 = Hack:style=bold:pixelsize=14;1
+font-1 = FontAwesome5Free:style=Solid:size=14;2
+font-2 = FontAwesome:style=Regular:size=14;2
+font-3 = FontAwesome5Free:style=Regular:size=14;2
+font-4 = FontAwesome5Brands:style=Regular:size=14;2
 
 modules-left = i3 memory cpu temperature pulseaudio spotify removable-disks
 modules-center = xwindow clock
-modules-right = wlan bluetooth battery date
+modules-right = wlan battery date
 
 tray-position = right
 tray-padding = 5
